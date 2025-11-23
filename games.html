@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games — AtlasForge Interactive</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body class="theme-dark" data-page="games">
+  <header class="af-header af-header-compact">
+    <div class="af-container">
+      <nav class="af-nav">
+        <a class="af-logo" href="index.html">
+          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
+          <span class="af-logo-text">Atlasforge Interactive</span>
+        </a>
+        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="af-nav-links">
+          <a href="index.html">Home</a>
+          <a href="studio-tools.html">Studio</a>
+          <a href="atlasv.html">Atlas-V</a>
+          <a href="games.html" class="is-active">Games</a>
+          <a href="skb.html">S/K/B</a>
+          <a href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="af-hero af-section">
+    <div class="af-container af-hero-grid">
+      <div>
+        <div class="af-kicker">GAMES</div>
+        <h1>The Atlasforge lineup.</h1>
+        <p class="af-hero-copy">Cozy sims, automation worlds, RTS and tabletop experiments—all prototyped in AtlasStudio and guided by Atlas-V. Everything you see is a front-end simulation.</p>
+        <div class="af-hero-actions">
+          <a class="af-btn af-btn-primary" href="#roadmap">View roadmap</a>
+          <a class="af-btn af-btn-secondary" href="#games">Browse games</a>
+        </div>
+      </div>
+      <div class="af-card">
+        <div class="af-kicker">Flagship</div>
+        <h3>TIDEGLASS-01</h3>
+        <p>Octopus in Action — Harbor-town civic sim with animal neighbors, mailbox tasks, and city hall decisions.</p>
+        <div class="af-chip">Powered by AtlasStudio + Atlas-V</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="af-section af-section-band" id="games">
+    <div class="af-container">
+      <div class="af-kicker">Filters</div>
+      <div class="af-filter-row">
+        <button class="af-filter-pill is-active" data-filter-type="phase" data-filter="All">All phases</button>
+        <button class="af-filter-pill" data-filter-type="phase" data-filter="Now">Now</button>
+        <button class="af-filter-pill" data-filter-type="phase" data-filter="Next">Next</button>
+        <button class="af-filter-pill" data-filter-type="phase" data-filter="Horizon">Horizon</button>
+        <button class="af-filter-pill" data-filter-type="tag" data-filter="All">All tags</button>
+        <button class="af-filter-pill" data-filter-type="tag" data-filter="Sim">Sim</button>
+        <button class="af-filter-pill" data-filter-type="tag" data-filter="Strategy">Strategy</button>
+        <button class="af-filter-pill" data-filter-type="tag" data-filter="Narrative">Narrative</button>
+        <button class="af-filter-pill" data-filter-type="tag" data-filter="Automation">Automation</button>
+        <button class="af-filter-pill" data-filter-type="tag" data-filter="RPG">RPG</button>
+      </div>
+      <div class="games-grid" id="games-grid"></div>
+      <div class="af-card" id="game-detail" style="margin-top:16px; display:none;"></div>
+    </div>
+  </section>
+
+  <section class="af-section" id="roadmap">
+    <div class="af-container">
+      <div class="af-kicker">Roadmap</div>
+      <h2 class="af-page-hero">Ciphered timelines for the approved lineup.</h2>
+      <div class="game-roadmap" id="games-roadmap"></div>
+    </div>
+  </section>
+
+  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

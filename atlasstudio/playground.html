@@ -4,193 +4,806 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AtlasStudio Dashboard Mock</title>
-
+  <title>AtlasStudio — Workstation</title>
   <link rel="stylesheet" href="../styles/main.css" />
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
   <script src="../scripts/playground.js" defer></script>
 </head>
 
-<body class="theme-dark as-shell">
-
-  <!-- HEADER -->
-  <header class="af-header af-header-compact">
-    <div class="af-container">
-      <nav class="af-nav">
-
-        <a class="af-logo" href="../index.html">
-          <img src="../assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">ATLASFORGE INTERACTIVE</span>
-        </a>
-
-        <div class="af-nav-links">
-          <a href="../atlasv.html">Atlas-V</a>
-          <a href="../studio-tools.html" class="is-active">AtlasStudio</a>
-          <a href="../octopus.html">Octopus in Action</a>
-          <a href="../about.html">About</a>
+<body class="as-body">
+  <div class="as-app-shell">
+    <!-- Top navigation bar -->
+    <header class="as-topbar">
+      <div class="as-topbar-left">
+        <img src="../assets/logos/ATLASSTUDIO_BRAND.png" alt="AtlasStudio" class="as-logo-mark" />
+        <div class="as-topbar-titles">
+          <div class="as-product-name">AtlasStudio</div>
+          <div class="as-product-sub">Enterprise Workstation · Matte</div>
         </div>
+      </div>
 
+      <nav class="as-topbar-nav" aria-label="Primary">
+        <button class="as-topbar-link as-topbar-link--active" type="button" data-route="workspace">Workspace</button>
+        <button class="as-topbar-link" type="button" data-route="projects">Projects</button>
+        <button class="as-topbar-link" type="button" data-route="runs">Runs</button>
+        <button class="as-topbar-link" type="button" data-route="settings">Settings</button>
       </nav>
-    </div>
-  </header>
 
+      <div class="as-topbar-right">
+        <div class="as-search-box" role="search">
+          <input type="search" placeholder="Search workspace" aria-label="Search" id="globalSearchInput" />
+          <button class="as-btn-icon" type="button" id="openCommandPalette" aria-label="Command palette">⌘K</button>
+        </div>
+        <div class="as-dropdown">
+          <button class="as-btn as-btn-quiet as-dropdown-trigger" type="button">
+            Atlas-V Sandbox
+            <span class="as-dropdown-caret">▾</span>
+          </button>
+          <div class="as-dropdown-menu">
+            <button class="as-dropdown-item" type="button">Atlas-V (Local)</button>
+            <button class="as-dropdown-item" type="button">Atlas-V (Cloud)</button>
+            <button class="as-dropdown-item" type="button" disabled>Octopus · Coming Soon</button>
+          </div>
+        </div>
+        <button class="as-btn as-btn-ghost js-ghost-toggle" type="button">Codex Ghost</button>
+        <button class="as-btn as-btn-primary" type="button" id="openQuickActions">New Build</button>
+      </div>
+    </header>
 
-  <!-- TOP BAND -->
-  <div class="as-top-band">
-    <div class="as-top-band-inner">
-      <div class="as-top-pill">ATLASSTUDIO — DASHBOARD MOCK</div>
-      <div class="as-top-pill">FRONT-END ONLY</div>
+    <!-- Mini status bar -->
+    <div class="as-status-bar" aria-live="polite">
+      <div class="as-status-item">
+        <span class="as-status-label">Screen</span>
+        <span class="as-status-value" id="statusScreen">Browser</span>
+      </div>
+      <div class="as-status-item">
+        <span class="as-status-label">AI Mode</span>
+        <span class="as-status-value" id="statusAI">On</span>
+      </div>
+      <div class="as-status-item">
+        <span class="as-status-label">Experimental</span>
+        <span class="as-status-value" id="statusExperimental">Off</span>
+      </div>
+      <div class="as-status-item">
+        <span class="as-status-label">Workspace</span>
+        <span class="as-status-value" id="statusWorkspace">Sandbox</span>
+      </div>
+      <div class="as-status-item">
+        <span class="as-status-label">Viewport</span>
+        <span class="as-status-value" id="statusViewport">Website</span>
+      </div>
     </div>
+
+    <!-- Workspace toggles -->
+    <div class="as-control-row" aria-label="Workspace toggles">
+      <div class="as-control-item">
+        <span class="as-control-label">AI Mode</span>
+        <div class="as-switch" data-flag="aiMode"></div>
+      </div>
+      <div class="as-control-item">
+        <span class="as-control-label">Experimental</span>
+        <div class="as-switch" data-flag="experimental"></div>
+      </div>
+      <div class="as-control-item">
+        <span class="as-control-label">Workspace</span>
+        <div class="as-pill-group js-pill-group" data-pill="workspace">
+          <button class="as-pill-toggle as-pill-toggle--active" type="button" data-workspace="Sandbox">Sandbox</button>
+          <button class="as-pill-toggle" type="button" data-workspace="Dev">Dev</button>
+          <button class="as-pill-toggle" type="button" data-workspace="Visual Preview">Visual</button>
+        </div>
+      </div>
+      <div class="as-control-item as-control-item--stretch">
+        <span class="as-control-label">Command Palette</span>
+        <button class="as-btn as-btn-secondary" type="button" id="openPalette">Open (Ctrl/Cmd+K)</button>
+      </div>
+    </div>
+
+    <!-- Route tabs -->
+      <div class="as-route-tabs" role="tablist">
+        <button class="as-route-tab is-active" type="button" data-screen="browser" role="tab" aria-selected="true" tabindex="0">Browser</button>
+        <button class="as-route-tab" type="button" data-screen="uat" role="tab" aria-selected="false" tabindex="-1">UAT</button>
+        <button class="as-route-tab" type="button" data-screen="review" role="tab" aria-selected="false" tabindex="-1">Review</button>
+        <button class="as-route-tab" type="button" data-screen="patch" role="tab" aria-selected="false" tabindex="-1">Patch</button>
+        <button class="as-route-tab" type="button" data-screen="dev" role="tab" aria-selected="false" tabindex="-1">Dev</button>
+      </div>
+
+    <div class="as-screen-stack">
+      <!-- Gallery Browser Screen -->
+      <section class="as-screen as-screen--active" data-screen="browser" aria-label="Gallery Browser">
+        <div class="as-gallery-layout">
+          <aside class="as-gallery-sidebar" aria-label="Gallery categories">
+            <div class="as-gallery-title">Gallery</div>
+            <ul class="as-category-list">
+              <li class="as-category-item is-active" data-category="images">Images</li>
+              <li class="as-category-item" data-category="documents">Documents</li>
+              <li class="as-category-item" data-category="videos">Videos</li>
+              <li class="as-category-item" data-category="audio">Audio</li>
+              <li class="as-category-item" data-category="other">Other</li>
+            </ul>
+          </aside>
+
+          <div class="as-gallery-grid">
+            <div class="as-section-head">
+              <h3>Gallery / Images</h3>
+              <span class="as-faint">Matte previews · static</span>
+            </div>
+            <div class="as-gallery-tiles">
+              <div class="as-gallery-tile" data-category="images" data-type="Image" data-size="2.1 MB" data-modified="Today" data-preview="landing-aether.png">
+                <div class="as-thumb">preview-01</div>
+                <div class="as-file-caption">landing-aether.png</div>
+              </div>
+              <div class="as-gallery-tile" data-category="images" data-type="Image" data-size="1.8 MB" data-modified="Today" data-preview="atlas-shell-dark.png">
+                <div class="as-thumb">preview-02</div>
+                <div class="as-file-caption">atlas-shell-dark.png</div>
+              </div>
+              <div class="as-gallery-tile" data-category="images" data-type="Image" data-size="1.4 MB" data-modified="This week" data-preview="module-grid.png">
+                <div class="as-thumb">preview-03</div>
+                <div class="as-file-caption">module-grid.png</div>
+              </div>
+              <div class="as-gallery-tile" data-category="documents" data-type="PDF" data-size="560 KB" data-modified="Yesterday" data-preview="briefing-notes.pdf">
+                <div class="as-thumb">doc</div>
+                <div class="as-file-caption">briefing-notes.pdf</div>
+              </div>
+              <div class="as-gallery-tile" data-category="videos" data-type="Video" data-size="32 MB" data-modified="This month" data-preview="sequence-01.mp4">
+                <div class="as-thumb">mp4</div>
+                <div class="as-file-caption">sequence-01.mp4</div>
+              </div>
+              <div class="as-gallery-tile" data-category="audio" data-type="Audio" data-size="6 MB" data-modified="This month" data-preview="ambient-loop.wav">
+                <div class="as-thumb">wav</div>
+                <div class="as-file-caption">ambient-loop.wav</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UAT Screen -->
+      <section class="as-screen" data-screen="uat" aria-label="UAT Workspace">
+        <div class="as-main-layout js-draggable" data-draggable="workspace">
+          <aside class="as-sidebar" aria-label="Project explorer">
+            <div class="as-sidebar-header">
+              <div class="as-sidebar-title">Explorer</div>
+              <button class="as-btn-icon" type="button" aria-label="New item">+</button>
+            </div>
+
+            <div class="as-sidebar-section-label">Projects</div>
+            <ul class="as-file-list">
+              <li class="as-file-item as-file-item--active" data-preview="atlasforge-site" data-type="Folder" data-size="48 items" data-modified="Today">
+                <span class="as-file-icon as-file-icon--folder"></span>
+                <span class="as-file-name">atlasforge-site</span>
+              </li>
+              <li class="as-file-item" data-preview="atlasstudio-workstation" data-type="Folder" data-size="62 items" data-modified="This week">
+                <span class="as-file-icon as-file-icon--folder"></span>
+                <span class="as-file-name">atlasstudio-workstation</span>
+              </li>
+              <li class="as-file-item" data-preview="atlas-v-engine" data-type="Folder" data-size="37 items" data-modified="This month">
+                <span class="as-file-icon as-file-icon--folder"></span>
+                <span class="as-file-name">atlas-v-engine</span>
+              </li>
+              <li class="as-file-item" data-preview="oia-sandbox" data-type="Folder" data-size="18 items" data-modified="This month">
+                <span class="as-file-icon as-file-icon--folder"></span>
+                <span class="as-file-name">oia-sandbox</span>
+              </li>
+              <li class="as-file-item" data-preview="experimental-suite" data-type="Folder" data-size="11 items" data-modified="2 days ago">
+                <span class="as-file-icon as-file-icon--folder"></span>
+                <span class="as-file-name">experimental-suite</span>
+              </li>
+            </ul>
+
+            <div class="as-sidebar-section-label">Files</div>
+            <ul class="as-file-list">
+              <li class="as-file-item" data-preview="atlasforge-home.html" data-type="HTML" data-size="14 KB" data-modified="Today">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">atlasforge-home.html</span>
+              </li>
+              <li class="as-file-item" data-preview="studio-playground.html" data-type="HTML" data-size="18 KB" data-modified="Today">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">studio-playground.html</span>
+              </li>
+              <li class="as-file-item" data-preview="visual-sim-engine.js" data-type="Script" data-size="32 KB" data-modified="This week">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">visual-sim-engine.js</span>
+              </li>
+              <li class="as-file-item" data-preview="design-system.css" data-type="Stylesheet" data-size="21 KB" data-modified="Yesterday">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">design-system.css</span>
+              </li>
+              <li class="as-file-item" data-preview="mock-data.json" data-type="JSON" data-size="8 KB" data-modified="This week">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">mock-data.json</span>
+              </li>
+              <li class="as-file-item" data-preview="ui-kit-buttons.html" data-type="HTML" data-size="11 KB" data-modified="This month">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">ui-kit-buttons.html</span>
+              </li>
+              <li class="as-file-item" data-preview="metrics-dashboard.html" data-type="HTML" data-size="25 KB" data-modified="This month">
+                <span class="as-file-icon as-file-icon--file"></span>
+                <span class="as-file-name">metrics-dashboard.html</span>
+              </li>
+            </ul>
+
+            <div class="as-sidebar-section-label">Modules</div>
+            <ul class="as-file-list">
+              <li class="as-file-item" data-preview="ai-workbench.json" data-type="Module" data-size="4 KB" data-modified="Today">
+                <span class="as-file-pill">GEN</span>
+                <span class="as-file-name">ai-workbench.json</span>
+              </li>
+              <li class="as-file-item" data-preview="routing-graph.atlas" data-type="Module" data-size="7 KB" data-modified="This week">
+                <span class="as-file-pill">ROUTER</span>
+                <span class="as-file-name">routing-graph.atlas</span>
+              </li>
+              <li class="as-file-item" data-preview="ui-shell.layout" data-type="Module" data-size="9 KB" data-modified="This week">
+                <span class="as-file-pill">UI</span>
+                <span class="as-file-name">ui-shell.layout</span>
+              </li>
+              <li class="as-file-item" data-preview="telemetry-feed.mock" data-type="Module" data-size="6 KB" data-modified="Yesterday">
+                <span class="as-file-pill">OPS</span>
+                <span class="as-file-name">telemetry-feed.mock</span>
+              </li>
+              <li class="as-file-item" data-preview="atlas-goblin-lab.html" data-type="Module" data-size="12 KB" data-modified="This month">
+                <span class="as-file-pill">LAB</span>
+                <span class="as-file-name">atlas-goblin-lab.html</span>
+              </li>
+            </ul>
+          </aside>
+
+          <main class="as-work-main">
+            <div class="as-main-tabs">
+              <button class="as-main-tab as-main-tab--active" type="button">Preview</button>
+              <button class="as-main-tab" type="button">Schema</button>
+              <button class="as-main-tab" type="button">Logs</button>
+            </div>
+
+            <section class="as-preview-grid" aria-label="Workstation preview">
+              <article class="as-card">
+                <header class="as-card-header">
+                  <div>
+                    <div class="as-card-title">AI Suggestions</div>
+                    <div class="as-card-sub">Atlas-V draft for current workspace</div>
+                  </div>
+                  <span class="as-chip">AI · Offline Mock</span>
+                </header>
+                <div class="as-card-body">
+                  <ul class="as-bullet-list">
+                    <li>Propose module graph for file routing and asset ingest.</li>
+                    <li>Detect human decision points and expose as checkboxes.</li>
+                    <li>Track build history and associate runs with snapshots.</li>
+                  </ul>
+                  <button class="as-btn as-btn-secondary" type="button">View Proposed Graph</button>
+                </div>
+              </article>
+
+              <article class="as-card">
+                <header class="as-card-header">
+                  <div>
+                    <div class="as-card-title">Previewer</div>
+                    <div class="as-card-sub">What a player or editor would roughly see</div>
+                  </div>
+                  <div class="as-pill-group js-pill-group">
+                    <button class="as-pill-toggle as-pill-toggle--active" type="button">Run</button>
+                    <button class="as-pill-toggle" type="button">Dry Run</button>
+                    <button class="as-pill-toggle" type="button">Inspect</button>
+                  </div>
+                </header>
+                <div class="as-card-body as-card-body--preview">
+                  <div class="as-preview-placeholder">
+                    <div class="as-preview-placeholder-header">
+                      <span class="as-preview-dot"></span>
+                      <span class="as-preview-dot"></span>
+                      <span class="as-preview-dot"></span>
+                      <span class="as-preview-title-mini">Game viewport (mock)</span>
+                    </div>
+                    <div class="as-preview-placeholder-body">
+                      <div class="as-preview-block-row">
+                        <div class="as-preview-block"></div>
+                        <div class="as-preview-block"></div>
+                        <div class="as-preview-block"></div>
+                      </div>
+                      <div class="as-preview-block-row">
+                        <div class="as-preview-block as-preview-block--wide"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="as-card">
+                <header class="as-card-header">
+                  <div>
+                    <div class="as-card-title">Code & Config</div>
+                    <div class="as-card-sub">Active file · workstation.layout</div>
+                  </div>
+                  <button class="as-btn-icon" type="button" aria-label="Open in editor">…</button>
+                </header>
+                <div class="as-card-body as-card-body--code">
+                  <pre class="as-code-block"><code>{
+  "workspace": "AtlasStudio",
+  "modules": [
+    "ai-generation",
+    "routing-graph",
+    "ui-workstation"
+  ],
+  "decisions": {
+    "human_review_required": true,
+    "allow_ai_to_commit": false
+  }
+}</code></pre>
+                </div>
+              </article>
+            </section>
+          </main>
+
+          <aside class="as-right-rail" aria-label="Human decision controls">
+            <header class="as-rail-header">
+              <div class="as-rail-title">Human Decisions</div>
+              <div class="as-rail-sub">Review before Atlas-V commits</div>
+            </header>
+
+            <section class="as-rail-section">
+              <div class="as-rail-section-title">Scope</div>
+              <label class="as-checkbox-row">
+                <input type="checkbox" checked />
+                <span>Allow AI to propose module graph</span>
+              </label>
+              <label class="as-checkbox-row">
+                <input type="checkbox" />
+                <span>Allow AI to modify routing rules</span>
+              </label>
+              <label class="as-checkbox-row">
+                <input type="checkbox" />
+                <span>Allow AI to touch production configs</span>
+              </label>
+            </section>
+
+            <section class="as-rail-section">
+              <div class="as-rail-section-title">Approval</div>
+              <label class="as-checkbox-row">
+                <input type="checkbox" />
+                <span>Require human approval for every commit</span>
+              </label>
+              <label class="as-checkbox-row">
+                <input type="checkbox" checked />
+                <span>Log all AI changes to history</span>
+              </label>
+            </section>
+
+            <section class="as-rail-section">
+              <div class="as-rail-section-title">Run Mode</div>
+              <div class="as-pill-group js-pill-group">
+                <button class="as-pill-toggle as-pill-toggle--active" type="button">Prototype</button>
+                <button class="as-pill-toggle" type="button">Staging</button>
+                <button class="as-pill-toggle" type="button">Locked</button>
+              </div>
+            </section>
+
+            <div class="as-rail-footer">
+              <button class="as-btn as-btn-secondary" type="button">Save Decisions</button>
+              <button class="as-btn as-btn-primary" type="button">Run Build</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Review Screen -->
+      <section class="as-screen" data-screen="review" aria-label="Review Workspace">
+        <div class="as-review-layout">
+          <div class="as-review-card">
+            <div class="as-label-row">
+              <span class="as-sidebar-title">Website Logic Review</span>
+              <span class="as-faint">UI pass · Atlas-V</span>
+            </div>
+            <div class="as-review-grid">
+              <div class="as-review-item">
+                <div class="as-review-label">Focus</div>
+                <div class="as-review-text">Navigation clarity, CTA rhythm, device scaling.</div>
+              </div>
+              <div class="as-review-item">
+                <div class="as-review-label">Status</div>
+                <div class="as-review-text">Ready for snapshot</div>
+                <div class="as-review-label">Toggle</div>
+                <div class="as-switch"></div>
+              </div>
+              <div class="as-review-item">
+                <div class="as-review-label">Notes</div>
+                <div class="as-review-text">Hero spacing and CTA weight approved.</div>
+              </div>
+              <div class="as-review-item">
+                <div class="as-review-label">Risks</div>
+                <div class="as-review-text">Need final legal text before publish.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="as-review-board">
+            <div class="as-label-row">
+              <span class="as-sidebar-title">Approvals</span>
+              <span class="as-faint">Updated just now</span>
+            </div>
+            <div class="as-review-item">
+              <div class="as-review-label">Sign-off</div>
+              <div class="as-review-text">Awaiting product review</div>
+            </div>
+            <div class="as-review-item">
+              <div class="as-review-label">Snapshots</div>
+              <div class="as-review-text">6 captured · 2 flagged for QA</div>
+            </div>
+            <div class="as-review-item">
+              <div class="as-review-label">Actions</div>
+              <div class="as-review-text">
+                <button class="as-btn as-btn-primary" type="button">Send for Approval</button>
+                <button class="as-btn as-btn-ghost" type="button">View History</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="as-review-board as-policy-board">
+            <div class="as-label-row">
+              <span class="as-sidebar-title">Policy Workflow Review</span>
+              <span class="as-faint">Safety · Governance</span>
+            </div>
+            <div class="as-review-item">
+              <div class="as-review-label">Stage</div>
+              <div class="as-review-text">Data intake · Drafted</div>
+            </div>
+            <div class="as-review-item">
+              <div class="as-review-label">Risk</div>
+              <div class="as-review-text">Requires human approval gates and audit trail.</div>
+            </div>
+            <div class="as-review-item">
+              <div class="as-review-label">Actions</div>
+              <div class="as-review-text">
+                <button class="as-btn as-btn-secondary" type="button">Attach Checklist</button>
+                <button class="as-btn as-btn-primary" type="button">Mark Ready</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Audio / Video Clipper Screen -->
+      <section class="as-screen" data-screen="patch" aria-label="Audio Video Clipper">
+        <div class="as-clipper">
+          <div class="as-clipper-list">
+            <div class="as-gallery-title">Audio / Video</div>
+            <div class="as-clipper-item is-active" data-type="Audio" data-size="1.1 MB" data-modified="Today" data-preview="02_intro-loop.wav">
+              <span>02_intro-loop.wav</span>
+              <span class="as-faint">01:02</span>
+            </div>
+            <div class="as-clipper-item" data-type="Video" data-size="25 MB" data-modified="This week" data-preview="05_scene-track.mp4">
+              <span>05_scene-track.mp4</span>
+              <span class="as-faint">03:18</span>
+            </div>
+            <div class="as-clipper-item" data-type="Audio" data-size="4 MB" data-modified="This week" data-preview="09_voiceover.wav">
+              <span>09_voiceover.wav</span>
+              <span class="as-faint">00:42</span>
+            </div>
+          </div>
+
+          <div class="as-clipper-main">
+            <div class="as-waveform">
+              <div class="as-label-row">
+                <span>Waveform Preview</span>
+                <div class="as-switch"></div>
+              </div>
+              <div class="as-wave-bars">
+                <div class="as-wave-bar" style="height: 28px"></div>
+                <div class="as-wave-bar" style="height: 34px"></div>
+                <div class="as-wave-bar" style="height: 22px"></div>
+                <div class="as-wave-bar" style="height: 40px"></div>
+                <div class="as-wave-bar" style="height: 18px"></div>
+                <div class="as-wave-bar" style="height: 36px"></div>
+                <div class="as-wave-bar" style="height: 30px"></div>
+              </div>
+              <div class="as-faint">Timeline markers · 00:00 — 03:20</div>
+            </div>
+
+            <div class="as-clipper-settings">
+              <div class="as-setting-card">
+                <div class="as-setting-title">Format</div>
+                <div class="as-setting-field">
+                  <span>File Type</span>
+                  <select class="as-setting-select">
+                    <option>WAV</option>
+                    <option>MP3</option>
+                    <option>AAC</option>
+                  </select>
+                </div>
+              </div>
+              <div class="as-setting-card">
+                <div class="as-setting-title">Quality</div>
+                <div class="as-setting-field">
+                  <span>Bitrate</span>
+                  <select class="as-setting-select">
+                    <option>320 kbps</option>
+                    <option>256 kbps</option>
+                    <option>192 kbps</option>
+                  </select>
+                </div>
+              </div>
+              <div class="as-setting-card">
+                <div class="as-setting-title">Export</div>
+                <button class="as-btn as-btn-primary" type="button">Export Clip</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dev / Brainstorm Screen -->
+      <section class="as-screen" data-screen="dev" aria-label="Dev Workspace">
+        <div class="as-dev-grid">
+          <article class="as-card as-dev-card">
+            <header class="as-card-header">
+              <div>
+                <div class="as-card-title">Brainstorm</div>
+                <div class="as-card-sub">Quick notes for Atlas-V tasks</div>
+              </div>
+              <div class="as-pill-group js-pill-group">
+                <button class="as-pill-toggle as-pill-toggle--active" type="button">Ideas</button>
+                <button class="as-pill-toggle" type="button">Todos</button>
+                <button class="as-pill-toggle" type="button">Links</button>
+              </div>
+            </header>
+            <div class="as-card-body">
+              <ul class="as-bullet-list">
+                <li>Refine viewport renderer states for game/app/website.</li>
+                <li>Wire policy review to decision summary bar.</li>
+                <li>Prep ghost sidecar diff script.</li>
+              </ul>
+              <button class="as-btn as-btn-secondary" type="button">Pin Note</button>
+            </div>
+          </article>
+
+          <article class="as-card as-dev-card js-draggable" data-draggable="console">
+            <header class="as-card-header">
+              <div>
+                <div class="as-card-title">Dev Console</div>
+                <div class="as-card-sub">Simulated logs for workspace shell</div>
+              </div>
+              <span class="as-chip">Console</span>
+            </header>
+            <div class="as-card-body as-card-body--code">
+              <pre class="as-code-block"><code>// atlas-dev-shell.mock
+const shell = createShell({
+  mode: 'visual',
+  guards: ['human-review'],
+});
+shell.log('session hydrated');
+shell.warn('network disabled');
+</code></pre>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- Decision Summary Bar -->
+    <div class="as-decision-bar" aria-live="polite">
+      <div class="as-decision-item">Pending <span id="decisionPending">3</span></div>
+      <div class="as-decision-item">Warnings <span id="decisionWarnings">1</span></div>
+      <div class="as-decision-item">Approvals <span id="decisionApprovals">2</span></div>
+      <button class="as-btn as-btn-secondary" type="button" id="openDecisions">Open Human Decisions Panel</button>
+    </div>
+
+    <!-- Codex Ghost Sidecar -->
+    <aside class="as-ghost-panel" aria-label="Codex Ghost sidecar">
+      <header class="as-ghost-header">
+        <div>
+          <div class="as-ghost-title">Codex Ghost</div>
+          <div class="as-ghost-sub">Sidecar · Visual mock only</div>
+        </div>
+        <div class="as-ghost-tabs">
+          <button class="as-ghost-tab as-ghost-tab--active" type="button" data-ghost-tab="chat">Chat</button>
+          <button class="as-ghost-tab" type="button" data-ghost-tab="diff">Diff</button>
+          <button class="as-ghost-tab" type="button" data-ghost-tab="timeline">Timeline</button>
+        </div>
+      </header>
+
+      <div class="as-ghost-body">
+        <section class="as-ghost-view as-ghost-view--active" data-ghost-view="chat">
+          <div class="as-ghost-message as-ghost-message--user">
+            <div class="as-ghost-label">You</div>
+            <div class="as-ghost-bubble">
+              Draft a safer module layout for Atlas-V sandbox with clear human decision points.
+            </div>
+          </div>
+          <div class="as-ghost-message as-ghost-message--ai">
+            <div class="as-ghost-label">Ghost</div>
+            <div class="as-ghost-bubble">
+              <div class="as-ghost-line"></div>
+              <div class="as-ghost-line"></div>
+              <div class="as-ghost-line as-ghost-line--wide"></div>
+            </div>
+          </div>
+
+          <div class="as-ghost-typing">
+            <span class="as-ghost-dot"></span>
+            <span class="as-ghost-dot"></span>
+            <span class="as-ghost-dot"></span>
+            <span class="as-ghost-typing-label">ghost drafting…</span>
+          </div>
+        </section>
+
+        <section class="as-ghost-view" data-ghost-view="diff">
+          <div class="as-ghost-diff-columns">
+            <div class="as-ghost-diff-col">
+              <div class="as-ghost-diff-title">Before</div>
+              <pre class="as-ghost-diff-block"><code>- router: single-entry
+- modules:
+  - ai-generation
+  - ui-workstation
+- decisions: none</code></pre>
+            </div>
+            <div class="as-ghost-diff-col">
+              <div class="as-ghost-diff-title">After (proposed)</div>
+              <pre class="as-ghost-diff-block"><code>+ router: multi-stage
++ modules:
++   - ai-generation
++   - routing-graph
++   - ui-workstation
++ decisions:
++   - human_review_required: true
++   - allow_ai_to_commit: false</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="as-ghost-view" data-ghost-view="timeline">
+          <ol class="as-ghost-timeline">
+            <li class="as-ghost-timeline-item">
+              <div class="as-ghost-timeline-dot"></div>
+              <div class="as-ghost-timeline-content">
+                <div class="as-ghost-timeline-title">Workspace created</div>
+                <div class="as-ghost-timeline-sub">octopus-in-action · base layout scaffolded</div>
+              </div>
+            </li>
+            <li class="as-ghost-timeline-item">
+              <div class="as-ghost-timeline-dot"></div>
+              <div class="as-ghost-timeline-content">
+                <div class="as-ghost-timeline-title">Modules linked</div>
+                <div class="as-ghost-timeline-sub">ai-generation, routing-graph, ui-workstation</div>
+              </div>
+            </li>
+            <li class="as-ghost-timeline-item">
+              <div class="as-ghost-timeline-dot"></div>
+              <div class="as-ghost-timeline-content">
+                <div class="as-ghost-timeline-title">Ghost run simulated</div>
+                <div class="as-ghost-timeline-sub">Atlas-V draft generated · awaiting human review</div>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <footer class="as-ghost-footer">
+        <div class="as-ghost-footer-actions">
+          <button class="as-btn as-btn-ghost" type="button" id="simulateDiff">Simulate Diff</button>
+          <button class="as-btn as-btn-ghost" type="button" id="simulateTimeline">Simulate Timeline</button>
+          <button class="as-btn as-btn-primary" type="button" disabled>Send</button>
+        </div>
+        <div class="as-ghost-input-faux">Sidecar is a visual mock. Hook real Codex / Atlas-V later.</div>
+      </footer>
+    </aside>
+
+    <!-- File Inspector Panel -->
+    <aside class="as-inspector" aria-label="File Inspector" id="fileInspector">
+      <header class="as-inspector-header">
+        <div>
+          <div class="as-inspector-title" id="inspectorTitle">File Inspector</div>
+          <div class="as-inspector-sub" id="inspectorMeta">Select an item to view details</div>
+        </div>
+        <button class="as-btn-icon" type="button" id="closeInspector" aria-label="Close inspector">×</button>
+      </header>
+      <div class="as-inspector-preview" id="inspectorPreview">No thumbnail</div>
+      <div class="as-inspector-grid">
+        <div>
+          <div class="as-inspector-label">Type</div>
+          <div class="as-inspector-value" id="inspectorType">—</div>
+        </div>
+        <div>
+          <div class="as-inspector-label">Size</div>
+          <div class="as-inspector-value" id="inspectorSize">—</div>
+        </div>
+        <div>
+          <div class="as-inspector-label">Modified</div>
+          <div class="as-inspector-value" id="inspectorModified">—</div>
+        </div>
+      </div>
+      <div class="as-inspector-suggestions" id="inspectorSuggestions">
+        <div class="as-inspector-label">AI Suggestions</div>
+        <ul>
+          <li>Surface preview variants.</li>
+          <li>Link to module graph.</li>
+          <li>Flag for human approval.</li>
+        </ul>
+      </div>
+      <div class="as-inspector-actions">
+        <button class="as-btn as-btn-primary" type="button">Open</button>
+        <button class="as-btn as-btn-secondary" type="button">Preview</button>
+        <button class="as-btn as-btn-ghost" type="button">Generate</button>
+        <button class="as-btn as-btn-quiet" type="button">Attach to Module</button>
+      </div>
+    </aside>
+
+    <!-- Quick actions panel -->
+    <div class="as-quick-panel" id="quickPanel" aria-label="Quick actions">
+      <div class="as-quick-header">
+        <div>
+          <div class="as-quick-title">Quick Actions</div>
+          <div class="as-quick-sub">Route, open inspector, and run mock tools</div>
+        </div>
+        <button class="as-btn-icon" type="button" id="closeQuickPanel" aria-label="Close quick panel">×</button>
+      </div>
+      <div class="as-quick-grid">
+        <button class="as-btn as-btn-secondary" data-action="goto-browser" type="button">Open Browser</button>
+        <button class="as-btn as-btn-secondary" data-action="goto-uat" type="button">Open UAT</button>
+        <button class="as-btn as-btn-secondary" data-action="goto-review" type="button">Open Review</button>
+        <button class="as-btn as-btn-secondary" data-action="goto-patch" type="button">Open Patch</button>
+        <button class="as-btn as-btn-secondary" data-action="goto-dev" type="button">Open Dev</button>
+        <button class="as-btn as-btn-ghost" data-action="open-inspector" type="button">Open Inspector</button>
+        <button class="as-btn as-btn-ghost" data-action="open-ghost" type="button">Toggle Ghost</button>
+        <button class="as-btn as-btn-ghost" data-action="notify" type="button">Sample Notification</button>
+      </div>
+    </div>
+
+    <!-- Command palette -->
+    <div class="as-command-palette" id="commandPalette" aria-modal="true" role="dialog">
+      <div class="as-command-surface">
+        <div class="as-command-head">
+          <div class="as-command-title">Command Palette</div>
+          <button class="as-btn-icon" type="button" id="closePalette" aria-label="Close command palette">×</button>
+        </div>
+        <input type="search" class="as-command-input" placeholder="Jump to screen, toggle AI, or run action" aria-label="Command search" />
+        <div class="as-command-list" id="commandList"></div>
+      </div>
+    </div>
+
+    <!-- Diagnostics overlay -->
+    <div class="as-diagnostics" id="diagnostics" aria-live="polite">
+      <div class="as-diagnostics-bar">
+        <div class="as-diagnostics-title">Diagnostics</div>
+        <div class="as-diagnostics-meta" id="diagnosticsMeta">Idle</div>
+        <div class="as-diagnostics-actions">
+          <button class="as-btn as-btn-ghost" type="button" id="toggleGrid">Grid</button>
+          <button class="as-btn as-btn-ghost" type="button" id="toggleDiag">Close</button>
+        </div>
+      </div>
+      <div class="as-diagnostics-body">
+        <div class="as-diagnostics-row">Viewport: <span id="diagViewport">Desktop</span></div>
+        <div class="as-diagnostics-row">Parallax: <span id="diagParallax">On</span></div>
+        <div class="as-diagnostics-row">Screens registered: <span id="diagScreens">0</span></div>
+        <div class="as-diagnostics-row">AI Mode: <span id="diagAI">On</span></div>
+      </div>
+    </div>
+
+    <!-- Settings drawer -->
+    <aside class="as-settings" id="settingsDrawer" aria-label="Settings drawer">
+      <header class="as-settings-head">
+        <div>
+          <div class="as-settings-title">Workspace Settings</div>
+          <div class="as-settings-sub">Density, accessibility, and theme hooks</div>
+        </div>
+        <button class="as-btn-icon" type="button" id="closeSettings" aria-label="Close settings">×</button>
+      </header>
+      <div class="as-settings-body">
+        <label class="as-settings-row">
+          <span>Compact density</span>
+          <div class="as-switch" data-flag="compact"></div>
+        </label>
+        <label class="as-settings-row">
+          <span>High contrast text</span>
+          <div class="as-switch" data-flag="highContrast"></div>
+        </label>
+        <label class="as-settings-row">
+          <span>Autosave layout (local)</span>
+          <div class="as-switch" data-flag="autosave"></div>
+        </label>
+      </div>
+    </aside>
+
+    <!-- Toast stack -->
+    <div class="as-toast-stack" aria-live="polite" aria-label="Notifications"></div>
   </div>
-
-
-  <!-- MAIN LAYOUT -->
-  <section class="as-layout">
-
-    <!-- ======================
-         LEFT COLUMN
-    ======================= -->
-    <div class="as-column-main">
-
-      <!-- TABS PANEL -->
-      <div class="as-panel">
-
-        <div class="as-panel-header">
-          <div class="as-panel-title">Workflow Tabs</div>
-        </div>
-
-        <div class="as-tablist">
-          <div class="as-tab is-active" data-tab="brainstorm">Brainstorm</div>
-          <div class="as-tab" data-tab="uat">UAT</div>
-          <div class="as-tab" data-tab="review">Review</div>
-          <div class="as-tab" data-tab="patch">Patch</div>
-        </div>
-
-        <div class="as-tab-content">
-          Select a workflow tab to simulate AtlasStudio’s production pipeline.
-          All components below are visual-only — no data is saved.
-        </div>
-
-      </div>
-
-
-      <!-- TOGGLES PANEL -->
-      <div class="as-panel">
-
-        <div class="as-panel-header">
-          <div class="as-panel-title">Toggles / Options</div>
-        </div>
-
-        <div class="as-toggles">
-
-          <div class="as-toggle">
-            <div>
-              <div class="as-toggle-label">Enable AI Suggestions</div>
-              <div class="as-toggle-hint">Simulates suggestion mode</div>
-            </div>
-            <div class="as-switch" data-switch>
-              <div class="as-switch-thumb"></div>
-            </div>
-          </div>
-
-          <div class="as-toggle">
-            <div>
-              <div class="as-toggle-label">Allow Experimental Features</div>
-              <div class="as-toggle-hint">Purely visual</div>
-            </div>
-            <div class="as-switch" data-switch>
-              <div class="as-switch-thumb"></div>
-            </div>
-          </div>
-
-          <div class="as-toggle">
-            <div>
-              <div class="as-toggle-label">Show Debug Overlay</div>
-              <div class="as-toggle-hint">No actual debug data</div>
-            </div>
-            <div class="as-switch" data-switch>
-              <div class="as-switch-thumb"></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- PATCH SIM -->
-      <div class="as-panel">
-
-        <div class="as-panel-header">
-          <div class="as-panel-title">Patch Simulation</div>
-        </div>
-
-        <p class="as-panel-subtitle">
-          Press “Run Patch” to show the fake progress bar animation.
-          This does not save or deploy anything.
-        </p>
-
-        <div class="af-hero-actions">
-          <button class="af-btn af-btn-primary" id="runPatchBtn">Run Patch</button>
-          <button class="af-btn af-btn-ghost" id="resetPatchBtn">Reset</button>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ======================
-         RIGHT COLUMN
-    ======================= -->
-    <div class="as-column-preview">
-
-      <div class="as-preview-card">
-
-        <!-- Header -->
-        <div class="as-preview-header">
-          <div class="as-preview-title">Preview Panel</div>
-          <div class="as-preview-meta">Mock Only</div>
-        </div>
-
-        <!-- Fake viewport -->
-        <div class="as-preview-viewport" id="previewViewport">
-          Right-side preview panel — shows the current workflow mode and patch status.
-        </div>
-
-        <!-- Fake patch progress -->
-        <div class="as-progress-shell" id="progressShell" style="display:none;">
-
-          <div class="as-progress-label-row">
-            <div>Applying Patch…</div>
-            <div id="progressPercent">46%</div>
-          </div>
-
-          <div class="as-progress-bar">
-            <div class="as-progress-bar-fill" id="progressFill"></div>
-          </div>
-
-        </div>
-
-        <div class="as-preview-actions">
-          <a class="af-btn af-btn-secondary" href="index.html">Back to Welcome</a>
-          <a class="af-btn af-btn-ghost" href="gallery.html">Open Gallery</a>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="af-section">
-    <div class="af-container" style="text-align:center; color: var(--af-text-muted); font-size: 0.85rem;">
-      © 2025 AtlasForge Interactive. All rights reserved.
-    </div>
-  </footer>
-
 </body>
 
 </html>

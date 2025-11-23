@@ -1,142 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AtlasForge Interactive</title>
-
-  <!-- Canon stylesheet -->
   <link rel="stylesheet" href="styles/main.css" />
-
-  <!-- Dark theme -->
-  <style>
-    body {
-      background: #0B0E17;
-    }
-  </style>
 </head>
-
-<body class="theme-dark">
-
-  <!-- ============================
-       HEADER
-  ============================= -->
+<body class="theme-dark" data-page="home">
   <header class="af-header af-header-compact">
     <div class="af-container">
       <nav class="af-nav">
-
-        <!-- Left: Logo -->
         <a class="af-logo" href="index.html">
           <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">ATLASFORGE INTERACTIVE</span>
+          <span class="af-logo-text">Atlasforge Interactive</span>
         </a>
-
-        <!-- Right: Navigation links -->
+        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
         <div class="af-nav-links">
+          <a href="index.html" class="is-active">Home</a>
+          <a href="studio-tools.html">Studio</a>
           <a href="atlasv.html">Atlas-V</a>
-          <a href="studio-tools.html">AtlasStudio</a>
-          <a href="octopus.html">Octopus in Action</a>
+          <a href="games.html">Games</a>
+          <a href="skb.html">S/K/B</a>
           <a href="about.html">About</a>
         </div>
-
       </nav>
     </div>
   </header>
 
-
-  <!-- ============================
-       HERO SECTION
-  ============================= -->
   <section class="af-hero af-section">
     <div class="af-container af-hero-grid">
-
-      <!-- Left column: text -->
       <div>
         <div class="af-kicker">AtlasForge Interactive</div>
-        <h1>
-          Building Worlds,<br />
-          Tools, and Intelligent Systems.
-        </h1>
-        <p class="af-hero-copy">
-          AtlasForge Interactive is a hybrid game & technology studio.
-          Our mission is to build smarter creative tools, immersive worlds,
-          and a generational engine — <strong>Atlas-V</strong> — that powers
-          the next era of interactive experiences.
-        </p>
-
+        <h1>Building worlds, tools, and intelligent systems.</h1>
+        <p class="af-hero-copy">AtlasForge is a studio and technology house crafting AtlasStudio, Atlas-V, and boutique experiences for teams that want believable simulations without real backends.</p>
         <div class="af-hero-actions">
-          <a class="af-btn af-btn-primary" href="atlasv.html">Explore Atlas-V</a>
+          <a class="af-btn af-btn-primary" href="atlasv.html">Meet Atlas-V</a>
           <a class="af-btn af-btn-secondary" href="studio-tools.html">Open AtlasStudio</a>
-          <a class="af-btn af-btn-ghost" href="about.html">Learn More</a>
+          <a class="af-btn af-btn-ghost" href="games.html">View Games</a>
         </div>
       </div>
-
-      <!-- Right column: hero image -->
-      <div>
-        <div class="af-card" style="text-align:center;">
-          <img src="assets/logos/ATLASV_BRAND.png" alt="Atlas-V Logo"
-            style="max-width: 260px; width: 100%; height: auto; margin-top: 10px;" />
-          <p style="color: var(--af-text-muted); margin-top: 10px; font-size: 0.9rem;">
-            The Atlas-V Engine — our core simulation and content pipeline.
-          </p>
+      <div class="af-card">
+        <h3>Live Signals</h3>
+        <p>Everything here is visual-only. We simulate pipelines, telemetry, and build flows for demos.</p>
+        <div class="af-feature-row">
+          <div class="af-feature">
+            <h3>Atlas-V Brain</h3>
+            <p>Copilot core for prompts, policy, and orchestrations.</p>
+          </div>
+          <div class="af-feature">
+            <h3>AtlasStudio</h3>
+            <p>Front-end workstation with fake builds, files, and inspectors.</p>
+          </div>
+          <div class="af-feature">
+            <h3>Games Lab</h3>
+            <p>Playable ideas, timelines, and simulated roadmaps.</p>
+          </div>
         </div>
       </div>
-
     </div>
   </section>
 
-
-  <!-- ============================
-       FEATURE CARDS
-  ============================= -->
   <section class="af-section af-section-band">
     <div class="af-container">
-
+      <div class="af-kicker">Products</div>
       <div class="af-grid af-grid-3">
-
-        <div class="af-card">
-          <h3>Atlas-V Engine</h3>
-          <p>
-            A next-generation logic and content engine designed for games,
-            simulations, automation, and hybrid experiences.
-          </p>
-          <a class="af-card-link" href="atlasv.html">Learn more →</a>
-        </div>
-
-        <div class="af-card">
-          <h3>AtlasStudio Workstation</h3>
-          <p>
-            A creative workstation where AI-assisted tools help build
-            graphics, logic flows, dialogue, systems, prototypes, and more.
-          </p>
-          <a class="af-card-link" href="studio-tools.html">Explore the tool →</a>
-        </div>
-
-        <div class="af-card">
-          <h3>Octopus in Action</h3>
-          <p>
-            Our flagship world — a charming simulation game featuring
-            Mayor Octavius, a bustling town, and an ever-expanding universe.
-          </p>
-          <a class="af-card-link" href="octopus.html">Visit the game →</a>
-        </div>
-
+        <article class="af-card">
+          <h3>Atlas-V</h3>
+          <p>AI brain / master copilot, orchestrating modules, memory strata, and guard rails.</p>
+          <a class="af-card-link" href="atlasv.html">View Atlas-V</a>
+        </article>
+        <article class="af-card">
+          <h3>AtlasStudio</h3>
+          <p>Simulated workstation with file explorers, inspectors, console, and randomizers.</p>
+          <a class="af-card-link" href="studio-tools.html">Visit Studio</a>
+        </article>
+        <article class="af-card">
+          <h3>Games & Labs</h3>
+          <p>Internal playables, roadmaps, and creative experiments for new worlds.</p>
+          <a class="af-card-link" href="games.html">Browse Games</a>
+        </article>
       </div>
-
     </div>
   </section>
 
-
-  <!-- ============================
-       FOOTER
-  ============================= -->
-  <footer class="af-section">
-    <div class="af-container" style="text-align:center; color: var(--af-text-muted); font-size: 0.85rem;">
-      © 2025 AtlasForge Interactive. All rights reserved.
+  <section class="af-section">
+    <div class="af-container">
+      <div class="af-kicker">Release Notes</div>
+      <div class="af-grid af-grid-2">
+        <article class="af-card">
+          <h3>v2.5 — Visual Simulation</h3>
+          <p>Expanded fake inspector, richer console feeds, and new Atlas-V agents grid.</p>
+        </article>
+        <article class="af-card">
+          <h3>v2.4 — Games Index</h3>
+          <p>Added project filter chips, roadmap, and card templates for previews.</p>
+        </article>
+      </div>
     </div>
-  </footer>
+  </section>
 
+  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
+  <script src="scripts/main.js" defer></script>
 </body>
-
 </html>

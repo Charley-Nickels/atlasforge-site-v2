@@ -1,370 +1,87 @@
-// AtlasStudio fake workstation interactions
-// All behavior is simulated on the front-end; nothing is persisted or sent anywhere.
+// scripts/playground.js
+// AtlasStudio matte workstation interactions — visual only
 
-// ---------- Static definitions ----------
-const FILE_MAP = {
-  "/atlasstudio": { type: "folder" },
-  "/scripts": { type: "folder" },
-  "/styles": { type: "folder" },
-  "/docs": { type: "folder" },
-  "atlasstudio/playground.html": {
-    type: "file",
-    content: `<!DOCTYPE html>
-<html>
-  <head>
-    <title>AtlasStudio</title>
-  </head>
-  <body class="as-body">
-    <main id="workspace">pro fake workstation</main>
-  </body>
-</html>`,
-  },
-  "atlasstudio/atlasstudio.css": {
-    type: "file",
-    content: `:root {
-  --theme: atlasforge-dark;
+function qs(sel, ctx = document) {
+  return ctx.querySelector(sel);
 }
-body {
-  background: #05070d;
-  color: #e8edf7;
+
+function qsa(sel, ctx = document) {
+  return Array.from(ctx.querySelectorAll(sel));
 }
-.panel {
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-}`,
-  },
-  "atlasstudio/playground.js": {
-    type: "file",
-    content: `const workstation = createWorkstation({
-  mode: 'sandbox',
-  panels: ['left','center','right'],
-});
-workstation.boot(() => console.log('visual only'));`,
-  },
-  "scripts/main.js": {
-    type: "file",
-    content: `import { atlas } from './atlas.js';
-const app = atlas.initialize({ theme: 'dark' });
-app.mount('#app');
-app.router.register('studio', () => 'fake route');`,
-  },
-  "styles/main.css": {
-    type: "file",
-    content: `body {
-  margin: 0;
-  background: #0b0e17;
-  color: #eaeef7;
-  font-family: system-ui, -apple-system, 'Inter', sans-serif;
+
+class EventBus {
+  constructor() {
+    this.events = {};
+  }
+  on(event, handler) {
+    if (!this.events[event]) this.events[event] = [];
+    this.events[event].push(handler);
+  }
+  emit(event, payload) {
+    (this.events[event] || []).forEach((fn) => fn(payload));
+  }
 }
-a {
-  color: #7bc4ff;
-  text-decoration: none;
-}
-.panel { border: 1px solid rgba(255,255,255,0.1); }`,
-  },
-  "docs/atlas-notes.md": {
-    type: "file",
-    content: `# Atlas Notes
-- studio: fake workstation overview
-- engine: atlas-v runtime sketch
-- oia: octopus in action mock world
-- persistence: none (front-end only)`,
-  },
-  "docs/oia-design.md": {
-    type: "file",
-    content: `# OIA Design
-- hero: mayor octavius
-- systems: farming, fishing, trading
-- presentation: front-end only
-- renderer: atlasforge dark theme`,
-  },
+
+const bus = new EventBus();
+
+const storageKey = 'as-prefs';
+
+const appState = {
+  currentScreen: 'browser',
+  aiMode: true,
+  experimental: false,
+  workspace: 'Sandbox',
+  viewportMode: 'website',
+  decisions: { pending: 3, warnings: 1, approvals: 2 },
+  compact: false,
+  highContrast: false,
+  autosave: false,
+  ghostOpen: false,
+  settingsOpen: false,
 };
 
-const EXPLORER_TREE = {
-  name: "/atlasforge-site-v2",
-  path: "/atlasforge-site-v2",
-  type: "folder",
-  children: [
-    {
-      name: "/atlasstudio",
-      path: "/atlasstudio",
-      type: "folder",
-      children: [
-        { name: "playground.html", path: "atlasstudio/playground.html", type: "file" },
-        { name: "atlasstudio.css", path: "atlasstudio/atlasstudio.css", type: "file" },
-        { name: "playground.js", path: "atlasstudio/playground.js", type: "file" },
-      ],
-    },
-    {
-      name: "/scripts",
-      path: "/scripts",
-      type: "folder",
-      children: [{ name: "main.js", path: "scripts/main.js", type: "file" }],
-    },
-    {
-      name: "/styles",
-      path: "/styles",
-      type: "folder",
-      children: [{ name: "main.css", path: "styles/main.css", type: "file" }],
-    },
-    {
-      name: "/docs",
-      path: "/docs",
-      type: "folder",
-      children: [
-        { name: "atlas-notes.md", path: "docs/atlas-notes.md", type: "file" },
-        { name: "oia-design.md", path: "docs/oia-design.md", type: "file" },
-      ],
-    },
-  ],
+const screenLabels = {
+  browser: 'Gallery Browser',
+  uat: 'App Preview / UAT',
+  review: 'Website / Policy Review',
+  patch: 'Audio / Video Clipper',
+  dev: 'Dev Workspace',
 };
 
-const moduleSnippets = {
-  map: (target, prompt) => {
-    const variants = [
-      [
-        `module: holo-map-${target}`,
-        `target: ${target}`,
-        `prompt: ${prompt || 'empty prompt (visual only)'}`,
-        "layers:",
-        "  - tiles: neon",
-        "  - fog: simulated",
-        "  - portals: decorative",
-        "note: generated locally only",
-      ],
-      [
-        `module: nav-grid-${target}`,
-        `prompt: ${prompt || 'mock navigation prompt'}`,
-        "layers:",
-        "  - grid: holo",
-        "  - beacons: local only",
-        "  - trails: synthetic",
-        "note: variations are cosmetic",
-      ],
-      [
-        `module: atlas-map-${target}`,
-        `prompt: ${prompt || 'visual sketch'}`,
-        "layers:",
-        "  - topology: stylized",
-        "  - overlays: telemetry ghosts",
-        "  - fx: parallax haze",
-        "note: exported nowhere",
-      ],
-    ];
-    return randomFrom(variants);
-  },
-  npc: (target, prompt) => {
-    const variants = [
-      [
-        `module: npc-${target}`,
-        `persona: kind guide`,
-        `prompt: ${prompt || 'describe npc behavior'}`,
-        "behavior: scripted ghosts",
-        "voice: text-only",
-        "save: disabled",
-      ],
-      [
-        `module: npc-${target}-scout`,
-        `prompt: ${prompt || 'fast scout mock'}`,
-        "behavior: patrol + ping",
-        "dialogue: canned responses",
-        "persistence: none",
-      ],
-      [
-        `module: npc-${target}-vendor`,
-        `prompt: ${prompt || 'shop loop'}`,
-        "inventory: decorative",
-        "currency: fake credits",
-        "telemetry: muted",
-      ],
-    ];
-    return randomFrom(variants);
-  },
-  dialogue: (target, prompt) => {
-    const variants = [
-      [
-        `dialogue: branching for ${target}`,
-        `prompt: ${prompt || 'short narrative cue'}`,
-        "nodes:",
-        "  - intro -> choice a/b",
-        "  - loopback: humor",
-        "telemetry: muted",
-      ],
-      [
-        `dialogue: holo-chat for ${target}`,
-        `prompt: ${prompt || 'banter seed'}`,
-        "nodes:",
-        "  - greet -> joke",
-        "  - branch -> lore drop",
-        "safety: mock",
-      ],
-      [
-        `dialogue: review bot for ${target}`,
-        `prompt: ${prompt || 'review hints'}`,
-        "nodes:",
-        "  - question -> confirm",
-        "  - loop -> annotate",
-        "persistence: client memory",
-      ],
-    ];
-    return randomFrom(variants);
-  },
-  system: (target, prompt) => {
-    const variants = [
-      [
-        `system: ${target}-subsystem`,
-        `prompt: ${prompt || 'system goals here'}`,
-        "apis: mocked",
-        "storage: none",
-        "events: ui-only",
-      ],
-      [
-        `system: ${target}-pipeline`,
-        `prompt: ${prompt || 'pipeline idea'}`,
-        "stages: hydrate -> render -> idle",
-        "logging: simulated",
-        "saves: blocked",
-      ],
-      [
-        `system: ${target}-monitor`,
-        `prompt: ${prompt || 'monitor sketch'}`,
-        "streams: visuals + ghost metrics",
-        "alerts: cosmetic",
-        "storage: ephemeral",
-      ],
-    ];
-    return randomFrom(variants);
-  },
-  ui: (target, prompt) => {
-    const variants = [
-      [
-        `ui: overlay-${target}`,
-        `prompt: ${prompt || 'ui mock'}`,
-        "widgets: cards, buttons, toggles",
-        "animations: css only",
-        "state: ephemeral",
-      ],
-      [
-        `ui: dock-${target}`,
-        `prompt: ${prompt || 'dock layout'}`,
-        "widgets: tabs + chip rail",
-        "effects: glass + glow",
-        "runtime: sandbox",
-      ],
-      [
-        `ui: panel-${target}`,
-        `prompt: ${prompt || 'panel sketch'}`,
-        "widgets: accordion + badges",
-        "fx: neon lines",
-        "state: local only",
-      ],
-    ];
-    return randomFrom(variants);
-  },
+const viewportModes = {
+  game: { title: 'Game viewport (mock)' },
+  app: { title: 'App viewport (mock)' },
+  website: { title: 'Website preview (mock)' },
+  spreadsheet: { title: 'Spreadsheet mock' },
 };
 
-const previewModes = {
-  brainstorm: {
-    icon: "💡",
-    title: "Brainstorm Canvas",
-    body: "Sticky ideas and ghost notes appear here. Visual only.",
-    lines: ["• Idea: new module", "• Idea: test pipeline", "• Idea: ghost UX"],
-  },
-  uat: {
-    icon: "🧪",
-    title: "UAT Checklist",
-    body: "Test Case 01, 02, 03 staged with phantom assertions.",
-    lines: ["[ ] Test Case 01", "[ ] Test Case 02", "[ ] Negative Path"],
-  },
-  review: {
-    icon: "📝",
-    title: "Review Deck",
-    body: "Comment bubbles and inline callouts. Nothing persists.",
-    lines: ["// Reviewer: Looks good", "// Reviewer: Check spacing", "// Note: purely visual"],
-  },
-  patch: {
-    icon: "⚙️",
-    title: "Patch Runner",
-    body: "Progress pulses without writing real files.",
-    lines: ["> Validate", "> Bundle", "> Simulate Apply"],
-  },
-};
+let notify = null;
 
-const state = {
-  currentWorkflow: "brainstorm",
-  selectedFile: "atlasstudio/playground.html",
-  toggles: {
-    aiSuggestions: true,
-    experimentalFeatures: false,
-    debugOverlay: false,
-  },
-  consoleLogs: [],
-  consoleGroups: {},
-  verbose: false,
-  consoleAutoClear: false,
-  consoleModeCycle: 0,
-  currentCodeSnippet: null,
-  patchState: "idle",
-  patchProgress: 0,
-  patchTimer: null,
-  explorerTree: EXPLORER_TREE,
-  expandedFolders: new Set(["/atlasforge-site-v2", "/atlasstudio", "/scripts", "/styles", "/docs"]),
-  searchQuery: "",
-  activeLine: null,
-  lastPreviewToggles: null,
-  previewClass: null,
-  lastWorkflow: "brainstorm",
-  moduleStatusTimer: null,
-  moduleStatusMessage: "Waiting for a mock request…",
-  moduleHistory: [],
-};
-
-// ---------- Helpers ----------
-function qs(selector) {
-  return document.querySelector(selector);
-}
-
-function qsa(selector) {
-  return Array.from(document.querySelectorAll(selector));
-}
-
-function snippetToLines(snippet) {
-  if (!snippet) return ["// missing snippet"];
-  if (Array.isArray(snippet)) return snippet;
-  if (typeof snippet === "string") return snippet.split("\n");
-  if (snippet.lines) return snippet.lines;
-  if (snippet.content) return snippet.content.split("\n");
-  return ["// snippet unavailable"];
-}
-
-function escapeRegExp(value) {
-  return value.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-}
-
-function escapeHTML(value) {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/\"/g, "&quot;")
-    .replace(/'/g, "&#39;");
-}
-
-function highlightText(text, query) {
-  const fragment = document.createDocumentFragment();
-  if (!query) {
-    fragment.append(document.createTextNode(text));
-    return fragment;
+class ScreenManager {
+  constructor() {
+    this.screens = new Map();
+    this.current = null;
   }
 
-  const safe = escapeRegExp(query);
-  const regex = new RegExp(`(${safe})`, "ig");
-  let lastIndex = 0;
-  let match;
+  register(id, el) {
+    if (!id || !el) return;
+    this.screens.set(id, el);
+    el.classList.remove('as-screen--active');
+    el.style.display = 'none';
+  }
 
-  while ((match = regex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      fragment.append(document.createTextNode(text.slice(lastIndex, match.index)));
+  show(id) {
+    if (!this.screens.has(id)) return;
+    if (this.current === id) return;
+    const next = this.screens.get(id);
+    const prev = this.current ? this.screens.get(this.current) : null;
+
+    if (prev) {
+      prev.classList.remove('as-screen--active');
+      prev.style.opacity = '0';
+      setTimeout(() => {
+        prev.style.display = 'none';
+      }, 120);
     }
     const mark = document.createElement("span");
     mark.className = "as-highlight";
@@ -455,53 +172,133 @@ function applySyntaxHighlight(line, mode) {
     return jsLine;
   }
 
-  if (mode === "md") {
-    return escaped.replace(/`([^`]*)`/g, '<span class="as-code-token as-code-string">`$1`</span>');
+    next.style.display = 'block';
+    requestAnimationFrame(() => {
+      next.style.opacity = '1';
+      next.classList.add('as-screen--active');
+    });
+
+    this.current = id;
+    appState.currentScreen = id;
+    setActiveRouteTab(id);
+    handleScreenMode(id);
+    updateStatusBar();
+    bus.emit('screen:change', id);
+  }
+}
+
+function persistState() {
+  const payload = {
+    aiMode: appState.aiMode,
+    experimental: appState.experimental,
+    workspace: appState.workspace,
+    viewportMode: appState.viewportMode,
+    compact: appState.compact,
+    highContrast: appState.highContrast,
+    autosave: appState.autosave,
+  };
+  try {
+    localStorage.setItem(storageKey, JSON.stringify(payload));
+  } catch (err) {
+    console.warn('Persist failed', err);
+  }
+}
+
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    Object.assign(appState, saved);
+  } catch (err) {
+    console.warn('Load failed', err);
+  }
+}
+
+function createNotifier() {
+  const stack = qs('.as-toast-stack');
+  return {
+    push(type, text) {
+      if (!stack) return;
+      const toast = document.createElement('div');
+      toast.className = 'as-toast';
+      toast.dataset.type = type || 'info';
+      toast.textContent = text;
+      stack.appendChild(toast);
+      requestAnimationFrame(() => toast.classList.add('is-showing'));
+      setTimeout(() => {
+        toast.classList.remove('is-showing');
+        setTimeout(() => toast.remove(), 200);
+      }, 2600);
+    },
+    info(msg) { this.push('info', msg); },
+    success(msg) { this.push('success', msg); },
+    error(msg) { this.push('error', msg); },
+  };
+}
+
+const viewport = (() => {
+  const frame = qs('.as-preview-placeholder');
+  const title = qs('.as-preview-title-mini');
+  function setMode(mode) {
+    const data = viewportModes[mode] || viewportModes.website;
+    Object.keys(viewportModes).forEach((key) => frame?.classList.remove(`is-${key}`));
+    frame?.classList.add(`is-${mode}`);
+    if (title) title.textContent = data.title;
+    appState.viewportMode = mode;
+    qs('#statusViewport')?.textContent = data.title;
+  }
+  return { setMode };
+})();
+
+function updateStatusBar() {
+  const screenEl = qs('#statusScreen');
+  const aiEl = qs('#statusAI');
+  const expEl = qs('#statusExperimental');
+  const wsEl = qs('#statusWorkspace');
+  const vpEl = qs('#statusViewport');
+  if (screenEl) screenEl.textContent = screenLabels[appState.currentScreen] || appState.currentScreen;
+  if (aiEl) aiEl.textContent = appState.aiMode ? 'On' : 'Off';
+  if (expEl) expEl.textContent = appState.experimental ? 'On' : 'Off';
+  if (wsEl) wsEl.textContent = appState.workspace;
+  if (vpEl) vpEl.textContent = viewportModes[appState.viewportMode]?.title || appState.viewportMode;
+  qs('#decisionPending')?.textContent = String(appState.decisions.pending);
+  qs('#decisionWarnings')?.textContent = String(appState.decisions.warnings);
+  qs('#decisionApprovals')?.textContent = String(appState.decisions.approvals);
+}
+
+  function setActiveRouteTab(screen) {
+    qsa('.as-route-tab').forEach((tab) => {
+      tab.classList.toggle('is-active', tab.getAttribute('data-screen') === screen);
+      const isActive = tab.classList.contains('is-active');
+      tab.setAttribute('aria-selected', isActive);
+      tab.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
   }
 
-  return escaped;
+function handleScreenMode(screen) {
+  const modeMap = {
+    browser: 'website',
+    uat: 'app',
+    review: 'website',
+    patch: 'game',
+    dev: 'spreadsheet',
+  };
+  const workspaceMap = {
+    browser: 'Visual Preview',
+    uat: 'Sandbox',
+    review: 'Review',
+    patch: 'Render',
+    dev: 'Dev',
+  };
+  viewport.setMode(modeMap[screen] || 'website');
+  appState.workspace = workspaceMap[screen] || 'Sandbox';
 }
 
-// ---------- Rendering ----------
-function formatTimestamp() {
-  const now = new Date();
-  const hh = String(now.getHours()).padStart(2, "0");
-  const mm = String(now.getMinutes()).padStart(2, "0");
-  const ss = String(now.getSeconds()).padStart(2, "0");
-  return `${hh}:${mm}:${ss}`;
-}
-
-function logMessage(message, { verboseOnly = false, level, group = null } = {}) {
-  const resolvedLevel = verboseOnly ? "VERBOSE" : level || "INFO";
-  state.consoleLogs.push({
-    text: message,
-    verboseOnly,
-    timestamp: formatTimestamp(),
-    level: resolvedLevel,
-    group,
-  });
-  renderConsole();
-}
-
-function renderModuleStatus(message) {
-  const moduleStatus = qs("#moduleStatus");
-  if (!moduleStatus) return;
-  if (typeof message === "string") {
-    state.moduleStatusMessage = message;
-  }
-  const statusLine = document.createElement("div");
-  statusLine.className = "as-module-status-line";
-  statusLine.textContent = state.moduleStatusMessage || "Waiting for a mock request…";
-
-  moduleStatus.innerHTML = "";
-  moduleStatus.appendChild(statusLine);
-
-  if (state.moduleHistory.length) {
-    state.moduleHistory.forEach((item, index) => {
-      const historyLine = document.createElement("div");
-      historyLine.className = "as-module-history-line";
-      historyLine.textContent = `#${index + 1} [${item.timestamp}] ${item.type.toUpperCase()} · ${item.target}`;
-      moduleStatus.appendChild(historyLine);
+function initRouteTabs(manager) {
+  qsa('.as-route-tab').forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-screen');
+      manager.show(target);
+      notify?.info(`Switched to ${screenLabels[target] || target}`);
     });
   }
 }
@@ -591,462 +388,452 @@ function renderConsole() {
       consoleEl.appendChild(createLine(entry));
     }
   });
-
-  if (shouldStick) {
-    consoleEl.scrollTop = consoleEl.scrollHeight;
-  }
 }
 
-function renderCodeViewer() {
-  const codeLines = qs("#codeLines");
-  const codeViewer = qs("#codeViewer");
-  const activeFilePath = qs("#activeFilePath");
-  if (!codeLines) return;
-  const mapEntry = FILE_MAP[state.selectedFile];
-  const snippet = mapEntry?.content ? snippetToLines(mapEntry.content) : snippetToLines(state.currentCodeSnippet);
-  const { label: fileTypeLabel, mode: syntaxMode } = resolveFileType(state.selectedFile);
-  codeLines.innerHTML = "";
+function initPillToggleGroups() {
+  qsa('.js-pill-group').forEach((group) => {
+    group.addEventListener('click', (evt) => {
+      const btn = evt.target.closest('.as-pill-toggle');
+      if (!btn) return;
+      qsa('.as-pill-toggle', group).forEach((b) => b.classList.remove('as-pill-toggle--active'));
+      btn.classList.add('as-pill-toggle--active');
+      if (group.dataset.pill === 'workspace') {
+        appState.workspace = btn.dataset.workspace || appState.workspace;
+        persistState();
+        updateStatusBar();
+      }
+      if (group.closest('.as-card-body--preview')) {
+        const label = btn.textContent?.trim().toLowerCase();
+        if (label === 'run') viewport.setMode('game');
+        if (label === 'dry run') viewport.setMode('app');
+        if (label === 'inspect') viewport.setMode('website');
+      }
+    });
+  });
+}
 
-  snippet.forEach((line, idx) => {
-    const lineEl = document.createElement("div");
-    lineEl.className = "as-code-line";
-
-    const numberEl = document.createElement("div");
-    numberEl.className = "as-code-number";
-    numberEl.textContent = String(idx + 1).padStart(2, "0");
-
-    const textEl = document.createElement("div");
-    textEl.className = "as-code-text";
-
-    if (!line || line.trim().length === 0) {
-      textEl.textContent = " ";
-      lineEl.classList.add("as-code-line--empty");
-    } else {
-      textEl.innerHTML = applySyntaxHighlight(line, syntaxMode);
+function initDropdowns() {
+  document.addEventListener('click', (evt) => {
+    qsa('.as-dropdown-menu').forEach((menu) => menu.classList.remove('is-open'));
+    const trigger = evt.target.closest('.as-dropdown-trigger');
+    if (!trigger) return;
+    const dropdown = trigger.closest('.as-dropdown');
+    const menu = qs('.as-dropdown-menu', dropdown);
+    if (menu) {
+      evt.stopPropagation();
+      menu.classList.toggle('is-open');
     }
+  });
+}
 
-    if (state.activeLine === idx) {
-      lineEl.classList.add("as-code-line--active");
+function initCodexGhostPanel() {
+  const toggleBtn = qs('.js-ghost-toggle');
+  const panel = qs('.as-ghost-panel');
+  if (!toggleBtn || !panel) return;
+  const apply = () => panel.classList.toggle('is-open', appState.ghostOpen);
+
+  toggleBtn.addEventListener('click', () => {
+    appState.ghostOpen = !appState.ghostOpen;
+    apply();
+  });
+
+  window.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape' && appState.ghostOpen) {
+      appState.ghostOpen = false;
+      apply();
     }
+  });
 
-    lineEl.appendChild(numberEl);
-    lineEl.appendChild(textEl);
-    lineEl.addEventListener("click", () => {
-      const current = codeLines.querySelector(".as-code-line--active");
-      if (current && current !== lineEl) current.classList.remove("as-code-line--active");
-      lineEl.classList.add("as-code-line--active");
-      state.activeLine = idx;
+  const tabs = qsa('.as-ghost-tab', panel);
+  const views = qsa('.as-ghost-view', panel);
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-ghost-tab');
+      tabs.forEach((t) => t.classList.remove('as-ghost-tab--active'));
+      tab.classList.add('as-ghost-tab--active');
+      views.forEach((view) => {
+        const viewKey = view.getAttribute('data-ghost-view');
+        view.classList.toggle('as-ghost-view--active', viewKey === target);
+      });
+    });
+  });
+
+  qs('#simulateDiff')?.addEventListener('click', () => {
+    tabs.forEach((t) => t.classList.toggle('as-ghost-tab--active', t.dataset.ghostTab === 'diff'));
+    views.forEach((v) => v.classList.toggle('as-ghost-view--active', v.dataset.ghostView === 'diff'));
+    notify?.info('Simulated diff preview.');
+  });
+
+  qs('#simulateTimeline')?.addEventListener('click', () => {
+    tabs.forEach((t) => t.classList.toggle('as-ghost-tab--active', t.dataset.ghostTab === 'timeline'));
+    views.forEach((v) => v.classList.toggle('as-ghost-view--active', v.dataset.ghostView === 'timeline'));
+    notify?.info('Simulated timeline.');
+  });
+}
+
+function attachButtonRipples() {
+  qsa('.as-btn, .af-btn, .as-btn-icon').forEach((btn) => {
+    btn.addEventListener('click', (evt) => {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.className = 'as-ripple';
+      ripple.style.left = `${evt.clientX - rect.left}px`;
+      ripple.style.top = `${evt.clientY - rect.top}px`;
+      ripple.style.width = ripple.style.height = `${Math.max(rect.width, rect.height)}px`;
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 450);
+    });
+  });
+}
+
+function initSwitches() {
+  const switches = qsa('.as-switch');
+  switches.forEach((sw) => {
+    const flag = sw.dataset.flag;
+    const apply = () => {
+      const on = appState[flag];
+      sw.classList.toggle('is-on', Boolean(on));
+    };
+    apply();
+    sw.addEventListener('click', () => {
+      if (flag === 'aiMode') appState.aiMode = !appState.aiMode;
+      if (flag === 'experimental') appState.experimental = !appState.experimental;
+      if (flag === 'compact') appState.compact = !appState.compact;
+      if (flag === 'highContrast') appState.highContrast = !appState.highContrast;
+      if (flag === 'autosave') appState.autosave = !appState.autosave;
+      apply();
+      persistState();
+      updateStatusBar();
     });
 
     codeLines.appendChild(lineEl);
   });
-
-  if (activeFilePath) {
-    activeFilePath.textContent = state.selectedFile;
-  }
-
-  const typeChip = codeLines.closest(".as-section")?.querySelector(".as-section-header .as-chip");
-  if (typeChip) {
-    typeChip.textContent = `VIEW · ${fileTypeLabel}`;
-  }
-
-  if (codeViewer) {
-    codeViewer.scrollTo({ top: 0, behavior: "smooth" });
-  }
 }
 
-function updatePreview() {
-  const chipWorkflow = qs("#chipWorkflow");
-  const chipSelectedFile = qs("#chipSelectedFile");
-  const chipPatch = qs("#chipPatch");
-  const flagAI = qs("#flagAI");
-  const flagExperimental = qs("#flagExperimental");
-  const flagDebug = qs("#flagDebug");
-  const previewTitle = qs("#previewTitle");
-  const previewBody = qs("#previewBody");
-  const patchStatus = qs("#patchStatus");
-  const previewShell = qs(".as-preview");
-  const previewWindow = qs(".as-preview-window");
-  const patchControls = qs(".as-patch-controls");
-
-  const previousToggles = state.lastPreviewToggles || { ...state.toggles };
-
-  if (chipWorkflow) chipWorkflow.textContent = `Workflow: ${state.currentWorkflow}`;
-  if (chipSelectedFile) chipSelectedFile.textContent = `File: ${state.selectedFile}`;
-  if (chipPatch) chipPatch.textContent = `Patch: ${state.patchState}`;
-
-  if (flagAI) flagAI.textContent = `AI Suggestions: ${state.toggles.aiSuggestions ? "ON" : "OFF"}`;
-  if (flagExperimental)
-    flagExperimental.textContent = `Experimental: ${state.toggles.experimentalFeatures ? "ON" : "OFF"}`;
-  if (flagDebug) flagDebug.textContent = `Debug: ${state.toggles.debugOverlay ? "ON" : "OFF"}`;
-
-  const modeCopy = previewModes[state.currentWorkflow];
-  if (modeCopy) {
-    if (previewTitle) previewTitle.textContent = `${modeCopy.icon} ${modeCopy.title}`;
-    if (previewBody) {
-      previewBody.innerHTML = "";
-      const lines = modeCopy.lines && modeCopy.lines.length ? modeCopy.lines : [modeCopy.body];
-      lines.forEach((line) => {
-        const lineEl = document.createElement("div");
-        lineEl.className = `as-preview-body-line as-preview-body-line--${state.currentWorkflow}`;
-        lineEl.textContent = line;
-        previewBody.appendChild(lineEl);
+function initCategoryFilter() {
+  const categories = qsa('.as-category-item');
+  const tiles = qsa('.as-gallery-tile');
+  if (!categories.length) return;
+  categories.forEach((cat) => {
+    cat.addEventListener('click', () => {
+      categories.forEach((c) => c.classList.remove('is-active'));
+      cat.classList.add('is-active');
+      const key = cat.getAttribute('data-category');
+      tiles.forEach((tile) => {
+        const match = tile.getAttribute('data-category');
+        tile.style.display = !key || match === key ? '' : 'none';
       });
+    });
+  });
+}
+
+function bindParallax() {
+  const shell = qs('.as-app-shell');
+  if (!shell) return;
+  shell.addEventListener('mousemove', (evt) => {
+    const rect = shell.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const dx = ((evt.clientX - cx) / rect.width) * 6;
+    const dy = ((evt.clientY - cy) / rect.height) * 6;
+    document.body.style.setProperty('--as-parallax-x', `${dx.toFixed(2)}px`);
+    document.body.style.setProperty('--as-parallax-y', `${dy.toFixed(2)}px`);
+    qs('#diagParallax')?.textContent = 'On';
+  });
+}
+
+function bootReady() {
+  requestAnimationFrame(() => {
+    document.body.classList.add('as-boot-ready');
+  });
+}
+
+function openInspector(data) {
+  const panel = qs('#fileInspector');
+  if (!panel) return;
+  qs('#inspectorTitle').textContent = data.title || 'File Inspector';
+  qs('#inspectorMeta').textContent = data.meta || 'Visual only';
+  qs('#inspectorPreview').textContent = data.preview || 'No thumbnail';
+  qs('#inspectorType').textContent = data.type || '—';
+  qs('#inspectorSize').textContent = data.size || '—';
+  qs('#inspectorModified').textContent = data.modified || '—';
+  const suggestions = qs('#inspectorSuggestions ul');
+  if (suggestions) {
+    suggestions.innerHTML = '';
+    (data.suggestions || ['Surface preview variants.', 'Link to module graph.', 'Flag for human approval.']).forEach((line) => {
+      const li = document.createElement('li');
+      li.textContent = line;
+      suggestions.appendChild(li);
+    });
+  }
+  panel.classList.add('is-open');
+}
+
+function closeInspector() {
+  qs('#fileInspector')?.classList.remove('is-open');
+}
+
+function bindInspectorTriggers() {
+  const triggers = qsa('.as-gallery-tile, .as-clipper-item, .as-file-item');
+  triggers.forEach((el) => {
+    el.addEventListener('click', () => {
+      const name = el.querySelector('.as-file-caption, .as-file-name, span')?.textContent?.trim() || 'Selected file';
+      openInspector({
+        title: name,
+        meta: 'Inspection preview · mock',
+        preview: el.dataset.preview || name,
+        type: el.dataset.type || 'asset',
+        size: el.dataset.size || '1.2 MB',
+        modified: el.dataset.modified || 'Today',
+      });
+      notify?.info(`Inspecting ${name}`);
+    });
+  });
+  qs('#closeInspector')?.addEventListener('click', closeInspector);
+}
+
+function initDecisionBar() {
+  qs('#openDecisions')?.addEventListener('click', () => {
+    notify?.success('Human decisions panel opened (mock).');
+  });
+}
+
+function initScreenManager() {
+  const manager = new ScreenManager();
+  qsa('.as-screen').forEach((screen) => {
+    manager.register(screen.getAttribute('data-screen'), screen);
+  });
+  qs('#diagScreens')?.textContent = String(manager.screens.size);
+  return manager;
+}
+
+function initViewportDefaults() {
+  viewport.setMode(appState.viewportMode || 'website');
+}
+
+function bindGlobalSearch(manager) {
+  const input = qs('#globalSearchInput');
+  if (!input) return;
+  input.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Enter') {
+      const value = input.value.trim().toLowerCase();
+      if (value.includes('clip')) manager.show('patch');
+      else if (value.includes('gallery') || value.includes('image')) manager.show('browser');
+      else if (value.includes('review')) manager.show('review');
+      else if (value.includes('uat') || value.includes('app')) manager.show('uat');
+      else if (value.includes('dev')) manager.show('dev');
+      notify?.info(`Search routed to ${appState.currentScreen}`);
     }
-  }
+  });
+}
 
-  if (previewShell) {
-    if (state.previewClass) previewShell.classList.remove(state.previewClass);
-    const nextClass = `as-preview--${state.currentWorkflow}`;
-    previewShell.classList.add(nextClass);
-    state.previewClass = nextClass;
-  }
+function bindQuickPanel(manager) {
+  const panel = qs('#quickPanel');
+  qs('#openQuickActions')?.addEventListener('click', () => panel?.classList.add('is-open'));
+  qs('#closeQuickPanel')?.addEventListener('click', () => panel?.classList.remove('is-open'));
+  qsa('[data-action]', panel).forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      if (action?.startsWith('goto-')) {
+        const target = action.replace('goto-', '');
+        manager.show(target);
+      }
+      if (action === 'open-inspector') {
+        openInspector({ title: 'Manual open', meta: 'Quick action', preview: '—' });
+      }
+      if (action === 'open-ghost') {
+        appState.ghostOpen = !appState.ghostOpen;
+        qs('.as-ghost-panel')?.classList.toggle('is-open', appState.ghostOpen);
+      }
+      if (action === 'notify') {
+        notify?.success('Quick action triggered.');
+      }
+      panel?.classList.remove('is-open');
+    });
+  });
+}
 
-  if (patchStatus) {
-    if (state.patchState === "running") {
-      patchStatus.textContent = `Patch runner: Running (${state.patchProgress}%)`;
-    } else if (state.patchState === "complete") {
-      patchStatus.textContent = "Patch runner: Complete (visual only)";
-    } else {
-      patchStatus.textContent = "Patch runner: Idle";
-    }
-  }
-
-  if (patchControls) {
-    let progressWidth = 0;
-    if (state.patchState === "running") progressWidth = state.patchProgress;
-    if (state.patchState === "complete") progressWidth = 100;
-    patchControls.style.setProperty("--patch-progress", `${progressWidth}%`);
-  }
-
-  const flagMap = [
-    [flagAI, "aiSuggestions"],
-    [flagExperimental, "experimentalFeatures"],
-    [flagDebug, "debugOverlay"],
+function buildPaletteCommands(manager) {
+  return [
+    { label: 'Go to Browser', action: () => manager.show('browser') },
+    { label: 'Go to UAT', action: () => manager.show('uat') },
+    { label: 'Go to Review', action: () => manager.show('review') },
+    { label: 'Go to Patch', action: () => manager.show('patch') },
+    { label: 'Go to Dev', action: () => manager.show('dev') },
+    { label: 'Toggle AI Mode', action: () => toggleFlag('aiMode') },
+    { label: 'Toggle Experimental', action: () => toggleFlag('experimental') },
+    { label: 'Toggle Ghost', action: () => qs('.js-ghost-toggle')?.click() },
+    { label: 'Open Inspector', action: () => openInspector({ title: 'Palette open', preview: '—' }) },
+    { label: 'Open Settings', action: () => openSettings() },
+    { label: 'Show Diagnostics', action: () => toggleDiagnostics(true) },
   ];
-  flagMap.forEach(([el, key]) => {
-    if (!el) return;
-    if (previousToggles[key] !== state.toggles[key]) {
-      el.classList.add("changed");
-      setTimeout(() => el.classList.remove("changed"), 450);
-    }
-  });
-  state.lastPreviewToggles = { ...state.toggles };
-
-  if (previewWindow && state.lastWorkflow !== state.currentWorkflow) {
-    previewWindow.classList.add("as-preview-window--swap");
-    setTimeout(() => previewWindow.classList.remove("as-preview-window--swap"), 380);
-  }
-  state.lastWorkflow = state.currentWorkflow;
 }
 
-function renderExplorer() {
-  const explorerRoot = qs("#fileExplorer");
-  if (!explorerRoot) return;
-  explorerRoot.innerHTML = "";
-
-  const query = state.searchQuery.trim().toLowerCase();
-
-  const nodeMatches = (node) => {
-    if (!query) return true;
-    const nameMatches = node.name.toLowerCase().includes(query);
-    if (nameMatches) return true;
-    if (node.type === "folder") {
-      return (node.children || []).some((child) => nodeMatches(child));
-    }
-    return false;
-  };
-
-  const createNode = (node) => {
-    const visible = nodeMatches(node);
-    if (node.type === "folder") {
-      const wrapper = document.createElement("div");
-      wrapper.className = "as-folder";
-      if (state.expandedFolders.has(node.path)) wrapper.classList.add("expanded");
-      if (!visible) wrapper.classList.add("is-hidden");
-
-      const label = document.createElement("div");
-      label.className = "as-folder-label";
-      const caret = document.createElement("span");
-      caret.className = "as-caret";
-      label.appendChild(caret);
-      const title = document.createElement("span");
-      title.appendChild(highlightText(node.name, query));
-      label.appendChild(title);
-
-      const childrenContainer = document.createElement("div");
-      childrenContainer.className = "as-folder-children";
-      if (!state.expandedFolders.has(node.path)) {
-        childrenContainer.style.display = "none";
-      }
-      (node.children || []).forEach((child) => {
-        childrenContainer.appendChild(createNode(child));
-      });
-
-      label.addEventListener("click", () => {
-        if (state.expandedFolders.has(node.path)) {
-          state.expandedFolders.delete(node.path);
-          wrapper.classList.remove("expanded");
-          childrenContainer.style.display = "none";
-        } else {
-          state.expandedFolders.add(node.path);
-          wrapper.classList.add("expanded");
-          childrenContainer.style.display = "";
-        }
-      });
-
-      wrapper.appendChild(label);
-      wrapper.appendChild(childrenContainer);
-      return wrapper;
-    }
-
-    // file node
-    const fileEl = document.createElement("div");
-    fileEl.className = "as-file";
-    fileEl.setAttribute("data-file", node.path);
-    if (!visible) fileEl.classList.add("is-hidden");
-    const fileLabel = document.createElement("span");
-    fileLabel.appendChild(highlightText(node.name, query));
-    fileEl.appendChild(fileLabel);
-    if (state.selectedFile === node.path) {
-      fileEl.classList.add("selected");
-    }
-
-    fileEl.addEventListener("click", () => {
-      expandAncestors(node.path);
-      state.selectedFile = node.path;
-      state.activeLine = null;
-      state.currentCodeSnippet = FILE_MAP[node.path]?.content || null;
-      renderExplorer();
-      renderCodeViewer();
-      updatePreview();
-      logMessage(`[Explorer] Selected file: ${node.path} (simulated)`, { group: "explorer" });
+function renderCommandPalette(commands) {
+  const list = qs('#commandList');
+  if (!list) return;
+  list.innerHTML = '';
+  commands.forEach((cmd) => {
+    const item = document.createElement('div');
+    item.className = 'as-command-item';
+    item.textContent = cmd.label;
+    item.addEventListener('click', () => {
+      cmd.action();
+      closePalette();
     });
-
-    return fileEl;
-  };
-
-  explorerRoot.appendChild(createNode(state.explorerTree));
+    list.appendChild(item);
+  });
 }
 
-// ---------- Bindings ----------
-function bindWorkflowTabs() {
-  qsa("#workflowTabs .as-tab").forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const workflow = tab.getAttribute("data-workflow") || "brainstorm";
-      state.currentWorkflow = workflow;
-      qsa("#workflowTabs .as-tab").forEach((btn) => {
-        btn.classList.toggle("as-tab--active", btn === tab);
-      });
-      if (state.consoleAutoClear) {
-        state.consoleLogs = [];
-        state.consoleGroups = {};
-        renderConsole();
-        logMessage(`[Console] Auto-cleared logs on workflow switch to ${workflow}.`, { group: "workflow" });
-      }
-      updatePreview();
-      logMessage(`[Workflow] Switched to ${workflow.toUpperCase()} (simulated).`, { group: "workflow" });
-    });
-  });
+function openPalette() {
+  qs('#commandPalette')?.classList.add('is-open');
+  qs('.as-command-input')?.focus();
+}
 
-  qsa("#workflowTabs .as-tab").forEach((tab) => {
-    const workflow = tab.getAttribute("data-workflow");
-    if (workflow === state.currentWorkflow) {
-      tab.classList.add("as-tab--active");
+function closePalette() {
+  qs('#commandPalette')?.classList.remove('is-open');
+}
+
+function bindPalette(manager) {
+  const commands = buildPaletteCommands(manager);
+  renderCommandPalette(commands);
+  qs('#openPalette')?.addEventListener('click', openPalette);
+  qs('#openCommandPalette')?.addEventListener('click', openPalette);
+  qs('#closePalette')?.addEventListener('click', closePalette);
+  qs('.as-command-input')?.addEventListener('input', (evt) => {
+    const value = evt.target.value.toLowerCase();
+    const filtered = commands.filter((cmd) => cmd.label.toLowerCase().includes(value));
+    renderCommandPalette(filtered);
+  });
+  window.addEventListener('keydown', (evt) => {
+    if ((evt.ctrlKey || evt.metaKey) && evt.key.toLowerCase() === 'k') {
+      evt.preventDefault();
+      openPalette();
+    }
+    if (evt.key === 'Escape') closePalette();
+  });
+}
+
+function toggleFlag(flag) {
+  appState[flag] = !appState[flag];
+  persistState();
+  updateStatusBar();
+  initSwitches();
+  notify?.info(`${flag} ${appState[flag] ? 'enabled' : 'disabled'}`);
+}
+
+function bindDiagnostics() {
+  const diag = qs('#diagnostics');
+  const toggleDiagBtn = qs('#toggleDiag');
+  toggleDiagBtn?.addEventListener('click', () => diag?.classList.toggle('is-open'));
+  qs('#toggleGrid')?.addEventListener('click', () => notify?.info('Grid overlay toggled (mock).'));
+}
+
+function toggleDiagnostics(forceOpen) {
+  const diag = qs('#diagnostics');
+  if (!diag) return;
+  const shouldOpen = forceOpen !== undefined ? forceOpen : !diag.classList.contains('is-open');
+  diag.classList.toggle('is-open', shouldOpen);
+}
+
+function openSettings() {
+  qs('#settingsDrawer')?.classList.add('is-open');
+  appState.settingsOpen = true;
+}
+
+function closeSettings() {
+  qs('#settingsDrawer')?.classList.remove('is-open');
+  appState.settingsOpen = false;
+}
+
+function bindSettings() {
+  qs('#closeSettings')?.addEventListener('click', closeSettings);
+  qsa('[data-route="settings"]').forEach((btn) => btn.addEventListener('click', openSettings));
+}
+
+function bindInspectorHotkeys() {
+  window.addEventListener('keydown', (evt) => {
+    if ((evt.ctrlKey || evt.metaKey) && evt.key.toLowerCase() === 'i') {
+      evt.preventDefault();
+      openInspector({ title: 'Hotkey open', meta: 'Ctrl/Cmd+I' });
     }
   });
 }
 
-function bindToggles() {
-  qsa(".as-toggle").forEach((toggle) => {
-    const key = toggle.getAttribute("data-toggle");
-    const switchEl = toggle.querySelector(".as-toggle-switch");
-    if (!key || !switchEl) return;
-
-    const applyVisual = () => {
-      toggle.classList.toggle("is-on", Boolean(state.toggles[key]));
-    };
-
-    applyVisual();
-
-    switchEl.addEventListener("click", () => {
-      state.toggles[key] = !state.toggles[key];
-      applyVisual();
-      updatePreview();
-      logMessage(`[Flags] ${key} turned ${state.toggles[key] ? "ON" : "OFF"}.`, { group: "toggles" });
-    });
-    });
-}
-
-function bindConsoleControls() {
-  const clearBtn = qs("#clearLog");
-  const verboseToggle = qs("#verboseToggle");
-  if (clearBtn) {
-    clearBtn.addEventListener("click", () => {
-      state.consoleLogs = [];
-      state.consoleGroups = {};
-      renderConsole();
-    });
-  }
-  if (verboseToggle) {
-    verboseToggle.checked = false;
-    verboseToggle.indeterminate = false;
-    verboseToggle.addEventListener("change", () => {
-      state.consoleModeCycle = (state.consoleModeCycle + 1) % 3;
-      if (state.consoleModeCycle === 1) {
-        state.verbose = true;
-        state.consoleAutoClear = false;
-        verboseToggle.checked = true;
-        verboseToggle.indeterminate = false;
-        logMessage("[Console] Verbose ON", { group: "console" });
-      } else if (state.consoleModeCycle === 2) {
-        state.verbose = false;
-        state.consoleAutoClear = true;
-        verboseToggle.checked = true;
-        verboseToggle.indeterminate = true;
-        logMessage("[Console] Auto-Clear ON", { group: "console" });
+function bindDraggables() {
+  qsa('.js-draggable').forEach((el) => {
+    let dragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+    el.addEventListener('dblclick', () => {
+      el.classList.toggle('is-floating');
+      if (el.classList.contains('is-floating')) {
+        el.style.position = 'absolute';
+        el.style.left = `${el.offsetLeft}px`;
+        el.style.top = `${el.offsetTop}px`;
       } else {
-        state.verbose = false;
-        state.consoleAutoClear = false;
-        verboseToggle.checked = false;
-        verboseToggle.indeterminate = false;
-        logMessage("[Console] Verbose OFF, Auto-Clear OFF", { group: "console" });
+        el.style.position = '';
+        el.style.left = '';
+        el.style.top = '';
       }
-      renderConsole();
     });
-  }
-}
-
-function bindExplorerControls() {
-  const search = qs(".as-search");
-  const expandAllBtn = qs("#expandAll");
-  const collapseAllBtn = qs("#collapseAll");
-
-  if (search) {
-    search.addEventListener("input", () => {
-      state.searchQuery = search.value || "";
-      renderExplorer();
+    el.addEventListener('mousedown', (evt) => {
+      if (!el.classList.contains('is-floating')) return;
+      dragging = true;
+      offsetX = evt.clientX - el.offsetLeft;
+      offsetY = evt.clientY - el.offsetTop;
+      document.body.style.userSelect = 'none';
     });
-  }
-
-  if (expandAllBtn) {
-    expandAllBtn.addEventListener("click", () => {
-      state.expandedFolders = new Set(collectFolderPaths(state.explorerTree));
-      renderExplorer();
-      logMessage("[Explorer] Expanded all folders.", { group: "explorer" });
+    window.addEventListener('mousemove', (evt) => {
+      if (!dragging) return;
+      el.style.left = `${evt.clientX - offsetX}px`;
+      el.style.top = `${evt.clientY - offsetY}px`;
     });
-  }
-
-  if (collapseAllBtn) {
-    collapseAllBtn.addEventListener("click", () => {
-      state.expandedFolders = new Set([state.explorerTree.path]);
-      renderExplorer();
-      logMessage("[Explorer] Collapsed all folders.", { group: "explorer" });
+    window.addEventListener('mouseup', () => {
+      dragging = false;
+      document.body.style.userSelect = '';
     });
-  }
-}
-
-function bindModuleGenerator() {
-  const form = qs("#moduleForm");
-  const moduleContainer = form?.closest(".as-module");
-  const codeViewer = qs("#codeViewer");
-  if (!form) return;
-
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const type = qs("#moduleType")?.value || "map";
-    const target = qs("#moduleTarget")?.value || "studio";
-    const prompt = qs("#modulePrompt")?.value.trim() || "";
-
-    moduleContainer?.classList.add("as-module-loading");
-    codeViewer?.classList.add("as-module-skeleton");
-    startModuleStatusAnimation();
-    logMessage(`[Generator] Request for ${type.toUpperCase()} targeting ${target}.`, {
-      level: "INFO",
-      group: "generator",
-    });
-    logMessage(`[Generator] Simulating Codex module generation (no real code saved).`, {
-      verboseOnly: true,
-      level: "VERBOSE",
-      group: "generator",
-    });
-
-    setTimeout(() => {
-      const buildSnippet = moduleSnippets[type] || moduleSnippets.map;
-      const lines = buildSnippet(target, prompt);
-      state.currentCodeSnippet = { lines };
-      state.selectedFile = `generated/${type}-${target}.mock`;
-      state.activeLine = null;
-      renderCodeViewer();
-      updatePreview();
-      const timestamp = formatTimestamp();
-      state.moduleHistory.unshift({ type, target, timestamp, label: `${type}-${target}` });
-      if (state.moduleHistory.length > 5) {
-        state.moduleHistory.pop();
-      }
-      stopModuleStatusAnimation("Draft ready (client-side only).");
-      moduleContainer?.classList.remove("as-module-loading");
-      codeViewer?.classList.remove("as-module-skeleton");
-      logMessage(`[Generator] Completed fake module for ${target}.`, { level: "INFO", group: "generator" });
-      renderModuleStatus();
-    }, 750);
   });
 }
 
-function runPatchSimulation() {
-  if (state.patchState === "running") return;
-  state.patchState = "running";
-  state.patchProgress = 0;
-  updatePreview();
-  logMessage("[Patch] Starting fake patch run...", { group: "patch" });
-  state.patchTimer = setInterval(() => {
-    state.patchProgress = Math.min(100, state.patchProgress + 12);
-    updatePreview();
-    if (state.patchProgress >= 100) {
-      clearInterval(state.patchTimer);
-      state.patchTimer = null;
-      state.patchState = "complete";
-      updatePreview();
-      logMessage("[Patch] Fake patch completed. No files were modified.", { group: "patch" });
-    } else if (state.patchProgress % 24 === 0) {
-      logMessage(`[Patch] Progress ${state.patchProgress}%`, { verboseOnly: true, group: "patch" });
+function bindGlobalShortcuts(manager) {
+  window.addEventListener('keydown', (evt) => {
+    if (evt.key === 'F2') {
+      toggleDiagnostics();
     }
-  }, 450);
+    if ((evt.ctrlKey || evt.metaKey) && evt.key.toLowerCase() === 'b') {
+      manager.show('browser');
+    }
+  });
 }
 
-function resetPatchSimulation() {
-  if (state.patchTimer) {
-    clearInterval(state.patchTimer);
-    state.patchTimer = null;
-  }
-  state.patchState = "idle";
-  state.patchProgress = 0;
-  updatePreview();
-  logMessage("[Patch] Reset patch state to idle.", { group: "patch" });
-}
-
-function bindPatchButtons() {
-  const runBtn = qs("#runPatch");
-  const resetBtn = qs("#resetPatch");
-  if (runBtn) runBtn.addEventListener("click", runPatchSimulation);
-  if (resetBtn) resetBtn.addEventListener("click", resetPatchSimulation);
-}
-
-// ---------- Initialization ----------
 function initialize() {
-  state.currentCodeSnippet = FILE_MAP[state.selectedFile]?.content || "// default snippet";
-  renderExplorer();
-  renderCodeViewer();
-  bindWorkflowTabs();
-  bindExplorerControls();
-  bindToggles();
-  bindConsoleControls();
-  bindModuleGenerator();
-  bindPatchButtons();
-  renderModuleStatus();
-  updatePreview();
-  logMessage("[System] AtlasStudio fake workstation initialized.", { group: "system" });
-  logMessage("[System] Explorer initialized.", { group: "system" });
+  loadState();
+  notify = createNotifier();
+  const manager = initScreenManager();
+  initRouteTabs(manager);
+  initPillToggleGroups();
+  initDropdowns();
+  initCodexGhostPanel();
+  initSwitches();
+  initCategoryFilter();
+  attachButtonRipples();
+  bindParallax();
+  bindInspectorTriggers();
+  initDecisionBar();
+  initViewportDefaults();
+  bindGlobalSearch(manager);
+  bindQuickPanel(manager);
+  bindPalette(manager);
+  bindDiagnostics();
+  bindSettings();
+  bindInspectorHotkeys();
+  bindDraggables();
+  bindGlobalShortcuts(manager);
+  manager.show(appState.currentScreen);
+  updateStatusBar();
+  bootReady();
+  qs('#diagViewport')?.textContent = window.innerWidth < 800 ? 'Mobile' : 'Desktop';
 }
 
-window.addEventListener("DOMContentLoaded", initialize);
+document.addEventListener('DOMContentLoaded', initialize);

@@ -1,129 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atlas-V Engine — AtlasForge Interactive</title>
-
+  <title>Atlas-V — Master Copilot</title>
   <link rel="stylesheet" href="styles/main.css" />
 </head>
-
-<body class="theme-dark">
-
-  <!-- HEADER -->
+<body class="theme-dark" data-page="atlasv">
   <header class="af-header af-header-compact">
     <div class="af-container">
       <nav class="af-nav">
-
         <a class="af-logo" href="index.html">
-          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">ATLASFORGE INTERACTIVE</span>
+          <img src="assets/logos/ATLASV_BRAND.png" alt="Atlas-V Logo" />
+          <span class="af-logo-text">Atlasforge Interactive</span>
         </a>
-
+        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
         <div class="af-nav-links">
+          <a href="index.html">Home</a>
+          <a href="studio-tools.html">Studio</a>
           <a href="atlasv.html" class="is-active">Atlas-V</a>
-          <a href="studio-tools.html">AtlasStudio</a>
-          <a href="octopus.html">Octopus in Action</a>
+          <a href="games.html">Games</a>
+          <a href="skb.html">S/K/B</a>
           <a href="about.html">About</a>
         </div>
-
       </nav>
     </div>
   </header>
 
+  <section class="af-hero af-section">
+    <div class="af-container af-hero-grid">
+      <div>
+        <div class="af-kicker">ATLAS-V</div>
+        <h1>Your project brain and master copilot.</h1>
+        <p class="af-hero-copy">Atlas-V keeps memory, constraints, prompts, and flows aligned. Everything here is a calm, front-end-only simulation that makes demos feel live.</p>
+        <div class="af-hero-actions">
+          <a class="af-btn af-btn-secondary" href="atlasstudio/playground.html">Open in Studio</a>
+          <a class="af-btn af-btn-ghost" href="#modules">View modules</a>
+        </div>
+      </div>
+      <div class="af-card">
+        <h3>Orbital Control Diagram</h3>
+        <p>Atlas-V in the center with specialist agents orbiting. Pure CSS, no backend.</p>
+        <div class="av-orbit">
+          <div class="av-core"><span>Atlas-V</span></div>
+          <div class="av-node">Navigator</div>
+          <div class="av-node">Memory</div>
+          <div class="av-node">Guard</div>
+          <div class="av-node">FlowSim</div>
+          <div class="av-node">Prompt</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- HERO -->
-  <section class="af-section af-page-hero">
+  <section class="af-section af-section-band" id="modules">
     <div class="af-container">
-
-      <div class="af-kicker">The Engine</div>
-      <h1>Atlas-V</h1>
-      <p class="af-page-lede">
-        Atlas-V is the core simulation, logic, and content pipeline that powers
-        the AtlasForge ecosystem. It is designed to be modular, predictable,
-        and built around a canon-first workflow.
-      </p>
-
+      <div class="af-kicker">Modules</div>
+      <h2 class="af-page-hero">Precision subsystems in a simulated stack.</h2>
+      <div class="av-grid" id="atlasv-modules"></div>
     </div>
   </section>
 
+  <section class="af-section" id="agents">
+    <div class="af-container">
+      <div class="af-kicker">Agents</div>
+      <h2 class="af-page-hero">Canon controllers guiding the stack.</h2>
+      <div class="av-grid" id="atlasv-agents"></div>
+    </div>
+  </section>
 
-  <!-- FEATURE GRID -->
   <section class="af-section af-section-band">
-    <div class="af-container af-grid af-grid-3">
-
-      <div class="af-card">
-        <h3>Canon-Driven Modules</h3>
-        <p>
-          Everything in Atlas-V is organized into versioned modules with IDs,
-          structures, and dependencies. This keeps systems consistent across
-          projects and prevents drift.
-        </p>
-      </div>
-
-      <div class="af-card">
-        <h3>Patch Pipelines</h3>
-        <p>
-          Atlas-V treats patches as first-class citizens. Each change is
-          tracked, checked, validated, and logged through a clear pipeline that
-          works with or without automation.
-        </p>
-      </div>
-
-      <div class="af-card">
-        <h3>Simulation Ready</h3>
-        <p>
-          Designed for games, tools, dashboards, and prototypes. Atlas-V
-          simulates logic flows, systems, and content structures with a
-          predictable runtime model.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ATLASSTUDIO CONNECTION -->
-  <section class="af-section">
     <div class="af-container af-grid af-grid-2">
-
-      <div class="af-card">
-        <h3>Works With AtlasStudio</h3>
-        <p>
-          AtlasStudio serves as the workstation UI for the Atlas-V engine.
-          All brainstorm → UAT → review → patch steps are surfaced cleanly
-          through a single interface.
-        </p>
-        <p>
-          The current prototype is front-end only, but fully models how the
-          workflow will eventually behave.
-        </p>
-
-        <a href="studio-tools.html" class="af-card-link">
-          Go to AtlasStudio →
-        </a>
-      </div>
-
-      <div class="af-card" style="text-align:center;">
-        <img src="assets/logos/ATLASV_BRAND.png" alt="Atlas-V Logo"
-          style="max-width: 200px; width: 100%; height: auto;" />
-        <p style="color: var(--af-text-muted); margin-top:10px; font-size:0.9rem;">
-          Non-symmetrical node-grid aesthetic — the signature of Atlas-V.
-        </p>
-      </div>
-
+      <article class="af-card">
+        <h3>Project Memory Vault</h3>
+        <p>Recent memories pinned by Atlas-V to keep context stable.</p>
+        <ul class="af-timeline" id="atlasv-memory"></ul>
+      </article>
+      <article class="af-card">
+        <h3>FlowSim Snapshot</h3>
+        <p>Simple node map showing how Atlas-V pretends to route work.</p>
+        <div id="atlasv-flowsim"></div>
+      </article>
     </div>
   </section>
 
-
-  <!-- FOOTER -->
-  <footer class="af-section">
-    <div class="af-container" style="text-align:center; color: var(--af-text-muted); font-size: 0.85rem;">
-      © 2025 AtlasForge Interactive. All rights reserved.
-    </div>
-  </footer>
-
+  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
+  <script src="scripts/main.js" defer></script>
 </body>
-
 </html>

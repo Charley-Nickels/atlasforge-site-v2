@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AtlasStudio Dashboard Mock</title>
+
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/atlasstudio.css" />
+  <script src="../scripts/playground.js" defer></script>
+</head>
+
+<body class="theme-dark as-shell">
+
+  <!-- HEADER -->
+  <header class="af-header af-header-compact">
+    <div class="af-container">
+      <nav class="af-nav">
+
+        <a class="af-logo" href="../index.html">
+          <img src="../assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
+          <span class="af-logo-text">ATLASFORGE INTERACTIVE</span>
+        </a>
+
+        <div class="af-nav-links">
+          <a href="../atlasv.html">Atlas-V</a>
+          <a href="../studio-tools.html" class="is-active">AtlasStudio</a>
+          <a href="../octopus.html">Octopus in Action</a>
+          <a href="../about.html">About</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- TOP BAND -->
+  <div class="as-top-band">
+    <div class="as-top-band-inner">
+      <div class="as-top-pill">ATLASSTUDIO — DASHBOARD MOCK</div>
+      <div class="as-top-pill">FRONT-END ONLY</div>
+    </div>
+  </div>
+
+
+  <!-- MAIN LAYOUT -->
+  <section class="as-layout">
+
+    <!-- ======================
+         LEFT COLUMN
+    ======================= -->
+    <div class="as-column-main">
+
+      <!-- TABS PANEL -->
+      <div class="as-panel">
+
+        <div class="as-panel-header">
+          <div class="as-panel-title">Workflow Tabs</div>
+        </div>
+
+        <div class="as-tablist">
+          <div class="as-tab is-active" data-tab="brainstorm">Brainstorm</div>
+          <div class="as-tab" data-tab="uat">UAT</div>
+          <div class="as-tab" data-tab="review">Review</div>
+          <div class="as-tab" data-tab="patch">Patch</div>
+        </div>
+
+        <div class="as-tab-content">
+          Select a workflow tab to simulate AtlasStudio’s production pipeline.
+          All components below are visual-only — no data is saved.
+        </div>
+
+      </div>
+
+
+      <!-- TOGGLES PANEL -->
+      <div class="as-panel">
+
+        <div class="as-panel-header">
+          <div class="as-panel-title">Toggles / Options</div>
+        </div>
+
+        <div class="as-toggles">
+
+          <div class="as-toggle">
+            <div>
+              <div class="as-toggle-label">Enable AI Suggestions</div>
+              <div class="as-toggle-hint">Simulates suggestion mode</div>
+            </div>
+            <div class="as-switch" data-switch>
+              <div class="as-switch-thumb"></div>
+            </div>
+          </div>
+
+          <div class="as-toggle">
+            <div>
+              <div class="as-toggle-label">Allow Experimental Features</div>
+              <div class="as-toggle-hint">Purely visual</div>
+            </div>
+            <div class="as-switch" data-switch>
+              <div class="as-switch-thumb"></div>
+            </div>
+          </div>
+
+          <div class="as-toggle">
+            <div>
+              <div class="as-toggle-label">Show Debug Overlay</div>
+              <div class="as-toggle-hint">No actual debug data</div>
+            </div>
+            <div class="as-switch" data-switch>
+              <div class="as-switch-thumb"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- PATCH SIM -->
+      <div class="as-panel">
+
+        <div class="as-panel-header">
+          <div class="as-panel-title">Patch Simulation</div>
+        </div>
+
+        <p class="as-panel-subtitle">
+          Press “Run Patch” to show the fake progress bar animation.
+          This does not save or deploy anything.
+        </p>
+
+        <div class="af-hero-actions">
+          <button class="af-btn af-btn-primary" id="runPatchBtn">Run Patch</button>
+          <button class="af-btn af-btn-ghost" id="resetPatchBtn">Reset</button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ======================
+         RIGHT COLUMN
+    ======================= -->
+    <div class="as-column-preview">
+
+      <div class="as-preview-card">
+
+        <!-- Header -->
+        <div class="as-preview-header">
+          <div class="as-preview-title">Preview Panel</div>
+          <div class="as-preview-meta">Mock Only</div>
+        </div>
+
+        <!-- Fake viewport -->
+        <div class="as-preview-viewport" id="previewViewport">
+          Right-side preview panel — shows the current workflow mode and patch status.
+        </div>
+
+        <!-- Fake patch progress -->
+        <div class="as-progress-shell" id="progressShell" style="display:none;">
+
+          <div class="as-progress-label-row">
+            <div>Applying Patch…</div>
+            <div id="progressPercent">46%</div>
+          </div>
+
+          <div class="as-progress-bar">
+            <div class="as-progress-bar-fill" id="progressFill"></div>
+          </div>
+
+        </div>
+
+        <div class="as-preview-actions">
+          <a class="af-btn af-btn-secondary" href="index.html">Back to Welcome</a>
+          <a class="af-btn af-btn-ghost" href="gallery.html">Open Gallery</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="af-section">
+    <div class="af-container" style="text-align:center; color: var(--af-text-muted); font-size: 0.85rem;">
+      © 2025 AtlasForge Interactive. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

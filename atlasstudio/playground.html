@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AtlasStudio Dashboard Mock</title>
+  <title>AtlasStudio — Fake Workstation</title>
 
   <link rel="stylesheet" href="../styles/main.css" />
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
   <script src="../scripts/playground.js" defer></script>
 </head>
 
-<body class="theme-dark as-shell">
+<body class="theme-dark as-body">
 
   <!-- HEADER -->
   <header class="af-header af-header-compact">
@@ -24,6 +24,7 @@
         </a>
 
         <div class="af-nav-links">
+          <a href="../index.html">Home</a>
           <a href="../atlasv.html">Atlas-V</a>
           <a href="../studio-tools.html" class="is-active">AtlasStudio</a>
           <a href="../octopus.html">Octopus in Action</a>
@@ -35,154 +36,234 @@
   </header>
 
 
-  <!-- TOP BAND -->
-  <div class="as-top-band">
-    <div class="as-top-band-inner">
-      <div class="as-top-pill">ATLASSTUDIO — DASHBOARD MOCK</div>
-      <div class="as-top-pill">FRONT-END ONLY</div>
+  <!-- MAIN WORKSTATION -->
+  <main class="af-section as-workstation">
+    <div class="af-container">
+
+      <!-- Header Bar -->
+      <div class="as-header-bar">
+        <div>
+          <div class="as-header-title">AtlasStudio Workstation</div>
+          <div class="as-header-sub">Front-end prototype only. No files are saved. No builds are deployed.</div>
+        </div>
+        <div class="as-header-pills">
+          <span class="as-pill">Mode: Sandbox</span>
+          <span class="as-pill">Builds: Visual Only</span>
+          <span class="as-pill">Status: No Deploys</span>
+        </div>
+      </div>
+
+      <!-- Toggles Bar -->
+      <div class="as-toggle-bar">
+        <div class="as-toggle" data-toggle="aiSuggestions">
+          <div class="as-toggle-label">Enable AI Suggestions</div>
+          <div class="as-toggle-switch" role="switch" aria-label="AI Suggestions">
+            <div class="as-toggle-thumb"></div>
+          </div>
+        </div>
+        <div class="as-toggle" data-toggle="experimentalFeatures">
+          <div class="as-toggle-label">Allow Experimental Features</div>
+          <div class="as-toggle-switch" role="switch" aria-label="Experimental Features">
+            <div class="as-toggle-thumb"></div>
+          </div>
+        </div>
+        <div class="as-toggle" data-toggle="debugOverlay">
+          <div class="as-toggle-label">Show Debug Overlay</div>
+          <div class="as-toggle-switch" role="switch" aria-label="Debug Overlay">
+            <div class="as-toggle-thumb"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="as-grid">
+
+        <!-- LEFT PANEL -->
+        <section class="as-left-panel as-panel">
+
+          <div class="as-section">
+            <div class="as-section-header">
+              <div class="as-section-title">Workflow Tabs</div>
+              <div class="as-section-sub">Switch between simulated phases.</div>
+            </div>
+            <div class="as-tabs" id="workflowTabs">
+              <button class="as-tab" data-workflow="brainstorm">Brainstorm</button>
+              <button class="as-tab" data-workflow="uat">UAT</button>
+              <button class="as-tab" data-workflow="review">Review</button>
+              <button class="as-tab" data-workflow="patch">Patch</button>
+            </div>
+          </div>
+
+          <div class="as-section">
+            <div class="as-section-header">
+              <div>
+                <div class="as-section-title">Project Explorer</div>
+                <div class="as-section-sub">Click to swap the fake code viewer.</div>
+              </div>
+              <div class="as-explorer-actions">
+                <button type="button" class="as-link-btn" id="expandAll">Expand All</button>
+                <button type="button" class="as-link-btn" id="collapseAll">Collapse All</button>
+                <input type="text" class="as-search" placeholder="Filter (visual only)" aria-label="Filter explorer" />
+              </div>
+            </div>
+
+            <div class="as-explorer" id="fileExplorer">
+              <div class="as-folder">
+                <div class="as-folder-label">/atlasforge-site-v2</div>
+                <div class="as-folder-children">
+                  <div class="as-folder">
+                    <div class="as-folder-label">/atlasstudio</div>
+                    <div class="as-folder-children">
+                      <div class="as-file" data-file="atlasstudio/playground.html">playground.html</div>
+                      <div class="as-file" data-file="atlasstudio/atlasstudio.css">atlasstudio.css</div>
+                      <div class="as-file" data-file="atlasstudio/playground.js">playground.js</div>
+                    </div>
+                  </div>
+                  <div class="as-folder">
+                    <div class="as-folder-label">/scripts</div>
+                    <div class="as-folder-children">
+                      <div class="as-file" data-file="scripts/main.js">main.js</div>
+                    </div>
+                  </div>
+                  <div class="as-folder">
+                    <div class="as-folder-label">/styles</div>
+                    <div class="as-folder-children">
+                      <div class="as-file" data-file="styles/main.css">main.css</div>
+                    </div>
+                  </div>
+                  <div class="as-folder">
+                    <div class="as-folder-label">/docs</div>
+                    <div class="as-folder-children">
+                      <div class="as-file" data-file="docs/atlas-notes.md">atlas-notes.md</div>
+                      <div class="as-file" data-file="docs/oia-design.md">oia-design.md</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- CENTER PANEL -->
+        <section class="as-center-panel as-panel">
+
+          <div class="as-section">
+            <div class="as-section-header">
+              <div>
+                <div class="as-section-title">Code Viewer</div>
+                <div class="as-section-sub">Active file: <span id="activeFilePath">atlasstudio/playground.html</span></div>
+              </div>
+              <span class="as-chip">READ-ONLY</span>
+            </div>
+
+            <div class="as-code-viewer" id="codeViewer">
+              <div class="as-code-lines" id="codeLines"></div>
+            </div>
+          </div>
+
+          <div class="as-section as-module">
+            <div class="as-section-header">
+              <div>
+                <div class="as-section-title">Module Generator (Simulated)</div>
+                <div class="as-section-sub">Pretends to generate modules using an AI engine. No real code is saved.</div>
+              </div>
+            </div>
+
+            <form class="as-form" id="moduleForm">
+              <label class="as-form-control">
+                <span>Module Type</span>
+                <select id="moduleType">
+                  <option value="map">Map</option>
+                  <option value="npc">NPC</option>
+                  <option value="dialogue">Dialogue</option>
+                  <option value="system">System</option>
+                  <option value="ui">UI</option>
+                </select>
+              </label>
+
+              <label class="as-form-control">
+                <span>Target Project</span>
+                <select id="moduleTarget">
+                  <option value="studio">AtlasStudio</option>
+                  <option value="engine">Atlas-V Engine</option>
+                  <option value="octopus">Octopus in Action</option>
+                </select>
+              </label>
+
+              <label class="as-form-control as-form-textarea">
+                <span>Prompt (visual only)</span>
+                <textarea id="modulePrompt" rows="3" placeholder="Describe the fake module you want to visualize..."></textarea>
+              </label>
+
+              <div class="as-form-actions">
+                <button type="submit" class="af-btn af-btn-primary" id="generateModule">Generate Module Draft</button>
+                <span class="as-small-hint" id="moduleStatus">Waiting for a mock request…</span>
+              </div>
+            </form>
+          </div>
+
+        </section>
+
+        <!-- RIGHT PANEL -->
+        <section class="as-right-panel as-panel">
+
+          <div class="as-section">
+            <div class="as-section-header">
+              <div class="as-section-title">Build Console</div>
+              <div class="as-section-sub">Simulated Logs</div>
+            </div>
+            <div class="as-console-actions">
+              <button class="af-btn af-btn-secondary" id="clearLog">Clear Log</button>
+              <label class="as-verbose">
+                <input type="checkbox" id="verboseToggle" />
+                <span>Verbose</span>
+              </label>
+            </div>
+            <div class="as-console" id="buildConsole"></div>
+          </div>
+
+          <div class="as-section">
+            <div class="as-section-header">
+              <div>
+                <div class="as-section-title">Viewport Preview</div>
+                <div class="as-section-sub">Shows the simulated workstation state.</div>
+              </div>
+            </div>
+
+            <div class="as-preview">
+              <div class="as-preview-chips">
+                <span class="as-chip" id="chipWorkflow">Workflow: Brainstorm</span>
+                <span class="as-chip" id="chipSelectedFile">File: atlasstudio/playground.html</span>
+                <span class="as-chip" id="chipPatch">Patch: Idle</span>
+              </div>
+              <div class="as-preview-flags">
+                <span class="as-flag" id="flagAI">AI Suggestions: ON</span>
+                <span class="as-flag" id="flagExperimental">Experimental: OFF</span>
+                <span class="as-flag" id="flagDebug">Debug: OFF</span>
+              </div>
+
+              <div class="as-preview-window">
+                <div class="as-preview-title" id="previewTitle">Brainstorm Canvas</div>
+                <div class="as-preview-body" id="previewBody">
+                  Sticky ideas and ghost notes appear here. Visual only.
+                </div>
+              </div>
+
+              <div class="as-patch-controls">
+                <div class="as-patch-status" id="patchStatus">Patch runner: Idle</div>
+                <div class="as-button-row">
+                  <button class="af-btn af-btn-primary" id="runPatch">Run Patch</button>
+                  <button class="af-btn af-btn-ghost" id="resetPatch">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
     </div>
-  </div>
-
-
-  <!-- MAIN LAYOUT -->
-  <section class="as-layout">
-
-    <!-- ======================
-         LEFT COLUMN
-    ======================= -->
-    <div class="as-column-main">
-
-      <!-- TABS PANEL -->
-      <div class="as-panel">
-
-        <div class="as-panel-header">
-          <div class="as-panel-title">Workflow Tabs</div>
-        </div>
-
-        <div class="as-tablist">
-          <div class="as-tab is-active" data-tab="brainstorm">Brainstorm</div>
-          <div class="as-tab" data-tab="uat">UAT</div>
-          <div class="as-tab" data-tab="review">Review</div>
-          <div class="as-tab" data-tab="patch">Patch</div>
-        </div>
-
-        <div class="as-tab-content">
-          Select a workflow tab to simulate AtlasStudio’s production pipeline.
-          All components below are visual-only — no data is saved.
-        </div>
-
-      </div>
-
-
-      <!-- TOGGLES PANEL -->
-      <div class="as-panel">
-
-        <div class="as-panel-header">
-          <div class="as-panel-title">Toggles / Options</div>
-        </div>
-
-        <div class="as-toggles">
-
-          <div class="as-toggle">
-            <div>
-              <div class="as-toggle-label">Enable AI Suggestions</div>
-              <div class="as-toggle-hint">Simulates suggestion mode</div>
-            </div>
-            <div class="as-switch" data-switch>
-              <div class="as-switch-thumb"></div>
-            </div>
-          </div>
-
-          <div class="as-toggle">
-            <div>
-              <div class="as-toggle-label">Allow Experimental Features</div>
-              <div class="as-toggle-hint">Purely visual</div>
-            </div>
-            <div class="as-switch" data-switch>
-              <div class="as-switch-thumb"></div>
-            </div>
-          </div>
-
-          <div class="as-toggle">
-            <div>
-              <div class="as-toggle-label">Show Debug Overlay</div>
-              <div class="as-toggle-hint">No actual debug data</div>
-            </div>
-            <div class="as-switch" data-switch>
-              <div class="as-switch-thumb"></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- PATCH SIM -->
-      <div class="as-panel">
-
-        <div class="as-panel-header">
-          <div class="as-panel-title">Patch Simulation</div>
-        </div>
-
-        <p class="as-panel-subtitle">
-          Press “Run Patch” to show the fake progress bar animation.
-          This does not save or deploy anything.
-        </p>
-
-        <div class="af-hero-actions">
-          <button class="af-btn af-btn-primary" id="runPatchBtn">Run Patch</button>
-          <button class="af-btn af-btn-ghost" id="resetPatchBtn">Reset</button>
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- ======================
-         RIGHT COLUMN
-    ======================= -->
-    <div class="as-column-preview">
-
-      <div class="as-preview-card">
-
-        <!-- Header -->
-        <div class="as-preview-header">
-          <div class="as-preview-title">Preview Panel</div>
-          <div class="as-preview-meta">Mock Only</div>
-        </div>
-
-        <!-- Fake viewport -->
-        <div class="as-preview-viewport" id="previewViewport">
-          Right-side preview panel — shows the current workflow mode and patch status.
-        </div>
-
-        <!-- Fake patch progress -->
-        <div class="as-progress-shell" id="progressShell" style="display:none;">
-
-          <div class="as-progress-label-row">
-            <div>Applying Patch…</div>
-            <div id="progressPercent">46%</div>
-          </div>
-
-          <div class="as-progress-bar">
-            <div class="as-progress-bar-fill" id="progressFill"></div>
-          </div>
-
-        </div>
-
-        <div class="as-preview-actions">
-          <a class="af-btn af-btn-secondary" href="index.html">Back to Welcome</a>
-          <a class="af-btn af-btn-ghost" href="gallery.html">Open Gallery</a>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
+  </main>
 
   <!-- FOOTER -->
   <footer class="af-section">

@@ -99,13 +99,13 @@
     </div>
 
     <!-- Route tabs -->
-    <div class="as-route-tabs" role="tablist">
-      <button class="as-route-tab is-active" type="button" data-screen="browser" role="tab" aria-selected="true">Browser</button>
-      <button class="as-route-tab" type="button" data-screen="uat" role="tab">UAT</button>
-      <button class="as-route-tab" type="button" data-screen="review" role="tab">Review</button>
-      <button class="as-route-tab" type="button" data-screen="patch" role="tab">Patch</button>
-      <button class="as-route-tab" type="button" data-screen="dev" role="tab">Dev</button>
-    </div>
+      <div class="as-route-tabs" role="tablist">
+        <button class="as-route-tab is-active" type="button" data-screen="browser" role="tab" aria-selected="true" tabindex="0">Browser</button>
+        <button class="as-route-tab" type="button" data-screen="uat" role="tab" aria-selected="false" tabindex="-1">UAT</button>
+        <button class="as-route-tab" type="button" data-screen="review" role="tab" aria-selected="false" tabindex="-1">Review</button>
+        <button class="as-route-tab" type="button" data-screen="patch" role="tab" aria-selected="false" tabindex="-1">Patch</button>
+        <button class="as-route-tab" type="button" data-screen="dev" role="tab" aria-selected="false" tabindex="-1">Dev</button>
+      </div>
 
     <div class="as-screen-stack">
       <!-- Gallery Browser Screen -->

@@ -177,12 +177,14 @@ function updateStatusBar() {
   qs('#decisionApprovals')?.textContent = String(appState.decisions.approvals);
 }
 
-function setActiveRouteTab(screen) {
-  qsa('.as-route-tab').forEach((tab) => {
-    tab.classList.toggle('is-active', tab.getAttribute('data-screen') === screen);
-    tab.setAttribute('aria-selected', tab.classList.contains('is-active'));
-  });
-}
+  function setActiveRouteTab(screen) {
+    qsa('.as-route-tab').forEach((tab) => {
+      tab.classList.toggle('is-active', tab.getAttribute('data-screen') === screen);
+      const isActive = tab.classList.contains('is-active');
+      tab.setAttribute('aria-selected', isActive);
+      tab.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+  }
 
 function handleScreenMode(screen) {
   const modeMap = {

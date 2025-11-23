@@ -1,0 +1,228 @@
+/* /styles/atlasstudio.css */
+/* AtlasStudio prototype dashboard visuals */
+
+/* Shell layout */
+.as-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(167, 212, 255, 0.06), transparent 55%),
+    radial-gradient(circle at bottom left, rgba(242, 159, 58, 0.08), transparent 60%),
+    #05070D;
+  color: var(--af-text-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+}
+
+.as-shell .af-header {
+  background: linear-gradient(to right, rgba(11,14,23,0.98), rgba(26,35,52,0.96));
+}
+
+/* Top band inside dashboard */
+.as-top-band {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(to right, rgba(242, 159, 58, 0.12), rgba(226, 107, 228, 0.12));
+  padding: 12px 0;
+  margin-bottom: 20px;
+}
+
+.as-top-band-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.as-top-pill {
+  background: rgba(255,255,255,0.06);
+  padding: 6px 12px;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: var(--af-text-muted);
+}
+
+/* Layout */
+.as-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 18px 60px;
+  display: grid;
+  grid-template-columns: 1fr 330px;
+  gap: 24px;
+}
+
+/* Panels */
+.as-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+.as-panel-header {
+  margin-bottom: 10px;
+}
+
+.as-panel-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--af-text-main);
+}
+
+.as-panel-subtitle {
+  color: var(--af-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Tabs */
+.as-tablist {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.as-tab {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--af-text-muted);
+}
+
+.as-tab.is-active {
+  background: linear-gradient(to right, rgba(242,159,58,0.3), rgba(226,107,228,0.3));
+  color: #fff;
+}
+
+.as-tab-content {
+  font-size: 0.85rem;
+  color: var(--af-text-muted);
+}
+
+/* Toggle switches */
+.as-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.as-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.as-toggle-label {
+  font-size: 0.9rem;
+  color: var(--af-text-main);
+}
+
+.as-toggle-hint {
+  font-size: 0.75rem;
+  color: var(--af-text-muted);
+}
+
+/* Switch */
+.as-switch {
+  width: 42px;
+  height: 22px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.as-switch-thumb {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+}
+
+.as-switch.is-on {
+  background: linear-gradient(to right, #F29F3A, #E26BE4);
+}
+
+.as-switch.is-on .as-switch-thumb {
+  transform: translateX(20px);
+}
+
+/* Preview panel */
+.as-column-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.as-preview-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+  padding: 0 0 20px;
+}
+
+.as-preview-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(to right, rgba(11,14,23,0.95), rgba(26,35,52,0.95));
+  border-radius: 14px 14px 0 0;
+}
+
+.as-preview-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.as-preview-meta {
+  font-size: 0.75rem;
+  color: var(--af-text-muted);
+}
+
+.as-preview-viewport {
+  padding: 20px 18px;
+  min-height: 140px;
+  font-size: 0.9rem;
+  color: var(--af-text-muted);
+}
+
+/* Patch progress */
+.as-progress-shell {
+  margin-top: 10px;
+  padding: 14px 18px;
+}
+
+.as-progress-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--af-text-muted);
+  margin-bottom: 6px;
+}
+
+.as-progress-bar {
+  background: rgba(255,255,255,0.06);
+  height: 8px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.as-progress-bar-fill {
+  height: 8px;
+  width: 0%;
+  background: linear-gradient(to right, #F29F3A, #E26BE4);
+  transition: width 0.2s ease;
+}
+
+/* Secondary actions */
+.as-preview-actions {
+  padding: 0 18px;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}

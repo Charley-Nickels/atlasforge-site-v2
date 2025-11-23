@@ -83,6 +83,94 @@ class ScreenManager {
         prev.style.display = 'none';
       }, 120);
     }
+    const mark = document.createElement("span");
+    mark.className = "as-highlight";
+    mark.textContent = match[0];
+    fragment.append(mark);
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    fragment.append(document.createTextNode(text.slice(lastIndex)));
+  }
+
+  return fragment;
+}
+
+function collectFolderPaths(node, acc = []) {
+  if (node.type === "folder") {
+    acc.push(node.path);
+    (node.children || []).forEach((child) => collectFolderPaths(child, acc));
+  }
+  return acc;
+}
+
+function expandAncestors(filePath) {
+  const parts = filePath.split("/");
+  state.expandedFolders.add(state.explorerTree.path);
+  let current = "";
+  for (let i = 0; i < parts.length - 1; i += 1) {
+    current += `/${parts[i]}`;
+    state.expandedFolders.add(current);
+  }
+}
+
+function randomFrom(list) {
+  if (!Array.isArray(list) || !list.length) return null;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function resolveFileType(filePath) {
+  const lower = (filePath || "").toLowerCase();
+  if (lower.endsWith(".html")) return { label: "HTML", mode: "html" };
+  if (lower.endsWith(".css")) return { label: "CSS", mode: "css" };
+  if (lower.endsWith(".js")) return { label: "JS", mode: "js" };
+  if (lower.endsWith(".md")) return { label: "Markdown", mode: "md" };
+  if (lower.endsWith(".mock")) return { label: "Mock Module", mode: "mock" };
+  return { label: "Text", mode: "text" };
+}
+
+function applySyntaxHighlight(line, mode) {
+  const escaped = escapeHTML(line);
+  if (!escaped.trim()) return "";
+
+  if (mode === "html") {
+    let htmlLine = escaped;
+    htmlLine = htmlLine.replace(/(&lt;!--.*?--&gt;)/g, '<span class="as-code-token as-code-comment">$1</span>');
+    htmlLine = htmlLine.replace(
+      /(&lt;\/?)([a-z0-9-]+)([^&]*?&gt;)/gi,
+      (match, p1, p2, p3) => `${p1}<span class="as-code-token as-code-tag">${p2}</span>${p3}`
+    );
+    htmlLine = htmlLine.replace(
+      /([a-z-:]+)=(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;)/gi,
+      '<span class="as-code-token as-code-attr">$1</span>=<span class="as-code-token as-code-string">$2</span>'
+    );
+    return htmlLine;
+  }
+
+  if (mode === "css") {
+    let cssLine = escaped;
+    cssLine = cssLine.replace(/(\/\*.*?\*\/)/g, '<span class="as-code-token as-code-comment">$1</span>');
+    cssLine = cssLine.replace(
+      /([a-z-]+)(\s*:\s*)([^;{}]+)/gi,
+      '<span class="as-code-token as-code-attr">$1</span>$2<span class="as-code-token as-code-string">$3</span>'
+    );
+    return cssLine;
+  }
+
+  if (mode === "js" || mode === "mock") {
+    let jsLine = escaped;
+    jsLine = jsLine.replace(/(\/\/.*)/g, '<span class="as-code-token as-code-comment">$1</span>');
+    jsLine = jsLine.replace(
+      /(&quot;.*?&quot;|&#39;.*?&#39;)/g,
+      '<span class="as-code-token as-code-string">$1</span>'
+    );
+    jsLine = jsLine.replace(
+      /\b(const|let|function|return|import|export|if|else)\b/g,
+      '<span class="as-code-token as-code-keyword">$1</span>'
+    );
+    return jsLine;
+  }
 
     next.style.display = 'block';
     requestAnimationFrame(() => {
@@ -212,6 +300,93 @@ function initRouteTabs(manager) {
       manager.show(target);
       notify?.info(`Switched to ${screenLabels[target] || target}`);
     });
+  }
+}
+
+function startModuleStatusAnimation() {
+  if (state.moduleStatusTimer) {
+    clearInterval(state.moduleStatusTimer);
+  }
+  let tick = 0;
+  renderModuleStatus("Generating... (visual only)");
+  state.moduleStatusTimer = setInterval(() => {
+    tick = (tick + 1) % 3;
+    const dots = ".".repeat(tick + 1);
+    renderModuleStatus(`Generating${dots} (visual only)`);
+  }, 320);
+}
+
+function stopModuleStatusAnimation(finalMessage) {
+  if (state.moduleStatusTimer) {
+    clearInterval(state.moduleStatusTimer);
+    state.moduleStatusTimer = null;
+  }
+  renderModuleStatus(finalMessage);
+}
+
+function renderConsole() {
+  const consoleEl = qs("#buildConsole");
+  if (!consoleEl) return;
+  const shouldStick = consoleEl.scrollTop + consoleEl.clientHeight >= consoleEl.scrollHeight - 5;
+  consoleEl.innerHTML = "";
+
+  const createLine = (entry) => {
+    const line = document.createElement("div");
+    line.className = "as-console-line enter";
+    line.dataset.level = entry.level || "INFO";
+    line.textContent = `[${entry.timestamp || formatTimestamp()}] [${entry.level || "INFO"}] ${entry.text}`;
+    setTimeout(() => line.classList.remove("enter"), 400);
+    return line;
+  };
+
+  let currentGroup = null;
+  let groupBody = null;
+
+  state.consoleLogs.forEach((entry) => {
+    if (entry.verboseOnly && !state.verbose) return;
+
+    if (entry.group) {
+      if (entry.group !== currentGroup) {
+        currentGroup = entry.group;
+        const groupWrapper = document.createElement("div");
+        groupWrapper.className = "as-console-group";
+
+        const header = document.createElement("div");
+        header.className = "as-console-group-header";
+        const caret = document.createElement("span");
+        caret.className = "as-console-group-caret";
+        const title = document.createElement("span");
+        title.className = "as-console-group-title";
+        title.textContent = entry.group;
+        header.append(caret, title);
+
+        const body = document.createElement("div");
+        body.className = "as-console-group-body";
+
+        const isCollapsed = Boolean(state.consoleGroups[entry.group]);
+        if (isCollapsed) {
+          groupWrapper.classList.add("is-collapsed");
+          body.style.display = "none";
+        }
+
+        header.addEventListener("click", () => {
+          const next = !state.consoleGroups[entry.group];
+          state.consoleGroups[entry.group] = next;
+          groupWrapper.classList.toggle("is-collapsed", next);
+          body.style.display = next ? "none" : "";
+        });
+
+        groupWrapper.append(header, body);
+        consoleEl.appendChild(groupWrapper);
+        groupBody = body;
+      }
+
+      groupBody.appendChild(createLine(entry));
+    } else {
+      currentGroup = null;
+      groupBody = null;
+      consoleEl.appendChild(createLine(entry));
+    }
   });
 }
 
@@ -330,6 +505,8 @@ function initSwitches() {
       persistState();
       updateStatusBar();
     });
+
+    codeLines.appendChild(lineEl);
   });
 }
 

@@ -1,255 +1,424 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Octopus in Action · Harbor-Town Simulation · AtlasForge Interactive</title>
+  <meta charset="utf-8" />
+  <title>Octopus in Action – Harbor City World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta
     name="description"
-    content="Octopus in Action is a cozy harbor-town simulation led by a gentleman octopus mayor. Built as the flagship world for the AtlasForge stack."
+    content="Octopus in Action is a harbor-city world built around neighborhoods, routes, and task networks that plug into the AtlasForge stack."
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles/tokens.css" />
+
   <link rel="stylesheet" href="styles/main.css" />
-  <script src="scripts/main.js" defer></script>
+  <link rel="stylesheet" href="styles/marketing.css" />
+
+  <!-- World-specific inline styling for the mailbox/task UI -->
+  <style>
+    .oia-mail-list {
+      list-style: none;
+      margin: 0.6rem 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+    }
+
+    .oia-mail-item {
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 0.4rem 0.55rem;
+      background: rgba(12, 10, 8, 0.85);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
+    }
+
+    .oia-mail-item:hover {
+      background: rgba(18, 14, 10, 0.96);
+      border-color: rgba(255, 138, 38, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .oia-mail-item--active {
+      border-color: rgba(255, 138, 38, 0.85);
+      box-shadow:
+        0 0 18px rgba(255, 138, 38, 0.5),
+        0 10px 26px rgba(0, 0, 0, 0.85);
+      background: radial-gradient(circle at left, rgba(255, 138, 38, 0.25), transparent 65%);
+    }
+
+    .oia-mail-title {
+      font-weight: 600;
+    }
+
+    .oia-mail-meta {
+      color: var(--mf-text-mute);
+    }
+
+    .oia-task-detail {
+      font-size: 0.84rem;
+      color: var(--mf-text-soft);
+      margin-top: 0.4rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 0.7rem 0.8rem;
+      background:
+        radial-gradient(circle at top left, rgba(255, 138, 38, 0.18), transparent 70%),
+        #151320;
+      box-shadow: var(--mf-shadow-tight);
+      display: none;
+    }
+
+    .oia-task-detail--active {
+      display: block;
+    }
+
+    .oia-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+    }
+
+    .oia-tag {
+      font-size: 0.74rem;
+      padding: 0.14rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(7, 5, 3, 0.9);
+      color: var(--mf-text-mute);
+    }
+  </style>
 </head>
-<body class="af-page af-theme-oia">
-  <!-- HEADER -->
-  <header class="af-header">
-    <div class="af-container">
-      <div class="af-header-inner">
-        <a href="index.html" class="af-brand">
-          <div class="af-brand-mark" aria-hidden="true"></div>
-          <div class="af-brand-text">
-            <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">Octopus in Action · Harbor-Town Sim</span>
-          </div>
-        </a>
 
-        <nav class="af-nav" aria-label="Primary navigation">
-          <a href="index.html" data-af-nav>Home</a>
-          <a href="studio-tools.html" data-af-nav>Studio</a>
-          <a href="atlasv.html" data-af-nav>Atlas-V</a>
-          <a href="games.html" data-af-nav>Games</a>
-          <a href="skb.html" data-af-nav>S/K/B</a>
-          <a href="about.html" data-af-nav>About</a>
-        </nav>
+<body class="mf-shell">
+  <!-- ================= HEADER ================= -->
+  <header class="mf-header">
+    <div class="mf-header-inner">
+      <a href="index.html" class="mf-logo">
+        <span class="mf-logo-mark">
+          <img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" />
+        </span>
+        <span class="mf-logo-text">AtlasForge</span>
+      </a>
 
-        <button
-          class="af-nav-toggle"
-          type="button"
-          aria-label="Toggle navigation"
-          id="afNavToggle"
-        >
-          ☰
-        </button>
-      </div>
+      <nav class="mf-nav">
+        <a href="index.html">Home</a>
+        <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V Engine</a>
+        <a class="mf-nav-active" href="octopus.html">Octopus in Action</a>
+        <a href="skb.html">S/K/B Audio Lab</a>
+        <a href="about.html">About</a>
+      </nav>
 
-      <div class="af-nav-mobile" id="afNavMobile">
-        <div class="af-nav-mobile-list">
-          <a href="index.html" data-af-nav>Home</a>
-          <a href="studio-tools.html" data-af-nav>Studio</a>
-          <a href="atlasv.html" data-af-nav>Atlas-V</a>
-          <a href="games.html" data-af-nav>Games</a>
-          <a href="skb.html" data-af-nav>S/K/B</a>
-          <a href="about.html" data-af-nav>About</a>
-        </div>
-      </div>
+      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="af-page-main">
-    <!-- HERO -->
-    <section class="af-hero">
-      <div class="af-container">
-        <div class="af-hero-inner">
-          <div>
-            <div class="af-hero-eyebrow-row">
-              <span class="af-pill">
-                <span class="af-pill-dot"></span>
-                Octopus in Action
-              </span>
-              <span class="af-pill af-pill--glow">
-                Cozy harbor sim · Gentle civic chaos
-              </span>
-            </div>
+  <main class="mf-main">
 
-            <h1 class="af-hero-title">
-              A small harbor, a <span>gentleman octopus</span>, and a town full of decisions.
-            </h1>
+    <!-- ================= HERO ================= -->
+    <section class="mf-hero mf-hero--oia mf-section">
+      <div class="mf-hero-inner">
 
-            <p class="af-hero-sub">
-              Octopus in Action is a simulation about running a harbor-town
-              where every task, schedule, and civic choice nudges the story.
-              You’re working with (and occasionally against) Mayor Octavius —
-              a polite octopus in a top hat — to keep the town alive.
-            </p>
+        <div class="mf-hero-body">
+          <div class="mf-hero-body-eyebrow">World · Harbor City</div>
+          <h1>Octopus in Action is a coastal city built out of tasks and routes.</h1>
 
-            <div class="af-btn-row">
-              <a href="games.html" class="af-btn-primary">
-                Back to games & worlds
-              </a>
-              <a href="studio-tools.html" class="af-btn-ghost">
-                See the tools shaping the harbor
-              </a>
-            </div>
-
-            <p class="af-hero-meta">
-              The game is currently in an early design & prototype phase. This
-              page captures the tone, systems, and role it plays inside the
-              AtlasForge stack.
-            </p>
-          </div>
-
-          <aside class="af-surface">
-            <header class="af-section-header">
-              <p class="af-kicker">The pitch</p>
-              <h2 class="af-section-title">Cozy, systemic, quietly weird.</h2>
-              <p class="af-section-sub">
-                OIA treats work, civic life, and relationships as first-class
-                gameplay. It’s not about saving the world in one big moment —
-                it’s about thousands of small, reversible decisions.
-              </p>
-            </header>
-
-            <div class="af-grid-2">
-              <article class="af-card af-card--soft">
-                <h3 class="af-card-title">Core loop</h3>
-                <p class="af-card-sub">
-                  Your day starts at the mailbox and ends with how the town
-                  feels at night.
-                </p>
-                <ul class="af-list">
-                  <li>Check mailbox for civic tasks and requests</li>
-                  <li>Visit city hall, docks, market, and homes</li>
-                  <li>See how people’s routines drift over time</li>
-                </ul>
-              </article>
-
-              <article class="af-card af-card--soft">
-                <h3 class="af-card-title">Atmosphere</h3>
-                <p class="af-card-sub">
-                  Gentle pacing, warm colors, and small dramas instead of
-                  constant crisis.
-                </p>
-                <ul class="af-list">
-                  <li>Morning fog and quiet streets</li>
-                  <li>Midday bustle at docks and markets</li>
-                  <li>Soft, reflective nights on the pier</li>
-                </ul>
-              </article>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- MAYOR & TOWN -->
-    <section class="af-section">
-      <div class="af-container af-split">
-        <div>
-          <header class="af-section-header">
-            <p class="af-kicker">Mayor & town</p>
-            <h2 class="af-section-title">Mayor Octavius & the harbor citizens.</h2>
-            <p class="af-section-sub">
-              The town is small enough that everyone matters. Octavius isn’t a
-              perfect leader — he’s trying, learning, and occasionally messing
-              up in public, just like you.
-            </p>
-          </header>
-
-          <ul class="af-list">
-            <li>
-              <strong>Mayor Octavius:</strong> kind, a little dramatic, deeply
-              invested in keeping things fair.
-            </li>
-            <li>
-              <strong>Dock workers & shop owners:</strong> they care more about
-              whether they can pay rent than grand speeches.
-            </li>
-            <li>
-              <strong>Families & night workers:</strong> live on the other side
-              of your decisions about noise, schedules, and resources.
-            </li>
-          </ul>
-        </div>
-
-        <aside class="af-card af-card--soft">
-          <h3 class="af-card-title">Types of choices</h3>
-          <p class="af-card-sub">
-            The game focuses on choices that feel small but compound over time:
+          <p>
+            The world is centered on a working harbor, sleepy neighborhoods, and the
+            small systems that keep everything moving—deliveries, patrols, markets,
+            and the occasional bit of trouble.
           </p>
-          <ul class="af-list">
-            <li>Which boats get dawn access to the docks?</li>
-            <li>Who gets warned vs. fined for small infractions?</li>
-            <li>How strict should curfews and noise rules be?</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
 
-    <!-- ENGINE & STACK CONNECTION -->
-    <section class="af-section af-section--compact">
-      <div class="af-container af-split">
-        <div>
-          <header class="af-section-header">
-            <p class="af-kicker">Under the hood</p>
-            <h2 class="af-section-title">OIA as a testbed for Atlas-V.</h2>
-            <p class="af-section-sub">
-              Every mailbox task, city hall decision, and NPC schedule is an
-              excuse to test how Atlas-V handles routing, memory, and guard rails.
-            </p>
-          </header>
-
-          <ul class="af-list">
-            <li>Atlas-V decides which tasks surface first and why.</li>
-            <li>Memory tracks what the town “remembers” you doing.</li>
-            <li>Guard prevents no-win spirals or permanent soft locks.</li>
-            <li>FlowSim explores alternate futures behind the scenes.</li>
-          </ul>
-        </div>
-
-        <aside class="af-card af-card--soft">
-          <h3 class="af-card-title">Tools behind the game</h3>
-          <p class="af-card-sub">
-            OIA is being designed alongside the AtlasStudio workstation:
+          <p>
+            Under the hood, those stories look like structured work: queues, chains,
+            routes, and snapshots that align with the AtlasForge stack.
           </p>
-          <ul class="af-list">
-            <li>Brainstorm panel for new loops and systems</li>
-            <li>UAT checklists for tasks and schedules</li>
-            <li>Patch notes that talk like the game, not a changelog</li>
-          </ul>
 
-          <div class="af-btn-row" style="margin-top:10px;">
-            <a href="studio-tools.html" class="af-btn-primary">
-              Visit AtlasStudio
+          <div class="mf-hero-actions">
+            <a class="mf-button mf-button--primary" href="atlasstudio/playground.html">
+              View OIA flows in AtlasStudio
+            </a>
+            <a class="mf-button mf-button--ghost" href="atlasv.html">
+              See how Atlas-V models the city
             </a>
           </div>
+
+          <div class="mf-hero-subnote">
+            Neighborhoods, docks, routes, and story events all become engine-friendly tasks.
+          </div>
+        </div>
+
+        <aside class="mf-hero-visual">
+          <h2>World identity</h2>
+          <p>
+            Warm orange, harbor lights, and a soft-lined mascot define the OIA look.
+          </p>
+          <p>
+            <img
+              src="assets/logos/transpOIA3.png"
+              alt="Octopus in Action logo"
+              style="width: 130px; opacity: 0.96; margin-top: 0.6rem;"
+            />
+          </p>
         </aside>
+
       </div>
     </section>
+
+    <!-- ================= WORLD OVERVIEW ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Setting</div>
+        <h2>A compact harbor city with dense systems.</h2>
+        <p>
+          The map is small on purpose—every block matters. Each district has its own routes,
+          schedules, and quirks that can be turned into tasks and chains.
+        </p>
+      </header>
+
+      <div class="mf-grid mf-grid--pillars">
+        <article class="mf-card mf-card--oia">
+          <h3>Harbor & docks</h3>
+          <p>
+            Cargo, ferries, night-fishing, and market boats. Routes here define supply,
+            schedules, and risk around weather and timing.
+          </p>
+        </article>
+
+        <article class="mf-card mf-card--oia">
+          <h3>Old town</h3>
+          <p>
+            Narrow streets, stacked apartments, and local shops.
+            Patrols, noise complaints, deliveries, and festivals all share the same streets.
+          </p>
+        </article>
+
+        <article class="mf-card mf-card--oia">
+          <h3>Hills & outskirts</h3>
+          <p>
+            Quieter areas with long roads and vantage points.
+            Great for long-range routes, high-ground events, and slow-burn stories.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= SYSTEMS / LOOPS ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Loops</div>
+        <h2>The city runs on small, repeatable systems.</h2>
+        <p>
+          Each loop is simple on its own—but layered together, they create a living,
+          reactive city perfect for simulation and management-style gameplay.
+        </p>
+      </header>
+
+      <div class="mf-grid mf-grid--workflow">
+        <article class="mf-card mf-card--oia">
+          <h3>Mailbox → Task → Route</h3>
+          <p>
+            Requests appear as letters or signals: deliveries, patrols, inspections, events.
+            They resolve into concrete routes you can track and improve.
+          </p>
+        </article>
+
+        <article class="mf-card mf-card--oia">
+          <h3>Shifts & time blocks</h3>
+          <p>
+            Morning markets, mid-day traffic, evening crowds, and late-night quiet.
+            Time-of-day acts as a natural modifier for risk and reward.
+          </p>
+        </article>
+
+        <article class="mf-card mf-card--oia">
+          <h3>Neighborhood mood</h3>
+          <p>
+            Each district has a mood that responds to recent events: good runs, failures,
+            long waits, or surprise moments.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= MAILBOX & TASK DETAIL ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Tasks</div>
+        <h2>The mailbox is how the city talks to you.</h2>
+        <p>
+          A few example requests from the OIA world, wired up in a mailbox/task layout
+          that matches how AtlasStudio will treat them.
+        </p>
+      </header>
+
+      <div class="mf-grid mf-grid--duo">
+        <!-- Left: Mailbox list -->
+        <article class="mf-card mf-card--oia">
+          <h3>Incoming requests</h3>
+          <p>
+            Pick a letter to see how it becomes a structured task.
+          </p>
+
+          <ul class="oia-mail-list">
+            <li class="oia-mail-item oia-mail-item--active" data-id="harbor-supply">
+              <div class="oia-mail-title">Harbor supply drop running late</div>
+              <div class="oia-mail-meta">Dock A · Incoming from south inlet</div>
+            </li>
+            <li class="oia-mail-item" data-id="night-market">
+              <div class="oia-mail-title">Night market crowd control request</div>
+              <div class="oia-mail-meta">Old Town · Festival lane</div>
+            </li>
+            <li class="oia-mail-item" data-id="hill-incident">
+              <div class="oia-mail-title">Unattended vehicle on hillside road</div>
+              <div class="oia-mail-meta">Hills · Switchback 3</div>
+            </li>
+            <li class="oia-mail-item" data-id="ferry-shift">
+              <div class="oia-mail-title">Add late ferry shuttle loop</div>
+              <div class="oia-mail-meta">Ferry pier · Last two departures</div>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Right: Task detail (swapped by JS) -->
+        <article class="mf-card mf-card--oia">
+          <div class="oia-task-detail oia-task-detail--active" data-id="harbor-supply">
+            <h3>Harbor supply drop running late</h3>
+            <p>
+              A supply boat is behind schedule, with perishables and replacement parts
+              for the morning fleet. You need a temporary reroute plan to keep the docks moving.
+            </p>
+            <div class="oia-tag-row">
+              <span class="oia-tag">Harbor</span>
+              <span class="oia-tag">Logistics</span>
+              <span class="oia-tag">Time-sensitive</span>
+              <span class="oia-tag">FlowSim</span>
+            </div>
+          </div>
+
+          <div class="oia-task-detail" data-id="night-market">
+            <h3>Night market crowd control request</h3>
+            <p>
+              A festival lane is pulling more visitors than expected. Stalls are packed,
+              exits are slow, and merchants are nervous. Patrol routes and barriers
+              need to be assigned and adjusted through the night.
+            </p>
+            <div class="oia-tag-row">
+              <span class="oia-tag">Old Town</span>
+              <span class="oia-tag">Crowd</span>
+              <span class="oia-tag">Guard</span>
+              <span class="oia-tag">Navigator</span>
+            </div>
+          </div>
+
+          <div class="oia-task-detail" data-id="hill-incident">
+            <h3>Unattended vehicle on hillside road</h3>
+            <p>
+              A stopped vehicle is blocking a tight curve on the hillside route.
+              It could be a simple breakdown—or the start of a chain reaction if
+              drivers keep rounding the bend too fast.
+            </p>
+            <div class="oia-tag-row">
+              <span class="oia-tag">Hills</span>
+              <span class="oia-tag">Risk</span>
+              <span class="oia-tag">Guard</span>
+              <span class="oia-tag">Snapshot</span>
+            </div>
+          </div>
+
+          <div class="oia-task-detail" data-id="ferry-shift">
+            <h3>Add late ferry shuttle loop</h3>
+            <p>
+              Evening ferries are filling up, and people are missing connections uphill.
+              A new shuttle loop is proposed to move passengers from the pier to the hill stops.
+            </p>
+            <div class="oia-tag-row">
+              <span class="oia-tag">Ferry Pier</span>
+              <span class="oia-tag">Transit</span>
+              <span class="oia-tag">Navigator</span>
+              <span class="oia-tag">FlowSim</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= STACK CONNECTION ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Stack integration</div>
+        <h2>How OIA links into AtlasStudio and Atlas-V.</h2>
+        <p>
+          Everything above maps directly into the workstation and engine layers.
+        </p>
+      </header>
+
+      <div class="mf-grid mf-grid--relations">
+        <article class="mf-card mf-card--studio">
+          <h3>In AtlasStudio</h3>
+          <p>
+            Mailbox items become feature cards. Decisions (Yes / No / Later / Expand) shape
+            the route the city takes through upcoming shifts.
+          </p>
+          <div class="mf-card-footer">
+            <a href="atlasstudio/playground.html">Open AtlasStudio</a>
+          </div>
+        </article>
+
+        <article class="mf-card mf-card--atlasv">
+          <h3>In Atlas-V</h3>
+          <p>
+            Navigator decides which tasks surface first. Memory remembers what happened
+            last time a similar request arrived. Guard checks constraints. FlowSim tests timing.
+          </p>
+          <div class="mf-card-footer">
+            <a href="atlasv.html">View Atlas-V engine</a>
+          </div>
+        </article>
+
+        <article class="mf-card mf-card--skb">
+          <h3>In S/K/B</h3>
+          <p>
+            Each district and time-of-day can carry its own sound palette. The audio lab
+            builds playlists and stems that shift with city state.
+          </p>
+          <div class="mf-card-footer">
+            <a href="skb.html">Visit S/K/B Audio Lab</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer class="af-footer">
-    <div class="af-container">
-      <div class="af-footer-inner">
-        <span>
-          Octopus in Action is a flagship world in active development. Details
-          may change as the town (and engine) evolve.
-        </span>
-        <div class="af-footer-links">
-          <a href="games.html">Back to games</a>
-          <a href="index.html">Home</a>
-        </div>
-      </div>
+  <!-- ================= FOOTER ================= -->
+  <footer class="mf-footer">
+    <div class="mf-footer-inner">
+      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
+      <nav class="mf-footer-nav">
+        <a href="index.html">Home</a>
+        <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V</a>
+        <a href="octopus.html">OIA</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="about.html">About</a>
+      </nav>
     </div>
   </footer>
+
+  <!-- Shared marketing behavior -->
+  <script src="scripts/marketing.js"></script>
+  <!-- World-specific interactions (mailbox/tasks) -->
+  <script src="scripts/oia.js"></script>
+  <script>
+    const year = document.getElementById("mf-year");
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

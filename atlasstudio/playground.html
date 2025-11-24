@@ -1,451 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>AtlasStudio Workstation · AtlasForge Interactive</title>
+  <meta charset="utf-8" />
+  <title>AtlasStudio Workstation Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="AtlasStudio dashboard mock — a three-panel workstation for shaping worlds, tools, and flows on top of the AtlasForge stack."
+  <meta 
+    name="description" 
+    content="AtlasStudio workstation demo — three-pane UI with feature queues, decisions, snapshots, and a fake Project Copilot assistant."
   />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- Global tokens + main site shell -->
-  <link rel="stylesheet" href="../styles/tokens.css" />
   <link rel="stylesheet" href="../styles/main.css" />
-  <!-- AtlasStudio-specific workstation styling -->
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
-  <script defer src="../scripts/playground.js"></script>
 </head>
-<body class="af-page af-theme-studio">
-  <header class="af-header">
-    <div class="af-container">
-      <div class="af-header-inner">
-        <a href="../index.html" class="af-brand">
-          <div class="af-brand-mark" aria-hidden="true"></div>
-          <div class="af-brand-text">
-            <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">AtlasStudio · Workstation Mock</span>
-          </div>
-        </a>
 
-        <nav class="af-nav" aria-label="Primary navigation">
-          <a href="../index.html" data-af-nav>Home</a>
-          <a href="../studio-tools.html" data-af-nav>Studio</a>
-          <a href="../atlasv.html" data-af-nav>Atlas-V</a>
-          <a href="../games.html" data-af-nav>Games</a>
-          <a href="../skb.html" data-af-nav>S/K/B</a>
-          <a href="../about.html" data-af-nav>About</a>
-        </nav>
-
-        <button
-          class="af-nav-toggle"
-          type="button"
-          aria-label="Toggle navigation"
-          id="afNavToggle"
-        >
-          ☰
-        </button>
-      </div>
-
-      <div class="af-nav-mobile" id="afNavMobile">
-        <div class="af-nav-mobile-list">
-          <a href="../index.html" data-af-nav>Home</a>
-          <a href="../studio-tools.html" data-af-nav>Studio</a>
-          <a href="../atlasv.html" data-af-nav>Atlas-V</a>
-          <a href="../games.html" data-af-nav>Games</a>
-          <a href="../skb.html" data-af-nav>S/K/B</a>
-          <a href="../about.html" data-af-nav>About</a>
-        </div>
-      </div>
+<body class="as-body">
+  
+  <!-- HEADER -->
+  <header class="as-header">
+    <div class="as-header-inner">
+      <a href="../index.html" class="as-logo">
+        <span class="as-logo-mark">◎</span>
+        <span class="as-logo-text">AtlasStudio</span>
+      </a>
+      <nav class="as-nav">
+        <a href="../studio-tools.html">Overview</a>
+        <a class="active" href="playground.html">Workstation Demo</a>
+        <a href="gallery.html">Gallery</a>
+      </nav>
     </div>
   </header>
 
   <main class="as-main">
-    <div class="af-container as-main-inner">
-      <!-- Left: Project sidebar -->
-      <aside class="as-sidebar">
-        <header class="as-sidebar-header">
-          <div class="as-sidebar-title-block">
-            <span class="as-sidebar-kicker">Workspace</span>
-            <h1 class="as-sidebar-title">AtlasStudio</h1>
-          </div>
-          <button
-            class="as-sidebar-chip"
-            type="button"
-            data-mode-toggle="focus"
-          >
-            <span class="as-chip-dot"></span>
-            Focus layout
-          </button>
-        </header>
 
-        <div class="as-sidebar-section">
-          <div class="as-section-label">Projects</div>
-          <ul class="as-project-list">
-            <li class="as-project-item as-project-item--active">
-              <div class="as-project-name">Octopus in Action</div>
-              <div class="as-project-meta">World · Harbor-town sim</div>
-            </li>
-            <li class="as-project-item">
-              <div class="as-project-name">Atlas-V Engine Mock</div>
-              <div class="as-project-meta">Engine · Flow & routing</div>
-            </li>
-            <li class="as-project-item">
-              <div class="as-project-name">Ops & Docs Sandbox</div>
-              <div class="as-project-meta">Tools · KA & dashboards</div>
-            </li>
-          </ul>
-        </div>
+    <!-- ===========================
+         LEFT NAV — WORKSPACES / QUEUES
+    ============================ -->
+    <aside class="as-leftnav">
+      <div class="as-leftnav-section">
+        <h3>Workspaces</h3>
+        <button class="as-nav-btn" data-workspace="oia">Octopus in Action</button>
+        <button class="as-nav-btn" data-workspace="atlasv">Atlas-V</button>
+        <button class="as-nav-btn" data-workspace="skb">S/K/B Audio</button>
+      </div>
 
-        <div class="as-sidebar-section">
-          <div class="as-section-label">Pipelines</div>
-          <div class="as-pipeline-row">
-            <span class="as-pill-mini as-pill-mini--active">Brainstorm</span>
-            <span class="as-pill-mini">UAT</span>
-            <span class="as-pill-mini">Review</span>
-            <span class="as-pill-mini">Patch</span>
-          </div>
-        </div>
+      <div class="as-leftnav-section">
+        <h3>Queues</h3>
+        <button class="as-queue-btn" data-queue="brainstorm">Brainstorm</button>
+        <button class="as-queue-btn" data-queue="uat">UAT</button>
+        <button class="as-queue-btn" data-queue="review">Review</button>
+        <button class="as-queue-btn" data-queue="patch">Patch</button>
+      </div>
 
-        <div class="as-sidebar-section">
-          <div class="as-section-label">Atlas-V context</div>
-          <ul class="as-list-compact">
-            <li>Navigator · Tideglass-01</li>
-            <li>Memory · Harbor decisions</li>
-            <li>Guard · Policy loop</li>
-            <li>FlowSim · Mailbox routing</li>
-          </ul>
-        </div>
-      </aside>
+      <div class="as-leftnav-section">
+        <h3>Snapshots</h3>
+        <button class="as-snap-btn" data-snap="1">v1.0.0 → v1.0.1</button>
+        <button class="as-snap-btn" data-snap="2">v1.0.1 → v1.0.2</button>
+        <button class="as-snap-btn" data-snap="3">v1.0.2 → v1.0.3</button>
+      </div>
+    </aside>
 
-      <!-- Center: Tabs + content editor -->
-      <section class="as-center">
-        <header class="as-center-header">
-          <div class="as-tablist" role="tablist" aria-label="Work tabs">
-            <button
-              class="as-tab as-tab--active"
-              type="button"
-              role="tab"
-              aria-selected="true"
-              data-tab-target="tab-brainstorm"
-            >
-              Brainstorm
-            </button>
-            <button
-              class="as-tab"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              data-tab-target="tab-uat"
-            >
-              UAT
-            </button>
-            <button
-              class="as-tab"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              data-tab-target="tab-review"
-            >
-              Review
-            </button>
-            <button
-              class="as-tab"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              data-tab-target="tab-patch"
-            >
-              Patch
-            </button>
-            <button
-              class="as-tab"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              data-tab-target="tab-atlasv"
-            >
-              Atlas-V
-            </button>
-          </div>
+    <!-- ===========================
+         CENTER — ACTIVE PANEL
+    ============================ -->
+    <section class="as-center">
 
-          <div class="as-center-actions">
-            <button
-              class="as-btn-ghost-mini"
-              type="button"
-              data-action="suggest"
-            >
-              Ask Atlas-V
-            </button>
-            <button
-              class="as-btn-main-mini"
-              type="button"
-              data-action="run-build"
-            >
-              Run fake build
-            </button>
-          </div>
-        </header>
+      <div class="as-center-header">
+        <h2 id="as-active-title">Feature Title</h2>
+        <span id="as-active-category">Category</span>
+      </div>
 
-        <div class="as-center-body">
-          <!-- Brainstorm -->
-          <section
-            class="as-panel as-panel--active"
-            id="tab-brainstorm"
-            role="tabpanel"
-          >
-            <header class="as-panel-header">
-              <h2 class="as-panel-title">Brainstorm · Harbor loop</h2>
-              <p class="as-panel-sub">
-                Freeform notes used to propose changes before they become real
-                tasks. Nothing here touches production.
-              </p>
-            </header>
-            <div class="as-panel-body">
-              <textarea
-                class="as-textarea"
-                data-as-editor="brainstorm"
-                spellcheck="false"
-              >• Add early-morning harbor fog as a soft difficulty modifier.
-• Use mailbox tasks as the primary “quest” surface.
-• City hall decisions should change schedules, not just flavor text.
-• Let Atlas-V explain why certain flows were picked for citizens.</textarea>
-              <div class="as-panel-footer">
-                <span class="as-footer-hint">
-                  Draft-only. Use <strong>Ask Atlas-V</strong> to generate fake
-                  refinements in the console.
-                </span>
-              </div>
-            </div>
-          </section>
+      <div class="as-feature-description" id="as-active-description">
+        Select a queue or workspace to begin.
+      </div>
 
-          <!-- UAT -->
-          <section class="as-panel" id="tab-uat" role="tabpanel">
-            <header class="as-panel-header">
-              <h2 class="as-panel-title">UAT · Mailbox loop</h2>
-              <p class="as-panel-sub">
-                High-level checklist for verifying the mailbox + civic decisions
-                behave the way we expect inside the sim.
-              </p>
-            </header>
-            <div class="as-panel-body as-panel-body--split">
-              <ul class="as-checklist">
-                <li>
-                  <label>
-                    <input type="checkbox" checked />
-                    Mailbox tasks appear at consistent, readable cadence.
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" />
-                    City hall decisions always surface at least one visible
-                    downstream effect.
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" />
-                    No decision path traps the player in a dead-end state.
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="checkbox" />
-                    Atlas-V explanations match the player’s visible experience.
-                  </label>
-                </li>
-              </ul>
-              <div class="as-panel-note">
-                <h3>Notes</h3>
-                <p>
-                  This panel is purely visual. Use it to think about what a
-                  real UAT pass would look like for OIA and similar sims.
-                </p>
-              </div>
-            </div>
-          </section>
+      <div class="as-decision-buttons">
+        <button class="as-dec-btn yes" data-decision="yes">Yes</button>
+        <button class="as-dec-btn no" data-decision="no">No</button>
+        <button class="as-dec-btn later" data-decision="later">Later</button>
+        <button class="as-dec-btn expand" data-decision="expand">Expand</button>
+      </div>
 
-          <!-- Review -->
-          <section class="as-panel" id="tab-review" role="tabpanel">
-            <header class="as-panel-header">
-              <h2 class="as-panel-title">Review · Changes queued</h2>
-              <p class="as-panel-sub">
-                A pretend diff view summarizing the next round of tweaks before
-                they would ship.
-              </p>
-            </header>
-            <div class="as-panel-body as-panel-body--grid">
-              <article class="as-review-card">
-                <div class="as-review-tag as-review-tag--add">+ Behavior</div>
-                <h3>NPC schedule drift</h3>
-                <p>
-                  Citizens now shift their patterns slightly after each city
-                  hall decision, making the town feel less static.
-                </p>
-              </article>
-              <article class="as-review-card">
-                <div class="as-review-tag as-review-tag--tweak">~ UX</div>
-                <h3>Mailbox density</h3>
-                <p>
-                  Reduced overlapping tasks during peak hours and added a “quiet
-                  morning” slot to prevent overwhelm.
-                </p>
-              </article>
-              <article class="as-review-card">
-                <div class="as-review-tag as-review-tag--remove">– Debt</div>
-                <h3>Legacy debug overlay</h3>
-                <p>
-                  Removed an internal-only overlay layer from the mock to keep
-                  the front-facing view clean.
-                </p>
-              </article>
-            </div>
-          </section>
+      <div class="as-subtabs">
+        <button class="as-subtab-btn active" data-tab="details">Details</button>
+        <button class="as-subtab-btn" data-tab="diff">Diff</button>
+        <button class="as-subtab-btn" data-tab="timeline">Timeline</button>
+      </div>
 
-          <!-- Patch -->
-          <section class="as-panel" id="tab-patch" role="tabpanel">
-            <header class="as-panel-header">
-              <h2 class="as-panel-title">Patch · v0.2.3 mock notes</h2>
-              <p class="as-panel-sub">
-                This is how a patch card might read if we promoted the current
-                visual state of the mock into a release.
-              </p>
-            </header>
-            <div class="as-panel-body">
-              <pre class="as-patch-note" aria-label="Patch note mock">
-[OIA] v0.2.3 — Harbor Drift (visual only)
+      <div class="as-tab-content" id="as-tab-details">
+        <p>This panel shows contextual details for the currently selected feature.</p>
+      </div>
 
-• Added mailbox “breathing room” between tasks during peak hours.
-• Introduced small NPC schedule variations after each city hall decision.
-• Tightened Atlas-V explanation text to match what the player actually sees.
-• Cleaned up debug overlays inside the AtlasStudio preview.
-              </pre>
-            </div>
-          </section>
+      <div class="as-tab-content hidden" id="as-tab-diff">
+        <p>Snapshot diff will appear here.</p>
+      </div>
 
-          <!-- Atlas-V -->
-          <section class="as-panel" id="tab-atlasv" role="tabpanel">
-            <header class="as-panel-header">
-              <h2 class="as-panel-title">Atlas-V · Orbit mock</h2>
-              <p class="as-panel-sub">
-                A conceptual slice of how Atlas-V might describe its own state
-                while you work on OIA.
-              </p>
-            </header>
-            <div class="as-panel-body as-panel-body--grid">
-              <article class="as-orbit-card">
-                <h3>Navigator</h3>
-                <p>
-                  “I am routing player intent between civic decisions and the
-                  harbor’s day/night rhythm.”
-                </p>
-              </article>
-              <article class="as-orbit-card">
-                <h3>Memory</h3>
-                <p>
-                  “I am holding the last 3 decisions, mail cadence, and active
-                  character arcs in view.”
-                </p>
-              </article>
-              <article class="as-orbit-card">
-                <h3>Guard</h3>
-                <p>
-                  “I am preventing loops that trap the player without visible
-                  paths forward.”
-                </p>
-              </article>
-              <article class="as-orbit-card">
-                <h3>FlowSim</h3>
-                <p>
-                  “I am testing new mailbox patterns without letting them touch
-                  the real build.”
-                </p>
-              </article>
-            </div>
-          </section>
-        </div>
-      </section>
+      <div class="as-tab-content hidden" id="as-tab-timeline">
+        <p>Timeline events and patch notes appear here.</p>
+      </div>
 
-      <!-- Right: Preview + console -->
-      <aside class="as-right">
-        <section class="as-preview">
-          <header class="as-preview-header">
-            <div>
-              <div class="as-preview-kicker">Preview</div>
-              <h2 class="as-preview-title">Harbor slice (mock)</h2>
-            </div>
-            <button
-              class="as-btn-ghost-mini"
-              type="button"
-              data-action="rotate-preview"
-            >
-              Rotate view
-            </button>
-          </header>
-          <div class="as-preview-frame">
-            <div class="as-preview-layer as-preview-layer--grid"></div>
-            <div class="as-preview-layer as-preview-layer--glow"></div>
-            <div class="as-preview-layer as-preview-layer--card">
-              <div class="as-preview-chip-row">
-                <span class="as-preview-chip">City Hall</span>
-                <span class="as-preview-chip as-preview-chip--soft">
-                  Mailbox
-                </span>
-                <span class="as-preview-chip as-preview-chip--muted">
-                  Docks
-                </span>
-              </div>
-              <p class="as-preview-text">
-                Mock-only view. Imagine this panel swapping between map,
-                timeline, UI, or documentation surfaces depending on the
-                current task.
-              </p>
-            </div>
-          </div>
-        </section>
+    </section>
 
-        <section class="as-console">
-          <header class="as-console-header">
-            <div class="as-console-label">
-              <span class="as-console-dot"></span>
-              AtlasStudio console
-            </div>
-            <button
-              class="as-btn-ghost-mini"
-              type="button"
-              data-action="clear-console"
-            >
-              Clear
-            </button>
-          </header>
-          <div class="as-console-body" data-console>
-            <div class="as-console-line as-console-line--meta">
-              [boot] AtlasStudio mock session initialized. No real builds will
-              run here.
-            </div>
-          </div>
-        </section>
-      </aside>
-    </div>
+    <!-- ===========================
+         RIGHT — PROJECT COPILOT
+    ============================ -->
+    <aside class="as-right">
+      <h3>Project Copilot</h3>
+      <div id="as-copilot-log" class="as-copilot-log">
+        <div class="as-copilot-msg system">Welcome to the workstation demo. Select a queue or snapshot to begin.</div>
+      </div>
+
+      <div class="as-copilot-inputbox">
+        <input type="text" id="as-copilot-input" placeholder="(Disabled — demo only)" disabled />
+        <button disabled>Send</button>
+      </div>
+    </aside>
+
   </main>
 
-  <footer class="af-footer">
-    <div class="af-container">
-      <div class="af-footer-inner">
-        <span>AtlasStudio is a prototype workstation. All behavior on this
-          page is simulated.</span>
-        <div class="af-footer-links">
-          <a href="../studio-tools.html">Back to Studio overview</a>
-          <a href="../index.html">Home</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <script src="../scripts/playground.js"></script>
 </body>
 </html>

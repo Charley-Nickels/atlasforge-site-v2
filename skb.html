@@ -2,70 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>S/K/B Audio Lab</title>
+  <title>S/K/B Audio Lab — AtlasForge Interactive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="S/K/B is the AtlasForge audio division: signals, kinetics, and bloom — an experimental space for stems, soundscapes, and voice personas."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles/main.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var toggle = document.getElementById("afNavToggle");
+      var mobile = document.getElementById("afNavMobile");
+      if (toggle && mobile) {
+        toggle.addEventListener("click", function () {
+          mobile.classList.toggle("af-nav-mobile-open");
+        });
+      }
+      var path = "skb.html";
+      var links = document.querySelectorAll("[data-af-nav]");
+      links.forEach(function (link) {
+        if (link.getAttribute("href") === path) {
+          link.classList.add("af-nav-active");
+        }
+      });
+    });
+  </script>
 </head>
-<body class="theme-dark" data-page="skb">
-  <header class="af-header af-header-compact">
+<body class="af-page">
+  <header class="af-header">
     <div class="af-container">
-      <nav class="af-nav">
-        <a class="af-logo" href="index.html">
-          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">Atlasforge Interactive</span>
+      <div class="af-header-inner">
+        <a href="index.html" class="af-brand">
+          <div class="af-brand-mark" aria-hidden="true"></div>
+          <div class="af-brand-text">
+            <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
+            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+          </div>
         </a>
-        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-        <div class="af-nav-links">
+
+        <nav class="af-nav" aria-label="Primary navigation">
+          <a href="index.html" data-af-nav>Home</a>
+          <a href="studio-tools.html" data-af-nav>Studio</a>
+          <a href="atlasv.html" data-af-nav>Atlas-V</a>
+          <a href="games.html" data-af-nav>Games</a>
+          <a href="skb.html" data-af-nav>S/K/B</a>
+          <a href="about.html" data-af-nav>About</a>
+        </nav>
+
+        <button
+          class="af-nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="afNavToggle"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="af-nav-mobile" id="afNavMobile">
+        <div class="af-nav-mobile-list">
+          <a href="index.html" data-af-nav>Home</a>
+          <a href="studio-tools.html" data-af-nav>Studio</a>
+          <a href="atlasv.html" data-af-nav>Atlas-V</a>
+          <a href="games.html" data-af-nav>Games</a>
+          <a href="skb.html" data-af-nav>S/K/B</a>
+          <a href="about.html" data-af-nav>About</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="af-section">
+      <div class="af-container">
+        <div class="af-section-header">
+          <p class="af-kicker">Audio division</p>
+          <h1 class="af-section-title">S/K/B</h1>
+          <p class="af-section-sub">
+            Signals · Kinetics · Bloom. The AtlasForge audio lab for stems,
+            soundscapes, and AI-driven voices designed for worlds built on the
+            stack.
+          </p>
+        </div>
+
+        <div class="af-split">
+          <div>
+            <article class="af-card">
+              <h2 class="af-card-title">What S/K/B focuses on</h2>
+              <p class="af-card-sub">
+                S/K/B is where music and sound design experiments live. It’s a
+                place to sketch how the audio side of the Atlas stack might
+                feel before anything is wired into real tools.
+              </p>
+              <ul class="af-list">
+                <li><strong>Voices</strong> — murmur personas and AI vocal
+                  shapes.</li>
+                <li><strong>Signals</strong> — generative stems and loop beds.</li>
+                <li><strong>Echoes</strong> — ambient soundscapes and OST
+                  sketches.</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside>
+            <div class="af-card af-card--soft">
+              <div class="af-badge af-badge--skb" style="margin-bottom: 6px;">
+                <span class="af-badge-dot"></span> S/K/B Audio Lab
+              </div>
+              <h3 class="af-card-title">Integration with Atlas-V</h3>
+              <p class="af-card-sub">
+                In future, S/K/B output could route through Atlas-V: adapting
+                stems, voice selection, and ambience based on in-world
+                context.
+              </p>
+              <p
+                style="
+                  margin: 0 0 8px;
+                  font-size: var(--af-text-xs);
+                  color: var(--af-text-mute);
+                "
+              >
+                For now, it’s a quiet observatory: concepts and motifs waiting
+                to be wired in.
+              </p>
+              <div class="af-btn-row">
+                <a href="games.html" class="af-btn-primary">See games & worlds</a>
+                <a href="atlasv.html" class="af-btn-ghost">Atlas-V integration</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="af-footer">
+    <div class="af-container">
+      <div class="af-footer-inner">
+        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <div class="af-footer-links">
           <a href="index.html">Home</a>
           <a href="studio-tools.html">Studio</a>
           <a href="atlasv.html">Atlas-V</a>
           <a href="games.html">Games</a>
-          <a href="skb.html" class="is-active">S/K/B</a>
           <a href="about.html">About</a>
         </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="skb-hero">
-    <div class="skb-hero-inner">
-      <div class="skb-orb">
-        <img src="assets/img/skb-orb.png" alt="S/K/B orb logo" />
-      </div>
-      <h1>S/K/B</h1>
-      <p class="skb-subtitle">Signals · Kinetics · Bloom</p>
-      <p class="skb-caption">Atlasforge Audio Division</p>
-      <div class="af-hero-actions" style="justify-content:center;">
-        <a class="af-btn af-btn-secondary" href="games.html">Hear the playables</a>
-        <a class="af-btn af-btn-ghost" href="atlasv.html">Atlas-V integration</a>
       </div>
     </div>
-  </main>
-
-  <section class="af-section">
-    <div class="af-container skb-grid">
-      <article class="af-card">
-        <div class="af-kicker">Voices</div>
-        <h3>Murmur Personas</h3>
-        <p>AI vocal shapes waiting to be routed. Soft, grayscale, and presently dormant.</p>
-        <div class="af-chip">Not yet online</div>
-      </article>
-      <article class="af-card">
-        <div class="af-kicker">Signals</div>
-        <h3>Generative Stems</h3>
-        <p>Loop beds and pulse lines that echo the orb motif. All visuals only.</p>
-        <div class="af-chip">In study</div>
-      </article>
-      <article class="af-card">
-        <div class="af-kicker">Echoes</div>
-        <h3>Soundscapes</h3>
-        <p>Atmospheres and OST sketches imagined for Atlasforge worlds.</p>
-        <div class="af-chip">Ghost access</div>
-      </article>
-    </div>
-  </section>
-
-  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
-  <script src="scripts/main.js" defer></script>
+  </footer>
 </body>
 </html>

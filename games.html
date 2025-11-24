@@ -2,40 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Games & Labs — AtlasForge Interactive</title>
+  <title>Games & Worlds · AtlasForge Interactive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="The AtlasForge lineup: cozy simulations, automation worlds, RTS experiments, and audio/visual prototypes — all built to stress-test Atlas-V and AtlasStudio."
+    content="Explore games and worlds in development at AtlasForge Interactive, starting with Octopus in Action — a harbor-town sim powered by the AtlasForge stack."
   />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="styles/tokens.css" />
-<link rel="stylesheet" href="styles/main.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggle = document.getElementById("afNavToggle");
-      var mobile = document.getElementById("afNavMobile");
-      if (toggle && mobile) {
-        toggle.addEventListener("click", function () {
-          mobile.classList.toggle("af-nav-mobile-open");
-        });
-      }
-      var path = "games.html";
-      var links = document.querySelectorAll("[data-af-nav]");
-      links.forEach(function (link) {
-        if (link.getAttribute("href") === path) {
-          link.classList.add("af-nav-active");
-        }
-      });
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
 <body class="af-page af-theme-core">
+  <!-- HEADER -->
   <header class="af-header">
     <div class="af-container">
       <div class="af-header-inner">
@@ -43,7 +27,7 @@
           <div class="af-brand-mark" aria-hidden="true"></div>
           <div class="af-brand-text">
             <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+            <span class="af-brand-sub">Games & Worlds</span>
           </div>
         </a>
 
@@ -79,77 +63,176 @@
     </div>
   </header>
 
-  <main>
-    <section class="af-section">
+  <!-- MAIN -->
+  <main class="af-page-main">
+    <!-- HERO -->
+    <section class="af-hero">
       <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">Games & labs</p>
-          <h1 class="af-section-title">The AtlasForge lineup.</h1>
-          <p class="af-section-sub">
-            Cozy sims, automation worlds, RTS and tabletop experiments—all
-            prototyped in AtlasStudio and guided by Atlas-V. Everything here
-            is currently a visual roadmap, but the intent is to ship.
-          </p>
-        </div>
+        <div class="af-hero-inner">
+          <div>
+            <div class="af-hero-eyebrow-row">
+              <span class="af-pill">
+                <span class="af-pill-dot"></span>
+                Games & Worlds
+              </span>
+              <span class="af-pill af-pill--glow">
+                Simulation-first experiences from the AtlasForge stack
+              </span>
+            </div>
 
-        <article class="af-card">
-          <div class="af-badge af-badge--oia" style="margin-bottom: 6px;">
-            <span class="af-badge-dot"></span> Flagship · TIDEGLASS-01
+            <h1 class="af-hero-title">
+              Worlds that <span>test the stack</span> before it powers yours.
+            </h1>
+
+            <p class="af-hero-sub">
+              AtlasForge Interactive uses games as laboratories. Every world we
+              build stress-tests the same stack that will eventually power other
+              simulations, tools, and decision-heavy systems.
+            </p>
+
+            <div class="af-btn-row">
+              <a href="octopus.html" class="af-btn-primary">
+                Visit Octopus in Action
+              </a>
+              <a href="studio-tools.html" class="af-btn-ghost">
+                See the tools behind it
+              </a>
+            </div>
+
+            <p class="af-hero-meta">
+              Current flagship: a harbor-town sim led by a gentleman octopus
+              mayor. Future titles will plug into the same engine and design
+              language.
+            </p>
           </div>
-          <h2 class="af-card-title">Octopus in Action</h2>
-          <p class="af-card-sub">
-            Harbor-town civic sim with animal neighbors, mailbox tasks, and
-            city hall decisions. Built to feel cozy, but with systems deep
-            enough to stress-test the engine and workstation.
-          </p>
-          <ul class="af-list">
-            <li>City hall choices that ripple through the town.</li>
-            <li>Mailbox tasks as a visible to-do surface.</li>
-            <li>NPC schedules, jobs, and relationships.</li>
-            <li>Integration concepts for Atlas-V and AtlasStudio.</li>
-          </ul>
-          <div class="af-btn-row" style="margin-top: 10px;">
-            <a href="octopus.html" class="af-btn-primary">Visit OIA surface</a>
-            <a href="#roadmap" class="af-btn-ghost">View roadmap</a>
-          </div>
-        </article>
+
+          <aside class="af-surface">
+            <header class="af-section-header">
+              <p class="af-kicker">Current flagship</p>
+              <h2 class="af-section-title">Octopus in Action</h2>
+              <p class="af-section-sub">
+                A cozy harbor-town simulation where civic decisions, work, and
+                small daily rituals matter as much as big events.
+              </p>
+            </header>
+
+            <div class="af-grid-2">
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Mayor Octavius</h3>
+                <p class="af-card-sub">
+                  A gentleman octopus with a monocle and top hat, trying to keep
+                  a small town running without losing its soul.
+                </p>
+                <ul class="af-list">
+                  <li>Mailbox as the primary “quest” surface</li>
+                  <li>City hall for decisions and debates</li>
+                  <li>NPC schedules that shift over time</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Harbor rhythms</h3>
+                <p class="af-card-sub">
+                  The town breathes: morning fog, dock work, market bustle,
+                  quiet nights. Your choices rewrite the tempo.
+                </p>
+                <ul class="af-list">
+                  <li>Day/night and weekday cycles</li>
+                  <li>Events triggered by civic choices</li>
+                  <li>Atlas-V explains why flows change</li>
+                </ul>
+              </article>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
 
-    <section class="af-section af-section--compact" id="roadmap">
-      <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">Roadmap</p>
-          <h2 class="af-section-title">Ciphered timelines for the lineup.</h2>
-          <p class="af-section-sub">
-            We keep the details light in public, but the internal plan spans
-            “Now / Next / Horizon” projects. All of them are meant to pressure
-            test Atlas-V and AtlasStudio as seriously as possible.
-          </p>
+    <!-- STACK-INTEGRATED DESIGN -->
+    <section class="af-section">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Stack-integrated design</p>
+            <h2 class="af-section-title">Built on the same logic as your tools.</h2>
+            <p class="af-section-sub">
+              Octopus in Action isn’t a separate “game project” — it’s the
+              flagship simulation that proves out the AtlasStudio + Atlas-V
+              mental model.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>AtlasStudio:</strong> used to shape tasks, loops, and
+              patch notes for the harbor.
+            </li>
+            <li>
+              <strong>Atlas-V:</strong> routes decisions, explains outcomes, and
+              keeps the world safe from dead-end states.
+            </li>
+            <li>
+              <strong>Shared language:</strong> the same concepts that tune a
+              sim can later tune a dashboard or operations flow.
+            </li>
+          </ul>
         </div>
 
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Why start with a harbor?</h3>
+          <p class="af-card-sub">
+            Harbors are naturally full of queues, schedules, and routes. Perfect
+            for testing decisions and timelines:
+          </p>
+          <ul class="af-list">
+            <li>Who gets dock access when space is tight?</li>
+            <li>Which tasks reach the player first each morning?</li>
+            <li>How do civic choices ripple into work and home life?</li>
+          </ul>
+          <div class="af-btn-row" style="margin-top:10px;">
+            <a href="octopus.html" class="af-btn-primary">
+              Read more about OIA
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FUTURE WORLDS -->
+    <section class="af-section af-section--compact">
+      <div class="af-container">
+        <header class="af-section-header">
+          <p class="af-kicker">On the horizon</p>
+          <h2 class="af-section-title">Space for more strange worlds.</h2>
+          <p class="af-section-sub">
+            OIA is the first major world, but the stack is built for more: other
+            cities, other jobs, other weird systems that blur the line between
+            “game,” “tool,” and “simulation.”
+          </p>
+        </header>
+
         <div class="af-grid-3">
-          <article class="af-card af-card--soft">
-            <h3 class="af-card-title">Now</h3>
+          <article class="af-card">
+            <h3 class="af-card-title">City-scale operations</h3>
             <p class="af-card-sub">
-              Octopus in Action core loop, AtlasStudio workstation mocks,
-              Atlas-V flow diagrams.
+              Think logistics, transit, or neighborhood sims where tiny
+              decisions build into big emergent patterns.
             </p>
           </article>
 
-          <article class="af-card af-card--soft">
-            <h3 class="af-card-title">Next</h3>
+          <article class="af-card">
+            <h3 class="af-card-title">Work & life stories</h3>
             <p class="af-card-sub">
-              Automation-heavy sims, RTS prototypes, and internal tooling
-              built on the same principles.
+              Games that treat jobs, routines, and community like main content,
+              not just background flavor.
             </p>
           </article>
 
-          <article class="af-card af-card--soft">
-            <h3 class="af-card-title">Horizon</h3>
+          <article class="af-card">
+            <h3 class="af-card-title">Training & ops sims</h3>
             <p class="af-card-sub">
-              Tabletop hybrids, narrative systems, and multi-surface
-              experiences that share engine logic.
+              Future experiments that use the same engine to tell stories about
+              real-world queues, policies, and decisions.
             </p>
           </article>
         </div>
@@ -157,16 +240,17 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="af-footer">
     <div class="af-container">
       <div class="af-footer-inner">
-        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <span>
+          Games at AtlasForge exist to entertain first, and to quietly test
+          the stack behind the scenes.
+        </span>
         <div class="af-footer-links">
-          <a href="index.html">Home</a>
-          <a href="studio-tools.html">Studio</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="skb.html">S/K/B</a>
-          <a href="about.html">About</a>
+          <a href="octopus.html">Octopus in Action</a>
+          <a href="studio-tools.html">AtlasStudio</a>
         </div>
       </div>
     </div>

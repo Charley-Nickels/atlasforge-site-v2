@@ -2,104 +2,1302 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AtlasForge Interactive</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <title>AtlasForge Interactive · Worlds, Tools & Intelligent Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="AtlasForge Interactive is a hybrid game & technology studio building Atlas-V, AtlasStudio, and Octopus in Action — tools and worlds for simulation-first experiences."
+  />
+
+  <style>
+    :root {
+      --bg-body: #050711;
+      --bg-elevated: #090c19;
+      --bg-soft: #0c1224;
+      --bg-soft-alt: #0b0f1d;
+
+      --border-subtle: rgba(148, 163, 184, 0.15);
+      --border-strong: rgba(148, 163, 184, 0.4);
+
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --text-mute: #6b7280;
+      --text-strong: #f9fafb;
+
+      --accent: #60a5fa;
+      --accent-soft: rgba(96, 165, 250, 0.15);
+      --accent-strong: #2563eb;
+
+      --success: #22c55e;
+      --warning: #f97316;
+
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 10px;
+
+      --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.7);
+      --shadow-subtle: 0 16px 40px rgba(15, 23, 42, 0.7);
+
+      --container-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background:
+        radial-gradient(circle at top, #0b1020 0, #020308 60%),
+        radial-gradient(circle at bottom, #020308 0, #000000 65%);
+      color: var(--text-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Header ---------- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 7, 17, 0.92),
+        rgba(5, 7, 17, 0.8),
+        transparent
+      );
+      border-bottom: 1px solid rgba(31, 41, 55, 0.7);
+    }
+
+    .site-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background:
+        radial-gradient(circle at 20% 0%, #60a5fa 0, #0b1020 55%),
+        radial-gradient(circle at 80% 80%, #4ade80 0, transparent 60%);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      box-shadow:
+        0 0 0 1px rgba(15, 23, 42, 0.9),
+        0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .nav a {
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #60a5fa, #22c55e);
+      transition: width 150ms ease-out;
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.85);
+      font-size: 12px;
+      color: var(--text-soft);
+      cursor: pointer;
+    }
+
+    .nav-cta span {
+      font-size: 13px;
+    }
+
+    .nav-cta-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    }
+
+    .nav-mobile-toggle {
+      display: none;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-soft);
+      cursor: pointer;
+    }
+
+    .nav-mobile-panel {
+      display: none;
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      padding: 48px 0 40px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-eyebrow-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .pill--glow {
+      border-color: transparent;
+      background:
+        radial-gradient(circle at 0 0, rgba(96, 165, 250, 0.4), transparent 55%),
+        rgba(15, 23, 42, 0.96);
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 3.1vw, 38px);
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      margin: 0 0 10px;
+      color: var(--text-strong);
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      margin: 0 0 18px;
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 36rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.8);
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      color: #f9fafb;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.6);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.06);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-soft);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--text-mute);
+    }
+
+    .hero-meta strong {
+      color: var(--text-soft);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      background:
+        radial-gradient(circle at top, #0b1020 0, #020617 65%);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .hero-panel-title {
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+
+    .hero-panel-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-panel-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-md);
+      padding: 10px 10px 9px;
+      background: var(--bg-soft-alt);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 4px;
+      font-size: 13px;
+    }
+
+    .hero-card p {
+      margin: 0 0 6px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .hero-card-footer {
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+
+    .hero-card--small {
+      font-size: 12px;
+    }
+
+    .hero-card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-card-list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    .hero-tagline {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+
+    /* ---------- Sections ---------- */
+
+    .section {
+      padding: 36px 0 30px;
+    }
+
+    .section-heading {
+      margin-bottom: 16px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-mute);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin: 0 0 6px;
+      color: var(--text-strong);
+    }
+
+    .section-sub {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-soft);
+      max-width: 36rem;
+    }
+
+    .section-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .section-split.reverse {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    }
+
+    /* ---------- Atlas-V block ---------- */
+
+    .feature-card {
+      border-radius: var(--radius-md);
+      padding: 12px 12px 11px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-subtle);
+      font-size: 13px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .feature-meta {
+      display: inline-flex;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-mute);
+      margin-bottom: 8px;
+    }
+
+    .feature-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .feature-meta-badge {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+
+    .feature-list li::before {
+      content: "▸";
+      margin-top: 2px;
+      font-size: 10px;
+      color: var(--accent);
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .use-case {
+      border-radius: var(--radius-sm);
+      padding: 8px 9px;
+      background: var(--bg-soft-alt);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .use-case strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 12px;
+    }
+
+    /* ---------- AtlasStudio block ---------- */
+
+    .studio-card {
+      border-radius: var(--radius-md);
+      padding: 12px 12px 11px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-subtle);
+      font-size: 13px;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .studio-chip {
+      padding: 6px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      font-size: 11px;
+      color: var(--text-soft);
+      background: var(--bg-soft);
+    }
+
+    /* ---------- OIA block ---------- */
+
+    .oia-card {
+      border-radius: var(--radius-md);
+      padding: 12px 12px 11px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-subtle);
+      font-size: 13px;
+    }
+
+    .oia-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+
+    .oia-pill {
+      border-radius: 999px;
+      padding: 4px 8px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .oia-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+      display: grid;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .oia-list li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+
+    /* ---------- Who it's for / FAQ ---------- */
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .audience-card {
+      border-radius: var(--radius-md);
+      padding: 10px 10px 9px;
+      background: var(--bg-soft-alt);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .audience-card h3 {
+      margin: 0 0 4px;
+      font-size: 13px;
+    }
+
+    .audience-card p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    .faq-item {
+      border-radius: var(--radius-sm);
+      padding: 9px 10px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 4px;
+      font-size: 13px;
+    }
+
+    .faq-item p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    /* ---------- About / contact ---------- */
+
+    .about-card {
+      border-radius: var(--radius-md);
+      padding: 12px 12px 11px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-subtle);
+      font-size: 13px;
+    }
+
+    .about-meta {
+      font-size: 11px;
+      color: var(--text-mute);
+      margin-top: 6px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      font-size: 13px;
+      align-items: center;
+    }
+
+    .pill-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    /* ---------- Footer ---------- */
+
+    .site-footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(31, 41, 55, 0.7);
+      padding: 14px 0 18px;
+      font-size: 11px;
+      color: var(--text-mute);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .section-split,
+      .section-split.reverse {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site-header-inner {
+        padding: 10px 0;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .nav-mobile-toggle {
+        display: inline-flex;
+      }
+
+      .nav-mobile-panel {
+        display: none;
+        border-top: 1px solid rgba(31, 41, 55, 0.7);
+        padding: 8px 0 10px;
+      }
+
+      .nav-mobile-panel.is-open {
+        display: block;
+      }
+
+      .nav-mobile-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--text-soft);
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+
+      .audience-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
 </head>
-<body class="theme-dark" data-page="home">
-  <header class="af-header af-header-compact">
-    <div class="af-container">
-      <nav class="af-nav">
-        <a class="af-logo" href="index.html">
-          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">Atlasforge Interactive</span>
+<body class="page">
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner">
+        <a href="#top" class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"></div>
+          <div class="brand-text">
+            <span class="brand-name">ATLASFORGE INTERACTIVE</span>
+            <span class="brand-sub">Worlds · Tools · Intelligent Systems</span>
+          </div>
         </a>
-        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-        <div class="af-nav-links">
-          <a href="index.html" class="is-active">Home</a>
-          <a href="studio-tools.html">Studio</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="games.html">Games</a>
-          <a href="skb.html">S/K/B</a>
-          <a href="about.html">About</a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#atlas-v">Atlas-V</a>
+          <a href="#atlasstudio">AtlasStudio</a>
+          <a href="#oia">Octopus in Action</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="nav-cta">
+            <span class="nav-cta-dot"></span>
+            <span>Early collaborators</span>
+          </a>
+        </nav>
+
+        <button
+          class="nav-mobile-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="navToggle"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="nav-mobile-panel" id="navMobilePanel">
+        <div class="nav-mobile-list">
+          <a href="#atlas-v">Atlas-V</a>
+          <a href="#atlasstudio">AtlasStudio</a>
+          <a href="#oia">Octopus in Action</a>
+          <a href="#about">About</a>
+          <a href="#contact">Early collaborators</a>
         </div>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section class="af-hero af-section">
-    <div class="af-container af-hero-grid">
-      <div>
-        <div class="af-kicker">AtlasForge Interactive</div>
-        <h1>Building worlds, tools, and intelligent systems.</h1>
-        <p class="af-hero-copy">AtlasForge is a studio and technology house crafting AtlasStudio, Atlas-V, and boutique experiences for teams that want believable simulations without real backends.</p>
-        <div class="af-hero-actions">
-          <a class="af-btn af-btn-primary" href="atlasv.html">Meet Atlas-V</a>
-          <a class="af-btn af-btn-secondary" href="studio-tools.html">Open AtlasStudio</a>
-          <a class="af-btn af-btn-ghost" href="games.html">View Games</a>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <div class="hero-eyebrow-row">
+              <span class="pill">
+                <span class="pill-dot"></span>
+                Hybrid game & tools studio
+              </span>
+              <span class="pill pill--glow">
+                Early-stage · Shipping real things
+              </span>
+            </div>
+
+            <h1 class="hero-title" id="heroTitle">
+              Build <span>worlds</span> and <span>workflows</span> that run on the same engine.
+            </h1>
+
+            <p class="hero-sub">
+              AtlasForge is building a connected stack for simulation-first work:
+              <strong>Atlas-V</strong>, a logic & content engine;
+              <strong>AtlasStudio</strong>, an AI-assisted workstation; and
+              <strong>Octopus in Action</strong>, a flagship world that proves it works in practice.
+            </p>
+
+            <div class="hero-cta-row">
+              <a href="#contact" class="btn-primary">
+                Talk about early access
+              </a>
+              <a href="#atlas-v" class="btn-ghost">
+                Explore the engine
+              </a>
+            </div>
+
+            <p class="hero-meta">
+              <strong>Built for:</strong> small studios, solo devs, and teams
+              experimenting with simulation, automation, and narrative systems.
+            </p>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-panel">
+              <div class="hero-panel-header">
+                <span class="hero-panel-title">AtlasForge stack</span>
+                <span class="hero-panel-status">
+                  <span class="hero-panel-status-dot"></span>
+                  Under active development
+                </span>
+              </div>
+
+              <div class="hero-grid">
+                <article class="hero-card">
+                  <h3>Atlas-V Engine</h3>
+                  <p>
+                    A simulation & automation engine designed to orchestrate
+                    rules, content, and state across games and tools.
+                  </p>
+                  <ul class="hero-card-list">
+                    <li>Scenario & node-based logic</li>
+                    <li>Content routing & patching</li>
+                    <li>Works with existing stacks</li>
+                  </ul>
+                  <div class="hero-card-footer">
+                    Focus: reliability & explainable behavior.
+                  </div>
+                </article>
+
+                <div class="hero-card hero-card--small">
+                  <h3>AtlasStudio</h3>
+                  <p>
+                    A workstation that keeps your files, prompts, and patches in
+                    one place — instead of scattered across tools.
+                  </p>
+                  <div class="hero-tagline">
+                    Think “layout & workflow studio” for games, docs, and
+                    prototypes.
+                  </div>
+                </div>
+
+                <div class="hero-card hero-card--small">
+                  <h3>Octopus in Action</h3>
+                  <p>
+                    A cozy simulation game built on the same ideas, used as a
+                    live test bed for Atlas-V and AtlasStudio.
+                  </p>
+                  <div class="hero-tagline">
+                    Playable proof, not just diagrams.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="af-card">
-        <h3>Live Signals</h3>
-        <p>Everything here is visual-only. We simulate pipelines, telemetry, and build flows for demos.</p>
-        <div class="af-feature-row">
-          <div class="af-feature">
-            <h3>Atlas-V Brain</h3>
-            <p>Copilot core for prompts, policy, and orchestrations.</p>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="section" aria-labelledby="audienceTitle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Who we’re building for</p>
+          <h2 class="section-title" id="audienceTitle">People who care about both worlds and workflows.</h2>
+          <p class="section-sub">
+            AtlasForge is not a generic “AI app.” It’s for teams who think in
+            systems — game loops, operational workflows, simulation rules —
+            and want tools that respect that way of working.
+          </p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card">
+            <h3>Game & simulation studios</h3>
+            <p>
+              Build worlds where narrative, economics, and player state are
+              driven by a consistent engine instead of ad-hoc scripts and
+              spreadsheets.
+            </p>
+          </article>
+          <article class="audience-card">
+            <h3>Solo builders & small teams</h3>
+            <p>
+              Use AtlasStudio as a focused hub for prompts, design docs,
+              sprites, flows, and patches — without spinning up a full platform
+              team.
+            </p>
+          </article>
+          <article class="audience-card">
+            <h3>Internal tools & ops teams</h3>
+            <p>
+              Experiment with simulation-style models for workflows:
+              routing, SLAs, customer journeys, or knowledge systems, backed
+              by Atlas-V.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atlas-V -->
+    <section class="section" id="atlas-v" aria-labelledby="atlasVTitle">
+      <div class="container">
+        <div class="section-split">
+          <div>
+            <div class="section-heading">
+              <p class="section-kicker">Engine</p>
+              <h2 class="section-title" id="atlasVTitle">Atlas-V: a simulation & automation core.</h2>
+              <p class="section-sub">
+                Atlas-V is our internal term for the logic and content engine
+                that coordinates worlds and workflows. It’s opinionated enough
+                to be useful, and flexible enough to sit beside your existing
+                stack.
+              </p>
+            </div>
+
+            <ul class="feature-list">
+              <li>
+                <strong>Structured logic:</strong> build systems out of nodes,
+                routes, and patches instead of one-off scripts.
+              </li>
+              <li>
+                <strong>Content-aware:</strong> designed to sit near your
+                content (docs, sprites, clips, knowledge) and reason about how
+                it should be used.
+              </li>
+              <li>
+                <strong>Explainable behavior:</strong> the goal is not black-box
+                magic, but clear timelines and diffs for what changed and why.
+              </li>
+              <li>
+                <strong>Simulation-first:</strong> think “what happens if…”
+                with safe sandboxes before you roll changes into a live world
+                or process.
+              </li>
+            </ul>
           </div>
-          <div class="af-feature">
-            <h3>AtlasStudio</h3>
-            <p>Front-end workstation with fake builds, files, and inspectors.</p>
+
+          <aside>
+            <article class="feature-card">
+              <div class="feature-meta">
+                <span>
+                  <span class="feature-meta-badge"></span>
+                  Early concepts
+                </span>
+                <span>Engine & pipeline</span>
+              </div>
+              <h3>Example use cases</h3>
+              <div class="use-case-grid">
+                <div class="use-case">
+                  <strong>Game simulation</strong>
+                  Tune city-builder economies, quest routing, or NPC schedules
+                  using scenarios before shipping updates.
+                </div>
+                <div class="use-case">
+                  <strong>Knowledge workflows</strong>
+                  Prototype decision trees and automations that sit on top of
+                  your existing docs and knowledge base.
+                </div>
+                <div class="use-case">
+                  <strong>Call & ops flows</strong>
+                  Model routing, SLAs, and edge cases as systems instead of
+                  static diagrams.
+                </div>
+                <div class="use-case">
+                  <strong>Custom experiments</strong>
+                  Use Atlas-V as the “brain” behind custom tools or internal
+                  dashboards where state and rules actually matter.
+                </div>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- AtlasStudio -->
+    <section class="section" id="atlasstudio" aria-labelledby="studioTitle">
+      <div class="container">
+        <div class="section-split reverse">
+          <div>
+            <div class="section-heading">
+              <p class="section-kicker">Workstation</p>
+              <h2 class="section-title" id="studioTitle">AtlasStudio: a focused place to work with AI, not fight it.</h2>
+              <p class="section-sub">
+                AtlasStudio is our internal workstation for building games,
+                tools, and documentation with Atlas-V in the loop. Instead of
+                twenty tabs and a copy-paste pile, it gives you a single,
+                opinionated surface.
+              </p>
+            </div>
+
+            <ul class="feature-list">
+              <li>
+                <strong>Context-aware sessions:</strong> keep chat, files,
+                routes, and patches tied to the same workspace instead of
+                starting from scratch every time.
+              </li>
+              <li>
+                <strong>Visual flows:</strong> sketch logic or UX flows and let
+                AI help with boilerplate, data, or edge-case checking.
+              </li>
+              <li>
+                <strong>Ship-ready outputs:</strong> the goal is real game
+                scenes, docs, and tools — not just pretty screenshots of UI.
+              </li>
+            </ul>
           </div>
-          <div class="af-feature">
-            <h3>Games Lab</h3>
-            <p>Playable ideas, timelines, and simulated roadmaps.</p>
+
+          <aside>
+            <article class="studio-card">
+              <h3>How AtlasStudio fits into your day</h3>
+              <p>
+                Today, AtlasStudio is our internal tool. Over time, select
+                partners will get access to the same workflows we use to build
+                AtlasForge projects.
+              </p>
+              <div class="studio-grid">
+                <span class="studio-chip">Design & narrative passes</span>
+                <span class="studio-chip">Sprite & UI explorations</span>
+                <span class="studio-chip">Logic & routing diagrams</span>
+                <span class="studio-chip">Patch notes & diffs</span>
+              </div>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Octopus in Action -->
+    <section class="section" id="oia" aria-labelledby="oiaTitle">
+      <div class="container">
+        <div class="section-split">
+          <div>
+            <div class="section-heading">
+              <p class="section-kicker">Flagship world</p>
+              <h2 class="section-title" id="oiaTitle">Octopus in Action: the cozy city that stress-tests everything.</h2>
+              <p class="section-sub">
+                Octopus in Action is our flagship world: a charming simulation
+                game starring Mayor Octavius and a town full of characters. It
+                doubles as a live sandbox for Atlas-V and AtlasStudio.
+              </p>
+            </div>
+
+            <ul class="oia-list">
+              <li>Simulation-driven city life and character schedules.</li>
+              <li>Systems for jobs, housing, and small-town politics.</li>
+              <li>Built to be both playful and technically demanding.</li>
+              <li>A place to test new engine features before they touch
+                anyone’s production tools.</li>
+            </ul>
+          </div>
+
+          <aside>
+            <article class="oia-card">
+              <div class="oia-badge-row">
+                <span class="oia-pill">Cozy simulation</span>
+                <span class="oia-pill">Work-in-progress</span>
+              </div>
+              <p>
+                As Octopus in Action grows, it will showcase what Atlas-V and
+                AtlasStudio can actually do — not just describe it on a slide.
+              </p>
+              <p style="margin-top:6px;">
+                If you like the idea of a studio that uses its own engine in a
+                real game, you’re in the right place.
+              </p>
+            </article>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & FAQ -->
+    <section class="section" id="about" aria-labelledby="aboutTitle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Studio</p>
+          <h2 class="section-title" id="aboutTitle">About AtlasForge Interactive</h2>
+          <p class="section-sub">
+            AtlasForge is early, but the intent is simple: build tools we
+            actually use, worlds that feel alive, and an engine that respects
+            both players and operators.
+          </p>
+        </div>
+
+        <div class="section-split">
+          <article class="about-card">
+            <h3 style="margin:0 0 6px;font-size:14px;">
+              What we’re doing right now
+            </h3>
+            <p style="margin:0 0 6px;">
+              Internally, we’re using Atlas-V concepts and the AtlasStudio
+              workstation to build Octopus in Action and other prototypes.
+            </p>
+            <p style="margin:0;">
+              Externally, we’re in conversation mode: talking to teams who care
+              about simulation, operations, and AI-assisted work — and shaping
+              which pieces of this stack should ship first.
+            </p>
+            <div class="about-meta">
+              If that sounds like you, we’d rather talk early than over-polish
+              a deck.
+            </div>
+          </article>
+
+          <div>
+            <div class="faq-grid">
+              <article class="faq-item">
+                <h3>Is Atlas-V available today?</h3>
+                <p>
+                  Not as a public product. Pieces of the engine are being used
+                  internally and hardened against real workloads. The goal is
+                  to open it to a small set of partners before anything “fully
+                  public.”
+                </p>
+              </article>
+              <article class="faq-item">
+                <h3>Can we use AtlasStudio now?</h3>
+                <p>
+                  AtlasStudio is currently an internal workstation. If you’re
+                  interested in a future collaborator build, reach out and tell
+                  us what your team is trying to do.
+                </p>
+              </article>
+              <article class="faq-item">
+                <h3>Do you only work on games?</h3>
+                <p>
+                  No. Games are our favorite way to stress-test ideas, but
+                  Atlas-V is deliberately being shaped for hybrid use:
+                  simulations, internal tools, and operational flows.
+                </p>
+              </article>
+              <article class="faq-item">
+                <h3>What kind of teams should contact you?</h3>
+                <p>
+                  Studios or teams who think in systems, who don’t want a
+                  generic chatbot bolted to their product, and who are okay
+                  co-designing an engine instead of buying a sealed black box.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="af-section af-section-band">
-    <div class="af-container">
-      <div class="af-kicker">Products</div>
-      <div class="af-grid af-grid-3">
-        <article class="af-card">
-          <h3>Atlas-V</h3>
-          <p>AI brain / master copilot, orchestrating modules, memory strata, and guard rails.</p>
-          <a class="af-card-link" href="atlasv.html">View Atlas-V</a>
-        </article>
-        <article class="af-card">
-          <h3>AtlasStudio</h3>
-          <p>Simulated workstation with file explorers, inspectors, console, and randomizers.</p>
-          <a class="af-card-link" href="studio-tools.html">Visit Studio</a>
-        </article>
-        <article class="af-card">
-          <h3>Games & Labs</h3>
-          <p>Internal playables, roadmaps, and creative experiments for new worlds.</p>
-          <a class="af-card-link" href="games.html">Browse Games</a>
-        </article>
+    <!-- Contact -->
+    <section class="section" id="contact" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">Contact</p>
+          <h2 class="section-title" id="contactTitle">Interested in Atlas-V, AtlasStudio, or Octopus in Action?</h2>
+          <p class="section-sub">
+            If you’re curious about early access, collaboration, or just want
+            to talk through what you’re building, send a short note with who
+            you are, what you’re working on, and why simulation or workflow
+            tooling matters to you.
+          </p>
+        </div>
+
+        <div class="contact-row">
+          <a class="btn-primary" href="mailto:hello@octopusinaction.app">
+            Email hello@octopusinaction.app
+          </a>
+          <span class="pill-link">
+            Prefer async? Include a link to a brief doc or deck — no polished
+            pitch required.
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#atlas-v">Atlas-V</a>
+          <a href="#atlasstudio">AtlasStudio</a>
+          <a href="#oia">Octopus in Action</a>
+        </div>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="af-section">
-    <div class="af-container">
-      <div class="af-kicker">Release Notes</div>
-      <div class="af-grid af-grid-2">
-        <article class="af-card">
-          <h3>v2.5 — Visual Simulation</h3>
-          <p>Expanded fake inspector, richer console feeds, and new Atlas-V agents grid.</p>
-        </article>
-        <article class="af-card">
-          <h3>v2.4 — Games Index</h3>
-          <p>Added project filter chips, roadmap, and card templates for previews.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <script>
+    // Simple mobile nav toggle
+    (function () {
+      var toggle = document.getElementById("navToggle");
+      var panel = document.getElementById("navMobilePanel");
+      if (!toggle || !panel) return;
 
-  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
-  <script src="scripts/main.js" defer></script>
+      toggle.addEventListener("click", function () {
+        panel.classList.toggle("is-open");
+      });
+
+      // Close nav when clicking a link
+      panel.addEventListener("click", function (event) {
+        if (event.target.tagName === "A") {
+          panel.classList.remove("is-open");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

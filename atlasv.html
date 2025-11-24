@@ -2,40 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Atlas-V · Engine — AtlasForge Interactive</title>
+  <title>Atlas-V Engine · Lattice Intelligence · AtlasForge Interactive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Atlas-V is the engine concept for AtlasForge: a project brain coordinating memory, prompts, constraints, and flows for simulations and tools."
+    content="Atlas-V is the routing brain beneath AtlasForge: a lattice-style decision engine that explains its reasoning. Navigator, Memory, Guard, and FlowSim operate as orbits, providing safe, interpretable behavior for worlds, tools, and operations."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="styles/tokens.css" />
-<link rel="stylesheet" href="styles/main.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggle = document.getElementById("afNavToggle");
-      var mobile = document.getElementById("afNavMobile");
-      if (toggle && mobile) {
-        toggle.addEventListener("click", function () {
-          mobile.classList.toggle("af-nav-mobile-open");
-        });
-      }
-      var path = "atlasv.html";
-      var links = document.querySelectorAll("[data-af-nav]");
-      links.forEach(function (link) {
-        if (link.getAttribute("href") === path) {
-          link.classList.add("af-nav-active");
-        }
-      });
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
+
 <body class="af-page af-theme-atlasv">
+  <!-- HEADER -->
   <header class="af-header">
     <div class="af-container">
       <div class="af-header-inner">
@@ -43,7 +28,7 @@
           <div class="af-brand-mark" aria-hidden="true"></div>
           <div class="af-brand-text">
             <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+            <span class="af-brand-sub">Atlas-V · Lattice Intelligence Engine</span>
           </div>
         </a>
 
@@ -79,106 +64,224 @@
     </div>
   </header>
 
-  <main>
-    <section class="af-section">
+  <!-- MAIN -->
+  <main class="af-page-main">
+    <!-- HERO -->
+    <section class="af-hero">
       <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">Engine</p>
-          <h1 class="af-section-title">Atlas-V</h1>
-          <p class="af-section-sub">
-            Atlas-V is the “project brain” concept for AtlasForge — a way to
-            organize prompts, memory, constraints, and orchestrations in one
-            place so worlds and tools behave like coherent systems.
-          </p>
-        </div>
-
-        <div class="af-split">
+        <div class="af-hero-inner">
           <div>
-            <article class="af-card">
-              <h2 class="af-card-title">How Atlas-V is modeled in the demos</h2>
-              <p class="af-card-sub">
-                In the current front-end-only mock, Atlas-V appears as an
-                orbital diagram: the core surrounded by specialist agents that
-                represent different kinds of work.
-              </p>
-              <ul class="af-list">
-                <li><strong>Navigator</strong> — directs flows between modules.</li>
-                <li><strong>Memory</strong> — keeps key context steady.</li>
-                <li><strong>Guard</strong> — policy, safety, and constraints.</li>
-                <li><strong>FlowSim</strong> — simulates routing decisions.</li>
-                <li><strong>Prompt</strong> — shapes how requests are framed.</li>
-                <li><strong>Modules</strong> — the tools and surfaces Atlas-V
-                  coordinates.</li>
-              </ul>
-            </article>
+            <div class="af-hero-eyebrow-row">
+              <span class="af-pill">
+                <span class="af-pill-dot"></span>
+                Atlas-V Engine
+              </span>
+              <span class="af-pill af-pill--glow">
+                Cyan lattice · Orbit-style reasoning
+              </span>
+            </div>
 
-            <article class="af-card af-card--soft" style="margin-top: 10px;">
-              <h2 class="af-card-title">Use cases we care about</h2>
-              <p class="af-card-sub">
-                Atlas-V is being designed to work with both creative and
-                operational systems.
-              </p>
-              <ul class="af-list">
-                <li>Game simulation loops and pacing.</li>
-                <li>Knowledge and documentation workflows.</li>
-                <li>Call center routing and scenarios.</li>
-                <li>Custom dashboards and internal tools.</li>
-              </ul>
-              <p style="margin: 0; font-size: var(--af-text-sm); color: var(--af-text-soft);">
-                For now it’s all simulated, but the shapes we pick here guide
-                the eventual real implementation.
-              </p>
-            </article>
+            <h1 class="af-hero-title">
+              A <span>lattice intelligence</span> engine that explains itself.
+            </h1>
+
+            <p class="af-hero-sub">
+              Atlas-V is the logic layer beneath AtlasStudio and Octopus in
+              Action. It thinks in orbits — Navigator, Memory, Guard, and
+              FlowSim — giving you explainable routing, timeline-aware
+              decisions, and safe workflows for worlds and operations.
+            </p>
+
+            <div class="af-btn-row">
+              <a href="studio-tools.html" class="af-btn-primary">
+                See how AtlasStudio uses Atlas-V
+              </a>
+              <a href="atlasstudio/playground.html" class="af-btn-ghost">
+                Open the workstation mock
+              </a>
+            </div>
+
+            <p class="af-hero-meta">
+              Atlas-V does not run on the website. What you see here is a
+              conceptual, documented model of the engine layer the studio is
+              building internally.
+            </p>
           </div>
 
-          <aside>
-            <div class="af-card af-card--soft">
-              <div class="af-badge af-badge--atlasv" style="margin-bottom: 6px;">
-                <span class="af-badge-dot"></span> Engine · Atlas-V
-              </div>
-              <h3 class="af-card-title">Atlas-V in the workstation</h3>
-              <p class="af-card-sub">
-                The AtlasStudio dashboard mock includes Atlas-V panels for
-                timelines, node maps, and “pretend” orchestration logs.
+          <aside class="af-surface">
+            <header class="af-section-header">
+              <p class="af-kicker">The orbit model</p>
+              <h2 class="af-section-title">Four roles, one engine.</h2>
+              <p class="af-section-sub">
+                Instead of one opaque “AI brain,” Atlas-V breaks itself into
+                understandable roles. Each orbit describes what part of the
+                decision space it handles.
               </p>
-              <p
-                style="
-                  margin: 0 0 8px;
-                  font-size: var(--af-text-xs);
-                  color: var(--af-text-mute);
-                "
-              >
-                It’s not connected to a backend yet, but the interface is
-                built as if it were.
-              </p>
-              <div class="af-btn-row" style="margin-bottom: 4px;">
-                <a href="studio-tools.html" class="af-btn-primary">
-                  Open in AtlasStudio
-                </a>
-                <a href="games.html" class="af-btn-ghost">
-                  See how games lean on Atlas-V
-                </a>
-              </div>
-              <p style="margin: 0; font-size: var(--af-text-xs); color: var(--af-text-mute);">
-                The goal: an engine that’s explainable, not a black box.
-              </p>
+            </header>
+
+            <div class="af-grid-2">
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Navigator</h3>
+                <p class="af-card-sub">
+                  Routes player or user intent to the right surface.
+                </p>
+                <ul class="af-list">
+                  <li>Which panel or task should respond?</li>
+                  <li>What context is relevant right now?</li>
+                  <li>How should the UI shift?</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Memory</h3>
+                <p class="af-card-sub">
+                  Tracks recent decisions, states, and actor arcs.
+                </p>
+                <ul class="af-list">
+                  <li>Keeps 3–7 changes in active view</li>
+                  <li>Resolves contradictions</li>
+                  <li>Maintains coherent timelines</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Guard</h3>
+                <p class="af-card-sub">
+                  Prevents unsafe or impossible states.
+                </p>
+                <ul class="af-list">
+                  <li>Detects loops and dead-ends</li>
+                  <li>Stops harmful chain reactions</li>
+                  <li>Ensures decisions remain reversible</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">FlowSim</h3>
+                <p class="af-card-sub">
+                  Tests ideas before they touch reality.
+                </p>
+                <ul class="af-list">
+                  <li>Sandbox experiments in parallel</li>
+                  <li>Predicts downstream effects</li>
+                  <li>Generates safe “what-if” timelines</li>
+                </ul>
+              </article>
             </div>
           </aside>
         </div>
       </div>
     </section>
+
+    <!-- EXPLAINABLE ENGINE -->
+    <section class="af-section">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Explainability</p>
+            <h2 class="af-section-title">Decisions you can read like a story.</h2>
+            <p class="af-section-sub">
+              Atlas-V is designed for situations where people need to trust what
+              the engine is doing. So every decision is framed in human terms —
+              not math, not hallucination, not guesswork.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>“Why this?”</strong> — every action includes a reason.
+            </li>
+            <li>
+              <strong>“What would have happened instead?”</strong> — alternate
+              paths are kept visible.
+            </li>
+            <li>
+              <strong>“What changed?”</strong> — impacts are listed explicitly.
+            </li>
+            <li>
+              <strong>“What’s next?”</strong> — the Navigator predicts the next
+              relevant surface.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Human-readable engine logs</h3>
+          <p class="af-card-sub">
+            AtlasStudio’s console shows how Atlas-V narrates its decisions.
+          </p>
+          <ul class="af-list">
+            <li>“I chose X because Y was happening.”</li>
+            <li>“I considered A and B, but those hit guard rails.”</li>
+            <li>“Memory elevated C due to recent events.”</li>
+          </ul>
+
+          <div class="af-btn-row" style="margin-top:10px;">
+            <a href="atlasstudio/playground.html" class="af-btn-primary">
+              See the mock console
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- HOW ATLAS-V CONNECTS -->
+    <section class="af-section af-section--compact">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Where it fits</p>
+            <h2 class="af-section-title">Atlas-V is the engine layer of the stack.</h2>
+            <p class="af-section-sub">
+              Every part of the AtlasForge ecosystem speaks to Atlas-V: the
+              workstation (AtlasStudio), the flagship game (Octopus in Action),
+              and future operational tools all use the same decision framework.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>AtlasStudio:</strong> brain panels + console send ideas to
+              Atlas-V for checks and narrative explanations.
+            </li>
+            <li>
+              <strong>Octopus in Action:</strong> world behaviors, schedules,
+              mailbox tasks, and civic decisions are routed via orbits.
+            </li>
+            <li>
+              <strong>Future tools:</strong> knowledge systems, operations,
+              incident timelines, routing dashboards, and tech workflows.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Real-world applications</h3>
+          <p class="af-card-sub">
+            Atlas-V is built for simulation, but the same engine applies to:
+          </p>
+          <ul class="af-list">
+            <li>Call-center or ops flow routing</li>
+            <li>Incident timelines & policy impact</li>
+            <li>Guided knowledge experiences</li>
+            <li>Any system with people + time + decisions</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="af-footer">
     <div class="af-container">
       <div class="af-footer-inner">
-        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <span>
+          Atlas-V is in an active design & documentation phase. This page
+          reflects the mental model powering the stack, not a live engine.
+        </span>
         <div class="af-footer-links">
-          <a href="index.html">Home</a>
-          <a href="studio-tools.html">Studio</a>
-          <a href="games.html">Games</a>
-          <a href="skb.html">S/K/B</a>
-          <a href="about.html">About</a>
+          <a href="studio-tools.html">AtlasStudio</a>
+          <a href="octopus.html">Octopus in Action</a>
         </div>
       </div>
     </div>

@@ -2,40 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About — AtlasForge Interactive</title>
+  <title>About · AtlasForge Interactive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="AtlasForge Interactive is a small studio focused on building tools, simulations, and games that feel handcrafted but powered by smart systems."
+    content="Learn about AtlasForge Interactive — a small studio focused on simulation-first games, tools, and explainable engine design."
   />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="styles/tokens.css" />
-<link rel="stylesheet" href="styles/main.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggle = document.getElementById("afNavToggle");
-      var mobile = document.getElementById("afNavMobile");
-      if (toggle && mobile) {
-        toggle.addEventListener("click", function () {
-          mobile.classList.toggle("af-nav-mobile-open");
-        });
-      }
-      var path = "about.html";
-      var links = document.querySelectorAll("[data-af-nav]");
-      links.forEach(function (link) {
-        if (link.getAttribute("href") === path) {
-          link.classList.add("af-nav-active");
-        }
-      });
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
 <body class="af-page af-theme-core">
+  <!-- HEADER -->
   <header class="af-header">
     <div class="af-container">
       <div class="af-header-inner">
@@ -43,7 +27,7 @@
           <div class="af-brand-mark" aria-hidden="true"></div>
           <div class="af-brand-text">
             <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+            <span class="af-brand-sub">About the studio</span>
           </div>
         </a>
 
@@ -79,70 +63,203 @@
     </div>
   </header>
 
-  <main>
+  <!-- MAIN -->
+  <main class="af-page-main">
+    <!-- HERO -->
+    <section class="af-hero">
+      <div class="af-container">
+        <div class="af-hero-inner">
+          <div>
+            <div class="af-hero-eyebrow-row">
+              <span class="af-pill">
+                <span class="af-pill-dot"></span>
+                About AtlasForge
+              </span>
+              <span class="af-pill af-pill--glow">
+                Small studio, long arc, simulation brain
+              </span>
+            </div>
+
+            <h1 class="af-hero-title">
+              A tiny studio with a <span>systems-first</span> obsession.
+            </h1>
+
+            <p class="af-hero-sub">
+              AtlasForge Interactive exists to connect three worlds: simulation
+              games, internal tools, and explainable engine design. The goal
+              isn’t to chase every trend — it’s to build a stack that actually
+              makes sense, then use it on things that matter.
+            </p>
+
+            <p class="af-hero-meta">
+              If the site feels like a living diagram, that’s intentional. This
+              is a working notebook disguised as a studio homepage.
+            </p>
+          </div>
+
+          <aside class="af-surface">
+            <header class="af-section-header">
+              <p class="af-kicker">What drives the work</p>
+              <h2 class="af-section-title">Curiosity, care, and repetition.</h2>
+              <p class="af-section-sub">
+                The studio is built around a few stubborn beliefs about how
+                systems and stories should behave.
+              </p>
+            </header>
+
+            <div class="af-grid-2">
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Simulation first</h3>
+                <p class="af-card-sub">
+                  Whether it’s a game or a dashboard, treat it like a tiny world
+                  with its own physics, constraints, and rhythms.
+                </p>
+              </article>
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Explain the engine</h3>
+                <p class="af-card-sub">
+                  People should be able to ask “why did it do that?” and get an
+                  answer that isn’t nonsense.
+                </p>
+              </article>
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Respect small decisions</h3>
+                <p class="af-card-sub">
+                  The little choices — who gets the 8am slot, which call routes
+                  where — often matter more than the dramatic ones.
+                </p>
+              </article>
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Build slowly on purpose</h3>
+                <p class="af-card-sub">
+                  It’s a one-step-at-a-time operation. The stack grows in loops:
+                  design → test → adjust → repeat.
+                </p>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT PROJECTS -->
     <section class="af-section">
       <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">Studio</p>
-          <h1 class="af-section-title">About AtlasForge Interactive</h1>
+        <header class="af-section-header">
+          <p class="af-kicker">Now</p>
+          <h2 class="af-section-title">What’s actively in motion.</h2>
           <p class="af-section-sub">
-            AtlasForge is a small studio focused on building tools,
-            simulations, and games that feel handcrafted but powered by smart
-            systems.
+            AtlasForge is not a big team. That’s why the focus is narrow and
+            each project feeds the others.
           </p>
-        </div>
+        </header>
 
-        <div class="af-split">
-          <article class="af-card">
-            <h2 class="af-card-title">What we’re trying to do</h2>
+        <div class="af-grid-3">
+          <article class="af-card af-card--soft">
+            <h3 class="af-card-title">AtlasStudio</h3>
             <p class="af-card-sub">
-              The long-term goal is a unified engine and workstation that can
-              support games, web tools, internal dashboards, data pipelines,
-              and future interactive formats — all built with a simulation-first
-              mindset.
+              Ember-lit workstation mock. Getting the layout, pipeline, and
+              feeling right before wiring deeper logic.
             </p>
             <ul class="af-list">
-              <li>Atlas-V as the engine / project brain.</li>
-              <li>AtlasStudio as the workstation / UI.</li>
-              <li>Octopus in Action and other worlds as live testbeds.</li>
-              <li>S/K/B as the audio and signal lab.</li>
+              <li>Three-panel layout</li>
+              <li>Brainstorm → UAT → Review → Patch flow</li>
+              <li>Mock console that behaves like a real one should</li>
             </ul>
           </article>
 
           <article class="af-card af-card--soft">
-            <h2 class="af-card-title">Why everything is “visual only” for now</h2>
+            <h3 class="af-card-title">Atlas-V Engine</h3>
             <p class="af-card-sub">
-              Every demo on this site is front-end only. That’s deliberate:
-              it lets us explore how the engine and workstation should feel,
-              without implying that a finished SaaS product already exists.
+              Documenting the orbit model and rules. The goal: an engine whose
+              decisions you can read like a story.
             </p>
-            <p
-              style="
-                margin: 0;
-                font-size: var(--af-text-sm);
-                color: var(--af-text-soft);
-              "
-            >
-              As we harden the ideas and pipelines, the intent is to invite a
-              small set of collaborators to shape which pieces become API
-              surfaces, products, or internal tools.
+            <ul class="af-list">
+              <li>Navigator, Memory, Guard, FlowSim roles</li>
+              <li>Explainable decision language</li>
+              <li>Safety rails against no-win loops</li>
+            </ul>
+          </article>
+
+          <article class="af-card af-card--soft">
+            <h3 class="af-card-title">Octopus in Action</h3>
+            <p class="af-card-sub">
+              Flagship harbor-town sim used as the main testbed for everything
+              else.
             </p>
+            <ul class="af-list">
+              <li>Mailbox-driven civic tasks</li>
+              <li>NPC schedules & harbor rhythms</li>
+              <li>Gentle, slightly strange tone</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- PHILOSOPHY / PEOPLE -->
+    <section class="af-section af-section--compact">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Philosophy</p>
+            <h2 class="af-section-title">What kind of studio this is (and isn’t).</h2>
+            <p class="af-section-sub">
+              It’s not a “move fast and break everything” kind of place. It’s a
+              “move thoughtfully and reuse what works” one.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>Not chasing volume:</strong> fewer projects, more depth.
+            </li>
+            <li>
+              <strong>Not pretending to be huge:</strong> this is a small
+              operation, and the site reflects that.
+            </li>
+            <li>
+              <strong>Not hiding complexity:</strong> the weird parts live in
+              the open instead of buried in jargon.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Where to look next</h3>
+          <p class="af-card-sub">
+            If you want to understand AtlasForge, it’s better to see the stack
+            than read a pitch deck:
+          </p>
+          <ul class="af-list">
+            <li>AtlasStudio — the workstation surface</li>
+            <li>Atlas-V — the engine model</li>
+            <li>Octopus in Action — the flagship world</li>
+          </ul>
+          <div class="af-btn-row" style="margin-top:10px;">
+            <a href="studio-tools.html" class="af-btn-primary">
+              AtlasStudio overview
+            </a>
+            <a href="octopus.html" class="af-btn-ghost">
+              Visit OIA’s harbor
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="af-footer">
     <div class="af-container">
       <div class="af-footer-inner">
-        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <span>
+          AtlasForge Interactive is still in its early chapters. The best way
+          to follow along is simply to watch the site and stack evolve.
+        </span>
         <div class="af-footer-links">
           <a href="index.html">Home</a>
-          <a href="studio-tools.html">Studio</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="games.html">Games</a>
-          <a href="skb.html">S/K/B</a>
+          <a href="games.html">Games & worlds</a>
         </div>
       </div>
     </div>

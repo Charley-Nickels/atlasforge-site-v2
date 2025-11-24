@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta 
     name="description" 
-    content="AtlasStudio workstation demo — three-pane UI with feature queues, decisions, snapshots, and a fake Project Copilot assistant."
+    content="AtlasStudio workstation demo — three-pane UI with feature queues, decisions, snapshots, version strip, and a fake Project Copilot assistant."
   />
   <link rel="stylesheet" href="../styles/main.css" />
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
@@ -56,60 +56,109 @@
         <button class="as-snap-btn" data-snap="2">v1.0.1 → v1.0.2</button>
         <button class="as-snap-btn" data-snap="3">v1.0.2 → v1.0.3</button>
       </div>
+
+      <div class="as-leftnav-hint">
+        <p>Tip: use <strong>1–4</strong> for Yes/No/Later/Expand, and <strong>Q/W/E/R</strong> to jump queues.</p>
+      </div>
     </aside>
 
     <!-- ===========================
-         CENTER — ACTIVE PANEL
+         CENTER — ACTIVE PANEL + VERSION STRIP
     ============================ -->
     <section class="as-center">
 
-      <div class="as-center-header">
-        <h2 id="as-active-title">Feature Title</h2>
-        <span id="as-active-category">Category</span>
+      <!-- Version timeline strip -->
+      <div class="as-version-strip">
+        <button class="as-version-btn active" data-version="v100">v1.0.0</button>
+        <button class="as-version-btn" data-version="v101" data-snap="1">v1.0.1</button>
+        <button class="as-version-btn" data-version="v102" data-snap="2">v1.0.2</button>
+        <button class="as-version-btn" data-version="v103" data-snap="3">v1.0.3</button>
       </div>
 
-      <div class="as-feature-description" id="as-active-description">
-        Select a queue or workspace to begin.
-      </div>
+      <div class="as-center-inner">
+        <div class="as-center-header">
+          <h2 id="as-active-title">Feature Title</h2>
+          <span id="as-active-category">Category</span>
+        </div>
 
-      <div class="as-decision-buttons">
-        <button class="as-dec-btn yes" data-decision="yes">Yes</button>
-        <button class="as-dec-btn no" data-decision="no">No</button>
-        <button class="as-dec-btn later" data-decision="later">Later</button>
-        <button class="as-dec-btn expand" data-decision="expand">Expand</button>
-      </div>
+        <div class="as-feature-description" id="as-active-description">
+          Select a workspace and queue to begin.
+        </div>
 
-      <div class="as-subtabs">
-        <button class="as-subtab-btn active" data-tab="details">Details</button>
-        <button class="as-subtab-btn" data-tab="diff">Diff</button>
-        <button class="as-subtab-btn" data-tab="timeline">Timeline</button>
-      </div>
+        <!-- Sub-feature drawer (for Expand) -->
+        <div id="as-subfeatures" class="as-subfeatures hidden">
+          <div class="as-subfeatures-header">
+            <h4>Sub-features generated from this idea</h4>
+          </div>
+          <ul id="as-subfeatures-list" class="as-subfeatures-list"></ul>
+        </div>
 
-      <div class="as-tab-content" id="as-tab-details">
-        <p>This panel shows contextual details for the currently selected feature.</p>
-      </div>
+        <!-- Decisions -->
+        <div class="as-decision-buttons">
+          <button class="as-dec-btn yes" data-decision="yes">Yes (1)</button>
+          <button class="as-dec-btn no" data-decision="no">No (2)</button>
+          <button class="as-dec-btn later" data-decision="later">Later (3)</button>
+          <button class="as-dec-btn expand" data-decision="expand">Expand (4)</button>
+        </div>
 
-      <div class="as-tab-content hidden" id="as-tab-diff">
-        <p>Snapshot diff will appear here.</p>
-      </div>
+        <!-- Sub-tabs for details/diff/timeline -->
+        <div class="as-subtabs">
+          <button class="as-subtab-btn active" data-tab="details">Details</button>
+          <button class="as-subtab-btn" data-tab="diff">Diff</button>
+          <button class="as-subtab-btn" data-tab="timeline">Timeline & Console</button>
+        </div>
 
-      <div class="as-tab-content hidden" id="as-tab-timeline">
-        <p>Timeline events and patch notes appear here.</p>
-      </div>
+        <div class="as-tab-content" id="as-tab-details">
+          <p>This panel shows contextual details for the currently selected feature.</p>
+        </div>
 
+        <div class="as-tab-content hidden" id="as-tab-diff">
+          <p>Select a snapshot or version to show diff between builds.</p>
+        </div>
+
+        <div class="as-tab-content hidden" id="as-tab-timeline">
+          <p class="as-console-intro">
+            Console-style events from the engine perspective appear here as you make decisions and load snapshots.
+          </p>
+          <div id="as-console-log" class="as-console-log">
+            <p class="as-console-line as-console-muted">No events yet. Make a decision to start logging.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===========================
-         RIGHT — PROJECT COPILOT
+         RIGHT — PROJECT COPILOT + MINI PANEL + HISTORY
     ============================ -->
     <aside class="as-right">
       <h3>Project Copilot</h3>
       <div id="as-copilot-log" class="as-copilot-log">
-        <div class="as-copilot-msg system">Welcome to the workstation demo. Select a queue or snapshot to begin.</div>
+        <div class="as-copilot-msg system">
+          Welcome to the AtlasStudio demo. Pick a workspace on the left, then a queue, and I’ll react as you move through decisions.
+        </div>
+      </div>
+
+      <div class="as-mini-panel">
+        <h4 id="as-mini-title">Workspace view</h4>
+        <p id="as-mini-body">Choose a workspace to see its mini diagram and flavor.</p>
+        <div class="as-mini-visual" id="as-mini-visual">
+          <!-- Simple ASCII-ish diagram rendered in CSS -->
+          <div class="as-mini-orbit"></div>
+        </div>
+      </div>
+
+      <div class="as-history">
+        <div class="as-history-header">
+          <h4>Recent decisions</h4>
+          <span class="as-history-hint">Auto-updates as you click or press 1–4.</span>
+        </div>
+        <ul id="as-history-list" class="as-history-list">
+          <li class="as-history-empty">No decisions yet.</li>
+        </ul>
       </div>
 
       <div class="as-copilot-inputbox">
-        <input type="text" id="as-copilot-input" placeholder="(Disabled — demo only)" disabled />
+        <input type="text" id="as-copilot-input" placeholder="(Typing disabled in demo)" disabled />
         <button disabled>Send</button>
       </div>
     </aside>

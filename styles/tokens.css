@@ -1,0 +1,198 @@
+/* styles/tokens.css */
+/* AtlasForge Umbrella — Brand Color Canon (Code Layer)
+   Generated from your locked system update.
+   Do not drift palettes unless explicitly instructed.
+*/
+
+/* ---------- BASE NEUTRALS (GLOBAL) ---------- */
+
+:root {
+  --af-bg-void: #1a1a21;
+  --af-bg-soft-gray: #d3d3d8;
+
+  --af-text-main: #f2f2f2;
+  --af-text-soft: #e6e6e6;
+  --af-text-muted: #a7a7b4;
+
+  --af-border-soft: rgba(255, 255, 255, 0.1);
+  --af-border-subtle: rgba(255, 255, 255, 0.07);
+
+  --af-shadow-soft: 0 30px 70px rgba(0, 0, 0, 0.85);
+}
+
+/* ---------- [1] ATLASFORGE INTERACTIVE — Magenta Energy Core ---------- */
+
+:root {
+  /* Core glow */
+  --af-core-magenta-start: #ff3fae;
+  --af-core-magenta-end: #ff007a;
+
+  /* Secondary ring gradient */
+  --af-core-ring-start: #ff4faa;
+  --af-core-ring-end: #6b0040;
+
+  /* Metallic rings */
+  --af-core-metal-1: #e6e6e6;
+  --af-core-metal-2: #c8c8c8;
+
+  /* Preferred backgrounds */
+  --af-core-bg-dark: #1a1a21;
+  --af-core-bg-soft: #2a2a33;
+}
+
+/* ---------- [2] ATLAS V — Cyan Lattice Intelligence ---------- */
+
+:root {
+  --av-core-cyan-start: #00e8ff;
+  --av-core-cyan-end: #00b6cc;
+
+  --av-line-cold-white: #efffff;
+  --av-line-deep-blue: #003a55;
+
+  --av-bg-space-navy: #071018;
+  --av-bg-midnight: #0b1f2d;
+}
+
+/* ---------- [3] ATLAS STUDIO — Orange Ember Creator ---------- */
+
+:root {
+  --as-ember-start: #ff9a3c;
+  --as-ember-end: #ff6a00;
+
+  --as-ember-soft: #ffd4b0;
+  --as-bg-navy: #101b32;
+}
+
+/* ---------- [4] OCTOPUS IN ACTION — Friendly Warm Orange ---------- */
+
+:root {
+  --oia-orange: #ff8a26;
+  --oia-shadow: #1a1a21;
+  --oia-accent-cream: #ffe3c2;
+}
+
+/* ---------- THEME MAPPINGS (PER PAGE / BRAND) ---------- */
+
+/* Core / AtlasForge umbrella pages (index, about, games, skb) */
+body.af-theme-core {
+  --theme-bg-main: var(--af-core-bg-dark);
+  --theme-bg-elevated: #22222d;
+  --theme-bg-soft: #242433;
+
+  --theme-accent-strong: var(--af-core-magenta-end);
+  --theme-accent-soft: var(--af-core-magenta-start);
+
+  --theme-pill-border: rgba(255, 63, 174, 0.6);
+  --theme-pill-glow: rgba(255, 0, 122, 0.22);
+
+  --theme-pill-gradient: linear-gradient(
+    135deg,
+    var(--af-core-magenta-start),
+    var(--af-core-magenta-end)
+  );
+
+  --theme-button-primary: linear-gradient(
+    135deg,
+    var(--af-core-magenta-start),
+    var(--af-core-magenta-end)
+  );
+
+  --theme-button-primary-shadow: 0 22px 54px rgba(255, 0, 122, 0.6);
+
+  --theme-tag-outline: rgba(255, 63, 174, 0.6);
+
+  --theme-section-border: rgba(255, 63, 174, 0.25);
+}
+
+/* Atlas-V page: cyan lattice */
+body.af-theme-atlasv {
+  --theme-bg-main: var(--av-bg-space-navy);
+  --theme-bg-elevated: var(--av-bg-midnight);
+  --theme-bg-soft: #081828;
+
+  --theme-accent-strong: var(--av-core-cyan-start);
+  --theme-accent-soft: var(--av-core-cyan-end);
+
+  --theme-pill-border: rgba(0, 232, 255, 0.55);
+  --theme-pill-glow: rgba(0, 183, 214, 0.22);
+
+  --theme-pill-gradient: linear-gradient(
+    135deg,
+    var(--av-core-cyan-start),
+    var(--av-core-cyan-end)
+  );
+
+  --theme-button-primary: linear-gradient(
+    135deg,
+    var(--av-core-cyan-start),
+    var(--av-core-cyan-end)
+  );
+
+  --theme-button-primary-shadow: 0 22px 54px rgba(0, 183, 214, 0.6);
+
+  --theme-tag-outline: rgba(0, 232, 255, 0.6);
+
+  --theme-section-border: rgba(0, 232, 255, 0.25);
+}
+
+/* AtlasStudio page: ember creator */
+body.af-theme-studio {
+  --theme-bg-main: var(--as-bg-navy);
+  --theme-bg-elevated: #121f3a;
+  --theme-bg-soft: #152344;
+
+  --theme-accent-strong: var(--as-ember-end);
+  --theme-accent-soft: var(--as-ember-start);
+
+  --theme-pill-border: rgba(255, 154, 60, 0.55);
+  --theme-pill-glow: rgba(255, 106, 0, 0.22);
+
+  --theme-pill-gradient: linear-gradient(
+    135deg,
+    var(--as-ember-start),
+    var(--as-ember-end)
+  );
+
+  --theme-button-primary: linear-gradient(
+    135deg,
+    var(--as-ember-start),
+    var(--as-ember-end)
+  );
+
+  --theme-button-primary-shadow: 0 22px 54px rgba(255, 106, 0, 0.6);
+
+  --theme-tag-outline: rgba(255, 154, 60, 0.6);
+
+  --theme-section-border: rgba(255, 154, 60, 0.25);
+}
+
+/* OIA page: friendly warm orange */
+body.af-theme-oia {
+  --theme-bg-main: #050713;
+  --theme-bg-elevated: #0b0f1f;
+  --theme-bg-soft: #12162a;
+
+  --theme-accent-strong: var(--oia-orange);
+  --theme-accent-soft: #ffb878;
+
+  --theme-pill-border: rgba(255, 138, 38, 0.55);
+  --theme-pill-glow: rgba(255, 138, 38, 0.22);
+
+  --theme-pill-gradient: linear-gradient(
+    135deg,
+    #ffb878,
+    var(--oia-orange)
+  );
+
+  --theme-button-primary: linear-gradient(
+    135deg,
+    #ffb878,
+    var(--oia-orange)
+  );
+
+  --theme-button-primary-shadow: 0 22px 54px rgba(255, 138, 38, 0.6);
+
+  --theme-tag-outline: rgba(255, 138, 38, 0.6);
+
+  --theme-section-border: rgba(255, 138, 38, 0.25);
+}

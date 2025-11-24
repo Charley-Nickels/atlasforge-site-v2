@@ -2,55 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — AtlasForge Interactive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="AtlasForge Interactive is a small studio focused on building tools, simulations, and games that feel handcrafted but powered by smart systems."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles/main.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var toggle = document.getElementById("afNavToggle");
+      var mobile = document.getElementById("afNavMobile");
+      if (toggle && mobile) {
+        toggle.addEventListener("click", function () {
+          mobile.classList.toggle("af-nav-mobile-open");
+        });
+      }
+      var path = "about.html";
+      var links = document.querySelectorAll("[data-af-nav]");
+      links.forEach(function (link) {
+        if (link.getAttribute("href") === path) {
+          link.classList.add("af-nav-active");
+        }
+      });
+    });
+  </script>
 </head>
-<body class="theme-dark" data-page="about">
-  <header class="af-header af-header-compact">
+<body class="af-page">
+  <header class="af-header">
     <div class="af-container">
-      <nav class="af-nav">
-        <a class="af-logo" href="index.html">
-          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">Atlasforge Interactive</span>
+      <div class="af-header-inner">
+        <a href="index.html" class="af-brand">
+          <div class="af-brand-mark" aria-hidden="true"></div>
+          <div class="af-brand-text">
+            <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
+            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+          </div>
         </a>
-        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-        <div class="af-nav-links">
+
+        <nav class="af-nav" aria-label="Primary navigation">
+          <a href="index.html" data-af-nav>Home</a>
+          <a href="studio-tools.html" data-af-nav>Studio</a>
+          <a href="atlasv.html" data-af-nav>Atlas-V</a>
+          <a href="games.html" data-af-nav>Games</a>
+          <a href="skb.html" data-af-nav>S/K/B</a>
+          <a href="about.html" data-af-nav>About</a>
+        </nav>
+
+        <button
+          class="af-nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="afNavToggle"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="af-nav-mobile" id="afNavMobile">
+        <div class="af-nav-mobile-list">
+          <a href="index.html" data-af-nav>Home</a>
+          <a href="studio-tools.html" data-af-nav>Studio</a>
+          <a href="atlasv.html" data-af-nav>Atlas-V</a>
+          <a href="games.html" data-af-nav>Games</a>
+          <a href="skb.html" data-af-nav>S/K/B</a>
+          <a href="about.html" data-af-nav>About</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="af-section">
+      <div class="af-container">
+        <div class="af-section-header">
+          <p class="af-kicker">Studio</p>
+          <h1 class="af-section-title">About AtlasForge Interactive</h1>
+          <p class="af-section-sub">
+            AtlasForge is a small studio focused on building tools,
+            simulations, and games that feel handcrafted but powered by smart
+            systems.
+          </p>
+        </div>
+
+        <div class="af-split">
+          <article class="af-card">
+            <h2 class="af-card-title">What we’re trying to do</h2>
+            <p class="af-card-sub">
+              The long-term goal is a unified engine and workstation that can
+              support games, web tools, internal dashboards, data pipelines,
+              and future interactive formats — all built with a simulation-first
+              mindset.
+            </p>
+            <ul class="af-list">
+              <li>Atlas-V as the engine / project brain.</li>
+              <li>AtlasStudio as the workstation / UI.</li>
+              <li>Octopus in Action and other worlds as live testbeds.</li>
+              <li>S/K/B as the audio and signal lab.</li>
+            </ul>
+          </article>
+
+          <article class="af-card af-card--soft">
+            <h2 class="af-card-title">Why everything is “visual only” for now</h2>
+            <p class="af-card-sub">
+              Every demo on this site is front-end only. That’s deliberate:
+              it lets us explore how the engine and workstation should feel,
+              without implying that a finished SaaS product already exists.
+            </p>
+            <p
+              style="
+                margin: 0;
+                font-size: var(--af-text-sm);
+                color: var(--af-text-soft);
+              "
+            >
+              As we harden the ideas and pipelines, the intent is to invite a
+              small set of collaborators to shape which pieces become API
+              surfaces, products, or internal tools.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="af-footer">
+    <div class="af-container">
+      <div class="af-footer-inner">
+        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <div class="af-footer-links">
           <a href="index.html">Home</a>
           <a href="studio-tools.html">Studio</a>
           <a href="atlasv.html">Atlas-V</a>
           <a href="games.html">Games</a>
           <a href="skb.html">S/K/B</a>
-          <a href="about.html" class="is-active">About</a>
         </div>
-      </nav>
-    </div>
-  </header>
-
-  <section class="af-section af-page-hero">
-    <div class="af-container">
-      <div class="af-kicker">About the Studio</div>
-      <h1>AtlasForge Interactive</h1>
-      <p class="af-page-lede">AtlasForge Interactive is a small studio focused on building tools, simulations, and games that feel handcrafted but powered by smart systems. Everything remains front-end only for these demos.</p>
-    </div>
-  </section>
-
-  <section class="af-section af-section-band">
-    <div class="af-container af-grid af-grid-2">
-      <div class="af-card">
-        <h3>Our Mission</h3>
-        <p>AtlasForge exists to lower the friction between ideas and working prototypes. We combine strong production values with automation and simulation so concepts can move from sketch to live build quickly—without losing craft.</p>
-        <p>The long-term goal is a unified engine and workstation that can support games, web tools, internal dashboards, data pipelines, and future interactive formats.</p>
-      </div>
-      <div class="af-card">
-        <h3>What We Build</h3>
-        <p>The AtlasForge portfolio is split into three core tracks: Atlas-V (brain), AtlasStudio (workstation), and Games/Labs (playables). We keep everything matte, minimal, and purely visual.</p>
-        <p>We also maintain the Codex Ghost sidecar and S/K/B audio lab as experimental surfaces.</p>
       </div>
     </div>
-  </section>
-
-  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
-  <script src="scripts/main.js" defer></script>
+  </footer>
 </body>
 </html>

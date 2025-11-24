@@ -1,132 +1,183 @@
-# AtlasForge Interactive — Site V2 Canon
-Version: 1.0.0  
-Status: Canonized
+# AtlasForge Canon Specification  
+### Unified Identity · Geometry · Interaction Model  
+_Last updated: v1.0_
 
-This document defines the official canon for the AtlasForge Interactive website (V2), including brand rules, folder structure, and development guidelines. All future updates to the site should align with this document unless explicitly revised.
-
----
-
-## 1. PURPOSE
-AtlasForge Interactive Site V2 is the public-facing studio website for:
-
-- AtlasForge Interactive (studio)
-- Atlas-V (engine)
-- AtlasStudio (workstation)
-- Octopus in Action (flagship game)
-- Future prototypes and internal tools
-
-The site must remain professional, clean, premium, and easy to extend.
+AtlasForge is a simulation-first ecosystem for designing workflows, worlds, and
+interfaces in a unified visual and decision language. This document defines the
+canonical rules for logos, palettes, interactions, and surface-level behavior
+across the entire stack.
 
 ---
 
-## 2. BRAND CANON
+# 1. Brand Family Overview
 
-### 2.1 Official Colors
-Deep Navy Base: #0B0E17
-Soft Navy Layers: #121826, #1A2334
+AtlasForge uses a shared geometry language: rings, shards, and lattices.
+Individual brands differ only by palette and tone.
 
-AtlasStudio Orange: #F29F3A
-AtlasForge Pink: #E26BE4
-Atlas-V Light Blue: #A7D4FF
-
-Soft White: #F5F7FF
-Muted Text: #9AA4C3
-Shadow: rgba(0,0,0,0.6)Deep Navy Base: #0B0E17
-Soft Navy Layers: #121826, #1A2334
-
-AtlasStudio Orange: #F29F3A
-AtlasForge Pink: #E26BE4
-Atlas-V Light Blue: #A7D4FF
-
-Soft White: #F5F7FF
-Muted Text: #9AA4C3
-Shadow: rgba(0,0,0,0.6)
-index.html
-about.html
-atlasv.html
-studio-tools.html
-octopus.html
-
-/styles/
-main.css
-atlasstudio.css
-
-/scripts/
-main.js
-playground.js
-
-/atlasstudio/
-index.html
-playground.html
-gallery.html
-
-/assets/
-/logos/
-ATLASFORGE_BRAND.png
-ATLASSTUDIO_BRAND.png
-ATLASSTUDIO_ALTBRAND.png
-ATLASV_BRAND.png
-OIA_BRAND.png
-
-/docs/
-atlas-canon.md
-patch-notes.md
-
-This structure is canonical and changes only if explicitly updated.
+| Brand | Canon Logo | Identity | Palette |
+|-------|-------------|----------|---------|
+| **AtlasForge (AF)** | `AF_CANON2.png` | Umbrella / Navigation layer | Magenta energy core |
+| **AtlasStudio (AS)** | `TRANSPAS.png` | Workstation · 3-panel layout | Orange ember |
+| **Atlas-V Engine (AV)** | `TRANSPAV.png` | Routing + Constraints Engine | Cyan lattice |
+| **Octopus in Action (OIA)** | `transpOIA3.png` | Harbor-city world | Warm orange |
+| **S/K/B Audio Lab (SKB)** | `SKBCANON.png` | Sound workshop | Violet nebula |
 
 ---
 
-## 4. DESIGN RULES
+# 2. Geometry Rules
 
-### Typography
-- Use clean, modern system fonts (SF Pro, Inter, system-ui).
+- **AF** uses concentric rings + internal magenta glow  
+- **AS** uses triangular shards + ember interior  
+- **AV** uses thin lattice lines + orbit grids  
+- **OIA** uses soft mascot illustration + warm shading  
+- **SKB** uses nebula grain + circular wave energy  
 
-### Layout
-- Strong spacing  
-- Rounded corners (12–20px)  
-- Subtle glows only in orange/pink/blue  
-- Dark theme only
-
-### UI Elements
-- Pill-shaped buttons  
-- Subtle animated hovers  
-- Card system for all info blocks  
-- Grid-based layout
+Shared rules:
+- white/cold-white strokes for structure  
+- shadows always fall away from center glow  
+- no rainbow gradients  
+- glow should be internal, never bloom outward excessively
 
 ---
 
-## 5. ATLASSTUDIO PROTOTYPE RULES
+# 3. Interaction Language (Stack-wide)
 
-The prototype at `/atlasstudio/` must be:
-- static  
-- front-end only  
-- safe to click  
-- able to simulate toggles, tabs, and patch bars
+AtlasForge uses a shared interaction model across all worlds and tools.
 
-No data saves, no back-end, no deployment triggers.
+### 3.1 Decision Quadrant
+Every feature or task supports:
 
----
+- **Yes** → moves forward, generates next step  
+- **No** → removes from active flow  
+- **Later** → defers and reappears in future sessions  
+- **Expand** → generates follow-up questions/subtasks  
 
-## 6. DEVELOPMENT RULES
+### 3.2 Snapshots
+A snapshot is a pass-level record of:
+- what moved  
+- what stalled  
+- what changed state  
+- which chains or tasks were affected  
 
-1. Always provide explicit file paths in code blocks.  
-2. Always include full file content for any update.  
-3. Use GitHub Web (no CLI required).  
-4. Maintain canon brand colors + logo silhouettes.  
-5. Keep content minimal, readable, professional.  
-6. Avoid feature sprawl unless part of roadmap.  
+Corresponds to `_SNAPSHOT_*` sheets in BuildLogs.
 
----
-
-## 7. ROADMAP (HIGH LEVEL)
-
-- Add metadata + SEO tags  
-- Add animated transitions  
-- Create Figma design system  
-- Add press kit page  
-- Add real Atlas-V documentation  
-- Add dynamic content when back-end exists  
+### 3.3 Queues
+Queues represent prioritized sets of work:
+- By category  
+- By tag  
+- By world / district / module  
+- By shift or time-block  
 
 ---
 
-End of document.
+# 4. AtlasStudio Canon
+
+AtlasStudio is the primary surface for flows.  
+Its 3-column layout is canonical:
+
+- **Left:** Navigation (queues, tags, worlds)  
+- **Center:** Active card (feature/task)  
+- **Right:** Session context (notes, snapshots, flags)  
+
+Rules:
+- decisions always appear attached to the card  
+- transitions must be soft fades or slides  
+- center column is always the “spotlight”  
+
+---
+
+# 5. Atlas-V Engine Canon
+
+The engine model has four modules:
+
+### 5.1 Navigator
+Determines what appears next based on:
+- queues  
+- tags  
+- world context  
+- urgency  
+
+### 5.2 Memory
+Tracks:
+- approvals  
+- rejections  
+- deferrals  
+- expansions  
+- notes and timestamps  
+
+### 5.3 Guard
+Imposes constraints:
+- limits  
+- caps  
+- safety conditions  
+- block/allow rules  
+
+### 5.4 FlowSim
+Simulates:
+- durations  
+- arrival times  
+- scenario stress tests  
+- shift-by-shift impacts  
+
+---
+
+# 6. OIA World Canon
+
+Octopus in Action is the flagship world.
+
+### Core loops:
+- mailbox → task → route  
+- district mood  
+- shift timing  
+- event chains  
+- risks from weather or congestion  
+
+### Districts:
+- **Harbor & docks**  
+- **Old Town**  
+- **Hills**  
+
+World identities must use warm-orange palette.
+
+---
+
+# 7. S/K/B Audio Lab Canon
+
+The audio lab provides:
+- ambient beds  
+- loops  
+- stems  
+- alternate cuts  
+
+Rules:
+- palette is violet/nebula  
+- waveform tiles use subtle glow  
+- “play” buttons are visual only  
+
+Audio packs must reflect world/time contexts:
+- harbor night pads  
+- hill winds  
+- festival chatter  
+
+---
+
+# 8. Future Extensions
+
+This canon supports future:
+- worlds  
+- tools  
+- decision surfaces  
+- diagrams  
+- build pipelines  
+
+All must respect the interaction language defined here.
+
+---
+
+# 9. Versioning
+
+This canon follows site versions:
+
+- `v1.0` – Marketing + Workstation + Engine + Worlds + Audio  
+- `v1.1+` – Diagrams, extended worlds, runtime simulations  
+- `v2.0` – Real engine integration  

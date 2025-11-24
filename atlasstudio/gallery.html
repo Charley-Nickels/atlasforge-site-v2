@@ -1,82 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AtlasStudio Gallery — AtlasForge Interactive</title>
+  <meta charset="utf-8" />
+  <title>AtlasForge – Brand & Workspace Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta
+    name="description"
+    content="Gallery of AtlasForge brand marks and workspace previews for AtlasStudio, Atlas-V, Octopus in Action, and S/K/B Audio Lab."
+  />
 
   <link rel="stylesheet" href="../styles/main.css" />
-  <link rel="stylesheet" href="../styles/atlasstudio.css" />
+  <link rel="stylesheet" href="../styles/marketing.css" />
 </head>
 
-<body class="theme-dark as-shell">
+<body class="mf-shell">
+  <!-- ================= HEADER ================= -->
+  <header class="mf-header">
+    <div class="mf-header-inner">
+      <a href="../index.html" class="mf-logo">
+        <span class="mf-logo-mark">
+          <img src="../assets/logos/AF_CANON2.png" alt="AtlasForge logo" />
+        </span>
+        <span class="mf-logo-text">AtlasForge</span>
+      </a>
 
-  <!-- HEADER -->
-  <header class="af-header af-header-compact">
-    <div class="af-container">
-      <nav class="af-nav">
-
-        <a class="af-logo" href="../index.html">
-          <img src="../assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">ATLASFORGE INTERACTIVE</span>
-        </a>
-
-        <div class="af-nav-links">
-          <a href="../atlasv.html">Atlas-V</a>
-          <a href="../studio-tools.html" class="is-active">AtlasStudio</a>
-          <a href="../octopus.html">Octopus in Action</a>
-          <a href="../about.html">About</a>
-        </div>
-
+      <nav class="mf-nav">
+        <a href="../index.html">Home</a>
+        <a class="mf-nav-active" href="../studio-tools.html">AtlasStudio</a>
+        <a href="../atlasv.html">Atlas-V Engine</a>
+        <a href="../octopus.html">Octopus in Action</a>
+        <a href="../skb.html">S/K/B Audio Lab</a>
+        <a href="../about.html">About</a>
       </nav>
+
+      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
+  <main class="mf-main">
 
-  <!-- TOP BAND -->
-  <div class="as-top-band">
-    <div class="as-top-band-inner">
-      <div class="as-top-pill">ATLASSTUDIO — GALLERY</div>
-      <div class="as-top-pill">FRONT-END ONLY</div>
-    </div>
-  </div>
+    <!-- ================= HERO ================= -->
+    <section class="mf-hero mf-hero--studio mf-section">
+      <div class="mf-hero-inner">
+        <div class="mf-hero-body">
+          <div class="mf-hero-body-eyebrow">Gallery</div>
+          <h1>Brand marks and workstation previews in one place.</h1>
 
-
-  <!-- MAIN CONTENT -->
-  <section class="af-section">
-    <div class="af-container">
-
-      <h1 style="margin-bottom: 20px;">Prototype Gallery</h1>
-      <p class="af-page-lede" style="margin-bottom: 40px;">
-        This gallery contains placeholder images, mockups, or future UI panels
-        for the AtlasStudio workstation.  
-        All content here is optional and can be expanded later.
-      </p>
-
-      <div class="af-grid af-grid-3">
-
-        <div class="af-card">
-          <h3>Mock Dashboard Panel</h3>
-          <p>A placeholder visual for the dashboard UI.</p>
-          <div style="background:rgba(255,255,255,0.05); height:160px; border-radius:12px;"></div>
-        </div>
-
-        <div class="af-card">
-          <h3>Future Map Mock</h3>
-          <p>Reserved space for interactive map prototypes.</p>
-          <div style="background:rgba(255,255,255,0.05); height:160px; border-radius:12px;"></div>
-        </div>
-
-        <div class="af-card">
-          <h3>UI Component Set</h3>
           <p>
-            Placeholder for buttons, switches, menus, or logic nodes
-            that will be part of the workstation toolkit.
+            A quick reference for the AtlasForge visual language: core logos,
+            brand tiles, and how they line up with the workstation views.
           </p>
-          <div style="background:rgba(255,255,255,0.05); height:160px; border-radius:12px;"></div>
+
+          <p>
+            Use this page as a visual checklist when updating assets, docs,
+            or future UI surfaces.
+          </p>
         </div>
 
+        <aside class="mf-hero-visual">
+          <h2>Studio + brands</h2>
+          <p>All five identities share orbit lines, shards, or lattices.</p>
+          <p>
+            <img
+              src="../assets/logos/AF_CANON2.png"
+              alt="AtlasForge logo"
+              style="width: 110px; opacity: 0.96; margin-top: 0.4rem;"
+            />
+          </p>
+        </aside>
       </div>
+    </section>
 
-      <div style="m
+    <!-- ================= BRAND ROW ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Brand set</div>
+        <h2>The five primary marks.</h2>
+        <p>
+          Canon logos used across the current site. If you swap any of these files,
+          this page will update automatically.
+        </p>
+      </header>
+
+      <div class="mf-logo-row">
+        <div class="mf-logo-tile">
+          <img src="../assets/logos/AF_CANON2.png" alt="AtlasForge" />
+          <div>
+            <div class="mf-chip">AtlasForge</div>
+            <div>Magenta energy core · Umbrella brand.</div>
+          </div>
+        </div>
+
+        <div class="mf-logo-tile">
+          <img src="../assets/logos/TRANSPAS.png" alt="AtlasStudio" />
+          <div>
+            <div class="mf-chip mf-chip--studio">AtlasStudio</div>
+            <div>Orange ember creator · Workstation surface.</div>
+          </div>
+        </div>
+
+        <div class="mf-logo-tile">
+          <img src="../assets/logos/TRANSPAV.png" alt="Atlas-V" />
+          <div>
+            <div class="mf-chip mf-chip--atlasv">Atlas-V</div>
+            <div>Cyan lattice intelligence · Engine language.</div>
+          </div>
+        </div>
+
+        <div class="mf-logo-tile">
+          <img src="../assets/logos/transpOIA3.png" alt="Octopus in Action" />
+          <div>
+            <div class="mf-chip mf-chip--oia">Octopus in Action</div>
+            <div>Friendly harbor-city mascot · Flagship world.</div>
+          </div>
+        </div>
+
+        <div class="mf-logo-tile">
+          <img src="../assets/logos/SKBCANON.png" alt="S/K/B" />
+          <div>
+            <div class="mf-chip mf-chip--skb">S/K/B Audio Lab</div>
+            <div>Violet nebula audio identity · Sound workshop.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORKSTATION PREVIEWS ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Workspace</div>
+        <h2>How the brands show up inside AtlasStudio.</h2>
+        <p>
+          These panels mirror the core layouts: navigation on the left,
+          active content in the center, decisions and notes on the right.
+        </p>
+      </header>
+
+      <div class="mf-grid mf-grid--pillars">
+        <article class="mf-card mf-card--studio">
+          <h3>AtlasStudio playground</h3>
+          <p>
+            Three-column layout: queues, preview, and assistant. Used as a canvas
+            for flows from any world or tool in the stack.
+          </p>
+          <div class="mf-card-footer">
+            <a href="../atlasstudio/playground.html">Open playground</a>
+          </div>
+        </article>
+
+        <article class="mf-card mf-card--atlasv">
+          <h3>Atlas-V module view</h3>
+          <p>
+            Shows how engine concepts like Navigator, Memory, Guard, and FlowSim
+            can be expressed as panels, tabs, and diagrams.
+          </p>
+          <div class="mf-card-footer">
+            <a href="../atlasv.html">Open Atlas-V page</a>
+          </div>
+        </article>
+
+        <article class="mf-card mf-card--oia">
+          <h3>OIA mailbox & tasks</h3>
+          <p>
+            Mailbox + task detail layout that feeds directly into AtlasStudio-style
+            decision flows and snapshots.
+          </p>
+          <div class="mf-card-footer">
+            <a href="../octopus.html">Open OIA page</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mf-footer">
+    <div class="mf-footer-inner">
+      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
+      <nav class="mf-footer-nav">
+        <a href="../index.html">Home</a>
+        <a href="../studio-tools.html">AtlasStudio</a>
+        <a href="../atlasv.html">Atlas-V</a>
+        <a href="../octopus.html">OIA</a>
+        <a href="../skb.html">S/K/B</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../scripts/marketing.js"></script>
+  <script>
+    const year = document.getElementById("mf-year");
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

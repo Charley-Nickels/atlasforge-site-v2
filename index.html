@@ -2,271 +2,278 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>AtlasForge Interactive · Worlds, Tools & Intelligent Systems</title>
+  <title>AtlasForge Interactive – Simulation-first ecosystem</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="AtlasForge Interactive is a small studio building a shared stack for games, tools, and intelligent systems — with AtlasStudio, Atlas-V, Octopus in Action, and SKB all running on the same mental model."
+    content="AtlasForge Interactive is a simulation-first ecosystem for fake-but-coherent demos: a workstation shell, an engine fiction, and worlds in pre-production. Everything here is front-end only."
   />
-  <!-- NOTE: keep your existing global stylesheet path if it differs -->
+  <!-- Legacy styles (if any internal pages still rely on them) -->
   <link rel="stylesheet" href="styles/main.css" />
+  <!-- New marketing shell -->
+  <link rel="stylesheet" href="styles/marketing.css" />
 </head>
-<body>
-  <header class="af-header">
-    <div class="af-header-inner">
-      <a href="index.html" class="af-logo">
-        <span class="af-logo-mark">◎</span>
-        <span class="af-logo-text">AtlasForge Interactive</span>
+<body class="mf-shell">
+
+  <!-- ================= HEADER ================= -->
+  <header class="mf-header">
+    <div class="mf-header-inner">
+      <a href="index.html" class="mf-logo">
+        <span class="mf-logo-mark">
+          <!-- You can change to AFBLACK.png or AF_CANON2.png if you like that variant better -->
+          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Interactive logo" />
+        </span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="af-nav">
-        <a href="index.html">Home</a>
-        <a href="studio-tools.html">Studio</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="games.html">Games</a>
-        <a href="skb.html">S/K/B</a>
+
+      <nav class="mf-nav">
+        <a class="mf-nav-active" href="index.html">Home</a>
+        <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V Engine</a>
+        <a href="worlds-oia.html">Octopus in Action</a>
+        <a href="skb.html">S/K/B Audio Lab</a>
         <a href="about.html">About</a>
       </nav>
-      <button class="af-nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
-  <main class="af-main">
-    <!-- HERO -->
-    <section class="af-hero af-section">
-      <div class="af-hero-inner">
-        <p class="af-eyebrow">Hybrid game & tools studio</p>
-        <h1>Build worlds and workflows on the same stack.</h1>
-        <p class="af-hero-body">
-          AtlasForge Interactive is a small studio building a shared stack for games, internal tools,
-          and intelligent systems. AtlasStudio, Atlas-V, Octopus in Action, and SKB all live on the
-          same mental model: decisions, timelines, and stories.
-        </p>
-        <div class="af-hero-actions">
-          <a class="af-button af-button-primary" href="studio-tools.html">
-            Open AtlasStudio overview
-          </a>
-          <a class="af-button af-button-ghost" href="atlasv.html">
-            Meet Atlas-V (engine layer)
-          </a>
+  <main class="mf-main">
+
+    <!-- ================ HERO ==================== -->
+    <section class="mf-hero mf-hero--forge mf-section">
+      <div class="mf-hero-inner">
+        <div class="mf-hero-body">
+          <div class="mf-hero-body-eyebrow">Simulation-first demos · Front-end only</div>
+          <h1>AtlasForge behaves like a real stack, but it’s all smoke and JavaScript.</h1>
+          <p>
+            This site is a controlled illusion: a workstation shell, an engine fiction, and world pages that
+            all act like a production ecosystem—without any servers, uploads, or external AI calls.
+          </p>
+          <p>
+            AtlasStudio is the UI shell. Atlas-V is the routing brain. Octopus in Action is the flagship world.
+            S/K/B is the audio lab that glues the vibes together.
+          </p>
+
+          <div class="mf-hero-actions">
+            <a class="mf-button mf-button--primary mf-cta-pulse" href="atlasstudio/playground.html">
+              Launch the fake workstation demo
+            </a>
+            <a class="mf-button mf-button--ghost" href="studio-tools.html">
+              Read how the workstation actually works
+            </a>
+          </div>
+
+          <div class="mf-hero-subnote">
+            Everything here runs in your browser: scripted workflows, mock decisions, and fake Copilot messages.
+            No file access, no uploads, no hidden services.
+          </div>
         </div>
-        <p class="af-hero-subnote">
-          Today: a working design language, a real game in progress, and a workstation demo.
-          Tomorrow: a deeper toolkit so small teams can ship their own simulations and decision systems.
-        </p>
+
+        <aside class="mf-hero-visual">
+          <h2>Current focus</h2>
+          <p>
+            We’re wiring the AtlasStudio demo to mirror your OIA BuildLog behavior:
+            feature queues, Yes/No/Later/Expand decisions, and pretend snapshots between
+            <span class="mf-chip">v1.0.0</span> and <span class="mf-chip">v1.0.3</span>.
+          </p>
+          <p>
+            The goal is to make the fake flows feel real enough that you can design processes inside them
+            before any backend exists.
+          </p>
+        </aside>
       </div>
     </section>
 
-    <!-- THREE PILLARS -->
-    <section class="af-section af-pillars">
-      <div class="af-section-header">
-        <p class="af-eyebrow">The Atlas stack</p>
-        <h2>Three pillars, one mental model.</h2>
+    <!-- ============== PILLARS / WHAT IT IS ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">What this actually is</div>
+        <h2>AtlasForge is a sandbox for believable prototypes, not a live product.</h2>
         <p>
-          Every project in AtlasForge uses the same idea: treat your world like a routing problem
-          between people, tools, and time. The art and stakes change, the structure stays familiar.
+          Every page is honest about what’s real today: guided workflows, blueprints, and front-end only demos
+          that simulate how a future stack could behave.
         </p>
-      </div>
+      </header>
 
-      <div class="af-pillars-grid">
-        <article class="af-card af-card-pillar af-card-studio">
-          <h3>AtlasStudio</h3>
+      <div class="mf-grid mf-grid--pillars">
+        <article class="mf-card mf-card--studio">
+          <h3>AtlasStudio workstation</h3>
           <p>
-            A three-panel workstation for shaping content, behavior, and flows. Built to feel like
-            a creative suite, not a config page.
+            A three-panel UI shell that visualizes queues, decisions, and snapshots. It is wired to
+            fake “Project Copilot” responses that react to your clicks, but nothing leaves the page.
           </p>
-          <ul>
-            <li>Brainstorm → UAT → Review → Patch pipeline</li>
-            <li>Feature queues with Yes / No / Later / Expand decisions</li>
-            <li>Demos that span games, tools, and docs</li>
-          </ul>
-          <a href="studio-tools.html" class="af-card-link">Explore AtlasStudio</a>
+          <div class="mf-card-footer">
+            <a href="studio-tools.html">AtlasStudio overview</a> ·
+            <a href="atlasstudio/playground.html">Open demo</a>
+          </div>
         </article>
 
-        <article class="af-card af-card-pillar af-card-atlasv">
-          <h3>Atlas-V Engine</h3>
+        <article class="mf-card mf-card--atlasv">
+          <h3>Atlas-V engine fiction</h3>
           <p>
-            A routing brain that thinks in orbits: Navigator, Memory, Guard, and FlowSim. Designed
-            for systems that juggle decisions and time.
+            A conceptual brain that talks about Navigator, Memory, Guard, and FlowSim. The engine page provides
+            diagrams and copy only—no real routing or evaluation happens yet.
           </p>
-          <ul>
-            <li>Explainable route diagrams and console-style logs</li>
-            <li>Intent, constraints, and outcomes shown visually</li>
-            <li>Blueprints for patchable flows, not a live backend</li>
-          </ul>
-          <a href="atlasv.html" class="af-card-link">See the Atlas-V model</a>
+          <div class="mf-card-footer">
+            <a href="atlasv.html">Explore Atlas-V page</a>
+          </div>
         </article>
 
-        <article class="af-card af-card-pillar af-card-oia">
-          <h3>Octopus in Action</h3>
+        <article class="mf-card mf-card--oia">
+          <h3>Worlds & labs</h3>
           <p>
-            A cozy harbor-town sim with a gentleman octopus mayor. This is the flagship world used
-            to prove the stack in practice.
+            Octopus in Action, S/K/B, and future projects use the same language of tasks, builds, and snapshots.
+            Their pages explain the worlds and show how they plug into the workstation demo.
           </p>
-          <ul>
-            <li>Mailbox-driven civic tasks and city hall decisions</li>
-            <li>Day/night rhythms and gentle schedule pressure</li>
-            <li>Design playground for Atlas-V and AtlasStudio ideas</li>
-          </ul>
-          <a href="octopus.html" class="af-card-link">Visit the harbor</a>
+          <div class="mf-card-footer">
+            <a href="worlds-oia.html">Visit Octopus in Action</a> ·
+            <a href="skb.html">Visit S/K/B</a>
+          </div>
         </article>
       </div>
     </section>
 
-    <!-- WHAT ATLASFORGE IS FOR -->
-    <section class="af-section af-uses">
-      <div class="af-section-header">
-        <h2>Simulation-first everything.</h2>
+    <!-- ============== BRAND ROW ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Ecosystem overview</div>
+        <h2>Four faces of the same simulation-first stack.</h2>
         <p>
-          The same mental model that powers a harbor-town sim can sketch out operations dashboards,
-          routing tools, and guided knowledge flows. Change the art and constraints; keep the
-          simulation brain.
+          Shared geometry, shared rules. Only the colors and mascots change.
         </p>
-      </div>
+      </header>
 
-      <div class="af-uses-grid">
-        <div class="af-card">
-          <h3>Games & sims</h3>
-          <p>
-            Management games, city-sims, training worlds, or explorable “what-if” sandboxes.
-            AtlasForge focuses on systems depth and readable decisions.
-          </p>
+      <div class="mf-logo-row">
+        <div class="mf-logo-tile">
+          <img src="assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge brand" />
+          <div>
+            <div class="mf-chip">Umbrella</div>
+            <div>Magenta energy core. Parent brand for everything.</div>
+          </div>
         </div>
-        <div class="af-card">
-          <h3>Ops & tools</h3>
-          <p>
-            Internal dashboards, timelines, and routing logic that borrow ideas from game design:
-            clear feedback, visible trade-offs, and narrative-style explanations.
-          </p>
+
+        <div class="mf-logo-tile">
+          <img src="assets/logos/ATLASSTUDIO_BRAND.png" alt="AtlasStudio brand" />
+          <div>
+            <div class="mf-chip mf-chip--studio">Workstation</div>
+            <div>Ember creator UI: queues, cards, and flows.</div>
+          </div>
         </div>
-        <div class="af-card">
-          <h3>Knowledge & docs</h3>
-          <p>
-            Guided experiences that turn static knowledge into navigable stories: branching flows,
-            decision logs, and scenario-driven walkthroughs.
-          </p>
+
+        <div class="mf-logo-tile">
+          <img src="assets/logos/ATLASV_BRAND.png" alt="Atlas-V brand" />
+          <div>
+            <div class="mf-chip mf-chip--atlasv">Engine</div>
+            <div>Cyan lattice diagrams for brain, guardrails, and routes.</div>
+          </div>
+        </div>
+
+        <div class="mf-logo-tile">
+          <img src="assets/logos/OIA_BRAND.png" alt="Octopus in Action brand" />
+          <div>
+            <div class="mf-chip mf-chip--oia">World</div>
+            <div>Harbor-city game in pre-production. Tasks feed the workstation.</div>
+          </div>
+        </div>
+
+        <div class="mf-logo-tile">
+          <img src="assets/logos/SKBCANON.png" alt="S/K/B brand" />
+          <div>
+            <div class="mf-chip mf-chip--skb">Audio Lab</div>
+            <div>Soundtracks, stems, and experimental audio personas.</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CURRENT FOCUS -->
-    <section class="af-section af-focus">
-      <div class="af-section-header">
-        <h2>Current focus: one stack, used three ways.</h2>
+    <!-- ============== BUILDLOG MENTAL MODEL ================ -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">BuildLog → UI translation</div>
+        <h2>How the OIA spreadsheets secretly drive the workstation demo.</h2>
         <p>
-          AtlasForge is actively shaping the internal stack before promising anything more public.
-          The site reflects an evolving workstation, not a finished SaaS product.
+          AtlasStudio’s fake flows are modeled after your OIA BuildLogs: feature rows with decisions,
+          notes, and snapshots between versions.
         </p>
-      </div>
-      <div class="af-focus-grid">
-        <div class="af-card">
-          <h3>AtlasStudio UI & workflow</h3>
+      </header>
+
+      <div class="mf-grid mf-grid--workflow">
+        <article class="mf-card">
+          <h3>Feature queues</h3>
           <p>
-            A clean three-pane workstation with feature queues, snapshots, and a fake “Project
-            Copilot” chat that illustrates how decisions get made.
+            Features from different projects (OIA, Atlas-V, S/K/B) are surfaced as cards in the left column
+            of the workstation demo. The selection logic is scripted, but feels like a pulled-from-spreadsheet queue.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>Atlas-V orbit language</h3>
+          <div class="mf-version-row">
+            <span class="mf-version-badge">v1.0.0</span>
+            <span>Initial brainstorm deck wired to cards.</span>
+          </div>
+        </article>
+
+        <article class="mf-card">
+          <h3>Decisions: Yes / No / Later / Expand</h3>
           <p>
-            Orbit diagrams, example logs, and storyboarded flows that show how a routing brain
-            could justify each change.
+            The center panel shows one feature at a time with decision buttons. Clicking them updates local state
+            and triggers different fake Copilot reactions—mirroring how your spreadsheet decisions and notes work.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>Octopus in Action</h3>
+          <div class="mf-version-row">
+            <span class="mf-version-badge">v1.0.1</span>
+            <span>Decisions log out to the on-screen console.</span>
+          </div>
+        </article>
+
+        <article class="mf-card">
+          <h3>Snapshots & pretend diffs</h3>
           <p>
-            Mailbox loops, city-hall choices, and gentle friction that stress-test the stack in a
-            cozy harbor instead of a sterile dashboard.
+            The right panel summarises a “current build” with highlights like “2 features moved to Patch”
+            or “Later items returned”. All of this is generated on the fly from local arrays.
           </p>
-        </div>
+          <div class="mf-version-row">
+            <span class="mf-version-badge">v1.0.3</span>
+            <span>Snapshot strip hints at BuildLog `_SNAPSHOT_*` tabs.</span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- WHO THIS IS FOR -->
-    <section class="af-section af-audience">
-      <div class="af-section-header">
-        <h2>Built for small teams and strange projects.</h2>
-        <p>
-          AtlasForge is coming from someone who lives in call-center ops, docs, and simulation
-          brain at the same time. The stack reflects that mixed DNA.
+    <!-- ============== CALL TO ACTION ===================== -->
+    <section class="mf-callout mf-section">
+      <div class="mf-callout-inner">
+        <h2 style="margin: 0 0 0.4rem; font-size: 1rem;">Try the workstation demo with the right expectations.</h2>
+        <p style="margin: 0 0 0.7rem;">
+          The AtlasStudio demo is intentionally fake. It exists to help you design flows, not to process real data.
+          If you want to turn this into a real product later, the same UI can sit on top of an actual backend.
         </p>
-      </div>
-      <div class="af-uses-grid">
-        <div class="af-card">
-          <h3>Indie & micro-studios</h3>
-          <p>
-            Teams that want deep systems without building a custom engine for every idea. One set
-            of patterns, many worlds.
-          </p>
-        </div>
-        <div class="af-card">
-          <h3>Ops-heavy teams</h3>
-          <p>
-            People who manage queues, schedules, and policy but think in stories, not just
-            spreadsheets.
-          </p>
-        </div>
-        <div class="af-card">
-          <h3>Tinkerers & hybrids</h3>
-          <p>
-            Anyone who wants their games, tools, and personal projects to live in one connected
-            universe instead of scattered side projects.
-          </p>
-        </div>
+        <a class="mf-button mf-button--primary" href="atlasstudio/playground.html">
+          Open AtlasStudio demo
+        </a>
       </div>
     </section>
 
-    <!-- CHOOSE YOUR WAY IN -->
-    <section class="af-section af-entry">
-      <div class="af-section-header">
-        <h2>Explore the stack in slices.</h2>
-        <p>
-          Each page focuses on one part of the system. You don’t need to hold the whole stack in
-          your head at once—start where your brain lights up.
-        </p>
-      </div>
-      <div class="af-entry-grid">
-        <a href="studio-tools.html" class="af-entry-card">
-          <h3>AtlasStudio overview</h3>
-          <p>See the workstation, the Brainstorm → UAT → Review → Patch pipeline, and how feature queues work.</p>
-        </a>
-        <a href="atlasv.html" class="af-entry-card">
-          <h3>Atlas-V orbits & engine</h3>
-          <p>Walk through the Navigator / Memory / Guard / FlowSim model and what an explainable routing brain looks like.</p>
-        </a>
-        <a href="octopus.html" class="af-entry-card">
-          <h3>Octopus in Action world</h3>
-          <p>Meet the harbor, the mayor, and the mailbox loops that exercise the stack in a cozy sim.</p>
-        </a>
-        <a href="skb.html" class="af-entry-card">
-          <h3>S/K/B audio & experiments</h3>
-          <p>Explore the audio lab side: soundscapes, stems, and how they plug into worlds and tools.</p>
-        </a>
-      </div>
-      <p class="af-dev-status">
-        AtlasForge Interactive is in active development. The site reflects a living stack, not a
-        finished product.
-      </p>
-    </section>
   </main>
 
-  <footer class="af-footer">
-    <div class="af-footer-inner">
-      <p>© <span id="af-year"></span> AtlasForge Interactive. Worlds · Tools · Intelligent Systems.</p>
-      <nav class="af-footer-nav">
-        <a href="about.html">About</a>
-        <a href="games.html">Games & worlds</a>
+  <!-- ================= FOOTER ================= -->
+  <footer class="mf-footer">
+    <div class="mf-footer-inner">
+      <span>© <span id="mf-year"></span> AtlasForge Interactive · All demos are front-end only.</span>
+      <nav class="mf-footer-nav">
+        <a href="index.html">Home</a>
         <a href="studio-tools.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V</a>
+        <a href="worlds-oia.html">OIA</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
-    <script>
-      // Simple year injection; keeps footer up to date without build tools.
-      (function () {
-        var span = document.getElementById("af-year");
-        if (span) span.textContent = new Date().getFullYear();
-      })();
-    </script>
   </footer>
+
+  <script src="scripts/marketing.js"></script>
+  <script>
+    // Footer year
+    const mfYear = document.getElementById("mf-year");
+    if (mfYear) mfYear.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

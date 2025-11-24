@@ -2,241 +2,242 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>AtlasStudio · Creative Workstation for Worlds & Tools</title>
+  <title>AtlasStudio – Workstation Overview</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta
     name="description"
-    content="AtlasStudio is the creative workstation of the AtlasForge stack. A three-pane UI for shaping worlds, workflows, content, and flows — powered by BuildLog-style queues, decision systems, and a Project Copilot demo."
+    content="AtlasStudio is a multi-panel workstation for organizing features, decisions, and snapshots across any project or world."
   />
+
   <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/marketing.css" />
 </head>
 
-<body>
-  <header class="af-header">
-    <div class="af-header-inner">
-      <a href="index.html" class="af-logo">
-        <span class="af-logo-mark">◎</span>
-        <span class="af-logo-text">AtlasForge</span>
+<body class="mf-shell">
+
+  <!-- ================= HEADER ================= -->
+  <header class="mf-header">
+    <div class="mf-header-inner">
+      <a href="index.html" class="mf-logo">
+        <span class="mf-logo-mark">
+          <img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" />
+        </span>
+        <span class="mf-logo-text">AtlasForge</span>
       </a>
-      <nav class="af-nav">
+
+      <nav class="mf-nav">
         <a href="index.html">Home</a>
-        <a class="active" href="studio-tools.html">Studio</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="games.html">Games</a>
-        <a href="skb.html">S/K/B</a>
+        <a class="mf-nav-active" href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V Engine</a>
+        <a href="worlds-oia.html">Octopus in Action</a>
+        <a href="skb.html">S/K/B Audio Lab</a>
         <a href="about.html">About</a>
       </nav>
-      <button class="af-nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
     </div>
   </header>
 
-  <main class="af-main">
-    <!-- HERO -->
-    <section class="af-hero af-section af-hero-studio">
-      <div class="af-hero-inner">
-        <p class="af-eyebrow">AtlasStudio Workstation</p>
-        <h1>The creative hub for worlds, workflows, and flows.</h1>
-        <p class="af-hero-body">
-          AtlasStudio is a three-pane workstation designed for shaping worlds, complex workflows,
-          content, and decision systems — all using the same internal mental model.
-        </p>
-        <div class="af-hero-actions">
-          <a class="af-button af-button-primary" href="atlasstudio/playground.html">
-            Open the Workstation Demo
-          </a>
-          <a class="af-button af-button-ghost" href="atlasstudio/gallery.html">
-            View Gallery
-          </a>
+  <main class="mf-main">
+
+    <!-- ================= HERO ================= -->
+    <section class="mf-hero mf-hero--studio mf-section">
+      <div class="mf-hero-inner">
+
+        <div class="mf-hero-body">
+          <div class="mf-hero-body-eyebrow">Workstation</div>
+          <h1>AtlasStudio is your orbit-based workflow surface.</h1>
+
+          <p>
+            A three-panel layout designed for navigating feature queues, making decisions,
+            and capturing version snapshots—across any project or world in the AtlasForge stack.
+          </p>
+
+          <p>
+            Everything in AtlasStudio speaks the same language: tasks, chains, routes, risks,
+            patches, and builds. Worlds like OIA and labs like S/K/B plug directly into it.
+          </p>
+
+          <div class="mf-hero-actions">
+            <a class="mf-button mf-button--primary" href="atlasstudio/playground.html">
+              Launch the workstation
+            </a>
+          </div>
         </div>
-        <p class="af-hero-subnote">
-          The current workstation demo is <strong>front-end only</strong>. It mirrors the BuildLog
-          pattern used in our internal design documents: Yes / No / Later / Expand decisions,
-          snapshots, and narrative logs.
-        </p>
+
+        <aside class="mf-hero-visual">
+          <h2>Studio identity</h2>
+          <p>
+            Ember geometry, shard highlights, and warm navigation glow define the Studio brand.
+          </p>
+          <p>
+            <img
+              src="assets/logos/TRANSPAS.png"
+              alt="AtlasStudio"
+              style="width: 120px; opacity: 0.95; margin-top: 0.5rem;"
+            />
+          </p>
+        </aside>
+
       </div>
     </section>
 
-    <!-- WORKFLOW -->
-    <section class="af-section af-studio-workflow">
-      <div class="af-section-header">
-        <p class="af-eyebrow">Design workflow</p>
-        <h2>Brainstorm → UAT → Review → Patch</h2>
+    <!-- ================= PANEL SYSTEM ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">The layout</div>
+        <h2>The three-panel system gives projects a predictable home.</h2>
         <p>
-          Every project in the stack — worlds, tools, docs, or audio — moves through the same four-part
-          workflow. The workstation makes that process visible and consistent.
+          Columns are designed around flow: navigate on the left, act in the center,
+          review on the right.
         </p>
-      </div>
+      </header>
 
-      <div class="af-workflow-grid">
-        <div class="af-card">
-          <h3>Brainstorm</h3>
+      <div class="mf-grid mf-grid--pillars">
+
+        <article class="mf-card mf-card--studio">
+          <h3>Left panel: navigation</h3>
           <p>
-            Early ideas, questions, prototypes, and rough experiments. Nothing is final — the goal
-            is exploration and expansion.
+            Feature queues, tags, task sets, worlds, rounds, and quick-jumps.
+            Structured so you can move between domains without losing state.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>UAT</h3>
+        </article>
+
+        <article class="mf-card mf-card--studio">
+          <h3>Center panel: actions</h3>
           <p>
-            User acceptance thinking: which ideas survive contact with constraints, narrative needs,
-            or system pressure? This phase simulates friction.
+            Features appear as cards. Each card carries its details, notes,
+            and decision actions: Yes, No, Later, Expand.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>Review</h3>
+        </article>
+
+        <article class="mf-card mf-card--studio">
+          <h3>Right panel: state & snapshots</h3>
           <p>
-            A focused audit of decisions, dependencies, conflicts, and stability. Flags items as
-            ready, blocked, or requiring expansion.
+            The right column reflects the current build: flags, risks, recent decisions,
+            and version-style snapshots tied to the active session.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>Patch</h3>
-          <p>
-            Output work: updated flows, refined logic, world changes, UI states, or audio sets.
-            Everything becomes a versioned snapshot.
-          </p>
-        </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- FEATURE QUEUES -->
-    <section class="af-section af-studio-queues">
-      <div class="af-section-header">
-        <p class="af-eyebrow">Feature queues & decisions</p>
-        <h2>A structured space for messy ideas.</h2>
+    <!-- ================= INTERACTION MODEL ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Interaction</div>
+        <h2>A consistent decision language across the entire stack.</h2>
         <p>
-          AtlasStudio uses a BuildLog-style queue system: every feature, idea, or asset request gets a
-          decision. These decisions drive the workstation and the narrative.
+          AtlasStudio standardizes decision-making across all worlds and tools.
         </p>
-      </div>
+      </header>
 
-      <div class="af-queues-grid">
-        <div class="af-card">
+      <div class="mf-grid mf-grid--workflow">
+
+        <article class="mf-card mf-card--studio">
           <h3>Yes</h3>
           <p>
-            Approved features. They move forward into UAT or get scheduled for a patch.
+            Moves the feature forward or marks it approved.
+            Often reveals the next step or follow-up category.
           </p>
-        </div>
-        <div class="af-card">
+        </article>
+
+        <article class="mf-card mf-card--studio">
           <h3>No</h3>
           <p>
-            Rejected or deferred ideas that won’t continue in this version.
+            Rejects or removes the feature from active rounds.
+            May trigger cleanup or archive behaviors.
           </p>
-        </div>
-        <div class="af-card">
+        </article>
+
+        <article class="mf-card mf-card--studio">
           <h3>Later</h3>
           <p>
-            Ideas that aren’t ready but shouldn’t disappear — these resurface in future sessions.
+            Defers the feature into a re-prompts queue.
+            Items placed in Later always return in future passes.
           </p>
-        </div>
-        <div class="af-card">
+        </article>
+
+        <article class="mf-card mf-card--studio">
           <h3>Expand</h3>
           <p>
-            Features that require more detail, sub-features, or additional context before a decision
-            can be made.
+            Generates follow-up questions or sub-features.
+            Designed for discovery and refinement cycles.
           </p>
-        </div>
-      </div>
+        </article>
 
-      <p class="af-queues-note">
-        The workstation demo simulates this system using pre-scripted feature lists, decision logs,
-        and snapshots. Nothing is stored or uploaded — it's all local state.
-      </p>
-    </section>
-
-    <!-- SNAPSHOTS -->
-    <section class="af-section af-studio-snapshots">
-      <div class="af-section-header">
-        <p class="af-eyebrow">Snapshots</p>
-        <h2>Version-to-version diffs.</h2>
-        <p>
-          Each simulated version creates a snapshot that captures changes in decisions, notes, and
-          flow positions. The workstation demo includes curated snapshots for illustration.
-        </p>
-      </div>
-
-      <div class="af-snapshot-cards">
-        <div class="af-card">
-          <h3>v1.0.0 → v1.0.1</h3>
-          <p>Example: approved tasks move from Brainstorm → UAT, and two “Later” items resurface.</p>
-        </div>
-        <div class="af-card">
-          <h3>v1.0.1 → v1.0.2</h3>
-          <p>Example: expanded features get sub-cards; one item becomes blocked.</p>
-        </div>
-        <div class="af-card">
-          <h3>v1.0.2 → v1.0.3</h3>
-          <p>Example: patch output creates a refined flow diagram and world-update summary.</p>
-        </div>
       </div>
     </section>
 
-    <!-- WHERE THE STUDIO SITS -->
-    <section class="af-section af-studio-relations">
-      <div class="af-section-header">
-        <h2>Where AtlasStudio fits in the stack.</h2>
+    <!-- ================= SNAPSHOTS ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Versioning</div>
+        <h2>Snapshots capture how each pass changes the project.</h2>
         <p>
-          The workstation is the connective tissue of the entire ecosystem. It surfaces the logic
-          behind every choice made in every project.
+          AtlasStudio uses snapshot strips to represent movement between passes:
+          features approved, dropped, deferred, or expanded.
         </p>
-      </div>
+      </header>
 
-      <div class="af-relations-grid">
-        <div class="af-card">
-          <h3>Atlas-V engine</h3>
+      <div class="mf-grid mf-grid--duo">
+
+        <article class="mf-card mf-card--studio">
+          <h3>Build snapshots</h3>
           <p>
-            The workstation uses the same orbit language: Navigator for browsing, Memory for
-            decisions, Guard for risks, FlowSim for timelines.
+            Each session can generate a snapshot—what moved, what stalled, and which
+            chains or tasks changed state. Helps track momentum and bottlenecks.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>Octopus in Action</h3>
+        </article>
+
+        <article class="mf-card mf-card--studio">
+          <h3>Sheet-compatible</h3>
           <p>
-            OIA’s mailbox tasks, city-hall decisions, and world schedules translate into feature
-            cards inside the workstation.
+            Snapshots echo the structure used in OIA’s versioned BuildLogs
+            (v1.0.0 → v1.0.3), making it easy to export or compare notes later.
           </p>
-        </div>
-        <div class="af-card">
-          <h3>S/K/B Audio Lab</h3>
-          <p>
-            Soundscapes, stems, and audio personas plug into the Studio as assets with their own
-            decisions and snapshots.
-          </p>
-        </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- LINK TO PLAYGROUND -->
-    <section class="af-section af-callout">
-      <div class="af-callout-inner">
-        <h2>Try the workstation demo.</h2>
-        <p>
-          The demo models how a future version of the real AtlasStudio app could feel. Everything is
-          front-end only: no uploads, no storage, no external AI calls.
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="mf-callout mf-section">
+      <div class="mf-callout-inner">
+        <h2 style="margin: 0 0 0.4rem; font-size: 1rem;">Open the AtlasStudio workstation.</h2>
+        <p style="margin: 0 0 0.7rem;">
+          Jump into the three-panel workspace and start moving features through
+          your flow. Worlds, chains, and builds all speak the same language.
         </p>
-        <a class="af-button af-button-primary" href="atlasstudio/playground.html">
-          Open AtlasStudio demo
+        <a class="mf-button mf-button--primary" href="atlasstudio/playground.html">
+          Open AtlasStudio
         </a>
       </div>
     </section>
+
   </main>
 
-  <footer class="af-footer">
-    <div class="af-footer-inner">
-      <p>© <span id="af-year"></span> AtlasForge Interactive.</p>
-      <nav class="af-footer-nav">
-        <a href="about.html">About</a>
-        <a href="games.html">Games & worlds</a>
+  <!-- ================= FOOTER ================= -->
+  <footer class="mf-footer">
+    <div class="mf-footer-inner">
+      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
+      <nav class="mf-footer-nav">
+        <a href="index.html">Home</a>
+        <a href="studio-tools.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V</a>
+        <a href="worlds-oia.html">OIA</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </footer>
 
+  <script src="scripts/marketing.js"></script>
   <script>
-    (function () {
-      var span = document.getElementById("af-year");
-      if (span) span.textContent = new Date().getFullYear();
-    })();
+    const year = document.getElementById("mf-year");
+    if (year) year.textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>

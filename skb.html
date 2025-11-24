@@ -2,40 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>S/K/B Audio Lab — AtlasForge Interactive</title>
+  <title>S/K/B · Audio Lab & Scores · AtlasForge Interactive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="S/K/B is the AtlasForge audio division: signals, kinetics, and bloom — an experimental space for stems, soundscapes, and voice personas."
+    content="S/K/B is the audio lab of AtlasForge Interactive — music, textures, and experimental soundtracks that support games and tools in the Atlas stack."
   />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="styles/tokens.css" />
-<link rel="stylesheet" href="styles/main.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggle = document.getElementById("afNavToggle");
-      var mobile = document.getElementById("afNavMobile");
-      if (toggle && mobile) {
-        toggle.addEventListener("click", function () {
-          mobile.classList.toggle("af-nav-mobile-open");
-        });
-      }
-      var path = "skb.html";
-      var links = document.querySelectorAll("[data-af-nav]");
-      links.forEach(function (link) {
-        if (link.getAttribute("href") === path) {
-          link.classList.add("af-nav-active");
-        }
-      });
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
 <body class="af-page af-theme-core">
+  <!-- HEADER -->
   <header class="af-header">
     <div class="af-container">
       <div class="af-header-inner">
@@ -43,7 +27,7 @@
           <div class="af-brand-mark" aria-hidden="true"></div>
           <div class="af-brand-text">
             <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+            <span class="af-brand-sub">S/K/B · Audio Lab</span>
           </div>
         </a>
 
@@ -79,80 +63,146 @@
     </div>
   </header>
 
-  <main>
-    <section class="af-section">
+  <!-- MAIN -->
+  <main class="af-page-main">
+    <!-- HERO -->
+    <section class="af-hero">
       <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">Audio division</p>
-          <h1 class="af-section-title">S/K/B</h1>
-          <p class="af-section-sub">
-            Signals · Kinetics · Bloom. The AtlasForge audio lab for stems,
-            soundscapes, and AI-driven voices designed for worlds built on the
-            stack.
-          </p>
-        </div>
-
-        <div class="af-split">
+        <div class="af-hero-inner">
           <div>
-            <article class="af-card">
-              <h2 class="af-card-title">What S/K/B focuses on</h2>
-              <p class="af-card-sub">
-                S/K/B is where music and sound design experiments live. It’s a
-                place to sketch how the audio side of the Atlas stack might
-                feel before anything is wired into real tools.
-              </p>
-              <ul class="af-list">
-                <li><strong>Voices</strong> — murmur personas and AI vocal
-                  shapes.</li>
-                <li><strong>Signals</strong> — generative stems and loop beds.</li>
-                <li><strong>Echoes</strong> — ambient soundscapes and OST
-                  sketches.</li>
-              </ul>
-            </article>
+            <div class="af-hero-eyebrow-row">
+              <span class="af-pill">
+                <span class="af-pill-dot"></span>
+                S/K/B · Audio Lab
+              </span>
+              <span class="af-pill af-pill--glow">
+                Scores, textures, and experiments for the Atlas stack
+              </span>
+            </div>
+
+            <h1 class="af-hero-title">
+              Soundtracks for <span>worlds</span>, tools, and strange in-between spaces.
+            </h1>
+
+            <p class="af-hero-sub">
+              S/K/B is the audio arm of AtlasForge Interactive: a space for
+              building soundtracks, ambient layers, and experimental cues for
+              games like Octopus in Action and future simulations.
+            </p>
+
+            <div class="af-btn-row">
+              <a href="games.html" class="af-btn-primary">
+                See games in development
+              </a>
+              <a href="octopus.html" class="af-btn-ghost">
+                Read about OIA’s world
+              </a>
+            </div>
+
+            <p class="af-hero-meta">
+              This page is a hub for the audio direction and philosophy. Links
+              to releases or playlists can be added later as projects solidify.
+            </p>
           </div>
 
-          <aside>
-            <div class="af-card af-card--soft">
-              <div class="af-badge af-badge--skb" style="margin-bottom: 6px;">
-                <span class="af-badge-dot"></span> S/K/B Audio Lab
-              </div>
-              <h3 class="af-card-title">Integration with Atlas-V</h3>
-              <p class="af-card-sub">
-                In future, S/K/B output could route through Atlas-V: adapting
-                stems, voice selection, and ambience based on in-world
-                context.
+          <aside class="af-surface">
+            <header class="af-section-header">
+              <p class="af-kicker">Audio direction</p>
+              <h2 class="af-section-title">Warm, human, a little haunted.</h2>
+              <p class="af-section-sub">
+                The S/K/B sound leans into warmth and texture. Even when the
+                stack is futuristic, the music leans human — small rooms,
+                imperfect recordings, and intentional space.
               </p>
-              <p
-                style="
-                  margin: 0 0 8px;
-                  font-size: var(--af-text-xs);
-                  color: var(--af-text-mute);
-                "
-              >
-                For now, it’s a quiet observatory: concepts and motifs waiting
-                to be wired in.
-              </p>
-              <div class="af-btn-row">
-                <a href="games.html" class="af-btn-primary">See games & worlds</a>
-                <a href="atlasv.html" class="af-btn-ghost">Atlas-V integration</a>
-              </div>
+            </header>
+
+            <div class="af-grid-2">
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">For Octopus in Action</h3>
+                <p class="af-card-sub">
+                  Gentle harbor themes with subtle unease: life is cozy, but
+                  decisions still matter.
+                </p>
+                <ul class="af-list">
+                  <li>Soft piano + pads for mornings</li>
+                  <li>Light percussion for dock work</li>
+                  <li>Reflective, lo-fi nights on the pier</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">For tools & dashboards</h3>
+                <p class="af-card-sub">
+                  Low-distraction ambient beds for long work sessions inside
+                  AtlasStudio-style environments.
+                </p>
+                <ul class="af-list">
+                  <li>Slow-moving chords & textures</li>
+                  <li>No jump-scare transitions</li>
+                  <li>Designed for focus, not hype</li>
+                </ul>
+              </article>
             </div>
           </aside>
         </div>
       </div>
     </section>
+
+    <!-- PALETTE & MOODS -->
+    <section class="af-section">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Palette</p>
+            <h2 class="af-section-title">Mood bands instead of genres.</h2>
+            <p class="af-section-sub">
+              Instead of locking into one genre per project, S/K/B is organized
+              by mood bands that can travel between worlds.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>Harbor Calm:</strong> warm, slightly worn sounds for cozy,
+              everyday scenes.
+            </li>
+            <li>
+              <strong>Decision Tension:</strong> subtle pulses and drones under
+              big choices, without going full “boss music.”
+            </li>
+            <li>
+              <strong>Ops Focus:</strong> neutral but supportive beds for
+              working in AtlasStudio or similar tools.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Future releases</h3>
+          <p class="af-card-sub">
+            As projects mature, this page will link to:
+          </p>
+          <ul class="af-list">
+            <li>OIA soundtrack samplers</li>
+            <li>Focus mixes for workstation use</li>
+            <li>Standalone experimental tracks</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="af-footer">
     <div class="af-container">
       <div class="af-footer-inner">
-        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <span>
+          S/K/B exists to keep the stack from feeling sterile. Even the most
+          technical tools deserve good music.
+        </span>
         <div class="af-footer-links">
+          <a href="games.html">Games & worlds</a>
           <a href="index.html">Home</a>
-          <a href="studio-tools.html">Studio</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="games.html">Games</a>
-          <a href="about.html">About</a>
         </div>
       </div>
     </div>

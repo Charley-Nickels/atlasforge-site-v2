@@ -1,11 +1,10 @@
 /* styles/main.css */
-/* AtlasForge OS v1 — Global Site Theme
-   - Dark navy base
-   - Neon forge + studio accents (orange, cyan, teal, gold)
-   - Inter-based OS typography
+/* AtlasForge OS v2 — Nuclear Recolor Pass
+   - Uses brand-scoped tokens from styles/tokens.css
+   - Themes by body class: af-theme-core / af-theme-atlasv / af-theme-studio / af-theme-oia
 */
 
-/* ---------- CSS RESET ---------- */
+/* ---------- RESET ---------- */
 
 *,
 *::before,
@@ -24,10 +23,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter",
     "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
+  color: var(--af-text-main, #f2f2f2);
   background:
-    radial-gradient(circle at top, #0e172a 0, #020617 60%),
-    radial-gradient(circle at bottom, #020617 0, #000000 65%);
-  color: #e5e7eb;
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.03) 0, transparent 55%),
+    radial-gradient(circle at bottom, rgba(0, 0, 0, 0.85) 0, transparent 65%),
+    var(--theme-bg-main, #1a1a21);
 }
 
 img {
@@ -40,58 +40,13 @@ a {
   text-decoration: none;
 }
 
-/* ---------- TOKENS ---------- */
+/* ---------- LAYOUT TOKENS ---------- */
 
 :root {
-  /* Core background */
-  --af-bg: #020617;
-  --af-bg-elevated: #050816;
-  --af-bg-soft: #0b1120;
-  --af-bg-soft-alt: #020617;
-
-  /* Borders */
-  --af-border-subtle: rgba(148, 163, 184, 0.35);
-  --af-border-soft: rgba(51, 65, 85, 0.75);
-
-  /* Text */
-  --af-text-main: #e5e7eb;
-  --af-text-soft: #9ca3af;
-  --af-text-mute: #6b7280;
-  --af-text-strong: #f9fafb;
-
-  /* Brand colors */
-  --af-forge-blue: #00b8f1;
-  --af-forge-orange: #ff8b2a;
-  --af-studio-gold: #e3b85f;
-  --af-studio-teal: #00b8a4;
-  --af-atlasv-cyan: #1ae6ff;
-  --af-oia-orange: #f78e2f;
-  --af-oia-teal: #38b8da;
-
-  /* Neutrals */
-  --af-surface-1: #020617;
-  --af-surface-2: #050816;
-  --af-surface-3: #0b1120;
-
-  /* Status */
-  --af-success: #22c55e;
-  --af-warning: #f97316;
-  --af-danger: #ef4444;
-
-  /* Radii */
   --af-radius-lg: 24px;
   --af-radius-md: 18px;
   --af-radius-sm: 12px;
-  --af-radius-xs: 8px;
 
-  /* Shadows */
-  --af-shadow-soft: 0 28px 80px rgba(15, 23, 42, 0.8);
-  --af-shadow-subtle: 0 16px 40px rgba(15, 23, 42, 0.7);
-
-  /* Layout */
-  --af-container-width: 1080px;
-
-  /* Typography scale */
   --af-text-xs: 11px;
   --af-text-sm: 13px;
   --af-text-md: 15px;
@@ -100,9 +55,11 @@ a {
   --af-text-2xl: 22px;
   --af-text-3xl: 28px;
   --af-text-4xl: 34px;
+
+  --af-container-width: 1080px;
 }
 
-/* ---------- LAYOUT ---------- */
+/* ---------- PAGE STRUCTURE ---------- */
 
 .af-page {
   display: flex;
@@ -135,14 +92,14 @@ a {
   font-size: var(--af-text-xs);
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--af-text-mute);
+  color: var(--af-text-muted);
   margin-bottom: 6px;
 }
 
 .af-section-title {
   margin: 0 0 6px;
   font-size: var(--af-text-2xl);
-  color: var(--af-text-strong);
+  color: var(--af-text-main);
   letter-spacing: -0.01em;
 }
 
@@ -162,36 +119,41 @@ a {
   align-items: flex-start;
 }
 
-.af-split--reverse {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-}
-
-/* Cards and surfaces */
+/* Cards / surfaces */
 
 .af-surface {
   border-radius: var(--af-radius-lg);
   padding: 18px 18px 16px;
-  background: radial-gradient(circle at top, #0f172a 0, #020617 60%);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.04) 0,
+      transparent 55%
+    ),
+    var(--theme-bg-elevated, #22222d);
+  border: 1px solid var(--theme-section-border, rgba(255, 255, 255, 0.16));
   box-shadow: var(--af-shadow-soft);
 }
 
 .af-card {
   border-radius: var(--af-radius-md);
   padding: 14px 14px 12px;
-  background: var(--af-bg-soft);
+  background: var(--theme-bg-soft, #242433);
   border: 1px solid var(--af-border-subtle);
-  box-shadow: var(--af-shadow-subtle);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.65);
 }
 
 .af-card--soft {
-  background: rgba(15, 23, 42, 0.9);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.45)
+  );
 }
 
 .af-card-title {
   margin: 0 0 4px;
   font-size: var(--af-text-md);
-  color: var(--af-text-strong);
+  color: var(--af-text-main);
 }
 
 .af-card-sub {
@@ -209,11 +171,11 @@ a {
   backdrop-filter: blur(18px);
   background: linear-gradient(
     to bottom,
-    rgba(2, 6, 23, 0.96),
-    rgba(2, 6, 23, 0.88),
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.88),
     transparent
   );
-  border-bottom: 1px solid rgba(30, 64, 175, 0.6);
+  border-bottom: 1px solid var(--theme-section-border, rgba(255, 255, 255, 0.2));
 }
 
 .af-header-inner {
@@ -235,13 +197,14 @@ a {
   height: 32px;
   border-radius: 12px;
   background:
-    radial-gradient(circle at 0 0, rgba(0, 184, 241, 0.9) 0, transparent 54%),
-    radial-gradient(circle at 80% 85%, rgba(255, 139, 42, 0.85) 0, transparent 60%),
-    radial-gradient(circle at 50% 50%, #020617 0, #020617 65%);
-  border: 1px solid rgba(148, 163, 184, 0.85);
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.4) 0, transparent 45%),
+    radial-gradient(circle at 12% 85%, var(--theme-accent-soft, #ff3fae) 0, transparent 54%),
+    radial-gradient(circle at 85% 20%, var(--theme-accent-strong, #ff007a) 0, transparent 60%),
+    radial-gradient(circle at 50% 50%, #000 0, #000 65%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow:
-    0 0 0 1px rgba(15, 23, 42, 0.9),
-    0 18px 40px rgba(15, 23, 42, 0.95);
+    0 0 0 1px rgba(0, 0, 0, 0.9),
+    0 18px 40px rgba(0, 0, 0, 0.95);
 }
 
 .af-brand-text {
@@ -254,12 +217,12 @@ a {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--af-text-strong);
+  color: var(--af-text-main);
 }
 
 .af-brand-sub {
   font-size: 11px;
-  color: var(--af-text-mute);
+  color: var(--af-text-muted);
 }
 
 /* Nav */
@@ -285,11 +248,7 @@ a {
   width: 0;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--af-forge-blue),
-    var(--af-forge-orange)
-  );
+  background: var(--theme-pill-gradient, linear-gradient(90deg, #ff3fae, #ff007a));
   transition: width 140ms ease-out;
 }
 
@@ -298,14 +257,16 @@ a {
   width: 100%;
 }
 
+/* Status pill */
+
 .af-nav-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid var(--theme-tag-outline, rgba(255, 63, 174, 0.65));
+  background: rgba(0, 0, 0, 0.85);
   font-size: 12px;
   color: var(--af-text-soft);
 }
@@ -314,7 +275,7 @@ a {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: var(--af-success);
+  background: #22c55e;
   box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.24);
 }
 
@@ -325,8 +286,8 @@ a {
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.65);
-  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.9);
   color: var(--af-text-soft);
   align-items: center;
   justify-content: center;
@@ -336,7 +297,7 @@ a {
 
 .af-nav-mobile {
   display: none;
-  border-top: 1px solid rgba(30, 64, 175, 0.6);
+  border-top: 1px solid var(--theme-section-border, rgba(255, 255, 255, 0.2));
   padding: 8px 0 10px;
 }
 
@@ -374,8 +335,8 @@ a {
   gap: 6px;
   padding: 4px 9px;
   border-radius: 999px;
-  border: 1px solid var(--af-border-subtle);
-  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid var(--theme-pill-border, rgba(255, 63, 174, 0.6));
+  background: rgba(0, 0, 0, 0.9);
   font-size: var(--af-text-xs);
   color: var(--af-text-soft);
 }
@@ -384,14 +345,14 @@ a {
   width: 6px;
   height: 6px;
   border-radius: 999px;
-  background: var(--af-forge-blue);
+  background: var(--theme-accent-soft, #ff3fae);
 }
 
 .af-pill--glow {
   border-color: transparent;
   background:
-    radial-gradient(circle at 0 0, rgba(0, 184, 241, 0.35), transparent 55%),
-    rgba(15, 23, 42, 0.96);
+    radial-gradient(circle at 0 0, var(--theme-pill-glow, rgba(255, 0, 122, 0.25)), transparent 55%),
+    rgba(0, 0, 0, 0.96);
 }
 
 .af-hero-title {
@@ -399,11 +360,11 @@ a {
   font-size: clamp(30px, 3.1vw, 38px);
   line-height: 1.16;
   letter-spacing: -0.01em;
-  color: var(--af-text-strong);
+  color: var(--af-text-main);
 }
 
 .af-hero-title span {
-  color: var(--af-forge-blue);
+  color: var(--theme-accent-soft, #ff3fae);
 }
 
 .af-hero-sub {
@@ -415,14 +376,14 @@ a {
 
 .af-hero-meta {
   font-size: var(--af-text-sm);
-  color: var(--af-text-mute);
+  color: var(--af-text-muted);
 }
 
 .af-hero-meta strong {
   color: var(--af-text-soft);
 }
 
-/* Buttons */
+/* ---------- BUTTONS ---------- */
 
 .af-btn-row {
   display: flex;
@@ -439,17 +400,13 @@ a {
   gap: 6px;
   padding: 8px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(37, 99, 235, 0.7);
-  background: linear-gradient(
-    135deg,
-    var(--af-forge-blue),
-    var(--af-forge-orange)
-  );
+  border: 1px solid transparent;
+  background: var(--theme-button-primary, linear-gradient(135deg, #ff3fae, #ff007a));
   color: #f9fafb;
   font-size: var(--af-text-sm);
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 18px 42px rgba(37, 99, 235, 0.65);
+  box-shadow: var(--theme-button-primary-shadow, 0 22px 54px rgba(255, 0, 122, 0.6));
 }
 
 .af-btn-primary:hover {
@@ -463,8 +420,8 @@ a {
   gap: 6px;
   padding: 7px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.82);
   color: var(--af-text-soft);
   font-size: var(--af-text-sm);
   cursor: pointer;
@@ -504,10 +461,10 @@ a {
   content: "▸";
   font-size: 10px;
   margin-top: 2px;
-  color: var(--af-forge-blue);
+  color: var(--theme-accent-soft, #ff3fae);
 }
 
-/* ---------- BRAND-SPECIFIC BADGES ---------- */
+/* ---------- BADGES ---------- */
 
 .af-badge {
   display: inline-flex;
@@ -516,8 +473,9 @@ a {
   padding: 3px 8px;
   border-radius: 999px;
   font-size: var(--af-text-xs);
-  border: 1px solid var(--af-border-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   color: var(--af-text-soft);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .af-badge-dot {
@@ -526,34 +484,35 @@ a {
   border-radius: 999px;
 }
 
+/* These are semantic, not exact brand hexes — but they map to canon hues. */
 .af-badge--forge .af-badge-dot {
-  background: var(--af-forge-orange);
+  background: var(--af-core-magenta-end);
 }
 
 .af-badge--studio .af-badge-dot {
-  background: var(--af-studio-gold);
+  background: var(--as-ember-end);
 }
 
 .af-badge--atlasv .af-badge-dot {
-  background: var(--af-atlasv-cyan);
+  background: var(--av-core-cyan-start);
 }
 
 .af-badge--oia .af-badge-dot {
-  background: var(--af-oia-orange);
+  background: var(--oia-orange);
 }
 
 .af-badge--skb .af-badge-dot {
-  background: var(--af-oia-teal);
+  background: var(--oia-accent-cream);
 }
 
 /* ---------- FOOTER ---------- */
 
 .af-footer {
   margin-top: auto;
-  border-top: 1px solid rgba(30, 64, 175, 0.7);
+  border-top: 1px solid var(--theme-section-border, rgba(255, 255, 255, 0.16));
   padding: 14px 0 18px;
   font-size: var(--af-text-xs);
-  color: var(--af-text-mute);
+  color: var(--af-text-muted);
 }
 
 .af-footer-inner {
@@ -585,8 +544,7 @@ a {
     padding-top: 32px;
   }
 
-  .af-split,
-  .af-split--reverse {
+  .af-split {
     grid-template-columns: minmax(0, 1fr);
   }
 

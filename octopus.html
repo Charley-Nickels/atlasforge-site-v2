@@ -2,20 +2,150 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Octopus in Action</title>
+  <title>Octopus in Action — AtlasForge Interactive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Octopus in Action is a harbor-town civic sim set in an AtlasForge world — a flagship game concept used to stress-test Atlas-V and AtlasStudio."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles/main.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var toggle = document.getElementById("afNavToggle");
+      var mobile = document.getElementById("afNavMobile");
+      if (toggle && mobile) {
+        toggle.addEventListener("click", function () {
+          mobile.classList.toggle("af-nav-mobile-open");
+        });
+      }
+      var path = "octopus.html";
+      var links = document.querySelectorAll("[data-af-nav]");
+      links.forEach(function (link) {
+        if (link.getAttribute("href") === path) {
+          link.classList.add("af-nav-active");
+        }
+      });
+    });
+  </script>
 </head>
-<body class="theme-dark" data-page="octopus">
-  <header class="af-header af-header-compact">
+<body class="af-page">
+  <header class="af-header">
     <div class="af-container">
-      <nav class="af-nav">
-        <a class="af-logo" href="index.html">
-          <img src="assets/logos/OIA_BRAND.png" alt="Octopus Logo" />
-          <span class="af-logo-text">Atlasforge Interactive</span>
+      <div class="af-header-inner">
+        <a href="index.html" class="af-brand">
+          <div class="af-brand-mark" aria-hidden="true"></div>
+          <div class="af-brand-text">
+            <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
+            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+          </div>
         </a>
-        <button class="af-nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-        <div class="af-nav-links">
+
+        <nav class="af-nav" aria-label="Primary navigation">
+          <a href="index.html" data-af-nav>Home</a>
+          <a href="studio-tools.html" data-af-nav>Studio</a>
+          <a href="atlasv.html" data-af-nav>Atlas-V</a>
+          <a href="games.html" data-af-nav>Games</a>
+          <a href="skb.html" data-af-nav>S/K/B</a>
+          <a href="about.html" data-af-nav>About</a>
+        </nav>
+
+        <button
+          class="af-nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          id="afNavToggle"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="af-nav-mobile" id="afNavMobile">
+        <div class="af-nav-mobile-list">
+          <a href="index.html" data-af-nav>Home</a>
+          <a href="studio-tools.html" data-af-nav>Studio</a>
+          <a href="atlasv.html" data-af-nav>Atlas-V</a>
+          <a href="games.html" data-af-nav>Games</a>
+          <a href="skb.html" data-af-nav>S/K/B</a>
+          <a href="about.html" data-af-nav>About</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="af-section">
+      <div class="af-container">
+        <div class="af-section-header">
+          <p class="af-kicker">Flagship world</p>
+          <h1 class="af-section-title">Octopus in Action</h1>
+          <p class="af-section-sub">
+            A harbor-town civic sim used as a playful surface for AtlasForge.
+            Think neighbor drama, mailbox tasks, city hall decisions, and
+            quiet systems under the hood.
+          </p>
+        </div>
+
+        <div class="af-split">
+          <div>
+            <article class="af-card">
+              <h2 class="af-card-title">A vignette inside the Atlas stack</h2>
+              <p class="af-card-sub">
+                Octopus in Action is both a game concept and a testbed:
+                everything we learn about simulation, pacing, and tools feeds
+                back into Atlas-V and AtlasStudio.
+              </p>
+              <ul class="af-list">
+                <li>Mayor Octavius and civic choices that ripple through town.</li>
+                <li>Mailbox and tasks as a visible to-do system.</li>
+                <li>NPC schedules, housing, and jobs as simulation targets.</li>
+                <li>Hooks for engine and workstation integration.</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside>
+            <div class="af-card af-card--soft">
+              <div class="af-badge af-badge--oia" style="margin-bottom: 6px;">
+                <span class="af-badge-dot"></span> World · Octopus in Action
+              </div>
+              <h3 class="af-card-title">Current status</h3>
+              <p class="af-card-sub">
+                The page you’re on is a quiet branded surface for the concept.
+                The live build is still being defined inside AtlasStudio and
+                engine diagrams.
+              </p>
+              <p
+                style="
+                  margin: 0 0 8px;
+                  font-size: var(--af-text-xs);
+                  color: var(--af-text-mute);
+                "
+              >
+                When it’s ready, this surface becomes the front door for
+                screenshots, trailers, and playable builds.
+              </p>
+              <div class="af-btn-row">
+                <a href="games.html" class="af-btn-primary">Back to lineup</a>
+                <a href="index.html" class="af-btn-ghost">Return home</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="af-footer">
+    <div class="af-container">
+      <div class="af-footer-inner">
+        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <div class="af-footer-links">
           <a href="index.html">Home</a>
           <a href="studio-tools.html">Studio</a>
           <a href="atlasv.html">Atlas-V</a>
@@ -23,34 +153,8 @@
           <a href="skb.html">S/K/B</a>
           <a href="about.html">About</a>
         </div>
-      </nav>
-    </div>
-  </header>
-
-  <section class="af-hero af-section">
-    <div class="af-container af-hero-grid">
-      <div>
-        <div class="af-kicker">OIA</div>
-        <h1>Octopus in Action</h1>
-        <p class="af-hero-copy">A playful brand surface inside AtlasForge. Use it to talk about mascot stories, mini games, or ops drills—always simulated, never live.</p>
-        <div class="af-hero-actions">
-          <a class="af-btn af-btn-primary" href="games.html">See Games</a>
-          <a class="af-btn af-btn-ghost" href="index.html">Back Home</a>
-        </div>
-      </div>
-      <div class="af-card">
-        <h3>Key Notes</h3>
-        <p>Everything here is matte, quiet, and front-end only. Treat it as a branded vignette for demos.</p>
-        <div class="af-feature-row">
-          <div class="af-feature"><h3>Mood</h3><p>Friendly</p></div>
-          <div class="af-feature"><h3>Platform</h3><p>Web / Demo</p></div>
-          <div class="af-feature"><h3>Status</h3><p>Concept</p></div>
-        </div>
       </div>
     </div>
-  </section>
-
-  <footer class="af-footer">© 2025 AtlasForge Interactive. All rights reserved.</footer>
-  <script src="scripts/main.js" defer></script>
+  </footer>
 </body>
 </html>

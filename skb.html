@@ -91,3 +91,182 @@
       <nav class="mf-nav">
         <a href="index.html">Home</a>
         <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V Engine</a>
+        <a href="octopus.html">Octopus in Action</a>
+        <a class="mf-nav-active" href="skb.html">S/K/B Audio Lab</a>
+        <a href="about.html">About</a>
+      </nav>
+
+      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="mf-main">
+
+    <!-- ================= HERO ================= -->
+    <section class="mf-hero mf-hero--skb mf-section">
+      <div class="mf-hero-inner">
+
+        <div class="mf-hero-body">
+          <div class="mf-hero-body-eyebrow">Audio Lab</div>
+          <h1>S/K/B builds sound palettes for worlds and flows.</h1>
+
+          <p>
+            The lab blends ambient beds, loops, stems, and alternate cuts — all structured
+            the same way AtlasForge structures work: tasks, routes, versions, and mood state.
+          </p>
+
+          <p>
+            Each world has its own audio identity. OIA has harbor-night pads, market
+            bustle loops, hill-route winds, and late ferry synths. S/K/B shapes these into
+            packs you can browse and preview.
+          </p>
+
+          <div class="mf-hero-actions">
+            <a class="mf-button mf-button--ghost" href="octopus.html">
+              See how OIA uses sound
+            </a>
+          </div>
+
+          <div class="mf-hero-subnote">
+            Tracks adapt to world state, time of day, and tasks in motion.
+          </div>
+        </div>
+
+        <aside class="mf-hero-visual">
+          <h2>Lab identity</h2>
+          <p>
+            Violet nebula glow, soft grains, and deep-space tones define S/K/B.
+          </p>
+          <p>
+            <img
+              src="assets/logos/SKBCANON.png"
+              alt="SKB"
+              style="width: 120px; opacity: 0.96; margin-top: 0.6rem;"
+            />
+          </p>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ================= PACKS ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Packs</div>
+        <h2>Modular sound packs built for mood and motion.</h2>
+        <p>
+          Each pack contains loops and stems tuned to specific world states:
+          night market crowds, ferry rush, hillside wind, quiet docks, and more.
+        </p>
+      </header>
+
+      <div class="skb-wave-grid">
+
+        <div class="skb-wave-tile">
+          <div class="skb-wave-header">
+            <span>Harbor Night Pads</span>
+            <button class="skb-play" type="button">▶</button>
+          </div>
+          <div class="skb-waveform"></div>
+        </div>
+
+        <div class="skb-wave-tile">
+          <div class="skb-wave-header">
+            <span>Old Town Chatter Loop</span>
+            <button class="skb-play" type="button">▶</button>
+          </div>
+          <div class="skb-waveform"></div>
+        </div>
+
+        <div class="skb-wave-tile">
+          <div class="skb-wave-header">
+            <span>Ferry Rush Pulse</span>
+            <button class="skb-play" type="button">▶</button>
+          </div>
+          <div class="skb-waveform"></div>
+        </div>
+
+        <div class="skb-wave-tile">
+          <div class="skb-wave-header">
+            <span>Hills Wind Ambient</span>
+            <button class="skb-play" type="button">▶</button>
+          </div>
+          <div class="skb-waveform"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= INTEGRATION ================= -->
+    <section class="mf-section">
+      <header class="mf-section-header">
+        <div class="mf-section-eyebrow">Stack integration</div>
+        <h2>Sound as part of the simulation.</h2>
+        <p>
+          S/K/B builds stems and loops the same way BuildLogs track features: versions,
+          tasks, and world state changes.
+        </p>
+      </header>
+
+      <div class="mf-grid mf-grid--pillars">
+        <article class="mf-card mf-card--oia">
+          <h3>With Octopus in Action</h3>
+          <p>
+            Tasks and time blocks select which stems play: quiet morning docks,
+            busy mid-day markets, noisy festivals, or windy hills.
+          </p>
+          <div class="mf-card-footer">
+            <a href="octopus.html">Visit world page</a>
+          </div>
+        </article>
+
+        <article class="mf-card mf-card--studio">
+          <h3>In AtlasStudio</h3>
+          <p>
+            The workstation can preview audio tied to features or world shifts,
+            giving sessions an emotional layer.
+          </p>
+          <div class="mf-card-footer">
+            <a href="atlasstudio/playground.html">Open AtlasStudio</a>
+          </div>
+        </article>
+
+        <article class="mf-card mf-card--atlasv">
+          <h3>Driven by Atlas-V</h3>
+          <p>
+            FlowSim factors time-of-day, weather, and world state to pick which
+            audio palette should be active.
+          </p>
+          <div class="mf-card-footer">
+            <a href="atlasv.html">View engine</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mf-footer">
+    <div class="mf-footer-inner">
+      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
+      <nav class="mf-footer-nav">
+        <a href="index.html">Home</a>
+        <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V</a>
+        <a href="octopus.html">OIA</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="scripts/marketing.js"></script>
+  <script src="scripts/skb.js"></script>
+  <script>
+    const year = document.getElementById("mf-year");
+    if (year) year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -14,100 +14,124 @@
   <div class="as-toast-stack" aria-live="polite" aria-atomic="true"></div>
 
   <!-- Command palette -->
-  <div id="commandPalette" class="as-command-palette" aria-hidden="true">
-    <div class="as-command-shell">
-      <div class="as-command-header">
-        <span class="as-command-title">Command Palette</span>
-        <button id="closePalette" class="as-btn-icon" aria-label="Close command palette">✕</button>
+  <div id="commandPalette" class="as-command-palette">
+    <div class="as-command-backdrop"></div>
+    <div class="as-command-shell" role="dialog" aria-modal="true" aria-labelledby="commandTitle">
+      <header class="as-command-header">
+        <h2 id="commandTitle">Command Palette</h2>
+        <p class="as-hint">Type a command or search term · <kbd>Ctrl</kbd> + <kbd>K</kbd> / <kbd>⌘</kbd> + <kbd>K</kbd> to open</p>
+      </header>
+      <div class="as-command-input-row">
+        <input type="text" class="as-command-input" placeholder="Search commands, files, or screens…" autocomplete="off">
       </div>
-      <input type="text" class="as-command-input" placeholder="Type a command or search…">
-      <div id="commandList" class="as-command-list" role="listbox"></div>
+      <div class="as-command-body">
+        <div class="as-command-section">
+          <h3>Commands</h3>
+          <ul class="as-command-list" id="commandList">
+            <!-- Filled by JS -->
+          </ul>
+        </div>
+        <div class="as-command-section">
+          <h3>Hints</h3>
+          <ul class="as-command-hints">
+            <li>Try “open atlasstudio”, “view patches”, or “go to dev”.</li>
+            <li>Everything is mock-only: no real files are edited.</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="as-command-footer">
+        <button class="as-btn as-btn--ghost" id="closePalette">Close</button>
+      </footer>
     </div>
   </div>
 
   <!-- Quick actions panel -->
-  <aside id="quickPanel" class="as-quick-panel" aria-hidden="true">
+  <aside id="quickPanel" class="as-quick-panel">
     <header class="as-quick-header">
       <h2>Quick Actions</h2>
       <button id="closeQuickPanel" class="as-btn-icon" aria-label="Close quick actions">✕</button>
     </header>
     <div class="as-quick-body">
-      <button class="as-btn as-btn--ghost" data-action="goto-browser">Go to Browser</button>
-      <button class="as-btn as-btn--ghost" data-action="goto-uat">Go to UAT</button>
-      <button class="as-btn as-btn--ghost" data-action="goto-review">Go to Review</button>
-      <button class="as-btn as-btn--ghost" data-action="goto-patch">Go to Patch</button>
-      <button class="as-btn as-btn--ghost" data-action="goto-dev">Go to Dev</button>
-      <button class="as-btn as-btn--ghost" data-action="open-inspector">Open Inspector</button>
-      <button class="as-btn as-btn--ghost" data-action="open-ghost">Toggle Ghost Panel</button>
-      <button class="as-btn as-btn--ghost" data-action="notify">Show Mock Notification</button>
+      <p class="as-hint">These are fake one-click flows that show how Atlas-V could help.</p>
+      <div class="as-quick-grid">
+        <button class="as-quick-card" data-action="goto-browser">
+          <span class="as-quick-title">Review hero section</span>
+          <span class="as-quick-text">Jump to browser preview and review the AtlasForge hero layout.</span>
+        </button>
+        <button class="as-quick-card" data-action="goto-uat">
+          <span class="as-quick-title">Run UAT checklist</span>
+          <span class="as-quick-text">Pretend to walk through a test run for the studio homepage.</span>
+        </button>
+        <button class="as-quick-card" data-action="goto-review">
+          <span class="as-quick-title">Send for review</span>
+          <span class="as-quick-text">Simulate sending this layout for a design review.</span>
+        </button>
+        <button class="as-quick-card" data-action="goto-patch">
+          <span class="as-quick-title">Open patch view</span>
+          <span class="as-quick-text">Show the fake Audio / Video clipper “patch” module.</span>
+        </button>
+      </div>
     </div>
   </aside>
 
   <!-- Settings drawer -->
-  <aside id="settingsDrawer" class="as-settings-drawer" aria-hidden="true">
+  <aside id="settingsDrawer" class="as-settings-drawer">
     <header class="as-settings-header">
       <h2>Workstation Settings</h2>
       <button id="closeSettings" class="as-btn-icon" aria-label="Close settings">✕</button>
     </header>
     <div class="as-settings-body">
       <section class="as-settings-group">
-        <h3>Modes</h3>
-        <div class="as-settings-row">
-          <span>AI Mode</span>
-          <button class="as-switch" data-flag="aiMode" aria-label="Toggle AI mode"></button>
-        </div>
-        <div class="as-settings-row">
-          <span>Experimental</span>
-          <button class="as-switch" data-flag="experimental" aria-label="Toggle experimental mode"></button>
-        </div>
-      </section>
-      <section class="as-settings-group">
-        <h3>Display</h3>
-        <div class="as-settings-row">
+        <h3>Mode</h3>
+        <div class="as-switch-row">
           <span>Compact layout</span>
-          <button class="as-switch" data-flag="compact" aria-label="Toggle compact layout"></button>
+          <button class="as-switch" data-setting="compact">
+            <span class="as-switch-handle"></span>
+          </button>
         </div>
-        <div class="as-settings-row">
+        <div class="as-switch-row">
           <span>High contrast</span>
-          <button class="as-switch" data-flag="highContrast" aria-label="Toggle high contrast"></button>
+          <button class="as-switch" data-setting="highContrast">
+            <span class="as-switch-handle"></span>
+          </button>
         </div>
       </section>
+
       <section class="as-settings-group">
-        <h3>Persistence</h3>
-        <div class="as-settings-row">
-          <span>Autosave toggles</span>
-          <button class="as-switch" data-flag="autosave" aria-label="Toggle autosave"></button>
+        <h3>Behavior</h3>
+        <div class="as-switch-row">
+          <span>Autosave sessions</span>
+          <button class="as-switch" data-setting="autosave">
+            <span class="as-switch-handle"></span>
+          </button>
         </div>
+        <p class="as-hint">These toggles are purely visual and do not persist.</p>
       </section>
     </div>
   </aside>
 
-  <!-- File inspector -->
-  <aside id="fileInspector" class="as-inspector" aria-hidden="true">
+  <!-- Inspector panel -->
+  <aside id="fileInspector" class="as-inspector">
     <header class="as-inspector-header">
-      <div>
-        <h2 id="inspectorTitle">File Inspector</h2>
-        <p id="inspectorMeta" class="as-inspector-meta">Select an item to view details</p>
-      </div>
+      <h2 id="inspectorTitle">File Inspector</h2>
       <button id="closeInspector" class="as-btn-icon" aria-label="Close inspector">✕</button>
     </header>
     <div class="as-inspector-body">
-      <div class="as-inspector-row">
-        <span class="as-label">Preview</span>
-        <span id="inspectorPreview" class="as-value">No thumbnail</span>
-      </div>
-      <div class="as-inspector-row">
-        <span class="as-label">Type</span>
-        <span id="inspectorType" class="as-value">—</span>
-      </div>
-      <div class="as-inspector-row">
-        <span class="as-label">Size</span>
-        <span id="inspectorSize" class="as-value">—</span>
-      </div>
-      <div class="as-inspector-row">
-        <span class="as-label">Last modified</span>
-        <span id="inspectorModified" class="as-value">—</span>
-      </div>
+      <div class="as-inspector-preview" id="inspectorPreview">No thumbnail</div>
+      <dl class="as-inspector-meta">
+        <div>
+          <dt>Type</dt>
+          <dd id="inspectorType">—</dd>
+        </div>
+        <div>
+          <dt>Size</dt>
+          <dd id="inspectorSize">—</dd>
+        </div>
+        <div>
+          <dt>Last modified</dt>
+          <dd id="inspectorModified">—</dd>
+        </div>
+      </dl>
       <div class="as-inspector-suggestions" id="inspectorSuggestions">
         <h3>Suggested next actions</h3>
         <ul></ul>
@@ -116,305 +140,307 @@
   </aside>
 
   <!-- Diagnostics panel -->
-  <aside id="diagnostics" class="as-diagnostics" aria-hidden="true">
+  <aside id="diagnostics" class="as-diagnostics">
     <header class="as-diagnostics-header">
       <h2>Diagnostics</h2>
       <button id="toggleDiag" class="as-btn-icon" aria-label="Toggle diagnostics">✕</button>
     </header>
     <div class="as-diagnostics-body">
-      <div class="as-diagnostics-row">
-        <span>Viewport</span>
-        <span id="diagViewport" class="as-diagnostics-value">Desktop</span>
+      <div class="as-diag-grid">
+        <div class="as-diag-item">
+          <span class="as-diag-label">Viewport</span>
+          <span class="as-diag-value" id="diagViewport">Desktop</span>
+        </div>
+        <div class="as-diag-item">
+          <span class="as-diag-label">Parallax</span>
+          <span class="as-diag-value" id="diagParallax">Off</span>
+        </div>
+        <div class="as-diag-item">
+          <span class="as-diag-label">Theme</span>
+          <span class="as-diag-value" id="diagTheme">Matte</span>
+        </div>
       </div>
-      <div class="as-diagnostics-row">
-        <span>Parallax</span>
-        <span id="diagParallax" class="as-diagnostics-value">Off</span>
-      </div>
-      <div class="as-diagnostics-row">
-        <span>Screens registered</span>
-        <span id="diagScreens" class="as-diagnostics-value">0</span>
-      </div>
-      <button id="toggleGrid" class="as-btn as-btn--ghost">Toggle grid overlay (mock)</button>
+      <p class="as-hint">These metrics are mock-only but help imagine what Atlas-V might surface.</p>
     </div>
   </aside>
 
-  <!-- App shell -->
-  <div class="as-app-shell js-draggable-root">
+  <!-- Main app shell -->
+  <div class="as-app-shell">
     <!-- Top bar -->
-    <header class="as-topbar js-draggable">
+    <header class="as-topbar">
       <div class="as-topbar-left">
         <div class="as-logo-lockup">
-          <div class="as-logo-mark">A</div>
+          <div class="as-logo-mark"></div>
           <div class="as-logo-text">
-            <span class="as-logo-title">AtlasStudio</span>
-            <span class="as-logo-subtitle">Matte Workstation · Playground</span>
+            <span class="as-logo-main">AtlasStudio</span>
+            <span class="as-logo-sub">Workstation · Playground</span>
           </div>
         </div>
       </div>
       <div class="as-topbar-center">
-        <nav class="as-routes">
-          <button class="as-route-tab is-active" data-screen="browser" aria-selected="true">Browser</button>
-          <button class="as-route-tab" data-screen="uat" aria-selected="false">UAT</button>
-          <button class="as-route-tab" data-screen="review" aria-selected="false">Review</button>
-          <button class="as-route-tab" data-screen="patch" aria-selected="false">Patch</button>
-          <button class="as-route-tab" data-screen="dev" aria-selected="false">Dev</button>
-        </nav>
+        <input
+          id="globalSearchInput"
+          type="search"
+          class="as-top-search"
+          placeholder="Search commands, files, or routes…"
+          autocomplete="off"
+        >
       </div>
       <div class="as-topbar-right">
-        <button id="openQuickActions" class="as-btn-icon" title="Quick actions">⚡</button>
-        <button id="openCommandPalette" class="as-btn-icon" title="Command palette (Ctrl/Cmd+K)">⌘K</button>
-        <button class="as-btn as-btn--ghost" data-route="settings">Settings</button>
-        <button class="as-btn as-btn--quiet js-ghost-toggle">Codex Ghost</button>
+        <button id="openQuickActions" class="as-btn as-btn--ghost">Quick actions</button>
+        <button id="openPalette" class="as-btn as-btn--primary">Command palette</button>
       </div>
     </header>
 
-    <!-- Main layout -->
-    <main class="as-layout">
-      <!-- Left column -->
+    <!-- Layout columns -->
+    <main class="as-main">
+      <!-- Left column: Navigator -->
       <section class="as-column as-column--left">
-        <div class="as-card">
-          <header class="as-card-header">
-            <h2>Global search</h2>
-          </header>
-          <div class="as-card-body">
-            <input
-              id="globalSearchInput"
-              type="search"
-              class="as-input"
-              placeholder="Search workspace (e.g. 'clipper', 'gallery', 'dev')">
-            <p class="as-hint">Press Enter to route to a screen.</p>
-          </div>
-        </div>
+        <header class="as-section-header">
+          <h2>Navigator</h2>
+          <button id="openSettings" class="as-btn-icon" aria-label="Open settings">⚙</button>
+        </header>
+        <nav class="as-nav">
+          <h3 class="as-nav-title">Workspaces</h3>
+          <ul class="as-nav-list">
+            <li><button class="as-nav-item is-active" data-workspace="atlasforge">AtlasForge Site</button></li>
+            <li><button class="as-nav-item" data-workspace="atlasstudio">AtlasStudio UI</button></li>
+            <li><button class="as-nav-item" data-workspace="atlasv">Atlas-V Engine</button></li>
+          </ul>
 
-        <div class="as-card">
-          <header class="as-card-header">
-            <h2>Gallery filters</h2>
-          </header>
-          <div class="as-card-body as-card-body--inline">
-            <button class="as-category-item is-active" data-category="">All</button>
-            <button class="as-category-item" data-category="deck">Slides</button>
-            <button class="as-category-item" data-category="ui">UI Panels</button>
-            <button class="as-category-item" data-category="code">Code Mockups</button>
-            <button class="as-category-item" data-category="audio">Audio</button>
+          <h3 class="as-nav-title">Views</h3>
+          <div class="as-nav-radios">
+            <button class="as-nav-radio is-active" data-viewport="website">Website</button>
+            <button class="as-nav-radio" data-viewport="game">Game</button>
+            <button class="as-nav-radio" data-viewport="docs">Docs</button>
           </div>
-        </div>
 
-        <div class="as-card">
-          <header class="as-card-header">
-            <h2>Human decisions</h2>
-          </header>
-          <div class="as-card-body">
-            <p class="as-hint">Visual-only controls to simulate human review.</p>
-            <button id="openDecisions" class="as-btn as-btn--primary">
-              Open decisions panel (mock)
-            </button>
+          <h3 class="as-nav-title">Routes</h3>
+          <div class="as-route-tabs" role="tablist">
+            <button class="as-route-tab is-active" data-screen="browser" aria-selected="true">Browser</button>
+            <button class="as-route-tab" data-screen="uat" aria-selected="false">UAT</button>
+            <button class="as-route-tab" data-screen="review" aria-selected="false">Review</button>
+            <button class="as-route-tab" data-screen="patch" aria-selected="false">Patch</button>
+            <button class="as-route-tab" data-screen="dev" aria-selected="false">Dev</button>
           </div>
-        </div>
+        </nav>
       </section>
 
-      <!-- Center column (screens) -->
+      <!-- Center column: Main screens -->
       <section class="as-column as-column--center">
-        <!-- Browser screen -->
-        <section class="as-screen as-screen--active" data-screen="browser">
-          <div class="as-card">
-            <header class="as-card-header">
-              <h2>Gallery Browser</h2>
-              <span class="as-tag">Visual mock</span>
-            </header>
-            <div class="as-card-body as-gallery-grid">
-              <!-- Example tiles -->
-              <article class="as-gallery-tile as-file-item"
-                data-category="deck"
-                data-type="slide"
-                data-size="420 KB"
-                data-modified="Today">
-                <div class="as-gallery-thumb"></div>
-                <div class="as-file-caption">AF-001 · Hero slide concept</div>
-              </article>
-
-              <article class="as-gallery-tile as-file-item"
-                data-category="ui"
-                data-type="panel"
-                data-size="310 KB"
-                data-modified="Yesterday">
-                <div class="as-gallery-thumb"></div>
-                <div class="as-file-caption">AS-014 · Workstation layout</div>
-              </article>
-
-              <article class="as-gallery-tile as-file-item"
-                data-category="code"
-                data-type="snippet"
-                data-size="9 KB"
-                data-modified="2 days ago">
-                <div class="as-gallery-thumb"></div>
-                <div class="as-file-caption">AV-DEV · Routing mock.js</div>
-              </article>
-
-              <article class="as-gallery-tile as-file-item"
-                data-category="audio"
-                data-type="audio"
-                data-size="3.4 MB"
-                data-modified="This week">
-                <div class="as-gallery-thumb"></div>
-                <div class="as-file-caption">SKB-Loop · Matte intro pad</div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- UAT / App preview -->
-        <section class="as-screen" data-screen="uat">
-          <div class="as-card">
-            <header class="as-card-header">
-              <h2>App Preview / UAT</h2>
-              <span class="as-tag">Prototype</span>
-            </header>
-            <div class="as-card-body as-card-body--preview">
-              <div class="as-preview-header">
-                <span class="as-preview-title-mini">Website preview (mock)</span>
-                <div class="js-pill-group" data-pill="workspace">
-                  <button class="as-pill-toggle as-pill-toggle--active" data-workspace="Sandbox">Run</button>
-                  <button class="as-pill-toggle" data-workspace="Sandbox">Dry run</button>
-                  <button class="as-pill-toggle" data-workspace="Inspect">Inspect</button>
-                </div>
-              </div>
-              <div class="as-preview-placeholder is-website">
-                <div class="as-preview-fake-page">
-                  <div class="as-preview-bar"></div>
-                  <div class="as-preview-block-row">
-                    <div class="as-preview-block is-accent"></div>
-                    <div class="as-preview-block"></div>
+        <div class="as-screen-stack">
+          <!-- Browser -->
+          <section class="as-screen is-active" data-screen="browser">
+            <div class="as-card">
+              <header class="as-card-header">
+                <h2>Browser preview (mock)</h2>
+                <span class="as-tag">AtlasForge home · Website</span>
+              </header>
+              <div class="as-card-body">
+                <div class="as-browser-frame">
+                  <div class="as-browser-header">
+                    <div class="as-browser-dots">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="as-browser-url">
+                      https://octopusinaction.app/
+                    </div>
                   </div>
-                  <div class="as-preview-block-row">
-                    <div class="as-preview-block"></div>
-                    <div class="as-preview-block"></div>
-                    <div class="as-preview-block"></div>
-                  </div>
-                </div>
-              </div>
-              <p class="as-hint">All content is fake and driven by the front-end only.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Review screen -->
-        <section class="as-screen" data-screen="review">
-          <div class="as-card">
-            <header class="as-card-header">
-              <h2>Review Workspace</h2>
-              <span class="as-tag">Policy / Website review mock</span>
-            </header>
-            <div class="as-card-body">
-              <div class="as-review-thread">
-                <div class="as-review-item">
-                  <div class="as-review-label">Change set</div>
-                  <div class="as-review-text">
-                    Atlas-V suggests consolidating duplicate hero sections across AtlasForge and AtlasStudio pages.
-                  </div>
-                </div>
-                <div class="as-review-item">
-                  <div class="as-review-label">Risk note</div>
-                  <div class="as-review-text">
-                    Ensure SKB stays visually separate and mysterious; avoid sharing palette with core AtlasForge.
-                  </div>
-                </div>
-                <div class="as-review-item">
-                  <div class="as-review-label">Human decision</div>
-                  <div class="as-review-text">
-                    Pending sign-off · Mark as ready once prototype visuals are acceptable.
+                  <div class="as-browser-content">
+                    <div class="as-hero-mock">
+                      <div class="as-hero-left">
+                        <p class="as-kicker">AtlasForge Interactive</p>
+                        <h1 class="as-hero-title">Build worlds, workflows, and weird experiments.</h1>
+                        <p class="as-hero-text">
+                          This preview is a fake embedded version of the AtlasForge site. Nothing here is live,
+                          but it demonstrates how AtlasStudio could keep context while you work.
+                        </p>
+                        <div class="as-hero-actions">
+                          <button class="as-btn as-btn--primary">Open in AtlasStudio</button>
+                          <button class="as-btn as-btn--ghost">View patch notes</button>
+                        </div>
+                      </div>
+                      <div class="as-hero-right">
+                        <div class="as-hero-preview-grid">
+                          <div class="as-hero-preview-card">AtlasForge</div>
+                          <div class="as-hero-preview-card">AtlasStudio</div>
+                          <div class="as-hero-preview-card">Atlas-V Engine</div>
+                          <div class="as-hero-preview-card">Octopus in Action</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="as-browser-footer">
+                      <span>Preview only · No external requests</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- Patch / Clipper -->
-        <section class="as-screen" data-screen="patch">
-          <div class="as-card">
-            <header class="as-card-header">
-              <h2>Audio / Video Clipper</h2>
-              <span class="as-tag">Fake module</span>
-            </header>
-            <div class="as-card-body">
-              <div class="as-clipper-list">
-                <div class="as-clipper-item as-file-item"
-                  data-type="clip"
-                  data-size="12 MB"
-                  data-modified="Recently">
-                  <div class="as-clipper-label">AtlasForge_site_intro.mp4</div>
-                  <div class="as-clipper-meta">00:00–00:12 · Fade in logo · Visual only</div>
-                </div>
-                <div class="as-clipper-item as-file-item"
-                  data-type="clip"
-                  data-size="4.3 MB"
-                  data-modified="Today">
-                  <div class="as-clipper-label">SKB_theme_loop.wav</div>
-                  <div class="as-clipper-meta">Loop A · Matte ambient bed</div>
-                </div>
-              </div>
-              <p class="as-hint">Click any row to open the inspector. No real media is processed.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Dev screen -->
-        <section class="as-screen" data-screen="dev">
-          <div class="as-card">
-            <header class="as-card-header">
-              <h2>Dev Workspace</h2>
-              <span class="as-tag">Spreadsheet / config mock</span>
-            </header>
-            <div class="as-card-body">
-              <div class="as-dev-grid">
-                <div class="as-dev-header-row">
-                  <span>Module</span>
-                  <span>Type</span>
-                  <span>Status</span>
-                  <span>Notes</span>
-                </div>
-                <div class="as-dev-row as-file-item" data-type="module">
-                  <span>AtlasForge</span>
-                  <span>Studio</span>
-                  <span>Stable</span>
-                  <span>Parent brand, matte UI, no neon.</span>
-                </div>
-                <div class="as-dev-row as-file-item" data-type="module">
-                  <span>AtlasStudio</span>
-                  <span>Workstation</span>
-                  <span>Prototype</span>
-                  <span>Fake-only front-end interactions in this environment.</span>
-                </div>
-                <div class="as-dev-row as-file-item" data-type="module">
-                  <span>Atlas-V</span>
-                  <span>Copilot</span>
-                  <span>Design</span>
-                  <span>Handles canon, prompts, project orchestration conceptually.</span>
-                </div>
-                <div class="as-dev-row as-file-item" data-type="module">
-                  <span>S/K/B</span>
-                  <span>Audio Lab</span>
-                  <span>Concept</span>
-                  <span>Mysterious audio brand, grayscale and matte.</span>
-                </div>
+          <!-- UAT -->
+          <section class="as-screen" data-screen="uat">
+            <div class="as-card">
+              <header class="as-card-header">
+                <h2>UAT · Checklist</h2>
+                <span class="as-tag">Fake suite</span>
+              </header>
+              <div class="as-card-body">
+                <ul class="as-uat-list">
+                  <li>
+                    <label>
+                      <input type="checkbox" checked>
+                      Homepage hero renders on desktop and mobile.
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox">
+                      AtlasStudio link routes to internal playground.
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox">
+                      Atlas-V diagrams render clearly with dark background.
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox">
+                      Octopus in Action section links to game landing.
+                    </label>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+          <!-- Review -->
+          <section class="as-screen" data-screen="review">
+            <div class="as-card">
+              <header class="as-card-header">
+                <h2>Design review</h2>
+                <span class="as-tag">Static mock</span>
+              </header>
+              <div class="as-card-body">
+                <p class="as-hint">
+                  Imagine this panel populated by Atlas-V after crawling the layout, design tokens, and patch notes.
+                </p>
+                <ul class="as-review-list">
+                  <li>
+                    <strong>Hero density:</strong> Good balance of copy and empty space, but the subheadline could be shorter.
+                  </li>
+                  <li>
+                    <strong>Navigation clarity:</strong> Clear separation between AtlasForge, AtlasStudio, and Atlas-V sections.
+                  </li>
+                  <li>
+                    <strong>Focus state visibility:</strong> Ensure all interactive elements have strong focus rings in high contrast mode.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Patch / Clipper -->
+          <section class="as-screen" data-screen="patch">
+            <div class="as-card">
+              <header class="as-card-header">
+                <h2>Audio / Video Clipper</h2>
+                <span class="as-tag">Fake module</span>
+              </header>
+              <div class="as-card-body">
+                <div class="as-clipper-list">
+                  <div class="as-clipper-item as-file-item"
+                    data-type="clip"
+                    data-size="12 MB"
+                    data-modified="Recently">
+                    <div class="as-clipper-label">AtlasForge_site_intro.mp4</div>
+                    <div class="as-clipper-meta">00:00–00:12 · Fade in logo · Visual only</div>
+                  </div>
+                  <div class="as-clipper-item as-file-item"
+                    data-type="clip"
+                    data-size="32 MB"
+                    data-modified="Yesterday">
+                    <div class="as-clipper-label">AtlasStudio_workstation_pan.mp4</div>
+                    <div class="as-clipper-meta">00:02–00:18 · Workstation flyover · B-roll</div>
+                  </div>
+                  <div class="as-clipper-item as-file-item"
+                    data-type="clip"
+                    data-size="20 MB"
+                    data-modified="Last week">
+                    <div class="as-clipper-label">OctopusInAction_teaser.mp4</div>
+                    <div class="as-clipper-meta">00:04–00:20 · City overview · Gameplay concept</div>
+                  </div>
+                </div>
+                <p class="as-hint">
+                  This “patch” screen is a stand-in for a real patch engine. In a future version, Atlas-V could propose clip sequences,
+                  transitions, and export presets automatically.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dev -->
+          <section class="as-screen" data-screen="dev">
+            <div class="as-card">
+              <header class="as-card-header">
+                <h2>Dev workspace</h2>
+                <span class="as-tag">Code lattice mock</span>
+              </header>
+              <div class="as-card-body as-dev-grid">
+                <div class="as-dev-pane">
+                  <header class="as-dev-pane-header">
+                    <span>atlasforge-site-v2/index.html</span>
+                    <span class="as-dev-pill">HTML</span>
+                  </header>
+                  <pre class="as-dev-code">
+&lt;section class="hero"&gt;
+  &lt;h1&gt;AtlasForge Interactive&lt;/h1&gt;
+  &lt;p&gt;Tools for building games, workflows, and weirder things.&lt;/p&gt;
+&lt;/section&gt;
+                  </pre>
+                </div>
+                <div class="as-dev-pane">
+                  <header class="as-dev-pane-header">
+                    <span>atlasstudio/playground.html</span>
+                    <span class="as-dev-pill">Workspace</span>
+                  </header>
+                  <pre class="as-dev-code">
+&lt;div class="as-app-shell"&gt;
+  &lt;!-- This entire layout is a visual-only prototype. --&gt;
+&lt;/div&gt;
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </section>
 
       <!-- Right column (Ghost + misc) -->
       <section class="as-column as-column--right">
-        <div class="as-card js-draggable">
-          <header class="as-card-header">
-            <h2>Session controls</h2>
+        <header class="as-section-header">
+          <h2>Assistant</h2>
+          <button class="as-btn as-btn--ghost js-ghost-toggle">Codex Ghost</button>
+        </header>
+
+        <section class="as-assistant-block">
+          <header class="as-section-subheader">
+            <h3>Session Notes</h3>
+            <button id="toggleDiag" class="as-btn as-btn--ghost as-btn--compact">Diagnostics</button>
           </header>
-          <div class="as-card-body">
-            <button id="openPalette" class="as-btn as-btn--ghost">Open command palette</button>
-            <button data-route="settings" class="as-btn as-btn--quiet">Open settings</button>
-            <button id="toggleDiag" class="as-btn as-btn--quiet">Toggle diagnostics</button>
+          <div class="as-notes">
+            <p class="as-hint">
+              This area represents notes or decisions taken during a design session.
+            </p>
+            <ul class="as-notes-list">
+              <li>AtlasForge hero should feel like a control room, not a brochure.</li>
+              <li>AtlasStudio is the internal tool; public site references it lightly.</li>
+              <li>Atlas-V diagrams should be geometric and minimal — no sci-fi clutter.</li>
+            </ul>
           </div>
-        </div>
+        </section>
 
         <!-- Ghost panel -->
         <aside class="as-ghost-panel">
@@ -442,32 +468,33 @@
             <button id="simulateTimeline" class="as-btn as-btn--ghost">Simulate timeline</button>
           </footer>
         </aside>
+
+        <section class="as-assistant-block">
+          <header class="as-section-subheader">
+            <h3>Decisions</h3>
+          </header>
+          <ul class="as-decisions-list">
+            <li>
+              <strong>AtlasForge palette:</strong> Keep matte dark base with neon overlays controlled by patches.
+            </li>
+            <li>
+              <strong>AtlasStudio brand:</strong> Slightly softer, focused on workspace clarity.
+            </li>
+            <li>
+              <strong>Atlas-V diagrams:</strong> Strict grid-based compositions only.
+            </li>
+          </ul>
+        </section>
       </section>
     </main>
 
     <!-- Status bar -->
     <footer class="as-statusbar">
-      <div class="as-status-group">
-        <span class="as-status-label">Screen</span>
-        <span id="statusScreen" class="as-status-value">Gallery Browser</span>
+      <div class="as-status-left">
+        <span class="as-status-chip">Workspace: <span id="statusWorkspace">AtlasForge</span></span>
+        <span class="as-status-chip">Viewport: <span id="statusViewport">Website</span></span>
       </div>
-      <div class="as-status-group">
-        <span class="as-status-label">AI</span>
-        <span id="statusAI" class="as-status-value">On</span>
-      </div>
-      <div class="as-status-group">
-        <span class="as-status-label">Experimental</span>
-        <span id="statusExperimental" class="as-status-value">Off</span>
-      </div>
-      <div class="as-status-group">
-        <span class="as-status-label">Workspace</span>
-        <span id="statusWorkspace" class="as-status-value">Sandbox</span>
-      </div>
-      <div class="as-status-group">
-        <span class="as-status-label">Viewport</span>
-        <span id="statusViewport" class="as-status-value">Website preview (mock)</span>
-      </div>
-      <div class="as-status-group as-status-group--decisions">
+      <div class="as-status-right">
         <span class="as-status-chip">Pending: <span id="decisionPending">3</span></span>
         <span class="as-status-chip">Warnings: <span id="decisionWarnings">1</span></span>
         <span class="as-status-chip">Approvals: <span id="decisionApprovals">2</span></span>

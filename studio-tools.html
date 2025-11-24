@@ -2,40 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>AtlasStudio · Workstation — AtlasForge Interactive</title>
+  <title>AtlasStudio · Ember Creator Workstation · AtlasForge Interactive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="AtlasStudio is the creative workstation in the AtlasForge ecosystem — a place to prototype flows, mock builds, and organize simulation-first projects."
+    content="AtlasStudio is an ember-lit workstation for building worlds, tools, and flows on top of the AtlasForge stack. A three-panel layout that treats games and operations like one continuous design problem."
   />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="styles/tokens.css" />
-<link rel="stylesheet" href="styles/main.css" />
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var toggle = document.getElementById("afNavToggle");
-      var mobile = document.getElementById("afNavMobile");
-      if (toggle && mobile) {
-        toggle.addEventListener("click", function () {
-          mobile.classList.toggle("af-nav-mobile-open");
-        });
-      }
-      var path = "studio-tools.html";
-      var links = document.querySelectorAll("[data-af-nav]");
-      links.forEach(function (link) {
-        if (link.getAttribute("href") === path) {
-          link.classList.add("af-nav-active");
-        }
-      });
-    });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/tokens.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
-<body class="af-page">
+<body class="af-page af-theme-studio">
+  <!-- Header -->
   <header class="af-header">
     <div class="af-container">
       <div class="af-header-inner">
@@ -43,7 +27,7 @@
           <div class="af-brand-mark" aria-hidden="true"></div>
           <div class="af-brand-text">
             <span class="af-brand-name">ATLASFORGE INTERACTIVE</span>
-            <span class="af-brand-sub">Worlds · Tools · Intelligent Systems</span>
+            <span class="af-brand-sub">AtlasStudio · Ember Creator Workstation</span>
           </div>
         </a>
 
@@ -79,128 +63,242 @@
     </div>
   </header>
 
-  <main>
-    <section class="af-section">
+  <main class="af-page-main">
+    <!-- Hero -->
+    <section class="af-hero">
       <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">The workstation</p>
-          <h1 class="af-section-title">AtlasStudio</h1>
-          <p class="af-section-sub">
-            AtlasStudio is the creative workstation for the AtlasForge
-            ecosystem. It’s where we prototype how ideas move across
-            Brainstorm → UAT → Review → Patch while keeping Atlas-V logic
-            nearby.
-          </p>
-        </div>
-
-        <div class="af-split">
+        <div class="af-hero-inner">
           <div>
-            <article class="af-card">
-              <h2 class="af-card-title">What AtlasStudio simulates today</h2>
-              <p class="af-card-sub">
-                The current version is a front-end prototype. It doesn’t
-                deploy or write real data, but it behaves like a real tool:
-                panels open, workflows progress, and “fake builds” move
-                through the pipeline.
-              </p>
-              <ul class="af-list">
-                <li>Brainstorm tabs for early concepts and notes.</li>
-                <li>UAT-style checklists and flows for review.</li>
-                <li>Patch views for diffs, timelines, and changelog ideas.</li>
-                <li>Right-side preview frame for maps, UI, or diagrams.</li>
-              </ul>
-            </article>
+            <div class="af-hero-eyebrow-row">
+              <span class="af-pill">
+                <span class="af-pill-dot"></span>
+                AtlasStudio · Workstation
+              </span>
+              <span class="af-pill af-pill--glow">
+                Ember-lit layout for systems thinking
+              </span>
+            </div>
 
-            <article class="af-card af-card--soft" style="margin-top: 10px;">
-              <h2 class="af-card-title">Why build the workstation first?</h2>
-              <p class="af-card-sub">
-                Tools shape how projects feel. AtlasStudio is the place where
-                we decide how Atlas-V, OIA, and future projects get worked on,
-                reviewed, and shipped.
-              </p>
-              <p style="margin: 0; font-size: var(--af-text-sm); color: var(--af-text-soft);">
-                Long term, the workstation will connect to build systems, AI
-                co-pilots, and internal repositories. For now, it’s a safe
-                simulation space where we can get the feel right.
-              </p>
-            </article>
+            <h1 class="af-hero-title">
+              One <span>workstation</span> for games, tools, and timelines.
+            </h1>
+
+            <p class="af-hero-sub">
+              AtlasStudio is the ember-colored cockpit for the AtlasForge stack.
+              It gives you a three-panel view of your worlds and workflows:
+              Brainstorm → UAT → Review → Patch — all on top of the same mental
+              model that powers Atlas-V and Octopus in Action.
+            </p>
+
+            <div class="af-btn-row">
+              <a href="atlasstudio/playground.html" class="af-btn-primary">
+                Open AtlasStudio workstation mock
+              </a>
+              <a href="atlasv.html" class="af-btn-ghost">
+                See how Atlas-V plugs in
+              </a>
+            </div>
+
+            <p class="af-hero-meta">
+              AtlasStudio is currently in a visual prototype phase. The
+              workstation you see is fully interactive as a mock, but it does
+              not change real builds yet — by design.
+            </p>
           </div>
 
-          <aside>
-            <div class="af-card af-card--soft">
-              <div class="af-badge af-badge--studio" style="margin-bottom: 6px;">
-                <span class="af-badge-dot"></span> Workstation · AtlasStudio
-              </div>
-              <h3 class="af-card-title">Launch the dashboard mock</h3>
-              <p class="af-card-sub">
-                The dashboard mock shows a multi-column layout with navigation,
-                flows, preview, console, and inspector panes.
+          <aside class="af-surface">
+            <header class="af-section-header">
+              <p class="af-kicker">What AtlasStudio does</p>
+              <h2 class="af-section-title">A calm cockpit for noisy systems.</h2>
+              <p class="af-section-sub">
+                Instead of scattering your work across tools, AtlasStudio gives
+                you a single place to draft changes, test them in a sandbox,
+                and see how they ripple across a world or workflow.
               </p>
-              <p
-                style="
-                  margin: 0 0 8px;
-                  font-size: var(--af-text-xs);
-                  color: var(--af-text-mute);
-                "
-              >
-                All interactions are visual-only, but they map to real
-                workflows we’d want in production.
-              </p>
-              <div class="af-btn-row" style="margin-bottom: 4px;">
-                <a href="atlasstudio/playground.html" class="af-btn-primary">
-                  Launch dashboard mock
-                </a>
-                <a
-                  href="#gallery"
-                  class="af-btn-ghost"
-                  style="white-space: nowrap;"
-                >
-                  View prototype gallery
-                </a>
-              </div>
-              <p style="margin: 0; font-size: var(--af-text-xs); color: var(--af-text-mute);">
-                Recommended on desktop. Dark-mode, workstation-style UI.
-              </p>
+            </header>
+
+            <div class="af-grid-3">
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Brainstorm</h3>
+                <p class="af-card-sub">
+                  Freeform panel for ideas, notes, and alternate timelines.
+                </p>
+                <ul class="af-list">
+                  <li>Capture behavior ideas in plain language</li>
+                  <li>Tag them by world, system, or feature</li>
+                  <li>Send promising ideas to UAT</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">UAT & Review</h3>
+                <p class="af-card-sub">
+                  Checklists, diff-style summaries, and impact notes.
+                </p>
+                <ul class="af-list">
+                  <li>Turn brainstorms into testable expectations</li>
+                  <li>Review changes like patch notes, not tickets</li>
+                  <li>Spot debt before it lands in production</li>
+                </ul>
+              </article>
+
+              <article class="af-card af-card--soft">
+                <h3 class="af-card-title">Patch & Console</h3>
+                <p class="af-card-sub">
+                  Capture what really shipped and why, then let Atlas-V narrate
+                  the engine’s side of the story.
+                </p>
+                <ul class="af-list">
+                  <li>Human-readable patch cards</li>
+                  <li>Atlas-V explanations alongside changes</li>
+                  <li>Console-style activity feed for each session</li>
+                </ul>
+              </article>
             </div>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="af-section af-section--compact" id="gallery">
-      <div class="af-container">
-        <div class="af-section-header">
-          <p class="af-kicker">Snapshots</p>
-          <h2 class="af-section-title">Prototype gallery</h2>
-          <p class="af-section-sub">
-            AtlasStudio is evolving visually and structurally. These snapshots
-            help communicate how the workstation will feel across different
-            projects.
-          </p>
+    <!-- Layout & panels overview -->
+    <section class="af-section">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Layout</p>
+            <h2 class="af-section-title">Three panels, many surfaces.</h2>
+            <p class="af-section-sub">
+              AtlasStudio is built around a stable three-column layout: sidebar
+              for context, center for the current task, and right-side
+              preview/console that reflects what the world or workflow is doing.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>Sidebar:</strong> project picker, pipelines, and quick
+              links into Atlas-V orbit context.
+            </li>
+            <li>
+              <strong>Center:</strong> tabs for Brainstorm, UAT, Review, Patch,
+              and Atlas-V — each with its own UI shape.
+            </li>
+            <li>
+              <strong>Right side:</strong> a rotatable preview for maps/flows,
+              plus a console that records your actions and mock builds.
+            </li>
+          </ul>
         </div>
+
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Workstation mock</h3>
+          <p class="af-card-sub">
+            The current AtlasStudio mock focuses on one flagship project:
+            Octopus in Action. It’s the testbed that exercises all the panels at
+            once.
+          </p>
+          <ul class="af-list">
+            <li>Mailbox loop & city hall decisions in the center panel</li>
+            <li>Harbor preview on the right-hand side</li>
+            <li>Console that reacts to fake “Ask Atlas-V” and “Run build” actions</li>
+          </ul>
+          <div class="af-btn-row" style="margin-top:10px;">
+            <a href="atlasstudio/playground.html" class="af-btn-primary">
+              Explore the live mock
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Atlas-V integration -->
+    <section class="af-section af-section--compact">
+      <div class="af-container af-split">
+        <div>
+          <header class="af-section-header">
+            <p class="af-kicker">Under the hood</p>
+            <h2 class="af-section-title">Built to speak Atlas-V fluently.</h2>
+            <p class="af-section-sub">
+              AtlasStudio is not “an AI feature.” It’s a cockpit for an engine
+              layer: Atlas-V. The engine thinks in orbits — navigator, memory,
+              guard, and flow-sim — and AtlasStudio is where you actually talk
+              to those roles.
+            </p>
+          </header>
+
+          <ul class="af-list">
+            <li>
+              <strong>Navigator:</strong> helps you route player or user intent
+              between panels.
+            </li>
+            <li>
+              <strong>Memory:</strong> keeps recent changes and decisions in
+              view while you work.
+            </li>
+            <li>
+              <strong>Guard:</strong> prevents dangerous loops or dead-end states.
+            </li>
+            <li>
+              <strong>FlowSim:</strong> runs fake experiments before anything
+              touches real systems.
+            </li>
+          </ul>
+        </div>
+
+        <aside class="af-card af-card--soft">
+          <h3 class="af-card-title">Where AtlasStudio fits</h3>
+          <p class="af-card-sub">
+            When all pieces are wired, a typical workflow looks like:
+          </p>
+          <ul class="af-list">
+            <li>Draft behavior in AtlasStudio</li>
+            <li>Send it to Atlas-V for explanation and safety checks</li>
+            <li>Preview changes in a sandboxed world like OIA</li>
+            <li>Promote only what makes sense to your real build</li>
+          </ul>
+          <div class="af-btn-row" style="margin-top:10px;">
+            <a href="atlasv.html" class="af-btn-ghost">
+              Learn more about Atlas-V
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Use cases -->
+    <section class="af-section af-section--compact">
+      <div class="af-container">
+        <header class="af-section-header">
+          <p class="af-kicker">Use cases</p>
+          <h2 class="af-section-title">Not just for games.</h2>
+          <p class="af-section-sub">
+            AtlasStudio is being built with games in mind, but the same layout
+            works for operations, docs, and live systems where decisions matter.
+          </p>
+        </header>
 
         <div class="af-grid-3">
           <article class="af-card">
-            <h3 class="af-card-title">Atlas-V flow views</h3>
+            <h3 class="af-card-title">Simulation & games</h3>
             <p class="af-card-sub">
-              Tabs and panels that show Atlas-V orchestrations next to your
-              working files.
+              Use AtlasStudio as your cockpit for balancing loops, tuning
+              schedules, and writing in-world patch notes.
             </p>
           </article>
 
           <article class="af-card">
-            <h3 class="af-card-title">Games & world layouts</h3>
+            <h3 class="af-card-title">Ops & call-center style flows</h3>
             <p class="af-card-sub">
-              Screens for Octopus in Action, RTS experiments, and future sims
-              as they move through the pipeline.
+              Treat incidents, policies, and queue behavior like a sim. Draft
+              changes, test them, and only ship what improves the real world.
             </p>
           </article>
 
           <article class="af-card">
-            <h3 class="af-card-title">Docs, KAs & ops tooling</h3>
+            <h3 class="af-card-title">Knowledge & docs</h3>
             <p class="af-card-sub">
-              Concept views for connecting internal docs, knowledge, and
-              dashboards to the same stack.
+              Use the Brainstorm → UAT → Review → Patch path to turn static
+              documentation into guided, decision-aware experiences.
             </p>
           </article>
         </div>
@@ -208,16 +306,17 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="af-footer">
     <div class="af-container">
       <div class="af-footer-inner">
-        <span>© 2025 AtlasForge Interactive. All rights reserved.</span>
+        <span>
+          AtlasStudio is a work-in-progress workstation. Today it’s a safe mock;
+          tomorrow it’s where worlds and workflows actually ship from.
+        </span>
         <div class="af-footer-links">
-          <a href="index.html">Home</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="games.html">Games</a>
-          <a href="skb.html">S/K/B</a>
-          <a href="about.html">About</a>
+          <a href="atlasstudio/playground.html">Open the workstation mock</a>
+          <a href="octopus.html">Visit Octopus in Action</a>
         </div>
       </div>
     </div>

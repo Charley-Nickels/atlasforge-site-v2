@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="styles/marketing.css" />
 </head>
 <body class="mf-shell brand-atlasv">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
       <a class="mf-logo" href="index.html">
-        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" /></span>
+        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
         <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="mf-nav" aria-label="Primary">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="atlasstudio.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V Engine</a>
@@ -23,11 +24,11 @@
         <a href="games.html">Games</a>
         <a href="about.html">About</a>
       </nav>
-      <button class="mf-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
+  <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--atlasv mf-section">
       <div class="mf-container mf-hero-inner">
         <div>
@@ -40,7 +41,7 @@
           </div>
         </div>
         <aside class="mf-hero-visual">
-          <h3>Engine notes</h3>
+          <h2>Engine notes</h2>
           <p>Static diagrams, fake outputs, and balanced lighting to illustrate the lattice.</p>
         </aside>
       </div>
@@ -68,12 +69,12 @@
           <h2>How Atlas-V adapts</h2>
         </header>
         <div class="mf-mode-grid">
-          <button class="mf-card" data-mode="navigator" aria-pressed="false">Navigator</button>
-          <button class="mf-card" data-mode="memory" aria-pressed="false">Memory</button>
-          <button class="mf-card" data-mode="guard" aria-pressed="false">Guard</button>
-          <button class="mf-card" data-mode="flowsim" aria-pressed="false">FlowSim</button>
-          <button class="mf-card" data-mode="smooth" aria-pressed="false">Smooth-Brain</button>
-          <button class="mf-card" data-mode="deep" aria-pressed="false">Deep-Structure</button>
+          <button class="mf-card" type="button" data-mode="navigator" aria-pressed="false">Navigator</button>
+          <button class="mf-card" type="button" data-mode="memory" aria-pressed="false">Memory</button>
+          <button class="mf-card" type="button" data-mode="guard" aria-pressed="false">Guard</button>
+          <button class="mf-card" type="button" data-mode="flowsim" aria-pressed="false">FlowSim</button>
+          <button class="mf-card" type="button" data-mode="smooth" aria-pressed="false">Smooth-Brain</button>
+          <button class="mf-card" type="button" data-mode="deep" aria-pressed="false">Deep-Structure</button>
         </div>
         <div class="mf-card" data-mode-panel="navigator">
           <h3>Navigator mode</h3><p>Guides routes and prioritizes clarity.</p>
@@ -103,10 +104,10 @@
           <h2>What the Guard flags</h2>
         </header>
         <div class="mf-constraint-list">
-          <button class="mf-card" data-constraint="timeline">Conflicting timeline event</button>
-          <button class="mf-card" data-constraint="circular">Circular reference detected</button>
-          <button class="mf-card" data-constraint="entity">Entity not linked</button>
-          <button class="mf-card" data-constraint="chain">Broken chain</button>
+          <button class="mf-card" type="button" data-constraint="timeline">Conflicting timeline event</button>
+          <button class="mf-card" type="button" data-constraint="circular">Circular reference detected</button>
+          <button class="mf-card" type="button" data-constraint="entity">Entity not linked</button>
+          <button class="mf-card" type="button" data-constraint="chain">Broken chain</button>
         </div>
         <div class="mf-card" data-constraint-detail="timeline"><p>Atlas-V highlights overlapping events and suggests a reorder.</p></div>
         <div class="mf-card" data-constraint-detail="circular" hidden><p>Loops are paused until routes are clarified.</p></div>
@@ -124,26 +125,26 @@
         <svg role="img" aria-label="Atlas-V lattice diagram" viewBox="0 0 400 200">
           <defs>
             <linearGradient id="atlasvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="rgba(31,182,255,0.4)" />
-              <stop offset="100%" stop-color="rgba(31,182,255,0.1)" />
+              <stop offset="0%" stop-color="var(--brand-accent)" stop-opacity="0.4" />
+              <stop offset="100%" stop-color="var(--brand-accent)" stop-opacity="0.1" />
             </linearGradient>
           </defs>
-          <rect x="10" y="20" width="380" height="160" rx="18" fill="url(#atlasvGrad)" stroke="rgba(255,255,255,0.12)" />
-          <circle cx="80" cy="100" r="18" fill="rgba(31,182,255,0.5)" />
-          <circle cx="200" cy="60" r="18" fill="rgba(31,182,255,0.4)" />
-          <circle cx="200" cy="140" r="18" fill="rgba(31,182,255,0.4)" />
-          <circle cx="320" cy="100" r="18" fill="rgba(31,182,255,0.5)" />
-          <line x1="98" y1="100" x2="182" y2="60" stroke="rgba(255,255,255,0.5)" />
-          <line x1="98" y1="100" x2="182" y2="140" stroke="rgba(255,255,255,0.5)" />
-          <line x1="218" y1="60" x2="302" y2="100" stroke="rgba(255,255,255,0.5)" />
-          <line x1="218" y1="140" x2="302" y2="100" stroke="rgba(255,255,255,0.5)" />
-          <text x="70" y="95" font-size="10" fill="#0f172a">Nav</text>
-          <text x="190" y="55" font-size="10" fill="#0f172a">Mem</text>
-          <text x="188" y="135" font-size="10" fill="#0f172a">Guard</text>
-          <text x="310" y="95" font-size="10" fill="#0f172a">Flow</text>
+          <rect x="10" y="20" width="380" height="160" rx="18" fill="url(#atlasvGrad)" stroke="var(--overlay-mid)" />
+          <circle cx="80" cy="100" r="18" fill="var(--brand-accent)" fill-opacity="0.5" />
+          <circle cx="200" cy="60" r="18" fill="var(--brand-accent)" fill-opacity="0.4" />
+          <circle cx="200" cy="140" r="18" fill="var(--brand-accent)" fill-opacity="0.4" />
+          <circle cx="320" cy="100" r="18" fill="var(--brand-accent)" fill-opacity="0.5" />
+          <line x1="98" y1="100" x2="182" y2="60" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <line x1="98" y1="100" x2="182" y2="140" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <line x1="218" y1="60" x2="302" y2="100" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <line x1="218" y1="140" x2="302" y2="100" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <text x="70" y="95" font-size="10" fill="var(--surface-900)">Nav</text>
+          <text x="190" y="55" font-size="10" fill="var(--surface-900)">Mem</text>
+          <text x="188" y="135" font-size="10" fill="var(--surface-900)">Guard</text>
+          <text x="310" y="95" font-size="10" fill="var(--surface-900)">Flow</text>
         </svg>
         <div class="mf-flow-panel">
-          <button class="mf-button mf-button--primary" data-flowsim-play aria-pressed="false">Play FlowSim pulse</button>
+          <button class="mf-button mf-button--primary" type="button" data-flowsim-play aria-pressed="false">Play FlowSim pulse</button>
         </div>
       </div>
     </section>
@@ -176,6 +177,7 @@
           <li><a href="games.html">Games</a></li>
         </ul>
         <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
       </div>
     </div>
   </footer>

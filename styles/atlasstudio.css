@@ -101,6 +101,10 @@
   color: var(--text-100);
 }
 
+.mf-panel-spacer {
+  margin-top: var(--space-16);
+}
+
 @media (max-width: 1024px) {
   .mf-workstation {
     grid-template-columns: 240px 1fr;

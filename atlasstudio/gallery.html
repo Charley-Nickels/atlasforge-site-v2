@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
 </head>
 <body class="mf-shell brand-atlasstudio">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
       <a class="mf-logo" href="../index.html">
-        <span class="mf-logo-mark"><img src="../assets/logos/AF_CANON2.png" alt="AtlasForge logo" /></span>
+        <span class="mf-logo-mark"><img src="../assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
         <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="mf-nav" aria-label="Primary">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="../index.html">Home</a>
         <a href="../atlasstudio.html">AtlasStudio</a>
         <a href="../atlasv.html">Atlas-V Engine</a>
@@ -24,11 +25,11 @@
         <a href="../games.html">Games</a>
         <a href="../about.html">About</a>
       </nav>
-      <button class="mf-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
+  <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--studio mf-section">
       <div class="mf-container mf-hero-inner">
         <div>
@@ -84,6 +85,7 @@
           <li><a href="../games.html">Games</a></li>
         </ul>
         <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
       </div>
     </div>
   </footer>

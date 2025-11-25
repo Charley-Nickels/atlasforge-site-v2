@@ -7,14 +7,15 @@
   <title>About AtlasForge Interactive</title>
   <link rel="stylesheet" href="styles/marketing.css" />
 </head>
-<body class="mf-shell">
+<body class="mf-shell brand-atlasforge">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
       <a class="mf-logo" href="index.html">
-        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" /></span>
+        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
         <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="mf-nav" aria-label="Primary">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="atlasstudio.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V Engine</a>
@@ -23,11 +24,11 @@
         <a href="games.html">Games</a>
         <a href="about.html">About</a>
       </nav>
-      <button class="mf-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
+  <main class="mf-main" id="main-content">
     <section class="mf-hero mf-section">
       <div class="mf-container mf-hero-inner">
         <div>
@@ -43,11 +44,11 @@
         <header class="mf-section-header">
           <div class="mf-eyebrow">What is AtlasForge?</div>
           <h2>Umbrella overview</h2>
-          <p>Explore each component using the navigation above. All content is simulated; no backend exists.</p>
+          <p>Explore each component using the navigation above. Everything runs client-side with static showcases; no backend is required.</p>
         </header>
         <div class="mf-case-grid">
           <article class="mf-card"><h3>AtlasForge Interactive</h3><p>Umbrella brand represented by this home site.</p></article>
-          <article class="mf-card"><h3>AtlasStudio Workstation</h3><p>Front-end demo of the tri-panel surface for tasks and decisions.</p></article>
+          <article class="mf-card"><h3>AtlasStudio Workstation</h3><p>Front-end tri-panel surface for tasks and decisions, fully simulated in-browser.</p></article>
           <article class="mf-card"><h3>Atlas-V Engine</h3><p>Module-based logic concepts powering flows conceptually.</p></article>
           <article class="mf-card"><h3>Octopus in Action</h3><p>Flagship world page; harbor city focus.</p></article>
           <article class="mf-card"><h3>S/K/B</h3><p>Audio label page with artists and releases.</p></article>
@@ -76,7 +77,7 @@
         </header>
         <div class="mf-case-grid">
           <article class="mf-card"><h3>Browse pages</h3><p>Use the header to jump between AtlasStudio, Atlas-V, OIA, SKB, and Games.</p></article>
-          <article class="mf-card"><h3>See static demos</h3><p>Each page contains fake interactions only.</p></article>
+          <article class="mf-card"><h3>Explore static showcases</h3><p>Each page uses simulated interactions for clarity.</p></article>
           <article class="mf-card"><h3>View roadmap</h3><p>Check values and goals for future iterations.</p></article>
         </div>
       </div>
@@ -90,7 +91,7 @@
         </header>
         <div class="mf-case-grid">
           <article class="mf-card"><h3>Experimentation</h3><p>Test ideas visually.</p></article>
-          <article class="mf-card"><h3>Demos</h3><p>Show how a stack could function.</p></article>
+            <article class="mf-card"><h3>Showcases</h3><p>Illustrate how the stack could function.</p></article>
           <article class="mf-card"><h3>Sandbox workstation</h3><p>Provide a feel for flows and guardrails without a backend.</p></article>
         </div>
       </div>
@@ -124,6 +125,7 @@
           <li><a href="games.html">Games</a></li>
         </ul>
         <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
       </div>
     </div>
   </footer>

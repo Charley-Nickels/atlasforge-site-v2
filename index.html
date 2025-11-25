@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="styles/marketing.css" />
 </head>
 <body class="mf-shell brand-atlasforge">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
       <a class="mf-logo" href="index.html">
-        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" /></span>
+        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
         <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="mf-nav" aria-label="Primary">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="atlasstudio.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V Engine</a>
@@ -23,11 +24,11 @@
         <a href="games.html">Games</a>
         <a href="about.html">About</a>
       </nav>
-      <button class="mf-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
+  <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--forge mf-section">
       <div class="mf-container mf-hero-inner">
         <div>
@@ -41,7 +42,7 @@
           <p class="mf-hero-cta-note">Everything here is simulated on a static front-end. No backend. No hidden calls. Just a clear picture of the stack.</p>
         </div>
         <aside class="mf-hero-visual">
-          <h3>Five-part stack</h3>
+          <h2>Five-part stack</h2>
           <ul class="mf-list-inline">
             <li class="mf-chip">AtlasForge</li>
             <li class="mf-chip">AtlasStudio</li>
@@ -130,6 +131,22 @@
     </section>
 
     <section class="mf-section">
+      <div class="mf-container mf-storyboard">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">AtlasForge storyboard</div>
+          <h2>Chapters of the ecosystem</h2>
+          <p>Follow the sequence from the core philosophy through the surfaces that express it.</p>
+        </header>
+        <div class="mf-storyboard-item"><strong>Zero-code creativity</strong><p>Begin with the principle that creators direct everything without writing code.</p></div>
+        <div class="mf-storyboard-item"><strong>AtlasForge philosophy</strong><p>Unify surfaces with balanced lighting, consistent grids, and clear structure.</p></div>
+        <div class="mf-storyboard-item"><strong>AtlasStudio surface</strong><p>Workstation tri-panel flows for tasks, decisions, snapshots, and screens.</p></div>
+        <div class="mf-storyboard-item"><strong>Atlas-V intelligence</strong><p>Navigator, Memory, Guard, and FlowSim keep routes readable and calm.</p></div>
+        <div class="mf-storyboard-item"><strong>Worlds & Labs</strong><p>OIA world notes and SKB audio releases supply narrative and sound inputs.</p></div>
+        <div class="mf-storyboard-item"><strong>Applications</strong><p>Games, docs, and experiences aligned as clear outputs of the stack.</p></div>
+      </div>
+    </section>
+
+    <section class="mf-section">
       <div class="mf-container mf-flow-panel">
         <header class="mf-section-header">
           <div class="mf-eyebrow">How it fits</div>
@@ -195,6 +212,7 @@
           <li><a href="games.html">Games</a></li>
         </ul>
         <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
       </div>
     </div>
   </footer>

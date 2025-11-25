@@ -33,9 +33,43 @@ main {
   min-height: 80vh;
 }
 
+h1 {
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  margin: 0 0 var(--space-20);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-12);
+}
+
+h4 {
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-8);
+}
+
 :focus-visible {
   outline: 2px solid var(--brand-accent, #b032f0);
   outline-offset: 2px;
+}
+
+.mf-skip {
+  position: absolute;
+  left: -999px;
+  top: -999px;
+  background: var(--surface-800);
+  color: var(--text-100);
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-8);
+  box-shadow: var(--shadow-card);
+}
+
+.mf-skip:focus-visible {
+  left: var(--space-12);
+  top: var(--space-12);
+  z-index: 10;
 }
 
 .mf-shell {
@@ -103,7 +137,7 @@ main {
 .mf-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-card);
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--overlay-mid);
 }
 
 .mf-card h3 {
@@ -130,23 +164,23 @@ main {
 
 .mf-button--primary {
   background: linear-gradient(135deg, var(--brand-accent, #b032f0), var(--brand-accent-strong, #7c1ea6));
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  color: var(--text-100);
+  box-shadow: var(--shadow-soft);
 }
 
 .mf-button--primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  box-shadow: var(--shadow-card);
 }
 
 .mf-button--ghost {
   color: var(--text-100);
-  border-color: rgba(255, 255, 255, 0.15);
+  border: var(--accent-border);
   background: transparent;
 }
 
 .mf-button--ghost:hover {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--text-100);
   transform: translateY(-1px);
 }
 
@@ -196,6 +230,7 @@ main {
 
 .mf-hero-actions {
   display: flex;
+  gap: var(--space-12);
   flex-wrap: wrap;
   gap: var(--space-12);
   margin-top: var(--space-20);
@@ -275,6 +310,12 @@ main {
   animation: mf-shimmer 1.4s ease-in-out infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .mf-skeleton::after {
+    animation: none;
+  }
+}
+
 @keyframes mf-shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
@@ -348,5 +389,38 @@ main {
 
   .mf-nav.is-open {
     display: flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .mf-card,
+  .mf-card:hover,
+  .mf-storyboard-item,
+  .mf-storyboard-item.is-active,
+  .mf-button,
+  .mf-button:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .mf-parallax .mf-layer-back {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface-800);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-12);
+    flex-direction: column;
+    gap: var(--space-8);
   }
 }

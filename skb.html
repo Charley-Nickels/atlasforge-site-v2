@@ -2,271 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>S/K/B Audio Lab – Sound & Stem Workshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta
-    name="description"
-    content="S/K/B Audio Lab is the sound workshop for AtlasForge worlds — experiments, palettes, and stems that match city state, mood, and flow."
-  />
-
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>S/K/B Audio Lab</title>
   <link rel="stylesheet" href="styles/marketing.css" />
-
-  <style>
-    .skb-wave-grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      margin-top: 1rem;
-    }
-
-    .skb-wave-tile {
-      border-radius: 16px;
-      padding: 0.9rem;
-      background: linear-gradient(135deg, rgba(25, 20, 35, 0.95), rgba(8, 4, 20, 0.85));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: var(--mf-shadow-tight);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .skb-wave-tile--hover {
-      border-color: rgba(180, 115, 255, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .skb-wave-tile--active {
-      border-color: rgba(255, 120, 245, 0.9);
-      box-shadow:
-        0 0 24px rgba(210, 100, 255, 0.45),
-        0 8px 20px rgba(0, 0, 0, 0.55);
-    }
-
-    .skb-wave-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.6rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-    }
-
-    .skb-play {
-      cursor: pointer;
-      background: rgba(50, 30, 65, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.3rem 0.55rem;
-      border-radius: 8px;
-      font-size: 0.78rem;
-      transition: background 0.2s ease;
-    }
-
-    .skb-play:hover {
-      background: rgba(120, 60, 160, 0.8);
-    }
-
-    .skb-waveform {
-      height: 60px;
-      background: url('assets/logos/SKBCANON.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.23;
-      filter: drop-shadow(0 0 6px rgba(210, 100, 255, 0.4));
-    }
-  </style>
 </head>
-
-<body class="mf-shell">
-  <!-- ================= HEADER ================= -->
+<body class="mf-shell brand-skb">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
-      <a href="index.html" class="mf-logo">
-        <span class="mf-logo-mark">
-          <img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" />
-        </span>
-        <span class="mf-logo-text">AtlasForge</span>
+      <a class="mf-logo" href="index.html">
+        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-
-      <nav class="mf-nav">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasstudio.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V Engine</a>
-        <a href="octopus.html">Octopus in Action</a>
-        <a class="mf-nav-active" href="skb.html">S/K/B Audio Lab</a>
+        <a href="oia.html">Octopus in Action</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="games.html">Games</a>
         <a href="about.html">About</a>
       </nav>
-
-      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
-
-    <!-- ================= HERO ================= -->
+  <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--skb mf-section">
-      <div class="mf-hero-inner">
-
-        <div class="mf-hero-body">
-          <div class="mf-hero-body-eyebrow">Audio Lab</div>
-          <h1>S/K/B builds sound palettes for worlds and flows.</h1>
-
-          <p>
-            The lab blends ambient beds, loops, stems, and alternate cuts — all structured
-            the same way AtlasForge structures work: tasks, routes, versions, and mood state.
-          </p>
-
-          <p>
-            Each world has its own audio identity. OIA has harbor-night pads, market
-            bustle loops, hill-route winds, and late ferry synths. S/K/B shapes these into
-            packs you can browse and preview.
-          </p>
-
-          <div class="mf-hero-actions">
-            <a class="mf-button mf-button--ghost" href="octopus.html">
-              See how OIA uses sound
-            </a>
-          </div>
-
-          <div class="mf-hero-subnote">
-            Tracks adapt to world state, time of day, and tasks in motion.
-          </div>
+      <div class="mf-container mf-hero-inner">
+        <div>
+          <div class="mf-hero-badge">S/K/B Audio Lab</div>
+          <h1>Violet-toned label with releases, artists, and sound palettes.</h1>
+          <p>SKB supplies music flavor to the ecosystem. This page highlights artists, albums, and timelines—no tooling implied.</p>
         </div>
-
         <aside class="mf-hero-visual">
-          <h2>Lab identity</h2>
-          <p>
-            Violet nebula glow, soft grains, and deep-space tones define S/K/B.
-          </p>
-          <p>
-            <img
-              src="assets/logos/SKBCANON.png"
-              alt="SKB"
-              style="width: 120px; opacity: 0.96; margin-top: 0.6rem;"
-            />
-          </p>
+          <h2>Label highlights</h2>
+          <p>Fictional releases and visualizers designed to fit the AtlasForge aesthetic.</p>
         </aside>
-
       </div>
     </section>
 
-    <!-- ================= PACKS ================= -->
     <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Packs</div>
-        <h2>Modular sound packs built for mood and motion.</h2>
-        <p>
-          Each pack contains loops and stems tuned to specific world states:
-          night market crowds, ferry rush, hillside wind, quiet docks, and more.
-        </p>
-      </header>
-
-      <div class="skb-wave-grid">
-
-        <div class="skb-wave-tile">
-          <div class="skb-wave-header">
-            <span>Harbor Night Pads</span>
-            <button class="skb-play" type="button">▶</button>
-          </div>
-          <div class="skb-waveform"></div>
-        </div>
-
-        <div class="skb-wave-tile">
-          <div class="skb-wave-header">
-            <span>Old Town Chatter Loop</span>
-            <button class="skb-play" type="button">▶</button>
-          </div>
-          <div class="skb-waveform"></div>
-        </div>
-
-        <div class="skb-wave-tile">
-          <div class="skb-wave-header">
-            <span>Ferry Rush Pulse</span>
-            <button class="skb-play" type="button">▶</button>
-          </div>
-          <div class="skb-waveform"></div>
-        </div>
-
-        <div class="skb-wave-tile">
-          <div class="skb-wave-header">
-            <span>Hills Wind Ambient</span>
-            <button class="skb-play" type="button">▶</button>
-          </div>
-          <div class="skb-waveform"></div>
-        </div>
-
+      <div class="mf-container mf-release-grid">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Artists & albums</div>
+          <h2>Featured releases</h2>
+        </header>
+        <article class="mf-card" data-album><h3>Harbor Echoes</h3><p>Ambient set inspired by OIA docks.</p></article>
+        <article class="mf-card" data-album><h3>Shard/Signal</h3><p>AtlasStudio-inspired synth runs.</p></article>
+        <article class="mf-card" data-album><h3>Lattice Pulse</h3><p>Atlas-V themed rhythmic studies.</p></article>
+        <article class="mf-card" data-album><h3>Nebula Drift</h3><p>SKB’s signature melodic arc.</p></article>
       </div>
     </section>
 
-    <!-- ================= INTEGRATION ================= -->
     <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Stack integration</div>
-        <h2>Sound as part of the simulation.</h2>
-        <p>
-          S/K/B builds stems and loops the same way BuildLogs track features: versions,
-          tasks, and world state changes.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--pillars">
-        <article class="mf-card mf-card--oia">
-          <h3>With Octopus in Action</h3>
-          <p>
-            Tasks and time blocks select which stems play: quiet morning docks,
-            busy mid-day markets, noisy festivals, or windy hills.
-          </p>
-          <div class="mf-card-footer">
-            <a href="octopus.html">Visit world page</a>
-          </div>
-        </article>
-
-        <article class="mf-card mf-card--studio">
-          <h3>In AtlasStudio</h3>
-          <p>
-            The workstation can preview audio tied to features or world shifts,
-            giving sessions an emotional layer.
-          </p>
-          <div class="mf-card-footer">
-            <a href="atlasstudio/playground.html">Open AtlasStudio</a>
-          </div>
-        </article>
-
-        <article class="mf-card mf-card--atlasv">
-          <h3>Driven by Atlas-V</h3>
-          <p>
-            FlowSim factors time-of-day, weather, and world state to pick which
-            audio palette should be active.
-          </p>
-          <div class="mf-card-footer">
-            <a href="atlasv.html">View engine</a>
-          </div>
-        </article>
+      <div class="mf-container mf-timeline">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Release timeline</div>
+          <h2>Launch cadence</h2>
+        </header>
+        <div class="mf-step">Q1: Harbor Echoes</div>
+        <div class="mf-step">Q2: Shard/Signal</div>
+        <div class="mf-step">Q3: Lattice Pulse</div>
+        <div class="mf-step">Q4: Nebula Drift</div>
       </div>
     </section>
 
+    <section class="mf-section">
+      <div class="mf-container mf-case-studies">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Role in the stack</div>
+          <h2>How SKB contributes</h2>
+          <p>Audio cues, release art, and timelines can appear as tasks or references inside AtlasStudio.</p>
+        </header>
+        <div class="mf-case-grid">
+          <article class="mf-card"><h3>Audio cues</h3><p>Use SKB tracks as prompts or cues in flows.</p></article>
+          <article class="mf-card"><h3>Art direction</h3><p>Visualizers and covers match the nebula motif.</p></article>
+          <article class="mf-card"><h3>Release mapping</h3><p>Align drops with timelines and guardrails.</p></article>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="mf-footer">
-    <div class="mf-footer-inner">
-      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
-      <nav class="mf-footer-nav">
-        <a href="index.html">Home</a>
-        <a href="studio-tools.html">AtlasStudio</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="octopus.html">OIA</a>
-        <a href="skb.html">S/K/B</a>
-        <a href="about.html">About</a>
-      </nav>
+    <div class="mf-container mf-footer-inner">
+      <div>
+        <strong>AtlasForge Interactive</strong>
+        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="mf-footer-list">
+          <li><a href="atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="atlasv.html">Atlas-V Engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Worlds & Labs</h4>
+        <ul class="mf-footer-list">
+          <li><a href="oia.html">Octopus in Action</a></li>
+          <li><a href="skb.html">S/K/B</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="mf-footer-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="games.html">Games</a></li>
+        </ul>
+        <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
     </div>
   </footer>
 
+  <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>
   <script src="scripts/skb.js"></script>
-  <script>
-    const year = document.getElementById("mf-year");
-    if (year) year.textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

@@ -1,124 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AtlasStudio — Prototype Dashboard</title>
-
-  <link rel="stylesheet" href="../styles/main.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>AtlasStudio – Gallery</title>
+  <link rel="stylesheet" href="../styles/marketing.css" />
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
 </head>
-
-<body class="theme-dark as-shell">
-
-  <!-- HEADER -->
-  <header class="af-header af-header-compact">
-    <div class="af-container">
-      <nav class="af-nav">
-
-        <a class="af-logo" href="../index.html">
-          <img src="../assets/logos/ATLASFORGE_BRAND.png" alt="AtlasForge Logo" />
-          <span class="af-logo-text">ATLASFORGE INTERACTIVE</span>
-        </a>
-
-        <div class="af-nav-links">
-          <a href="../atlasv.html">Atlas-V</a>
-          <a href="../studio-tools.html" class="is-active">AtlasStudio</a>
-          <a href="../octopus.html">Octopus in Action</a>
-          <a href="../about.html">About</a>
-        </div>
-
+<body class="mf-shell brand-atlasstudio">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
+  <header class="mf-header">
+    <div class="mf-header-inner">
+      <a class="mf-logo" href="../index.html">
+        <span class="mf-logo-mark"><img src="../assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
+      </a>
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../atlasstudio.html">AtlasStudio</a>
+        <a href="../atlasv.html">Atlas-V Engine</a>
+        <a href="../oia.html">Octopus in Action</a>
+        <a href="../skb.html">S/K/B</a>
+        <a href="../games.html">Games</a>
+        <a href="../about.html">About</a>
       </nav>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-
-  <!-- TOP BAND -->
-  <div class="as-top-band">
-    <div class="as-top-band-inner">
-
-      <div class="as-top-pill">
-        ATLASSTUDIO — PROTOTYPE
-      </div>
-
-      <div class="as-top-pill">
-        FRONT-END ONLY
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- MAIN LAYOUT -->
-  <section class="as-layout">
-
-    <!-- LEFT COLUMN -->
-    <div class="as-column-main">
-
-      <div class="as-panel">
-        <div class="as-panel-header">
-          <div class="as-panel-title">Welcome</div>
-        </div>
-
-        <p class="as-panel-subtitle">
-          This is the front-end prototype for AtlasStudio — the workstation for the
-          AtlasForge ecosystem.  
-          Use the links below to explore the mock dashboard and gallery.
-        </p>
-
-        <div class="af-hero-actions" style="margin-top: 14px;">
-          <a class="af-btn af-btn-primary" href="playground.html">Open Mock Dashboard</a>
-          <a class="af-btn af-btn-secondary" href="gallery.html">View Prototype Gallery</a>
+  <main class="mf-main" id="main-content">
+    <section class="mf-hero mf-hero--studio mf-section">
+      <div class="mf-container mf-hero-inner">
+        <div>
+          <div class="mf-hero-badge">AtlasStudio Gallery</div>
+          <h1>Snapshots of the simulated workstation.</h1>
+          <p>Browse highlights from timelines, logic branches, and screen previews.</p>
         </div>
       </div>
+    </section>
 
-      <div class="as-panel">
-        <div class="as-panel-title">What This Prototype Shows</div>
-
-        <div class="as-tab-content">
-          • Fake tabs (Brainstorm → UAT → Review → Patch)  
-          • Fake toggles + animation  
-          • Right-side preview panels  
-          • Fake patch progress bars  
-          • All front-end only — no data is ever saved  
+    <section class="mf-section">
+      <div class="mf-container mf-gallery">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Highlights</div>
+          <h2>Visual references</h2>
+        </header>
+        <div class="mf-gallery-grid">
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Tri-panel layout</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Decision chips</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Snapshot rail</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Assistant notes</p></div>
         </div>
       </div>
+    </section>
+  </main>
 
-    </div>
-
-
-    <!-- RIGHT COLUMN / PREVIEW -->
-    <div class="as-column-preview">
-
-      <div class="as-preview-card">
-        <div class="as-preview-header">
-          <div class="as-preview-title">AtlasStudio Mock Preview</div>
-        </div>
-
-        <div class="as-preview-viewport">
-          This space will show mock maps, UI elements, or diagrams.
-        </div>
-
-        <div class="as-preview-actions">
-          <a class="af-btn af-btn-secondary" href="playground.html">Open Dashboard</a>
-          <a class="af-btn af-btn-ghost" href="gallery.html">Open Gallery</a>
-        </div>
-
+  <footer class="mf-footer">
+    <div class="mf-container mf-footer-inner">
+      <div>
+        <strong>AtlasForge Interactive</strong>
+        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
       </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="af-section">
-    <div class="af-container" style="text-align:center; color: var(--af-text-muted); font-size: 0.85rem;">
-      © 2025 AtlasForge Interactive. All rights reserved.
+      <div>
+        <h4>Products</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="../atlasv.html">Atlas-V Engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Worlds & Labs</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../oia.html">Octopus in Action</a></li>
+          <li><a href="../skb.html">S/K/B</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../games.html">Games</a></li>
+        </ul>
+        <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
     </div>
   </footer>
 
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/marketing.js"></script>
 </body>
-
 </html>

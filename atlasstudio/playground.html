@@ -2,169 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>AtlasStudio Workstation Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta 
-    name="description" 
-    content="AtlasStudio workstation demo — three-pane UI with feature queues, decisions, snapshots, version strip, and a fake Project Copilot assistant."
-  />
-  <link rel="stylesheet" href="../styles/main.css" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>AtlasStudio Playground</title>
+  <link rel="stylesheet" href="../styles/marketing.css" />
   <link rel="stylesheet" href="../styles/atlasstudio.css" />
 </head>
-
-<body class="as-body">
-  
-  <!-- HEADER -->
-  <header class="as-header">
-    <div class="as-header-inner">
-      <a href="../index.html" class="as-logo">
-        <span class="as-logo-mark">◎</span>
-        <span class="as-logo-text">AtlasStudio</span>
+<body class="mf-shell brand-atlasstudio">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
+  <header class="mf-header">
+    <div class="mf-header-inner">
+      <a class="mf-logo" href="../index.html">
+        <span class="mf-logo-mark"><img src="../assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="as-nav">
-        <a href="../studio-tools.html">Overview</a>
-        <a class="active" href="playground.html">Workstation Demo</a>
-        <a href="gallery.html">Gallery</a>
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../atlasstudio.html">AtlasStudio</a>
+        <a href="../atlasv.html">Atlas-V Engine</a>
+        <a href="../oia.html">Octopus in Action</a>
+        <a href="../skb.html">S/K/B</a>
+        <a href="../games.html">Games</a>
+        <a href="../about.html">About</a>
       </nav>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="as-main">
-
-    <!-- ===========================
-         LEFT NAV — WORKSPACES / QUEUES
-    ============================ -->
-    <aside class="as-leftnav">
-      <div class="as-leftnav-section">
-        <h3>Workspaces</h3>
-        <button class="as-nav-btn" data-workspace="oia">Octopus in Action</button>
-        <button class="as-nav-btn" data-workspace="atlasv">Atlas-V</button>
-        <button class="as-nav-btn" data-workspace="skb">S/K/B Audio</button>
-      </div>
-
-      <div class="as-leftnav-section">
-        <h3>Queues</h3>
-        <button class="as-queue-btn" data-queue="brainstorm">Brainstorm</button>
-        <button class="as-queue-btn" data-queue="uat">UAT</button>
-        <button class="as-queue-btn" data-queue="review">Review</button>
-        <button class="as-queue-btn" data-queue="patch">Patch</button>
-      </div>
-
-      <div class="as-leftnav-section">
-        <h3>Snapshots</h3>
-        <button class="as-snap-btn" data-snap="1">v1.0.0 → v1.0.1</button>
-        <button class="as-snap-btn" data-snap="2">v1.0.1 → v1.0.2</button>
-        <button class="as-snap-btn" data-snap="3">v1.0.2 → v1.0.3</button>
-      </div>
-
-      <div class="as-leftnav-hint">
-        <p>Tip: use <strong>1–4</strong> for Yes/No/Later/Expand, and <strong>Q/W/E/R</strong> to jump queues.</p>
-      </div>
-    </aside>
-
-    <!-- ===========================
-         CENTER — ACTIVE PANEL + VERSION STRIP
-    ============================ -->
-    <section class="as-center">
-
-      <!-- Version timeline strip -->
-      <div class="as-version-strip">
-        <button class="as-version-btn active" data-version="v100">v1.0.0</button>
-        <button class="as-version-btn" data-version="v101" data-snap="1">v1.0.1</button>
-        <button class="as-version-btn" data-version="v102" data-snap="2">v1.0.2</button>
-        <button class="as-version-btn" data-version="v103" data-snap="3">v1.0.3</button>
-      </div>
-
-      <div class="as-center-inner">
-        <div class="as-center-header">
-          <h2 id="as-active-title">Feature Title</h2>
-          <span id="as-active-category">Category</span>
-        </div>
-
-        <div class="as-feature-description" id="as-active-description">
-          Select a workspace and queue to begin.
-        </div>
-
-        <!-- Sub-feature drawer (for Expand) -->
-        <div id="as-subfeatures" class="as-subfeatures hidden">
-          <div class="as-subfeatures-header">
-            <h4>Sub-features generated from this idea</h4>
+  <main class="mf-main mf-section" id="main-content">
+    <div class="mf-container">
+      <header class="mf-section-header">
+        <div class="mf-eyebrow">AtlasStudio Playground</div>
+        <h1>Tri-panel workstation simulation</h1>
+        <p>All interactions are front-end only. No backend exists.</p>
+      </header>
+      <div class="mf-workstation">
+        <aside class="mf-panel">
+          <div class="mf-panel-header">
+            <h2>Queue</h2>
+            <span class="mf-chip">Tasks</span>
           </div>
-          <ul id="as-subfeatures-list" class="as-subfeatures-list"></ul>
-        </div>
+          <div data-task-list class="mf-task-list" aria-label="Task list"></div>
+        </aside>
 
-        <!-- Decisions -->
-        <div class="as-decision-buttons">
-          <button class="as-dec-btn yes" data-decision="yes">Yes (1)</button>
-          <button class="as-dec-btn no" data-decision="no">No (2)</button>
-          <button class="as-dec-btn later" data-decision="later">Later (3)</button>
-          <button class="as-dec-btn expand" data-decision="expand">Expand (4)</button>
-        </div>
-
-        <!-- Sub-tabs for details/diff/timeline -->
-        <div class="as-subtabs">
-          <button class="as-subtab-btn active" data-tab="details">Details</button>
-          <button class="as-subtab-btn" data-tab="diff">Diff</button>
-          <button class="as-subtab-btn" data-tab="timeline">Timeline & Console</button>
-        </div>
-
-        <div class="as-tab-content" id="as-tab-details">
-          <p>This panel shows contextual details for the currently selected feature.</p>
-        </div>
-
-        <div class="as-tab-content hidden" id="as-tab-diff">
-          <p>Select a snapshot or version to show diff between builds.</p>
-        </div>
-
-        <div class="as-tab-content hidden" id="as-tab-timeline">
-          <p class="as-console-intro">
-            Console-style events from the engine perspective appear here as you make decisions and load snapshots.
-          </p>
-          <div id="as-console-log" class="as-console-log">
-            <p class="as-console-line as-console-muted">No events yet. Make a decision to start logging.</p>
+        <section class="mf-panel">
+          <div class="mf-panel-header">
+            <h2 data-task-title>Loading task</h2>
+            <span class="mf-chip">Focus</span>
           </div>
-        </div>
-      </div>
-    </section>
+          <div data-task-tags class="mf-list-inline"></div>
+          <p data-task-notes>Choose a task to see details.</p>
+          <div class="mf-decision-bar">
+            <button class="mf-decision-button" data-decision="Yes">Yes</button>
+            <button class="mf-decision-button" data-decision="No">No</button>
+            <button class="mf-decision-button" data-decision="Later">Later</button>
+            <button class="mf-decision-button" data-decision="Expand">Expand</button>
+          </div>
+          <div class="mf-panel-spacer">
+            <button class="mf-button mf-button--primary" data-snapshot>Create Snapshot</button>
+          </div>
+        </section>
 
-    <!-- ===========================
-         RIGHT — PROJECT COPILOT + MINI PANEL + HISTORY
-    ============================ -->
-    <aside class="as-right">
-      <h3>Project Copilot</h3>
-      <div id="as-copilot-log" class="as-copilot-log">
-        <div class="as-copilot-msg system">
-          Welcome to the AtlasStudio demo. Pick a workspace on the left, then a queue, and I’ll react as you move through decisions.
-        </div>
+        <aside class="mf-panel">
+          <div class="mf-panel-header">
+            <h2>Assistant & Snapshots</h2>
+            <span class="mf-chip">Atlas-V inside</span>
+          </div>
+          <div data-assistant-feed class="mf-assistant" aria-live="polite"></div>
+          <div class="mf-panel-header mf-panel-spacer">
+            <h3>Snapshots</h3>
+          </div>
+          <div data-snapshot-list class="mf-snapshots"></div>
+        </aside>
       </div>
-
-      <div class="as-mini-panel">
-        <h4 id="as-mini-title">Workspace view</h4>
-        <p id="as-mini-body">Choose a workspace to see its mini diagram and flavor.</p>
-        <div class="as-mini-visual" id="as-mini-visual">
-          <!-- Simple ASCII-ish diagram rendered in CSS -->
-          <div class="as-mini-orbit"></div>
-        </div>
-      </div>
-
-      <div class="as-history">
-        <div class="as-history-header">
-          <h4>Recent decisions</h4>
-          <span class="as-history-hint">Auto-updates as you click or press 1–4.</span>
-        </div>
-        <ul id="as-history-list" class="as-history-list">
-          <li class="as-history-empty">No decisions yet.</li>
-        </ul>
-      </div>
-
-      <div class="as-copilot-inputbox">
-        <input type="text" id="as-copilot-input" placeholder="(Typing disabled in demo)" disabled />
-        <button disabled>Send</button>
-      </div>
-    </aside>
-
+    </div>
   </main>
 
+  <footer class="mf-footer">
+    <div class="mf-container mf-footer-inner">
+      <div>
+        <strong>AtlasForge Interactive</strong>
+        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="../atlasv.html">Atlas-V Engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Worlds & Labs</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../oia.html">Octopus in Action</a></li>
+          <li><a href="../skb.html">S/K/B</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../games.html">Games</a></li>
+        </ul>
+        <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/marketing.js"></script>
   <script src="../scripts/playground.js"></script>
 </body>
 </html>

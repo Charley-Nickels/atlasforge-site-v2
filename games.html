@@ -2,200 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Worlds & Projects – AtlasForge Interactive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta
-    name="description"
-    content="Browse the worlds and projects connected to the AtlasForge stack, starting with Octopus in Action and S/K/B Audio Lab."
-  />
-
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Games & Projects</title>
   <link rel="stylesheet" href="styles/marketing.css" />
 </head>
-
-<body class="mf-shell">
-  <!-- ================= HEADER ================= -->
+<body class="mf-shell brand-atlasforge">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
-      <a href="index.html" class="mf-logo">
-        <span class="mf-logo-mark">
-          <img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" />
-        </span>
-        <span class="mf-logo-text">AtlasForge</span>
+      <a class="mf-logo" href="index.html">
+        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-
-      <nav class="mf-nav">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="studio-tools.html">AtlasStudio</a>
+        <a href="atlasstudio.html">AtlasStudio</a>
         <a href="atlasv.html">Atlas-V Engine</a>
-        <a href="octopus.html">Octopus in Action</a>
-        <a href="skb.html">S/K/B Audio Lab</a>
+        <a href="oia.html">Octopus in Action</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="games.html">Games</a>
         <a href="about.html">About</a>
       </nav>
-
-      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
-
-    <!-- ================= HERO ================= -->
-    <section class="mf-hero mf-hero--forge mf-section">
-      <div class="mf-hero-inner">
-        <div class="mf-hero-body">
-          <div class="mf-hero-body-eyebrow">Worlds & projects</div>
-          <h1>Worlds plug into AtlasForge like clients on the same stack.</h1>
-
-          <p>
-            Each project uses the AtlasStudio + Atlas-V language in its own way:
-            harbor cities, audio labs, and future experiments all share the same
-            idea of tasks, routes, and builds.
-          </p>
-
-          <p>
-            This page collects current and planned worlds in one place.
-          </p>
+  <main class="mf-main" id="main-content">
+    <section class="mf-hero mf-section">
+      <div class="mf-container mf-hero-inner">
+        <div>
+          <div class="mf-hero-badge">Games & Projects</div>
+          <h1>Showcase of outputs built on the AtlasForge vision.</h1>
+          <p>Each project is presented as a finished experience, not a tool. Explore teasers and devlog excerpts.</p>
         </div>
       </div>
     </section>
 
-    <!-- ================= FEATURED: OIA ================= -->
     <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Flagship world</div>
-        <h2>Octopus in Action · harbor city sim</h2>
-        <p>
-          A compact coastal city with dock traffic, night markets, hillside roads,
-          and neighborhoods that react to how well you keep everything moving.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--duo">
-        <article class="mf-card mf-card--oia">
-          <h3>What it is</h3>
-          <p>
-            Part management game, part neighborhood simulator. You orchestrate
-            routes, patrols, deliveries, and events across districts, shifts,
-            and changing conditions.
-          </p>
-          <p>
-            The city’s requests flow through a mailbox and become tasks inside
-            AtlasStudio, where decisions shape the next rounds.
-          </p>
-          <div class="mf-card-footer">
-            <a href="octopus.html">Visit OIA world page</a>
-          </div>
-        </article>
-
-        <article class="mf-card mf-card--atlasv">
-          <h3>How it uses the stack</h3>
-          <p>
-            Atlas-V handles routing, risk, and timing for OIA’s systems.
-            Navigator decides which tasks surface, Guard enforces limits,
-            Memory keeps decision history, and FlowSim runs city timelines.
-          </p>
-          <div class="mf-card-footer">
-            <a href="atlasv.html">View Atlas-V engine</a> ·
-            <a href="atlasstudio/playground.html">Open AtlasStudio</a>
-          </div>
-        </article>
+      <div class="mf-container mf-gallery">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Highlights</div>
+          <h2>Projects in focus</h2>
+        </header>
+        <div class="mf-gallery-grid">
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Octopus in Action teaser</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Screen flow concept</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Audio showcase</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- ================= FEATURED: S/K/B ================= -->
     <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Audio lab</div>
-        <h2>S/K/B · soundtracks and stems</h2>
-        <p>
-          S/K/B Audio Lab builds sound palettes that respond to world state:
-          quiet harbor mornings, busy markets, festival nights, and wind-soaked hills.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--duo">
-        <article class="mf-card mf-card--skb">
-          <h3>What it is</h3>
-          <p>
-            A workshop for ambient beds, loops, stems, and alternate cuts.
-            Each pack is tuned to a specific mood and time slice in the worlds.
-          </p>
-          <div class="mf-card-footer">
-            <a href="skb.html">Visit S/K/B Audio Lab</a>
-          </div>
-        </article>
-
-        <article class="mf-card mf-card--studio">
-          <h3>How it plugs in</h3>
-          <p>
-            World state and session context can select which pack plays.
-            Shifts in AtlasStudio sessions and Atlas-V scenarios can drive
-            which stems are “active” at any moment.
-          </p>
-        </article>
+      <div class="mf-container mf-case-studies">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Pipeline</div>
+          <h2>How the stack supports delivery</h2>
+        </header>
+        <div class="mf-case-grid">
+          <article class="mf-card"><h3>AtlasStudio decisions</h3><p>Tasks and routes converge into clear milestones.</p></article>
+          <article class="mf-card"><h3>Atlas-V guardrails</h3><p>Constraints keep project flows stable.</p></article>
+          <article class="mf-card"><h3>OIA + SKB inputs</h3><p>World content and soundtracks feed into the final cut.</p></article>
+        </div>
       </div>
     </section>
-
-    <!-- ================= FUTURE WORLDS ================= -->
-    <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Future slots</div>
-        <h2>More worlds can share the same spine.</h2>
-        <p>
-          The stack is built so new projects can slide in without inventing a
-          brand-new language each time.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--pillars">
-        <article class="mf-card">
-          <h3>Simulation-heavy tools</h3>
-          <p>
-            Dashboards, schedulers, or routing tools that already think in tasks,
-            queues, and constraints can plug directly into AtlasStudio and Atlas-V.
-          </p>
-        </article>
-
-        <article class="mf-card">
-          <h3>Story-forward games</h3>
-          <p>
-            Neighborhood sims, city builders, and management games that want a
-            consistent way to speak about flows and states.
-          </p>
-        </article>
-
-        <article class="mf-card">
-          <h3>Experimental labs</h3>
-          <p>
-            Small prototypes — odd mechanics, new interfaces, or audio experiments —
-            that live alongside the main stack while still speaking its language.
-          </p>
-        </article>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="mf-footer">
-    <div class="mf-footer-inner">
-      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
-      <nav class="mf-footer-nav">
-        <a href="index.html">Home</a>
-        <a href="studio-tools.html">AtlasStudio</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="octopus.html">OIA</a>
-        <a href="skb.html">S/K/B</a>
-        <a href="about.html">About</a>
-      </nav>
+    <div class="mf-container mf-footer-inner">
+      <div>
+        <strong>AtlasForge Interactive</strong>
+        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="mf-footer-list">
+          <li><a href="atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="atlasv.html">Atlas-V Engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Worlds & Labs</h4>
+        <ul class="mf-footer-list">
+          <li><a href="oia.html">Octopus in Action</a></li>
+          <li><a href="skb.html">S/K/B</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="mf-footer-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="games.html">Games</a></li>
+        </ul>
+        <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
     </div>
   </footer>
 
+  <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>
-  <script>
-    const year = document.getElementById("mf-year");
-    if (year) year.textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

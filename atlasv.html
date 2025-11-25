@@ -2,327 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Atlas-V Engine – Routing & Simulation Brain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <meta
-    name="description"
-    content="Atlas-V is the routing and simulation brain for the AtlasForge stack, describing how work moves through Navigator, Memory, Guard, and FlowSim."
-  />
-
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Atlas-V Engine</title>
   <link rel="stylesheet" href="styles/marketing.css" />
 </head>
-
-<body class="mf-shell">
-  <!-- ================= HEADER ================= -->
+<body class="mf-shell brand-atlasv">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="mf-header">
     <div class="mf-header-inner">
-      <a href="index.html" class="mf-logo">
-        <span class="mf-logo-mark">
-          <img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" />
-        </span>
-        <span class="mf-logo-text">AtlasForge</span>
+      <a class="mf-logo" href="index.html">
+        <span class="mf-logo-mark"><img src="assets/logos/AF_CANON2.png" alt="AtlasForge logo" width="42" height="42" loading="lazy" decoding="async" /></span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-
-      <nav class="mf-nav">
+      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="studio-tools.html">AtlasStudio</a>
-        <a class="mf-nav-active" href="atlasv.html">Atlas-V Engine</a>
-        <a href="worlds-oia.html">Octopus in Action</a>
-        <a href="skb.html">S/K/B Audio Lab</a>
+        <a href="atlasstudio.html">AtlasStudio</a>
+        <a href="atlasv.html">Atlas-V Engine</a>
+        <a href="oia.html">Octopus in Action</a>
+        <a href="skb.html">S/K/B</a>
+        <a href="games.html">Games</a>
         <a href="about.html">About</a>
       </nav>
-
-      <button class="mf-nav-toggle" aria-label="Toggle navigation">☰</button>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main">
-
-    <!-- ================= HERO ================= -->
+  <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--atlasv mf-section">
-      <div class="mf-hero-inner">
-
-        <div class="mf-hero-body">
-          <div class="mf-hero-body-eyebrow">Engine</div>
-          <h1>Atlas-V describes how work moves through the stack.</h1>
-
-          <p>
-            The engine breaks every flow into four concerns: navigation, memory, guardrails,
-            and simulation. Together they define how features travel from idea to release.
-          </p>
-
-          <p>
-            AtlasStudio is the surface. Atlas-V is the model beneath it: the language that
-            explains what should happen to each feature, task, risk, and patch.
-          </p>
-
+      <div class="mf-container mf-hero-inner">
+        <div>
+          <div class="mf-hero-badge">Atlas-V Engine</div>
+          <h1>Navigator, Guard, Memory, and FlowSim working together.</h1>
+          <p>Atlas-V is the logic core backing AtlasStudio flows. This page shows the modules, intelligence modes, constraint checks, and FlowSim playback—entirely simulated with front-end code.</p>
           <div class="mf-hero-actions">
-            <a class="mf-button mf-button--primary" href="#modules">
-              Inspect engine modules
-            </a>
-            <a class="mf-button mf-button--ghost" href="atlasstudio/playground.html">
-              See Atlas-V behavior in the workstation
-            </a>
-          </div>
-
-          <div class="mf-hero-subnote">
-            Navigator, Memory, Guard, and FlowSim form the core engine orbit.
+            <a class="mf-button mf-button--primary" href="atlasstudio.html">See AtlasStudio</a>
+            <a class="mf-button mf-button--ghost" href="#modules">View modules</a>
           </div>
         </div>
-
         <aside class="mf-hero-visual">
-          <h2>Engine identity</h2>
-          <p>
-            Cyan lattice lines, orbital rings, and node clusters define the Atlas-V brand.
-          </p>
-          <p>
-            <img
-              src="assets/logos/TRANSPAV.png"
-              alt="Atlas-V logo"
-              style="width: 130px; opacity: 0.96; margin-top: 0.6rem;"
-            />
-          </p>
+          <h2>Engine notes</h2>
+          <p>Static diagrams, fake outputs, and balanced lighting to illustrate the lattice.</p>
         </aside>
-
       </div>
     </section>
 
-    <!-- ================= ENGINE LAYERS ================= -->
+    <section id="modules" class="mf-section">
+      <div class="mf-container mf-intelligence">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Core modules</div>
+          <h2>Atlas-V cards</h2>
+        </header>
+        <div class="mf-grid mf-grid--2">
+          <article class="mf-card"><h3>Navigator</h3><p>Routes tasks and screens with clear paths.</p></article>
+          <article class="mf-card"><h3>Memory</h3><p>Keeps decision ledgers and snapshots coherent.</p></article>
+          <article class="mf-card"><h3>Guard</h3><p>Constraint scanner that flags circular or missing links.</p></article>
+          <article class="mf-card"><h3>FlowSim</h3><p>Timeline preview of routes and state shifts.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Layers</div>
-        <h2>Four core modules, one shared language.</h2>
-        <p>
-          Every project in AtlasForge can be described in the same structure: how you find work,
-          how you remember what happened, how you protect the system, and how you rehearse outcomes.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--pillars">
-        <article class="mf-card mf-card--atlasv">
-          <h3>Navigator</h3>
-          <p>
-            Browsing and routing: which work appears, in what order, under which filters and tags.
-            Ties directly into AtlasStudio’s queues and search patterns.
-          </p>
-        </article>
-
-        <article class="mf-card mf-card--atlasv">
-          <h3>Memory</h3>
-          <p>
-            Decisions, notes, and version state. Tracks whether a feature was approved, deferred,
-            rejected, or expanded—and why.
-          </p>
-        </article>
-
-        <article class="mf-card mf-card--atlasv">
-          <h3>Guard</h3>
-          <p>
-            Safety, constraints, and caps. Defines limits, edge cases, and rules that keep flows
-            within acceptable parameters.
-          </p>
-        </article>
-
-        <article class="mf-card mf-card--atlasv">
-          <h3>FlowSim</h3>
-          <p>
-            Timelines and scenarios. Models when work should land, how long it takes, and what happens
-            under different assumptions.
-          </p>
-        </article>
+      <div class="mf-container mf-intelligence">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Intelligence modes</div>
+          <h2>How Atlas-V adapts</h2>
+        </header>
+        <div class="mf-mode-grid">
+          <button class="mf-card" type="button" data-mode="navigator" aria-pressed="false">Navigator</button>
+          <button class="mf-card" type="button" data-mode="memory" aria-pressed="false">Memory</button>
+          <button class="mf-card" type="button" data-mode="guard" aria-pressed="false">Guard</button>
+          <button class="mf-card" type="button" data-mode="flowsim" aria-pressed="false">FlowSim</button>
+          <button class="mf-card" type="button" data-mode="smooth" aria-pressed="false">Smooth-Brain</button>
+          <button class="mf-card" type="button" data-mode="deep" aria-pressed="false">Deep-Structure</button>
+        </div>
+        <div class="mf-card" data-mode-panel="navigator">
+          <h3>Navigator mode</h3><p>Guides routes and prioritizes clarity.</p>
+        </div>
+        <div class="mf-card" data-mode-panel="memory" hidden>
+          <h3>Memory mode</h3><p>Surfaces previous decisions to keep canon intact.</p>
+        </div>
+        <div class="mf-card" data-mode-panel="guard" hidden>
+          <h3>Guard mode</h3><p>Scans constraints and flags conflicts calmly.</p>
+        </div>
+        <div class="mf-card" data-mode-panel="flowsim" hidden>
+          <h3>FlowSim mode</h3><p>Shows timeline pulses for current routes.</p>
+        </div>
+        <div class="mf-card" data-mode-panel="smooth" hidden>
+          <h3>Smooth-Brain</h3><p>Guidance for simple flows and onboarding.</p>
+        </div>
+        <div class="mf-card" data-mode-panel="deep" hidden>
+          <h3>Deep-Structure</h3><p>Highlights complex structures while staying readable.</p>
+        </div>
       </div>
     </section>
 
-    <!-- ================= MODULE SWITCHER ================= -->
-    <section class="mf-section" id="modules">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Module view</div>
-        <h2>Spotlight the module that’s driving your current decision.</h2>
-        <p>
-          Use the module switcher to focus on how each part of the engine shapes a given feature.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--duo">
-        <!-- Left: Tabs + active label -->
-        <article class="mf-card mf-card--atlasv">
-          <h3>Engine modules</h3>
-          <p>
-            Choose a module to see its role, inputs, and outputs in the flow.
-          </p>
-
-          <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.45rem;">
-            <button
-              class="mf-button mf-button--ghost av-module-tab av-module-tab--active"
-              data-module="navigator"
-              data-label="Navigator"
-              type="button"
-            >
-              Navigator
-            </button>
-            <button
-              class="mf-button mf-button--ghost av-module-tab"
-              data-module="memory"
-              data-label="Memory"
-              type="button"
-            >
-              Memory
-            </button>
-            <button
-              class="mf-button mf-button--ghost av-module-tab"
-              data-module="guard"
-              data-label="Guard"
-              type="button"
-            >
-              Guard
-            </button>
-            <button
-              class="mf-button mf-button--ghost av-module-tab"
-              data-module="flowsim"
-              data-label="FlowSim"
-              type="button"
-            >
-              FlowSim
-            </button>
-          </div>
-
-          <p style="margin-top: 0.9rem; font-size: 0.8rem; color: var(--mf-text-mute);">
-            Active module:
-            <strong class="av-active-label">Navigator</strong>
-          </p>
-        </article>
-
-        <!-- Right: Module cards (swapped by JS) -->
-        <article class="mf-card mf-card--atlasv">
-          <div
-            class="av-module-card av-module-card--active"
-            data-module="navigator"
-          >
-            <h3>Navigator · entry & routing</h3>
-            <p>
-              Controls what appears in the user’s field of view: which queue, which filter,
-              and which feature enters the spotlight next.
-            </p>
-            <ul style="margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.82rem;">
-              <li>Inputs: queues, tags, search, current world/context.</li>
-              <li>Outputs: an ordered list of candidates for the active panel.</li>
-              <li>AtlasStudio tie-in: left column behavior and quick-jumps.</li>
-            </ul>
-          </div>
-
-          <div class="av-module-card" data-module="memory" style="display: none;">
-            <h3>Memory · decisions & state</h3>
-            <p>
-              Tracks every choice: Yes, No, Later, Expand, plus notes and snapshot references.
-            </p>
-            <ul style="margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.82rem;">
-              <li>Inputs: user actions, feature metadata, timestamps.</li>
-              <li>Outputs: state per feature, history, and snapshot anchors.</li>
-              <li>AtlasStudio tie-in: decision buttons and history view.</li>
-            </ul>
-          </div>
-
-          <div class="av-module-card" data-module="guard" style="display: none;">
-            <h3>Guard · constraints & safety</h3>
-            <p>
-              Encodes rules, maximums, and conditions that keep flows safe and coherent.
-            </p>
-            <ul style="margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.82rem;">
-              <li>Inputs: thresholds, roles, environment settings.</li>
-              <li>Outputs: allow/deny flags, warnings, and caps.</li>
-              <li>AtlasStudio tie-in: warnings, blocked actions, risk ribbons.</li>
-            </ul>
-          </div>
-
-          <div class="av-module-card" data-module="flowsim" style="display: none;">
-            <h3>FlowSim · scenarios & timelines</h3>
-            <p>
-              Looks at time and capacity: when features land, how long they stay open,
-              and how routes behave under different assumptions.
-            </p>
-            <ul style="margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.82rem;">
-              <li>Inputs: durations, dependencies, sequence constraints.</li>
-              <li>Outputs: projected timelines, stress-test scenarios.</li>
-              <li>AtlasStudio tie-in: schedule views and release strips.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ================= INTEGRATION ================= -->
     <section class="mf-section">
-      <header class="mf-section-header">
-        <div class="mf-section-eyebrow">Integration</div>
-        <h2>Where Atlas-V shows up across the stack.</h2>
-        <p>
-          The engine’s language appears everywhere: in AtlasStudio, in OIA’s BuildLogs,
-          and in how S/K/B structures releases and stems.
-        </p>
-      </header>
-
-      <div class="mf-grid mf-grid--relations">
-        <article class="mf-card mf-card--atlasv">
-          <h3>AtlasStudio workstation</h3>
-          <p>
-            Navigator governs the left panel, Memory manages card state in the center,
-            Guard sits behind warnings, and FlowSim informs timelines and build strips.
-          </p>
-          <div class="mf-card-footer">
-            <a href="atlasstudio/playground.html">Open AtlasStudio</a>
-          </div>
-        </article>
-
-        <article class="mf-card mf-card--oia">
-          <h3>Octopus in Action</h3>
-          <p>
-            OIA’s task networks, patrol routes, and neighborhood changes map cleanly to
-            Navigator and FlowSim, making the city feel like a living engine client.
-          </p>
-          <div class="mf-card-footer">
-            <a href="worlds-oia.html">Visit the OIA world page</a>
-          </div>
-        </article>
-
-        <article class="mf-card mf-card--skb">
-          <h3>S/K/B Audio Lab</h3>
-          <p>
-            Releases, stems, and alternate cuts use the same engine language: decisions,
-            risk flags, and release timelines, all driven by Atlas-V concepts.
-          </p>
-          <div class="mf-card-footer">
-            <a href="skb.html">Visit S/K/B Audio Lab</a>
-          </div>
-        </article>
+      <div class="mf-container mf-constraints">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Constraint & validation</div>
+          <h2>What the Guard flags</h2>
+        </header>
+        <div class="mf-constraint-list">
+          <button class="mf-card" type="button" data-constraint="timeline">Conflicting timeline event</button>
+          <button class="mf-card" type="button" data-constraint="circular">Circular reference detected</button>
+          <button class="mf-card" type="button" data-constraint="entity">Entity not linked</button>
+          <button class="mf-card" type="button" data-constraint="chain">Broken chain</button>
+        </div>
+        <div class="mf-card" data-constraint-detail="timeline"><p>Atlas-V highlights overlapping events and suggests a reorder.</p></div>
+        <div class="mf-card" data-constraint-detail="circular" hidden><p>Loops are paused until routes are clarified.</p></div>
+        <div class="mf-card" data-constraint-detail="entity" hidden><p>Missing entity connections prompt a relink.</p></div>
+        <div class="mf-card" data-constraint-detail="chain" hidden><p>Unreachable steps are isolated for review.</p></div>
       </div>
     </section>
 
+    <section class="mf-section">
+      <div class="mf-container mf-diagram-frame">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Integrated lattice</div>
+          <h2>Atlas-V diagram</h2>
+        </header>
+        <svg role="img" aria-label="Atlas-V lattice diagram" viewBox="0 0 400 200">
+          <defs>
+            <linearGradient id="atlasvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--brand-accent)" stop-opacity="0.4" />
+              <stop offset="100%" stop-color="var(--brand-accent)" stop-opacity="0.1" />
+            </linearGradient>
+          </defs>
+          <rect x="10" y="20" width="380" height="160" rx="18" fill="url(#atlasvGrad)" stroke="var(--overlay-mid)" />
+          <circle cx="80" cy="100" r="18" fill="var(--brand-accent)" fill-opacity="0.5" />
+          <circle cx="200" cy="60" r="18" fill="var(--brand-accent)" fill-opacity="0.4" />
+          <circle cx="200" cy="140" r="18" fill="var(--brand-accent)" fill-opacity="0.4" />
+          <circle cx="320" cy="100" r="18" fill="var(--brand-accent)" fill-opacity="0.5" />
+          <line x1="98" y1="100" x2="182" y2="60" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <line x1="98" y1="100" x2="182" y2="140" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <line x1="218" y1="60" x2="302" y2="100" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <line x1="218" y1="140" x2="302" y2="100" stroke="var(--text-100)" stroke-opacity="0.5" />
+          <text x="70" y="95" font-size="10" fill="var(--surface-900)">Nav</text>
+          <text x="190" y="55" font-size="10" fill="var(--surface-900)">Mem</text>
+          <text x="188" y="135" font-size="10" fill="var(--surface-900)">Guard</text>
+          <text x="310" y="95" font-size="10" fill="var(--surface-900)">Flow</text>
+        </svg>
+        <div class="mf-flow-panel">
+          <button class="mf-button mf-button--primary" type="button" data-flowsim-play aria-pressed="false">Play FlowSim pulse</button>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="mf-footer">
-    <div class="mf-footer-inner">
-      <span>© <span id="mf-year"></span> AtlasForge Interactive.</span>
-      <nav class="mf-footer-nav">
-        <a href="index.html">Home</a>
-        <a href="studio-tools.html">AtlasStudio</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="worlds-oia.html">OIA</a>
-        <a href="skb.html">S/K/B</a>
-        <a href="about.html">About</a>
-      </nav>
+    <div class="mf-container mf-footer-inner">
+      <div>
+        <strong>AtlasForge Interactive</strong>
+        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul class="mf-footer-list">
+          <li><a href="atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="atlasv.html">Atlas-V Engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Worlds & Labs</h4>
+        <ul class="mf-footer-list">
+          <li><a href="oia.html">Octopus in Action</a></li>
+          <li><a href="skb.html">S/K/B</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="mf-footer-list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="games.html">Games</a></li>
+        </ul>
+        <small>© <span data-year></span> AtlasForge Interactive</small>
+        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Shared marketing behavior -->
+  <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>
-  <!-- Page-specific engine behavior -->
   <script src="scripts/atlasv.js"></script>
-  <script>
-    const year = document.getElementById("mf-year");
-    if (year) year.textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

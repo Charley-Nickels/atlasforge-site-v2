@@ -1,57 +1,67 @@
-// ======================================================
-// AtlasForge Marketing JS
-// - Mobile nav toggle
-// - Section reveal on scroll
-// Front-end only; no storage, no network.
-// ======================================================
-
-document.addEventListener("DOMContentLoaded", () => {
-  initMarketingNav();
-  initMarketingSectionReveal();
-});
-
-// ------------------------------
-// Mobile nav toggle
-// ------------------------------
-function initMarketingNav() {
-  const header = document.querySelector(".mf-header");
-  if (!header) return;
-
-  const nav = header.querySelector(".mf-nav");
-  const toggle = header.querySelector(".mf-nav-toggle");
-
-  if (!nav || !toggle) return;
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("mf-nav--open");
-  });
-
-  // Close after clicking a link (on mobile)
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("mf-nav--open");
+(function() {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const navToggle = document.querySelector('.mf-nav-toggle');
+  const nav = document.querySelector('.mf-nav');
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) {
+        nav.querySelector('a')?.focus();
+      }
     });
+  }
+
+  // Active link based on path with alias support
+  const fullPath = window.location.pathname;
+  const path = fullPath.split('/').pop();
+  const defaultedPath = path && path.length ? path : 'index.html';
+  const canonical = (() => {
+    if (fullPath.includes('atlasstudio/')) return 'atlasstudio.html';
+    if (defaultedPath === 'studio-tools.html') return 'atlasstudio.html';
+    if (defaultedPath === 'octopus.html') return 'oia.html';
+    return defaultedPath;
+  })();
+
+  document.querySelectorAll('.mf-nav a').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href && canonical && href.endsWith(canonical)) {
+      link.classList.add('is-active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
-}
 
-// ------------------------------
-// Section reveal on scroll
-// ------------------------------
-function initMarketingSectionReveal() {
-  const sections = document.querySelectorAll(".mf-section");
-  if (!sections.length) return;
+  // Storyboard highlighting on scroll
+  const chapters = document.querySelectorAll('.mf-storyboard-item');
+  if (!prefersReduced && 'IntersectionObserver' in window && chapters.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-active');
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("mf-section--visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
+    chapters.forEach((chap) => observer.observe(chap));
+  }
 
-  sections.forEach((section) => observer.observe(section));
-}
+  // Clear skeletons after load
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.mf-skeleton').forEach((skel) => {
+      skel.classList.add('is-loaded');
+      skel.style.display = 'none';
+    });
+  }
+
+  // Active link based on path
+  const path = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.mf-nav a').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href && href.endsWith(path)) {
+      link.classList.add('is-active');
+    }
+  });
+})();

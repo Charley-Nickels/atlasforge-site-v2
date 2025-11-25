@@ -1,198 +1,112 @@
-/* styles/tokens.css */
-/* AtlasForge Umbrella — Brand Color Canon (Code Layer)
-   Generated from your locked system update.
-   Do not drift palettes unless explicitly instructed.
-*/
-
-/* ---------- BASE NEUTRALS (GLOBAL) ---------- */
-
 :root {
-  --af-bg-void: #1a1a21;
-  --af-bg-soft-gray: #d3d3d8;
+  /* Spacing */
+  --space-2: 0.125rem;
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
 
-  --af-text-main: #f2f2f2;
-  --af-text-soft: #e6e6e6;
-  --af-text-muted: #a7a7b4;
+  /* Radii */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
 
-  --af-border-soft: rgba(255, 255, 255, 0.1);
-  --af-border-subtle: rgba(255, 255, 255, 0.07);
+  /* Shadows */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.22);
+  --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.28);
 
-  --af-shadow-soft: 0 30px 70px rgba(0, 0, 0, 0.85);
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+
+  /* Balanced lighting tokens */
+  --highlight-soft: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 12px 30px rgba(0, 0, 0, 0.25);
+  --accent-border: 1px solid rgba(255, 255, 255, 0.08);
+  --overlay-strong: rgba(255, 255, 255, 0.16);
+  --overlay-mid: rgba(255, 255, 255, 0.08);
+  --overlay-weak: rgba(255, 255, 255, 0.06);
+  --overlay-faint: rgba(255, 255, 255, 0.02);
+
+  /* Brand palettes */
+  --forge-100: #f7e6ff;
+  --forge-300: #d79cff;
+  --forge-500: #b032f0;
+  --forge-700: #7c1ea6;
+
+  --studio-100: #ffe8da;
+  --studio-300: #ffb78a;
+  --studio-500: #f16a1b;
+  --studio-700: #b84a10;
+
+  --atlasv-100: #dff6ff;
+  --atlasv-300: #8ed7f7;
+  --atlasv-500: #1fb6ff;
+  --atlasv-700: #0f7db2;
+
+  --oia-100: #ffe8d1;
+  --oia-300: #ffb88a;
+  --oia-500: #f07f3c;
+  --oia-700: #b45a25;
+
+  --skb-100: #f2e6ff;
+  --skb-300: #c7a6ff;
+  --skb-500: #8c4dff;
+  --skb-700: #5a2caa;
+
+  /* Neutral palette */
+  --surface-900: #0c0d12;
+  --surface-800: #11131a;
+  --surface-700: #191c26;
+  --surface-600: #1f2430;
+  --surface-500: #262c3a;
+  --text-100: #f5f7fb;
+  --text-300: #c4c8d4;
+  --text-500: #9199aa;
+  --text-700: #5d6371;
 }
 
-/* ---------- [1] ATLASFORGE INTERACTIVE — Magenta Energy Core ---------- */
-
-:root {
-  /* Core glow */
-  --af-core-magenta-start: #ff3fae;
-  --af-core-magenta-end: #ff007a;
-
-  /* Secondary ring gradient */
-  --af-core-ring-start: #ff4faa;
-  --af-core-ring-end: #6b0040;
-
-  /* Metallic rings */
-  --af-core-metal-1: #e6e6e6;
-  --af-core-metal-2: #c8c8c8;
-
-  /* Preferred backgrounds */
-  --af-core-bg-dark: #1a1a21;
-  --af-core-bg-soft: #2a2a33;
+/* Brand theme mappings */
+body.brand-atlasforge {
+  --brand-accent: var(--forge-500);
+  --brand-accent-strong: var(--forge-700);
+  --brand-accent-soft: var(--forge-300);
 }
 
-/* ---------- [2] ATLAS V — Cyan Lattice Intelligence ---------- */
-
-:root {
-  --av-core-cyan-start: #00e8ff;
-  --av-core-cyan-end: #00b6cc;
-
-  --av-line-cold-white: #efffff;
-  --av-line-deep-blue: #003a55;
-
-  --av-bg-space-navy: #071018;
-  --av-bg-midnight: #0b1f2d;
+body.brand-atlasstudio {
+  --brand-accent: var(--studio-500);
+  --brand-accent-strong: var(--studio-700);
+  --brand-accent-soft: var(--studio-300);
 }
 
-/* ---------- [3] ATLAS STUDIO — Orange Ember Creator ---------- */
-
-:root {
-  --as-ember-start: #ff9a3c;
-  --as-ember-end: #ff6a00;
-
-  --as-ember-soft: #ffd4b0;
-  --as-bg-navy: #101b32;
+body.brand-atlasv {
+  --brand-accent: var(--atlasv-500);
+  --brand-accent-strong: var(--atlasv-700);
+  --brand-accent-soft: var(--atlasv-300);
 }
 
-/* ---------- [4] OCTOPUS IN ACTION — Friendly Warm Orange ---------- */
-
-:root {
-  --oia-orange: #ff8a26;
-  --oia-shadow: #1a1a21;
-  --oia-accent-cream: #ffe3c2;
+body.brand-oia {
+  --brand-accent: var(--oia-500);
+  --brand-accent-strong: var(--oia-700);
+  --brand-accent-soft: var(--oia-300);
 }
 
-/* ---------- THEME MAPPINGS (PER PAGE / BRAND) ---------- */
-
-/* Core / AtlasForge umbrella pages (index, about, games, skb) */
-body.af-theme-core {
-  --theme-bg-main: var(--af-core-bg-dark);
-  --theme-bg-elevated: #22222d;
-  --theme-bg-soft: #242433;
-
-  --theme-accent-strong: var(--af-core-magenta-end);
-  --theme-accent-soft: var(--af-core-magenta-start);
-
-  --theme-pill-border: rgba(255, 63, 174, 0.6);
-  --theme-pill-glow: rgba(255, 0, 122, 0.22);
-
-  --theme-pill-gradient: linear-gradient(
-    135deg,
-    var(--af-core-magenta-start),
-    var(--af-core-magenta-end)
-  );
-
-  --theme-button-primary: linear-gradient(
-    135deg,
-    var(--af-core-magenta-start),
-    var(--af-core-magenta-end)
-  );
-
-  --theme-button-primary-shadow: 0 22px 54px rgba(255, 0, 122, 0.6);
-
-  --theme-tag-outline: rgba(255, 63, 174, 0.6);
-
-  --theme-section-border: rgba(255, 63, 174, 0.25);
-}
-
-/* Atlas-V page: cyan lattice */
-body.af-theme-atlasv {
-  --theme-bg-main: var(--av-bg-space-navy);
-  --theme-bg-elevated: var(--av-bg-midnight);
-  --theme-bg-soft: #081828;
-
-  --theme-accent-strong: var(--av-core-cyan-start);
-  --theme-accent-soft: var(--av-core-cyan-end);
-
-  --theme-pill-border: rgba(0, 232, 255, 0.55);
-  --theme-pill-glow: rgba(0, 183, 214, 0.22);
-
-  --theme-pill-gradient: linear-gradient(
-    135deg,
-    var(--av-core-cyan-start),
-    var(--av-core-cyan-end)
-  );
-
-  --theme-button-primary: linear-gradient(
-    135deg,
-    var(--av-core-cyan-start),
-    var(--av-core-cyan-end)
-  );
-
-  --theme-button-primary-shadow: 0 22px 54px rgba(0, 183, 214, 0.6);
-
-  --theme-tag-outline: rgba(0, 232, 255, 0.6);
-
-  --theme-section-border: rgba(0, 232, 255, 0.25);
-}
-
-/* AtlasStudio page: ember creator */
-body.af-theme-studio {
-  --theme-bg-main: var(--as-bg-navy);
-  --theme-bg-elevated: #121f3a;
-  --theme-bg-soft: #152344;
-
-  --theme-accent-strong: var(--as-ember-end);
-  --theme-accent-soft: var(--as-ember-start);
-
-  --theme-pill-border: rgba(255, 154, 60, 0.55);
-  --theme-pill-glow: rgba(255, 106, 0, 0.22);
-
-  --theme-pill-gradient: linear-gradient(
-    135deg,
-    var(--as-ember-start),
-    var(--as-ember-end)
-  );
-
-  --theme-button-primary: linear-gradient(
-    135deg,
-    var(--as-ember-start),
-    var(--as-ember-end)
-  );
-
-  --theme-button-primary-shadow: 0 22px 54px rgba(255, 106, 0, 0.6);
-
-  --theme-tag-outline: rgba(255, 154, 60, 0.6);
-
-  --theme-section-border: rgba(255, 154, 60, 0.25);
-}
-
-/* OIA page: friendly warm orange */
-body.af-theme-oia {
-  --theme-bg-main: #050713;
-  --theme-bg-elevated: #0b0f1f;
-  --theme-bg-soft: #12162a;
-
-  --theme-accent-strong: var(--oia-orange);
-  --theme-accent-soft: #ffb878;
-
-  --theme-pill-border: rgba(255, 138, 38, 0.55);
-  --theme-pill-glow: rgba(255, 138, 38, 0.22);
-
-  --theme-pill-gradient: linear-gradient(
-    135deg,
-    #ffb878,
-    var(--oia-orange)
-  );
-
-  --theme-button-primary: linear-gradient(
-    135deg,
-    #ffb878,
-    var(--oia-orange)
-  );
-
-  --theme-button-primary-shadow: 0 22px 54px rgba(255, 138, 38, 0.6);
-
-  --theme-tag-outline: rgba(255, 138, 38, 0.6);
-
-  --theme-section-border: rgba(255, 138, 38, 0.25);
+body.brand-skb {
+  --brand-accent: var(--skb-500);
+  --brand-accent-strong: var(--skb-700);
+  --brand-accent-soft: var(--skb-300);
 }

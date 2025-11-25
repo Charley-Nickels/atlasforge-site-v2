@@ -1,0 +1,25 @@
+/* Transparent logo overrides – AtlasForge Site V2 branding */
+:root {
+  --logo-atlasforge: url("/assets/logos/Atlasforge_Transparent.png");
+  --logo-atlasv:       url("/assets/logos/AtlasVTransparent.png");
+  --logo-oia:          url("/assets/logos/OIA_transparent.png");
+  --logo-skb:          url("/assets/logos/skbtransparent.png");
+}
+
+/* Example usage in header */
+.header-logo-atlasforge {
+  background: var(--logo-atlasforge) no-repeat center center;
+  background-size: contain;
+}
+.header-logo-atlasv {
+  background: var(--logo-atlasv) no-repeat center center;
+  background-size: contain;
+}
+.header-logo-oia {
+  background: var(--logo-oia) no-repeat center center;
+  background-size: contain;
+}
+.header-logo-skb {
+  background: var(--logo-skb) no-repeat center center;
+  background-size: contain;
+}

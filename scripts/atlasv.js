@@ -1,45 +1,51 @@
-// ======================================================
-// Atlas-V Engine Page JS
-// - Module tab switching (Navigator, Memory, Guard, FlowSim)
-// - Lightweight DOM-only behavior, no network/storage.
-// ======================================================
+(function() {
+  const modeButtons = document.querySelectorAll('[data-mode]');
+  const modePanels = document.querySelectorAll('[data-mode-panel]');
+  const constraintButtons = document.querySelectorAll('[data-constraint]');
+  const constraintDetails = document.querySelectorAll('[data-constraint-detail]');
+  const playbackButton = document.querySelector('[data-flowsim-play]');
+  const diagram = document.querySelector('.mf-diagram-frame');
 
-document.addEventListener("DOMContentLoaded", () => {
-  initAtlasVModuleSwitcher();
-});
+  function setMode(mode) {
+    modeButtons.forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset.mode === mode);
+    });
+    modePanels.forEach((panel) => {
+      panel.hidden = panel.dataset.modePanel !== mode;
+    });
+  }
 
-function initAtlasVModuleSwitcher() {
-  const tabs = document.querySelectorAll(".av-module-tab");
-  const cards = document.querySelectorAll(".av-module-card");
-  const label = document.querySelector(".av-active-label");
+  function setConstraint(key) {
+    constraintButtons.forEach((btn) => btn.classList.toggle('is-active', btn.dataset.constraint === key));
+    constraintDetails.forEach((item) => item.hidden = item.dataset.constraintDetail !== key);
+  }
 
-  if (!tabs.length || !cards.length) return;
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const target = tab.dataset.module;
-
-      // Toggle active tab
-      tabs.forEach((t) => t.classList.toggle("av-module-tab--active", t === tab));
-
-      // Toggle active card
-      cards.forEach((card) => {
-        const match = card.dataset.module === target;
-        card.classList.toggle("av-module-card--active", match);
-      });
-
-      // Update label text
-      if (label) {
-        label.textContent = tab.dataset.label || tab.textContent.trim();
+  modeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => setMode(btn.dataset.mode));
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setMode(btn.dataset.mode);
       }
     });
   });
 
-  // If nothing is active by default, activate the first
-  const anyActive = Array.from(tabs).some((tab) =>
-    tab.classList.contains("av-module-tab--active")
-  );
-  if (!anyActive && tabs[0]) {
-    tabs[0].click();
+  constraintButtons.forEach((btn) => {
+    btn.addEventListener('click', () => setConstraint(btn.dataset.constraint));
+  });
+
+  if (playbackButton && diagram) {
+    playbackButton.addEventListener('click', () => {
+      diagram.classList.add('is-playing');
+      playbackButton.setAttribute('aria-pressed', 'true');
+      setTimeout(() => {
+        diagram.classList.remove('is-playing');
+        playbackButton.setAttribute('aria-pressed', 'false');
+      }, 2400);
+    });
   }
-}
+
+  // defaults
+  if (modeButtons.length) setMode(modeButtons[0].dataset.mode);
+  if (constraintButtons.length) setConstraint(constraintButtons[0].dataset.constraint);
+})();

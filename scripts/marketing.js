@@ -54,5 +54,14 @@
       skel.classList.add('is-loaded');
       skel.style.display = 'none';
     });
+  }
+
+  // Active link based on path
+  const path = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.mf-nav a').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href && href.endsWith(path)) {
+      link.classList.add('is-active');
+    }
   });
 })();

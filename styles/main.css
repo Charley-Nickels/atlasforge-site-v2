@@ -230,6 +230,7 @@ h4 {
 
 .mf-hero-actions {
   display: flex;
+  gap: var(--space-12);
   flex-wrap: wrap;
   gap: var(--space-12);
   margin-top: var(--space-20);
@@ -412,5 +413,14 @@ h4 {
 
   .mf-parallax .mf-layer-back {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface-800);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--space-12);
+    flex-direction: column;
+    gap: var(--space-8);
   }
 }

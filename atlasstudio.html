@@ -31,20 +31,39 @@
 
   <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--studio mf-section">
+      <!-- Future hero background asset:
+           <img src="assets/backgrounds/hero/bg_hero-atlasforge_soft-gradient.png" class="hero-bg" alt="" /> -->
       <div class="mf-container mf-hero-inner">
         <div>
           <div class="mf-hero-badge">AtlasStudio Workstation</div>
-          <h1>Zero-code surface for building logic, screens, and flows.</h1>
-          <p>AtlasStudio Workstation (short: AtlasStudio) is a simulated tri-panel UI for managing tasks, decisions, and snapshots. Atlas-V runs internally to keep routes, guardrails, and memory aligned.</p>
+          <h1>Prototype workstation guided by Atlas-V.</h1>
+          <p>Atlas Studio POC is a prototype surface that shows how Atlas-V and the Atlas Engine organize phases, runs, and tasks into a visual, zero-code experience for teams and creators.</p>
           <div class="mf-hero-actions">
             <a class="mf-button mf-button--primary" href="atlasstudio/playground.html">Open the workstation</a>
             <a class="mf-button mf-button--ghost" href="#templates">Browse templates</a>
           </div>
         </div>
         <aside class="mf-hero-visual">
-          <h2>Modes overview</h2>
-          <p>Switch between Visual Builder, Logic Builder, Knowledge, Entity, Timeline, Screen, and Atlas-V sync views.</p>
+          <h2>Preview modes</h2>
+          <p>A concept view of Visual Builder, Logic Builder, Knowledge, Entity, Timeline, Screen, and Atlas-V sync states.</p>
+          <!-- Future POC frame: <img src="assets/flourishes/frames/frame_screen-soft_01.png" class="studio-frame" alt="" /> -->
         </aside>
+      </div>
+    </section>
+
+    <section class="mf-section">
+      <div class="mf-container mf-stack-overview">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Guided by the Atlas stack</div>
+          <h2>How Atlas Studio POC fits</h2>
+          <p>Atlas Studio POC is the prototype workstation surface in a governed stack that combines Atlas Engine, Atlas-V, and Atlas-V Lite.</p>
+        </header>
+        <div class="mf-template-grid">
+          <article class="mf-card"><h3>Atlas Engine</h3><p>Structures work into phases and runs, setting guardrails and workflows for the stack.</p></article>
+          <article class="mf-card"><h3>Atlas-V</h3><p>The full copilot that applies Engine structure, delivers execution prompts, and powers Studio POC interactions.</p></article>
+          <article class="mf-card"><h3>Atlas-V Lite</h3><p>A GPT-delivered experience that mirrors Atlas-V guidance in a chat-first format.</p></article>
+          <article class="mf-card"><h3>Atlas Studio POC</h3><p>Prototype workstation interface that visualizes tasks, decisions, and previews guided by Atlas-V.</p></article>
+        </div>
       </div>
     </section>
 
@@ -73,7 +92,7 @@
         <header class="mf-section-header">
           <div class="mf-eyebrow">Studio modes</div>
           <h2>Purpose-built views</h2>
-          <p>Each mode highlights a different aspect of creation without any code required.</p>
+          <p>Each previewed mode highlights a different aspect of creation without any code required.</p>
         </header>
         <div class="mf-mode-grid">
           <article class="mf-card"><h3>Visual Builder</h3><p>Arrange panels, cards, and flows visually.</p></article>
@@ -82,8 +101,23 @@
           <article class="mf-card"><h3>Entity Mode</h3><p>Manage characters, items, and locations.</p></article>
           <article class="mf-card"><h3>Timeline Mode</h3><p>Sequence events with FlowSim-backed timing.</p></article>
           <article class="mf-card"><h3>Screen Mode</h3><p>Preview screens and routes.</p></article>
-          <article class="mf-card"><h3>Atlas-V Sync</h3><p>Confirm Navigator, Memory, Guard, and FlowSim alignment.</p></article>
+          <article class="mf-card"><h3>Atlas-V Sync</h3><p>Keep guidance, guardrails, memory, and previews aligned as you build.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="mf-section">
+      <div class="mf-container mf-flow-panel">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">How it works</div>
+          <h2>Guided phases and runs</h2>
+          <p>Atlas Engine structures projects into phases and runs. Atlas-V delivers step-by-step execution prompts, and you send back quick run reports so the copilot can choose what comes next.</p>
+        </header>
+        <div class="mf-flow-track"><strong>Phases</strong><p>Big chunks of a project organized by the Engine.</p></div>
+        <div class="mf-flow-track"><strong>Runs</strong><p>Bite-sized tasks with clear goals.</p></div>
+        <div class="mf-flow-track"><strong>Execution prompts</strong><p>Guided steps tailored to the tools you already use.</p></div>
+        <div class="mf-flow-track"><strong>Run reports</strong><p>Quick updates that let Atlas-V adjust and keep the plan on track.</p></div>
+        <div class="mf-flow-track"><strong>Studio POC surface</strong><p>Visualizes tasks, decisions, and previews so teams can work with Atlas-V in one place.</p></div>
       </div>
     </section>
 
@@ -92,7 +126,7 @@
         <header class="mf-section-header">
           <div class="mf-eyebrow">Showcase</div>
           <h2>AtlasStudio visuals</h2>
-          <p>Static screenshots showing timelines, entity editors, diagrams, and flows.</p>
+          <p>Preview visuals showing timelines, entity editors, diagrams, and flows inside the prototype workstation.</p>
         </header>
         <div class="mf-showcase-grid">
           <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Timeline alignment</p></div>
@@ -110,11 +144,11 @@
         <header class="mf-section-header">
           <div class="mf-eyebrow">Integration</div>
           <h2>Atlas-V under the hood</h2>
-          <p>AtlasStudio calls on Atlas-V modules for routing, guardrails, memory, and timeline previews. Worlds and labs feed tasks and cues.</p>
+          <p>Atlas Studio POC is guided by Atlas-V so routing, guardrails, memory, and previews stay aligned. Worlds and labs feed tasks and cues into the workspace.</p>
         </header>
-        <div class="mf-flow-track"><strong>Atlas-V inside Studio</strong><p>Navigator, Guard, Memory, and FlowSim back each decision.</p></div>
-        <div class="mf-flow-track"><strong>OIA + SKB inputs</strong><p>OIA BuildLogs and SKB releases appear as tasks and cues.</p></div>
-        <div class="mf-flow-track"><strong>Outputs</strong><p>Projects organized for delivery.</p></div>
+        <div class="mf-flow-track"><strong>Atlas-V inside Studio</strong><p>Navigator, Guard, Memory, and FlowSim act as conceptual capabilities that steer decisions.</p></div>
+        <div class="mf-flow-track"><strong>OIA + SKB inputs</strong><p>OIA worlds and SKB releases appear as tasks and cues for teams to organize.</p></div>
+        <div class="mf-flow-track"><strong>Outputs</strong><p>Projects and releases organized for delivery across AtlasForge.</p></div>
       </div>
     </section>
   </main>
@@ -123,7 +157,6 @@
     <div class="mf-container mf-footer-inner">
       <div>
         <strong>AtlasForge Interactive</strong>
-        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
       </div>
       <div>
         <h4>Products</h4>
@@ -145,8 +178,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="games.html">Games</a></li>
         </ul>
-        <small>© <span data-year></span> AtlasForge Interactive</small>
-        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+        <small>© <span data-year></span> AtlasForge Interactive. All rights reserved.</small>
       </div>
     </div>
   </footer>

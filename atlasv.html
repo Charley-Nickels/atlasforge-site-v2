@@ -30,20 +30,49 @@
 
   <main class="mf-main" id="main-content">
     <section class="mf-hero mf-hero--atlasv mf-section">
+      <!-- Future hero background asset:
+           <img src="assets/backgrounds/hero/bg_hero-atlasv_soft-gradient.png" class="hero-bg" alt="" /> -->
       <div class="mf-container mf-hero-inner">
         <div>
           <div class="mf-hero-badge">Atlas-V Engine</div>
-          <h1>Navigator, Guard, Memory, and FlowSim working together.</h1>
-          <p>Atlas-V is the logic core backing AtlasStudio flows. This page shows the modules, intelligence modes, constraint checks, and FlowSim playback—entirely simulated with front-end code.</p>
+          <h1>The AtlasForge project copilot built on Atlas Engine.</h1>
+          <p>Atlas-V applies the Atlas Engine governance to real work—structuring phases, runs, and guided tasks that power Atlas Studio POC and AtlasForge creations like Octopus in Action and S/K/B.</p>
           <div class="mf-hero-actions">
             <a class="mf-button mf-button--primary" href="atlasstudio.html">See AtlasStudio</a>
-            <a class="mf-button mf-button--ghost" href="#modules">View modules</a>
+            <a class="mf-button mf-button--ghost" href="#modules">Explore capabilities</a>
           </div>
         </div>
         <aside class="mf-hero-visual">
           <h2>Engine notes</h2>
-          <p>Static diagrams, fake outputs, and balanced lighting to illustrate the lattice.</p>
+          <p>Atlas Engine sets the structure; Atlas-V turns it into step-by-step guidance for the tools and workflows you already use.</p>
         </aside>
+      </div>
+    </section>
+
+    <section class="mf-section">
+      <div class="mf-container mf-intelligence">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Stack context</div>
+          <h2>Atlas Engine + Atlas-V</h2>
+        </header>
+        <div class="mf-grid mf-grid--2">
+          <article class="mf-card">
+            <h3>Atlas Engine</h3>
+            <p>Governed logic backbone that shapes projects into phases and runs while keeping guardrails in place.</p>
+          </article>
+          <article class="mf-card">
+            <h3>Atlas-V</h3>
+            <p>Full project copilot that applies the Engine’s structure, delivering execution prompts and run report guidance across tools.</p>
+          </article>
+          <article class="mf-card">
+            <h3>Atlas-V Lite</h3>
+            <p>GPT-delivered experience that mirrors Atlas-V’s guidance in a lightweight, chat-first format.</p>
+          </article>
+          <article class="mf-card">
+            <h3>Atlas Studio POC</h3>
+            <p>Prototype workstation surface guided by Atlas-V to plan, preview, and manage projects without exposing backend internals.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -51,13 +80,13 @@
       <div class="mf-container mf-intelligence">
         <header class="mf-section-header">
           <div class="mf-eyebrow">Core modules</div>
-          <h2>Atlas-V cards</h2>
+          <h2>Atlas-V capabilities</h2>
         </header>
         <div class="mf-grid mf-grid--2">
-          <article class="mf-card"><h3>Navigator</h3><p>Routes tasks and screens with clear paths.</p></article>
-          <article class="mf-card"><h3>Memory</h3><p>Keeps decision ledgers and snapshots coherent.</p></article>
-          <article class="mf-card"><h3>Guard</h3><p>Constraint scanner that flags circular or missing links.</p></article>
-          <article class="mf-card"><h3>FlowSim</h3><p>Timeline preview of routes and state shifts.</p></article>
+          <article class="mf-card"><h3>Navigator</h3><p>Suggests the next meaningful step and keeps work moving.</p></article>
+          <article class="mf-card"><h3>Memory</h3><p>Holds key decisions and context so runs stay aligned.</p></article>
+          <article class="mf-card"><h3>Guard</h3><p>Applies agreed constraints and flags conflicts before they spread.</p></article>
+          <article class="mf-card"><h3>FlowSim</h3><p>Shows a preview of how a workflow or change might play out.</p></article>
         </div>
       </div>
     </section>
@@ -77,22 +106,49 @@
           <button class="mf-card" type="button" data-mode="deep" aria-pressed="false">Deep-Structure</button>
         </div>
         <div class="mf-card" data-mode-panel="navigator">
-          <h3>Navigator mode</h3><p>Guides routes and prioritizes clarity.</p>
+          <h3>Navigator mode</h3><p>Prioritizes the clearest next move and highlights dependencies.</p>
         </div>
         <div class="mf-card" data-mode-panel="memory" hidden>
-          <h3>Memory mode</h3><p>Surfaces previous decisions to keep canon intact.</p>
+          <h3>Memory mode</h3><p>Surfaces previous decisions and context to keep runs consistent.</p>
         </div>
         <div class="mf-card" data-mode-panel="guard" hidden>
-          <h3>Guard mode</h3><p>Scans constraints and flags conflicts calmly.</p>
+          <h3>Guard mode</h3><p>Scans agreed constraints, flags conflicts, and suggests safer routes.</p>
         </div>
         <div class="mf-card" data-mode-panel="flowsim" hidden>
-          <h3>FlowSim mode</h3><p>Shows timeline pulses for current routes.</p>
+          <h3>FlowSim mode</h3><p>Offers a quick preview of how a change might ripple through the plan.</p>
         </div>
         <div class="mf-card" data-mode-panel="smooth" hidden>
-          <h3>Smooth-Brain</h3><p>Guidance for simple flows and onboarding.</p>
+          <h3>Smooth-Brain</h3><p>Guidance tuned for simple flows and onboarding moments.</p>
         </div>
         <div class="mf-card" data-mode-panel="deep" hidden>
-          <h3>Deep-Structure</h3><p>Highlights complex structures while staying readable.</p>
+          <h3>Deep-Structure</h3><p>Highlights complex structures while keeping them understandable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mf-section">
+      <div class="mf-container mf-intelligence">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">How Atlas-V works with you</div>
+          <h2>Phases, runs, and guided execution</h2>
+        </header>
+        <div class="mf-grid mf-grid--2">
+          <article class="mf-card">
+            <h3>Phase & Run framing</h3>
+            <p>Atlas Engine shapes work into phases (big chunks) and runs (small tasks) so teams can move in clear steps.</p>
+          </article>
+          <article class="mf-card">
+            <h3>Execution prompts</h3>
+            <p>Atlas-V provides step-by-step guidance tailored to the tools you use, from docs and sheets to editors and whiteboards.</p>
+          </article>
+          <article class="mf-card">
+            <h3>Run reports</h3>
+            <p>After each run, a short check-in keeps context fresh and helps choose the next action.</p>
+          </article>
+          <article class="mf-card">
+            <h3>Works with Lite</h3>
+            <p>Atlas-V Lite mirrors the same pattern in a chat-first experience when you want quick guidance.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -138,10 +194,10 @@
           <line x1="98" y1="100" x2="182" y2="140" stroke="var(--text-100)" stroke-opacity="0.5" />
           <line x1="218" y1="60" x2="302" y2="100" stroke="var(--text-100)" stroke-opacity="0.5" />
           <line x1="218" y1="140" x2="302" y2="100" stroke="var(--text-100)" stroke-opacity="0.5" />
-          <text x="70" y="95" font-size="10" fill="var(--surface-900)">Nav</text>
-          <text x="190" y="55" font-size="10" fill="var(--surface-900)">Mem</text>
-          <text x="188" y="135" font-size="10" fill="var(--surface-900)">Guard</text>
-          <text x="310" y="95" font-size="10" fill="var(--surface-900)">Flow</text>
+          <text x="70" y="95" font-size="10" fill="var(--text-100)">Nav</text>
+          <text x="190" y="55" font-size="10" fill="var(--text-100)">Mem</text>
+          <text x="188" y="135" font-size="10" fill="var(--text-100)">Guard</text>
+          <text x="310" y="95" font-size="10" fill="var(--text-100)">Flow</text>
         </svg>
         <div class="mf-flow-panel">
           <button class="mf-button mf-button--primary" type="button" data-flowsim-play aria-pressed="false">Play FlowSim pulse</button>
@@ -154,7 +210,7 @@
     <div class="mf-container mf-footer-inner">
       <div>
         <strong>AtlasForge Interactive</strong>
-        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
+        <p class="mf-hero-cta-note">Built with Atlas Engine, Atlas-V, and Atlas Studio POC.</p>
       </div>
       <div>
         <h4>Products</h4>
@@ -177,7 +233,7 @@
           <li><a href="games.html">Games</a></li>
         </ul>
         <small>© <span data-year></span> AtlasForge Interactive</small>
-        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+        <p class="mf-footer-note">Concept previews; features evolve as the stack matures.</p>
       </div>
     </div>
   </footer>

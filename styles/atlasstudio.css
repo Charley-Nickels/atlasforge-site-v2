@@ -8,11 +8,17 @@
 }
 
 .mf-panel {
-  background: var(--surface-800);
-  border: var(--accent-border);
+  /*
+    Future panel frame overlay:
+    background-image: var(--asset-frame-soft-01);
+    background-size: cover;
+    background-blend-mode: soft-light;
+  */
+  background: linear-gradient(180deg, var(--surface-850), var(--surface-800));
+  border: var(--border-strong);
   border-radius: var(--radius-12);
   padding: var(--space-16);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-card);
   min-height: 200px;
 }
 
@@ -29,15 +35,16 @@
 .mf-task {
   padding: var(--space-12);
   border-radius: var(--radius-8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
-  transition: transform 120ms ease, border-color 120ms ease;
+  border: var(--border-strong);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)), var(--surface-750);
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }
 
 .mf-task:hover,
 .mf-task.is-active {
-  border-color: var(--brand-accent);
+  border-color: var(--brand-accent-soft);
   transform: translateY(-2px);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)), var(--surface-750);
 }
 
 .mf-task .mf-chip {
@@ -55,17 +62,39 @@
 .mf-decision-button {
   border-radius: var(--radius-8);
   padding: var(--space-12);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
+  border: var(--border-strong);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
   cursor: pointer;
   text-align: center;
-  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  color: var(--text-100);
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
 }
 
 .mf-decision-button:hover {
   transform: translateY(-1px);
   border-color: var(--brand-accent);
-  background: rgba(241, 106, 27, 0.08);
+  background: linear-gradient(165deg, rgba(241, 106, 27, 0.12), rgba(255, 255, 255, 0.02));
+  box-shadow: var(--shadow-soft);
+}
+
+.mf-decision-button[data-decision="Yes"] {
+  background: linear-gradient(150deg, rgba(241, 106, 27, 0.16), rgba(255, 255, 255, 0.02));
+  border-color: var(--brand-accent-soft);
+}
+
+.mf-decision-button[data-decision="No"] {
+  border-color: var(--overlay-mid);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+}
+
+.mf-decision-button[data-decision="Later"] {
+  border-color: var(--overlay-mid);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+}
+
+.mf-decision-button[data-decision="Expand"] {
+  border-color: var(--brand-accent);
+  background: linear-gradient(150deg, rgba(241, 106, 27, 0.12), rgba(255, 255, 255, 0.02));
 }
 
 .mf-snapshots {
@@ -74,10 +103,16 @@
 }
 
 .mf-snapshot {
+  /*
+    Future snapshot texture:
+    background-image: var(--asset-card-strong);
+    background-size: cover;
+    background-blend-mode: screen;
+  */
   border-radius: var(--radius-8);
   padding: var(--space-12);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-strong);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
 }
 
 .mf-assistant {

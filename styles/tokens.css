@@ -70,14 +70,32 @@
 
   /* Neutral palette */
   --surface-900: #0c0d12;
+  --surface-850: #0f1118;
   --surface-800: #11131a;
+  --surface-750: #171c27;
   --surface-700: #191c26;
   --surface-600: #1f2430;
   --surface-500: #262c3a;
+  --border-strong: 1px solid rgba(255, 255, 255, 0.14);
   --text-100: #f5f7fb;
   --text-300: #c4c8d4;
   --text-500: #9199aa;
   --text-700: #5d6371;
+
+  /* Asset placeholders (inactive) */
+  /* --asset-hero-atlasforge: url('../assets/backgrounds/hero/bg_hero-atlasforge_soft-gradient.png'); */
+  /* --asset-hero-atlasv: url('../assets/backgrounds/hero/bg_hero-atlasv_soft-gradient.png'); */
+  /* --asset-section-light: url('../assets/backgrounds/sections/bg_section-light_noise.png'); */
+  /* --asset-section-dark: url('../assets/backgrounds/sections/bg_section-dark_noise.png'); */
+  /* --asset-card-soft: url('../assets/ui/cards/card_surface-soft.png'); */
+  /* --asset-card-strong: url('../assets/ui/cards/card_surface-strong.png'); */
+  /* --asset-divider-soft: url('../assets/ui/dividers/divider_soft-line.png'); */
+  /* --asset-btn-primary-light: url('../assets/ui/buttons/btn_primary-pill_light.png'); */
+  /* --asset-btn-primary-dark: url('../assets/ui/buttons/btn_primary-pill_dark.png'); */
+  /* --asset-btn-ghost: url('../assets/ui/buttons/btn_ghost-pill_outline.png'); */
+  /* --asset-blob-soft-01: url('../assets/flourishes/blobs/blob_corner-soft_01.png'); */
+  /* --asset-blob-soft-02: url('../assets/flourishes/blobs/blob_corner-soft_02.png'); */
+  /* --asset-frame-soft-01: url('../assets/flourishes/frames/frame_screen-soft_01.png'); */
 }
 
 /* Brand theme mappings */

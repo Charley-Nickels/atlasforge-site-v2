@@ -76,3 +76,8 @@
 - Added overlay tokens and applied them to overlays, diagrams, and cards for consistent lighting without new visuals.
 - Updated Atlas-V diagram colors to brand tokens and set button semantics for mode, constraint, and FlowSim controls.
 - Tuned ghost/primary buttons to token-based colors, retained reduced-motion guards, and verified balanced accent lighting.
+
+## 2025-12-08 – Phase 5 – Run #1 – Baseline Visual Uplift
+- Introduced elevated neutral tokens (`--surface-850`, `--surface-750`, `--border-strong`) and applied them to hero shells, cards, and panels for stronger readability.
+- Refined hero surfaces, navigation chips, and storyboard tiles with higher-contrast gradients aligned to each brand accent.
+- Harmonized workstation panels and Atlas-V diagram labeling to improve contrast without adding new motion.

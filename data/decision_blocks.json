@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "version": "v0.1",
+    "phase": "Phase 5 — Canon Lock Seed",
+    "description": "Initial skeleton for AtlasForge internal decision console."
+  },
+  "blocks": [
+    {
+      "id": "brand_canon",
+      "title": "Brand Canon — Visibility & Role",
+      "description": "Decide how core brands show up in the public-facing site and canon.",
+      "items": [
+        {
+          "id": "brand_atlasforge",
+          "label": "AtlasForge (Umbrella)",
+          "description": "Role of AtlasForge as the parent studio brand.",
+          "type": "select",
+          "options": ["Hero", "Nav Only", "Footer Only", "Internal Only", "Later"],
+          "default": "Hero"
+        },
+        {
+          "id": "brand_atlasv",
+          "label": "Atlas-V Engine",
+          "description": "How prominent Atlas-V should be on the homepage.",
+          "type": "select",
+          "options": ["Hero", "Secondary Section", "Nav Only", "Internal Only", "Later"],
+          "default": "Secondary Section"
+        },
+        {
+          "id": "brand_atlasstudio",
+          "label": "AtlasStudio Workstation",
+          "description": "Should AtlasStudio get its own hero-level section?",
+          "type": "select",
+          "options": ["Hero", "Secondary Section", "Nav Only", "Hidden", "Later"],
+          "default": "Secondary Section"
+        }
+      ]
+    },
+    {
+      "id": "subsidiary_candidates",
+      "title": "Subsidiary & Line Candidates",
+      "description": "Approve or park early ideas for sub-brands and lines.",
+      "items": [
+        {
+          "id": "subs_template_factory",
+          "label": "Template Factory",
+          "description": "System that sells reusable templates (game, docs, flows, etc.).",
+          "type": "select",
+          "options": ["Approve", "Backlog", "Reject", "Later"],
+          "default": "Backlog"
+        },
+        {
+          "id": "subs_hypercasual_forge",
+          "label": "Hypercasual Forge",
+          "description": "Line of small, fast-built hypercasual games.",
+          "type": "select",
+          "options": ["Approve", "Backlog", "Reject", "Later"],
+          "default": "Backlog"
+        },
+        {
+          "id": "subs_documentary_labs",
+          "label": "Documentary Labs",
+          "description": "Label for documentary-style content & experiments.",
+          "type": "select",
+          "options": ["Approve", "Backlog", "Reject", "Later"],
+          "default": "Backlog"
+        }
+      ]
+    }
+  ]
+}

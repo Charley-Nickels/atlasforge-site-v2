@@ -10,7 +10,7 @@
 }
 
 .mf-header-inner {
-  width: min(1200px, 92vw);
+  width: min(var(--layout-max-width), 92vw);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -30,10 +30,18 @@
 }
 
 .mf-logo-mark img {
-  width: 55px;
-  height: 55px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-12);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), var(--shadow-soft);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.mf-nav-group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-16);
+  margin-left: auto;
 }
 
 .mf-nav {
@@ -42,18 +50,30 @@
   gap: var(--space-12);
 }
 
+.mf-nav--secondary {
+  border-left: 1px solid var(--overlay-weak);
+  padding-left: var(--space-12);
+  opacity: 0.85;
+}
+
 .mf-nav a {
   padding: var(--space-8) var(--space-12);
   border-radius: var(--radius-8);
   color: var(--text-300);
   transition: background 120ms ease, color 120ms ease, transform 120ms ease;
   border: 1px solid transparent;
+  font-weight: 600;
 }
 
 .mf-nav a:hover {
   color: var(--text-100);
   background: var(--overlay-weak);
   border-color: var(--overlay-weak);
+}
+
+.mf-nav a:active {
+  transform: translateY(1px);
+  background: var(--overlay-weak);
 }
 
 .mf-nav a.is-active {
@@ -265,13 +285,22 @@
   color: var(--text-100);
   backdrop-filter: blur(4px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  font-weight: 700;
 }
 
 .mf-hero-badge-logo {
-  height: 30px;
+  height: 38px;
   width: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+}
+
+.mf-card--media figure,
+.mf-card--media img {
+  width: 100%;
+  border-radius: var(--radius-8);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--overlay-weak);
 }
 
 .mf-diagram-frame {
@@ -300,6 +329,6 @@
   }
 
   .mf-hero {
-    padding: var(--space-32) 0;
+    padding: var(--space-40) 0;
   }
 }

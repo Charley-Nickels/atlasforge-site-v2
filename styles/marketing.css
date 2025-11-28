@@ -30,8 +30,8 @@
 }
 
 .mf-logo-mark img {
-  width: 42px;
-  height: 42px;
+  width: 55px;
+  height: 55px;
   border-radius: var(--radius-12);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), var(--shadow-soft);
 }

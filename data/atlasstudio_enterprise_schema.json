@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "description": "Generic decision schema for AtlasStudio Enterprise projects.",
+    "recommended_use": "Use these blocks to structure choices for workflow and automation design, then export the responses as JSON for AI-assisted generation of SOPs, templates, and flows.",
+    "example_projects": [
+      "Escalation and incident handling workflow",
+      "Quality assurance and coaching tracker",
+      "Intake and triage pipeline",
+      "Knowledge article publishing flow"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "project_overview",
+      "title": "Project Overview",
+      "description": "Foundational context for the workflow or automation being designed.",
+      "items": [
+        {
+          "id": "project_priority",
+          "label": "Project priority",
+          "description": "Overall urgency and priority for this initiative.",
+          "type": "select",
+          "options": ["Critical", "High", "Medium", "Low"],
+          "default": "High",
+          "tags": ["planning", "prioritization"],
+          "impact": "Influences delivery expectations, sequencing, and stakeholder check-ins."
+        },
+        {
+          "id": "time_horizon",
+          "label": "Time horizon",
+          "description": "Expected delivery window for the first usable release.",
+          "type": "select",
+          "options": ["1-2 weeks", "3-6 weeks", "7-12 weeks", "Quarter+"],
+          "default": "3-6 weeks",
+          "tags": ["planning", "timeline"],
+          "impact": "Sets target milestones and scope sizing for initial launch."
+        },
+        {
+          "id": "primary_objective",
+          "label": "Primary objective",
+          "description": "Main outcome sought from the workflow (efficiency, quality, visibility, or compliance).",
+          "type": "select",
+          "options": ["Efficiency", "Quality", "Visibility", "Compliance", "Customer Experience"],
+          "default": "Efficiency",
+          "tags": ["objective", "success_criteria"],
+          "impact": "Guides solution framing and which metrics or outputs are emphasized."
+        }
+      ]
+    },
+    {
+      "id": "workflow_structure",
+      "title": "Workflow Structure",
+      "description": "Key shape of the process, including stages, approvals, and escalation behavior.",
+      "items": [
+        {
+          "id": "stage_count",
+          "label": "Number of stages",
+          "description": "How many distinct stages should the workflow have from intake to completion?",
+          "type": "select",
+          "options": ["2-3", "4-5", "6-7", "8+"],
+          "default": "4-5",
+          "tags": ["workflow", "structure"],
+          "impact": "Affects UI complexity, task assignments, and reporting granularity."
+        },
+        {
+          "id": "approval_style",
+          "label": "Approvals",
+          "description": "Approval depth required for key steps.",
+          "type": "select",
+          "options": ["None", "Single approver", "Dual approver", "Role-based"],
+          "default": "Single approver",
+          "tags": ["workflow", "governance"],
+          "impact": "Determines workflow branching and notification patterns."
+        },
+        {
+          "id": "escalation_handling",
+          "label": "Escalation handling",
+          "description": "How escalations should be triggered and routed when SLAs slip or exceptions arise.",
+          "type": "select",
+          "options": ["Manual only", "Rule-based alerts", "Automatic reassignment", "Hybrid"],
+          "default": "Rule-based alerts",
+          "tags": ["workflow", "sla", "ownership"],
+          "impact": "Controls automation depth and who is notified during exceptions."
+        },
+        {
+          "id": "automation_depth",
+          "label": "Automation depth",
+          "description": "Degree of automation expected across the workflow steps.",
+          "type": "select",
+          "options": ["Manual-first", "Notifications only", "Partial automation", "High automation"],
+          "default": "Partial automation",
+          "tags": ["automation", "power_automate"],
+          "impact": "Signals how many steps become Power Automate flows versus manual SOP steps."
+        }
+      ]
+    },
+    {
+      "id": "data_and_reporting",
+      "title": "Data and Reporting",
+      "description": "Decisions about data storage, reporting cadence, and analytics visibility.",
+      "items": [
+        {
+          "id": "data_store",
+          "label": "Primary data store",
+          "description": "Where core records should live for durability and collaboration.",
+          "type": "select",
+          "options": ["Excel Online", "SharePoint list", "Dataverse", "Hybrid"],
+          "default": "SharePoint list",
+          "tags": ["data_structure", "storage"],
+          "impact": "Defines schema location, access patterns, and integration points."
+        },
+        {
+          "id": "reporting_cadence",
+          "label": "Reporting cadence",
+          "description": "How often summary reporting is produced or refreshed.",
+          "type": "select",
+          "options": ["Ad-hoc", "Weekly", "Bi-weekly", "Monthly"],
+          "default": "Weekly",
+          "tags": ["reporting", "cadence"],
+          "impact": "Impacts data freshness expectations and Power BI/Excel refresh schedules."
+        },
+        {
+          "id": "kpi_focus",
+          "label": "Primary KPIs",
+          "description": "Which metrics the workflow should surface prominently.",
+          "type": "select",
+          "options": ["Volume", "Cycle time", "Quality/defects", "Customer satisfaction", "Cost"],
+          "default": "Cycle time",
+          "tags": ["metrics", "reporting"],
+          "impact": "Determines charting priorities and data fields captured for analysis."
+        },
+        {
+          "id": "data_retention",
+          "label": "Data retention",
+          "description": "Retention expectations for records and attachments.",
+          "type": "select",
+          "options": ["90 days", "180 days", "1 year", "3 years", "Policy-driven"],
+          "default": "Policy-driven",
+          "tags": ["governance", "compliance"],
+          "impact": "Informs storage limits, archival patterns, and compliance guidance."
+        }
+      ]
+    }
+  ]
+}

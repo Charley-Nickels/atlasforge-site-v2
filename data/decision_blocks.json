@@ -5,12 +5,15 @@
     "description": "Structured business decisions for AtlasForge brands, subsidiaries, navigation, content, and governance.",
     "canon_doc_path": "docs/atlasforge_canon_index.md"
   },
+
   "blocks": [
+
     {
       "id": "core_pillars_visibility",
       "title": "Core Pillars \u2014 Visibility & Placement",
       "description": "Set how visible each primary pillar should be across the site and canon surfaces.",
       "items": [
+
         {
           "id": "visibility_atlasforge_umbrella",
           "label": "How prominently should the AtlasForge umbrella appear across the site and canon?",
@@ -3017,13 +3020,16 @@
           ],
           "default": "B_STAGGERED"
         }
+
       ]
     },
+
     {
       "id": "media_lines_and_focus",
       "title": "Media Lines & Focus",
       "description": "Decide which media lanes become canon and how primary they are.",
       "items": [
+
         {
           "id": "media_true_crime",
           "label": "Should a true crime/analysis lane be part of canon media?",
@@ -3326,11 +3332,13 @@
         }
       ]
     },
+
     {
       "id": "governance_and_public_boundaries",
       "title": "Governance & Public Boundaries",
       "description": "Decide how much governance detail and internal mechanics become public.",
       "items": [
+
         {
           "id": "gov_transparency_level",
           "label": "How much of the internal governance system should be public?",
@@ -3602,13 +3610,16 @@
           ],
           "default": "C_MINIMAL"
         }
+
       ]
     },
+
     {
       "id": "collaboration_and_contact_policy",
       "title": "Collaboration & Contact Policy",
       "description": "Decide how open the company is to collaborations, hiring, and inquiries.",
       "items": [
+
         {
           "id": "contact_openness",
           "label": "How open should AtlasForge be to collaboration inquiries?",
@@ -3834,7 +3845,9 @@
           ],
           "default": "B_EMAIL_FORM"
         }
+
       ]
     }
+
   ]
 }

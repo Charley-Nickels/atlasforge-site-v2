@@ -4,6 +4,8 @@
   const UNLOCK_KEY = 'atlas_decisions_unlocked';
   const GOBLIN_PARAM = 'goblin';
   const GOBLIN_VALUE = 'unleashed';
+  const OINK_PARAM = 'oink';
+  const OINK_VALUE = 'chaos';
   const gateStatus = document.getElementById('gate-status');
   const consoleStatus = document.getElementById('console-status');
   const adminGate = document.getElementById('admin-gate');
@@ -307,7 +309,7 @@
 
   const checkQueryUnlock = () => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get(GOBLIN_PARAM) === GOBLIN_VALUE) {
+    if (params.get(GOBLIN_PARAM) === GOBLIN_VALUE || params.get(OINK_PARAM) === OINK_VALUE) {
       unlockConsole(true);
       return true;
     }

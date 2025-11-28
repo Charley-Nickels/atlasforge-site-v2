@@ -212,6 +212,11 @@ h4 {
   color: var(--text-100);
 }
 
+.mf-chip img {
+  height: 1.25em;
+  width: auto;
+}
+
 .mf-hero {
   position: relative;
   padding: var(--space-48) 0;
@@ -381,61 +386,6 @@ h4 {
   margin-top: var(--space-8);
   color: var(--text-300);
   font-size: 0.9rem;
-}
-
-.mf-admin-modal[aria-hidden="true"] {
-  display: none;
-}
-
-.mf-admin-modal[aria-hidden="false"] {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.mf-admin-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.mf-admin-modal-dialog {
-  position: relative;
-  background: var(--surface-800);
-  color: var(--text-100);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  max-width: 320px;
-  width: 100%;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-}
-
-.mf-admin-modal-dialog label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-size: 0.875rem;
-}
-
-#mf-admin-code {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.mf-admin-modal-actions {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
-  margin-bottom: 0.5rem;
-}
-
-.mf-admin-error {
-  color: #ff6b6b;
-  font-size: 0.8rem;
-  min-height: 1rem;
 }
 
 .mf-nav-toggle {

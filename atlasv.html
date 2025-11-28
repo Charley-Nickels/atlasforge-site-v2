@@ -234,9 +234,27 @@
         </ul>
         <small>© <span data-year></span> AtlasForge Interactive</small>
         <p class="mf-footer-note">Concept previews; features evolve as the stack matures.</p>
+        <a href="#" class="mf-footer-admin-link" id="mf-footer-admin-link">Admin</a>
       </div>
     </div>
   </footer>
+
+  <div id="mf-admin-modal" class="mf-admin-modal" aria-hidden="true">
+    <div class="mf-admin-modal-backdrop"></div>
+    <div class="mf-admin-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="mf-admin-modal-title">
+      <h2 id="mf-admin-modal-title">Admin Access</h2>
+      <p>Enter the admin code to continue.</p>
+      <form id="mf-admin-form">
+        <label for="mf-admin-code">Admin code</label>
+        <input type="password" id="mf-admin-code" name="mf-admin-code" autocomplete="off" />
+        <div class="mf-admin-modal-actions">
+          <button type="submit" class="mf-admin-submit">Unlock</button>
+          <button type="button" class="mf-admin-cancel">Cancel</button>
+        </div>
+        <p id="mf-admin-error" class="mf-admin-error" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
   <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>

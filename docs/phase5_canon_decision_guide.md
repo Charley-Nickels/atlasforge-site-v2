@@ -1,92 +1,53 @@
 # AtlasForge Phase 5 — Canon Decision Guide (Preflight)
 
-## 1. Purpose of this Guide
-This guide is for the Master Architect to review before using `/admin/atlas-decisions.html`. The console reads `data/decision_blocks.json` and maps to `docs/atlasforge_canon_index.md`. This document explains what each block controls across the site and canon so choices in the console are intentional. It is a map of decisions, not the final canon.
+## Purpose
+This guide helps Basil use `/admin/atlas-decisions.html` to lock Phase 5 business canon before rewriting site content. The console reads `data/decision_blocks.json`, and the exported JSON becomes the single source for navigation, page structure, product positioning, and governance messaging. Every item is phrased as a clear question; options are lettered (A–E/F) for visibility, maturity, transparency, and contact dials.
 
-## 2. How the Decision Engine Connects to Phase 5
-Phase 5 locks brand canon (roles, tone, visibility), navigation and homepage structure, IP visibility (OIA, Neighborhood Watch, others), governance transparency, and positioning for AtlasStudio and Atlas-V. The console renders the structured blocks from `data/decision_blocks.json`, and `docs/atlasforge_canon_index.md` describes how those decisions feed the future `docs/atlasforge_canon.md`. AtlasStudio Enterprise (see `docs/AtlasStudio_Enterprise.md`) defines a decision-engine pattern for Microsoft 365-style workflows; Phase 5 canon choices influence how it is described and surfaced on marketing pages but do not add backend features yet.
+## How the console fits Phase 5
+- Finalize what brands, products, and pages exist and how visible they are.
+- Decide how Atlas-V, AtlasStudio, AtlasStudio Enterprise, and related tooling are described.
+- Approve or park subsidiaries/lines (Hypercasual Forge, Template Factory, MerchForge, Narrative/Documentary Labs, VoiceForge/SKB, etc.).
+- Set the maturity and visibility of Octopus in Action, Neighborhood Watch, and other IPs.
+- Define governance transparency and contact openness.
+- The export feeds `docs/atlasforge_canon_index.md` and will drive the Phase 5 rewrite plan and eventual public copy.
 
-## 3. Block-by-Block Decision Overview
-Below follows each block in the order defined in `data/decision_blocks.json`, with its intent and primary areas affected.
+## Dial conventions
+- **Visibility (A–F):** Internal only → Background mention → Footer → Minor section → Major section → Hero placement.
+- **Brand role (A–E):** Internal only → Background tag → Supporting brand → Major brand → Flagship brand.
+- **Tone (A–E):** Neutral/practical → Warm/inviting → Playful/experimental → Bold/distinctive → Deep specialist voice.
+- **Atlas-V detail (A–D):** Tagline only → Short pitch → Detailed section → Deep technical appendix.
+- **Governance visibility (A–D):** Internal only → Footer mention → Minor section → Major section.
+- **AtlasStudio presence (A–E):** Internal only → Labs-only → Minor showcase → Major showcase → Hero tool presence.
+- **Navigation prominence (A–E):** Not in nav → Footer-only → Secondary nav → Primary nav → Dedicated hub page.
+- **Homepage blocks (A–E):** Omit → Footer-only → Small teaser → Full section → Hero-eligible.
+- **Subsidiary priority (A–E):** Not pursuing → Future idea → Low priority → Active side label → Core label.
+- **Game/IP status (A–E):** Concept only → Internal prototype → In active development → Soft public mention → Flagship page.
+- **Media emphasis (A–E):** Not active → Occasional → Regular but quiet → Major focus → Flagship series.
+- **Governance transparency (A–D):** Internal only → High-level summary → Summary with examples → Deep public docs.
+- **Contact openness (A–E):** No public contact → Invite-only → Filtered form → Open form → Proactive outreach.
+- Structural items use labeled choices such as **Keep combined / Split into hubs / Defer** and routing choices (e.g., redirect vs. standalone).
 
-### 3.1 Core Pillars Visibility
-- **Block ID:** core_pillars_visibility — items: 8
-- **Purpose:** Sets how AtlasForge pillars (umbrella, Games, Media, Studio/Tools, Atlas-V/Engine, Merch, Labs, Contact) rank across hero, nav, sections, and footer.
-- **Pages/Areas Affected:** Global navigation shell, homepage hero and pillar sections, footer emphasis, any “What we build” summaries.
+## Block overview (aligns with `data/decision_blocks.json`)
+- **core_pillars_visibility (8 items):** Visibility for AtlasForge umbrella, Games, Media, Studio/Tools, Atlas-V/Engine, Merch, Labs, and Contact gateways.
+- **brand_roles_and_importance (14 items):** Official role for each brand or line, from internal-only to flagship.
+- **brand_narrative_tone (10 items):** Communication tone to use when writing public-facing material for each brand/IP.
+- **atlasv_behavior_and_messaging (12 items):** Positioning, detail depth, governance visibility, CTA style, Lite relationship, and persona voice for Atlas-V.
+- **atlasstudio_surface_and_scope (12 items):** Visibility, framing, scope, UI detail, module mentions, demos, use cases, data layer, and powered-by messaging for AtlasStudio.
+- **website_structure_and_nav (18 items):** Navigation presence for key destinations (Atlas-V, AtlasStudio, OIA, SKB, Games, Media, About, Tools, Roadmap, Governance, Contact, Merch, Blog, Labs) and grouping/splitting decisions.
+- **homepage_content_blocks (15 items):** Which homepage blocks appear and at what strength (overview, Atlas-V, AtlasStudio, OIA, Labs, Governance, Contact, Media, Games, Engine explainer, case studies, roadmap, Merch, testimonials, newsletter).
+- **subsidiaries_and_lines (14 items):** Approval and visibility for Hypercasual Forge, Template Factory, MerchForge, Narrative/Documentary Labs, VoiceForge/SKB, partnerships, education, toolkits, research, and related lines.
+- **game_ip_status (14 items):** Maturity and visibility for Octopus in Action, Neighborhood Watch, game backlog, engine callouts, platforms, cadence, demos, new IP slots, services, cross-promo, and merch linkage.
+- **media_lines_and_focus (12 items):** Activity and presentation for true crime/mystery, educational/STEM, commentary, devlogs, media grouping, coming-soon framing, distribution detail, cadence, voice credit, safety notes, interactivity, and merch links.
+- **governance_and_public_boundaries (12 items):** Visibility and depth for governance pages, constraints, tools, compliance, public docs, decision console, data stance, audience clarity, and feedback paths.
+- **collaboration_and_contact_policy (10 items):** Openness for sales/partner intake, hiring signals, newsletter, social, partner filters, support, press, community, demo requests, and privacy notes.
 
-### 3.2 Brand Roles and Importance
-- **Block ID:** brand_roles_and_importance — items: 14
-- **Purpose:** Defines ecosystem roles for AtlasForge umbrella, Atlas-V, AtlasStudio, Atlas Engine, Media, Games, SKB/Audio, VoiceForge, Hypercasual Forge, Template Factory, MerchForge, Narrative Labs, Documentary Labs, and Media labeling.
-- **Pages/Areas Affected:** About/Studio copy, Atlas-V page framing, AtlasStudio positioning, sub-brand mentions across product and media hubs.
+## Coverage check
+- `data/decision_blocks.json` currently holds **12 blocks** and **151 items** with stable IDs that match `docs/atlasforge_canon_index.md`.
+- All options are lettered and use consistent scales; defaults remain aligned with prior intent.
+- The admin console will render option labels from the JSON while storing the original option values for export.
 
-### 3.3 Brand Narrative Tone
-- **Block ID:** brand_narrative_tone — items: 10
-- **Purpose:** Chooses public tone/voice per brand and key IP (AtlasForge, Atlas-V, AtlasStudio, Octopus in Action, AtlasForge Media) ranging from playful to technical or polished.
-- **Pages/Areas Affected:** Marketing copy tone on homepage, Atlas-V, AtlasStudio, Media, and IP highlights.
-
-### 3.4 Atlas-V Behavior and Messaging
-- **Block ID:** atlasv_behavior_and_messaging — items: 12
-- **Purpose:** Frames Atlas-V identity (copilot/engine/governance), governance visibility, phase/run explanation depth, CTA emphasis, and whether safety/decision engine mechanics surface publicly.
-- **Pages/Areas Affected:** atlasv.html, homepage Atlas-V sections, governance blurbs, any Atlas-V Lite mentions.
-
-### 3.5 AtlasStudio Surface and Scope
-- **Block ID:** atlasstudio_surface_and_scope — items: 12
-- **Purpose:** Determines AtlasStudio visibility level, product vs prototype framing, UI detail/mocks allowance, CTA strength, and references to tabs (Game/Excel/Policy/Writing/Web).
-- **Pages/Areas Affected:** atlasstudio.html, homepage AtlasStudio block, nav/footer entries, studio overview copy.
-
-### 3.6 Website Structure and Navigation
-- **Block ID:** website_structure_and_nav — items: 18
-- **Purpose:** Controls which pages are present and how they appear (home, Atlas-V, AtlasStudio, OIA, SKB, About/Studio, Media/Ecosystem hubs, roadmap/governance pages), plus grouping under Ecosystem or similar nav hubs.
-- **Pages/Areas Affected:** Global navigation menus, footer links, page existence/visibility (atlasv.html, atlasstudio.html, oia.html, skb.html, about.html, roadmap/governance slots).
-
-### 3.7 Homepage Content Blocks
-- **Block ID:** homepage_content_blocks — items: 15
-- **Purpose:** Selects which homepage sections exist and their prominence (AtlasForge overview, Atlas-V how-it-works, AtlasStudio teaser, OIA highlight, Labs/Under Construction, governance blurb, contact/work-with-us, and other featured blocks).
-- **Pages/Areas Affected:** index.html section ordering and inclusion, footer mentions for lower-priority blocks.
-
-### 3.8 Subsidiaries and Lines
-- **Block ID:** subsidiaries_and_lines — items: 14
-- **Purpose:** Approves or backlogs sub-labels like Hypercasual Forge, Template Factory, MerchForge, Narrative Labs, Documentary Labs, Labs variants, and SKB/VoiceForge positioning.
-- **Pages/Areas Affected:** Sub-brand references across homepage, media sections, about/studio pages, and any ecosystem lists.
-
-### 3.9 Game IP Status
-- **Block ID:** game_ip_status — items: 14
-- **Purpose:** Sets visibility/status for Octopus in Action, Neighborhood Watch, and other named IPs; defines how OIA appears (hero/section/nav/footer) and whether Neighborhood Watch is mentioned.
-- **Pages/Areas Affected:** oia.html, games.html, homepage game highlights, navigation links, roadmap mentions.
-
-### 3.10 Media Lines and Focus
-- **Block ID:** media_lines_and_focus — items: 12
-- **Purpose:** Approves media lanes (true crime/mystery, educational/STEM, commentary/essays, devlogs/behind-the-scenes), decides grouping under AtlasForge Media versus sub-labels, cadence expectations, and safety/merch linkage.
-- **Pages/Areas Affected:** Media sections on homepage, media/press hub pages, about/studio storytelling, footer references.
-
-### 3.11 Governance and Public Boundaries
-- **Block ID:** governance_and_public_boundaries — items: 12
-- **Purpose:** Sets governance/safety transparency level, presence of governance page/sections, whether decision engine mechanics are referenced, and how constraints/guardrails are acknowledged.
-- **Pages/Areas Affected:** Governance/Safety page or sections, Atlas-V messaging, footer acknowledgments, any roadmap or transparency statements.
-
-### 3.12 Collaboration and Contact Policy
-- **Block ID:** collaboration_and_contact_policy — items: 10
-- **Purpose:** Configures contact/hiring/partnership touchpoints, inquiry filters, community channels, privacy positioning, and whether to surface policies prominently or quietly.
-- **Pages/Areas Affected:** Contact/work-with-us CTAs on homepage and footer, about/studio contact language, potential forms or email callouts.
-
-## 4. Coverage Check & Potential Gaps
-- All block IDs in `data/decision_blocks.json` appear in `docs/atlasforge_canon_index.md`; the index includes one extra heading labeled “Next Step” for navigation purposes.
-- All 151 item IDs in `data/decision_blocks.json` are represented in the index; no missing or extra item IDs detected.
-- Some descriptions reference future states (e.g., hard launch later for AtlasStudio), which are intentional options rather than gaps.
-
-## 5. AtlasStudio & Enterprise Touchpoints
-Canon choices will set how prominently AtlasStudio appears (hero, secondary, nav) and whether it is framed as prototype, future product, or active product. The same decisions affect mentions of Atlas-V Lite/Engine in AtlasStudio context. AtlasStudio Enterprise, defined in `docs/AtlasStudio_Enterprise.md`, is a decision-engine pattern for Microsoft 365-style workflows; Phase 5 choices govern how and where it is described on marketing pages without exposing internal details.
-
-## 6. Suggested Mindset When Making Decisions
-- Are we presenting AtlasForge as a focused studio or a broad ecosystem with multiple pillars?
-- Which offerings must be visible now versus kept background or internal?
-- What governance transparency level feels safe and appropriate for public pages?
-- How should Atlas-V and AtlasStudio share emphasis compared to game/IP highlights like Octopus in Action?
-- Should concept-stage IPs remain labeled as concepts rather than active projects?
-
-## 7. Next Steps After Decisions
-1. Use the admin console to select options per block.
-2. Export JSON from the console (copy or download).
-3. Send the JSON to the Master Architect (this chat).
-4. The Canon Resolver will read the export, generate `docs/atlasforge_canon.md`, produce the Phase 5 rewrite plan, and drive content updates across the site.
-5. This guide remains the reference while making selections; the export plus resolver produces the final canon text.
+## Usage checklist
+1. Open `/admin/atlas-decisions.html` (Goblin gate still applies).
+2. Expand each block, answer every question, and choose the lettered option that matches the desired Phase 5 canon.
+3. Export/download the JSON once complete.
+4. Provide the export to ChatGPT to drive the Phase 5 rewrite plan and downstream canonical documents.

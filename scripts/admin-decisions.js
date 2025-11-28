@@ -85,8 +85,10 @@
       control = document.createElement('select');
       item.options.forEach((opt) => {
         const option = document.createElement('option');
-        option.value = opt;
-        option.textContent = opt;
+        const optionValue = typeof opt === 'object' && opt !== null ? opt.value : opt;
+        const optionLabel = typeof opt === 'object' && opt !== null ? opt.label : opt;
+        option.value = optionValue;
+        option.textContent = optionLabel;
         control.appendChild(option);
       });
       control.value = storedValue !== undefined ? storedValue : item.default || '';

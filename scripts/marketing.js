@@ -2,6 +2,20 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const navToggle = document.querySelector('.mf-nav-toggle');
   const nav = document.querySelector('.mf-nav');
+  const mobileMedia = window.matchMedia('(max-width: 1023px)');
+
+  const closeNav = () => {
+    if (!nav || !navToggle) return;
+    nav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  const isMobileNav = () => {
+    if (!navToggle) return false;
+    const toggleVisible = navToggle.offsetParent !== null;
+    return toggleVisible || mobileMedia.matches;
+  };
+
   if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('is-open');
@@ -9,6 +23,14 @@
       if (isOpen) {
         nav.querySelector('a')?.focus();
       }
+    });
+
+    nav.querySelectorAll('a, button').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isMobileNav() && nav.classList.contains('is-open')) {
+          closeNav();
+        }
+      });
     });
   }
 

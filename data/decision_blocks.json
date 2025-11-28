@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v1.0-canon-lock",
-    "phase": "Phase 5 \u2014 Canon Lock V1",
+    "phase": "Phase 5 — Canon Lock V1",
     "description": "Structured decision set for AtlasForge canon lock using multi-level visibility, role, maturity, transparency, and contact dials.",
     "canon_doc_path": "docs/atlasforge_canon.md",
     "canon_index_path": "docs/atlasforge_canon_index.md"
@@ -733,7 +733,7 @@
     {
       "id": "atlasstudio_surface_and_scope",
       "title": "AtlasStudio Surface and Scope",
-      "description": "Decide AtlasStudio\u2019s presence, promises, and framing.",
+      "description": "Decide AtlasStudio’s presence, promises, and framing.",
       "items": [
         {
           "id": "atlasstudio_page_visibility",

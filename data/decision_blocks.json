@@ -18,13 +18,12 @@
           "description": "Visibility priority for AtlasForge umbrella brand across site surfaces.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "Hero",
           "canon_section": "pillars",
@@ -36,13 +35,12 @@
           "description": "Placement emphasis for AtlasForge Games pillar in public surfaces.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "MajorSection",
           "canon_section": "pillars",
@@ -54,13 +52,12 @@
           "description": "Visibility level for AtlasForge Media lane on site.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "MinorSection",
           "canon_section": "pillars",
@@ -72,13 +69,12 @@
           "description": "How prominently the Studio/Tools pillar appears (AtlasStudio + tools).",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "MajorSection",
           "canon_section": "pillars",
@@ -90,13 +86,12 @@
           "description": "Surface priority for Atlas Engine / Atlas-V narrative.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "MajorSection",
           "canon_section": "pillars",
@@ -108,13 +103,12 @@
           "description": "Presence of AtlasForge Merch offerings in public areas.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "FooterOnly",
           "canon_section": "pillars",
@@ -126,13 +120,12 @@
           "description": "Whether experimental labs/under-construction work gets a defined pillar slot.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "MinorSection",
           "canon_section": "pillars",
@@ -144,13 +137,12 @@
           "description": "Placement for contact/hiring/partner CTA within core pillars.",
           "type": "select",
           "options": [
-            "Hero",
-            "MajorSection",
-            "MinorSection",
-            "NavOnly",
+            "HiddenInternal",
+            "BackgroundMention",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "MinorSection",
+            "MajorSection",
+            "Hero"
           ],
           "default": "FooterOnly",
           "canon_section": "pillars",
@@ -169,15 +161,13 @@
           "description": "Role of AtlasForge as the parent studio and ecosystem owner.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Core+Public",
+          "default": "FlagshipBrand",
           "canon_section": "brands",
           "canon_key": "brand.atlasforge.role"
         },
@@ -187,15 +177,13 @@
           "description": "Ecosystem role for Atlas-V as engine brain / copilot.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Core+Public",
+          "default": "FlagshipBrand",
           "canon_section": "brands",
           "canon_key": "brand.atlasv.role"
         },
@@ -205,15 +193,13 @@
           "description": "Role of AtlasStudio workstation surface within the stack.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Core+Public",
+          "default": "MajorBrand",
           "canon_section": "brands",
           "canon_key": "brand.atlasstudio.role"
         },
@@ -223,15 +209,13 @@
           "description": "Public vs internal framing of Atlas Engine governance layer.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Core+Internal",
+          "default": "BackgroundTag",
           "canon_section": "brands",
           "canon_key": "brand.atlasengine.role"
         },
@@ -241,15 +225,13 @@
           "description": "Importance of Media lane as a public-facing label.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "SupportOnly",
+          "default": "SupportingBrand",
           "canon_section": "brands",
           "canon_key": "brand.media.role"
         },
@@ -259,15 +241,13 @@
           "description": "Positioning of Games as a primary output line.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Core+Public",
+          "default": "FlagshipBrand",
           "canon_section": "brands",
           "canon_key": "brand.games.role"
         },
@@ -277,15 +257,13 @@
           "description": "Importance of SKB audio/music label within ecosystem.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Experimental",
+          "default": "BackgroundTag",
           "canon_section": "brands",
           "canon_key": "brand.skb.role"
         },
@@ -295,15 +273,13 @@
           "description": "Visibility and seriousness of VoiceForge narration/voice brand.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "SupportOnly",
+          "default": "SupportingBrand",
           "canon_section": "brands",
           "canon_key": "brand.voiceforge.role"
         },
@@ -313,15 +289,13 @@
           "description": "Status of Hypercasual Forge as a sub-brand for small games.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Experimental",
+          "default": "BackgroundTag",
           "canon_section": "brands",
           "canon_key": "brand.hypercasual_forge.role"
         },
@@ -331,15 +305,13 @@
           "description": "Treatment of Template Factory (templates marketplace).",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "SupportOnly",
+          "default": "SupportingBrand",
           "canon_section": "brands",
           "canon_key": "brand.template_factory.role"
         },
@@ -349,15 +321,13 @@
           "description": "Role of MerchForge merch line under AtlasForge.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "SupportOnly",
+          "default": "SupportingBrand",
           "canon_section": "brands",
           "canon_key": "brand.merchforge.role"
         },
@@ -367,15 +337,13 @@
           "description": "Importance of Narrative Labs storytelling experiments.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Experimental",
+          "default": "BackgroundTag",
           "canon_section": "brands",
           "canon_key": "brand.narrative_labs.role"
         },
@@ -385,15 +353,13 @@
           "description": "Positioning of Documentary Labs content line.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Experimental",
+          "default": "BackgroundTag",
           "canon_section": "brands",
           "canon_key": "brand.documentary_labs.role"
         },
@@ -403,15 +369,13 @@
           "description": "Whether media stays under a single AtlasForge Media label or multiple sub-labels.",
           "type": "select",
           "options": [
-            "Core+Public",
-            "Core+Internal",
-            "SupportOnly",
-            "Experimental",
-            "InternalOnly",
-            "Park/Later",
-            "Drop"
+            "NotInPublicCanon",
+            "BackgroundTag",
+            "SupportingBrand",
+            "MajorBrand",
+            "FlagshipBrand"
           ],
-          "default": "Core+Public",
+          "default": "MajorBrand",
           "canon_section": "brands",
           "canon_key": "brand.media.labeling"
         }
@@ -428,14 +392,13 @@
           "description": "Tone for umbrella brand messaging.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Playful+Approachable",
+          "default": "WarmInviting",
           "canon_section": "tone",
           "canon_key": "tone.atlasforge"
         },
@@ -445,14 +408,13 @@
           "description": "Personality for Atlas-V descriptions and copy.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Serious+Technical",
+          "default": "NeutralPractical",
           "canon_section": "tone",
           "canon_key": "tone.atlasv"
         },
@@ -462,14 +424,13 @@
           "description": "Voice for AtlasStudio workstation messaging.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Cozy+Supportive",
+          "default": "WarmInviting",
           "canon_section": "tone",
           "canon_key": "tone.atlasstudio"
         },
@@ -479,14 +440,13 @@
           "description": "Tone for media/streaming/podcast style content.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Playful+Approachable",
+          "default": "WarmInviting",
           "canon_section": "tone",
           "canon_key": "tone.media"
         },
@@ -496,14 +456,13 @@
           "description": "Tone for OIA marketing copy and page content.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Playful+Approachable",
+          "default": "WarmInviting",
           "canon_section": "tone",
           "canon_key": "tone.oia"
         },
@@ -513,14 +472,13 @@
           "description": "Tone for Neighborhood Watch concept mentions.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Experimental+Weird",
+          "default": "PlayfulExperimental",
           "canon_section": "tone",
           "canon_key": "tone.neighborhood_watch"
         },
@@ -530,14 +488,13 @@
           "description": "Tone when referencing Atlas Engine governance layer publicly.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Corporate+Polished",
+          "default": "BoldDistinctive",
           "canon_section": "tone",
           "canon_key": "tone.atlas_engine"
         },
@@ -547,14 +504,13 @@
           "description": "Voice for SKB music/audio label content.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Experimental+Weird",
+          "default": "PlayfulExperimental",
           "canon_section": "tone",
           "canon_key": "tone.skb"
         },
@@ -564,14 +520,13 @@
           "description": "Tone for Lite assistant references.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Playful+Approachable",
+          "default": "WarmInviting",
           "canon_section": "tone",
           "canon_key": "tone.atlasv_lite"
         },
@@ -581,14 +536,13 @@
           "description": "Tone for Hypercasual Forge sub-brand snippets.",
           "type": "select",
           "options": [
-            "Playful+Approachable",
-            "Serious+Technical",
-            "Cozy+Supportive",
-            "Experimental+Weird",
-            "Corporate+Polished",
-            "InternalOnly"
+            "NeutralPractical",
+            "WarmInviting",
+            "PlayfulExperimental",
+            "BoldDistinctive",
+            "DeepLoreHeavy"
           ],
-          "default": "Playful+Approachable",
+          "default": "WarmInviting",
           "canon_section": "tone",
           "canon_key": "tone.hypercasual_forge"
         }
@@ -605,13 +559,12 @@
           "description": "How Atlas-V is framed (copilot, engine brain, governance layer).",
           "type": "select",
           "options": [
-            "ProjectCopilot",
-            "EngineBrain",
-            "GovernanceLayer",
-            "DeveloperTool",
-            "MultiRole"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "ProjectCopilot",
+          "default": "ShortPitch",
           "canon_section": "atlasv",
           "canon_key": "atlasv.identity"
         },
@@ -621,12 +574,12 @@
           "description": "Depth of explaining Atlas-V loops and phase/run model.",
           "type": "select",
           "options": [
-            "NotMentioned",
-            "Light",
-            "Medium",
-            "Deep"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "Light",
+          "default": "ShortPitch",
           "canon_section": "atlasv",
           "canon_key": "atlasv.explanation_depth"
         },
@@ -636,11 +589,12 @@
           "description": "Visibility of Atlas-V governance/safety role in public content.",
           "type": "select",
           "options": [
-            "Public",
-            "SemiPublic",
-            "InternalOnly"
+            "HiddenInternal",
+            "FooterMention",
+            "MinorSection",
+            "MajorSection"
           ],
-          "default": "SemiPublic",
+          "default": "MinorSection",
           "canon_section": "atlasv",
           "canon_key": "atlasv.governance_visibility"
         },
@@ -650,11 +604,12 @@
           "description": "Whether to hint at internal mechanics (decision engine, prompt discipline).",
           "type": "select",
           "options": [
-            "Hinted",
-            "ImpliedOnly",
-            "NotMentioned"
+            "HiddenInternal",
+            "FooterMention",
+            "MinorSection",
+            "MajorSection"
           ],
-          "default": "ImpliedOnly",
+          "default": "FooterMention",
           "canon_section": "atlasv",
           "canon_key": "atlasv.internal_mechanics"
         },
@@ -664,12 +619,12 @@
           "description": "Scope positioning: single project, multi-project, or orchestration brain.",
           "type": "select",
           "options": [
-            "SingleProject",
-            "MultiProject",
-            "FullOrchestration",
-            "Advisory"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "MultiProject",
+          "default": "DetailedSection",
           "canon_section": "atlasv",
           "canon_key": "atlasv.scope"
         },
@@ -679,11 +634,12 @@
           "description": "How much of the loop (phase/run/prompt/report) is shown publicly.",
           "type": "select",
           "options": [
-            "ExposePhasesRuns",
-            "SummarizeOnly",
-            "InternalOnly"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "SummarizeOnly",
+          "default": "ShortPitch",
           "canon_section": "atlasv",
           "canon_key": "atlasv.loop_visibility"
         },
@@ -693,11 +649,12 @@
           "description": "Balance between capability messaging and safety/governance messaging.",
           "type": "select",
           "options": [
-            "CapabilityFirst",
-            "Balanced",
-            "SafetyFirst"
+            "HiddenInternal",
+            "FooterMention",
+            "MinorSection",
+            "MajorSection"
           ],
-          "default": "Balanced",
+          "default": "MinorSection",
           "canon_section": "atlasv",
           "canon_key": "atlasv.safety_positioning"
         },
@@ -707,12 +664,12 @@
           "description": "How Atlas-V Lite is described relative to Atlas-V.",
           "type": "select",
           "options": [
-            "ParallelProduct",
-            "SubBrandLite",
-            "TrainingMode",
-            "InternalOnly"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "SubBrandLite",
+          "default": "ShortPitch",
           "canon_section": "atlasv",
           "canon_key": "atlasv.lite_relationship"
         },
@@ -722,12 +679,12 @@
           "description": "CTA pattern for Atlas-V (contact, waitlist, internal invite).",
           "type": "select",
           "options": [
-            "ContactUs",
-            "Waitlist",
-            "InternalInvite",
-            "NoCTA"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "ContactUs",
+          "default": "DetailedSection",
           "canon_section": "atlasv",
           "canon_key": "atlasv.cta"
         },
@@ -737,12 +694,12 @@
           "description": "Depth of public examples or case studies for Atlas-V.",
           "type": "select",
           "options": [
-            "GenericExamples",
-            "CaseStudyLight",
-            "CaseStudyDeep",
-            "NoExamples"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "GenericExamples",
+          "default": "DetailedSection",
           "canon_section": "atlasv",
           "canon_key": "atlasv.examples_depth"
         },
@@ -752,12 +709,12 @@
           "description": "Whether to reference decision engine concept in public copy.",
           "type": "select",
           "options": [
-            "Explicit",
-            "SoftReference",
-            "Hidden",
-            "InternalDocsOnly"
+            "HiddenInternal",
+            "FooterMention",
+            "MinorSection",
+            "MajorSection"
           ],
-          "default": "SoftReference",
+          "default": "MinorSection",
           "canon_section": "atlasv",
           "canon_key": "atlasv.decision_engine_reference"
         },
@@ -767,12 +724,12 @@
           "description": "Public persona voice for Atlas-V (guide vs partner vs neutral).",
           "type": "select",
           "options": [
-            "Guide",
-            "Partner",
-            "Neutral",
-            "Minimal"
+            "TaglineOnly",
+            "ShortPitch",
+            "DetailedSection",
+            "DeepTechnicalAppendix"
           ],
-          "default": "Guide",
+          "default": "ShortPitch",
           "canon_section": "atlasv",
           "canon_key": "atlasv.persona_voice"
         }
@@ -789,13 +746,13 @@
           "description": "Whether AtlasStudio has its own top-level page.",
           "type": "select",
           "options": [
-            "Hero",
-            "SecondarySection",
-            "NavOnly",
-            "InternalOnly",
-            "Later"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "SecondarySection",
+          "default": "MajorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.page_visibility"
         },
@@ -805,12 +762,13 @@
           "description": "Frame AtlasStudio as prototype, future product, or active product.",
           "type": "select",
           "options": [
-            "InternalPrototype",
-            "FutureProduct",
-            "ActiveProduct",
-            "Backburner"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "FutureProduct",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.framing"
         },
@@ -820,12 +778,13 @@
           "description": "Scope: concept only, concept + mockups, soft launch, or hard launch later.",
           "type": "select",
           "options": [
-            "ConceptOnly",
-            "Concept+Mockups",
-            "SoftLaunch",
-            "HardLaunchLater"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "Concept+Mockups",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.scope"
         },
@@ -835,12 +794,13 @@
           "description": "How much UI detail to show (diagrams, mockups, screenshots).",
           "type": "select",
           "options": [
-            "None",
-            "LightDiagrams",
-            "Mockups",
-            "Screenshots"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "LightDiagrams",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.ui_detail"
         },
@@ -850,12 +810,13 @@
           "description": "Whether to mention tabs like Game/Excel/Policy/Writing/Web.",
           "type": "select",
           "options": [
-            "MentionAll",
-            "MentionRepresentative",
-            "MentionNone",
-            "InternalOnly"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "MentionRepresentative",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.tabs_mention"
         },
@@ -865,12 +826,13 @@
           "description": "Positioning of AtlasStudio relative to Atlas-V (guided surface vs standalone).",
           "type": "select",
           "options": [
-            "GuidedSurface",
-            "PartnerTool",
-            "Standalone",
-            "InternalOnly"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "GuidedSurface",
+          "default": "MajorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.role_relative"
         },
@@ -880,12 +842,13 @@
           "description": "CTA style for AtlasStudio (waitlist, contact, coming soon).",
           "type": "select",
           "options": [
-            "Waitlist",
-            "Contact",
-            "ComingSoon",
-            "InternalOnly"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "ComingSoon",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.cta"
         },
@@ -895,12 +858,13 @@
           "description": "Whether to include behind-the-scenes team/process stories for AtlasStudio.",
           "type": "select",
           "options": [
-            "None",
-            "Short",
-            "Detailed",
-            "InternalOnly"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "Short",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.teamstory"
         },
@@ -910,12 +874,13 @@
           "description": "Whether to highlight Atlas-V/Engine powering AtlasStudio.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Secondary",
-            "Footnote",
-            "InternalOnly"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "Secondary",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.powered_by"
         },
@@ -925,12 +890,13 @@
           "description": "Range of use cases shown (games, media, docs, web).",
           "type": "select",
           "options": [
-            "GamesOnly",
-            "Games+Media",
-            "Games+Media+Docs",
-            "FullBreadth"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "Games+Media+Docs",
+          "default": "MajorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.usecases"
         },
@@ -940,12 +906,13 @@
           "description": "Whether to mention governance/decision data powering Studio.",
           "type": "select",
           "options": [
-            "Explicit",
-            "Soft",
-            "None",
-            "InternalOnly"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "Soft",
+          "default": "MinorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.data_layer"
         },
@@ -955,12 +922,13 @@
           "description": "Depth of demo walkthroughs (animated slice vs static).",
           "type": "select",
           "options": [
-            "Static",
-            "AnimatedSlice",
-            "InteractiveMock",
-            "NoDemo"
+            "HiddenInternal",
+            "LabsOnly",
+            "MinorShowcase",
+            "MajorShowcase",
+            "HeroTool"
           ],
-          "default": "AnimatedSlice",
+          "default": "MajorShowcase",
           "canon_section": "atlasstudio",
           "canon_key": "atlasstudio.demo_depth"
         }
@@ -977,14 +945,13 @@
           "description": "Visibility of Home/AtlasForge umbrella page in nav.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavPrimary",
+          "default": "PrimaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.home"
         },
@@ -994,14 +961,13 @@
           "description": "Navigation placement for Atlas-V page.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavPrimary",
+          "default": "PrimaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.atlasv"
         },
@@ -1011,14 +977,13 @@
           "description": "Navigation placement for AtlasStudio page.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavPrimary",
+          "default": "PrimaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.atlasstudio"
         },
@@ -1028,14 +993,13 @@
           "description": "Visibility of OIA page.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavSecondary",
+          "default": "SecondaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.oia"
         },
@@ -1045,12 +1009,12 @@
           "description": "Treatment of octopus.html relative to OIA page.",
           "type": "select",
           "options": [
-            "Redirect",
-            "Pointer",
-            "Hide",
-            "MergeLater"
+            "RedirectToOIA",
+            "PointerLink",
+            "KeepStandalone",
+            "FuturePhase"
           ],
-          "default": "Pointer",
+          "default": "PointerLink",
           "canon_section": "website_structure",
           "canon_key": "nav.octopus_page"
         },
@@ -1060,14 +1024,13 @@
           "description": "Placement for SKB/audio label page.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavSecondary",
+          "default": "SecondaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.skb"
         },
@@ -1077,14 +1040,13 @@
           "description": "Navigation treatment for games.html.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavSecondary",
+          "default": "SecondaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.games"
         },
@@ -1094,14 +1056,13 @@
           "description": "Placement for media/streams/podcasts hub.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "HiddenButLive",
+          "default": "NotInNav",
           "canon_section": "website_structure",
           "canon_key": "nav.media"
         },
@@ -1111,14 +1072,13 @@
           "description": "Placement for about.html / studio story.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "NavSecondary",
+          "default": "SecondaryNav",
           "canon_section": "website_structure",
           "canon_key": "nav.about"
         },
@@ -1128,12 +1088,11 @@
           "description": "Whether studio-tools.html appears in nav.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
           "default": "FooterOnly",
           "canon_section": "website_structure",
@@ -1145,12 +1104,12 @@
           "description": "Whether to group products under a single Ecosystem menu item.",
           "type": "select",
           "options": [
-            "GroupInNav",
-            "GroupInFooter",
-            "NoGrouping",
-            "InternalOnly"
+            "KeepCombined",
+            "SplitIntoHubs",
+            "FooterOnly",
+            "FuturePhase"
           ],
-          "default": "GroupInNav",
+          "default": "KeepCombined",
           "canon_section": "website_structure",
           "canon_key": "nav.ecosystem_grouping"
         },
@@ -1160,13 +1119,13 @@
           "description": "Whether to have a roadmap page or keep roadmap internal.",
           "type": "select",
           "options": [
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "InternalOnly",
+          "default": "NotInNav",
           "canon_section": "website_structure",
           "canon_key": "nav.roadmap"
         },
@@ -1176,11 +1135,11 @@
           "description": "Presence of governance/safety page in nav.",
           "type": "select",
           "options": [
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
           "default": "FooterOnly",
           "canon_section": "website_structure",
@@ -1192,12 +1151,11 @@
           "description": "Visibility of contact/hiring page.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
           "default": "FooterOnly",
           "canon_section": "website_structure",
@@ -1209,12 +1167,11 @@
           "description": "Placement for merch page or link.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
           "default": "FooterOnly",
           "canon_section": "website_structure",
@@ -1226,14 +1183,13 @@
           "description": "Whether to include a blog/devlog page in navigation.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "HiddenButLive",
+          "default": "NotInNav",
           "canon_section": "website_structure",
           "canon_key": "nav.blog"
         },
@@ -1243,14 +1199,13 @@
           "description": "Visibility of Labs/Under Construction hub page.",
           "type": "select",
           "options": [
-            "NavPrimary",
-            "NavSecondary",
+            "NotInNav",
             "FooterOnly",
-            "HiddenButLive",
-            "InternalOnly",
-            "Later"
+            "SecondaryNav",
+            "PrimaryNav",
+            "HubPage"
           ],
-          "default": "HiddenButLive",
+          "default": "NotInNav",
           "canon_section": "website_structure",
           "canon_key": "nav.labs"
         },
@@ -1260,12 +1215,12 @@
           "description": "Whether media lanes are grouped under AtlasForge Media nav item.",
           "type": "select",
           "options": [
-            "SingleMediaNav",
-            "SplitByLane",
+            "KeepCombined",
+            "SplitIntoHubs",
             "FooterOnly",
-            "InternalOnly"
+            "FuturePhase"
           ],
-          "default": "SingleMediaNav",
+          "default": "KeepCombined",
           "canon_section": "website_structure",
           "canon_key": "nav.media_grouping"
         }
@@ -1282,13 +1237,13 @@
           "description": "Include AtlasForge umbrella overview on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMajorBlock",
+          "default": "FullSection",
           "canon_section": "homepage",
           "canon_key": "home.overview"
         },
@@ -1298,13 +1253,13 @@
           "description": "Include Atlas-V how-it-works or feature block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMajorBlock",
+          "default": "FullSection",
           "canon_section": "homepage",
           "canon_key": "home.atlasv"
         },
@@ -1314,13 +1269,13 @@
           "description": "Include AtlasStudio teaser block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMajorBlock",
+          "default": "FullSection",
           "canon_section": "homepage",
           "canon_key": "home.atlasstudio"
         },
@@ -1330,13 +1285,13 @@
           "description": "Placement of OIA highlight block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMinorBlock",
+          "default": "SmallTeaserBlock",
           "canon_section": "homepage",
           "canon_key": "home.oia"
         },
@@ -1346,13 +1301,13 @@
           "description": "Include labs/under construction block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMinorBlock",
+          "default": "SmallTeaserBlock",
           "canon_section": "homepage",
           "canon_key": "home.labs"
         },
@@ -1362,13 +1317,13 @@
           "description": "Include governance/safety blurb on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMinorBlock",
+          "default": "SmallTeaserBlock",
           "canon_section": "homepage",
           "canon_key": "home.governance"
         },
@@ -1378,13 +1333,13 @@
           "description": "Include contact/hiring/partner CTA block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMinorBlock",
+          "default": "SmallTeaserBlock",
           "canon_section": "homepage",
           "canon_key": "home.contact"
         },
@@ -1394,13 +1349,13 @@
           "description": "Include media lanes sampler block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMinorBlock",
+          "default": "SmallTeaserBlock",
           "canon_section": "homepage",
           "canon_key": "home.media"
         },
@@ -1410,13 +1365,13 @@
           "description": "Include games outputs summary block on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMajorBlock",
+          "default": "FullSection",
           "canon_section": "homepage",
           "canon_key": "home.games"
         },
@@ -1426,13 +1381,13 @@
           "description": "Include high-level Atlas Engine explainer on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "IncludeAsMinorBlock",
+          "default": "SmallTeaserBlock",
           "canon_section": "homepage",
           "canon_key": "home.atlas_engine"
         },
@@ -1442,11 +1397,11 @@
           "description": "Include case studies or example projects block.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
           "default": "FooterOnly",
           "canon_section": "homepage",
@@ -1458,13 +1413,13 @@
           "description": "Include roadmap/coming-soon teaser block.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "Later",
+          "default": "Omit",
           "canon_section": "homepage",
           "canon_key": "home.roadmap"
         },
@@ -1474,11 +1429,11 @@
           "description": "Include merch callout on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
           "default": "FooterOnly",
           "canon_section": "homepage",
@@ -1490,13 +1445,13 @@
           "description": "Whether to include testimonials/quotes block.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
-          "default": "Later",
+          "default": "Omit",
           "canon_section": "homepage",
           "canon_key": "home.testimonials"
         },
@@ -1506,11 +1461,11 @@
           "description": "Include newsletter signup on homepage.",
           "type": "select",
           "options": [
-            "IncludeAsMajorBlock",
-            "IncludeAsMinorBlock",
+            "Omit",
             "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "SmallTeaserBlock",
+            "FullSection",
+            "HeroEligible"
           ],
           "default": "FooterOnly",
           "canon_section": "homepage",
@@ -1529,14 +1484,13 @@
           "description": "Status and seriousness of Hypercasual Forge sub-label.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.hypercasual_forge"
         },
@@ -1546,14 +1500,13 @@
           "description": "Status of Template Factory templates marketplace.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.template_factory"
         },
@@ -1563,14 +1516,13 @@
           "description": "Status of MerchForge merch and drops.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Core",
+          "default": "CoreLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.merchforge"
         },
@@ -1580,14 +1532,13 @@
           "description": "Status of Narrative Labs storytelling experiments.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.narrative_labs"
         },
@@ -1597,14 +1548,13 @@
           "description": "Status of Documentary Labs content line.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.documentary_labs"
         },
@@ -1614,14 +1564,13 @@
           "description": "Status of VoiceForge narration/voice label.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Backlog",
+          "default": "LowPriority",
           "canon_section": "subsidiaries",
           "canon_key": "subs.voiceforge"
         },
@@ -1631,14 +1580,13 @@
           "description": "Status of SKB music/audio label.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.skb"
         },
@@ -1648,14 +1596,13 @@
           "description": "Status of game tools utilities spun out of AtlasStudio.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Backlog",
+          "default": "LowPriority",
           "canon_section": "subsidiaries",
           "canon_key": "subs.game_tools"
         },
@@ -1665,14 +1612,13 @@
           "description": "Whether media lanes stay under AtlasForge Media or split into sub-labels.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.media_labeling"
         },
@@ -1682,14 +1628,13 @@
           "description": "Status of umbrella Labs bucket for experiments.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Approve+Experimental",
+          "default": "ActiveSideLabel",
           "canon_section": "subsidiaries",
           "canon_key": "subs.labs_bucket"
         },
@@ -1699,14 +1644,13 @@
           "description": "Status of external partnership/collab line (services/consult).",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Backlog",
+          "default": "LowPriority",
           "canon_section": "subsidiaries",
           "canon_key": "subs.partnerships"
         },
@@ -1716,14 +1660,13 @@
           "description": "Status of educational content/products line.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Backlog",
+          "default": "LowPriority",
           "canon_section": "subsidiaries",
           "canon_key": "subs.education"
         },
@@ -1733,14 +1676,13 @@
           "description": "Status of starter packs/toolkits offering.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "Backlog",
+          "default": "LowPriority",
           "canon_section": "subsidiaries",
           "canon_key": "subs.toolkits"
         },
@@ -1750,14 +1692,13 @@
           "description": "Status of research/whitepaper style outputs.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotPursuing",
+            "FutureIdea",
+            "LowPriority",
+            "ActiveSideLabel",
+            "CoreLabel"
           ],
-          "default": "InternalOnly",
+          "default": "NotPursuing",
           "canon_section": "subsidiaries",
           "canon_key": "subs.research"
         }
@@ -1774,15 +1715,13 @@
           "description": "High-level status/priority for Octopus in Action.",
           "type": "select",
           "options": [
-            "NearTermFlagship",
-            "InProgress",
             "ConceptOnly",
-            "Backlog",
-            "InternalExperiment",
-            "Drop",
-            "Later"
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "InProgress",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.oia.status"
         },
@@ -1792,15 +1731,13 @@
           "description": "How OIA appears on the site (hero vs section vs nav vs footer).",
           "type": "select",
           "options": [
-            "Hero",
-            "Section",
-            "Nav",
-            "Footer",
-            "MentionOnly",
-            "InternalOnly",
-            "Later"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Section",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.oia.visibility"
         },
@@ -1810,13 +1747,11 @@
           "description": "Status for Neighborhood Watch concept.",
           "type": "select",
           "options": [
-            "NearTermFlagship",
-            "InProgress",
             "ConceptOnly",
-            "Backlog",
-            "InternalExperiment",
-            "Drop",
-            "Later"
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
           "default": "ConceptOnly",
           "canon_section": "games",
@@ -1828,15 +1763,13 @@
           "description": "Whether Neighborhood Watch is mentioned publicly.",
           "type": "select",
           "options": [
-            "Hero",
-            "Section",
-            "Nav",
-            "Footer",
-            "MentionOnly",
-            "InternalOnly",
-            "Later"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "MentionOnly",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.neighborhood_watch.visibility"
         },
@@ -1846,12 +1779,13 @@
           "description": "Whether to call out a single flagship or rotating slate.",
           "type": "select",
           "options": [
-            "SingleFlagship",
-            "Rotating",
-            "None",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "SingleFlagship",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.flagship_rotation"
         },
@@ -1861,12 +1795,13 @@
           "description": "Whether to list backlog/concept games publicly.",
           "type": "select",
           "options": [
-            "ListLight",
-            "ListNamesOnly",
-            "Hide",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "ListNamesOnly",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.backlog_listing"
         },
@@ -1876,12 +1811,13 @@
           "description": "Whether to note Atlas-V/Studio powering games.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Secondary",
-            "Footnote",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Secondary",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.powered_by"
         },
@@ -1891,13 +1827,13 @@
           "description": "Platform mentions (web, mobile, PC).",
           "type": "select",
           "options": [
-            "WebFirst",
-            "MobileFirst",
-            "PCFirst",
-            "MultiPlatform",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "WebFirst",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.platforms"
         },
@@ -1907,12 +1843,13 @@
           "description": "How often updates/devlogs for games are shown.",
           "type": "select",
           "options": [
-            "Frequent",
-            "Occasional",
-            "MilestoneOnly",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Occasional",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.update_cadence"
         },
@@ -1922,12 +1859,13 @@
           "description": "Depth of OIA demo/preview shown on site.",
           "type": "select",
           "options": [
-            "PlayableSlice",
-            "Video",
-            "Screenshots",
-            "CopyOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Screenshots",
+          "default": "InActiveDevelopment",
           "canon_section": "games",
           "canon_key": "game.oia.demo_depth"
         },
@@ -1937,12 +1875,13 @@
           "description": "Whether to reserve space for new IP mentions.",
           "type": "select",
           "options": [
-            "ReserveSlot",
-            "MentionPipeline",
-            "NoSlot",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "ReserveSlot",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.new_ip_slots"
         },
@@ -1952,12 +1891,13 @@
           "description": "Whether to mention game services/consulting.",
           "type": "select",
           "options": [
-            "OfferServices",
-            "Exploratory",
-            "DoNotMention",
-            "InternalOnly"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Exploratory",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.services"
         },
@@ -1967,12 +1907,13 @@
           "description": "How games cross-promote tools and Atlas-V.",
           "type": "select",
           "options": [
-            "Strong",
-            "Moderate",
-            "Light",
-            "None"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Moderate",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.cross_promo"
         },
@@ -1982,12 +1923,13 @@
           "description": "Whether game pages link to related merch.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Secondary",
-            "Footnote",
-            "None"
+            "ConceptOnly",
+            "InternalPrototype",
+            "InActiveDevelopment",
+            "SoftPublicMention",
+            "FlagshipWorld"
           ],
-          "default": "Footnote",
+          "default": "InternalPrototype",
           "canon_section": "games",
           "canon_key": "game.merch_linkage"
         }
@@ -2004,14 +1946,13 @@
           "description": "Status of true crime/mystery media lane.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Approve+Experimental",
+          "default": "RegularButQuiet",
           "canon_section": "media",
           "canon_key": "media.true_crime"
         },
@@ -2021,14 +1962,13 @@
           "description": "Status of educational/STEM/practical engineering media lane.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Approve+Core",
+          "default": "MajorFocus",
           "canon_section": "media",
           "canon_key": "media.educational"
         },
@@ -2038,14 +1978,13 @@
           "description": "Status of commentary/essays/analysis lane.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Approve+Experimental",
+          "default": "RegularButQuiet",
           "canon_section": "media",
           "canon_key": "media.commentary"
         },
@@ -2055,14 +1994,13 @@
           "description": "Status of devlogs/behind-the-scenes lane.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Approve+Core",
+          "default": "MajorFocus",
           "canon_section": "media",
           "canon_key": "media.devlogs"
         },
@@ -2072,12 +2010,13 @@
           "description": "Whether media is primarily grouped under AtlasForge Media.",
           "type": "select",
           "options": [
-            "SingleBrand",
-            "SplitLabels",
-            "MinimalBranding",
-            "InternalOnly"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "SingleBrand",
+          "default": "RegularButQuiet",
           "canon_section": "media",
           "canon_key": "media.grouping"
         },
@@ -2087,12 +2026,13 @@
           "description": "Whether media is referenced mainly as coming soon.",
           "type": "select",
           "options": [
-            "ProminentComingSoon",
-            "LightComingSoon",
-            "NoComingSoon",
-            "InternalOnly"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "LightComingSoon",
+          "default": "Occasional",
           "canon_section": "media",
           "canon_key": "media.coming_soon"
         },
@@ -2102,13 +2042,13 @@
           "description": "Mentioned distribution channels (site, YouTube, podcast).",
           "type": "select",
           "options": [
-            "SitePrimary",
-            "YouTubePrimary",
-            "PodcastPrimary",
-            "MultiChannel",
-            "InternalOnly"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "MultiChannel",
+          "default": "MajorFocus",
           "canon_section": "media",
           "canon_key": "media.distribution"
         },
@@ -2118,12 +2058,13 @@
           "description": "Cadence messaging for media releases.",
           "type": "select",
           "options": [
-            "Regular",
-            "Seasonal",
-            "AdHoc",
-            "InternalOnly"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Seasonal",
+          "default": "RegularButQuiet",
           "canon_section": "media",
           "canon_key": "media.cadence"
         },
@@ -2133,12 +2074,13 @@
           "description": "Whether to feature VoiceForge/voice talent credits.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Secondary",
-            "Footnote",
-            "InternalOnly"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Secondary",
+          "default": "RegularButQuiet",
           "canon_section": "media",
           "canon_key": "media.voice_credit"
         },
@@ -2148,12 +2090,13 @@
           "description": "Whether to attach governance/safety note to media lane.",
           "type": "select",
           "options": [
-            "Include",
-            "Optional",
-            "NoNote",
-            "InternalOnly"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Include",
+          "default": "Occasional",
           "canon_section": "media",
           "canon_key": "media.safety_note"
         },
@@ -2163,14 +2106,13 @@
           "description": "Status of interactive/branching media experiments.",
           "type": "select",
           "options": [
-            "Approve+Core",
-            "Approve+Experimental",
-            "Backlog",
-            "InternalOnly",
-            "Reject",
-            "Later"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Approve+Experimental",
+          "default": "RegularButQuiet",
           "canon_section": "media",
           "canon_key": "media.interactivity"
         },
@@ -2180,12 +2122,13 @@
           "description": "Whether media pages link to merch drops.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Secondary",
-            "Footnote",
-            "None"
+            "NotActive",
+            "Occasional",
+            "RegularButQuiet",
+            "MajorFocus",
+            "FlagshipSeries"
           ],
-          "default": "Footnote",
+          "default": "Occasional",
           "canon_section": "media",
           "canon_key": "media.merch_link"
         }
@@ -2202,13 +2145,12 @@
           "description": "Whether there is a Governance/Safety page.",
           "type": "select",
           "options": [
-            "FullPage",
-            "SectionOnly",
-            "FooterOnly",
             "InternalOnly",
-            "Later"
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "SectionOnly",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.page_presence"
         },
@@ -2218,12 +2160,12 @@
           "description": "How much governance and safety is shown publicly.",
           "type": "select",
           "options": [
-            "High",
-            "Medium",
-            "Low",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Medium",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.transparency"
         },
@@ -2233,12 +2175,12 @@
           "description": "How Atlas Engine is framed (capabilities vs safety).",
           "type": "select",
           "options": [
-            "FocusOnCapabilities",
-            "BalanceCapabilitiesAndSafety",
-            "FocusOnSafety",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "BalanceCapabilitiesAndSafety",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.engine_framing"
         },
@@ -2248,12 +2190,12 @@
           "description": "Whether to mention internal tools like decision engine conceptually.",
           "type": "select",
           "options": [
-            "Explicit",
-            "Conceptual",
-            "Avoid",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Conceptual",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.internal_tools"
         },
@@ -2263,12 +2205,12 @@
           "description": "Whether to acknowledge constraints/guardrails in marketing text.",
           "type": "select",
           "options": [
-            "Explicit",
-            "Light",
-            "None",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Light",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.constraints"
         },
@@ -2278,12 +2220,12 @@
           "description": "Whether to include compliance/ethics statements.",
           "type": "select",
           "options": [
-            "Include",
-            "Optional",
-            "Omit",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Optional",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.compliance"
         },
@@ -2293,12 +2235,12 @@
           "description": "Whether to provide governance/safety contact pathway.",
           "type": "select",
           "options": [
-            "DedicatedContact",
-            "GeneralContact",
-            "NoContact",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "GeneralContact",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.contact"
         },
@@ -2308,12 +2250,12 @@
           "description": "Whether to link governance docs from site.",
           "type": "select",
           "options": [
-            "LinkDocs",
-            "SummaryOnly",
-            "NoLinks",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "SummaryOnly",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.docs"
         },
@@ -2323,11 +2265,12 @@
           "description": "Whether to hint at internal decision console existence.",
           "type": "select",
           "options": [
-            "NotMentioned",
-            "Hinted",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "NotMentioned",
+          "default": "InternalOnly",
           "canon_section": "governance",
           "canon_key": "governance.decision_console"
         },
@@ -2337,12 +2280,12 @@
           "description": "Whether to state data/privacy stance for tooling.",
           "type": "select",
           "options": [
-            "Explicit",
-            "Brief",
-            "Omit",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Brief",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.data"
         },
@@ -2352,12 +2295,12 @@
           "description": "Clarify whether site speaks to players, partners, or builders.",
           "type": "select",
           "options": [
-            "PlayersFirst",
-            "PartnersFirst",
-            "BuildersFirst",
-            "Balanced"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Balanced",
+          "default": "SummaryPlusExamples",
           "canon_section": "governance",
           "canon_key": "governance.audience"
         },
@@ -2367,12 +2310,12 @@
           "description": "Whether to include feedback/reporting channel for governance.",
           "type": "select",
           "options": [
-            "Include",
-            "Optional",
-            "Omit",
-            "InternalOnly"
+            "InternalOnly",
+            "HighLevelSummaryOnly",
+            "SummaryPlusExamples",
+            "DeepPublicDocs"
           ],
-          "default": "Optional",
+          "default": "HighLevelSummaryOnly",
           "canon_section": "governance",
           "canon_key": "governance.feedback"
         }
@@ -2389,13 +2332,13 @@
           "description": "Placement and strength of work-with-us/service CTA.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Secondary",
-            "FooterOnly",
-            "InternalOnly",
-            "Later"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Secondary",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.work_with_us"
         },
@@ -2405,12 +2348,13 @@
           "description": "Whether to signal hiring/open roles.",
           "type": "select",
           "options": [
-            "ActiveHiring",
-            "TalentPool",
-            "NoHiring",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "TalentPool",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.hiring"
         },
@@ -2420,12 +2364,13 @@
           "description": "Whether to promote newsletter signup beyond homepage footer.",
           "type": "select",
           "options": [
-            "Sitewide",
-            "HomepageOnly",
-            "FooterOnly",
-            "NoNewsletter"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "FooterOnly",
+          "default": "InviteOnly",
           "canon_section": "contact",
           "canon_key": "contact.newsletter"
         },
@@ -2435,12 +2380,13 @@
           "description": "Whether to include social links (X/YouTube/etc.).",
           "type": "select",
           "options": [
-            "Include",
-            "Minimal",
-            "None",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Minimal",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.social"
         },
@@ -2450,12 +2396,13 @@
           "description": "Whether to include partner fit criteria on contact pathways.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Light",
-            "None",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Light",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.partner_filters"
         },
@@ -2465,12 +2412,13 @@
           "description": "Whether to list support/help channel.",
           "type": "select",
           "options": [
-            "Dedicated",
-            "Shared",
-            "None",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Shared",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.support"
         },
@@ -2480,12 +2428,13 @@
           "description": "Whether to list press contact for media inquiries.",
           "type": "select",
           "options": [
-            "Dedicated",
-            "Shared",
-            "None",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Shared",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.press"
         },
@@ -2495,12 +2444,13 @@
           "description": "Whether to reference community/Discord hub.",
           "type": "select",
           "options": [
-            "Link",
-            "MentionOnly",
-            "None",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "MentionOnly",
+          "default": "InviteOnly",
           "canon_section": "contact",
           "canon_key": "contact.community"
         },
@@ -2510,12 +2460,13 @@
           "description": "How demo requests are handled (form vs email vs none).",
           "type": "select",
           "options": [
-            "Form",
-            "Email",
-            "WaitlistOnly",
-            "None"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Email",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.demos"
         },
@@ -2525,12 +2476,13 @@
           "description": "Whether to include privacy/data handling note on contact forms.",
           "type": "select",
           "options": [
-            "Prominent",
-            "Footnote",
-            "None",
-            "InternalOnly"
+            "NoPublicContact",
+            "InviteOnly",
+            "FilteredContactForm",
+            "OpenContactForm",
+            "ProactiveOutreach"
           ],
-          "default": "Footnote",
+          "default": "FilteredContactForm",
           "canon_section": "contact",
           "canon_key": "contact.privacy"
         }

@@ -212,6 +212,11 @@ h4 {
   color: var(--text-100);
 }
 
+.mf-chip img {
+  height: 1.25em;
+  width: auto;
+}
+
 .mf-hero {
   position: relative;
   padding: var(--space-48) 0;
@@ -374,6 +379,13 @@ h4 {
 
 .mf-footer small {
   color: var(--text-500);
+}
+
+.mf-footer-admin-link {
+  display: inline-block;
+  margin-top: var(--space-8);
+  color: var(--text-300);
+  font-size: 0.9rem;
 }
 
 .mf-nav-toggle {

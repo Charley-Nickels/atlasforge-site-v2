@@ -128,3 +128,68 @@ Template family names align to wireframes (Run F5), component inventory (Runs F2
   - Footer.Core → Footer.Base + Footer.Clusters
 - **Notes for Figma:** Decision P6-F5-002 on responsive table vs card stack; consider landmark roles for console region; keep visuals minimal.
 - **Token/Dependency Notes:** Neutral palette; rely on global spacing/typography; focus outlines per accessibility spec.
+
+---
+
+# Phase 7 — Run F19 Template Specifications
+The following Phase 7 updates consolidate page template construction for Figma assembly. Use these as the authoritative frames for F20–F21 builds; earlier Phase 6 mappings remain for traceability.
+
+## Global Construction Rules
+- All templates must be built with Auto Layout and align to a 12-column grid (desktop) with tablet/mobile degradations captured as separate frames.
+- Section blocks stay modular and drag-reorderable; margins follow the global spacing scale and CTA clusters may stack on smaller breakpoints.
+- Cross-brand governance hooks reference Atlas-V badges/cards; placeholder blocks remain where future components are planned.
+
+## Home Template
+- **Section Order:** Hero (AF.Hero.Umbrella) → Ecosystem/Stack Diagram → Tools/Products grid → Games/Media/Labs teasers → Governance badge block → CTA cluster → Footer.
+- **Key Components:** Hero.Primary, Card.ProductGrid, Card.BrandTeaser, Governance.Badge, CTA.Primary/Secondary, Footer.Global.
+- **Responsive:** Desktop 3–4 columns; tablet 2 columns; mobile single column with stacked CTAs.
+
+## Atlas-V Template
+- **Section Order:** Brand hero → Workflow grid → Governance detail block → Use case cards → CTA segment → Footer.
+- **Key Components:** Hero.Brand, Card.Workflow, Governance.Card, Card.UseCase, CTA.Primary, Footer.Global.
+- **Responsive:** Desktop 3→2 grids; tablet compresses diagrams; mobile stacks with drawer nav.
+
+## AtlasStudio Template
+- **Section Order:** Hero → Playground Shell (Tabs → Panels → Console → Drawer → Ghost Sidecar) → Coaching/FAQ → CTA → Footer.
+- **Key Components:** Hero.Brand, AS.PlaygroundShell (tabs, console, drawer, sidecar), CTA.Primary/Secondary, Footer.Global.
+- **Responsive:** Desktop full shell; tablet compressed rail; mobile stacked panels with overlay drawer.
+
+## Games Template
+- **Section Order:** Hero → Catalog grid → Screenshot gallery → CTA → Footer.
+- **Key Components:** Hero.Brand, Card.Game, Gallery.Game, CTA.Primary, Footer.Global.
+- **Responsive:** Desktop 3→2 grids; tablet 2 columns; mobile single column with tap-to-advance gallery (carousel vs scroll pending P6-F5-001).
+
+## OIA Template
+- **Section Order:** Hero → Species intro panels → Image gallery → CTA → Footer.
+- **Key Components:** Hero.Brand, SpeciesIntroPanels, GallerySystem, CTA.Primary, Footer.Global.
+- **Responsive:** Desktop 3→2→1 for panels; tablet 2 columns; mobile stacked gallery.
+
+## SKB Template
+- **Section Order:** Hero → Playlist cards + audio list → CTA → Footer.
+- **Key Components:** Hero.Label, Card.Audio/SKB, AudioList, CTA.Primary/Secondary, Footer.Global.
+- **Responsive:** Desktop 3→2 grids; tablet 2 columns; mobile single-column playlists with tap-to-play.
+
+## Media Template
+- **Section Order:** Hero → Pillar cards → Articles/episodes list → CTA → Footer.
+- **Key Components:** Hero.Brand, MediaPillarCards, MediaArticleCards, CTA.Primary, Footer.Global.
+- **Responsive:** Desktop 3→2 grids; tablet 2 columns; mobile single-column lists.
+
+## Labs Template
+- **Section Order:** Hero → Experiment cards → Category grids → CTA → Footer.
+- **Key Components:** Hero.Brand, LabsExperimentCards, LabsCategoryGrid, CTA.Primary, Footer.Global.
+- **Responsive:** Desktop 3→2 grids; tablet 2 columns; mobile accordions for experiments; decision P6-F19-003 tracks layout parity with Media.
+
+## About Template
+- **Section Order:** Hero → Timeline/lore placeholder → Mission/values → CTA → Footer.
+- **Key Components:** Hero.Label, PlaceholderBlock (timeline/lore), Mission/Values cards, CTA.Primary/Secondary, Footer.Global.
+- **Responsive:** Desktop 2-column where applicable; tablet single column; mobile stacked. Placeholder styling awaiting P6-F19-002.
+
+## Admin Template
+- **Section Order:** Hero/instruction block → Filters + Freeze toggle → Table OR Cards → Export CTA → Footer/Notes.
+- **Key Components:** Admin.Table or Admin.Cards, Admin.Filters, Admin.Freeze, Admin.Export, Governance footnote (optional), CTA.Primary.
+- **Responsive:** Desktop/tablet favor tables; mobile uses stacked cards if approved (P6-F5-002). Filters move to overlay; export CTA follows button states; preparing state pending P6-F18-001.
+
+## Template Construction Rules
+- All templates require desktop/tablet/mobile frames in Figma with consistent padding and gutter rules.
+- CTA treatment remains dual-CTA capable unless P6-F19-001 standardizes heroes to primary-only.
+- Placeholder blocks remain in About and Admin until upgraded; cross-brand badges appear consistently per governance decisions.

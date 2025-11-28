@@ -9,13 +9,13 @@
   "blocks": [
     {
       "id": "core_pillars_visibility",
-      "title": "Core Pillars Visibility",
-      "description": "Decide how core AtlasForge pillars appear on the site (hero, sections, nav, internal).",
+      "title": "Core pillars and how the canon surfaces them",
+      "description": "Choose how each AtlasForge pillar is canonized in-world and surfaced on public pages, from hidden lore to hero-level story anchors.",
       "items": [
         {
           "id": "core_pillars_visibility_atlasforge",
-          "label": "AtlasForge umbrella visibility",
-          "description": "Visibility priority for AtlasForge umbrella brand across site surfaces.",
+          "label": "How prominently should the AtlasForge umbrella be canonized across the site and story?",
+          "description": "Sets whether the AtlasForge banner is treated as a quiet backdrop or a hero identity anchoring every page in the shared universe.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -31,8 +31,8 @@
         },
         {
           "id": "core_pillars_visibility_games",
-          "label": "AtlasForge Games pillar",
-          "description": "Placement emphasis for AtlasForge Games pillar in public surfaces.",
+          "label": "How visible is the AtlasForge Games pillar in the public canon?",
+          "description": "Controls if Games is a whispered capability or a front-line guild in the narrative, with matching placement on key surfaces.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -48,8 +48,8 @@
         },
         {
           "id": "core_pillars_visibility_media",
-          "label": "AtlasForge Media pillar",
-          "description": "Visibility level for AtlasForge Media lane on site.",
+          "label": "How visible is the AtlasForge Media pillar within the canon storyline?",
+          "description": "Determines whether Media is a subtle lore conduit or a featured storytelling wing with clear placement across pages.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -65,8 +65,8 @@
         },
         {
           "id": "core_pillars_visibility_studio",
-          "label": "AtlasForge Studio pillar",
-          "description": "How prominently the Studio/Tools pillar appears (AtlasStudio + tools).",
+          "label": "How prominent is the AtlasForge Studio/tools pillar in-world and on the site?",
+          "description": "Sets whether the builder's workshop (AtlasStudio + tools) is a quiet backstage mention or a headlining part of the canon.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -82,8 +82,8 @@
         },
         {
           "id": "core_pillars_visibility_atlasv",
-          "label": "Atlas Engine / Atlas-V pillar",
-          "description": "Surface priority for Atlas Engine / Atlas-V narrative.",
+          "label": "How central should Atlas Engine / Atlas-V be in the public canon narrative?",
+          "description": "Defines how much the creative engine is spotlighted as the mind behind AtlasForge worlds versus kept as internal infrastructure.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -99,8 +99,8 @@
         },
         {
           "id": "core_pillars_visibility_merch",
-          "label": "Merch pillar",
-          "description": "Presence of AtlasForge Merch offerings in public areas.",
+          "label": "How openly should AtlasForge Merch operate as an in-universe trading post?",
+          "description": "Controls whether merch is a quiet support channel or a visible canon market with its own placement on the site.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -116,8 +116,8 @@
         },
         {
           "id": "core_pillars_visibility_labs",
-          "label": "Labs / Experimental pillar",
-          "description": "Whether experimental labs/under-construction work gets a defined pillar slot.",
+          "label": "How much do Labs and experimental work appear as canonized pillars?",
+          "description": "Determines if experimental efforts stay in the shadows or receive a named pillar slot in the public-facing story.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -133,8 +133,8 @@
         },
         {
           "id": "core_pillars_visibility_contact",
-          "label": "Contact / Work With Us touchpoint",
-          "description": "Placement for contact/hiring/partner CTA within core pillars.",
+          "label": "Where should the Contact / Work With Us gateway sit in the canon map?",
+          "description": "Sets whether the doorway for partners and recruits is framed as a subtle link or a major entry point in the storyline and nav.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -152,13 +152,13 @@
     },
     {
       "id": "brand_roles_and_importance",
-      "title": "Brand Roles and Importance",
-      "description": "Define ecosystem role for each main brand/label.",
+      "title": "Brand roles and canon importance",
+      "description": "Decide the official role each brand or label plays inside the AtlasForge universe and how boldly we present that role to the public.",
       "items": [
         {
           "id": "brand_roles_atlasforge",
-          "label": "AtlasForge umbrella role",
-          "description": "Role of AtlasForge as the parent studio and ecosystem owner.",
+          "label": "What role should the AtlasForge umbrella play in official canon?",
+          "description": "Establishes how authoritative the AtlasForge name is across worlds and tools, from background organizer to flagship house.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -173,8 +173,8 @@
         },
         {
           "id": "brand_roles_atlasv",
-          "label": "Atlas-V role",
-          "description": "Ecosystem role for Atlas-V as engine brain / copilot.",
+          "label": "How official is Atlas-V as the creative intelligence within the universe?",
+          "description": "Decides whether Atlas-V is treated as a tagged component or the flagship brain driving how AtlasForge builds and speaks.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -189,8 +189,8 @@
         },
         {
           "id": "brand_roles_atlasstudio",
-          "label": "AtlasStudio role",
-          "description": "Role of AtlasStudio workstation surface within the stack.",
+          "label": "How formally is AtlasStudio recognized as the maker's workshop in canon?",
+          "description": "Sets whether AtlasStudio is a light-side utility or a primary studio brand shaping how creators engage with AtlasForge.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -205,8 +205,8 @@
         },
         {
           "id": "brand_roles_atlasengine",
-          "label": "Atlas Engine role",
-          "description": "Public vs internal framing of Atlas Engine governance layer.",
+          "label": "How official is the Atlas Engine identity alongside Atlas-V?",
+          "description": "Clarifies if Atlas Engine is a background technology tag or a major brand representing the core runtime in-world and on-site.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -221,8 +221,8 @@
         },
         {
           "id": "brand_roles_media",
-          "label": "AtlasForge Media role",
-          "description": "Importance of Media lane as a public-facing label.",
+          "label": "How recognized is the AtlasForge Media imprint in canon?",
+          "description": "Decides whether Media is a quiet label or a major storytelling brand credited across releases.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -237,8 +237,8 @@
         },
         {
           "id": "brand_roles_games",
-          "label": "AtlasForge Games role",
-          "description": "Positioning of Games as a primary output line.",
+          "label": "How canonized is the AtlasForge Games brand?",
+          "description": "Determines if Games is a supporting studio mark or a flagship brand fronting our playable worlds.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -253,8 +253,8 @@
         },
         {
           "id": "brand_roles_skb",
-          "label": "SKB / Audio label role",
-          "description": "Importance of SKB audio/music label within ecosystem.",
+          "label": "How official is SKB / the audio label within the universe?",
+          "description": "Sets whether SKB is a niche craft guild or a prominent sound house credited across experiences.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -269,8 +269,8 @@
         },
         {
           "id": "brand_roles_voiceforge",
-          "label": "VoiceForge role",
-          "description": "Visibility and seriousness of VoiceForge narration/voice brand.",
+          "label": "What canon weight should VoiceForge carry as a voice/talent label?",
+          "description": "Controls whether VoiceForge is a small background tag or a major voice guild in the AtlasForge story.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -285,8 +285,8 @@
         },
         {
           "id": "brand_roles_hypercasual",
-          "label": "Hypercasual Forge role",
-          "description": "Status of Hypercasual Forge as a sub-brand for small games.",
+          "label": "How seriously is Hypercasual Forge treated as an official line?",
+          "description": "Determines if Hypercasual Forge is a future experiment or an active label for lightweight releases in the canon.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -301,8 +301,8 @@
         },
         {
           "id": "brand_roles_template_factory",
-          "label": "Template Factory role",
-          "description": "Treatment of Template Factory (templates marketplace).",
+          "label": "How official is Template Factory as a canon offering?",
+          "description": "Clarifies whether Template Factory is a support utility or a recognized label for starter kits in-world.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -317,8 +317,8 @@
         },
         {
           "id": "brand_roles_merchforge",
-          "label": "MerchForge role",
-          "description": "Role of MerchForge merch line under AtlasForge.",
+          "label": "What role should MerchForge play in the AtlasForge canon?",
+          "description": "Sets whether MerchForge is a quiet logistics arm or a branded market house acknowledged across lore and site.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -333,8 +333,8 @@
         },
         {
           "id": "brand_roles_narrative_labs",
-          "label": "Narrative Labs role",
-          "description": "Importance of Narrative Labs storytelling experiments.",
+          "label": "How canonized is Narrative Labs as a storytelling R&D wing?",
+          "description": "Decides if Narrative Labs is a future-skunkworks mention or a recognized creative lab influencing public releases.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -349,8 +349,8 @@
         },
         {
           "id": "brand_roles_documentary_labs",
-          "label": "Documentary Labs role",
-          "description": "Positioning of Documentary Labs content line.",
+          "label": "How visible is Documentary Labs as part of the canon studio slate?",
+          "description": "Determines whether Documentary Labs sits in the background or is acknowledged as a major non-fiction production house.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -365,8 +365,8 @@
         },
         {
           "id": "brand_roles_atlasforge_media_labeling",
-          "label": "Media label framing",
-          "description": "Whether media stays under a single AtlasForge Media label or multiple sub-labels.",
+          "label": "How should we frame the AtlasForge Media label across channels?",
+          "description": "Sets whether AtlasForge Media is treated as a tag-of-convenience or a unified imprint that groups all media stories.",
           "type": "select",
           "options": [
             "NotInPublicCanon",
@@ -383,13 +383,13 @@
     },
     {
       "id": "brand_narrative_tone",
-      "title": "Brand Narrative Tone",
-      "description": "Decide tone/personality for public-facing content per brand.",
+      "title": "Narrative tone for each brand in canon",
+      "description": "Select the voice each brand uses when speaking in-world and on the site, balancing practical signals with the shared AtlasForge story.",
       "items": [
         {
           "id": "brand_tone_atlasforge",
-          "label": "AtlasForge overall tone",
-          "description": "Tone for umbrella brand messaging.",
+          "label": "What narrative tone should the AtlasForge umbrella use?",
+          "description": "Decides whether AtlasForge speaks in practical coordination or leans into warm, playful, or deep-lore voice across canon.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -404,8 +404,8 @@
         },
         {
           "id": "brand_tone_atlasv",
-          "label": "Atlas-V tone",
-          "description": "Personality for Atlas-V descriptions and copy.",
+          "label": "What voice should Atlas-V use when it speaks in-world?",
+          "description": "Sets whether Atlas-V sounds neutral, inviting, experimental, bold, or lore-heavy in both narrative and UI cues.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -420,8 +420,8 @@
         },
         {
           "id": "brand_tone_atlasstudio",
-          "label": "AtlasStudio tone",
-          "description": "Voice for AtlasStudio workstation messaging.",
+          "label": "How should AtlasStudio sound as the maker-facing workshop?",
+          "description": "Determines if AtlasStudio messaging is pragmatic, welcoming, playful, assertive, or steeped in world lore.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -436,8 +436,8 @@
         },
         {
           "id": "brand_tone_atlasforge_media",
-          "label": "AtlasForge Media tone",
-          "description": "Tone for media/streaming/podcast style content.",
+          "label": "What tone should AtlasForge Media adopt in canon releases?",
+          "description": "Decides whether Media speaks plainly, warmly, experimentally, boldly, or with deep lore references.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -452,8 +452,8 @@
         },
         {
           "id": "brand_tone_oia",
-          "label": "Octopus in Action tone",
-          "description": "Tone for OIA marketing copy and page content.",
+          "label": "How should Octopus in Action speak in-world and on pages?",
+          "description": "Sets whether OIA messaging is practical, inviting, playful, distinctive, or heavy with narrative backstory.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -468,8 +468,8 @@
         },
         {
           "id": "brand_tone_neighborhood_watch",
-          "label": "Neighborhood Watch tone",
-          "description": "Tone for Neighborhood Watch concept mentions.",
+          "label": "What voice fits Neighborhood Watch within the canon?",
+          "description": "Determines if Neighborhood Watch is framed as grounded, welcoming, quirky, bold, or lore-rich when mentioned publicly.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -484,8 +484,8 @@
         },
         {
           "id": "brand_tone_atlas_engine",
-          "label": "Atlas Engine tone",
-          "description": "Tone when referencing Atlas Engine governance layer publicly.",
+          "label": "How should the Atlas Engine speak when referenced?",
+          "description": "Defines whether the engine is described plainly or with a more adventurous or lore-heavy tone in docs and surfaces.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -500,8 +500,8 @@
         },
         {
           "id": "brand_tone_skb",
-          "label": "SKB / Audio label tone",
-          "description": "Voice for SKB music/audio label content.",
+          "label": "What tone should SKB / the audio label use in canon?",
+          "description": "Sets whether SKB communications feel neutral, warm, playful, bold, or deeply narrative.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -516,8 +516,8 @@
         },
         {
           "id": "brand_tone_atlasv_lite",
-          "label": "Atlas-V Lite tone",
-          "description": "Tone for Lite assistant references.",
+          "label": "How should Atlas-V Lite address users in the story?",
+          "description": "Determines if Atlas-V Lite is a straightforward helper or a more characterful, lore-aware companion in messaging.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -532,8 +532,8 @@
         },
         {
           "id": "brand_tone_hypercasual",
-          "label": "Hypercasual Forge tone",
-          "description": "Tone for Hypercasual Forge sub-brand snippets.",
+          "label": "What tone should Hypercasual Forge use when spoken about?",
+          "description": "Decides whether Hypercasual Forge feels purely functional or leans into playful, bold, or lore-tinted language.",
           "type": "select",
           "options": [
             "NeutralPractical",
@@ -550,13 +550,13 @@
     },
     {
       "id": "atlasv_behavior_and_messaging",
-      "title": "Atlas-V Behavior and Messaging",
-      "description": "Decide how Atlas-V is framed and how deeply we explain it.",
+      "title": "Atlas-V identity, behavior, and storytelling depth",
+      "description": "Define how Atlas-V is framed as the creative engine within the universe and how much of its inner workings and guardrails we reveal to visitors.",
       "items": [
         {
           "id": "atlasv_identity",
-          "label": "Atlas-V primary identity",
-          "description": "How Atlas-V is framed (copilot, engine brain, governance layer).",
+          "label": "How should Atlas-V be introduced as a character or system in canon?",
+          "description": "Clarifies whether Atlas-V is framed as a tool, a guide, or a flagship intelligence shaping AtlasForge worlds and messaging.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -570,8 +570,8 @@
         },
         {
           "id": "atlasv_explanation_depth",
-          "label": "Phases/Runs explanation depth",
-          "description": "Depth of explaining Atlas-V loops and phase/run model.",
+          "label": "How much detail should we share about Atlas-V phases and runs?",
+          "description": "Sets whether we stick to taglines or dive into short, detailed, or deep technical storytelling about how the engine operates.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -585,8 +585,8 @@
         },
         {
           "id": "atlasv_governance_visibility",
-          "label": "Governance visibility",
-          "description": "Visibility of Atlas-V governance/safety role in public content.",
+          "label": "How visible are Atlas-V governance and guardrails in public canon?",
+          "description": "Decides whether governance stays hidden or is surfaced as footer notes, minor sections, or major explanations for visitors.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -600,8 +600,8 @@
         },
         {
           "id": "atlasv_internal_mechanics",
-          "label": "Internal mechanics hinting",
-          "description": "Whether to hint at internal mechanics (decision engine, prompt discipline).",
+          "label": "How much should we hint at Atlas-V's internal mechanics?",
+          "description": "Controls whether we obscure the internals or reveal loops, data paths, and safeguards as part of the narrative.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -615,8 +615,8 @@
         },
         {
           "id": "atlasv_scope_span",
-          "label": "Atlas-V scope",
-          "description": "Scope positioning: single project, multi-project, or orchestration brain.",
+          "label": "How wide is Atlas-V's scope in the canon narrative?",
+          "description": "Determines if Atlas-V is positioned as a narrow assistant or the broad creative brain behind tools, media, and games.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -630,8 +630,8 @@
         },
         {
           "id": "atlasv_loop_visibility",
-          "label": "Loop visibility",
-          "description": "How much of the loop (phase/run/prompt/report) is shown publicly.",
+          "label": "How explicitly should we describe the Atlas-V creative loops?",
+          "description": "Sets whether loops are hidden, lightly referenced, or highlighted as core to how AtlasForge builds worlds.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -645,8 +645,8 @@
         },
         {
           "id": "atlasv_safety_positioning",
-          "label": "Safety positioning",
-          "description": "Balance between capability messaging and safety/governance messaging.",
+          "label": "How do we position Atlas-V's safety stance in-world and publicly?",
+          "description": "Clarifies if safety is implied, softly stated, or foregrounded as a key trait of the engine's personality and controls.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -660,8 +660,8 @@
         },
         {
           "id": "atlasv_lite_relationship",
-          "label": "Atlas-V Lite relationship",
-          "description": "How Atlas-V Lite is described relative to Atlas-V.",
+          "label": "How is Atlas-V Lite related to the main Atlas-V in canon?",
+          "description": "Determines whether Lite is a quiet companion, a sibling tool, or a clearly framed entry-tier persona for the engine.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -675,8 +675,8 @@
         },
         {
           "id": "atlasv_cta_style",
-          "label": "Atlas-V call-to-action",
-          "description": "CTA pattern for Atlas-V (contact, waitlist, internal invite).",
+          "label": "What style of call-to-action should invite people to Atlas-V?",
+          "description": "Sets whether CTAs are subtle tags or bolder invitations that portray Atlas-V as a guide, partner, or commanding flagship.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -690,8 +690,8 @@
         },
         {
           "id": "atlasv_examples_depth",
-          "label": "Example depth",
-          "description": "Depth of public examples or case studies for Atlas-V.",
+          "label": "How deep should Atlas-V examples go when shown publicly?",
+          "description": "Controls whether examples stay high-level or become detailed walkthroughs that expose canon processes.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -705,8 +705,8 @@
         },
         {
           "id": "atlasv_decision_engine_reference",
-          "label": "Decision engine framing",
-          "description": "Whether to reference decision engine concept in public copy.",
+          "label": "How should the decision engine itself be referenced in canon?",
+          "description": "Determines if the engine is quietly mentioned, cited in footers, or highlighted as part of the public story about how decisions are locked.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -720,8 +720,8 @@
         },
         {
           "id": "atlasv_persona_voice",
-          "label": "Atlas-V persona voice",
-          "description": "Public persona voice for Atlas-V (guide vs partner vs neutral).",
+          "label": "How should Atlas-V speak when personified?",
+          "description": "Sets the persona voice from neutral guide to lore-heavy character when Atlas-V addresses users or appears in copy.",
           "type": "select",
           "options": [
             "TaglineOnly",
@@ -737,13 +737,13 @@
     },
     {
       "id": "atlasstudio_surface_and_scope",
-      "title": "AtlasStudio Surface and Scope",
-      "description": "Decide AtlasStudio\u2019s presence, promises, and framing.",
+      "title": "AtlasStudio surface, scope, and canon framing",
+      "description": "Decide how AtlasStudio is positioned as the builder's workshop in the AtlasForge story and how much of its interface, data, and use cases appear publicly.",
       "items": [
         {
           "id": "atlasstudio_page_visibility",
-          "label": "AtlasStudio page presence",
-          "description": "Whether AtlasStudio has its own top-level page.",
+          "label": "How present should the AtlasStudio page be in the public canon map?",
+          "description": "Decides whether AtlasStudio is hidden, labs-only, or showcased as a hero tool page signaling the builder's workshop.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -758,8 +758,8 @@
         },
         {
           "id": "atlasstudio_framing",
-          "label": "AtlasStudio framing",
-          "description": "Frame AtlasStudio as prototype, future product, or active product.",
+          "label": "How should AtlasStudio be framed as an in-universe workshop?",
+          "description": "Determines if AtlasStudio is pitched as a labs experiment or a major forge where creators craft AtlasForge experiences.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -774,8 +774,8 @@
         },
         {
           "id": "atlasstudio_scope",
-          "label": "AtlasStudio scope depth",
-          "description": "Scope: concept only, concept + mockups, soft launch, or hard launch later.",
+          "label": "How much of AtlasStudio's capability should be canonized now?",
+          "description": "Sets whether scope stays minimal or expands to show breadth of creation tools and pipelines in public storytelling.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -790,8 +790,8 @@
         },
         {
           "id": "atlasstudio_ui_detail",
-          "label": "UI detail shown",
-          "description": "How much UI detail to show (diagrams, mockups, screenshots).",
+          "label": "How much UI detail should we reveal for AtlasStudio?",
+          "description": "Controls if we keep the interface abstract or showcase detailed screens that anchor the workshop in canon.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -806,8 +806,8 @@
         },
         {
           "id": "atlasstudio_tabs_mention",
-          "label": "AtlasStudio tabs callout",
-          "description": "Whether to mention tabs like Game/Excel/Policy/Writing/Web.",
+          "label": "Do we call out AtlasStudio tabs or modules in the story?",
+          "description": "Determines whether feature areas are merely hinted at or explicitly named as parts of the workshop experience.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -822,8 +822,8 @@
         },
         {
           "id": "atlasstudio_role_relative",
-          "label": "AtlasStudio role vs Atlas-V",
-          "description": "Positioning of AtlasStudio relative to Atlas-V (guided surface vs standalone).",
+          "label": "How is AtlasStudio positioned relative to Atlas-V in canon?",
+          "description": "Clarifies whether AtlasStudio is presented as the hands guided by Atlas-V or as a peer toolset with its own agency.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -838,8 +838,8 @@
         },
         {
           "id": "atlasstudio_cta",
-          "label": "AtlasStudio CTA",
-          "description": "CTA style for AtlasStudio (waitlist, contact, coming soon).",
+          "label": "How strong should the AtlasStudio invitation be?",
+          "description": "Sets whether CTAs are light teasers or bold hero prompts to enter the workshop and start building.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -854,8 +854,8 @@
         },
         {
           "id": "atlasstudio_teamstory",
-          "label": "Team story depth",
-          "description": "Whether to include behind-the-scenes team/process stories for AtlasStudio.",
+          "label": "How much team story do we share around AtlasStudio?",
+          "description": "Controls whether team credits and craft are quietly referenced or highlighted as part of the workshop lore.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -870,8 +870,8 @@
         },
         {
           "id": "atlasstudio_powered_by",
-          "label": "Powered-by callout",
-          "description": "Whether to highlight Atlas-V/Engine powering AtlasStudio.",
+          "label": "How should powered-by messaging link AtlasStudio to Atlas-V/Engine?",
+          "description": "Determines if the connection is subtle or prominently canonized as the workshop being fueled by Atlas-V and the engine.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -886,8 +886,8 @@
         },
         {
           "id": "atlasstudio_usecases",
-          "label": "Use case breadth",
-          "description": "Range of use cases shown (games, media, docs, web).",
+          "label": "How broad should public use cases for AtlasStudio be?",
+          "description": "Sets whether we mention a few examples or showcase a wide range of creations to cement its role in the universe.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -902,8 +902,8 @@
         },
         {
           "id": "atlasstudio_data_layer",
-          "label": "Data layer framing",
-          "description": "Whether to mention governance/decision data powering Studio.",
+          "label": "How do we frame the AtlasStudio data layer in canon?",
+          "description": "Clarifies whether data foundations stay internal or are presented as a defining piece of how the workshop operates.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -918,8 +918,8 @@
         },
         {
           "id": "atlasstudio_demo_depth",
-          "label": "Demo depth",
-          "description": "Depth of demo walkthroughs (animated slice vs static).",
+          "label": "How deep should AtlasStudio demos go for the public?",
+          "description": "Controls whether demos are light teasers or full walkthroughs that reveal process and craft in-world.",
           "type": "select",
           "options": [
             "HiddenInternal",
@@ -936,13 +936,13 @@
     },
     {
       "id": "website_structure_and_nav",
-      "title": "Website Structure and Navigation",
-      "description": "Decide which pages exist and how they appear in navigation.",
+      "title": "Site structure and navigational canon signals",
+      "description": "Choose how the site map itself tells the AtlasForge story, from what earns a nav slot to whether hubs stay combined or branch into distinct lore stops.",
       "items": [
         {
           "id": "nav_home",
-          "label": "Home page placement",
-          "description": "Visibility of Home/AtlasForge umbrella page in nav.",
+          "label": "How should the Home page anchor the canon story?",
+          "description": "Decides whether Home is a light portal or a primary hub weaving together the AtlasForge narrative for visitors.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -957,8 +957,8 @@
         },
         {
           "id": "nav_atlasv",
-          "label": "Atlas-V page",
-          "description": "Navigation placement for Atlas-V page.",
+          "label": "What prominence should the Atlas-V page have in navigation?",
+          "description": "Determines if Atlas-V is hidden from nav or elevated to a primary or hub destination for the engine's story.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -973,8 +973,8 @@
         },
         {
           "id": "nav_atlasstudio",
-          "label": "AtlasStudio page",
-          "description": "Navigation placement for AtlasStudio page.",
+          "label": "How visible should AtlasStudio be in the nav map?",
+          "description": "Sets whether the workshop is tucked away or clearly reachable as a main path in the canon journey.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -989,8 +989,8 @@
         },
         {
           "id": "nav_oia",
-          "label": "Octopus in Action page",
-          "description": "Visibility of OIA page.",
+          "label": "How present is Octopus in Action in the nav and canon tour?",
+          "description": "Controls whether OIA is absent, footer-only, or a primary/hub route for showcasing the world.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1005,8 +1005,8 @@
         },
         {
           "id": "nav_octopus_alt",
-          "label": "Octopus page duplicate",
-          "description": "Treatment of octopus.html relative to OIA page.",
+          "label": "Do we maintain an alternate Octopus entry in navigation?",
+          "description": "Decides if a duplicate/experimental Octopus link exists and how prominent it is on the site map.",
           "type": "select",
           "options": [
             "RedirectToOIA",
@@ -1020,8 +1020,8 @@
         },
         {
           "id": "nav_skb",
-          "label": "SKB / audio page",
-          "description": "Placement for SKB/audio label page.",
+          "label": "How should SKB / audio content appear in navigation?",
+          "description": "Determines whether the audio house is absent, tucked in the footer, or given nav real estate as part of canon.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1036,8 +1036,8 @@
         },
         {
           "id": "nav_games",
-          "label": "Games hub page",
-          "description": "Navigation treatment for games.html.",
+          "label": "How visible should the Games hub be in navigation?",
+          "description": "Sets whether playable worlds have no nav slot or rise to primary/hub placement for the canon tour.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1052,8 +1052,8 @@
         },
         {
           "id": "nav_media",
-          "label": "Media hub page",
-          "description": "Placement for media/streams/podcasts hub.",
+          "label": "How prominent should the Media hub be in navigation?",
+          "description": "Decides if media stories live quietly or earn a primary nav path that frames the universe.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1068,8 +1068,8 @@
         },
         {
           "id": "nav_about",
-          "label": "About / Studio page",
-          "description": "Placement for about.html / studio story.",
+          "label": "How should the About/Studio story appear in navigation?",
+          "description": "Controls whether the studio story is hidden, footer-only, or central in the nav for world context.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1084,8 +1084,8 @@
         },
         {
           "id": "nav_studio_tools",
-          "label": "Studio tools page",
-          "description": "Whether studio-tools.html appears in nav.",
+          "label": "How do we surface the Studio tools page in nav?",
+          "description": "Determines if tools stay off the map or become a primary route for builders in the canon journey.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1100,8 +1100,8 @@
         },
         {
           "id": "nav_ecosystem_grouping",
-          "label": "Ecosystem grouping",
-          "description": "Whether to group products under a single Ecosystem menu item.",
+          "label": "Should tools and engines stay grouped or split into separate hubs?",
+          "description": "Decides if the ecosystem remains combined or branches into multiple nav hubs, guiding how visitors perceive the world map.",
           "type": "select",
           "options": [
             "KeepCombined",
@@ -1115,8 +1115,8 @@
         },
         {
           "id": "nav_roadmap_page",
-          "label": "Roadmap page",
-          "description": "Whether to have a roadmap page or keep roadmap internal.",
+          "label": "How visible should the Roadmap be as part of canon?",
+          "description": "Sets whether the roadmap is absent, footer-only, or a major nav destination that signals future lore.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1131,8 +1131,8 @@
         },
         {
           "id": "nav_governance_page",
-          "label": "Governance/Safety page",
-          "description": "Presence of governance/safety page in nav.",
+          "label": "How present should Governance/Safety be in the nav?",
+          "description": "Determines if governance is hidden, lightly linked, or elevated to primary navigation for transparency.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1147,8 +1147,8 @@
         },
         {
           "id": "nav_contact_page",
-          "label": "Contact / Work With Us page",
-          "description": "Visibility of contact/hiring page.",
+          "label": "How prominent should the Contact / Work With Us page be?",
+          "description": "Clarifies whether entryways for partners and recruits are minimized or surfaced as main nav routes.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1163,8 +1163,8 @@
         },
         {
           "id": "nav_merch",
-          "label": "Merch page",
-          "description": "Placement for merch page or link.",
+          "label": "How visible should Merch be in navigation?",
+          "description": "Decides if merch is omitted, footer-linked, or positioned as a primary/hub path in the canon journey.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1179,8 +1179,8 @@
         },
         {
           "id": "nav_blog",
-          "label": "Blog / Devlog",
-          "description": "Whether to include a blog/devlog page in navigation.",
+          "label": "What presence should Blog/Devlog have in nav?",
+          "description": "Controls whether ongoing posts are hidden or surfaced to show the living canon.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1195,8 +1195,8 @@
         },
         {
           "id": "nav_labs",
-          "label": "Labs hub",
-          "description": "Visibility of Labs/Under Construction hub page.",
+          "label": "How should Labs appear in navigation?",
+          "description": "Determines if experiments are off-map, footer-noted, or given nav space as a living R&D area.",
           "type": "select",
           "options": [
             "NotInNav",
@@ -1211,8 +1211,8 @@
         },
         {
           "id": "nav_media_grouping",
-          "label": "Media label grouping",
-          "description": "Whether media lanes are grouped under AtlasForge Media nav item.",
+          "label": "Do we group media lanes under a single label in nav?",
+          "description": "Decides if media entries remain separate or consolidate into a hub, affecting how visitors read the canon structure.",
           "type": "select",
           "options": [
             "KeepCombined",
@@ -1228,13 +1228,13 @@
     },
     {
       "id": "homepage_content_blocks",
-      "title": "Homepage Content Blocks",
-      "description": "Decide which content blocks appear on the homepage and their prominence.",
+      "title": "Homepage story blocks and canon weight",
+      "description": "Set how strongly each storyline appears on the homepage\u2014from subtle teasers to hero-eligible banners\u2014to anchor the public view of the universe.",
       "items": [
         {
           "id": "home_atlasforge_overview",
-          "label": "AtlasForge overview block",
-          "description": "Include AtlasForge umbrella overview on homepage.",
+          "label": "How strong should the AtlasForge overview be on the homepage?",
+          "description": "Sets whether the homepage lightly introduces the world or foregrounds a full section explaining the AtlasForge canon.",
           "type": "select",
           "options": [
             "Omit",
@@ -1249,8 +1249,8 @@
         },
         {
           "id": "home_atlasv_block",
-          "label": "Atlas-V feature block",
-          "description": "Include Atlas-V how-it-works or feature block on homepage.",
+          "label": "How prominently should Atlas-V appear on the homepage?",
+          "description": "Determines if Atlas-V is merely tagged or featured with a full section or hero presence as the creative intelligence.",
           "type": "select",
           "options": [
             "Omit",
@@ -1265,8 +1265,8 @@
         },
         {
           "id": "home_atlasstudio_block",
-          "label": "AtlasStudio teaser block",
-          "description": "Include AtlasStudio teaser block on homepage.",
+          "label": "How visible should AtlasStudio be on the homepage?",
+          "description": "Controls whether the workshop is only hinted at or given a full/hero treatment inviting builders.",
           "type": "select",
           "options": [
             "Omit",
@@ -1281,8 +1281,8 @@
         },
         {
           "id": "home_oia_highlight",
-          "label": "Octopus in Action highlight",
-          "description": "Placement of OIA highlight block on homepage.",
+          "label": "How much should Octopus in Action be showcased on the homepage?",
+          "description": "Decides if OIA is omitted or highlighted as a flagship world anchoring the canon for visitors.",
           "type": "select",
           "options": [
             "Omit",
@@ -1297,8 +1297,8 @@
         },
         {
           "id": "home_labs_block",
-          "label": "Labs / Under Construction block",
-          "description": "Include labs/under construction block on homepage.",
+          "label": "How do we feature Labs/under-construction work on the homepage?",
+          "description": "Sets whether experiments stay hidden or appear as teasers or sections signaling ongoing lore.",
           "type": "select",
           "options": [
             "Omit",
@@ -1313,8 +1313,8 @@
         },
         {
           "id": "home_governance_blurb",
-          "label": "Governance/Safety blurb",
-          "description": "Include governance/safety blurb on homepage.",
+          "label": "How visible should governance and safety be on the homepage?",
+          "description": "Determines if governance is absent, a footer note, or a notable section explaining guardrails in-world.",
           "type": "select",
           "options": [
             "Omit",
@@ -1329,8 +1329,8 @@
         },
         {
           "id": "home_contact_block",
-          "label": "Contact / Work With Us block",
-          "description": "Include contact/hiring/partner CTA block on homepage.",
+          "label": "How prominent should Contact / Work With Us be on the homepage?",
+          "description": "Clarifies whether outreach is tucked away or made a strong invitation within the home narrative.",
           "type": "select",
           "options": [
             "Omit",
@@ -1345,8 +1345,8 @@
         },
         {
           "id": "home_media_block",
-          "label": "Media lane block",
-          "description": "Include media lanes sampler block on homepage.",
+          "label": "How much Media presence should the homepage carry?",
+          "description": "Sets whether media stories are omitted or showcased to demonstrate the AtlasForge storytelling wing.",
           "type": "select",
           "options": [
             "Omit",
@@ -1361,8 +1361,8 @@
         },
         {
           "id": "home_games_block",
-          "label": "Games outputs block",
-          "description": "Include games outputs summary block on homepage.",
+          "label": "How visibly should Games outputs appear on the homepage?",
+          "description": "Decides if games are absent, lightly teased, or celebrated as full sections or hero material.",
           "type": "select",
           "options": [
             "Omit",
@@ -1377,8 +1377,8 @@
         },
         {
           "id": "home_atlas_engine_block",
-          "label": "Atlas Engine explainer block",
-          "description": "Include high-level Atlas Engine explainer on homepage.",
+          "label": "How much should the Atlas Engine be explained on the homepage?",
+          "description": "Determines whether the engine is hidden, briefly noted, or given a full section describing its role in canon.",
           "type": "select",
           "options": [
             "Omit",
@@ -1393,8 +1393,8 @@
         },
         {
           "id": "home_case_studies",
-          "label": "Case studies / examples",
-          "description": "Include case studies or example projects block.",
+          "label": "How prominently should case studies/examples feature on the homepage?",
+          "description": "Sets whether detailed examples remain off-page or are elevated to sections that prove the canon in action.",
           "type": "select",
           "options": [
             "Omit",
@@ -1409,8 +1409,8 @@
         },
         {
           "id": "home_roadmap_snippet",
-          "label": "Roadmap teaser",
-          "description": "Include roadmap/coming-soon teaser block.",
+          "label": "How much roadmap content should live on the homepage?",
+          "description": "Decides if future plans are omitted or teased/featured to show where the universe is heading.",
           "type": "select",
           "options": [
             "Omit",
@@ -1425,8 +1425,8 @@
         },
         {
           "id": "home_merch_block",
-          "label": "Merch feature block",
-          "description": "Include merch callout on homepage.",
+          "label": "How present should Merch be on the homepage?",
+          "description": "Controls whether the market is absent, teased, or spotlighted as part of the core story.",
           "type": "select",
           "options": [
             "Omit",
@@ -1441,8 +1441,8 @@
         },
         {
           "id": "home_testimonials",
-          "label": "Testimonials / quotes",
-          "description": "Whether to include testimonials/quotes block.",
+          "label": "How visible should testimonials/quotes be on the homepage?",
+          "description": "Determines if external voices stay hidden or become proof points anchoring trust in the canon narrative.",
           "type": "select",
           "options": [
             "Omit",
@@ -1457,8 +1457,8 @@
         },
         {
           "id": "home_newsletter",
-          "label": "Newsletter signup",
-          "description": "Include newsletter signup on homepage.",
+          "label": "How strong should the newsletter/signup invite be?",
+          "description": "Sets whether ongoing updates are omitted or highlighted as a primary way to follow the evolving universe.",
           "type": "select",
           "options": [
             "Omit",
@@ -1475,13 +1475,13 @@
     },
     {
       "id": "subsidiaries_and_lines",
-      "title": "Subsidiaries and Lines",
-      "description": "Decide which sub-labels/subsidiaries are canon and their seriousness.",
+      "title": "Subsidiary lines and their standing in canon",
+      "description": "Determine which spin-offs, labs, and specialty lines are treated as core houses in the AtlasForge world versus future or side experiments on the site.",
       "items": [
         {
           "id": "subs_hypercasual_forge",
-          "label": "Hypercasual Forge line",
-          "description": "Status and seriousness of Hypercasual Forge sub-label.",
+          "label": "What status should Hypercasual Forge hold in canon?",
+          "description": "Decides if Hypercasual Forge is paused, future, side, or core label for lightweight game drops.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1496,8 +1496,8 @@
         },
         {
           "id": "subs_template_factory",
-          "label": "Template Factory line",
-          "description": "Status of Template Factory templates marketplace.",
+          "label": "How official is Template Factory as part of the universe?",
+          "description": "Sets whether template kits are speculative, side offerings, or a core label for starter packs.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1512,8 +1512,8 @@
         },
         {
           "id": "subs_merchforge",
-          "label": "MerchForge line",
-          "description": "Status of MerchForge merch and drops.",
+          "label": "What canon priority should MerchForge receive?",
+          "description": "Determines if MerchForge is a future idea, a side logistics arm, or a core branded market.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1528,8 +1528,8 @@
         },
         {
           "id": "subs_narrative_labs",
-          "label": "Narrative Labs line",
-          "description": "Status of Narrative Labs storytelling experiments.",
+          "label": "How active is Narrative Labs within the canon?",
+          "description": "Clarifies whether narrative experiments are dormant, occasional, or a core creative label.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1544,8 +1544,8 @@
         },
         {
           "id": "subs_documentary_labs",
-          "label": "Documentary Labs line",
-          "description": "Status of Documentary Labs content line.",
+          "label": "What standing should Documentary Labs have?",
+          "description": "Decides if documentary work is future, side, or a major line in the AtlasForge slate.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1560,8 +1560,8 @@
         },
         {
           "id": "subs_voiceforge",
-          "label": "VoiceForge line",
-          "description": "Status of VoiceForge narration/voice label.",
+          "label": "How recognized is VoiceForge as a canon voice/talent line?",
+          "description": "Sets whether VoiceForge is exploratory, a side label, or a core provider across worlds.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1576,8 +1576,8 @@
         },
         {
           "id": "subs_skb",
-          "label": "SKB / Audio label line",
-          "description": "Status of SKB music/audio label.",
+          "label": "How prominent should SKB / audio label be as a line?",
+          "description": "Determines if SKB is inactive, occasional, or a core label for sound across the universe.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1592,8 +1592,8 @@
         },
         {
           "id": "subs_game_tools",
-          "label": "Game tools line",
-          "description": "Status of game tools utilities spun out of AtlasStudio.",
+          "label": "How official is the game tools line within the canon?",
+          "description": "Clarifies whether game tools are experimental, side offerings, or core builder kits tied to AtlasForge.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1608,8 +1608,8 @@
         },
         {
           "id": "subs_media_labeling",
-          "label": "Media label grouping",
-          "description": "Whether media lanes stay under AtlasForge Media or split into sub-labels.",
+          "label": "How should we treat media labeling as a line?",
+          "description": "Decides if grouping media is speculative, side, or a core canon label for releases.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1624,8 +1624,8 @@
         },
         {
           "id": "subs_labs_bucket",
-          "label": "Labs bucket",
-          "description": "Status of umbrella Labs bucket for experiments.",
+          "label": "What status should the general Labs bucket have?",
+          "description": "Sets whether Labs is inactive, future, or an active core container for experiments.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1640,8 +1640,8 @@
         },
         {
           "id": "subs_partnerships",
-          "label": "Partnerships line",
-          "description": "Status of external partnership/collab line (services/consult).",
+          "label": "How should Partnerships be positioned as a line?",
+          "description": "Determines if partnerships are paused, invite-only, or a core canon pillar for co-creation.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1656,8 +1656,8 @@
         },
         {
           "id": "subs_education",
-          "label": "Education / learning line",
-          "description": "Status of educational content/products line.",
+          "label": "What role should Education/learning play in canon?",
+          "description": "Clarifies whether learning tracks are speculative, side, or a core label for outreach.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1672,8 +1672,8 @@
         },
         {
           "id": "subs_toolkits",
-          "label": "Toolkits / starter packs",
-          "description": "Status of starter packs/toolkits offering.",
+          "label": "How active should Toolkits/starter packs be?",
+          "description": "Decides if toolkits are dormant, occasional, or a core way to onboard creators in-world.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1688,8 +1688,8 @@
         },
         {
           "id": "subs_research",
-          "label": "Research notes line",
-          "description": "Status of research/whitepaper style outputs.",
+          "label": "What standing should Research notes have in canon?",
+          "description": "Sets whether research remains internal, occasional, or a core stream of published insights.",
           "type": "select",
           "options": [
             "NotPursuing",
@@ -1706,13 +1706,13 @@
     },
     {
       "id": "game_ip_status",
-      "title": "Game IP Status",
-      "description": "Capture high-level status/visibility for IP without deep design.",
+      "title": "Game/IP readiness and public canon status",
+      "description": "Clarify which games and worlds are canonized, how visible they are, and how tightly they connect to AtlasForge tooling and merch in public storytelling.",
       "items": [
         {
           "id": "game_oia_status",
-          "label": "Octopus in Action status",
-          "description": "High-level status/priority for Octopus in Action.",
+          "label": "What is Octopus in Action's production status in canon?",
+          "description": "Clarifies whether OIA is concept-only or advanced toward flagship release within the universe.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1727,8 +1727,8 @@
         },
         {
           "id": "game_oia_visibility",
-          "label": "Octopus in Action visibility",
-          "description": "How OIA appears on the site (hero vs section vs nav vs footer).",
+          "label": "How visible should Octopus in Action be to the public?",
+          "description": "Determines if OIA stays internal, softly mentioned, or highlighted as a flagship world on the site.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1743,8 +1743,8 @@
         },
         {
           "id": "game_neighborhood_watch_status",
-          "label": "Neighborhood Watch status",
-          "description": "Status for Neighborhood Watch concept.",
+          "label": "What is Neighborhood Watch's production status in canon?",
+          "description": "Sets whether Neighborhood Watch is an idea, prototype, or active development line in the slate.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1759,8 +1759,8 @@
         },
         {
           "id": "game_neighborhood_watch_visibility",
-          "label": "Neighborhood Watch visibility",
-          "description": "Whether Neighborhood Watch is mentioned publicly.",
+          "label": "How visible should Neighborhood Watch be publicly?",
+          "description": "Decides if the title is hidden, hinted, or promoted as a major world.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1775,8 +1775,8 @@
         },
         {
           "id": "game_flagship_rotation",
-          "label": "Flagship game rotation",
-          "description": "Whether to call out a single flagship or rotating slate.",
+          "label": "How should we handle flagship game rotation in canon?",
+          "description": "Clarifies whether we avoid naming flagships, rotate mentions, or lock a world as the lead signal.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1791,8 +1791,8 @@
         },
         {
           "id": "game_backlog_listing",
-          "label": "Backlog game listing",
-          "description": "Whether to list backlog/concept games publicly.",
+          "label": "How much of the game backlog should we list publicly?",
+          "description": "Determines if backlog titles stay internal or appear as future-phase teasers in the canon.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1807,8 +1807,8 @@
         },
         {
           "id": "game_engine_callout",
-          "label": "Powered-by callout",
-          "description": "Whether to note Atlas-V/Studio powering games.",
+          "label": "How should powered-by messaging connect games to Atlas-V/Engine?",
+          "description": "Sets whether engine mentions are omitted, subtle, or boldly tying worlds to our technology.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1823,8 +1823,8 @@
         },
         {
           "id": "game_platforms",
-          "label": "Platform targeting",
-          "description": "Platform mentions (web, mobile, PC).",
+          "label": "How clearly should we state target platforms for games?",
+          "description": "Decides if platform plans remain vague or are canonized as part of each world's public profile.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1839,8 +1839,8 @@
         },
         {
           "id": "game_update_cadence",
-          "label": "Update cadence",
-          "description": "How often updates/devlogs for games are shown.",
+          "label": "How openly should we describe game update cadence?",
+          "description": "Determines whether release rhythm stays internal or becomes part of the public canon for worlds.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1855,8 +1855,8 @@
         },
         {
           "id": "game_oia_demo_depth",
-          "label": "OIA demo depth",
-          "description": "Depth of OIA demo/preview shown on site.",
+          "label": "How deep should public demos for OIA go?",
+          "description": "Sets whether OIA demos are absent, light, or detailed walkthroughs anchoring the world's canon.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1871,8 +1871,8 @@
         },
         {
           "id": "game_new_ip_slots",
-          "label": "New IP slots",
-          "description": "Whether to reserve space for new IP mentions.",
+          "label": "How many new IP slots should we acknowledge in canon?",
+          "description": "Decides if new worlds are unannounced, hinted, or clearly promised as future arrivals.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1887,8 +1887,8 @@
         },
         {
           "id": "game_services_positioning",
-          "label": "Game services positioning",
-          "description": "Whether to mention game services/consulting.",
+          "label": "How do we position game services work (co-dev/ports) in canon?",
+          "description": "Clarifies whether services stay hidden or are presented as an active line alongside our own IP.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1903,8 +1903,8 @@
         },
         {
           "id": "game_cross_promo",
-          "label": "Cross-promo with Studio/Atlas-V",
-          "description": "How games cross-promote tools and Atlas-V.",
+          "label": "How tightly should games cross-promote AtlasStudio/Atlas-V?",
+          "description": "Determines if cross-promo is omitted or made a visible part of how worlds tie back to the tools.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1919,8 +1919,8 @@
         },
         {
           "id": "game_merch_linkage",
-          "label": "Merch linkage",
-          "description": "Whether game pages link to related merch.",
+          "label": "How should games link to merch in canon?",
+          "description": "Sets whether merch tie-ins are absent, hinted, or strongly connected to each world publicly.",
           "type": "select",
           "options": [
             "ConceptOnly",
@@ -1937,13 +1937,13 @@
     },
     {
       "id": "media_lines_and_focus",
-      "title": "Media Lines and Focus",
-      "description": "Decide which content lanes exist and how visible they are.",
+      "title": "Media lanes and narrative focus",
+      "description": "Control which media series are canonized, how often they speak, and how they link to other parts of the AtlasForge universe.",
       "items": [
         {
           "id": "media_true_crime",
-          "label": "True crime / mystery lane",
-          "description": "Status of true crime/mystery media lane.",
+          "label": "What focus should true crime/mystery media have in canon?",
+          "description": "Decides if this lane is inactive or rises to major/flagship series status in our storytelling mix.",
           "type": "select",
           "options": [
             "NotActive",
@@ -1958,8 +1958,8 @@
         },
         {
           "id": "media_educational",
-          "label": "Educational / STEM lane",
-          "description": "Status of educational/STEM/practical engineering media lane.",
+          "label": "How active should educational/STEM media be?",
+          "description": "Clarifies whether educational content is occasional or a major focus within the universe.",
           "type": "select",
           "options": [
             "NotActive",
@@ -1974,8 +1974,8 @@
         },
         {
           "id": "media_commentary",
-          "label": "Commentary / essays lane",
-          "description": "Status of commentary/essays/analysis lane.",
+          "label": "How prominent should commentary/essay content be?",
+          "description": "Determines if commentary is rare, regular, or a flagship way we speak to the audience.",
           "type": "select",
           "options": [
             "NotActive",
@@ -1990,8 +1990,8 @@
         },
         {
           "id": "media_devlogs",
-          "label": "Devlogs / behind-the-scenes",
-          "description": "Status of devlogs/behind-the-scenes lane.",
+          "label": "How visible should devlogs/behind-the-scenes media be?",
+          "description": "Sets whether devlogs are hidden, occasional, or a major channel showing the canon being built.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2006,8 +2006,8 @@
         },
         {
           "id": "media_grouping_under_brand",
-          "label": "Grouping under AtlasForge Media",
-          "description": "Whether media is primarily grouped under AtlasForge Media.",
+          "label": "How tightly should media be grouped under the AtlasForge Media brand?",
+          "description": "Decides if grouping is light or if all lanes consolidate under a clear imprint in public.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2022,8 +2022,8 @@
         },
         {
           "id": "media_coming_soon_framing",
-          "label": "Coming-soon framing",
-          "description": "Whether media is referenced mainly as coming soon.",
+          "label": "How should we frame coming-soon media in canon?",
+          "description": "Determines whether future series are quietly noted or actively teased as part of the narrative.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2038,8 +2038,8 @@
         },
         {
           "id": "media_distribution",
-          "label": "Distribution channels",
-          "description": "Mentioned distribution channels (site, YouTube, podcast).",
+          "label": "How much detail about distribution channels should we share?",
+          "description": "Clarifies whether platforms stay vague or are spelled out as part of media canonization.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2054,8 +2054,8 @@
         },
         {
           "id": "media_schedule",
-          "label": "Release cadence",
-          "description": "Cadence messaging for media releases.",
+          "label": "How openly should we state media release cadence?",
+          "description": "Decides if cadence is hidden, occasional, or a major promise to the audience.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2070,8 +2070,8 @@
         },
         {
           "id": "media_voice_credit",
-          "label": "Voice talent credit",
-          "description": "Whether to feature VoiceForge/voice talent credits.",
+          "label": "How should voice talent be credited in canon?",
+          "description": "Sets whether voice credits are omitted, occasional, or a major part of how we present media.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2086,8 +2086,8 @@
         },
         {
           "id": "media_safety_note",
-          "label": "Safety/governance note",
-          "description": "Whether to attach governance/safety note to media lane.",
+          "label": "How visible should safety/governance notes be in media?",
+          "description": "Determines if safety is unstated or explicitly included as part of media releases.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2102,8 +2102,8 @@
         },
         {
           "id": "media_interactivity",
-          "label": "Interactive media experiments",
-          "description": "Status of interactive/branching media experiments.",
+          "label": "How much emphasis on interactive media experiments should we show?",
+          "description": "Clarifies whether interactive work is hidden, occasional, or a flagship series in the canon.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2118,8 +2118,8 @@
         },
         {
           "id": "media_merch_link",
-          "label": "Media-to-merch linkage",
-          "description": "Whether media pages link to merch drops.",
+          "label": "How should media connect to merch in canon?",
+          "description": "Decides if merch tie-ins are absent or emphasized as a major linkage from stories to products.",
           "type": "select",
           "options": [
             "NotActive",
@@ -2136,13 +2136,13 @@
     },
     {
       "id": "governance_and_public_boundaries",
-      "title": "Governance and Public Boundaries",
-      "description": "Decide how much governance, safety, and internal process we show publicly.",
+      "title": "Governance visibility and public boundaries",
+      "description": "Decide how much of our safety, compliance, and decision machinery is canonized for public audiences versus kept internal.",
       "items": [
         {
           "id": "governance_page_presence",
-          "label": "Governance/Safety page presence",
-          "description": "Whether there is a Governance/Safety page.",
+          "label": "How visible should the Governance/Safety presence be?",
+          "description": "Sets whether governance lives internally or gains page presence that signals our guardrails to the public.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2156,8 +2156,8 @@
         },
         {
           "id": "governance_transparency",
-          "label": "Transparency level",
-          "description": "How much governance and safety is shown publicly.",
+          "label": "How transparent should governance decisions be in canon?",
+          "description": "Determines if we only hint at oversight or provide summaries/examples or deep public documentation.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2171,8 +2171,8 @@
         },
         {
           "id": "governance_engine_framing",
-          "label": "Engine framing",
-          "description": "How Atlas Engine is framed (capabilities vs safety).",
+          "label": "How should we frame the engine's governance posture?",
+          "description": "Clarifies whether governance is implied or explicitly described as part of the Atlas-V/engine story.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2186,8 +2186,8 @@
         },
         {
           "id": "governance_internal_tools",
-          "label": "Internal tools mention",
-          "description": "Whether to mention internal tools like decision engine conceptually.",
+          "label": "How much should we mention internal governance tools?",
+          "description": "Decides if tools stay internal or are referenced as part of the canon toolkit shown to visitors.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2201,8 +2201,8 @@
         },
         {
           "id": "governance_constraints_ack",
-          "label": "Constraints acknowledgment",
-          "description": "Whether to acknowledge constraints/guardrails in marketing text.",
+          "label": "How openly should we acknowledge Atlas-V constraints?",
+          "description": "Sets whether constraints are unspoken or spelled out with examples of what the engine will and won't do.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2216,8 +2216,8 @@
         },
         {
           "id": "governance_compliance",
-          "label": "Compliance statement",
-          "description": "Whether to include compliance/ethics statements.",
+          "label": "How explicit should compliance statements be?",
+          "description": "Determines if compliance is omitted or presented clearly to anchor trust in the canon.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2231,8 +2231,8 @@
         },
         {
           "id": "governance_contact",
-          "label": "Governance contact",
-          "description": "Whether to provide governance/safety contact pathway.",
+          "label": "How should people reach governance/safety contacts?",
+          "description": "Clarifies whether contact paths are absent, filtered, or clearly provided for oversight discussions.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2246,8 +2246,8 @@
         },
         {
           "id": "governance_public_docs",
-          "label": "Public docs linkage",
-          "description": "Whether to link governance docs from site.",
+          "label": "How much should we link to public governance docs?",
+          "description": "Decides if documents stay internal, lightly linked, or fully shared as part of transparency.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2261,8 +2261,8 @@
         },
         {
           "id": "governance_decision_console",
-          "label": "Decision console visibility",
-          "description": "Whether to hint at internal decision console existence.",
+          "label": "How visible should the decision console be in canon?",
+          "description": "Sets whether the console is internal, hinted, or highlighted as part of how we lock decisions.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2276,8 +2276,8 @@
         },
         {
           "id": "governance_user_data",
-          "label": "User data stance",
-          "description": "Whether to state data/privacy stance for tooling.",
+          "label": "How clearly should we state our user data stance?",
+          "description": "Determines whether data policies are implied or explicitly communicated to the audience.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2291,8 +2291,8 @@
         },
         {
           "id": "governance_audience_clarity",
-          "label": "Audience clarity",
-          "description": "Clarify whether site speaks to players, partners, or builders.",
+          "label": "How explicit should we be about our intended audience?",
+          "description": "Clarifies whether target audiences remain vague or are clearly stated with examples.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2306,8 +2306,8 @@
         },
         {
           "id": "governance_feedback",
-          "label": "Feedback channel",
-          "description": "Whether to include feedback/reporting channel for governance.",
+          "label": "How open should feedback channels be for governance topics?",
+          "description": "Decides if feedback stays internal, filtered, or openly encouraged regarding canon and safety.",
           "type": "select",
           "options": [
             "InternalOnly",
@@ -2323,13 +2323,13 @@
     },
     {
       "id": "collaboration_and_contact_policy",
-      "title": "Collaboration and Contact Policy",
-      "description": "Decide how collaboration, hiring, and contact touchpoints are presented.",
+      "title": "Collaboration openings and contact signals",
+      "description": "Set how open the doors are for partners, hiring, press, and community, framed both as in-world entryways and practical contact channels.",
       "items": [
         {
           "id": "contact_sales",
-          "label": "Work with us CTA",
-          "description": "Placement and strength of work-with-us/service CTA.",
+          "label": "How strong should the Work With Us/sales invitation be?",
+          "description": "Sets whether partner outreach is closed, filtered, or proactively encouraged as part of the storyline.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2344,8 +2344,8 @@
         },
         {
           "id": "contact_hiring",
-          "label": "Hiring signals",
-          "description": "Whether to signal hiring/open roles.",
+          "label": "What hiring signals should we send in canon?",
+          "description": "Determines if hiring is silent, invite-only, or openly promoted as part of the world narrative.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2360,8 +2360,8 @@
         },
         {
           "id": "contact_newsletter",
-          "label": "Newsletter opt-in",
-          "description": "Whether to promote newsletter signup beyond homepage footer.",
+          "label": "How should newsletter opt-in be framed?",
+          "description": "Clarifies whether ongoing updates are discouraged, filtered, or proactively invited to follow the canon.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2376,8 +2376,8 @@
         },
         {
           "id": "contact_social_links",
-          "label": "Social links",
-          "description": "Whether to include social links (X/YouTube/etc.).",
+          "label": "How visible should social links be as channels into the universe?",
+          "description": "Decides if social routes are hidden, lightly offered, or openly promoted for engagement.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2392,8 +2392,8 @@
         },
         {
           "id": "contact_partner_filters",
-          "label": "Partner filter messaging",
-          "description": "Whether to include partner fit criteria on contact pathways.",
+          "label": "How selective should partner intake messaging be?",
+          "description": "Sets whether we discourage inbound, filter via forms, or actively recruit partnerships in canon.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2408,8 +2408,8 @@
         },
         {
           "id": "contact_support_channel",
-          "label": "Support channel",
-          "description": "Whether to list support/help channel.",
+          "label": "How should support channels be presented?",
+          "description": "Determines if support is closed, limited, or openly accessible for users of AtlasForge tools and worlds.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2424,8 +2424,8 @@
         },
         {
           "id": "contact_press",
-          "label": "Press/contact for media",
-          "description": "Whether to list press contact for media inquiries.",
+          "label": "How open should press/media contact be?",
+          "description": "Clarifies whether press outreach is discouraged, filtered, or actively encouraged with clear contact paths.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2440,8 +2440,8 @@
         },
         {
           "id": "contact_community",
-          "label": "Community hub",
-          "description": "Whether to reference community/Discord hub.",
+          "label": "How do we frame community hubs in canon?",
+          "description": "Decides if community spaces are absent, lightly offered, or openly promoted for AtlasForge fans.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2456,8 +2456,8 @@
         },
         {
           "id": "contact_demo_requests",
-          "label": "Demo request handling",
-          "description": "How demo requests are handled (form vs email vs none).",
+          "label": "How should demo requests be handled and signaled?",
+          "description": "Sets whether demos are unavailable, filtered, or openly invited as part of the public journey.",
           "type": "select",
           "options": [
             "NoPublicContact",
@@ -2472,8 +2472,8 @@
         },
         {
           "id": "contact_privacy",
-          "label": "Privacy note",
-          "description": "Whether to include privacy/data handling note on contact forms.",
+          "label": "How visible should privacy notes be alongside contact options?",
+          "description": "Determines if privacy messaging is minimal or clearly communicated wherever users reach out.",
           "type": "select",
           "options": [
             "NoPublicContact",

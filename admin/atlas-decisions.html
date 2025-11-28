@@ -5,160 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AtlasForge Decision Console (Internal)</title>
   <link rel="stylesheet" href="/styles/main.css">
-  <style>
-    :root {
-      --card-bg: rgba(255, 255, 255, 0.9);
-      --border-color: #e0e4ea;
-      --text-muted: #4a5568;
-      --bg-light: #f6f8fb;
-    }
-
-    body {
-      background: var(--bg-light);
-      color: #1a202c;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .page-shell {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 48px 24px 64px;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 32px;
-    }
-
-    .header h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-      letter-spacing: -0.02em;
-    }
-
-    .header p {
-      margin: 0;
-      color: var(--text-muted);
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(17, 24, 39, 0.06);
-      padding: 20px;
-      margin-bottom: 20px;
-    }
-
-    .lock-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .lock-card label {
-      font-weight: 600;
-    }
-
-    .lock-card input {
-      flex: 1 1 220px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      font-size: 14px;
-    }
-
-    .btn {
-      background: linear-gradient(135deg, #111827, #1f2937);
-      color: #fff;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: transform 0.08s ease, box-shadow 0.12s ease;
-      box-shadow: 0 6px 14px rgba(17, 24, 39, 0.12);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 20px rgba(17, 24, 39, 0.16);
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .block-card h2 {
-      margin: 0 0 6px;
-      font-size: 20px;
-    }
-
-    .block-card p.block-description {
-      margin: 0 0 12px;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    .block-item {
-      border-top: 1px solid var(--border-color);
-      padding: 12px 0;
-    }
-
-    .block-item:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .block-item label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .item-description {
-      margin: 0 0 8px;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    select, textarea, input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 10px 12px;
-      font-size: 14px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: #fff;
-      box-sizing: border-box;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-
-    .export-card textarea {
-      min-height: 180px;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    }
-
-    .status-message {
-      margin-top: 10px;
-      color: #e53e3e;
-      font-size: 14px;
-    }
-
-    .meta-line {
-      color: var(--text-muted);
-      font-size: 13px;
-      margin: 4px 0 0;
-    }
-  </style>
+  <link rel="stylesheet" href="/styles/admin.css">
 </head>
 <body>
+  <div class="admin-topbar" aria-label="AtlasForge Decision Console">
+    <div class="admin-topbar__icon" aria-hidden="true">🔒</div>
+    <div class="admin-topbar__text">
+      <div class="admin-topbar__title">AtlasForge Decision Console</div>
+      <div class="admin-topbar__subtitle">Internal decision blocks — changes are stored in this browser only.</div>
+    </div>
+  </div>
   <main class="page-shell">
     <header class="header">
       <h1>AtlasForge Decision Console (Internal)</h1>
@@ -171,221 +27,53 @@
         <input type="password" id="admin-code" placeholder="Admin code" autocomplete="off">
         <button class="btn" id="unlock-btn" type="button">Unlock</button>
       </div>
+      <p class="meta-line">This console is not visible in site navigation.</p>
       <div class="status-message" id="gate-status"></div>
     </section>
 
     <section id="console" class="hidden">
-      <section class="card" id="meta-card">
-        <h2>Decision Blocks</h2>
-        <p class="meta-line" id="meta-phase"></p>
-        <p class="meta-line" id="meta-description"></p>
+      <section class="card goblin-card hidden" id="goblin-sequence" aria-live="polite" aria-label="Goblin mode initialization">
+        <h2>Goblin Mode Initialization</h2>
+        <p class="meta-line">Running a playful setup sequence before loading the console.</p>
+        <div id="goblin-log" class="goblin-log"></div>
       </section>
 
-      <div id="blocks-container"></div>
+      <div id="console-body" class="hidden">
+        <section class="card directions-card" aria-labelledby="human-directions-title">
+          <h2 id="human-directions-title">How to use this console (for Human)</h2>
+          <ol class="directions-list">
+            <li><strong>Review each block.</strong> Expand decision blocks one by one. Read the labels and descriptions to understand each choice.</li>
+            <li><strong>Make selections.</strong> Choose an option for every item. If unsure, pick the closest fit and refine later.</li>
+            <li><strong>Save progress (optional).</strong> Your choices stay in this browser. You can return on this device without losing them.</li>
+            <li><strong>Export decisions as JSON.</strong> Use <em>Export JSON</em> to view the export or <em>Download JSON</em> to save it locally.</li>
+            <li><strong>Send the JSON to the Master Architect.</strong> In your current chat with the Master Architect (ChatGPT, Copilot, etc.), paste the JSON in a code block or upload the file. Note that it is the latest export from the AtlasForge Decision Console.</li>
+            <li><strong>Wait for instructions.</strong> The Master Architect will review the JSON and share next steps (canon resolution, content updates, or workflow design).</li>
+          </ol>
+          <p class="meta-line">This page does not commit changes automatically. Decisions become canon only after the Master Architect processes your JSON export.</p>
+        </section>
 
-      <section class="card export-card">
-        <h2>Export Decisions</h2>
-        <p class="block-description">Export the current selections as JSON for Basil/ChatGPT.</p>
-        <button class="btn" id="export-btn" type="button">Export Decisions JSON</button>
-        <textarea id="export-output" aria-label="Exported decisions" placeholder="Your exported JSON will appear here." readonly></textarea>
-      </section>
+        <section class="card" id="meta-card">
+          <h2>Decision Blocks</h2>
+          <p class="meta-line" id="meta-phase"></p>
+          <p class="meta-line" id="meta-description"></p>
+          <div class="status-message" id="console-status" role="status" aria-live="polite"></div>
+        </section>
+
+        <div id="blocks-container"></div>
+
+        <section class="card export-card">
+          <h2>Export Decisions</h2>
+          <p class="block-description">Export the current selections as JSON for Basil/ChatGPT.</p>
+          <div class="export-actions">
+            <button class="btn" id="export-btn" type="button">Export Decisions JSON</button>
+            <button class="btn btn-secondary" id="download-btn" type="button">Download JSON</button>
+          </div>
+          <textarea id="export-output" aria-label="Exported decisions" placeholder="Your exported JSON will appear here." readonly></textarea>
+        </section>
+      </div>
     </section>
   </main>
 
-  <script>
-    (function () {
-      const ADMIN_CODE = 'OCTO-ADMIN-ALPHA';
-      const STORAGE_KEY = 'atlas_decisions_v1';
-      const gateStatus = document.getElementById('gate-status');
-      const adminGate = document.getElementById('admin-gate');
-      const consoleSection = document.getElementById('console');
-      const blocksContainer = document.getElementById('blocks-container');
-      const exportBtn = document.getElementById('export-btn');
-      const exportOutput = document.getElementById('export-output');
-      const metaPhase = document.getElementById('meta-phase');
-      const metaDescription = document.getElementById('meta-description');
-
-      let decisions = {};
-      let dataCache = null;
-
-      const loadStoredDecisions = () => {
-        try {
-          const stored = localStorage.getItem(STORAGE_KEY);
-          if (stored) {
-            decisions = JSON.parse(stored) || {};
-          }
-        } catch (err) {
-          console.warn('Unable to parse stored decisions', err);
-          decisions = {};
-        }
-      };
-
-      const persistDecisions = () => {
-        try {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(decisions));
-        } catch (err) {
-          console.warn('Unable to persist decisions', err);
-        }
-      };
-
-      const setStatus = (message, isError = true) => {
-        gateStatus.textContent = message;
-        gateStatus.style.color = isError ? '#e53e3e' : '#047857';
-      };
-
-      const handleInputChange = (itemId, input) => {
-        let value;
-        if (input.type === 'checkbox') {
-          value = input.checked;
-        } else {
-          value = input.value;
-        }
-        decisions[itemId] = value;
-        persistDecisions();
-      };
-
-      const createControl = (item) => {
-        const storedValue = decisions[item.id];
-        let control;
-
-        if (item.type === 'select') {
-          control = document.createElement('select');
-          item.options.forEach((opt) => {
-            const option = document.createElement('option');
-            option.value = opt;
-            option.textContent = opt;
-            control.appendChild(option);
-          });
-          control.value = storedValue !== undefined ? storedValue : item.default || '';
-        } else if (item.type === 'checkbox') {
-          control = document.createElement('input');
-          control.type = 'checkbox';
-          control.checked = storedValue !== undefined ? Boolean(storedValue) : Boolean(item.default);
-        } else {
-          control = document.createElement('textarea');
-          control.rows = 3;
-          control.value = storedValue !== undefined ? storedValue : (item.default || '');
-        }
-
-        control.id = item.id;
-        control.addEventListener('change', () => handleInputChange(item.id, control));
-        return control;
-      };
-
-      const renderBlocks = (data) => {
-        blocksContainer.innerHTML = '';
-        if (!data || !Array.isArray(data.blocks)) {
-          const error = document.createElement('p');
-          error.textContent = 'No decision blocks available.';
-          blocksContainer.appendChild(error);
-          return;
-        }
-
-        metaPhase.textContent = data.meta?.phase ? `Phase: ${data.meta.phase}` : '';
-        metaDescription.textContent = data.meta?.description || '';
-
-        data.blocks.forEach((block) => {
-          const section = document.createElement('section');
-          section.className = 'card block-card';
-
-          const title = document.createElement('h2');
-          title.textContent = block.title || 'Untitled Block';
-          section.appendChild(title);
-
-          if (block.description) {
-            const desc = document.createElement('p');
-            desc.className = 'block-description';
-            desc.textContent = block.description;
-            section.appendChild(desc);
-          }
-
-          if (Array.isArray(block.items)) {
-            block.items.forEach((item) => {
-              const itemRow = document.createElement('div');
-              itemRow.className = 'block-item';
-
-              const label = document.createElement('label');
-              label.setAttribute('for', item.id);
-              label.textContent = item.label || item.id;
-              itemRow.appendChild(label);
-
-              if (item.description) {
-                const itemDesc = document.createElement('p');
-                itemDesc.className = 'item-description';
-                itemDesc.textContent = item.description;
-                itemRow.appendChild(itemDesc);
-              }
-
-              const control = createControl(item);
-              itemRow.appendChild(control);
-
-              if (decisions[item.id] === undefined && item.default !== undefined) {
-                decisions[item.id] = item.type === 'checkbox' ? Boolean(item.default) : item.default;
-                persistDecisions();
-              }
-
-              section.appendChild(itemRow);
-            });
-          }
-
-          blocksContainer.appendChild(section);
-        });
-      };
-
-      const exportDecisions = () => {
-        if (!dataCache) {
-          setStatus('Load decision blocks before exporting.', true);
-          return;
-        }
-        const exportPayload = {
-          meta: {
-            phase: dataCache.meta?.phase || 'Unknown Phase',
-            version: dataCache.meta?.version || 'unknown',
-            exported_at: new Date().toISOString(),
-          },
-          decisions,
-        };
-        const output = JSON.stringify(exportPayload, null, 2);
-        exportOutput.value = output;
-        exportOutput.focus();
-        exportOutput.select();
-        setStatus('Decisions exported. You can copy the JSON below.', false);
-      };
-
-      const loadData = () => {
-        fetch('/data/decision_blocks.json')
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Failed to load decision blocks: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            dataCache = data;
-            renderBlocks(data);
-            setStatus('Decision blocks loaded.', false);
-          })
-          .catch((err) => {
-            console.error(err);
-            setStatus('Unable to load decision blocks. Please try again later.');
-          });
-      };
-
-      document.getElementById('unlock-btn').addEventListener('click', () => {
-        const code = document.getElementById('admin-code').value.trim();
-        if (code === ADMIN_CODE) {
-          adminGate.classList.add('hidden');
-          consoleSection.classList.remove('hidden');
-          setStatus('');
-          loadStoredDecisions();
-          loadData();
-        } else {
-          setStatus('Incorrect code.');
-        }
-      });
-
-      exportBtn.addEventListener('click', exportDecisions);
-    })();
-  </script>
+  <script src="/scripts/admin-decisions.js"></script>
 </body>
 </html>

@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "phase": "Phase 5",
+    "version": "phase5-decisions-v2",
+    "exported_at": "static-seed",
+    "description": "Seed export for Phase 6 handoff; update via admin console for latest state."
+  },
+  "decisions": [
+    {
+      "id": "NAV-001",
+      "category": "Navigation",
+      "priority": "High",
+      "dependency": "Run 1 nav lock",
+      "question": "Where should SKB live in the IA so Games stays clear and Media remains grouped?",
+      "options": [
+        "Footer-only with audio note",
+        "Secondary nav link",
+        "Hidden with contextual mentions"
+      ],
+      "recommended": "Secondary nav link",
+      "reasoning": "Keeps SKB discoverable without crowding the top-level nav.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Requires council confirmation before Figma nav components."
+    },
+    {
+      "id": "GOV-001",
+      "category": "Governance",
+      "priority": "Medium",
+      "dependency": "Homepage/Atlas-V sections",
+      "question": "What depth should governance blurbs use on homepage vs Atlas-V vs About?",
+      "options": [
+        "Single sentence everywhere",
+        "Expanded note on Atlas-V only",
+        "Homepage + Atlas-V short, About slightly longer"
+      ],
+      "recommended": "Homepage + Atlas-V short, About slightly longer",
+      "reasoning": "Balances visibility with non-technical tone.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Aligns with safety positioning without exposing internals."
+    },
+    {
+      "id": "VIS-002",
+      "category": "Visual/UI",
+      "priority": "High",
+      "dependency": "Run 4 token pass",
+      "question": "Should hero badges use the darker accent or neutral surface for contrast across brands?",
+      "options": [
+        "Dark accent badge",
+        "Neutral soft badge",
+        "Brand-colored badge per pillar"
+      ],
+      "recommended": "Neutral soft badge",
+      "reasoning": "Prevents clashes across playful vs. serious pages.",
+      "status": "Approved",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "Yes",
+      "notes": "Lock for component library and Figma hero symbols."
+    },
+    {
+      "id": "IA-003",
+      "category": "IA/Structure",
+      "priority": "Medium",
+      "dependency": "Labs/Blog shells",
+      "question": "How should hidden-but-live Labs and Blog be teased without cluttering navigation?",
+      "options": [
+        "Footer-only teasers",
+        "Inline teaser blocks on homepage",
+        "Contextual mentions on Labs-related pages"
+      ],
+      "recommended": "Footer-only teasers",
+      "reasoning": "Meets canon requirement while keeping nav minimal.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Figma must show inactive state for hidden links."
+    },
+    {
+      "id": "BRD-004",
+      "category": "Brand",
+      "priority": "High",
+      "dependency": "Tone matrix",
+      "question": "How strict should the tone gating be for playful titles like OIA when sharing space with Atlas-V blocks?",
+      "options": [
+        "Hard separation by sections",
+        "Light blending with badges",
+        "Unified neutral tone across page"
+      ],
+      "recommended": "Hard separation by sections",
+      "reasoning": "Protects Atlas-V seriousness while keeping OIA playful.",
+      "status": "Approved",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "Yes",
+      "notes": "Enforce with Figma page-level tone chips."
+    },
+    {
+      "id": "PH-005",
+      "category": "Placeholder Modules",
+      "priority": "Medium",
+      "dependency": "Run 5 metadata pass",
+      "question": "What metadata set should placeholder cards surface for Media and Labs grids?",
+      "options": [
+        "Title + tag only",
+        "Title + tag + status",
+        "Title + tag + status + runtime/length"
+      ],
+      "recommended": "Title + tag + status + runtime/length",
+      "reasoning": "Gives designers intent without overcommitting content.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Needs confirmation for consistent card heights."
+    },
+    {
+      "id": "PFG-006",
+      "category": "Pre-Figma Requirements",
+      "priority": "Medium",
+      "dependency": "CTA hierarchy tokens",
+      "question": "Which CTA hierarchy should Figma cement for primary/secondary/ghost?",
+      "options": [
+        "Solid/Outline/Ghost",
+        "Gradient/Neutral/Ghost",
+        "Solid/Soft/Ghost"
+      ],
+      "recommended": "Solid/Soft/Ghost",
+      "reasoning": "Matches Phase 5 pre-Figma buttons while keeping flexibility.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Phase 6 to apply to nav buttons and hero CTAs."
+    },
+    {
+      "id": "FUT-007",
+      "category": "Future Suggestions",
+      "priority": "Low",
+      "dependency": "Phase 6 backlog",
+      "question": "Should we expose devlog snippets inside Media or keep them blog-only after Phase 6?",
+      "options": [
+        "Expose on Media grid",
+        "Keep in hidden blog",
+        "Hybrid: single highlight on Media"
+      ],
+      "recommended": "Hybrid: single highlight on Media",
+      "reasoning": "Keeps Media focused while hinting at deeper stories.",
+      "status": "Later",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Add to backlog for Figma storytelling templates."
+    },
+    {
+      "id": "CRB-008",
+      "category": "Cross-Brand Logic",
+      "priority": "Medium",
+      "dependency": "AtlasStudio + Games blocks",
+      "question": "How should Powered by Atlas-V and Audio by SKB badges stack inside Games and OIA heroes?",
+      "options": [
+        "Single inline row",
+        "Separate pill row under hero",
+        "Contextual badges near CTA"
+      ],
+      "recommended": "Separate pill row under hero",
+      "reasoning": "Keeps CTAs clean while preserving cross-brand credits.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Need spacing tokens for stacked badges."
+    },
+    {
+      "id": "CNT-009",
+      "category": "Content",
+      "priority": "Medium",
+      "dependency": "Run 3 copy lock",
+      "question": "How many concept vault entries should appear on Games before Phase 6 to avoid overscope?",
+      "options": [
+        "Three concepts",
+        "Five concepts",
+        "Full vault with filters"
+      ],
+      "recommended": "Three concepts",
+      "reasoning": "Keeps promises manageable ahead of production art.",
+      "status": "Pending",
+      "blocked_by_canon": "No",
+      "ready_for_phase6": "No",
+      "notes": "Sync with OIA page to avoid duplication."
+    }
+  ]
+}

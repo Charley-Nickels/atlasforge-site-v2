@@ -3,74 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AtlasForge Decision Console (Internal)</title>
+  <meta name="robots" content="noindex,nofollow">
+  <title>AtlasForge Decisions Admin</title>
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="/styles/admin.css">
 </head>
-<body>
-  <div class="admin-topbar" aria-label="AtlasForge Decision Console">
+<body class="admin-shell">
+  <a class="admin-skip" href="#main-content">Skip to main content</a>
+  <div class="admin-topbar" aria-label="AtlasForge Decisions Admin">
     <div class="admin-topbar__icon" aria-hidden="true">🔒</div>
     <div class="admin-topbar__text">
-      <div class="admin-topbar__title">AtlasForge Decision Console</div>
-      <div class="admin-topbar__subtitle">Internal decision blocks — changes are stored in this browser only.</div>
+      <div class="admin-topbar__title">AtlasForge Decisions Console</div>
+      <div class="admin-topbar__subtitle">Phase 5 decisions with canon freeze + export for Phase 6 handoff.</div>
     </div>
   </div>
-  <main class="page-shell">
+
+  <main class="page-shell" id="main-content" role="main">
     <header class="header">
-      <h1>AtlasForge Decision Console (Internal)</h1>
-      <p>Load decision blocks, capture choices, and export JSON for ChatGPT.</p>
+      <h1>Phase 5 Decisions Admin</h1>
+      <p>Track canon-ready decisions, freeze approvals, and export the JSON for Phase 6.</p>
     </header>
 
-    <section class="card" id="admin-gate">
-      <div class="lock-card">
-        <label for="admin-code">Enter admin code to access the decision console.</label>
-        <input type="password" id="admin-code" placeholder="Admin code" autocomplete="off">
-        <button class="btn" id="unlock-btn" type="button">Unlock</button>
+    <section class="card" id="controls-panel">
+      <div class="controls-grid">
+        <div>
+          <label for="filter-category">Filter by category</label>
+          <select id="filter-category" aria-label="Filter by category">
+            <option value="all">All categories</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter-priority">Filter by priority</label>
+          <select id="filter-priority" aria-label="Filter by priority">
+            <option value="all">All priorities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter-status">Filter by status</label>
+          <select id="filter-status" aria-label="Filter by status">
+            <option value="all">All statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Dropped">Dropped</option>
+            <option value="Later">Later</option>
+          </select>
+        </div>
       </div>
-      <p class="meta-line">This console is not visible in site navigation.</p>
-      <div class="status-message" id="gate-status"></div>
+      <div class="controls-actions">
+        <label class="freeze-toggle">
+          <input type="checkbox" id="canon-freeze" />
+          <span>Canon Freeze (locks approved items)</span>
+        </label>
+        <div class="export-actions">
+          <button class="btn" id="export-btn" type="button">Export JSON</button>
+          <button class="btn btn-secondary" id="download-btn" type="button">Download JSON</button>
+        </div>
+      </div>
+      <p class="meta-line">Filters update the list below. Canon Freeze prevents edits to approved decisions while exporting remains available.</p>
+      <!-- Designer Note: Decisions UI designed for Phase 6 canon export -->
     </section>
 
-    <section id="console" class="hidden">
-      <section class="card goblin-card hidden" id="goblin-sequence" aria-live="polite" aria-label="Goblin mode initialization">
-        <h2>Goblin Mode Initialization</h2>
-        <p class="meta-line">Running a playful setup sequence before loading the console.</p>
-        <div id="goblin-log" class="goblin-log"></div>
-      </section>
+    <section class="card" id="admin-meta">
+      <h2>Decisions Inventory</h2>
+      <p class="meta-line">Includes brand, visual, navigation, governance, placeholder, cross-brand, pre-Figma, and future-facing questions.</p>
+      <div class="status-message" id="console-status" role="status" aria-live="polite"></div>
+      <div id="decisions-container" class="decisions-grid" aria-live="polite"></div>
+    </section>
 
-      <div id="console-body" class="hidden">
-        <section class="card directions-card" aria-labelledby="human-directions-title">
-          <h2 id="human-directions-title">How to use this console (for Human)</h2>
-          <ol class="directions-list">
-            <li><strong>Review each block.</strong> Expand decision blocks one by one. Read the labels and descriptions to understand each choice.</li>
-            <li><strong>Make selections.</strong> Choose an option for every item. If unsure, pick the closest fit and refine later.</li>
-            <li><strong>Save progress (optional).</strong> Your choices stay in this browser. You can return on this device without losing them.</li>
-            <li><strong>Export decisions as JSON.</strong> Use <em>Export JSON</em> to view the export or <em>Download JSON</em> to save it locally.</li>
-            <li><strong>Send the JSON to the Master Architect.</strong> In your current chat with the Master Architect (ChatGPT, Copilot, etc.), paste the JSON in a code block or upload the file. Note that it is the latest export from the AtlasForge Decision Console.</li>
-            <li><strong>Wait for instructions.</strong> The Master Architect will review the JSON and share next steps (canon resolution, content updates, or workflow design).</li>
-          </ol>
-          <p class="meta-line">This page does not commit changes automatically. Decisions become canon only after the Master Architect processes your JSON export.</p>
-        </section>
-
-        <section class="card" id="meta-card">
-          <h2>Decision Blocks</h2>
-          <p class="meta-line" id="meta-phase"></p>
-          <p class="meta-line" id="meta-description"></p>
-          <div class="status-message" id="console-status" role="status" aria-live="polite"></div>
-        </section>
-
-        <div id="blocks-container"></div>
-
-        <section class="card export-card">
-          <h2>Export Decisions</h2>
-          <p class="block-description">Export the current selections as JSON for Basil/ChatGPT.</p>
-          <div class="export-actions">
-            <button class="btn" id="export-btn" type="button">Export Decisions JSON</button>
-            <button class="btn btn-secondary" id="download-btn" type="button">Download JSON</button>
-          </div>
-          <textarea id="export-output" aria-label="Exported decisions" placeholder="Your exported JSON will appear here." readonly></textarea>
-        </section>
+    <section class="card" id="special-tracks">
+      <div class="special-columns">
+        <div>
+          <h3>Decisions Requiring Human Narrative Input</h3>
+          <ul id="narrative-list" class="meta-list"></ul>
+        </div>
+        <div>
+          <h3>Design Prototype Approvals</h3>
+          <ul id="prototype-list" class="meta-list"></ul>
+        </div>
+        <div>
+          <h3>Brainstorm New Suggestions (Phase 6 Seeds)</h3>
+          <ul id="brainstorm-list" class="meta-list"></ul>
+          <!-- Designer Note: JSON schema must be maintained for future phases -->
+        </div>
       </div>
+    </section>
+
+    <section class="card export-card">
+      <h2>Export Decisions JSON</h2>
+      <p class="block-description">Exports the visible decision set into Phase 5 schema for Figma handoff and canon review.</p>
+      <textarea id="export-output" aria-label="Exported decisions" placeholder="Your exported JSON will appear here." readonly></textarea>
     </section>
   </main>
 

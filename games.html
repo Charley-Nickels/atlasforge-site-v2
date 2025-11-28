@@ -9,95 +9,134 @@
 </head>
 <body class="mf-shell brand-atlasforge">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
-  <header class="mf-header">
+  <header class="mf-header" role="banner">
     <div class="mf-header-inner">
       <a class="mf-logo" href="index.html">
         <span class="mf-logo-mark"><img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" width="55" height="55" loading="lazy" decoding="async" /></span>
         <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="atlasstudio.html">AtlasStudio</a>
-        <a href="atlasv.html">Atlas-V Engine</a>
-        <a href="oia.html">Octopus in Action</a>
-        <a href="skb.html">S/K/B</a>
-        <a href="games.html">Games</a>
-        <a href="about.html">About</a>
-      </nav>
+      <div class="mf-nav-group" id="mf-primary-nav">
+        <nav class="mf-nav mf-nav--primary" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="atlasv.html">Atlas-V</a>
+          <a href="atlasstudio.html">AtlasStudio</a>
+          <a href="games.html">Games</a>
+          <a href="media.html">Media</a>
+        </nav>
+        <nav class="mf-nav mf-nav--secondary" aria-label="Secondary">
+          <a href="skb.html">SKB</a>
+        </nav>
+      </div>
       <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
 
-  <main class="mf-main" id="main-content">
+  <main class="mf-main" id="main-content" role="main">
+    <!-- Designer Note: Visual component rules for Figma translation -->
     <section class="mf-hero mf-section">
-      <!-- Future hero background asset:
-           <img src="assets/backgrounds/sections/bg_section-light_noise.png" class="hero-bg" alt="" /> -->
       <div class="mf-container mf-hero-inner">
         <div>
-          <div class="mf-hero-badge">Games & Projects</div>
-          <h1>Showcase of outputs built on the AtlasForge vision.</h1>
-          <p>Each project is presented as a finished experience, not a tool. Explore teasers and devlog excerpts.</p>
+          <div class="mf-hero-badge">AtlasForge Games</div>
+          <h1>Playful worlds with professional delivery.</h1>
+          <p>Flagship experiences built on the governed Atlas stack—Powered by Atlas-V, built in AtlasStudio workflow, and finished with SKB audio.</p>
+          <div class="mf-hero-actions">
+            <a class="mf-button mf-button--primary" href="oia.html">Visit Octopus in Action</a>
+            <a class="mf-button mf-button--ghost" href="#concepts">Explore the Concept Vault</a>
+          </div>
         </div>
+        <aside class="mf-hero-visual">
+          <h2>Our game philosophy</h2>
+          <p>Make worlds that invite curiosity, keep governance light, and respect players with clear, transparent systems.</p>
+        </aside>
       </div>
     </section>
 
     <section class="mf-section">
       <div class="mf-container mf-gallery">
         <header class="mf-section-header">
-          <div class="mf-eyebrow">Highlights</div>
-          <h2>Projects in focus</h2>
+          <div class="mf-eyebrow">Flagship</div>
+          <h2>Octopus in Action (OIA)</h2>
+          <p>Our playful city-builder where an octopus mayor keeps the town running. Created by AtlasForge Games. Powered by Atlas-V. Audio by SKB.</p>
         </header>
         <div class="mf-gallery-grid">
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Octopus in Action teaser</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Screen flow concept</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block"></div><p>Audio showcase</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder concept art"></div><p>District planner mock</p><p class="mf-meta">Metadata: systems art · Status: swap with layout render</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder UI mock"></div><p>Mayor dashboard preview</p><p class="mf-meta">Metadata: HUD concept · Status: wireframe</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder audio chip"></div><p>SKB soundtrack chips</p><p class="mf-meta">Metadata: Audio by SKB · Status: badge placeholder</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="concepts" class="mf-section">
+      <div class="mf-container mf-case-studies">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Concept Vault</div>
+          <h2>Ideas in the lab</h2>
+          <p>Playable concepts under evaluation—kept public-safe and expectations-managed.</p>
+        </header>
+        <div class="mf-case-grid">
+          <article class="mf-card"><h3>Neighborhood Watch</h3><p>Co-op stealth missions to protect a cozy block.</p><p class="mf-note">Experiment from Labs.</p><p class="mf-meta">Tag: Stealth co-op · Status: prototype</p></article>
+          <article class="mf-card"><h3>Sim Management</h3><p>Operations sim with Atlas-V Guard assisting logistics.</p><p class="mf-note">Powered by Atlas-V.</p><p class="mf-meta">Tag: Systems sim · Status: concept vault</p></article>
+          <article class="mf-card"><h3>Viz Sim</h3><p>Visualization sandbox for flows and routes.</p><p class="mf-note">Built in AtlasStudio workflow.</p><p class="mf-meta">Tag: Sandbox · Status: placeholder</p></article>
+          <article class="mf-card"><h3>Micro Worlds</h3><p>Bite-sized experiments that may graduate to full titles.</p><p class="mf-note">Labs to Games pipeline.</p><p class="mf-meta">Tag: Experimental · Status: may graduate</p></article>
         </div>
       </div>
     </section>
 
     <section class="mf-section">
-      <div class="mf-container mf-case-studies">
+      <div class="mf-container mf-flow-panel">
         <header class="mf-section-header">
-          <div class="mf-eyebrow">Pipeline</div>
-          <h2>How the stack supports delivery</h2>
+          <div class="mf-eyebrow">Our philosophy</div>
+          <h2>Playful tone, production discipline</h2>
+          <p>Games are joyful but run on serious craft: clear scope, steady delivery, and cross-brand alignment.</p>
         </header>
-        <div class="mf-case-grid">
-          <article class="mf-card"><h3>AtlasStudio decisions</h3><p>Tasks and routes converge into clear milestones.</p></article>
-          <article class="mf-card"><h3>Atlas-V guardrails</h3><p>Constraints keep project flows stable.</p></article>
-          <article class="mf-card"><h3>OIA + SKB inputs</h3><p>World content and soundtracks feed into the final cut.</p></article>
-        </div>
+        <div class="mf-flow-track"><strong>Powered by Atlas-V</strong><p>Runs, prompts, and guardrails keep builds consistent.</p></div>
+        <div class="mf-flow-track"><strong>Built in AtlasStudio workflow</strong><p>Assets, beats, and tasks travel through cozy tabs.</p></div>
+        <div class="mf-flow-track"><strong>Audio by SKB</strong><p>Soundscapes sequenced alongside milestones.</p></div>
+        <div class="mf-flow-track"><strong>Experiment from Labs</strong><p>New mechanics are incubated safely before shipping.</p></div>
+      </div>
+    </section>
+
+    <section class="mf-section">
+      <div class="mf-container mf-intelligence">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Designer notes</div>
+          <h2>Pre-Figma guidance</h2>
+        </header>
+        <ul class="mf-designer-notes">
+          <li>Tone is playful/ professional—keep copy bright but grounded.</li>
+          <li>Flagship OIA should always be the first game representation.</li>
+          <li>Concept Vault cards must manage expectations: experimental, may change.</li>
+          <li>Use Powered by Atlas-V and Audio by SKB badges subtly in hero/supporting blocks.</li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="mf-footer">
+  <footer class="mf-footer" role="contentinfo">
     <div class="mf-container mf-footer-inner">
-      <div>
+      <div class="mf-footer-brand">
         <strong>AtlasForge Interactive</strong>
-        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
-      </div>
-      <div>
-        <h4>Products</h4>
-        <ul class="mf-footer-list">
-          <li><a href="atlasstudio.html">AtlasStudio</a></li>
-          <li><a href="atlasv.html">Atlas-V Engine</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Worlds & Labs</h4>
-        <ul class="mf-footer-list">
-          <li><a href="oia.html">Octopus in Action</a></li>
-          <li><a href="skb.html">S/K/B</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul class="mf-footer-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="games.html">Games</a></li>
-        </ul>
+        <p class="mf-footer-note">Governed stack for games, tools, and audio.</p>
+        <a class="mf-footer-link" href="mailto:hello@atlasforge.gg">hello@atlasforge.gg</a>
         <small>© <span data-year></span> AtlasForge Interactive</small>
-        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="mf-footer-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="atlasv.html">Atlas-V</a></li>
+          <li><a href="atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="media.html">Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Secondary</h4>
+        <ul class="mf-footer-list">
+          <li><a href="skb.html">SKB</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <p class="mf-footer-note">Contact and merch live in the footer only.</p>
         <a href="/admin/atlas-decisions.html" class="mf-footer-admin-link">Admin</a>
       </div>
     </div>

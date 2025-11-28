@@ -16,15 +16,18 @@
         <span class="mf-logo-mark"><img src="../assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" width="55" height="55" loading="lazy" decoding="async" /></span>
         <span class="mf-logo-text">AtlasForge Interactive</span>
       </a>
-      <nav class="mf-nav" id="mf-primary-nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
-        <a href="../atlasstudio.html">AtlasStudio</a>
-        <a href="../atlasv.html">Atlas-V Engine</a>
-        <a href="../oia.html">Octopus in Action</a>
-        <a href="../skb.html">S/K/B</a>
-        <a href="../games.html">Games</a>
-        <a href="../about.html">About</a>
-      </nav>
+      <div class="mf-nav-group" id="mf-primary-nav">
+        <nav class="mf-nav mf-nav--primary" aria-label="Primary">
+          <a href="../index.html">Home</a>
+          <a href="../atlasv.html">Atlas-V</a>
+          <a href="../atlasstudio.html">AtlasStudio</a>
+          <a href="../games.html">Games</a>
+          <a href="../media.html">Media</a>
+        </nav>
+        <nav class="mf-nav mf-nav--secondary" aria-label="Secondary">
+          <a href="../skb.html">SKB</a>
+        </nav>
+      </div>
       <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
     </div>
   </header>
@@ -63,32 +66,30 @@
 
   <footer class="mf-footer">
     <div class="mf-container mf-footer-inner">
-      <div>
+      <div class="mf-footer-brand">
         <strong>AtlasForge Interactive</strong>
-        <p class="mf-hero-cta-note">Pre-launch build, temporarily noindex.</p>
-      </div>
-      <div>
-        <h4>Products</h4>
-        <ul class="mf-footer-list">
-          <li><a href="../atlasstudio.html">AtlasStudio</a></li>
-          <li><a href="../atlasv.html">Atlas-V Engine</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Worlds & Labs</h4>
-        <ul class="mf-footer-list">
-          <li><a href="../oia.html">Octopus in Action</a></li>
-          <li><a href="../skb.html">S/K/B</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul class="mf-footer-list">
-          <li><a href="../about.html">About</a></li>
-          <li><a href="../games.html">Games</a></li>
-        </ul>
+        <p class="mf-footer-note">Governed stack for games, tools, and audio.</p>
+        <a class="mf-footer-link" href="mailto:hello@atlasforge.gg">hello@atlasforge.gg</a>
         <small>© <span data-year></span> AtlasForge Interactive</small>
-        <p class="mf-footer-note">Pre-launch build, temporarily noindex.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../atlasv.html">Atlas-V</a></li>
+          <li><a href="../atlasstudio.html">AtlasStudio</a></li>
+          <li><a href="../games.html">Games</a></li>
+          <li><a href="../media.html">Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Secondary</h4>
+        <ul class="mf-footer-list">
+          <li><a href="../skb.html">SKB</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+        <p class="mf-footer-note">Contact and merch live in the footer only.</p>
+        <a href="/admin/atlas-decisions.html" class="mf-footer-admin-link">Admin</a>
       </div>
     </div>
   </footer>

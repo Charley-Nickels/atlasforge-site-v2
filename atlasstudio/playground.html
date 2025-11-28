@@ -10,6 +10,8 @@
 </head>
 <body class="mf-shell brand-atlasstudio">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
+  <!-- Component: Global.Nav.Top -->
+  <!-- Component: Global.Nav.MobileToggle -->
   <header class="mf-header">
     <div class="mf-header-inner">
       <a class="mf-logo" href="../index.html">
@@ -32,13 +34,71 @@
     </div>
   </header>
 
+  <!-- Component: AS.PlaygroundShell -->
   <main class="mf-main mf-section" id="main-content">
     <div class="mf-container">
       <header class="mf-section-header">
         <div class="mf-eyebrow">AtlasStudio Playground</div>
         <h1>Tri-panel workstation simulation</h1>
-        <p>All interactions are front-end only. No backend exists.</p>
+        <p>All interactions are front-end only. No backend exists, and every panel stays cozy and supportive.</p>
       </header>
+      <!-- Component: AS.TabsStrip -->
+      <!-- Component: AS.PlaygroundShell -->
+      <div class="mf-studio-shell mf-shell-window">
+        <div class="mf-shell-top">
+          <div class="mf-shell-tabs" aria-label="Playground tabs">
+            <span class="mf-chip-pill is-active">Game</span>
+            <span class="mf-chip-pill">Excel</span>
+            <span class="mf-chip-pill">Policy</span>
+            <span class="mf-chip-pill">Writing</span>
+            <span class="mf-chip-pill">Web</span>
+          </div>
+          <div class="mf-shell-actions">
+            <button class="mf-button mf-button--ghost" type="button">Concept Action</button>
+            <button class="mf-button mf-button--ghost" type="button">Snapshot</button>
+          </div>
+        </div>
+          <div class="mf-shell-grid">
+          <div class="mf-shell-pane">
+            <h3>Task drawer</h3>
+            <ul class="mf-shell-list">
+              <li><span class="mf-chip">High</span> Harbor flow orchestration</li>
+              <li><span class="mf-chip">Medium</span> Cozy workstation polish</li>
+              <li><span class="mf-chip">Low</span> Policy blurb rewrite</li>
+              <li><span class="mf-chip">Audio</span> SKB stem staging</li>
+            </ul>
+            <p class="mf-meta">Workflow preview · Guard + Navigator watching quietly</p>
+          </div>
+          <div class="mf-shell-pane">
+            <h3>Workspace preview</h3>
+            <div class="mf-shell-preview">
+              <div class="mf-skeleton mf-skeleton--block" aria-label="Mock window"></div>
+              <div class="mf-shell-row">
+                <div class="mf-chip">Navigator</div>
+                <div class="mf-chip">Guard</div>
+                <div class="mf-chip">Memory</div>
+                <div class="mf-chip">FlowSim</div>
+              </div>
+              <p class="mf-note">Conceptual layout · Screenshots swap for Figma art</p>
+            </div>
+          </div>
+          <!-- Component: AS.GhostConsole -->
+          <div class="mf-shell-pane mf-shell-pane--terminal">
+            <div class="mf-panel-header">
+              <h3>Codex ghost sidecar</h3>
+              <span class="mf-chip">Atlas-V</span>
+            </div>
+            <pre class="mf-shell-terminal" aria-label="Faux terminal feed">$ atlas-v listen --mode cozy
+> Guard: soft check on policy copy.
+> Navigator: tab rail aligned to Game focus.
+> Memory: SKB cues pinned for later.
+> FlowSim: gentle pulse ready for preview.
+            </pre>
+            <p class="mf-meta">Static console preview · Powered by Atlas-V wiring</p>
+          </div>
+        </div>
+      </div>
+      <!-- Component: Global.SectionWrapper -->
       <div class="mf-workstation">
         <aside class="mf-panel">
           <div class="mf-panel-header">
@@ -78,9 +138,20 @@
           <div data-snapshot-list class="mf-snapshots"></div>
         </aside>
       </div>
+      <!-- Component: Global.SectionWrapper -->
+      <div class="mf-shell-sidebar">
+        <h3>Cozy workstation block</h3>
+        <p>Friendly chips, soft gradients, and playful cards keep the Playground warm while staying governed.</p>
+        <div class="mf-shell-stack">
+          <div class="mf-card"><strong>Project tree</strong><p>Worlds, Labs, and Media branches sit beside tasks.</p></div>
+          <div class="mf-card"><strong>Mock file cards</strong><p>Shows saved snapshots and faux entities.</p></div>
+          <div class="mf-card"><strong>Concept buttons</strong><p>CTA hierarchy mirrors the tri-panel actions.</p></div>
+        </div>
+      </div>
     </div>
   </main>
 
+  <!-- Component: Global.Footer.Base -->
   <footer class="mf-footer">
     <div class="mf-container mf-footer-inner">
       <div class="mf-footer-brand">

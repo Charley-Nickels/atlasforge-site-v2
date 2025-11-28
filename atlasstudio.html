@@ -10,6 +10,8 @@
 </head>
 <body class="mf-shell brand-atlasstudio">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
+  <!-- Component: Global.Nav.Top -->
+  <!-- Component: Global.Nav.MobileToggle -->
   <header class="mf-header" role="banner">
     <div class="mf-header-inner">
       <a class="mf-logo" href="index.html">
@@ -33,7 +35,10 @@
   </header>
 
   <main class="mf-main" id="main-content" role="main">
+    <!-- Layout: AtlasStudio.Section.Hero -->
     <!-- Designer Note: Visual component rules for Figma translation -->
+    <!-- Component: AS.Hero -->
+    <!-- Component: Global.Hero.Primary -->
     <section class="mf-hero mf-hero--studio mf-section">
       <div class="mf-container mf-hero-inner">
         <div>
@@ -41,21 +46,119 @@
             <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" class="mf-hero-badge-logo" loading="lazy" decoding="async" />
             <span>AtlasStudio Workstation</span>
           </div>
-          <h1>The cozy, governed workstation built with Atlas-V guidance.</h1>
-          <p>AtlasStudio is the pre-release surface where creators plan, arrange, and preview work in a supportive, zero-code flow powered by Atlas-V.</p>
+          <h1>Cozy, governed workstation guided by Atlas-V.</h1>
+          <p>AtlasStudio is a pre-release, supportive surface for arranging runs, sketching tabs, and previewing how Atlas-V keeps teams calm and canon-aligned.</p>
           <div class="mf-hero-actions">
-            <a class="mf-button mf-button--primary" href="#tabs">See the tabs</a>
+            <a class="mf-button mf-button--primary" href="atlasstudio/playground.html">Open the Playground</a>
+            <a class="mf-button mf-button--ghost" href="#tabs">See the tabs</a>
             <a class="mf-button mf-button--ghost" href="#scenario">Day in the Studio</a>
-            <a class="mf-button mf-button--ghost" href="#coming-soon">Coming Soon</a>
           </div>
         </div>
         <aside class="mf-hero-visual">
           <h2>Powered by Atlas-V</h2>
-          <p>Navigator, Guard, Memory, and FlowSim keep the cozy UI aligned with canon while staying friendly to new creators.</p>
+          <p>Navigator, Guard, Memory, and FlowSim quietly guide tasks, decisions, and previews inside the studio shell.</p>
         </aside>
       </div>
     </section>
 
+    <!-- Component: AS.PlaygroundShell -->
+    <!-- Layout: AtlasStudio.Section.PlaygroundShell -->
+    <section class="mf-section mf-shell-section">
+      <div class="mf-container">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Playground restoration</div>
+          <h2>Studio shell with multi-tab mock and ghost sidecar</h2>
+          <p>Restored conceptual UI showing the tri-panel workstation, faux-terminal, task drawer, and tab rail used before Phase 5 rewrites—now tuned to the cozy tone.</p>
+        </header>
+        <div class="mf-studio-shell">
+          <div class="mf-shell-window">
+            <div class="mf-shell-top">
+              <div class="mf-shell-tabs" aria-label="Playground tabs">
+                <span class="mf-chip-pill is-active">Game</span>
+                <span class="mf-chip-pill">Excel</span>
+                <span class="mf-chip-pill">Policy</span>
+                <span class="mf-chip-pill">Writing</span>
+                <span class="mf-chip-pill">Web</span>
+              </div>
+              <div class="mf-shell-actions">
+                <button class="mf-button mf-button--ghost">Concept Action</button>
+                <button class="mf-button mf-button--ghost">Snapshot</button>
+              </div>
+            </div>
+            <div class="mf-shell-grid">
+              <div class="mf-shell-pane">
+                <h3>Task drawer</h3>
+                <ul class="mf-shell-list">
+                  <li><span class="mf-chip">High</span> Harbor flow orchestration</li>
+                  <li><span class="mf-chip">Medium</span> Cozy workstation polish</li>
+                  <li><span class="mf-chip">Low</span> Policy blurb rewrite</li>
+                  <li><span class="mf-chip">Audio</span> SKB stem staging</li>
+                </ul>
+                <p class="mf-meta">Workflow preview · Guard + Navigator watching quietly</p>
+              </div>
+              <div class="mf-shell-pane">
+                <h3>Workspace preview</h3>
+                <div class="mf-shell-preview">
+                  <div class="mf-skeleton mf-skeleton--block" aria-label="Mock window"></div>
+                  <div class="mf-shell-row">
+                    <div class="mf-chip">Navigator</div>
+                    <div class="mf-chip">Guard</div>
+                    <div class="mf-chip">Memory</div>
+                    <div class="mf-chip">FlowSim</div>
+                  </div>
+                  <p class="mf-note">Conceptual layout · Screenshots swap for Figma art</p>
+                </div>
+              </div>
+              <div class="mf-shell-pane mf-shell-pane--terminal">
+                <div class="mf-panel-header">
+                  <h3>Codex ghost sidecar</h3>
+                  <span class="mf-chip">Atlas-V</span>
+                </div>
+                <pre class="mf-shell-terminal" aria-label="Faux terminal feed">$ atlas-v listen --mode cozy
+> Guard: soft check on policy copy.
+> Navigator: tab rail aligned to Game focus.
+> Memory: SKB cues pinned for later.
+> FlowSim: gentle pulse ready for preview.
+                </pre>
+                <p class="mf-meta">Static console preview · Powered by Atlas-V wiring</p>
+              </div>
+            </div>
+          </div>
+          <aside class="mf-shell-sidebar">
+            <h3>Cozy workstation block</h3>
+            <p>Friendly chips, soft gradients, and playful cards keep the Playground warm while staying governed.</p>
+            <div class="mf-shell-stack">
+              <div class="mf-card"><strong>Project tree</strong><p>Worlds, Labs, and Media branches sit beside tasks.</p></div>
+              <div class="mf-card"><strong>Mock file cards</strong><p>Shows saved snapshots and faux entities.</p></div>
+              <div class="mf-card"><strong>Concept buttons</strong><p>CTA hierarchy mirrors the tri-panel actions.</p></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.DayInStudio -->
+    <section class="mf-section">
+      <div class="mf-container mf-stack-overview">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Guided by the Atlas stack</div>
+        
+          <h2>How AtlasStudio fits</h2>
+          <p>AtlasStudio is the prototype workstation surface in a governed stack that combines Atlas Engine, Atlas-V, and AtlasForge teams.</p>
+        </header>
+        <div class="mf-template-grid">
+          <article class="mf-card"><h3>Atlas Engine</h3><p>Structures work into phases and runs, setting guardrails and workflows.</p></article>
+          <article class="mf-card"><h3>Atlas-V</h3><p>The copilot applying Engine structure and powering Playground interactions.</p></article>
+          <article class="mf-card"><h3>AtlasForge Teams</h3><p>Games, SKB, and Media receive the governed outputs organized in Studio.</p></article>
+          <article class="mf-card"><h3>AtlasStudio</h3><p>Visualizes tasks, decisions, and previews so teams stay cozy and aligned.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Component: AS.TabsStrip -->
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.TabsPreview -->
     <section id="tabs" class="mf-section">
       <div class="mf-container mf-stack-overview">
         <header class="mf-section-header">
@@ -73,20 +176,8 @@
       </div>
     </section>
 
-    <section id="scenario" class="mf-section">
-      <div class="mf-container mf-templates">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Day in the Studio</div>
-          <h2>Cozy flow for creators</h2>
-          <p>A morning-to-launch loop that keeps teams calm, guided, and canon-aligned.</p>
-        </header>
-        <div class="mf-flow-track"><strong>Morning setup</strong><p>Atlas-V proposes runs; you pin tasks for the day.</p></div>
-        <div class="mf-flow-track"><strong>Midday build</strong><p>Switch tabs—Game, Excel, Policy—to keep outputs moving without breaking tone.</p></div>
-        <div class="mf-flow-track"><strong>Afternoon review</strong><p>Guard surfaces conflicts; Memory reminds you of approvals.</p></div>
-        <div class="mf-flow-track"><strong>Evening snapshot</strong><p>Run reports capture progress for AtlasForge Games and SKB release planning.</p></div>
-      </div>
-    </section>
-
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.GhostConsole -->
     <section class="mf-section">
       <div class="mf-container mf-modes">
         <header class="mf-section-header">
@@ -103,24 +194,60 @@
       </div>
     </section>
 
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.Scenario -->
+    <section id="scenario" class="mf-section">
+      <div class="mf-container mf-templates">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Day in the Studio</div>
+          <h2>Cozy flow for creators</h2>
+          <p>A morning-to-launch loop that keeps teams calm, guided, and canon-aligned.</p>
+        </header>
+        <div class="mf-flow-track"><strong>Morning setup</strong><p>Atlas-V proposes runs; you pin tasks for the day.</p></div>
+        <div class="mf-flow-track"><strong>Midday build</strong><p>Switch tabs—Game, Excel, Policy—to keep outputs moving without breaking tone.</p></div>
+        <div class="mf-flow-track"><strong>Afternoon review</strong><p>Guard surfaces conflicts; Memory reminds you of approvals.</p></div>
+        <div class="mf-flow-track"><strong>Evening snapshot</strong><p>Run reports capture progress for AtlasForge Games and SKB release planning.</p></div>
+      </div>
+    </section>
+
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.SandboxPanels -->
     <section class="mf-section">
       <div class="mf-container mf-showcase">
         <header class="mf-section-header">
-          <div class="mf-eyebrow">Conceptual diagrams</div>
-          <h2>Pre-Figma visual placeholders</h2>
-          <p>HTML placeholders ready to swap with Figma art in Phase 6.</p>
+          <div class="mf-eyebrow">Conceptual sandboxes</div>
+          <h2>Restored UI mock surfaces</h2>
+          <p>Pre-Figma placeholders for the cozy workstation, tab rail, faux-terminal, and mock file cards.</p>
         </header>
         <div class="mf-showcase-grid">
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>AtlasStudio desk layout</p><p class="mf-meta">Metadata: workspace overview · Swap with Figma render</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Atlas-V guidance chip states</p><p class="mf-meta">Metadata: chip states A/B/C · Status: art pending</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Tab switch microinteractions</p><p class="mf-meta">Metadata: hover/focus/tap · Status: animation swap</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>FlowSim pulse preview</p><p class="mf-meta">Metadata: rhythm baseline · Status: motion placeholder</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Guard check overlay</p><p class="mf-meta">Metadata: governance tone · Status: overlay concept</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Run report summary card</p><p class="mf-meta">Metadata: checklist + note · Status: handoff ready</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>AtlasStudio desk layout</p><p class="mf-meta">Workspace overview · Swap with Figma render</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Atlas-V guidance chip states</p><p class="mf-meta">Chip states A/B/C · Status: art pending</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Tab switch microinteractions</p><p class="mf-meta">Hover/focus/tap · Status: animation swap</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>FlowSim pulse preview</p><p class="mf-meta">Rhythm baseline · Status: motion placeholder</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Guard check overlay</p><p class="mf-meta">Governance tone · Status: overlay concept</p></div>
+          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder wireframe"></div><p>Run report summary card</p><p class="mf-meta">Checklist + note · Status: handoff ready</p></div>
         </div>
       </div>
     </section>
 
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.FlowSim -->
+    <section class="mf-section">
+      <div class="mf-container mf-flow-panel">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">How it works</div>
+          <h2>Guided phases and runs</h2>
+          <p>Atlas Engine structures projects into phases and runs. Atlas-V delivers step-by-step prompts, and the Playground shows how to feed back snapshots.</p>
+        </header>
+        <div class="mf-flow-track"><strong>Phases</strong><p>Big chunks of a project organized by the Engine.</p></div>
+        <div class="mf-flow-track"><strong>Runs</strong><p>Bite-sized tasks with clear goals.</p></div>
+        <div class="mf-flow-track"><strong>Execution prompts</strong><p>Guided steps tailored to the tools you already use.</p></div>
+        <div class="mf-flow-track"><strong>Run reports</strong><p>Quick updates that let Atlas-V adjust and keep the plan on track.</p></div>
+        <div class="mf-flow-track"><strong>Studio surface</strong><p>Visualizes tasks, decisions, and previews without shipping code.</p></div>
+      </div>
+    </section>
+
+    <!-- Layout: AtlasStudio.Section.CrossBrandWorkflow -->
     <section class="mf-section">
       <div class="mf-container mf-flow-panel">
         <header class="mf-section-header">
@@ -135,6 +262,8 @@
       </div>
     </section>
 
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.ComingSoon -->
     <section id="coming-soon" class="mf-section">
       <div class="mf-container mf-templates">
         <header class="mf-section-header">
@@ -147,6 +276,8 @@
       </div>
     </section>
 
+    <!-- Component: Global.SectionWrapper -->
+    <!-- Layout: AtlasStudio.Section.FooterCTA -->
     <section class="mf-section">
       <div class="mf-container mf-intelligence">
         <header class="mf-section-header">
@@ -156,13 +287,14 @@
         <ul class="mf-designer-notes">
           <li>Keep tone cozy/supportive; avoid technical jargon.</li>
           <li>Show Powered by Atlas-V chips sparingly to keep the mood warm.</li>
-          <li>Coming Soon CTA should be a soft state, not a hard gate or form.</li>
+          <li>Preserve the Playground and tri-panel mock—no production app behavior.</li>
           <li>Diagrams are placeholders—Phase 6 will replace with Figma components.</li>
         </ul>
       </div>
     </section>
   </main>
 
+  <!-- Component: Global.Footer.Base -->
   <footer class="mf-footer" role="contentinfo">
     <div class="mf-container mf-footer-inner">
       <div class="mf-footer-brand">

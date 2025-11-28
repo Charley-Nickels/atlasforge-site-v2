@@ -1,155 +1,3849 @@
 {
   "meta": {
-    "version": "v1.0-phase5",
-    "phase": "Phase 5 — Canon Lock (Business Decisions)",
-    "description": "Business-critical decision set for AtlasForge’s canon, structure, subsidiaries, product narrative, and public positioning.",
+    "version": "v1.0-phase5-canon",
+    "phase": "Phase 5 \u2014 Canon Lock V1",
+    "description": "Structured business decisions for AtlasForge brands, subsidiaries, navigation, content, and governance.",
     "canon_doc_path": "docs/atlasforge_canon_index.md"
   },
 
   "blocks": [
 
     {
-      "id": "core_pillars",
-      "title": "Core Pillars — Public Canon Priority",
-      "description": "Decide how prominently each AtlasForge pillar should appear in public content and brand canon.",
+      "id": "core_pillars_visibility",
+      "title": "Core Pillars \u2014 Visibility & Placement",
+      "description": "Set how visible each primary pillar should be across the site and canon surfaces.",
       "items": [
 
         {
-          "id": "pillar_atlasforge_games",
-          "label": "How prominently should AtlasForge Games appear across the website and canon?",
+          "id": "visibility_atlasforge_umbrella",
+          "label": "How prominently should the AtlasForge umbrella appear across the site and canon?",
+          "description": "Determines hero badges, global framing, and homepage lead copy.",
           "type": "select",
           "options": [
-            { "value": "A_HERO", "label": "A — Top-tier hero presence (featured on homepage + navigation)" },
-            { "value": "B_MAJOR", "label": "B — Major section presence (prominent but secondary)" },
-            { "value": "C_MINOR", "label": "C — Minor section only (footer card or secondary link)" },
-            { "value": "D_BACKGROUND", "label": "D — Background mention only (no surface placement)" },
-            { "value": "E_HIDDEN", "label": "E — Internal only (not shown publicly)" }
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
           ],
           "default": "B_MAJOR"
         },
-
         {
-          "id": "pillar_atlasstudio",
-          "label": "How prominently should AtlasStudio (tools/workstation) appear?",
+          "id": "visibility_atlasv_engine",
+          "label": "How visible should the Atlas-V Engine be in public materials?",
+          "description": "Affects navigation, hero modules, and stack diagrams.",
           "type": "select",
           "options": [
-            { "value": "A_HERO", "label": "A — Hero / showcased toolset" },
-            { "value": "B_MAJOR", "label": "B — Major section with CTA" },
-            { "value": "C_MINOR", "label": "C — Brief mention only" },
-            { "value": "D_BACKGROUND", "label": "D — Background-only explanation" },
-            { "value": "E_HIDDEN", "label": "E — Not shown publicly" }
-          ],
-          "default": "B_MAJOR"
-        },
-
-        {
-          "id": "pillar_atlasv",
-          "label": "How central should the Atlas-V Engine identity be?",
-          "type": "select",
-          "options": [
-            { "value": "A_HERO", "label": "A — Central brain of the company (front-and-center)" },
-            { "value": "B_MAJOR", "label": "B — Major feature section" },
-            { "value": "C_MINOR", "label": "C — Secondary feature mention" },
-            { "value": "D_BACKGROUND", "label": "D — Internal role explained quietly" },
-            { "value": "E_HIDDEN", "label": "E — Internal-only tool" }
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
           ],
           "default": "A_HERO"
+        },
+        {
+          "id": "visibility_atlasstudio",
+          "label": "How visible should AtlasStudio (workstation) be on the site?",
+          "description": "Controls hero placement, navigation, and demo imagery depth.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "visibility_games_pillar",
+          "label": "How visible should the Games pillar be across the homepage and navigation?",
+          "description": "Impacts whether games get their own top nav and homepage tile.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "visibility_media_pillar",
+          "label": "How visible should the Media/Storytelling pillar be?",
+          "description": "Covers true crime, devlogs, and storytelling placements on site.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "C_PRESENT"
+        },
+        {
+          "id": "visibility_labs",
+          "label": "How visible should Labs/experimental projects be in the canon?",
+          "description": "Determines whether experimental tools and worlds appear on public surfaces.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "C_PRESENT"
+        },
+        {
+          "id": "visibility_merch",
+          "label": "Should Merch/physical goods appear visibly in canon surfaces?",
+          "description": "Controls placement of merch tiles and CTAs across pages.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "C_PRESENT"
+        },
+        {
+          "id": "visibility_contact",
+          "label": "How visible should Contact/Work With Us be on public pages?",
+          "description": "Impacts CTA strength on homepage and nav placement.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "C_PRESENT"
+        },
+        {
+          "id": "visibility_governance",
+          "label": "How visible should Governance/Canon process be to the public?",
+          "description": "Controls if governance appears as a nav item, footer, or hidden.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "C_PRESENT"
+        },
+        {
+          "id": "visibility_roadmap",
+          "label": "How visible should roadmap/phase updates be on the site?",
+          "description": "Affects whether roadmap is linked in nav, footer, or hidden.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HERO",
+              "label": "A \u2014 Hero-level presence across key surfaces"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major section presence"
+            },
+            {
+              "value": "C_PRESENT",
+              "label": "C \u2014 Present but secondary"
+            },
+            {
+              "value": "D_BACKGROUND",
+              "label": "D \u2014 Background mention only"
+            },
+            {
+              "value": "E_HIDDEN",
+              "label": "E \u2014 Internal only"
+            }
+          ],
+          "default": "C_PRESENT"
         }
-
       ]
     },
-
     {
-      "id": "subsidiary_expansion",
-      "title": "Subsidiaries & Additional Lines — Approve/Deny",
-      "description": "Decide whether each proposed subsidiary or product-line extension should become canon.",
+      "id": "brand_roles_and_importance",
+      "title": "Brand Roles & Importance",
+      "description": "Clarify the portfolio role for each brand and label in the canon.",
       "items": [
-
         {
-          "id": "approve_merchforge",
-          "label": "Should MerchForge (AtlasForge merch line) be canon?",
+          "id": "role_atlasforge_umbrella",
+          "label": "What role should the AtlasForge umbrella play in the portfolio?",
+          "description": "Defines whether AtlasForge is a flagship public identity or a quieter parent brand.",
           "type": "select",
           "options": [
-            { "value": "APPROVE", "label": "Approve" },
-            { "value": "DENY", "label": "Deny" }
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
           ],
-          "default": "APPROVE"
+          "default": "B_MAJOR"
         },
-
         {
-          "id": "approve_templatefactory",
-          "label": "Should TemplateFactory (game/tool templates) be canon?",
+          "id": "role_atlasv_engine",
+          "label": "What role should Atlas-V play in the brand story?",
+          "description": "Sets whether Atlas-V is a flagship product or a supporting system.",
           "type": "select",
           "options": [
-            { "value": "APPROVE", "label": "Approve" },
-            { "value": "DENY", "label": "Deny" }
-          ],
-          "default": "APPROVE"
-        },
-
-        {
-          "id": "approve_hypercasualforge",
-          "label": "Should Hypercasual Forge be an official game label?",
-          "type": "select",
-          "options": [
-            { "value": "APPROVE", "label": "Approve" },
-            { "value": "DENY", "label": "Deny" }
-          ],
-          "default": "APPROVE"
-        }
-      ]
-    },
-
-    {
-      "id": "brand_roles",
-      "title": "Brand Positioning & Roles",
-      "description": "Set clarity on what each brand exists to do and how it is framed.",
-      "items": [
-
-        {
-          "id": "brand_games_role",
-          "label": "What role should AtlasForge Games play?",
-          "type": "select",
-          "options": [
-            { "value": "A_FLAGSHIP", "label": "A — Flagship product identity" },
-            { "value": "B_MAJOR", "label": "B — Major creative line" },
-            { "value": "C_SUPPORT", "label": "C — Support identity only" },
-            { "value": "D_BACKGROUND", "label": "D — Background role" }
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
           ],
           "default": "A_FLAGSHIP"
         },
-
         {
-          "id": "brand_media_role",
-          "label": "Should AtlasForge Media (documentaries, storytelling, content) be formalized?",
+          "id": "role_atlasstudio",
+          "label": "What role should AtlasStudio occupy?",
+          "description": "Positions AtlasStudio as a product, prototype, or internal POC.",
           "type": "select",
           "options": [
-            { "value": "YES", "label": "Yes" },
-            { "value": "NO", "label": "No" }
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "role_games_label",
+          "label": "What role should the AtlasForge Games label play?",
+          "description": "Clarifies if games are the flagship audience draw or a support lane.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "role_atlasv_lite",
+          "label": "What role should Atlas-V Lite play in the canon?",
+          "description": "Determines whether Atlas-V Lite is framed as a product, companion, or concept.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_SUPPORT"
+        },
+        {
+          "id": "role_skb",
+          "label": "What role should S/K/B (audio label) play?",
+          "description": "Sets prominence of SKB releases relative to games and tools.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "role_media_line",
+          "label": "What role should AtlasForge Media/storytelling play?",
+          "description": "Defines whether media is core, support, or experimental.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_SUPPORT"
+        },
+        {
+          "id": "role_worlds_label",
+          "label": "What role should Worlds/Canon (OIA, neighborhoods) play?",
+          "description": "Determines if worlds carry brand weight or serve as examples.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "role_merch_line",
+          "label": "What role should merch/physical goods play in canon?",
+          "description": "Clarifies whether merch is a core revenue lane or a supportive perk.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_SUPPORT"
+        },
+        {
+          "id": "role_docs_library",
+          "label": "What role should AtlasForge Docs/Library play?",
+          "description": "Sets whether docs are a productized knowledge base or supporting asset.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_MAJOR"
+        },
+        {
+          "id": "role_academy",
+          "label": "What role should AtlasForge Academy (education) play?",
+          "description": "Determines if courses/tutorials become a core offering or support lane.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_SUPPORT"
+        },
+        {
+          "id": "role_consulting",
+          "label": "What role should Atlas Consulting (B2B engagements) play?",
+          "description": "Clarifies whether consulting is a core pillar or optional offering.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FLAGSHIP",
+              "label": "A \u2014 Flagship identity"
+            },
+            {
+              "value": "B_MAJOR",
+              "label": "B \u2014 Major line"
+            },
+            {
+              "value": "C_SUPPORT",
+              "label": "C \u2014 Support identity"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_SUPPORT"
+        }
+      ]
+    },
+    {
+      "id": "brand_tone_and_voice",
+      "title": "Brand Tone & Voice",
+      "description": "Select tone guidance for each brand to shape copy and canon voice.",
+      "items": [
+        {
+          "id": "tone_atlasforge",
+          "label": "What tone should AtlasForge umbrella use in copy?",
+          "description": "Affects homepage, about, and corporate messaging voice.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_atlasv",
+          "label": "What tone should Atlas-V use when speaking in copy?",
+          "description": "Influences whether Atlas-V sounds like a strict co-pilot or a friendly guide.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_atlasstudio",
+          "label": "What tone should AtlasStudio use in descriptions?",
+          "description": "Guides language for workstation capabilities and demo flows.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_games",
+          "label": "What tone should AtlasForge Games use across pages?",
+          "description": "Affects how game descriptions and CTAs feel.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_oia",
+          "label": "What tone should Octopus in Action use?",
+          "description": "Guides whether OIA is gritty, humorous, or analytical.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_skb",
+          "label": "What tone should S/K/B use for audio releases?",
+          "description": "Impacts how we describe tracks, packs, and collaborations.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_media",
+          "label": "What tone should media/storytelling pieces use?",
+          "description": "Sets whether docu-style or lighthearted narration dominates.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_governance",
+          "label": "What tone should governance documentation use?",
+          "description": "Affects how policy and canon rules read publicly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_contact",
+          "label": "What tone should contact/hiring CTAs use?",
+          "description": "Sets formality for collaboration invites and filters.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "tone_docs_and_academy",
+          "label": "What tone should Docs/Academy materials use?",
+          "description": "Impacts tutorial style and guidance voice.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SERIOUS",
+              "label": "A \u2014 Very serious/formal"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced professional"
+            },
+            {
+              "value": "C_PLAYFUL",
+              "label": "C \u2014 Playful/creative"
+            },
+            {
+              "value": "D_EXPERIMENTAL",
+              "label": "D \u2014 Experimental/quirky"
+            }
+          ],
+          "default": "B_BALANCED"
+        }
+      ]
+    },
+    {
+      "id": "atlasv_behavior_and_messaging",
+      "title": "Atlas-V Behavior & Messaging",
+      "description": "Decide how Atlas-V is described, how active it sounds, and what is public.",
+      "items": [
+        {
+          "id": "atlasv_persona",
+          "label": "How proactive should Atlas-V sound in marketing copy?",
+          "description": "Defines whether Atlas-V is an assertive commander or a careful guide.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULLY_ACTIVE",
+              "label": "A \u2014 Highly proactive and directive"
+            },
+            {
+              "value": "B_GUIDED",
+              "label": "B \u2014 Proactive but user-guided"
+            },
+            {
+              "value": "C_CONSTRAINED",
+              "label": "C \u2014 Cautious and permission-based"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Quiet helper only"
+            }
+          ],
+          "default": "B_GUIDED"
+        },
+        {
+          "id": "atlasv_autonomy_promises",
+          "label": "How much autonomy should we promise Atlas-V delivers?",
+          "description": "Affects claims about automation, autopilot, and human-in-the-loop.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HIGH_AUTONOMY",
+              "label": "A \u2014 Near-autopilot claims"
+            },
+            {
+              "value": "B_BALANCED_AUTONOMY",
+              "label": "B \u2014 Strong assistance with approvals"
+            },
+            {
+              "value": "C_LOW_AUTONOMY",
+              "label": "C \u2014 Limited automation, mostly guidance"
+            },
+            {
+              "value": "D_NO_AUTONOMY",
+              "label": "D \u2014 Guidance only, no automation promises"
+            }
+          ],
+          "default": "B_BALANCED_AUTONOMY"
+        },
+        {
+          "id": "atlasv_guardrails_emphasis",
+          "label": "How much should we emphasize guardrails and governance language?",
+          "description": "Impacts copy about constraints, safety, and policy enforcement.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HIGH",
+              "label": "A \u2014 Heavy emphasis on safety and guardrails"
+            },
+            {
+              "value": "B_MEDIUM",
+              "label": "B \u2014 Balanced mention of safety"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light safety nods"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Minimal public mention"
+            }
+          ],
+          "default": "B_MEDIUM"
+        },
+        {
+          "id": "atlasv_governance_public",
+          "label": "Should we publicly describe how Atlas-V enforces governance?",
+          "description": "Decides if governance pipelines are exposed beyond high-level mentions.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Explain governance patterns"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Keep governance internals private"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Backlog for future release"
+            }
           ],
           "default": "YES"
+        },
+        {
+          "id": "atlasv_lite_publicity",
+          "label": "Should Atlas-V Lite be presented as a public-facing assistant?",
+          "description": "Determines if Atlas-V Lite gets its own public CTA or is kept conceptual.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Public-facing assistant"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Keep as internal mode"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Backlog until stable"
+            }
+          ],
+          "default": "YES"
+        },
+        {
+          "id": "atlasv_council_public",
+          "label": "Should references to the Council of Three/internal decision engine be public?",
+          "description": "Clarifies whether internal governance lore is surfaced on pages.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Public lore element"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Keep internal"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Introduce after canon lock"
+            }
+          ],
+          "default": "NO"
+        },
+        {
+          "id": "atlasv_voice_refers_to_user",
+          "label": "How should Atlas-V refer to the user/team in copy?",
+          "description": "Determines if Atlas-V addresses readers directly or as collaborators.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DIRECT",
+              "label": "A \u2014 Direct second-person guidance"
+            },
+            {
+              "value": "B_COLLAB",
+              "label": "B \u2014 Collaborative partner language"
+            },
+            {
+              "value": "C_NEUTRAL",
+              "label": "C \u2014 Neutral, descriptive voice"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal narrator only"
+            }
+          ],
+          "default": "B_COLLAB"
+        },
+        {
+          "id": "atlasv_data_positioning",
+          "label": "How should we position Atlas-V with respect to data and privacy?",
+          "description": "Controls how much we talk about data boundaries and inputs.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed discussion of data policies"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced mention of responsible use"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light reference only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 Omit from public copy"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "atlasv_api_story",
+          "label": "Should we position Atlas-V as offering an API/SDK?",
+          "description": "Impacts whether we imply third-party integration pathways.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Promise API/SDK access"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Keep to internal stack"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Backlog until productized"
+            }
+          ],
+          "default": "LATER"
+        },
+        {
+          "id": "atlasv_copilot_vs_assistant",
+          "label": "How should we frame Atlas-V: copilot, assistant, or engine?",
+          "description": "Aligns messaging across pages for consistent identity.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_ENGINE",
+              "label": "A \u2014 Engine first, powering everything"
+            },
+            {
+              "value": "B_COPILOT",
+              "label": "B \u2014 Copilot leading workflows"
+            },
+            {
+              "value": "C_ASSISTANT",
+              "label": "C \u2014 Assistant that supports"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal orchestrator only"
+            }
+          ],
+          "default": "B_COPILOT"
+        },
+        {
+          "id": "atlasv_safety_promises",
+          "label": "How strongly should we claim Atlas-V prevents off-canon outputs?",
+          "description": "Controls explicitness of safety and governance marketing claims.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_STRONG",
+              "label": "A \u2014 Strong enforcement claims"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced enforcement language"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light references"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 Avoid explicit claims"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "atlasv_human_oversight",
+          "label": "How much should we stress human oversight alongside Atlas-V?",
+          "description": "Determines whether copy highlights approvals and reviewers.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_STRONG",
+              "label": "A \u2014 Strong emphasis on human approvals"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced mention of oversight"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light reminder"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No oversight emphasis"
+            }
+          ],
+          "default": "B_BALANCED"
+        }
+      ]
+    },
+    {
+      "id": "atlasstudio_surface_and_scope",
+      "title": "AtlasStudio Surface & Scope",
+      "description": "Define how AtlasStudio is framed, demoed, and offered in canon.",
+      "items": [
+        {
+          "id": "atlasstudio_status",
+          "label": "Should AtlasStudio be framed as current offering, prototype, or future?",
+          "description": "Sets expectations for availability on site pages.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CURRENT",
+              "label": "A \u2014 Available product"
+            },
+            {
+              "value": "B_PILOT",
+              "label": "B \u2014 Pilot for select partners"
+            },
+            {
+              "value": "C_FUTURE",
+              "label": "C \u2014 Future product on roadmap"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal prototype only"
+            }
+          ],
+          "default": "B_PILOT"
+        },
+        {
+          "id": "atlasstudio_demo_depth",
+          "label": "How much workstation detail should we show in screenshots/diagrams?",
+          "description": "Controls mock depth of flows, timelines, and builders shown publicly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed UI walkthroughs"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced snapshots"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light illustrative mockups"
+            },
+            {
+              "value": "D_ABSTRACT",
+              "label": "D \u2014 Abstract diagrams only"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "atlasstudio_internal_vs_external",
+          "label": "Should AtlasStudio be presented as internal-only or available to outsiders?",
+          "description": "Impacts CTA language about access and collaboration.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_EXTERNAL",
+              "label": "A \u2014 Available for external collaborators"
+            },
+            {
+              "value": "B_LIMITED",
+              "label": "B \u2014 Limited access by invite"
+            },
+            {
+              "value": "C_INTERNAL",
+              "label": "C \u2014 Internal POC with demos only"
+            },
+            {
+              "value": "D_CONCEPT",
+              "label": "D \u2014 Conceptual showcase only"
+            }
+          ],
+          "default": "B_LIMITED"
+        },
+        {
+          "id": "atlasstudio_task_scope",
+          "label": "How broad should the advertised task scope for AtlasStudio be?",
+          "description": "Whether we pitch Studio as planning-only or execution-ready.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_END_TO_END",
+              "label": "A \u2014 End-to-end creation environment"
+            },
+            {
+              "value": "B_PLANNING_PLUS",
+              "label": "B \u2014 Planning with light execution"
+            },
+            {
+              "value": "C_PLANNING",
+              "label": "C \u2014 Planning/blueprinting only"
+            },
+            {
+              "value": "D_EXPERIMENT",
+              "label": "D \u2014 Experimental sandbox"
+            }
+          ],
+          "default": "B_PLANNING_PLUS"
+        },
+        {
+          "id": "atlasstudio_invite_cta",
+          "label": "What strength should the AtlasStudio invite CTA have?",
+          "description": "Controls button prominence and copy for requesting access.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_STRONG",
+              "label": "A \u2014 Strong CTA with apply link"
+            },
+            {
+              "value": "B_MEDIUM",
+              "label": "B \u2014 Medium CTA with contact"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light mention only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No public CTA"
+            }
+          ],
+          "default": "B_MEDIUM"
+        },
+        {
+          "id": "atlasstudio_use_cases",
+          "label": "How many use cases should we publicly showcase for AtlasStudio?",
+          "description": "Affects gallery depth and case study count.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_RICH",
+              "label": "A \u2014 Rich set (5+ examples)"
+            },
+            {
+              "value": "B_MEDIUM",
+              "label": "B \u2014 Medium set (3\u20134)"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light set (1\u20132)"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Mention without examples"
+            }
+          ],
+          "default": "B_MEDIUM"
+        },
+        {
+          "id": "atlasstudio_data_story",
+          "label": "How much should we explain the data/governance story inside AtlasStudio?",
+          "description": "Determines how we describe alignment with Atlas-V and rulesets.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed governance walkthrough"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced explanation"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light mention"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No governance discussion"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "atlasstudio_enterprise_position",
+          "label": "Should AtlasStudio be framed as enterprise-ready?",
+          "description": "Impacts whether enterprise messaging and compliance appear.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Enterprise-ready positioning"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Keep as creative studio"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Backlog enterprise push"
+            }
+          ],
+          "default": "NO"
+        },
+        {
+          "id": "atlasstudio_visual_depth",
+          "label": "How detailed should workstation visual treatments be?",
+          "description": "Controls fidelity of mock screens and diagrams shown.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HIGH_FIDELITY",
+              "label": "A \u2014 High-fidelity UI shots"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced fidelity"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal stylized frames"
+            },
+            {
+              "value": "D_ABSTRACT",
+              "label": "D \u2014 Abstract hints only"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "atlasstudio_workflow_depth",
+          "label": "How deep should we describe workflows (phases, runs, approvals)?",
+          "description": "Affects narrative depth in documentation and landing pages.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DEEP",
+              "label": "A \u2014 Deep workflow walkthroughs"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced mid-depth"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light overview only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 Omit workflow detail"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "atlasstudio_collab_story",
+          "label": "How should collaboration inside AtlasStudio be framed?",
+          "description": "Determines whether multi-user or solo builder stories are highlighted.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_MULTIUSER",
+              "label": "A \u2014 Multi-user collaboration focus"
+            },
+            {
+              "value": "B_GUIDED",
+              "label": "B \u2014 Guided single-user with reviews"
+            },
+            {
+              "value": "C_SOLO",
+              "label": "C \u2014 Solo creator focus"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal ops only"
+            }
+          ],
+          "default": "B_GUIDED"
+        },
+        {
+          "id": "atlasstudio_price_position",
+          "label": "Should pricing or value framing for AtlasStudio appear publicly?",
+          "description": "Decides if we hint at pricing tiers, value statements, or keep quiet.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_OPEN",
+              "label": "A \u2014 Open pricing/value framing"
+            },
+            {
+              "value": "B_SOFT",
+              "label": "B \u2014 Soft value framing only"
+            },
+            {
+              "value": "C_NONE",
+              "label": "C \u2014 No pricing/value mention"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_SOFT"
+        }
+      ]
+    },
+    {
+      "id": "website_structure_and_navigation",
+      "title": "Website Structure & Navigation",
+      "description": "Decide top-level navigation, grouping, and depth of pages.",
+      "items": [
+        {
+          "id": "nav_homepage_structure",
+          "label": "Should Home emphasize AtlasForge as the hub or individual products first?",
+          "description": "Impacts homepage hero orientation and nav ordering.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HUB_FIRST",
+              "label": "A \u2014 AtlasForge hub first"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced hub + products"
+            },
+            {
+              "value": "C_PRODUCT_FIRST",
+              "label": "C \u2014 Products/labels first"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Minimal home, push to sections"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "nav_atlasv",
+          "label": "Should Atlas-V have a dedicated top navigation item?",
+          "description": "Determines if Atlas-V gets first-level nav and dropdown options.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Dedicated nav item"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Keep within AtlasForge hub"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Add after content expands"
+            }
+          ],
+          "default": "YES"
+        },
+        {
+          "id": "nav_atlasstudio",
+          "label": "Should AtlasStudio have its own top nav with subpages?",
+          "description": "Controls presence of AtlasStudio nav and potential gallery sublinks.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Top nav with subpages"
+            },
+            {
+              "value": "B_SINGLE",
+              "label": "B \u2014 Single page linked in nav"
+            },
+            {
+              "value": "C_GROUPED",
+              "label": "C \u2014 Grouped under Products"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No dedicated nav"
+            }
+          ],
+          "default": "A_FULL"
+        },
+        {
+          "id": "nav_games",
+          "label": "How should Games appear in navigation?",
+          "description": "Decides if Games is top-level, grouped, or hidden.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_TOP_LEVEL",
+              "label": "A \u2014 Top-level nav with dropdown"
+            },
+            {
+              "value": "B_SINGLE",
+              "label": "B \u2014 Single Games page"
+            },
+            {
+              "value": "C_GROUPED",
+              "label": "C \u2014 Grouped under Worlds/Media"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 Hidden from nav"
+            }
+          ],
+          "default": "A_TOP_LEVEL"
+        },
+        {
+          "id": "nav_media",
+          "label": "How should Media/Storytelling appear in navigation?",
+          "description": "Controls whether Media is separated or bundled with Games/Worlds.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_TOP_LEVEL",
+              "label": "A \u2014 Top-level Media nav"
+            },
+            {
+              "value": "B_GROUPED",
+              "label": "B \u2014 Grouped with Games"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer-only link"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 Keep internal"
+            }
+          ],
+          "default": "B_GROUPED"
+        },
+        {
+          "id": "nav_worlds",
+          "label": "Should Worlds/Canon have dedicated navigation?",
+          "description": "Decides if OIA and other worlds get their own nav lane or are nested.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_TOP_LEVEL",
+              "label": "A \u2014 Top-level Worlds nav"
+            },
+            {
+              "value": "B_NESTED",
+              "label": "B \u2014 Nested under Games"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer mention only"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 Keep internal"
+            }
+          ],
+          "default": "B_NESTED"
+        },
+        {
+          "id": "nav_governance",
+          "label": "Where should Governance/Canon docs live in navigation?",
+          "description": "Determines prominence of governance links across nav/footer.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_TOP_LEVEL",
+              "label": "A \u2014 Top-level nav item"
+            },
+            {
+              "value": "B_SECONDARY",
+              "label": "B \u2014 Secondary link in nav"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer-only"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_SECONDARY"
+        },
+        {
+          "id": "nav_contact",
+          "label": "Where should Contact/Work With Us appear?",
+          "description": "Impacts whether contact is top nav, footer, or tucked away.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_TOP_LEVEL",
+              "label": "A \u2014 Top-level nav CTA"
+            },
+            {
+              "value": "B_SECONDARY",
+              "label": "B \u2014 Secondary nav link"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer-only link"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 No public link"
+            }
+          ],
+          "default": "B_SECONDARY"
+        },
+        {
+          "id": "nav_depth_games",
+          "label": "How deep should Games subpages go?",
+          "description": "Determines whether each IP gets a page or a shared grid only.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PER_GAME",
+              "label": "A \u2014 Individual pages per game"
+            },
+            {
+              "value": "B_FEATURED",
+              "label": "B \u2014 Featured cards with modal details"
+            },
+            {
+              "value": "C_SINGLE",
+              "label": "C \u2014 Single consolidated page"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Single section on homepage"
+            }
+          ],
+          "default": "B_FEATURED"
+        },
+        {
+          "id": "nav_depth_media",
+          "label": "How deep should Media subpages go?",
+          "description": "Controls number of media format pages (podcast, video, devlogs).",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_MULTIPLE",
+              "label": "A \u2014 Multiple media format pages"
+            },
+            {
+              "value": "B_SINGLE",
+              "label": "B \u2014 Single media overview"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer mention only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No media pages"
+            }
+          ],
+          "default": "B_SINGLE"
+        },
+        {
+          "id": "nav_depth_tools",
+          "label": "Should Tools/Studio have multiple subpages (gallery, templates, modes)?",
+          "description": "Impacts nav dropdown depth for AtlasStudio assets.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_RICH",
+              "label": "A \u2014 Rich dropdown with multiple subpages"
+            },
+            {
+              "value": "B_MEDIUM",
+              "label": "B \u2014 Limited dropdown (gallery only)"
+            },
+            {
+              "value": "C_SINGLE",
+              "label": "C \u2014 Single tools page"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No dropdown"
+            }
+          ],
+          "default": "B_MEDIUM"
+        },
+        {
+          "id": "nav_governance_depth",
+          "label": "How deep should governance documentation go on the site?",
+          "description": "Determines if governance has multiple subpages or a single overview.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_MULTI",
+              "label": "A \u2014 Multiple governance pages"
+            },
+            {
+              "value": "B_SINGLE",
+              "label": "B \u2014 Single governance overview"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer PDF/link only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No public governance"
+            }
+          ],
+          "default": "B_SINGLE"
+        },
+        {
+          "id": "nav_roadmap",
+          "label": "Where should the Roadmap live?",
+          "description": "Places roadmap content in nav, footer, or keeps internal.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_TOP_LEVEL",
+              "label": "A \u2014 Top-level nav item"
+            },
+            {
+              "value": "B_SECONDARY",
+              "label": "B \u2014 Secondary nav/mega menu"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer-only"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_FOOTER"
+        },
+        {
+          "id": "nav_grouping_preference",
+          "label": "Should Atlas-V and AtlasStudio be grouped together or separate in nav?",
+          "description": "Impacts navigation clustering for products/tools.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_GROUPED",
+              "label": "A \u2014 Grouped under Products"
+            },
+            {
+              "value": "B_SEPARATE",
+              "label": "B \u2014 Separate top-level items"
+            },
+            {
+              "value": "C_HYBRID",
+              "label": "C \u2014 Grouped with one featured link"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Single combined page"
+            }
+          ],
+          "default": "B_SEPARATE"
+        },
+        {
+          "id": "nav_footer_density",
+          "label": "How dense should the footer navigation be?",
+          "description": "Controls whether footer lists every brand or stays minimal.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_RICH",
+              "label": "A \u2014 Rich footer with all brands"
+            },
+            {
+              "value": "B_MEDIUM",
+              "label": "B \u2014 Medium footer with key items"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light footer with essentials"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Minimal legal-only footer"
+            }
+          ],
+          "default": "B_MEDIUM"
+        },
+        {
+          "id": "nav_language_localization",
+          "label": "Should we signal multi-language/localized navigation?",
+          "description": "Determines whether localization toggles appear in nav or footer.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Show localization controls"
+            },
+            {
+              "value": "NO",
+              "label": "No \u2014 Single language"
+            },
+            {
+              "value": "LATER",
+              "label": "Later \u2014 Backlog localization"
+            }
+          ],
+          "default": "LATER"
+        },
+        {
+          "id": "nav_admin_visibility",
+          "label": "Should any admin or console links be visible in production navigation?",
+          "description": "Ensures administrative routes stay hidden unless explicitly allowed.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HIDE",
+              "label": "A \u2014 Hide all admin links"
+            },
+            {
+              "value": "B_LIMITED",
+              "label": "B \u2014 Limited hidden toggles"
+            },
+            {
+              "value": "C_EXPERIMENT",
+              "label": "C \u2014 Experimental banner only"
+            },
+            {
+              "value": "D_SHOW",
+              "label": "D \u2014 Show admin links"
+            }
+          ],
+          "default": "A_HIDE"
+        }
+      ]
+    },
+    {
+      "id": "homepage_content_blocks",
+      "title": "Homepage Content Blocks",
+      "description": "Select which blocks appear on the homepage and how detailed they are.",
+      "items": [
+        {
+          "id": "home_what_we_make",
+          "label": "Should the homepage include an explicit \"What we make\" grid?",
+          "description": "Controls presence of a clear grid summarizing products and labels.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes"
+            },
+            {
+              "value": "NO",
+              "label": "No"
+            },
+            {
+              "value": "LATER",
+              "label": "Later"
+            }
+          ],
+          "default": "YES"
+        },
+        {
+          "id": "home_stack_diagram_depth",
+          "label": "How much detail should the homepage stack diagram show?",
+          "description": "Affects amount of copy and number of layers in the diagram.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_RICH",
+              "label": "A \u2014 Detailed layered diagram"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced diagram"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light illustration only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No stack diagram"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_games_section",
+          "label": "Should the homepage feature a Games section with cards?",
+          "description": "Determines presence and depth of game highlights on home.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed cards with summaries"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced short highlights"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Single mention/link"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No home games block"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_tools_section",
+          "label": "How large should the Tools/AtlasStudio section be on the homepage?",
+          "description": "Impacts visuals, CTAs, and explanation depth for AtlasStudio.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed walkthrough block"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced section"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Brief mention"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No dedicated block"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_media_section",
+          "label": "Should the homepage highlight Media/Storytelling?",
+          "description": "Determines if media formats are promoted on the homepage.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed section with formats"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced teaser"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Quick mention"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No media block"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_governance_section",
+          "label": "Should the homepage include a Governance/Safety mention?",
+          "description": "Decides whether to show governance as part of the hero or footer only.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PROMINENT",
+              "label": "A \u2014 Prominent governance block"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced mention"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Small footer note"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No governance on homepage"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_hiring_section",
+          "label": "Should the homepage include hiring/collaboration messaging?",
+          "description": "Controls whether collaboration invites appear on home.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes \u2014 Include hiring/collab block"
+            },
+            {
+              "value": "NO",
+              "label": "No"
+            },
+            {
+              "value": "LATER",
+              "label": "Later"
+            }
+          ],
+          "default": "NO"
+        },
+        {
+          "id": "home_contact_cta_strength",
+          "label": "How strong should the homepage contact CTA be?",
+          "description": "Impacts button prominence and copy.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_STRONG",
+              "label": "A \u2014 Strong CTA with button"
+            },
+            {
+              "value": "B_MEDIUM",
+              "label": "B \u2014 Medium inline link"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light footer link"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No contact CTA"
+            }
+          ],
+          "default": "B_MEDIUM"
+        },
+        {
+          "id": "home_stack_story",
+          "label": "How much of the Atlas stack story should appear on the homepage?",
+          "description": "Determines narrative depth about Engine, V, Lite, and Studio.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DEEP",
+              "label": "A \u2014 Deep explanation with visuals"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced overview"
+            },
+            {
+              "value": "C_LIGHT",
+              "label": "C \u2014 Light paragraph"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 Omit stack story"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_worlds_section",
+          "label": "Should the homepage feature Worlds/Canon (e.g., OIA) tiles?",
+          "description": "Impacts whether worlds get a grid or mention on home.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_DETAILED",
+              "label": "A \u2014 Detailed tiles with lore snippets"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced card mention"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Small link only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No worlds on homepage"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_media_formats",
+          "label": "Should homepage mention specific media formats (podcast, docs, true crime)?",
+          "description": "Controls whether format chips appear in hero/cards.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Yes, list formats explicitly"
+            },
+            {
+              "value": "B_LIGHT",
+              "label": "B \u2014 Light references only"
+            },
+            {
+              "value": "C_NONE",
+              "label": "C \u2014 No format mentions"
+            },
+            {
+              "value": "D_BACKLOG",
+              "label": "D \u2014 Backlog for later"
+            }
+          ],
+          "default": "B_LIGHT"
+        },
+        {
+          "id": "home_merch_callout",
+          "label": "Should the homepage include a merch/physical goods callout?",
+          "description": "Adds a tile for merch if approved.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes"
+            },
+            {
+              "value": "NO",
+              "label": "No"
+            },
+            {
+              "value": "LATER",
+              "label": "Later"
+            }
+          ],
+          "default": "LATER"
+        },
+        {
+          "id": "home_testimonials",
+          "label": "Should we show testimonials/quotes on the homepage?",
+          "description": "Determines whether to show quotes from users/partners or keep internal.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_STRONG",
+              "label": "A \u2014 Prominent testimonials section"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced small quotes"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Single quote"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No testimonials"
+            }
+          ],
+          "default": "C_MINIMAL"
+        },
+        {
+          "id": "home_news_updates",
+          "label": "Should the homepage include a news/updates strip?",
+          "description": "Affects whether releases and governance updates appear on home.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_ACTIVE",
+              "label": "A \u2014 Active news strip"
+            },
+            {
+              "value": "B_BALANCED",
+              "label": "B \u2014 Balanced occasional updates"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Small note in footer"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No news strip"
+            }
+          ],
+          "default": "B_BALANCED"
+        },
+        {
+          "id": "home_cta_count",
+          "label": "How many primary CTAs should the homepage surface?",
+          "description": "Determines whether to focus on one CTA or multiple per pillar.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_SINGLE",
+              "label": "A \u2014 Single focused CTA"
+            },
+            {
+              "value": "B_DOUBLE",
+              "label": "B \u2014 Two CTAs (tools + games)"
+            },
+            {
+              "value": "C_MULTI",
+              "label": "C \u2014 Multiple CTAs by pillar"
+            },
+            {
+              "value": "D_MINIMAL",
+              "label": "D \u2014 Minimal CTA presence"
+            }
+          ],
+          "default": "B_DOUBLE"
+        }
+      ]
+    },
+    {
+      "id": "subsidiaries_and_lines",
+      "title": "Subsidiaries & Additional Lines",
+      "description": "Decide which expansion lines become official canon versus backlog.",
+      "items": [
+        {
+          "id": "approve_merchforge",
+          "label": "Should MerchForge (merch store) become an official subsidiary?",
+          "description": "Covers apparel, pins, posters, and physical goods tied to canon.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "APPROVE"
+        },
+        {
+          "id": "approve_templatefactory",
+          "label": "Should TemplateFactory (templates for games/tools) be canon?",
+          "description": "Decides if template packs become a product line or remain internal.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "APPROVE"
+        },
+        {
+          "id": "approve_hypercasual_forge",
+          "label": "Should Hypercasual Forge (mobile/arcade label) be canon?",
+          "description": "Affects whether mobile spin-offs appear on site and roadmap.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "BACKLOG"
+        },
+        {
+          "id": "approve_atlasforge_academy",
+          "label": "Should AtlasForge Academy (courses, tutorials) be canon?",
+          "description": "Determines if education products are marketed publicly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "BACKLOG"
+        },
+        {
+          "id": "approve_docs_library",
+          "label": "Should AtlasForge Docs/Atlas Library be a public line?",
+          "description": "Clarifies if docs become a branded knowledge hub.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "APPROVE"
+        },
+        {
+          "id": "approve_atlas_consulting",
+          "label": "Should Atlas Consulting (B2B advisory) be canon?",
+          "description": "Decides whether consulting is marketed as a service offering.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "BACKLOG"
+        },
+        {
+          "id": "approve_media_studio",
+          "label": "Should AtlasForge Media Studio (production services) be canon?",
+          "description": "Would allow media production for hire using AtlasForge story stack.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "EXPLORE"
+        },
+        {
+          "id": "approve_sound_packs",
+          "label": "Should SKB Sound Packs (sample/loop packs) become a line?",
+          "description": "Defines whether SKB releases include downloadable packs for creators.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "APPROVE"
+        },
+        {
+          "id": "approve_atlasforge_publishing",
+          "label": "Should AtlasForge Publishing (third-party game publishing) be canon?",
+          "description": "Determines if we publish external titles using Atlas-V guidance.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "BACKLOG"
+        },
+        {
+          "id": "approve_world_bible_pdfs",
+          "label": "Should World Bible PDFs/print editions be a product line?",
+          "description": "Decides if lore books and printable guides are sold publicly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "APPROVE"
+        },
+        {
+          "id": "approve_creator_portal",
+          "label": "Should a Creator Portal (asset/library access) be canon?",
+          "description": "Potential portal for assets, templates, and collaboration requests.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "EXPLORE"
+        },
+        {
+          "id": "approve_events_showcases",
+          "label": "Should live events/showcases (digital or local) be canon?",
+          "description": "Covers livestream showcases, demos, and meetups tied to releases.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "BACKLOG"
+        },
+        {
+          "id": "approve_podcast_network",
+          "label": "Should an AtlasForge podcast network become official?",
+          "description": "Determines if multiple podcast strands become a branded network.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "EXPLORE"
+        },
+        {
+          "id": "approve_atlasforge_labs_public",
+          "label": "Should AtlasForge Labs be presented as a public beta program?",
+          "description": "Decides if experiments and prototypes are shared openly with signups.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "BACKLOG"
+        },
+        {
+          "id": "approve_collab_shop",
+          "label": "Should collaboration drops/co-branded merch be canon?",
+          "description": "Covers limited runs with partners or artists aligned to canon.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "EXPLORE"
+        },
+        {
+          "id": "approve_atlasforge_press",
+          "label": "Should AtlasForge Press (blogs, essays, whitepapers) be canon as a line?",
+          "description": "Decides whether thought leadership content is branded as a product lane.",
+          "type": "select",
+          "options": [
+            {
+              "value": "APPROVE",
+              "label": "Approve"
+            },
+            {
+              "value": "DENY",
+              "label": "Deny"
+            },
+            {
+              "value": "BACKLOG",
+              "label": "Backlog"
+            },
+            {
+              "value": "EXPLORE",
+              "label": "Explore variant"
+            }
+          ],
+          "default": "APPROVE"
+        }
+      ]
+    },
+    {
+      "id": "games_and_ip_status",
+      "title": "Games & IP Status",
+      "description": "Decide which games/IPs are public canon and how they are framed.",
+      "items": [
+        {
+          "id": "ip_oia",
+          "label": "What status should Octopus in Action (OIA) hold on the site?",
+          "description": "Determines if OIA is a flagship world or internal prototype.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "A_CANON"
+        },
+        {
+          "id": "ip_neighborhood_watch",
+          "label": "What status should Neighborhood Watch hold?",
+          "description": "Clarifies whether Neighborhood Watch is surfaced as a canon project.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_IN_DEVELOPMENT"
+        },
+        {
+          "id": "ip_runner_concepts",
+          "label": "Should runner/speed game concepts be listed as canon ideas?",
+          "description": "Decides if runner concepts appear as concepts, backlog, or hidden.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_CONCEPT"
+        },
+        {
+          "id": "ip_sim_management",
+          "label": "Should sim/management prototypes be mentioned publicly?",
+          "description": "Covers city/crew sim prototypes in the canon story.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_CONCEPT"
+        },
+        {
+          "id": "ip_audio_games",
+          "label": "Should audio-driven or rhythm games appear in canon?",
+          "description": "Decides whether audio-led prototypes become public items.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_IN_DEVELOPMENT"
+        },
+        {
+          "id": "ip_viz_simulations",
+          "label": "Should visualization/simulation demos be treated as canon projects?",
+          "description": "Includes flow sims, diagram generators, and logic sandboxes.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_IN_DEVELOPMENT"
+        },
+        {
+          "id": "ip_mobile_spinoffs",
+          "label": "Should mobile spin-offs be shown as canon or experimental?",
+          "description": "Covers small mobile experiences connected to main worlds.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_CONCEPT"
+        },
+        {
+          "id": "ip_world_expansions",
+          "label": "Should side stories/expansions of existing worlds be listed?",
+          "description": "Determines if supporting fiction releases are public.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_IN_DEVELOPMENT"
+        },
+        {
+          "id": "ip_atlasstudio_showcase",
+          "label": "Should AtlasStudio in-product demos be framed as mini-games?",
+          "description": "Clarifies if workstation demos count as playable experiences.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_CONCEPT"
+        },
+        {
+          "id": "ip_collab_games",
+          "label": "Should collaboration games with partners appear as canon?",
+          "description": "Covers co-created titles using Atlas-V guidance.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_IN_DEVELOPMENT"
+        },
+        {
+          "id": "ip_backlog_titles",
+          "label": "Should backlog/prototype titles be listed for transparency?",
+          "description": "Decides if early prototypes appear as concepts or stay hidden.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_CONCEPT"
+        },
+        {
+          "id": "ip_retired_projects",
+          "label": "Should retired/abandoned projects be referenced?",
+          "description": "Clarifies whether to include a retired list or keep internal.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "D_INTERNAL"
+        },
+        {
+          "id": "ip_mod_support",
+          "label": "Should mod/UGC support be part of the canon story for games?",
+          "description": "Determines if modability is promised publicly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_CANON",
+              "label": "A \u2014 Fully canon and on site"
+            },
+            {
+              "value": "B_IN_DEVELOPMENT",
+              "label": "B \u2014 Mentioned as in development"
+            },
+            {
+              "value": "C_CONCEPT",
+              "label": "C \u2014 Mentioned as concept"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "C_CONCEPT"
+        },
+        {
+          "id": "ip_release_cadence",
+          "label": "How should we frame release cadence for games/IP?",
+          "description": "Sets expectations for frequency of launches or seasons.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_REGULAR",
+              "label": "A \u2014 Regular releases/seasons"
+            },
+            {
+              "value": "B_STAGGERED",
+              "label": "B \u2014 Staggered milestone drops"
+            },
+            {
+              "value": "C_OCCASIONAL",
+              "label": "C \u2014 Occasional showcase drops"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 No public cadence"
+            }
+          ],
+          "default": "B_STAGGERED"
         }
 
       ]
     },
 
     {
-      "id": "governance",
-      "title": "Governance & Public Boundaries",
-      "description": "Clarify what is disclosed publicly and what stays internal.",
+      "id": "media_lines_and_focus",
+      "title": "Media Lines & Focus",
+      "description": "Decide which media lanes become canon and how primary they are.",
       "items": [
 
         {
-          "id": "governance_visibility",
-          "label": "How transparent should governance and process documentation be?",
+          "id": "media_true_crime",
+          "label": "Should a true crime/analysis lane be part of canon media?",
+          "description": "Determines if investigative storytelling is core or experimental.",
           "type": "select",
           "options": [
-            { "value": "A_FULL", "label": "A — Fully transparent (public governance documents)" },
-            { "value": "B_PARTIAL", "label": "B — Partial (high-level only)" },
-            { "value": "C_MINIMAL", "label": "C — Minimal (rare disclosures)" },
-            { "value": "D_HIDDEN", "label": "D — None (fully internal)" }
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "B_OCCASIONAL"
+        },
+        {
+          "id": "media_engineering_education",
+          "label": "Should educational engineering/analysis content be a primary lane?",
+          "description": "Covers deep dives on systems, pipelines, and creative tooling.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "A_PRIMARY"
+        },
+        {
+          "id": "media_devlogs",
+          "label": "Should devlogs be ongoing and public?",
+          "description": "Clarifies cadence and prominence of development logs.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "A_PRIMARY"
+        },
+        {
+          "id": "media_podcast",
+          "label": "Should we run a podcast/interview series?",
+          "description": "Determines if podcasting is primary or a backlog experiment.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "B_OCCASIONAL"
+        },
+        {
+          "id": "media_comedy_sketch",
+          "label": "Should comedy/sketch formats be part of the canon?",
+          "description": "Decides if comedic bits appear or stay experimental only.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "C_BACKLOG"
+        },
+        {
+          "id": "media_livestreams",
+          "label": "Should livestreams (builds, reviews) be a canon format?",
+          "description": "Clarifies if live content is primary, occasional, or hidden.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "B_OCCASIONAL"
+        },
+        {
+          "id": "media_soundtrack_breakdowns",
+          "label": "Should soundtrack/score breakdowns be part of the media slate?",
+          "description": "Ties SKB audio releases to media storytelling.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "A_PRIMARY"
+        },
+        {
+          "id": "media_docuseries",
+          "label": "Should we produce documentary-style series about AtlasForge builds?",
+          "description": "Determines if docu-series are a primary channel or just occasional.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "B_OCCASIONAL"
+        },
+        {
+          "id": "media_world_bibles",
+          "label": "Should world bible readings/visualizations be media outputs?",
+          "description": "Covers lore narration, visual lore dumps, and read-throughs.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "B_OCCASIONAL"
+        },
+        {
+          "id": "media_research_notes",
+          "label": "Should research notes and design memos be shared publicly?",
+          "description": "Decides if internal memos become public media pieces.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "C_BACKLOG"
+        },
+        {
+          "id": "media_community_highlights",
+          "label": "Should community creations/collabs be featured as media?",
+          "description": "Determines if community spotlights become part of canon media.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PRIMARY",
+              "label": "A \u2014 Primary media lane"
+            },
+            {
+              "value": "B_OCCASIONAL",
+              "label": "B \u2014 Occasional content"
+            },
+            {
+              "value": "C_BACKLOG",
+              "label": "C \u2014 Backlog/seasonal"
+            },
+            {
+              "value": "D_NOT_CANON",
+              "label": "D \u2014 Not part of canon"
+            }
+          ],
+          "default": "B_OCCASIONAL"
+        },
+        {
+          "id": "media_release_cadence",
+          "label": "What cadence should media releases target?",
+          "description": "Sets expectations for how often episodes or posts appear.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_WEEKLY",
+              "label": "A \u2014 Weekly cadence"
+            },
+            {
+              "value": "B_BIWEEKLY",
+              "label": "B \u2014 Bi-weekly cadence"
+            },
+            {
+              "value": "C_MONTHLY",
+              "label": "C \u2014 Monthly/seasonal"
+            },
+            {
+              "value": "D_UNSCHEDULED",
+              "label": "D \u2014 Unscheduled drops"
+            }
+          ],
+          "default": "C_MONTHLY"
+        }
+      ]
+    },
+
+    {
+      "id": "governance_and_public_boundaries",
+      "title": "Governance & Public Boundaries",
+      "description": "Decide how much governance detail and internal mechanics become public.",
+      "items": [
+
+        {
+          "id": "gov_transparency_level",
+          "label": "How much of the internal governance system should be public?",
+          "description": "Controls depth of governance disclosures across site.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Full transparency"
+            },
+            {
+              "value": "B_GUIDE",
+              "label": "B \u2014 Guided summary"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal disclosure"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_GUIDE"
+        },
+        {
+          "id": "gov_publish_atlasv_explainer",
+          "label": "Should we publish a \"How Atlas-V works\" explainer?",
+          "description": "Determines whether internals are described step-by-step.",
+          "type": "select",
+          "options": [
+            {
+              "value": "YES",
+              "label": "Yes"
+            },
+            {
+              "value": "NO",
+              "label": "No"
+            },
+            {
+              "value": "LATER",
+              "label": "Later"
+            }
+          ],
+          "default": "YES"
+        },
+        {
+          "id": "gov_policy_access",
+          "label": "How accessible should policy/ruleset documents be?",
+          "description": "Decides if PDFs/policies are downloadable or summarized only.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Full transparency"
+            },
+            {
+              "value": "B_GUIDE",
+              "label": "B \u2014 Guided summary"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal disclosure"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_GUIDE"
+        },
+        {
+          "id": "gov_release_notes",
+          "label": "Should governance release notes be public?",
+          "description": "Determines if change logs for canon updates are visible.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PUBLIC",
+              "label": "A \u2014 Public release notes"
+            },
+            {
+              "value": "B_SUMMARY",
+              "label": "B \u2014 Summaries only"
+            },
+            {
+              "value": "C_INTERNAL",
+              "label": "C \u2014 Internal release notes"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No release notes"
+            }
+          ],
+          "default": "B_SUMMARY"
+        },
+        {
+          "id": "gov_admin_visibility",
+          "label": "Should admin console/Goblin Mode be referenced anywhere public?",
+          "description": "Ensures admin mechanics stay hidden or hinted at lightly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_HIDE",
+              "label": "A \u2014 Do not mention admin modes"
+            },
+            {
+              "value": "B_EASTER",
+              "label": "B \u2014 Light easter egg"
+            },
+            {
+              "value": "C_EXPLAIN",
+              "label": "C \u2014 Explain as governance tool"
+            },
+            {
+              "value": "D_PUBLIC",
+              "label": "D \u2014 Public admin entry"
+            }
+          ],
+          "default": "A_HIDE"
+        },
+        {
+          "id": "gov_council_visibility",
+          "label": "Should Council of Three/internal governance lore be public?",
+          "description": "Decides if governance characters appear in canon copy.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FEATURED",
+              "label": "A \u2014 Featured lore element"
+            },
+            {
+              "value": "B_MENTIONED",
+              "label": "B \u2014 Mentioned lightly"
+            },
+            {
+              "value": "C_HIDDEN",
+              "label": "C \u2014 Hidden from public"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal-only"
+            }
+          ],
+          "default": "B_MENTIONED"
+        },
+        {
+          "id": "gov_surface_risks",
+          "label": "Should we openly discuss risk mitigation and constraints?",
+          "description": "Impacts tone around safety, bias, and constraint management.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Full transparency"
+            },
+            {
+              "value": "B_GUIDE",
+              "label": "B \u2014 Guided summary"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal disclosure"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_GUIDE"
+        },
+        {
+          "id": "gov_internal_tools",
+          "label": "Should internal tooling names (Engine, Atlas-V Lite) be public?",
+          "description": "Determines whether internal tool names appear or stay codenamed.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_ALL",
+              "label": "A \u2014 All tool names public"
+            },
+            {
+              "value": "B_PARTIAL",
+              "label": "B \u2014 Partial list"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal mentions"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 None public"
+            }
           ],
           "default": "B_PARTIAL"
+        },
+        {
+          "id": "gov_user_data",
+          "label": "Should we explain how user data is handled in canon materials?",
+          "description": "Clarifies whether privacy/usage policy is described on site.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Full transparency"
+            },
+            {
+              "value": "B_GUIDE",
+              "label": "B \u2014 Guided summary"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal disclosure"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_GUIDE"
+        },
+        {
+          "id": "gov_escalation_process",
+          "label": "Should escalation/appeal processes be documented publicly?",
+          "description": "Determines if governance escalation paths are shown to visitors.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_FULL",
+              "label": "A \u2014 Full escalation process"
+            },
+            {
+              "value": "B_LIGHT",
+              "label": "B \u2014 Light overview"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal hints"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 Internal only"
+            }
+          ],
+          "default": "B_LIGHT"
+        },
+        {
+          "id": "gov_public_feedback",
+          "label": "Should public feedback loops on canon be open?",
+          "description": "Decides whether visitors can submit canon suggestions or issues.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_OPEN",
+              "label": "A \u2014 Open feedback portal"
+            },
+            {
+              "value": "B_FILTERED",
+              "label": "B \u2014 Filtered submissions"
+            },
+            {
+              "value": "C_MINIMAL",
+              "label": "C \u2014 Minimal, email only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No public feedback"
+            }
+          ],
+          "default": "C_MINIMAL"
+        }
+
+      ]
+    },
+
+    {
+      "id": "collaboration_and_contact_policy",
+      "title": "Collaboration & Contact Policy",
+      "description": "Decide how open the company is to collaborations, hiring, and inquiries.",
+      "items": [
+
+        {
+          "id": "contact_openness",
+          "label": "How open should AtlasForge be to collaboration inquiries?",
+          "description": "Sets strength of CTA for collaborators and partners.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_OPEN",
+              "label": "A \u2014 Open invites and strong CTA"
+            },
+            {
+              "value": "B_FILTERED",
+              "label": "B \u2014 Filtered invites with form"
+            },
+            {
+              "value": "C_LIMITED",
+              "label": "C \u2014 Limited pathways via footer"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 No public contact"
+            }
+          ],
+          "default": "B_FILTERED"
+        },
+        {
+          "id": "contact_placement",
+          "label": "Where should contact CTAs appear across the site?",
+          "description": "Controls distribution of contact links across nav, hero, and footer.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_NAV_AND_HERO",
+              "label": "A \u2014 Nav + hero + footer"
+            },
+            {
+              "value": "B_NAV_FOOTER",
+              "label": "B \u2014 Nav + footer"
+            },
+            {
+              "value": "C_FOOTER_ONLY",
+              "label": "C \u2014 Footer only"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 Hidden"
+            }
+          ],
+          "default": "B_NAV_FOOTER"
+        },
+        {
+          "id": "contact_intake_process",
+          "label": "How rigorous should the intake process for contact be?",
+          "description": "Decides if contact requires forms, qualifiers, or is open email.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_RIGOROUS",
+              "label": "A \u2014 Rigorous form + filters"
+            },
+            {
+              "value": "B_FILTERED",
+              "label": "B \u2014 Form with light filters"
+            },
+            {
+              "value": "C_SIMPLE",
+              "label": "C \u2014 Simple email/social"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 No intake"
+            }
+          ],
+          "default": "B_FILTERED"
+        },
+        {
+          "id": "contact_hiring_visibility",
+          "label": "Should hiring/collaboration prompts be visible?",
+          "description": "Determines if hiring language appears in nav or only via footer.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_VISIBLE",
+              "label": "A \u2014 Visible across hero/nav"
+            },
+            {
+              "value": "B_SELECTIVE",
+              "label": "B \u2014 Selective placement"
+            },
+            {
+              "value": "C_FOOTER",
+              "label": "C \u2014 Footer only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 Hidden"
+            }
+          ],
+          "default": "B_SELECTIVE"
+        },
+        {
+          "id": "contact_world_collabs",
+          "label": "Should we invite world/IP collaboration pitches?",
+          "description": "Clarifies whether external creators can pitch worlds or stories.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_OPEN",
+              "label": "A \u2014 Open invites and strong CTA"
+            },
+            {
+              "value": "B_FILTERED",
+              "label": "B \u2014 Filtered invites with form"
+            },
+            {
+              "value": "C_LIMITED",
+              "label": "C \u2014 Limited pathways via footer"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 No public contact"
+            }
+          ],
+          "default": "C_LIMITED"
+        },
+        {
+          "id": "contact_media_requests",
+          "label": "Should media interview/press requests be encouraged?",
+          "description": "Sets openness to press outreach and media inquiries.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_OPEN",
+              "label": "A \u2014 Open invites and strong CTA"
+            },
+            {
+              "value": "B_FILTERED",
+              "label": "B \u2014 Filtered invites with form"
+            },
+            {
+              "value": "C_LIMITED",
+              "label": "C \u2014 Limited pathways via footer"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 No public contact"
+            }
+          ],
+          "default": "B_FILTERED"
+        },
+        {
+          "id": "contact_tools_pilots",
+          "label": "Should we invite pilot users for AtlasStudio or Atlas-V?",
+          "description": "Determines if pilot access requests are solicited publicly.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_OPEN",
+              "label": "A \u2014 Open invites and strong CTA"
+            },
+            {
+              "value": "B_FILTERED",
+              "label": "B \u2014 Filtered invites with form"
+            },
+            {
+              "value": "C_LIMITED",
+              "label": "C \u2014 Limited pathways via footer"
+            },
+            {
+              "value": "D_HIDDEN",
+              "label": "D \u2014 No public contact"
+            }
+          ],
+          "default": "B_FILTERED"
+        },
+        {
+          "id": "contact_support_expectations",
+          "label": "How should we set expectations for response times to inquiries?",
+          "description": "Clarifies whether we promise quick responses or slower review.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_PROMPT",
+              "label": "A \u2014 Prompt responses expected"
+            },
+            {
+              "value": "B_STANDARD",
+              "label": "B \u2014 Standard business responses"
+            },
+            {
+              "value": "C_SLOW",
+              "label": "C \u2014 Slow/backlog responses"
+            },
+            {
+              "value": "D_INTERNAL",
+              "label": "D \u2014 No response promise"
+            }
+          ],
+          "default": "B_STANDARD"
+        },
+        {
+          "id": "contact_surface_channels",
+          "label": "Which channels should be listed for contact (email, form, socials)?",
+          "description": "Determines whether socials are shown or kept minimal.",
+          "type": "select",
+          "options": [
+            {
+              "value": "A_EMAIL_FORM_SOCIAL",
+              "label": "A \u2014 Email + form + socials"
+            },
+            {
+              "value": "B_EMAIL_FORM",
+              "label": "B \u2014 Email + form"
+            },
+            {
+              "value": "C_EMAIL_ONLY",
+              "label": "C \u2014 Email only"
+            },
+            {
+              "value": "D_NONE",
+              "label": "D \u2014 Do not list channels"
+            }
+          ],
+          "default": "B_EMAIL_FORM"
         }
 
       ]

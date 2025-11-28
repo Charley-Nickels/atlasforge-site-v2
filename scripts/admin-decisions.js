@@ -84,10 +84,10 @@
     if (item.type === 'select') {
       control = document.createElement('select');
       item.options.forEach((opt) => {
-        const option = document.createElement('option');
-        option.value = opt;
-        option.textContent = opt;
-        control.appendChild(option);
+        const optionEl = document.createElement('option');
+        optionEl.value = opt.value;
+        optionEl.textContent = opt.label || opt.value;
+        control.appendChild(optionEl);
       });
       control.value = storedValue !== undefined ? storedValue : item.default || '';
     } else if (item.type === 'checkbox') {

@@ -6,10 +6,8 @@
   <title>AtlasForge Interactive – Home</title>
   <link rel="stylesheet" href="styles/marketing.css" />
 </head>
-<body class="mf-shell brand-atlasforge">
+<body class="mf-shell brand-atlasforge home-shell">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
-  <!-- Component: Global.Nav.Top -->
-  <!-- Component: Global.Nav.MobileToggle -->
   <header class="mf-header" role="banner">
     <div class="mf-header-inner">
       <a class="mf-logo" href="index.html">
@@ -18,7 +16,7 @@
       </a>
       <div class="mf-nav-group" id="mf-primary-nav">
         <nav class="mf-nav mf-nav--primary" aria-label="Primary">
-          <a href="index.html">Home</a>
+          <a href="index.html" class="is-active">Home</a>
           <a href="atlasv.html">Atlas-V</a>
           <a href="atlasstudio.html">AtlasStudio</a>
           <a href="games.html">Games</a>
@@ -33,245 +31,188 @@
   </header>
 
   <main class="mf-main" id="main-content" role="main">
-    <!-- Layout: Home.Section.Hero -->
-    <!-- Designer Note: Visual component rules for Figma translation -->
-    <!-- Component: AF.HeroUmbrella -->
-    <!-- Component: Global.Hero.Primary -->
-    <section class="mf-hero mf-hero--forge mf-section">
-      <!-- Future hero background asset:
-           <img src="assets/backgrounds/hero/bg_hero-atlasforge_soft-gradient.png" class="hero-bg" alt="" /> -->
-      <div class="mf-container mf-hero-inner">
-        <div>
+    <section class="mf-section home-hero af-hero-gradient-af">
+      <div class="mf-container home-hero__grid">
+        <div class="home-hero__copy">
           <div class="mf-hero-badge mf-hero-badge--atlasforge">
             <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" class="mf-hero-badge-logo" loading="lazy" decoding="async" />
             <span>AtlasForge umbrella</span>
           </div>
-          <h1>AtlasForge Interactive powers governed creation.</h1>
-          <p>Games, tools, and audio from a single stack: Atlas Engine for structure, Atlas-V as the copilot, Atlas-V Lite for GPT guidance, and the Atlas Studio POC as the workstation surface.</p>
+          <h1>AtlasForge Interactive connects worlds, tools, and audio under one governed stack.</h1>
+          <p class="home-hero__lede">Atlas Engine defines the pattern, Atlas-V enforces it, and AtlasStudio brings the surface. Games, media, and labs output together with guardrails intact.</p>
           <div class="mf-hero-actions">
             <a class="mf-button mf-button--primary" href="atlasstudio.html">Explore AtlasStudio</a>
             <a class="mf-button mf-button--ghost" href="atlasv.html">See Atlas-V Engine</a>
-            <a class="mf-button mf-button--ghost" href="#stack">Explore the stack</a>
+            <a class="mf-button mf-button--ghost" href="#stack">View the stack</a>
+          </div>
+          <div class="home-hero__governance">
+            <span class="mf-chip mf-chip--outline">Powered by Atlas-V</span>
+            <span class="mf-chip mf-chip--subtle">Governed creation</span>
+            <span class="mf-chip mf-chip--subtle">Auditable runs</span>
           </div>
         </div>
-        <aside class="mf-hero-visual">
-          <h2>Governed stack</h2>
+        <aside class="home-hero__visual af-card-frame">
+          <h2>Stack signals</h2>
           <ul class="mf-list-inline">
-            <li class="mf-chip">AtlasForge</li>
-            <li class="mf-chip">AtlasStudio</li>
+            <li class="mf-chip">Atlas Engine</li>
             <li class="mf-chip">Atlas-V</li>
+            <li class="mf-chip">AtlasStudio</li>
             <li class="mf-chip">OIA</li>
-            <li class="mf-chip">S/K/B</li>
+            <li class="mf-chip">SKB</li>
+            <li class="mf-chip">Labs</li>
           </ul>
-          <p>Use the navigation to explore how the logic backbone, copilots, surfaces, and outputs align.</p>
+          <p class="home-hero__visual-note">Logic and safety travel across the stack—heroes, cards, and storytellers share the same backbone.</p>
         </aside>
       </div>
     </section>
 
-    <!-- Layout: Home.Section.StackDiagram -->
-    <!-- Component: AF.StackDiagram -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section" id="stack">
-      <div class="mf-container mf-stack-diagram mf-parallax">
-        <div class="mf-layer-back"></div>
-        <div class="mf-layer-front">
-          <header class="mf-section-header">
-            <div class="mf-eyebrow">Stack diagram</div>
-            <h2>AtlasForge stack in motion</h2>
-            <p>Atlas Engine orchestrates the logic, Atlas-V applies it as the project copilot, Atlas-V Lite brings GPT delivery, and Atlas Studio POC is the prototype workstation guided by that brain.</p>
-          </header>
-          <div class="mf-grid mf-grid--2 mf-layer-list">
-            <div class="mf-layer"><strong>Atlas Engine</strong><p>Governed logic backbone structuring phases, runs, and workflows.</p></div>
-            <div class="mf-layer"><strong>Atlas-V</strong><p>Project copilot that applies Engine governance across tools and tasks.</p></div>
-            <div class="mf-layer"><strong>Atlas-V Lite</strong><p>GPT-delivered assistant experience for quick guidance within the same pattern.</p></div>
-            <div class="mf-layer"><strong>Atlas Studio POC</strong><p>Prototype workstation surface guided by Atlas-V for planning, flows, and snapshots.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Layout: Home.Section.CaseStudies -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section">
-      <div class="mf-container mf-case-studies">
+    <section class="mf-section home-stack" id="stack">
+      <div class="mf-container af-stack-lg">
         <header class="mf-section-header">
-          <div class="mf-eyebrow">Case studies</div>
-          <h2>Examples that show the stack at work</h2>
-          <p>Each scenario highlights Atlas-V guidance inside the Atlas Studio POC, drawing on worlds and audio inputs.</p>
+          <div class="mf-eyebrow">Ecosystem</div>
+          <h2>AtlasForge stack in motion</h2>
+          <p>Atlas Engine structures the phases, Atlas-V enforces the path, AtlasStudio expresses it, and worlds feed it with narrative and audio.</p>
         </header>
-        <div class="mf-case-grid">
-          <article class="mf-card">
-            <h3>Building a narrative logic tree</h3>
-            <p>Map branching storylines in Atlas Studio POC while Atlas-V keeps routes clear and consistent.</p>
+        <div class="home-stack__grid">
+          <article class="af-card-frame home-stack__card">
+            <h3>Atlas Engine</h3>
+            <p>Logic backbone that defines phases, runs, and governance to keep every surface aligned.</p>
           </article>
-          <article class="mf-card">
-            <h3>World bible structuring</h3>
-            <p>Organize lore, characters, and zones; connect tasks to OIA content pulls governed by Atlas-V.</p>
+          <article class="af-card-frame home-stack__card">
+            <h3>Atlas-V</h3>
+            <p>Project copilot that issues prompts, validates progress, and tracks decision trails.</p>
           </article>
-          <article class="mf-card">
-            <h3>Audio release planning</h3>
-            <p>Slot SKB tracks into release timelines with Atlas-V sequencing milestones and approvals.</p>
+          <article class="af-card-frame home-stack__card">
+            <h3>AtlasStudio</h3>
+            <p>Workstation POC for tasks, flows, snapshots, and decisions guided by Atlas-V.</p>
           </article>
-          <article class="mf-card">
-            <h3>Entity map maintenance</h3>
-            <p>Keep entities synced across flows with Atlas-V tracking changes and aligning outputs.</p>
+          <article class="af-card-frame home-stack__card">
+            <h3>Worlds & Labs</h3>
+            <p>OIA narrative, SKB audio, and Labs experiments supply inputs for builds and releases.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Layout: Home.Section.SampleProjects -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section">
-      <div class="mf-container mf-gallery">
+    <section class="mf-section home-products" id="products">
+      <div class="mf-container af-stack-lg">
         <header class="mf-section-header">
-          <div class="mf-eyebrow">Sample projects</div>
-          <h2>Visuals from the stack</h2>
-          <p>Concept showcases of timelines, diagrams, and flows that preview the AtlasForge experience.</p>
+          <div class="mf-eyebrow">Products & Tools</div>
+          <h2>Core pillars that ship the experience</h2>
+          <p>Explore the engine, copilots, and workstation that guide how games, media, and tools are produced.</p>
         </header>
-        <div class="mf-gallery-grid">
-          <div class="mf-card">
-            <div class="mf-skeleton mf-skeleton--block"></div>
-            <p>FlowSim timeline pulse</p>
+        <div class="home-products__grid">
+          <article class="af-card-frame home-product">
+            <div class="home-product__eyebrow">Logic & Safety</div>
+            <h3>Atlas-V</h3>
+            <p>Safety, governance, and execution copilot driven by Atlas Engine.</p>
+            <a class="mf-button mf-button--ghost" href="atlasv.html">See Atlas-V</a>
+          </article>
+          <article class="af-card-frame home-product">
+            <div class="home-product__eyebrow">Workstation</div>
+            <h3>AtlasStudio</h3>
+            <p>Decision console and flow surface for snapshots, timelines, and runs.</p>
+            <a class="mf-button mf-button--ghost" href="atlasstudio.html">Visit AtlasStudio</a>
+          </article>
+          <article class="af-card-frame home-product">
+            <div class="home-product__eyebrow">Engine</div>
+            <h3>Atlas Engine</h3>
+            <p>Governing logic that informs phases, prompts, and audits across experiences.</p>
+            <a class="mf-button mf-button--ghost" href="atlasv.html#engine">View architecture</a>
+          </article>
+          <article class="af-card-frame home-product">
+            <div class="home-product__eyebrow">Operations</div>
+            <h3>Decision Console</h3>
+            <p>Admin shell for approvals, guardrails, and stack telemetry.</p>
+            <a class="mf-button mf-button--ghost" href="/admin/atlas-decisions.html">Open admin</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mf-section home-experiences" id="experiences">
+      <div class="mf-container af-stack-lg">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Worlds & Media</div>
+          <h2>Outputs powered by the stack</h2>
+          <p>Flagship projects show how the governed system delivers games, audio, and media.</p>
+        </header>
+        <div class="home-experiences__grid">
+          <article class="af-card-frame home-experience home-experience--oia">
+            <div class="home-experience__meta">Flagship Game</div>
+            <h3>OIA — Octopus in Action</h3>
+            <p>World bible, characters, and missions managed through Atlas-V with Studio flows.</p>
+            <a class="mf-button mf-button--ghost" href="oia.html">Explore OIA</a>
+          </article>
+          <article class="af-card-frame home-experience home-experience--skb">
+            <div class="home-experience__meta">Audio Label</div>
+            <h3>SKB</h3>
+            <p>Release planning, track approvals, and timeline alignment for the audio arm.</p>
+            <a class="mf-button mf-button--ghost" href="skb.html">Visit SKB</a>
+          </article>
+          <article class="af-card-frame home-experience home-experience--media">
+            <div class="home-experience__meta">Media & Labs</div>
+            <h3>Media & Labs</h3>
+            <p>Experiments, podcasts, and visuals that validate the stack and feed Atlas-V.</p>
+            <a class="mf-button mf-button--ghost" href="media.html">See media</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mf-section home-governance" id="governance">
+      <div class="mf-container af-stack-lg">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Governance</div>
+          <h2>Powered by Atlas-V safety and oversight</h2>
+          <p>Atlas-V enforces the guardrails that keep games, tools, and audio aligned with the Atlas Engine plan.</p>
+        </header>
+        <div class="home-governance__panel af-panel-frame">
+          <div class="home-governance__grid">
+            <div>
+              <div class="home-governance__badge">Powered by Atlas-V</div>
+              <h3>Safety layer for every surface</h3>
+              <p>Governed prompts, approvals, and telemetry ensure each release follows the same rules.</p>
+            </div>
+            <div class="home-governance__list">
+              <div class="home-governance__item">
+                <strong>Run governance</strong>
+                <p>Phases, runs, and reports link decisions back to the Engine.</p>
+              </div>
+              <div class="home-governance__item">
+                <strong>Decision trails</strong>
+                <p>Approvals, badges, and callouts make ownership visible across the stack.</p>
+              </div>
+              <div class="home-governance__item">
+                <strong>Atlas-V hooks</strong>
+                <p>Copilot routes, prompts, and safety checks translate Engine logic into action.</p>
+              </div>
+            </div>
           </div>
-          <div class="mf-card">
-            <div class="mf-skeleton mf-skeleton--block"></div>
-            <p>Logic builder view</p>
-          </div>
-          <div class="mf-card">
-            <div class="mf-skeleton mf-skeleton--block"></div>
-            <p>Entity relationship snapshot</p>
-          </div>
-          <div class="mf-card">
-            <div class="mf-skeleton mf-skeleton--block"></div>
-            <p>Atlas-V guard console</p>
+          <div class="home-governance__cta">
+            <a class="mf-button mf-button--primary" href="atlasv.html">See Atlas-V</a>
+            <a class="mf-button mf-button--ghost" href="atlasstudio.html">Visit AtlasStudio</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Layout: Home.Section.Storyboard -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section">
-      <div class="mf-container mf-storyboard">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">AtlasForge storyboard</div>
-          <h2>Chapters of the ecosystem</h2>
-          <p>Follow the sequence from the core philosophy through the governed stack that expresses it.</p>
+    <section class="mf-section home-cta mf-section--compact" id="cta">
+      <div class="mf-container home-cta__inner af-stack-lg">
+        <header class="home-cta__header">
+          <h2>Pick your path through the stack</h2>
+          <p>Choose a surface to explore or dive into Atlas-V to see how governance and creation pair together.</p>
         </header>
-        <div class="mf-storyboard-item"><strong>Zero-code creativity</strong><p>Creators direct everything with guided workflows instead of manual wiring.</p></div>
-        <div class="mf-storyboard-item"><strong>AtlasForge philosophy</strong><p>Balanced lighting, consistent grids, and a governed logic layer keep surfaces coherent.</p></div>
-        <div class="mf-storyboard-item"><strong>Atlas Studio POC</strong><p>Prototype workstation for tasks, decisions, snapshots, and flows guided by Atlas-V.</p></div>
-        <div class="mf-storyboard-item"><strong>Atlas-V copilot</strong><p>Applies Atlas Engine structure so projects stay aligned and auditable.</p></div>
-        <div class="mf-storyboard-item"><strong>Worlds & Labs</strong><p>OIA world notes and SKB audio releases supply narrative and sound inputs for builds.</p></div>
-        <div class="mf-storyboard-item"><strong>Applications</strong><p>Games, docs, and experiences delivered as outputs powered by the stack.</p></div>
-      </div>
-    </section>
-
-    <!-- Layout: Home.Section.FlowTracks -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section">
-      <div class="mf-container mf-flow-panel">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">How it fits</div>
-          <h2>One ecosystem, multiple surfaces</h2>
-          <p>Atlas Engine governs the flow, Atlas-V and Atlas-V Lite guide work, and worlds and labs supply the creative inputs.</p>
-        </header>
-        <div class="mf-flow-track">
-          <strong>AtlasStudio → Atlas-V</strong>
-          <p>Decisions, snapshots, and flows guided by Atlas-V inside the Atlas Studio POC.</p>
-        </div>
-        <div class="mf-flow-track">
-          <strong>Worlds & Labs → Studio</strong>
-          <p>OIA tasks and SKB releases appear as cards and cues; the workstation keeps them organized.</p>
-        </div>
-        <div class="mf-flow-track">
-          <strong>Outputs</strong>
-          <p>Games, docs, and experiences arranged as clear deliverables powered by Atlas-V.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Layout: Home.Section.HowItWorks -->
-    <!-- Component: Global.SectionWrapper -->
-    <!-- Layout: Home.Section.Audience -->
-    <section class="mf-section">
-      <div class="mf-container">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">How it works</div>
-          <h2>Structured guidance for any project</h2>
-          <p>Atlas Engine sets the pattern, Atlas-V applies it, and Atlas-V Lite brings the same flow to GPT experiences.</p>
-        </header>
-        <div class="mf-grid mf-grid--2">
-          <div class="mf-card">
-            <h3>Phases and runs</h3>
-            <p>Projects break into phases (big chunks) and runs (focused tasks) so teams can move methodically.</p>
-          </div>
-          <div class="mf-card">
-            <h3>Guidance and check-ins</h3>
-            <p>Atlas-V issues step-by-step execution prompts for your tools, then asks for quick run reports to keep progress on track.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mf-section">
-      <div class="mf-container">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Who it is for</div>
-          <h2>Built for teams and creators</h2>
-          <p>From independent creators to studios and managers, AtlasForge keeps projects organized without locking you into one tool.</p>
-        </header>
-        <div class="mf-grid mf-grid--2 mf-grid--stacked">
-          <div class="mf-card">
-            <h3>Creators and studios</h3>
-            <p>Design worlds, apps, or releases with Atlas-V guiding consistent routes and Atlas Studio POC as your surface.</p>
-          </div>
-          <div class="mf-card">
-            <h3>Teams and leads</h3>
-            <p>Use phases and runs to keep workstreams synchronized while letting Atlas-V Lite assist directly in chat.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Layout: Home.Section.Merch -->
-    <!-- Component: Merch.TeaserCards -->
-    <section id="merch" class="mf-section">
-      <div class="mf-container mf-gallery">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Merch teaser</div>
-          <h2>MerchForge coming later</h2>
-          <p>Neutral, minimal cards preview future drops—footer-only exposure until launch.</p>
-        </header>
-        <div class="mf-gallery-grid">
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder merch card"></div><p>AtlasForge hoodie mock</p><p class="mf-note">Tone: minimal, no purchase flow.</p><p class="mf-meta">Category: Apparel · Status: concept art</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder merch card"></div><p>Atlas-V badge pin</p><p class="mf-note">Powered by Atlas-V mark only.</p><p class="mf-meta">Category: Pin · Status: badge draft</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder merch card"></div><p>SKB vinyl concept</p><p class="mf-note">Audio by SKB callout.</p><p class="mf-meta">Category: Vinyl · Status: mock sleeve</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Layout: Home.Section.BrandStrip -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section">
-      <div class="mf-container">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Brand strip</div>
-          <h2>Explore each surface</h2>
-        </header>
-        <div class="mf-brand-strip">
-          <div class="mf-brand-tile"><a href="atlasstudio.html">AtlasStudio Workstation</a><span>Surface for flows and decisions.</span></div>
-          <div class="mf-brand-tile"><a href="atlasv.html">Atlas-V Engine</a><span>Project copilot powered by Atlas Engine.</span></div>
-          <div class="mf-brand-tile"><a href="oia.html">Octopus in Action</a><span>Flagship world built with Atlas-V.</span></div>
-          <div class="mf-brand-tile"><a href="skb.html">S/K/B</a><span>Audio label and releases guided in Atlas Studio POC.</span></div>
-          <div class="mf-brand-tile"><a href="games.html">Games</a><span>Showcase of outputs powered by AtlasForge.</span></div>
+        <div class="home-cta__actions">
+          <a class="mf-button mf-button--primary" href="atlasv.html">See Atlas-V</a>
+          <a class="mf-button mf-button--ghost" href="atlasstudio.html">Visit AtlasStudio</a>
+          <a class="mf-button mf-button--ghost" href="games.html">Explore Games</a>
+          <a class="mf-button mf-button--ghost" href="media.html">Browse Media</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Component: Global.Footer.Base -->
   <footer class="mf-footer" role="contentinfo">
     <div class="mf-container mf-footer-inner">
       <div class="mf-footer-brand">
@@ -301,8 +242,6 @@
       </div>
     </div>
   </footer>
-
-
 
   <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>

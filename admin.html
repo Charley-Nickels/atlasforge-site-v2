@@ -4,10 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Admin Access</title>
+  <title>AtlasForge Admin Portal</title>
   <link rel="stylesheet" href="styles/marketing.css" />
+  <link rel="stylesheet" href="styles/admin.css" />
 </head>
-<body class="mf-shell brand-admin">
+<body class="mf-shell brand-admin admin-shell">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
   <!-- Component: Global.Nav.Top -->
   <!-- Component: Global.Nav.MobileToggle -->
@@ -34,20 +35,983 @@
   </header>
 
   <main class="mf-main" id="main-content">
-    <!-- Component: Global.Hero.Primary -->
-    <section class="mf-hero mf-section">
-      <div class="mf-container mf-hero-inner">
-        <div>
-          <div class="mf-hero-badge"><span>Admin (Hidden)</span></div>
-          <h1>Admin access lives off the public nav.</h1>
-          <p>Use the secure Decisions Console link below to reach the admin tools when authorized.</p>
-          <div class="mf-hero-actions">
-            <a class="mf-button mf-button--primary" href="/admin/atlas-decisions.html">Open Decisions Console</a>
+    <section class="admin-hero af-hero-gradient-af">
+      <div class="admin-container admin-hero__inner">
+        <div class="admin-hero__eyebrow">Hidden console · internal only</div>
+        <h1>AtlasForge Admin Portal</h1>
+        <p class="admin-hero__lede">Decision console for dev/testing. Lore-first, goblin-friendly, and powered by Atlas-V governance hooks.</p>
+        <div class="admin-hero__meta">
+          <span class="admin-pill admin-pill--warning">Dev / testing only</span>
+          <span class="admin-pill admin-pill--ghost">Goblin mode prereq</span>
+          <span class="admin-pill admin-pill--success">Phase 8 tokens</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-gate">
+      <div class="admin-container admin-grid admin-grid--two">
+        <div class="admin-card admin-login-card af-panel-frame">
+          <div class="admin-card__header">
+            <div>
+              <p class="admin-meta">Goblin gate</p>
+              <h2>Lore-only access</h2>
+            </div>
+            <span class="admin-pill admin-pill--info">Visible password</span>
+          </div>
+          <label class="admin-field" for="admin-password">
+            <span>Lore-only password (not secure)</span>
+            <input id="admin-password" name="admin-password" type="text" placeholder="enter goblin phrase" />
+            <small class="admin-field__hint">This console is for AtlasForge dev/testing only. Do not use a real password.</small>
+          </label>
+          <div class="admin-actions">
+            <button class="admin-btn admin-btn--primary" type="button">Enter Goblin Console</button>
+            <button class="admin-btn admin-btn--ghost" type="button">Request checklist gremlin</button>
+          </div>
+        </div>
+
+        <div class="admin-card admin-loading-card af-card-frame">
+          <div class="admin-card__header">
+            <div>
+              <p class="admin-meta">Goblin loading theater</p>
+              <h3>Fake progress feed</h3>
+            </div>
+            <span class="admin-pill admin-pill--accent">In progress</span>
+          </div>
+          <ul class="admin-steps">
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Initiating goblin mode…</li>
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Attempting to go hog wild…</li>
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Adjusting specifications for filthy pig boy…</li>
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Determining copy-paste goblin’s tasks…</li>
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Adjusting checklists for dirty checklist gremlin…</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-console">
+      <div class="admin-container admin-console__inner">
+        <div class="admin-console__header">
+          <div>
+            <p class="admin-meta">Decision console</p>
+            <h2>Welcome, filthy little copy-paste goblin.</h2>
+            <p class="admin-lede">Snapshot of pending calls across the stack. Use the decision blocks to track A–E picks, approvals, and notes.</p>
+          </div>
+          <div class="admin-pill-row">
+            <span class="admin-pill admin-pill--success">Atlas-V governance</span>
+            <span class="admin-pill admin-pill--ghost">Lore-only auth</span>
+          </div>
+        </div>
+
+        <div class="admin-exportbar">
+          <div class="admin-export-actions">
+            <button class="admin-btn admin-btn--ghost" type="button" data-export-open data-tooltip="Export decisions as CSV or JSON" aria-describedby="admin-export-hint">
+              Export decisions
+            </button>
+            <button class="admin-btn admin-btn--secondary" type="button" data-history-open data-tooltip="View logger history" aria-describedby="admin-history-hint">
+              Logger history
+            </button>
+          </div>
+        </div>
+
+        <div class="admin-summary af-panel-frame" aria-live="polite">
+          <div class="admin-summary__item">
+            <p class="admin-meta">Total</p>
+            <strong data-summary-total>0</strong>
+          </div>
+          <div class="admin-summary__item">
+            <p class="admin-meta">Pending</p>
+            <strong data-summary-pending>0</strong>
+          </div>
+          <div class="admin-summary__item">
+            <p class="admin-meta">Accepted</p>
+            <strong data-summary-accepted>0</strong>
+          </div>
+          <div class="admin-summary__item">
+            <p class="admin-meta">Rejected</p>
+            <strong data-summary-rejected>0</strong>
+          </div>
+          <div class="admin-summary__item">
+            <p class="admin-meta">Backlog</p>
+            <strong data-summary-backlog>0</strong>
+          </div>
+          <div class="admin-summary__item">
+            <p class="admin-meta">Passed</p>
+            <strong data-summary-passed>0</strong>
+          </div>
+        </div>
+
+        <div class="admin-metrics af-panel-frame" aria-live="polite">
+          <div class="admin-metrics__item">
+            <p class="admin-meta">Changed</p>
+            <strong data-metric-changed>0</strong>
+            <small>Decisions with edits</small>
+          </div>
+          <div class="admin-metrics__item">
+            <p class="admin-meta">Notes present</p>
+            <strong data-metric-notes>0</strong>
+            <small>Cards with comments</small>
+          </div>
+          <div class="admin-metrics__item">
+            <p class="admin-meta">Requires review</p>
+            <strong data-metric-review>0</strong>
+            <small>Pending / backlog / pass</small>
+          </div>
+        </div>
+
+        <div class="admin-heat-legend" aria-hidden="true">
+          <span class="admin-heat-key admin-heat-key--review">Review</span>
+          <span class="admin-heat-key admin-heat-key--changed">Changed</span>
+          <span class="admin-heat-key admin-heat-key--notes">Notes</span>
+        </div>
+
+        <div class="admin-filterbar" id="admin-export-hint">
+          <div class="admin-filters" role="group" aria-label="Filter decisions by status">
+            <button type="button" class="admin-filter admin-filter--active" data-filter="all" aria-pressed="true" data-tooltip="Show all decisions">All</button>
+            <button type="button" class="admin-filter" data-filter="pending" aria-pressed="false" data-tooltip="Show pending">Pending</button>
+            <button type="button" class="admin-filter" data-filter="accepted" aria-pressed="false" data-tooltip="Show accepted">Accepted</button>
+            <button type="button" class="admin-filter" data-filter="rejected" aria-pressed="false" data-tooltip="Show rejected">Rejected</button>
+            <button type="button" class="admin-filter" data-filter="backlog" aria-pressed="false" data-tooltip="Show backlog">Backlog</button>
+            <button type="button" class="admin-filter" data-filter="archived" aria-pressed="false" data-tooltip="Show archived">Archived</button>
+            <button type="button" class="admin-filter" data-filter="passed" aria-pressed="false" data-tooltip="Show passed">Passed</button>
+          </div>
+          <label class="admin-search" for="admin-search" id="admin-history-hint">
+            <span class="admin-meta">Search</span>
+            <input id="admin-search" type="search" placeholder="Search decisions..." />
+          </label>
+        </div>
+
+        <div class="admin-controls admin-sticky-nav" aria-label="Decision navigation" data-scroll-shadow>
+          <div class="admin-group-controls" role="group" aria-label="Expand or collapse all decision groups">
+            <button type="button" class="admin-filter" data-expand-all data-tooltip="Expand all sections" aria-pressed="false">Expand all</button>
+            <button type="button" class="admin-filter" data-collapse-all data-tooltip="Collapse all sections" aria-pressed="false">Collapse all</button>
+          </div>
+          <nav class="admin-section-links" aria-label="Jump to decision sections">
+            <a href="#admin-section-website" data-section-link="website">Website</a>
+            <a href="#admin-section-oia" data-section-link="oia">OIA</a>
+            <a href="#admin-section-atlasv" data-section-link="atlasv">Atlas-V</a>
+            <a href="#admin-section-studio" data-section-link="studio">AtlasStudio</a>
+            <a href="#admin-section-engine" data-section-link="engine">Atlas Engine</a>
+            <a href="#admin-section-poc" data-section-link="poc">POC Queue</a>
+            <a href="#admin-section-meta" data-section-link="meta">Meta</a>
+          </nav>
+        </div>
+
+        <div class="admin-dashboard-grid">
+          <div class="admin-snapshot af-card-frame">
+            <p class="admin-meta">Open decisions</p>
+            <strong class="admin-stat">12</strong>
+            <p class="admin-subtext">Active across Phase 8 shells</p>
+          </div>
+          <div class="admin-snapshot af-card-frame">
+            <p class="admin-meta">Resolved this week</p>
+            <strong class="admin-stat">7</strong>
+            <p class="admin-subtext">Shipped to live previews</p>
+          </div>
+          <div class="admin-snapshot af-card-frame">
+            <p class="admin-meta">Hooks queued</p>
+            <strong class="admin-stat">5</strong>
+            <p class="admin-subtext">Phase 6/7 carry-over</p>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-website" data-section-key="website">
+          <div class="admin-section__head">
+            <div>
+              <h3>Website Decisions</h3>
+              <span class="admin-pill admin-pill--accent">Nav + visuals</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="website" aria-controls="admin-section-body-website" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-website">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F6-002" data-status="pending" data-group="website" data-tags="grid layout density 4-2-1 3-2-1">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F6-002 · Pending</p>
+                  <h4>Grid standard for marketing tiles</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Pick the default responsive grid pattern for cards across Games/Media/Labs.</p>
+              <div class="admin-options" role="group" aria-label="Grid options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="grid-standard" /> A) 4→2→1 default</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="grid-standard" /> B) 3→2→1 default</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="grid-standard" /> C) 4→3→1 with tighter gaps</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="grid-standard" /> D) Template-specific mix</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="grid-standard-pass" /> Pass / None</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Grid concerns"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F6-001" data-status="pending" data-group="website" data-tags="hero naming labels subhero">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F6-001 · Pending</p>
+                  <h4>Hero naming pattern</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Choose how hero headings and supporting labels are named and paired across pages.</p>
+              <div class="admin-options" role="group" aria-label="Hero naming options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="hero-naming" /> A) Hero + SubHero</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="hero-naming" /> B) Hero + Label ribbon</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="hero-naming" /> C) Hero only with governance badge</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="hero-naming" /> D) Hero + SubHero + CTA microcopy</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="hero-naming-pass" /> Pass / revisit</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Hero naming notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F5-003" data-status="pending" data-group="website" data-tags="governance badge placement hero footer">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F5-003 · Pending</p>
+                  <h4>Governance badge placement</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Set the consistent pattern for placing “Powered by Atlas-V” across hero bands and footers.</p>
+              <div class="admin-options" role="group" aria-label="Governance badge placement">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="badge-placement" /> A) Hero + footer always</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="badge-placement" /> B) Hero only on brand pages</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="badge-placement" /> C) Footer only with admin link</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="badge-placement" /> D) Contextual per template</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="badge-placement-pass" /> Pass / hold</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Badge placement notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F8-004" data-status="pending" data-group="website" data-tags="tooltip hover focus tap model">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F8-004 · Pending</p>
+                  <h4>Governance tooltip behavior</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Confirm the canonical hover/focus/tap pattern for governance tooltips on badges and links.</p>
+              <div class="admin-options" role="group" aria-label="Tooltip behavior">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="tooltip-model" /> A) Hover + focus with dismiss</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="tooltip-model" /> B) Tap-to-lock on mobile</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="tooltip-model" /> C) Inline helper text only</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="tooltip-model" /> D) Icon + modal details</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="tooltip-model-pass" /> Pass / None</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Tooltip guidance"></textarea>
+              </label>
+            </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-oia" data-section-key="oia">
+          <div class="admin-section__head">
+            <div>
+              <h3>OIA Decisions</h3>
+              <span class="admin-pill admin-pill--info">World roadmap</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="oia" aria-controls="admin-section-body-oia" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-oia">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F5-001" data-status="pending" data-group="oia" data-tags="gallery mobile tap swipe carousel">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F5-001 · Pending</p>
+                  <h4>Games/OIA gallery on mobile</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Choose the interaction model for galleries on phones.</p>
+              <div class="admin-options" role="group" aria-label="Gallery mobile behavior">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="oia-gallery" /> A) Tap-only cards</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="oia-gallery" /> B) Tap + swipe strip</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="oia-gallery" /> C) Mini-carousel</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="oia-gallery" /> D) Static stacked tiles</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="oia-gallery-pass" /> Pass / defer</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Gallery notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F9-001" data-status="pending" data-group="oia" data-tags="species lore reveal hover tap panel modal">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F9-001 · Pending</p>
+                  <h4>Species lore reveal</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Pick how species cards expose lore: hover, tap expand, panel, or modal.</p>
+              <div class="admin-options" role="group" aria-label="Species reveal options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="species-reveal" /> A) Hover reveal on desktop</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="species-reveal" /> B) Tap-to-expand inline</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="species-reveal" /> C) Slide-up panel</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="species-reveal" /> D) Modal detail</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="species-reveal-pass" /> Pass / None</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Lore reveal notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F10-001" data-status="pending" data-group="oia" data-tags="oia roadmap mailbox tasks map inline preview">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F10-001 · Pending</p>
+                  <h4>Next OIA preview focus</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Pick which OIA feature surfaces next on the site and gallery teasers.</p>
+              <div class="admin-options" role="group" aria-label="OIA preview options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="oia-preview" /> A) Mailbox overlay</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="oia-preview" /> B) Task chips + progress</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="oia-preview" /> C) Species log teaser</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="oia-preview" /> D) Map interactions</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="oia-preview-pass" /> Pass / backlog</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="OIA roadmap notes"></textarea>
+              </label>
+            </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-atlasv" data-section-key="atlasv">
+          <div class="admin-section__head">
+            <div>
+              <h3>Atlas-V / Lite Decisions</h3>
+              <span class="admin-pill admin-pill--accent">Governance</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="atlasv" aria-controls="admin-section-body-atlasv" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-atlasv">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F8-003" data-status="pending" data-group="atlasv" data-tags="governance strictness safety tone">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F8-003 · Pending</p>
+                  <h4>Governance strictness level</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Select the default safety posture for Atlas-V across public shells.</p>
+              <div class="admin-options" role="group" aria-label="Governance strictness">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="av-strictness" /> A) Conservative / block risky replies</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="av-strictness" /> B) Balanced with guided clarifications</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="av-strictness" /> C) Playful goblin with safety reminders</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="av-strictness-pass" /> Pass / defer</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Governance notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F5-004" data-status="pending" data-group="atlasv" data-tags="governance badge placement cross brand">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F5-004 · Pending</p>
+                  <h4>Cross-brand governance hooks</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Decide where "Powered by Atlas-V" appears across brands and how often governance badges repeat.</p>
+              <div class="admin-options admin-options--binary" role="group" aria-label="Cross-brand governance">
+                <label class="admin-option admin-decision-option" data-choice="yes"><input type="radio" name="av-hooks" /> Yes — global hero + footer</label>
+                <label class="admin-option admin-decision-option" data-choice="no"><input type="radio" name="av-hooks" /> No — brand page only</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="av-hooks-pass" /> Pass / contextual</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Placement notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F11-002" data-status="pending" data-group="atlasv" data-tags="atlas-v suggestions admin console autofill">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F11-002 · Pending</p>
+                  <h4>Atlas-V suggestions into console</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Decide if Atlas-V can propose or auto-fill decisions into the admin console.</p>
+              <div class="admin-options admin-options--approve" role="group" aria-label="Atlas-V suggestion handling">
+                <label class="admin-option admin-decision-option" data-choice="approve"><input type="radio" name="av-suggest" /> Approve — allow auto-fill proposals</label>
+                <label class="admin-option admin-decision-option" data-choice="hold"><input type="radio" name="av-suggest" /> Hold — manual review only</label>
+                <label class="admin-option admin-decision-option" data-choice="deny"><input type="radio" name="av-suggest" /> Deny — no auto suggestions</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="av-suggest-pass" /> Pass / later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Suggestion rules"></textarea>
+              </label>
+            </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-studio" data-section-key="studio">
+          <div class="admin-section__head">
+            <div>
+              <h3>AtlasStudio Decisions</h3>
+              <span class="admin-pill admin-pill--info">Workbench</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="studio" aria-controls="admin-section-body-studio" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-studio">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F5-004" data-status="pending" data-group="studio" data-tags="task drawer minimized full height">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F5-004 · Pending</p>
+                  <h4>Task drawer behavior</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Choose if the AtlasStudio task drawer can peek/minimize or remains full-height only.</p>
+              <div class="admin-options admin-options--binary" role="group" aria-label="Task drawer behavior">
+                <label class="admin-option admin-decision-option" data-choice="yes"><input type="radio" name="as-drawer" /> Yes — peek/minimized state</label>
+                <label class="admin-option admin-decision-option" data-choice="no"><input type="radio" name="as-drawer" /> No — full-height only</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="as-drawer-pass" /> Pass / TBD</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Drawer notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F8-002" data-status="pending" data-group="studio" data-tags="typing fidelity animation cursor">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F8-002 · Pending</p>
+                  <h4>Console typing fidelity</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Pick how realistic the playground console typing should feel.</p>
+              <div class="admin-options" role="group" aria-label="Typing fidelity options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="as-typing" /> A) Static text</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="as-typing" /> B) Blinking cursor only</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="as-typing" /> C) Fake typing animation</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="as-typing" /> D) Animated with per-character delay</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="as-typing-pass" /> Pass / None</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Typing fidelity notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F10-002" data-status="pending" data-group="studio" data-tags="automation depth suggestions prompts">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F10-002 · Pending</p>
+                  <h4>AtlasStudio automation depth</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Set how aggressive the POC should be in auto-suggesting runs, decisions, and prompts.</p>
+              <div class="admin-options" role="group" aria-label="Automation depth options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="as-automation" /> A) Manual only</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="as-automation" /> B) Light suggestions</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="as-automation" /> C) Semi-autonomous with approvals</label>
+                <label class="admin-option admin-decision-option" data-choice="D"><input type="radio" name="as-automation" /> D) Aggressive auto-suggest</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="as-automation-pass" /> Pass / later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Automation notes"></textarea>
+              </label>
+            </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-engine" data-section-key="engine">
+          <div class="admin-section__head">
+            <div>
+              <h3>Atlas Engine / Backend</h3>
+              <span class="admin-pill admin-pill--ghost">Routing</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="engine" aria-controls="admin-section-body-engine" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-engine">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F5-002" data-status="pending" data-group="engine" data-tags="admin mobile layout table cards hybrid">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F5-002 · Pending</p>
+                  <h4>Admin mobile layout</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Choose the responsive pattern for admin tables/cards on mobile.</p>
+              <div class="admin-options" role="group" aria-label="Admin mobile layout">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="admin-mobile" /> A) Responsive table with scroll</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="admin-mobile" /> B) Stacked cards</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="admin-mobile" /> C) Hybrid condensed table + cards</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="admin-mobile-pass" /> Pass / later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Mobile layout notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F6-003" data-status="pending" data-group="engine" data-tags="export behavior preparing queued">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F6-003 · Pending</p>
+                  <h4>Admin export behavior</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Decide how exports present: simple download, preparing state, or queued batch.</p>
+              <div class="admin-options" role="group" aria-label="Export behavior">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="admin-export" /> A) Simple export only</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="admin-export" /> B) Export + preparing state</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="admin-export" /> C) Queued batch export</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="admin-export-pass" /> Pass / defer</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Export behavior notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P6-F6-004" data-status="pending" data-group="engine" data-tags="placeholder upgrades about timeline admin export">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P6-F6-004 · Pending</p>
+                  <h4>Placeholder upgrade priority</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Confirm whether About timeline and export controls upgrades ship in Phase 8.</p>
+              <div class="admin-options admin-options--approve" role="group" aria-label="Placeholder upgrade priority">
+                <label class="admin-option admin-decision-option" data-choice="approve"><input type="radio" name="admin-placeholders" /> Approve — ship now</label>
+                <label class="admin-option admin-decision-option" data-choice="hold"><input type="radio" name="admin-placeholders" /> Hold — backlog</label>
+                <label class="admin-option admin-decision-option" data-choice="deny"><input type="radio" name="admin-placeholders" /> Deny — skip for Phase 8</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="admin-placeholders-pass" /> Pass / later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Placeholder notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P9-ENG-801" data-status="pending" data-group="engine" data-tags="autonomy loop atlas engine human in loop">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P9-ENG-801 · Pending</p>
+                  <h4>Autonomy level for loop</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Set how autonomous the Atlas development loop should run for early previews.</p>
+              <div class="admin-options" role="group" aria-label="Autonomy level">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="eng-autonomy" /> A) Human-in-the-loop only</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="eng-autonomy" /> B) Semi-autonomous with bulk suggestions</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="eng-autonomy" /> C) Near-autonomous with approvals</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="eng-autonomy-pass" /> Pass / later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Autonomy notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P9-ENG-802" data-status="pending" data-group="engine" data-tags="automated patch scope css layout content gameplay">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P9-ENG-802 · Pending</p>
+                  <h4>Scope of automated patching</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Decide what the loop can touch: visual CSS tweaks vs layout/content vs gameplay logic for OIA.</p>
+              <div class="admin-options" role="group" aria-label="Automated patch scope">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="eng-scope" /> A) Visual CSS only</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="eng-scope" /> B) Layout + content changes</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="eng-scope" /> C) Gameplay logic allowed</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="eng-scope-pass" /> Pass / limit later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Scope notes"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P9-ENG-803" data-status="pending" data-group="engine" data-tags="logging rollback strictness governance">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P9-ENG-803 · Pending</p>
+                  <h4>Logging & rollback rules</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Set the default logging granularity and rollback expectations for automated or semi-automated runs.</p>
+              <div class="admin-options" role="group" aria-label="Logging and rollback">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="eng-rollback" /> A) Verbose logs + manual rollback</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="eng-rollback" /> B) Snapshot rollback per run</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="eng-rollback" /> C) Automatic rollback on failure</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="eng-rollback-pass" /> Pass / decide later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Logging notes"></textarea>
+              </label>
+            </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-poc" data-section-key="poc">
+          <div class="admin-section__head">
+            <div>
+              <h3>POC & Experiment Queue</h3>
+              <span class="admin-pill admin-pill--accent">Branches</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="poc" aria-controls="admin-section-body-poc" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-poc">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P8-POC-601" data-status="backlog" data-group="poc" data-tags="poc experiments queue">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P8-POC-601 · Backlog</p>
+                  <h4>Upcoming POC branch</h4>
+                </div>
+                <span class="admin-status admin-status--backlog">Backlog</span>
+              </header>
+              <p class="admin-decision-card__context">Select which POC should be staged after AtlasStudio playground.</p>
+              <div class="admin-options" role="group" aria-label="POC queue options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="poc-queue" /> A) OIA feature mini-demo</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="poc-queue" /> B) Media carousel polish</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="poc-queue" /> C) Labs experiment cards</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="poc-queue-pass" /> Pass / Hold</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Notes for POC"></textarea>
+              </label>
+            </article>
+          </div>
+          </div>
+        </div>
+
+        <div class="admin-section" id="admin-section-meta" data-section-key="meta">
+          <div class="admin-section__head">
+            <div>
+              <h3>Meta & Goblin Tools</h3>
+              <span class="admin-pill admin-pill--ghost">Goblin ops</span>
+            </div>
+            <button class="admin-toggle" type="button" data-section-toggle="meta" aria-controls="admin-section-body-meta" aria-expanded="true">
+              <span class="admin-toggle__icon" aria-hidden="true">▾</span>
+              <span class="admin-toggle__label">Collapse</span>
+            </button>
+          </div>
+          <div class="admin-section__body" id="admin-section-body-meta">
+          <div class="admin-decision-grid">
+            <article class="admin-decision-card af-card-frame" data-decision-id="P8-META-701" data-status="accepted" data-group="meta" data-tags="tone silliness copy">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P8-META-701 · Accepted</p>
+                  <h4>Goblin mode level</h4>
+                </div>
+                <span class="admin-status admin-status--accepted">Accepted</span>
+              </header>
+              <p class="admin-decision-card__context">Tune the silliness level for admin copy while keeping clarity.</p>
+              <div class="admin-options admin-options--binary" role="group" aria-label="Goblin mode level">
+                <label class="admin-option admin-decision-option" data-choice="yes"><input type="radio" name="goblin-level" /> Yes — crank goblin references</label>
+                <label class="admin-option admin-decision-option" data-choice="no"><input type="radio" name="goblin-level" /> No — keep restrained tone</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="goblin-level-pass" /> Pass / toggle later</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Notes or checklist gremlin tasks"></textarea>
+              </label>
+            </article>
+
+            <article class="admin-decision-card af-card-frame" data-decision-id="P8-META-715" data-status="pending" data-group="meta" data-tags="run log placement analytics">
+              <header class="admin-decision-card__head">
+                <div>
+                  <p class="admin-meta">P8-META-715 · Pending</p>
+                  <h4>Run log visibility</h4>
+                </div>
+                <span class="admin-status admin-status--pending">Pending</span>
+              </header>
+              <p class="admin-decision-card__context">Decide where to expose the Phase 8 run log within the admin console.</p>
+              <div class="admin-options" role="group" aria-label="Run log options">
+                <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="run-log" /> A) Dedicated log panel</label>
+                <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="run-log" /> B) Inline within dashboard</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="run-log" /> C) Export-only</label>
+                <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="run-log-pass" /> Pass / None</label>
+              </div>
+              <div class="admin-status-row" role="group" aria-label="Decision status">
+                <button type="button" class="admin-status-pill" data-status-value="pending">Pending</button>
+                <button type="button" class="admin-status-pill" data-status-value="accepted">Accepted</button>
+                <button type="button" class="admin-status-pill" data-status-value="rejected">Rejected</button>
+                <button type="button" class="admin-status-pill" data-status-value="backlog">Backlog</button>
+                <button type="button" class="admin-status-pill" data-status-value="archived">Archived</button>
+              </div>
+              <label class="admin-notes">
+                <span>Notes</span>
+                <textarea rows="3" placeholder="Notes for goblin ops"></textarea>
+              </label>
+            </article>
+          </div>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <aside class="admin-history" aria-hidden="true" role="complementary" aria-label="Logger history drawer">
+    <div class="admin-history__header af-panel-frame">
+      <div class="admin-history__title">
+        <p class="admin-meta">AtlasLogger</p>
+        <h3>History</h3>
+      </div>
+      <div class="admin-history__controls">
+        <div class="admin-history__filters" role="group" aria-label="Filter log entries">
+          <button type="button" class="admin-filter admin-filter--active" data-history-filter="all">All</button>
+          <button type="button" class="admin-filter" data-history-filter="option">Option</button>
+          <button type="button" class="admin-filter" data-history-filter="binary">Yes/No</button>
+          <button type="button" class="admin-filter" data-history-filter="approval">Approve/Deny</button>
+          <button type="button" class="admin-filter" data-history-filter="status">Status</button>
+          <button type="button" class="admin-filter" data-history-filter="pass">Pass</button>
+          <button type="button" class="admin-filter" data-history-filter="notes">Notes</button>
+          <button type="button" class="admin-filter" data-history-filter="export">Export</button>
+        </div>
+        <div class="admin-history__actions">
+          <button type="button" class="admin-btn admin-btn--ghost" data-history-clear>Clear log</button>
+          <button type="button" class="admin-btn admin-btn--secondary" data-history-close aria-label="Close history drawer">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class="admin-history__body af-panel-frame" data-scroll-shadow>
+      <div class="admin-history__list" data-history-list role="list"></div>
+    </div>
+  </aside>
+
+  <div class="admin-export-modal" aria-hidden="true">
+    <div class="admin-export-modal__overlay" data-export-close aria-hidden="true"></div>
+    <div class="admin-export-modal__dialog af-panel-frame" role="dialog" aria-modal="true" aria-labelledby="admin-export-title">
+      <div class="admin-export-modal__header">
+        <div>
+          <p class="admin-meta">Exports</p>
+          <h3 id="admin-export-title">Export decision data</h3>
+          <p class="admin-export-modal__lede">Generate CSV or JSON using the current dataset. Clipboard uses JSON.</p>
+        </div>
+        <button type="button" class="admin-export-modal__close" data-export-close aria-label="Close export dialog">×</button>
+      </div>
+      <fieldset class="admin-export-options">
+        <legend class="admin-meta">Scope</legend>
+        <label class="admin-option admin-export-option">
+          <input type="radio" name="admin-export-scope" value="all" checked />
+          <span>Export all decisions</span>
+        </label>
+        <label class="admin-option admin-export-option">
+          <input type="radio" name="admin-export-scope" value="filtered" />
+          <span>Export filtered view</span>
+        </label>
+        <label class="admin-option admin-export-option">
+          <input type="radio" name="admin-export-scope" value="changed" />
+          <span>Export changed only</span>
+        </label>
+      </fieldset>
+      <div class="admin-export-actions">
+        <button type="button" class="admin-btn admin-btn--primary" data-export-download="csv">Download CSV</button>
+        <button type="button" class="admin-btn admin-btn--ghost" data-export-download="json">Download JSON</button>
+        <button type="button" class="admin-btn admin-btn--ghost" data-export-copy>Copy JSON to clipboard</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Component: Global.Footer.Base -->
   <footer class="mf-footer">
@@ -82,5 +1046,7 @@
 
   <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>
+  <script src="scripts/logger.js"></script>
+  <script src="scripts/admin.js"></script>
 </body>
 </html>

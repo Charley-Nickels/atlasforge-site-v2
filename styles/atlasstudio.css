@@ -2,24 +2,16 @@
 
 .mf-workstation {
   display: grid;
-  grid-template-columns: 280px 1fr 320px;
+  grid-template-columns:
+    calc(var(--space-88) * 3 + var(--space-16))
+    1fr
+    calc(var(--space-88) * 3 + var(--space-40) + var(--space-16));
   gap: var(--space-16);
   align-items: start;
 }
 
 .mf-panel {
-  /*
-    Future panel frame overlay:
-    background-image: var(--asset-frame-soft-01);
-    background-size: cover;
-    background-blend-mode: soft-light;
-  */
-  background: linear-gradient(180deg, var(--surface-850), var(--surface-800));
-  border: var(--border-strong);
-  border-radius: var(--radius-12);
-  padding: var(--space-16);
-  box-shadow: var(--shadow-card);
-  min-height: 200px;
+  min-height: calc(var(--space-88) + var(--space-64) + var(--space-48));
 }
 
 .mf-panel h3 {
@@ -33,18 +25,25 @@
 }
 
 .mf-task {
-  padding: var(--space-12);
-  border-radius: var(--radius-8);
-  border: var(--border-strong);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)), var(--surface-750);
+  background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+      color-mix(in srgb, var(--overlay-faint) 90%, transparent)
+    ),
+    var(--color-surface-300);
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
 }
 
 .mf-task:hover,
 .mf-task.is-active {
-  border-color: var(--brand-accent-soft);
-  transform: translateY(-2px);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)), var(--surface-750);
+  border-color: var(--state-hover-border);
+  transform: translateY(calc(-1 * (var(--space-4) + var(--space-2))));
+  background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--overlay-strong) 65%, transparent),
+      color-mix(in srgb, var(--overlay-mid) 85%, transparent)
+    ),
+    var(--color-surface-300);
 }
 
 .mf-task .mf-chip {
@@ -54,47 +53,73 @@
 
 .mf-decision-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(var(--space-72) + var(--space-64) + var(--space-4)), 1fr)
+  );
   gap: var(--space-12);
   margin-top: var(--space-16);
 }
 
 .mf-decision-button {
-  border-radius: var(--radius-8);
-  padding: var(--space-12);
-  border: var(--border-strong);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+    color-mix(in srgb, var(--overlay-faint) 90%, transparent)
+  );
   cursor: pointer;
   text-align: center;
-  color: var(--text-100);
+  color: var(--color-text-main);
   transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
 }
 
 .mf-decision-button:hover {
-  transform: translateY(-1px);
-  border-color: var(--brand-accent);
-  background: linear-gradient(165deg, rgba(241, 106, 27, 0.12), rgba(255, 255, 255, 0.02));
+  transform: translateY(calc(-1 * var(--space-2)));
+  border-color: var(--state-hover-border);
+  background: var(--state-hover-surface);
   box-shadow: var(--shadow-soft);
 }
 
+  .mf-decision-button:focus-visible {
+    outline: var(--border-thick) solid var(--state-focus-outline);
+    outline-offset: var(--space-4);
+    border-color: var(--state-focus-outline);
+  }
+
 .mf-decision-button[data-decision="Yes"] {
-  background: linear-gradient(150deg, rgba(241, 106, 27, 0.16), rgba(255, 255, 255, 0.02));
-  border-color: var(--brand-accent-soft);
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-brand-as-amber) 22%, transparent),
+    color-mix(in srgb, var(--overlay-mid) 80%, transparent)
+  );
+  border-color: var(--color-brand-accent-soft, var(--brand-accent-soft));
 }
 
 .mf-decision-button[data-decision="No"] {
   border-color: var(--overlay-mid);
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--overlay-mid) 80%, transparent),
+    color-mix(in srgb, var(--overlay-faint) 90%, transparent)
+  );
 }
 
 .mf-decision-button[data-decision="Later"] {
   border-color: var(--overlay-mid);
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+    color-mix(in srgb, var(--overlay-faint) 90%, transparent)
+  );
 }
 
 .mf-decision-button[data-decision="Expand"] {
   border-color: var(--brand-accent);
-  background: linear-gradient(150deg, rgba(241, 106, 27, 0.12), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(
+    150deg,
+    color-mix(in srgb, var(--color-brand-as-amber) 18%, transparent),
+    color-mix(in srgb, var(--overlay-mid) 80%, transparent)
+  );
 }
 
 .mf-snapshots {
@@ -109,10 +134,11 @@
     background-size: cover;
     background-blend-mode: screen;
   */
-  border-radius: var(--radius-8);
-  padding: var(--space-12);
-  border: var(--border-strong);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(
+    165deg,
+    color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+    color-mix(in srgb, var(--overlay-faint) 90%, transparent)
+  );
 }
 
 .mf-assistant {
@@ -132,8 +158,8 @@
 }
 
 .mf-panel-header .mf-chip {
-  background: rgba(241, 106, 27, 0.12);
-  color: var(--text-100);
+  background: var(--color-brand-as-amber-soft);
+  color: var(--color-text-main);
 }
 
 .mf-panel-spacer {
@@ -141,22 +167,26 @@
 }
 
 .mf-shell-section {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+    color-mix(in srgb, var(--overlay-weak) 90%, transparent)
+  );
 }
 
 .mf-studio-shell {
   display: grid;
   gap: var(--space-16);
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr calc(var(--space-88) * 3 + var(--space-40) + var(--space-16));
   align-items: start;
 }
 
 .mf-shell-window {
-  border-radius: var(--radius-12);
-  border: var(--border-strong);
-  padding: var(--space-16);
-  background: linear-gradient(170deg, var(--surface-850), var(--surface-800));
-  box-shadow: var(--shadow-card);
+    background: linear-gradient(
+      170deg,
+      color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+      var(--color-surface-100)
+    );
 }
 
 .mf-shell-top {
@@ -176,17 +206,21 @@
 .mf-chip-pill {
   display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: var(--border-strong);
-  background: linear-gradient(140deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0));
-  color: var(--text-100);
+  padding: calc(var(--space-4) + var(--space-2)) var(--space-12);
+  border-radius: var(--radius-pill);
+  border: var(--border-regular) solid var(--color-border-strong);
+  background: var(--state-hover-surface);
+  color: var(--color-text-main);
   font-weight: 600;
 }
 
 .mf-chip-pill.is-active {
   border-color: var(--brand-accent-soft);
-  background: linear-gradient(140deg, rgba(241, 106, 27, 0.16), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(
+    140deg,
+    color-mix(in srgb, var(--color-brand-as-amber) 22%, transparent),
+    color-mix(in srgb, var(--overlay-mid) 80%, transparent)
+  );
 }
 
 .mf-shell-actions {
@@ -197,18 +231,27 @@
 .mf-shell-grid {
   display: grid;
   gap: var(--space-12);
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(calc(var(--space-72) * 3 + var(--space-24)), 1fr)
+  );
 }
 
 .mf-shell-pane {
-  border-radius: var(--radius-10);
-  border: var(--border-strong);
-  padding: var(--space-12);
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--overlay-mid) 70%, transparent),
+      color-mix(in srgb, var(--overlay-weak) 90%, transparent)
+    );
 }
 
 .mf-shell-pane--terminal {
-  background: linear-gradient(165deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)), var(--surface-775);
+  background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--overlay-strong) 70%, transparent),
+      color-mix(in srgb, var(--overlay-mid) 85%, transparent)
+    ),
+    var(--color-surface-300);
 }
 
 .mf-shell-list {
@@ -229,21 +272,17 @@
 }
 
 .mf-shell-terminal {
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: var(--radius-8);
+  background: color-mix(in srgb, var(--overlay-strong) 80%, transparent);
+  border-radius: var(--radius-sm);
   padding: var(--space-12);
-  color: var(--text-100);
-  font-family: var(--font-mono);
-  min-height: 140px;
+  color: var(--color-text-main);
+  font-family: var(--font-family-mono);
+  min-height: calc(var(--space-72) + var(--space-64) + var(--space-4));
   white-space: pre-line;
 }
 
 .mf-shell-sidebar {
-  border-radius: var(--radius-12);
-  border: var(--border-strong);
-  padding: var(--space-16);
-  background: linear-gradient(170deg, var(--surface-825), var(--surface-800));
-  box-shadow: var(--shadow-card);
+    background: linear-gradient(170deg, var(--color-surface-100), var(--color-surface-200));
 }
 
 .mf-shell-stack {
@@ -252,9 +291,9 @@
   margin-top: var(--space-12);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: calc(var(--bp-desktop) - var(--space-88) * 2)) {
   .mf-workstation {
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: calc(var(--space-88) * 3) 1fr;
   }
 
   .mf-studio-shell {
@@ -262,7 +301,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--bp-tablet)) {
   .mf-workstation {
     grid-template-columns: 1fr;
   }

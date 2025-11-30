@@ -10,98 +10,186 @@
 </head>
 <body class="admin-shell">
   <a class="admin-skip" href="#main-content">Skip to main content</a>
-  <div class="admin-topbar" aria-label="AtlasForge Decisions Admin">
-    <div class="admin-topbar__icon" aria-hidden="true">🔒</div>
-    <div class="admin-topbar__text">
-      <div class="admin-topbar__title">AtlasForge Decisions Console</div>
-      <div class="admin-topbar__subtitle">Phase 5 decisions with canon freeze + export for Phase 6 handoff.</div>
+  <div class="admin-container">
+    <section class="gate-card card" id="goblin-gate" aria-label="Goblin Gate" aria-labelledby="gate-title" aria-describedby="gate-description gate-error" role="form">
+      <div class="gate-card__header">
+        <div class="gate-icon" aria-hidden="true">🧙‍♂️</div>
+        <div>
+          <p class="gate-eyebrow">Admin Gate</p>
+          <h1 class="gate-title" id="gate-title">Goblin Gate</h1>
+          <p class="gate-description" id="gate-description">Enter the activation phrase to reveal the Phase 5 Decisions Console.</p>
+        </div>
+      </div>
+      <div class="gate-form">
+        <label for="gate-phrase">Activation phrase</label>
+        <input id="gate-phrase" type="text" autocomplete="off" aria-describedby="gate-description gate-error" aria-invalid="false" aria-required="true" required />
+        <p class="gate-error" id="gate-error" role="alert" aria-live="assertive" aria-atomic="true"></p>
+        <div class="gate-actions">
+          <button class="btn" id="gate-submit" type="button">Unlock admin</button>
+        </div>
+        <!-- Activation phrase: "initiate goblin mode" -->
+      </div>
+    </section>
+
+    <div class="decisions-admin is-locked" id="decisions-admin" aria-hidden="true" hidden>
+      <div class="admin-topbar" aria-label="AtlasForge Decisions Admin">
+        <div class="admin-topbar__icon" aria-hidden="true">🔒</div>
+        <div class="admin-topbar__text">
+          <div class="admin-topbar__title">AtlasForge Decisions Console</div>
+          <div class="admin-topbar__subtitle">Phase 5 decisions with canon freeze + export for Phase 6 handoff.</div>
+        </div>
+      </div>
+
+      <main class="page-shell admin-console" id="main-content" role="main">
+        <section class="card admin-hero-bar">
+          <div class="admin-hero-bar__text">
+            <p class="admin-hero-bar__eyebrow">Phase 5 Decisions Admin</p>
+            <h1 class="admin-hero-bar__title">AtlasForge Decisions Console</h1>
+            <p class="admin-hero-bar__description">Track canon-ready decisions, apply filters, and export for Phase 6 planning.</p>
+          </div>
+          <div class="admin-hero-bar__actions">
+            <a class="btn" href="https://octopusin-action.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View Octopus in Action live (opens in a new tab)">View Octopus in Action live</a>
+          </div>
+        </section>
+
+        <!-- Layout: Admin.Section.ControlsPanel -->
+        <section class="card filters-card" id="controls-panel">
+          <div class="filters-card__header">
+            <div>
+              <p class="meta-line">Console filters and canon freeze</p>
+              <h2>Filters</h2>
+            </div>
+            <div class="filters-card__toggles">
+              <label class="freeze-toggle">
+                <input type="checkbox" id="canon-freeze" />
+                <span>Canon Freeze (locks approved items)</span>
+              </label>
+            </div>
+          </div>
+          <div class="controls-grid">
+            <div>
+              <label for="filter-category">Filter by category</label>
+              <select id="filter-category" aria-label="Filter by category">
+                <option value="all">All categories</option>
+              </select>
+            </div>
+            <div>
+              <label for="filter-priority">Filter by priority</label>
+              <select id="filter-priority" aria-label="Filter by priority">
+                <option value="all">All priorities</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <div>
+              <label for="filter-status">Filter by status</label>
+              <select id="filter-status" aria-label="Filter by status">
+                <option value="all">All statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Dropped">Dropped</option>
+                <option value="Later">Later</option>
+              </select>
+            </div>
+          </div>
+          <div class="controls-actions">
+            <div class="export-actions">
+              <button class="btn" id="export-btn" type="button">Export JSON</button>
+              <button class="btn btn-secondary" id="download-btn" type="button">Download JSON</button>
+            </div>
+            <p class="meta-line">Filters update the list below. Canon Freeze prevents edits to approved decisions while exporting remains available.</p>
+          </div>
+          <!-- Designer Note: Decisions UI designed for Phase 6 canon export -->
+        </section>
+
+        <!-- Layout: Admin.Section.Meta -->
+        <section class="card decisions-inventory" id="admin-meta">
+          <div class="decisions-inventory__header">
+            <div>
+              <p class="meta-line">All decisions ready for canon review</p>
+              <h2>Decisions Inventory</h2>
+            </div>
+            <div class="decisions-meta">
+              <span class="pill" id="decision-count" aria-live="polite">0 decisions shown</span>
+              <div class="status-message" id="console-status" role="status" aria-live="polite"></div>
+            </div>
+          </div>
+          <p class="meta-line">Includes brand, visual, navigation, governance, placeholder, cross-brand, pre-Figma, and future-facing questions.</p>
+          <div id="decisions-container" class="decisions-grid" aria-live="polite"></div>
+        </section>
+
+        <!-- Layout: Admin.Section.SpecialTracks -->
+        <section class="card" id="special-tracks">
+          <h2 class="section-title">Tracks & Dependencies</h2>
+          <div class="special-columns">
+            <div>
+              <h3>Decisions Requiring Human Narrative Input</h3>
+              <ul id="narrative-list" class="meta-list"></ul>
+            </div>
+            <div>
+              <h3>Design Prototype Approvals</h3>
+              <ul id="prototype-list" class="meta-list"></ul>
+            </div>
+            <div>
+              <h3>Brainstorm New Suggestions (Phase 6 Seeds)</h3>
+              <ul id="brainstorm-list" class="meta-list"></ul>
+              <!-- Designer Note: JSON schema must be maintained for future phases -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Layout: Admin.Section.Export -->
+        <section class="card export-card">
+          <h2>Export Decisions JSON</h2>
+          <p class="block-description">Exports the visible decision set into Phase 5 schema for Figma handoff and canon review.</p>
+          <textarea id="export-output" aria-label="Exported decisions" placeholder="Your exported JSON will appear here." readonly></textarea>
+        </section>
+      </main>
     </div>
   </div>
 
-  <main class="page-shell" id="main-content" role="main">
-    <header class="header">
-      <h1>Phase 5 Decisions Admin</h1>
-      <p>Track canon-ready decisions, freeze approvals, and export the JSON for Phase 6.</p>
-    </header>
+  <script>
+    (function () {
+      const gate = document.getElementById('goblin-gate');
+      const adminPanel = document.getElementById('decisions-admin');
+      const phraseInput = document.getElementById('gate-phrase');
+      const gateError = document.getElementById('gate-error');
+      const gateSubmit = document.getElementById('gate-submit');
+      const activationPhrase = 'initiate goblin mode';
 
-    <!-- Layout: Admin.Section.ControlsPanel -->
-    <section class="card" id="controls-panel">
-      <div class="controls-grid">
-        <div>
-          <label for="filter-category">Filter by category</label>
-          <select id="filter-category" aria-label="Filter by category">
-            <option value="all">All categories</option>
-          </select>
-        </div>
-        <div>
-          <label for="filter-priority">Filter by priority</label>
-          <select id="filter-priority" aria-label="Filter by priority">
-            <option value="all">All priorities</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
-        </div>
-        <div>
-          <label for="filter-status">Filter by status</label>
-          <select id="filter-status" aria-label="Filter by status">
-            <option value="all">All statuses</option>
-            <option value="Pending">Pending</option>
-            <option value="Approved">Approved</option>
-            <option value="Dropped">Dropped</option>
-            <option value="Later">Later</option>
-          </select>
-        </div>
-      </div>
-      <div class="controls-actions">
-        <label class="freeze-toggle">
-          <input type="checkbox" id="canon-freeze" />
-          <span>Canon Freeze (locks approved items)</span>
-        </label>
-        <div class="export-actions">
-          <button class="btn" id="export-btn" type="button">Export JSON</button>
-          <button class="btn btn-secondary" id="download-btn" type="button">Download JSON</button>
-        </div>
-      </div>
-      <p class="meta-line">Filters update the list below. Canon Freeze prevents edits to approved decisions while exporting remains available.</p>
-      <!-- Designer Note: Decisions UI designed for Phase 6 canon export -->
-    </section>
+      if (!gate || !adminPanel || !phraseInput || !gateSubmit) return;
 
-    <!-- Layout: Admin.Section.Meta -->
-    <section class="card" id="admin-meta">
-      <h2>Decisions Inventory</h2>
-      <p class="meta-line">Includes brand, visual, navigation, governance, placeholder, cross-brand, pre-Figma, and future-facing questions.</p>
-      <div class="status-message" id="console-status" role="status" aria-live="polite"></div>
-      <div id="decisions-container" class="decisions-grid" aria-live="polite"></div>
-    </section>
+      const unlock = () => {
+        const attempt = phraseInput.value.trim().toLowerCase();
+        gateError.textContent = '';
+        gateError.classList.remove('is-visible');
+        phraseInput.setAttribute('aria-invalid', 'false');
 
-    <!-- Layout: Admin.Section.SpecialTracks -->
-    <section class="card" id="special-tracks">
-      <div class="special-columns">
-        <div>
-          <h3>Decisions Requiring Human Narrative Input</h3>
-          <ul id="narrative-list" class="meta-list"></ul>
-        </div>
-        <div>
-          <h3>Design Prototype Approvals</h3>
-          <ul id="prototype-list" class="meta-list"></ul>
-        </div>
-        <div>
-          <h3>Brainstorm New Suggestions (Phase 6 Seeds)</h3>
-          <ul id="brainstorm-list" class="meta-list"></ul>
-          <!-- Designer Note: JSON schema must be maintained for future phases -->
-        </div>
-      </div>
-    </section>
+        if (attempt === activationPhrase) {
+          adminPanel.classList.remove('is-locked');
+          adminPanel.classList.add('is-unlocked');
+          adminPanel.removeAttribute('aria-hidden');
+          adminPanel.removeAttribute('hidden');
+          gate.setAttribute('aria-hidden', 'true');
+          gate.setAttribute('hidden', '');
+          gate.classList.add('is-hidden');
+          adminPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          gateError.textContent = 'Incorrect phrase. Try again to enter the console.';
+          gateError.classList.add('is-visible');
+          phraseInput.setAttribute('aria-invalid', 'true');
+        }
+      };
 
-    <!-- Layout: Admin.Section.Export -->
-    <section class="card export-card">
-      <h2>Export Decisions JSON</h2>
-      <p class="block-description">Exports the visible decision set into Phase 5 schema for Figma handoff and canon review.</p>
-      <textarea id="export-output" aria-label="Exported decisions" placeholder="Your exported JSON will appear here." readonly></textarea>
-    </section>
-  </main>
-
+      gateSubmit.addEventListener('click', unlock);
+      phraseInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          unlock();
+        }
+      });
+    })();
+  </script>
   <script src="/scripts/admin-decisions.js"></script>
 </body>
 </html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decision Deck v0 — AtlasForge</title>
+  <link rel="stylesheet" href="styles/marketing.css" />
+  <style>
+    .admin-table {
+      display: grid;
+      gap: var(--space-8);
+    }
+
+    .admin-table__row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-8);
+      padding: var(--space-12);
+      border: var(--border-regular) solid var(--color-border-subtle);
+      border-radius: var(--radius-sm);
+      background: var(--color-surface-100);
+    }
+
+    .admin-table__head {
+      background: var(--color-surface-200);
+      font-weight: 700;
+    }
+
+    .admin-lede {
+      margin: 0;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body class="mf-shell brand-atlasforge">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
+  <header class="mf-header" role="banner">
+    <div class="mf-header-inner">
+      <a class="mf-logo" href="index.html">
+        <span class="mf-logo-mark"><img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" width="55" height="55" loading="lazy" decoding="async" /></span>
+        <span class="mf-logo-text">AtlasForge Interactive</span>
+      </a>
+      <div class="mf-nav-group" id="mf-primary-nav">
+        <nav class="mf-nav mf-nav--primary" aria-label="Primary"></nav>
+        <nav class="mf-nav mf-nav--secondary" aria-label="Secondary"></nav>
+      </div>
+      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <main class="mf-main" id="main-content">
+    <section class="mf-section af-hero-gradient-af">
+      <div class="mf-container home-hero__grid">
+        <div class="home-hero__copy">
+          <div class="mf-hero-badge mf-hero-badge--atlasforge">Decision Deck</div>
+          <h1>Decision Deck v0 — Phase 8 scaffolding</h1>
+          <p class="home-hero__lede">Lightweight placeholder for future governance flows. Use this to sketch projects, questions, and statuses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mf-section">
+      <div class="mf-container af-stack-lg">
+        <header class="mf-section-header">
+          <div class="mf-eyebrow">Projects</div>
+          <h2>Example decisions</h2>
+          <p>Static table only — no persistence. These entries mirror the Phase 8 governance clusters.</p>
+        </header>
+        <div class="af-panel-frame" role="region" aria-label="Decision list">
+          <div class="admin-table admin-table--lite">
+            <div class="admin-table__row admin-table__head">
+              <div>Project</div>
+              <div>Category</div>
+              <div>Title</div>
+              <div>Status</div>
+            </div>
+            <div class="admin-table__row">
+              <div>Website</div>
+              <div>Layout</div>
+              <div>Standardize 3→2→1 marketing grid</div>
+              <div>Draft</div>
+            </div>
+            <div class="admin-table__row">
+              <div>OIA</div>
+              <div>Gallery</div>
+              <div>Tap-to-expand vs inline lore cards</div>
+              <div>Pending</div>
+            </div>
+            <div class="admin-table__row">
+              <div>Atlas V</div>
+              <div>Governance</div>
+              <div>Badge cadence across site heroes</div>
+              <div>Backlog</div>
+            </div>
+            <div class="admin-table__row">
+              <div>Atlas Studio</div>
+              <div>UX</div>
+              <div>Task drawer peek mode</div>
+              <div>Draft</div>
+            </div>
+          </div>
+          <div class="af-stack-lg" style="margin-top: var(--space-24);">
+            <label for="decision-export">
+              <strong>Decision Export (future phases)</strong>
+              <p class="admin-lede">Paste or gather export payloads here when Atlas-V governance hooks are ready.</p>
+            </label>
+            <textarea id="decision-export" rows="4" style="width: 100%; border-radius: var(--radius-md); padding: var(--space-12); border: var(--border-regular) solid var(--color-border-subtle); background: var(--color-surface-100);">Paste decisions here in future phases.</textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mf-footer">
+    <div class="mf-container mf-footer__grid">
+      <div>
+        <p class="mf-footer__brand">AtlasForge © <span data-year>2024</span></p>
+        <p class="mf-footer__meta">Governance scaffolding</p>
+      </div>
+      <div class="mf-footer__links">
+        <a href="canon.html">Canon Viewer</a>
+        <a href="admin.html">Admin</a>
+        <a href="index.html">Home</a>
+        <a id="mf-footer-admin-link" href="admin.html">Admin (Goblin Mode)</a>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

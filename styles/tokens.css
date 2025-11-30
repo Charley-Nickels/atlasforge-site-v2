@@ -1,5 +1,85 @@
 :root {
-  /* Spacing */
+  /* ======================================== */
+  /* Surfaces & Neutral Layer                */
+  /* ======================================== */
+  --color-surface-0: #f4efe7; /* page background */
+  --color-surface-100: #f6f2eb;
+  --color-surface-200: #eae4dc;
+  --color-surface-300: #e2d9cc;
+  --color-surface-400: #d8cec0;
+  --color-surface-500: #cfc3b2;
+  --color-surface-600: #c2b49f;
+
+  --color-border-subtle: #e2d9cc;
+  --color-border-strong: #c5b7a3;
+
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #555555;
+  --color-text-soft: #6a6a6a;
+  --color-text-inverse: #ffffff;
+
+  /* ======================================== */
+  /* Brand Accents                           */
+  /* ======================================== */
+  --color-brand-af-pink: #d81f44;
+  --color-brand-af-pink-soft: #ff5a8d;
+
+  --color-brand-av-cyan: #00d1d9;
+  --color-brand-av-cyan-soft: #7af0ff;
+
+  --color-brand-as-amber: #ff8a2b;
+  --color-brand-as-amber-soft: #ffc28a;
+
+  --color-brand-games: #ff3c8e;
+  --color-brand-oia: #ff3c8e;
+  --color-brand-skb: #21d6b3;
+  --color-brand-media: #e7b21a;
+  --color-brand-labs: #21d6b3;
+
+  /* Default brand mapping (overridable per page) */
+  --color-brand-accent: var(--color-brand-af-pink);
+  --color-brand-accent-strong: #a11632;
+  --color-brand-accent-soft: var(--color-brand-af-pink-soft);
+
+  /* ======================================== */
+  /* Interaction States                      */
+  /* ======================================== */
+  --color-state-hover-bg: rgba(26, 26, 26, 0.06);
+  --color-state-focus-outline: var(--color-brand-accent);
+  --color-state-pressed-bg: rgba(26, 26, 26, 0.1);
+  --color-state-disabled-bg: rgba(26, 26, 26, 0.08);
+  --color-state-disabled-fg: rgba(26, 26, 26, 0.45);
+
+  --state-hover-surface: var(--color-state-hover-bg);
+  --state-hover-border: var(--color-border-subtle);
+  --state-hover-foreground: var(--color-text-main);
+  --state-focus-outline: var(--color-state-focus-outline);
+  --state-pressed-surface: var(--color-state-pressed-bg);
+  --state-pressed-foreground: var(--color-text-main);
+  --state-disabled-surface: var(--color-state-disabled-bg);
+  --state-disabled-foreground: var(--color-state-disabled-fg);
+
+  /* ======================================== */
+  /* Typography                              */
+  /* ======================================== */
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --font-size-h1: 3rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-size-caption: 0.8125rem;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* ======================================== */
+  /* Spacing                                 */
+  /* ======================================== */
   --space-2: 0.125rem;
   --space-4: 0.25rem;
   --space-8: 0.5rem;
@@ -15,87 +95,114 @@
   --space-72: 4.5rem;
   --space-88: 5.5rem;
 
-  /* Layout */
-  --layout-max-width: 1200px;
-  --layout-content-width: 1100px;
+  /* Layout helpers */
+  --layout-max-width-main: 1280px;
+  --layout-max-width-admin: 1200px;
+  --layout-max-width-narrow: 1100px;
+  --layout-max-width: var(--layout-max-width-main);
+  --layout-content-width: var(--layout-max-width-narrow);
+  --layout-main: var(--layout-max-width-main);
+  --layout-narrow: var(--layout-max-width-narrow);
+  --layout-admin: var(--layout-max-width-admin);
   --section-padding-y: var(--space-48);
   --section-padding-y-compact: var(--space-32);
 
-  /* Radii */
-  --radius-4: 4px;
-  --radius-8: 8px;
-  --radius-12: 12px;
-  --radius-16: 16px;
-  --radius-24: 24px;
+  /* ======================================== */
+  /* Borders                                 */
+  /* ======================================== */
+  --border-thin: 1px;
+  --border-regular: 1px;
+  --border-thick: 2px;
+
+  /* ======================================== */
+  /* Radii                                   */
+  /* ======================================== */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-pill: 999px;
 
-  /* Shadows */
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.18);
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.22);
-  --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.28);
-  --shadow-ambient: 0 12px 40px rgba(0, 0, 0, 0.24);
+  /* ======================================== */
+  /* Shadows / Elevation                     */
+  /* ======================================== */
+  --shadow-sm: 0 2px 8px rgba(26, 26, 26, 0.12);
+  --shadow-none: none;
+  --shadow-soft: 0 8px 20px rgba(26, 26, 26, 0.16);
+  --shadow-medium: 0 10px 28px rgba(26, 26, 26, 0.2);
+  --shadow-strong: 0 16px 40px rgba(26, 26, 26, 0.28);
+  --shadow-ambient: 0 12px 36px rgba(26, 26, 26, 0.22);
+  --shadow-glow-soft: 0 0 0 var(--border-thin) rgba(26, 26, 26, 0.08), 0 0 24px color-mix(in srgb, var(--color-brand-accent) 38%, transparent);
+  --shadow-glow-strong: 0 0 0 var(--border-regular) color-mix(in srgb, var(--color-brand-accent) 55%, transparent), var(--shadow-ambient);
+  --shadow-glow-filter-soft: drop-shadow(0 var(--space-4) var(--space-12) color-mix(in srgb, var(--color-text-main) 25%, transparent));
+  --shadow-glow-filter-strong: drop-shadow(0 var(--space-4) var(--space-16) color-mix(in srgb, var(--color-brand-accent) 55%, transparent));
+  --shadow-elevated: var(--shadow-medium);
+  --shadow-raised: var(--shadow-soft);
+  --shadow-lg: var(--shadow-medium);
+  --shadow-xl: var(--shadow-strong);
+  --shadow-section-inset: 0 var(--border-thin) 0 var(--color-border-subtle) inset,
+    0 calc(-1 * var(--border-thin)) 0 var(--color-border-subtle) inset;
+  --shadow-ring-accent: 0 0 0 var(--border-thin) var(--state-hover-border);
 
-  /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-md: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2rem;
-  --text-3xl: 2.5rem;
-  --text-4xl: 3rem;
+  /* ======================================== */
+  /* Status Colors                            */
+  /* ======================================== */
+  --color-status-success: #1f8a4d;
+  --color-status-info: #0b83b2;
+  --color-status-warning: #c77b0a;
+  --color-status-critical: #c13535;
+  --color-status-success-soft: #d9f2e4;
+  --color-status-info-soft: #e3f1fa;
+  --color-status-warning-soft: #fdeed3;
+  --color-status-critical-soft: #fde1e1;
 
-  /* Balanced lighting tokens */
-  --highlight-soft: 0 0 0 1px rgba(255, 255, 255, 0.05), 0 12px 30px rgba(0, 0, 0, 0.25);
-  --accent-border: 1px solid rgba(255, 255, 255, 0.08);
-  --overlay-strong: rgba(255, 255, 255, 0.16);
-  --overlay-mid: rgba(255, 255, 255, 0.08);
-  --overlay-weak: rgba(255, 255, 255, 0.06);
-  --overlay-faint: rgba(255, 255, 255, 0.02);
+  /* ======================================== */
+  /* CTA Tokens                               */
+  /* ======================================== */
+  --cta-primary-bg: var(--color-brand-accent);
+  --cta-primary-strong: var(--color-brand-accent-strong);
+  --cta-primary-border: transparent;
+  --cta-primary-text: #ffffff;
+  --cta-primary-hover-bg: var(--color-brand-accent-strong);
+  --cta-primary-pressed-bg: var(--color-brand-accent);
+  --cta-primary-focus-outline: var(--color-state-focus-outline);
+  --cta-ghost-border: var(--accent-border);
+  --cta-ghost-text: var(--color-text-main);
+  --cta-ghost-hover-border: var(--color-text-main);
+  --cta-ghost-hover-surface: var(--state-hover-surface);
 
-  /* Brand palettes */
-  --forge-100: #f7e6ff;
-  --forge-300: #d79cff;
-  --forge-500: #b032f0;
-  --forge-700: #7c1ea6;
+  /* ======================================== */
+  /* Balanced lighting tokens                */
+  /* ======================================== */
+  --highlight-soft: 0 0 0 var(--border-thin) rgba(26, 26, 26, 0.08), 0 12px 30px rgba(26, 26, 26, 0.18);
+  --accent-border: var(--border-regular) solid rgba(26, 26, 26, 0.14);
+  --overlay-strong: rgba(26, 26, 26, 0.12);
+  --overlay-mid: rgba(26, 26, 26, 0.08);
+  --overlay-weak: rgba(26, 26, 26, 0.05);
+  --overlay-faint: rgba(26, 26, 26, 0.02);
 
-  --studio-100: #ffe8da;
-  --studio-300: #ffb78a;
-  --studio-500: #f16a1b;
-  --studio-700: #b84a10;
+  /* ======================================== */
+  /* Breakpoints                             */
+  /* ======================================== */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1200px;
 
-  --atlasv-100: #dff6ff;
-  --atlasv-300: #8ed7f7;
-  --atlasv-500: #1fb6ff;
-  --atlasv-700: #0f7db2;
+  /* ======================================== */
+  /* Light console palette (admin)            */
+  /* ======================================== */
+  --color-surface-light-0: #f6f2eb;
+  --color-surface-light-100: #ffffff;
+  --color-surface-light-200: #ede6dc;
+  --color-border-light: #d9cfc0;
+  --color-text-strong: #1a1a1a;
+  --color-text-muted-strong: #4a5568;
+  --color-accent-strong: #7c1ea6;
 
-  --oia-100: #ffe8d1;
-  --oia-300: #ffb88a;
-  --oia-500: #f07f3c;
-  --oia-700: #b45a25;
-
-  --skb-100: #f2e6ff;
-  --skb-300: #c7a6ff;
-  --skb-500: #8c4dff;
-  --skb-700: #5a2caa;
-
-  /* Neutral palette */
-  --surface-900: #0c0d12;
-  --surface-850: #0f1118;
-  --surface-800: #11131a;
-  --surface-750: #171c27;
-  --surface-700: #191c26;
-  --surface-600: #1f2430;
-  --surface-500: #262c3a;
-  --border-strong: 1px solid rgba(255, 255, 255, 0.14);
-  --text-100: #f5f7fb;
-  --text-300: #c4c8d4;
-  --text-500: #9199aa;
-  --text-700: #5d6371;
-
-  /* Asset placeholders (inactive) */
+  /* ======================================== */
+  /* Asset placeholders (inactive)           */
+  /* ======================================== */
   /* --asset-hero-atlasforge: url('../assets/backgrounds/hero/bg_hero-atlasforge_soft-gradient.png'); */
   /* --asset-hero-atlasv: url('../assets/backgrounds/hero/bg_hero-atlasv_soft-gradient.png'); */
   /* --asset-section-light: url('../assets/backgrounds/sections/bg_section-light_noise.png'); */
@@ -109,35 +216,107 @@
   /* --asset-blob-soft-01: url('../assets/flourishes/blobs/blob_corner-soft_01.png'); */
   /* --asset-blob-soft-02: url('../assets/flourishes/blobs/blob_corner-soft_02.png'); */
   /* --asset-frame-soft-01: url('../assets/flourishes/frames/frame_screen-soft_01.png'); */
+
+  /* ======================================== */
+  /* Legacy aliases for compatibility         */
+  /* ======================================== */
+  --surface-900: var(--color-surface-0);
+  --surface-850: var(--color-surface-100);
+  --surface-825: var(--color-surface-200);
+  --surface-800: var(--color-surface-200);
+  --surface-775: var(--color-surface-300);
+  --surface-750: var(--color-surface-300);
+  --surface-700: var(--color-surface-400);
+  --surface-600: var(--color-surface-500);
+  --surface-500: var(--color-surface-600);
+  --border-strong: var(--border-regular) solid var(--color-border-strong);
+  --text-100: var(--color-text-main);
+  --text-300: var(--color-text-muted);
+  --text-500: var(--color-text-soft);
+  --text-700: #3a3a3a;
+
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+  --text-xs: 0.8125rem;
+  --text-sm: var(--font-size-small);
+  --text-md: var(--font-size-body);
+  --text-lg: 1.125rem;
+  --text-xl: var(--font-size-h3);
+  --text-2xl: var(--font-size-h2);
+  --text-3xl: 2.5rem;
+  --text-4xl: var(--font-size-h1);
+
+  --radius-4: var(--radius-xs);
+  --radius-8: var(--radius-sm);
+  --radius-10: 10px;
+  --radius-12: var(--radius-md);
+  --radius-16: var(--radius-lg);
+  --radius-24: var(--radius-xl);
+
+  --shadow-card: var(--shadow-medium);
+  --shadow-soft-elevated: var(--shadow-soft);
+
+  /* Legacy state aliases */
+  --color-state-hover: var(--color-state-hover-bg);
+  --color-state-focus: var(--color-state-focus-outline);
+  --color-state-active: var(--color-state-pressed-bg);
+  --color-state-disabled-text: var(--color-state-disabled-fg);
+
+  /* Legacy brand aliases */
+  --color-af-accent: var(--color-brand-af-pink);
+  --color-af-accent-soft: var(--color-brand-af-pink-soft);
+  --color-av-accent: var(--color-brand-av-cyan);
+  --color-av-accent-soft: var(--color-brand-av-cyan-soft);
+  --color-as-accent: var(--color-brand-as-amber);
+  --color-as-accent-soft: var(--color-brand-as-amber-soft);
+  --color-games-accent: var(--color-brand-games);
+  --color-oia-accent: var(--color-brand-oia);
+  --color-skb-accent: var(--color-brand-skb);
+  --color-labs-accent: var(--color-brand-labs);
 }
 
 /* Brand theme mappings */
 body.brand-atlasforge {
-  --brand-accent: var(--forge-500);
-  --brand-accent-strong: var(--forge-700);
-  --brand-accent-soft: var(--forge-300);
+  --brand-accent: var(--color-brand-af-pink);
+  --brand-accent-strong: #a11632;
+  --brand-accent-soft: var(--color-brand-af-pink-soft);
+  --color-brand-accent: var(--color-brand-af-pink);
+  --color-brand-accent-strong: #a11632;
+  --color-brand-accent-soft: var(--color-brand-af-pink-soft);
 }
 
 body.brand-atlasstudio {
-  --brand-accent: var(--studio-500);
-  --brand-accent-strong: var(--studio-700);
-  --brand-accent-soft: var(--studio-300);
+  --brand-accent: var(--color-brand-as-amber);
+  --brand-accent-strong: #c35f15;
+  --brand-accent-soft: var(--color-brand-as-amber-soft);
+  --color-brand-accent: var(--color-brand-as-amber);
+  --color-brand-accent-strong: #c35f15;
+  --color-brand-accent-soft: var(--color-brand-as-amber-soft);
 }
 
 body.brand-atlasv {
-  --brand-accent: var(--atlasv-500);
-  --brand-accent-strong: var(--atlasv-700);
-  --brand-accent-soft: var(--atlasv-300);
+  --brand-accent: var(--color-brand-av-cyan);
+  --brand-accent-strong: #0b9aa1;
+  --brand-accent-soft: var(--color-brand-av-cyan-soft);
+  --color-brand-accent: var(--color-brand-av-cyan);
+  --color-brand-accent-strong: #0b9aa1;
+  --color-brand-accent-soft: var(--color-brand-av-cyan-soft);
 }
 
 body.brand-oia {
-  --brand-accent: var(--oia-500);
-  --brand-accent-strong: var(--oia-700);
-  --brand-accent-soft: var(--oia-300);
+  --brand-accent: var(--color-brand-oia);
+  --brand-accent-strong: #c32a67;
+  --brand-accent-soft: #ffb3d0;
+  --color-brand-accent: var(--color-brand-oia);
+  --color-brand-accent-strong: #c32a67;
+  --color-brand-accent-soft: #ffb3d0;
 }
 
 body.brand-skb {
-  --brand-accent: var(--skb-500);
-  --brand-accent-strong: var(--skb-700);
-  --brand-accent-soft: var(--skb-300);
+  --brand-accent: var(--color-brand-skb);
+  --brand-accent-strong: #1a9f8c;
+  --brand-accent-soft: #7cf2d9;
+  --color-brand-accent: var(--color-brand-skb);
+  --color-brand-accent-strong: #1a9f8c;
+  --color-brand-accent-soft: #7cf2d9;
 }

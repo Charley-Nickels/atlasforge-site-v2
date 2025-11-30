@@ -48,6 +48,50 @@
       </div>
     </section>
 
+    <section class="admin-activation">
+      <div class="admin-container admin-grid admin-grid--two">
+        <div class="admin-card af-panel-frame">
+          <div class="admin-card__header">
+            <div>
+              <p class="admin-meta">Goblin gate</p>
+              <h2>Activation phrase</h2>
+            </div>
+            <span class="admin-pill admin-pill--warning">Visible text</span>
+          </div>
+          <form id="admin-activation-form" class="af-stack-lg">
+            <label class="admin-field" for="admin-activation-input">
+              <span>Type the phrase to unlock admin</span>
+              <!-- Activation phrase: "initiate goblin mode" -->
+              <input id="admin-activation-input" name="admin-activation-input" type="text" placeholder="enter activation phrase" required />
+              <small class="admin-field__hint">Do not use a real password. This is a lore-only guardrail for the console.</small>
+            </label>
+            <div class="admin-actions">
+              <button class="admin-btn admin-btn--primary" type="submit">Unlock</button>
+              <button class="admin-btn admin-btn--ghost" type="reset">Clear</button>
+            </div>
+            <p class="admin-meta" id="admin-activation-status" aria-live="polite"></p>
+          </form>
+        </div>
+        <div class="admin-card af-card-frame">
+          <div class="admin-card__header">
+            <div>
+              <p class="admin-meta">Canon notice</p>
+              <h3>Governed access</h3>
+            </div>
+            <span class="admin-pill admin-pill--info">Phase 8</span>
+          </div>
+          <p>Admin panels stay hidden until the goblin phrase is provided. This keeps previews separate from the public beige site.</p>
+          <ul class="admin-steps">
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Type the phrase exactly.</li>
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Content reveals when matched.</li>
+            <li><span class="admin-step__dot" aria-hidden="true"></span>Reuse the gate for local testing.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div id="admin-protected" class="admin-locked" aria-live="polite">
+
     <section class="admin-hub">
       <div class="admin-container">
         <header class="admin-hub__header">
@@ -1021,6 +1065,7 @@
         </div>
       </div>
     </section>
+    </div>
   </main>
 
   <aside class="admin-history" aria-hidden="true" role="complementary" aria-label="Logger history drawer">
@@ -1085,36 +1130,52 @@
     </div>
   </div>
 
-  <!-- Component: Global.Footer.Base -->
   <footer class="mf-footer">
-    <div class="mf-container mf-footer-inner">
-      <div class="mf-footer-brand">
-        <strong>AtlasForge Interactive</strong>
-        <p class="mf-footer-note">Governed stack for games, tools, and audio.</p>
-        <a class="mf-footer-link" href="mailto:hello@atlasforge.gg">hello@atlasforge.gg</a>
-        <small>© <span data-year></span> AtlasForge Interactive</small>
-      </div>
+    <div class="container mf-footer__grid">
       <div>
-        <h4>Navigate</h4>
-        <ul class="mf-footer-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="atlasv.html">Atlas-V</a></li>
-          <li><a href="atlasstudio.html">AtlasStudio</a></li>
-          <li><a href="games.html">Games</a></li>
-          <li><a href="media.html">Media</a></li>
-        </ul>
+        <p class="mf-footer__brand">AtlasForge © <span data-year>2024</span></p>
+        <p class="mf-footer__meta">Admin portal · Beige theme</p>
       </div>
-      <div>
-        <h4>Secondary</h4>
-        <ul class="mf-footer-list">
-          <li><a href="skb.html">SKB</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-        <p class="mf-footer-note">Contact and merch live in the footer only.</p>
-        <a href="/admin/atlas-decisions.html" class="mf-footer-admin-link">Admin</a>
+      <div class="mf-footer__links" data-footer-primary></div>
+      <div class="mf-footer__links" data-footer-secondary></div>
+      <div class="mf-footer__links">
+        <a href="canon.html">Canon Viewer</a>
+        <a href="decisions.html">Decision Deck</a>
+        <a id="mf-footer-admin-link" href="admin.html">Admin (Goblin Mode)</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function() {
+      const protectedBlock = document.getElementById('admin-protected');
+      const activationForm = document.getElementById('admin-activation-form');
+      const activationInput = document.getElementById('admin-activation-input');
+      const activationStatus = document.getElementById('admin-activation-status');
+      const activationSection = document.querySelector('.admin-activation');
+      const ACTIVATION_PHRASE = 'initiate goblin mode';
+
+      if (protectedBlock && activationForm && activationInput) {
+        activationForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const value = (activationInput.value || '').trim().toLowerCase();
+
+          if (value === ACTIVATION_PHRASE) {
+            protectedBlock.classList.remove('admin-locked');
+            if (activationSection) activationSection.classList.add('admin-locked');
+            activationStatus.textContent = 'Goblin gate unlocked. Admin tiles revealed.';
+          } else {
+            activationStatus.textContent = 'Incorrect phrase. Try again.';
+            activationInput.focus();
+          }
+        });
+
+        activationForm.addEventListener('reset', () => {
+          activationStatus.textContent = '';
+        });
+      }
+    })();
+  </script>
 
   <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>

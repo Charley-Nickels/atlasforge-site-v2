@@ -45,6 +45,19 @@
     }
   }
 
+  function buildFooterLinks() {
+    const primaryFooter = document.querySelector('[data-footer-primary]');
+    const secondaryFooter = document.querySelector('[data-footer-secondary]');
+
+    if (primaryFooter) {
+      primaryFooter.innerHTML = NAV_PRIMARY.map((item) => `<a href="${item.href}">${item.label}</a>`).join('');
+    }
+
+    if (secondaryFooter) {
+      secondaryFooter.innerHTML = NAV_SECONDARY.map((item) => `<a href="${item.href}">${item.label}</a>`).join('');
+    }
+  }
+
   const ADMIN_CODE_HASH = "a6506adb72c5f516e711856247a0757eeaac80d827a525ad1ca644ed6383b82c";
 
   function sha256Hex(str) {
@@ -58,6 +71,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     buildNav();
+    buildFooterLinks();
 
     const adminLink = document.getElementById("mf-footer-admin-link");
     const modal = document.getElementById("mf-admin-modal");

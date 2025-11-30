@@ -4,6 +4,47 @@
     yearEl.textContent = new Date().getFullYear();
   }
 
+  const NAV_PRIMARY = [
+    { label: 'AtlasForge', href: 'index.html' },
+    { label: 'Studio / About', href: 'about.html' },
+    { label: 'Atlas Studio', href: 'atlasstudio.html' },
+    { label: 'Atlas V', href: 'atlasv.html' },
+    { label: 'Games', href: 'games.html' },
+    { label: 'Labs', href: 'labs.html' }
+  ];
+
+  const NAV_SECONDARY = [
+    { label: 'Atlas Wave', href: 'wave.html' },
+    { label: 'AMN', href: 'amn.html' },
+    { label: 'Store', href: 'store.html' },
+    { label: 'Publishing & Licensing', href: 'publishing.html' }
+  ];
+
+  function isActive(href, current) {
+    if (current === '' || current === '/') return href === 'index.html';
+    return current === href;
+  }
+
+  function buildNav() {
+    const primaryNav = document.querySelector('.mf-nav--primary');
+    const secondaryNav = document.querySelector('.mf-nav--secondary');
+    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+    if (primaryNav) {
+      primaryNav.innerHTML = NAV_PRIMARY.map((item) => {
+        const active = isActive(item.href.toLowerCase(), current) ? 'is-active' : '';
+        return `<a href="${item.href}" class="${active}">${item.label}</a>`;
+      }).join('');
+    }
+
+    if (secondaryNav) {
+      secondaryNav.innerHTML = NAV_SECONDARY.map((item) => {
+        const active = isActive(item.href.toLowerCase(), current) ? 'is-active' : '';
+        return `<a href="${item.href}" class="${active}">${item.label}</a>`;
+      }).join('');
+    }
+  }
+
   const ADMIN_CODE_HASH = "a6506adb72c5f516e711856247a0757eeaac80d827a525ad1ca644ed6383b82c";
 
   function sha256Hex(str) {
@@ -16,6 +57,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
+    buildNav();
+
     const adminLink = document.getElementById("mf-footer-admin-link");
     const modal = document.getElementById("mf-admin-modal");
     const form = document.getElementById("mf-admin-form");

@@ -27,6 +27,13 @@
   const HISTORY_CLEAR_SELECTOR = '[data-history-clear]';
   const STICKY_NAV_SELECTOR = '.admin-sticky-nav';
   const SCROLL_SHADOW_SELECTOR = '[data-scroll-shadow]';
+  const ACTIVATION_PHRASE = 'initiate goblin mode'; // changeable phrase for lore-only gate
+
+  let adminInitialized = false;
+
+  if (document.body) {
+    document.body.classList.add('admin-locked');
+  }
 
   let activeFilter = 'all';
   let searchTerm = '';
@@ -785,7 +792,28 @@
     window.addEventListener('resize', () => shadowTargets.forEach(updateScrollShadows), { passive: true });
   };
 
-  document.addEventListener('DOMContentLoaded', () => {
+  const ensureGateStyles = () => {
+    if (document.getElementById('admin-gate-style')) return;
+    const style = document.createElement('style');
+    style.id = 'admin-gate-style';
+    style.textContent = `
+      .admin-gate { display: none; }
+      .admin-locked .admin-gate { display: block; }
+      .admin-locked main > :not(.admin-gate) { display: none !important; }
+      .admin-locked .mf-header { position: static; }
+      .admin-error { color: var(--color-brand-accent); font-weight: 600; margin-top: var(--space-8); }
+    `;
+    document.head.appendChild(style);
+  };
+
+  const setLocked = () => {
+    document.body.classList.add('admin-locked');
+    document.body.classList.remove('admin-unlocked');
+  };
+
+  const bootAdmin = () => {
+    if (adminInitialized) return;
+    adminInitialized = true;
     cards = Array.from(document.querySelectorAll(CARDS_SELECTOR));
     cards.forEach(registerCard);
     initFilters();
@@ -795,5 +823,62 @@
     initScrollShadows();
     updateSummary();
     applyFilters();
+  };
+
+  const setupGate = () => {
+    ensureGateStyles();
+    setLocked();
+
+    const gate = document.querySelector('.admin-gate');
+    const input = document.getElementById('admin-password');
+    const button = gate ? gate.querySelector('.admin-btn--primary') : null;
+    let errorEl = gate ? gate.querySelector('[data-admin-error]') : null;
+
+    if (!errorEl && gate) {
+      errorEl = document.createElement('p');
+      errorEl.className = 'admin-error';
+      errorEl.dataset.adminError = 'true';
+      errorEl.setAttribute('aria-live', 'polite');
+      gate.querySelector('.admin-card')?.appendChild(errorEl);
+    }
+
+    const unlock = () => {
+      document.body.classList.remove('admin-locked');
+      document.body.classList.add('admin-unlocked');
+      if (errorEl) errorEl.textContent = '';
+      bootAdmin();
+    };
+
+    const validate = () => {
+      const value = (input?.value || '').trim().toLowerCase();
+      if (value === ACTIVATION_PHRASE) {
+        unlock();
+      } else if (errorEl) {
+        errorEl.textContent = 'Incorrect activation phrase. The gate stays closed.';
+      }
+    };
+
+    if (button) {
+      button.addEventListener('click', validate);
+    }
+
+    if (input) {
+      input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          validate();
+        }
+      });
+    }
+
+    if (!gate || !input || !button) {
+      document.body.classList.add('admin-unlocked');
+      document.body.classList.remove('admin-locked');
+      bootAdmin();
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setupGate();
   });
 })();

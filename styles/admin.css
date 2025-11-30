@@ -7,6 +7,10 @@ body.admin-shell {
   font-family: var(--font-family-sans);
 }
 
+.admin-locked {
+  display: none;
+}
+
 .admin-container {
   max-width: var(--layout-admin, var(--layout-max-width-admin));
   margin: 0 auto;

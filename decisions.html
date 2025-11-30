@@ -6,30 +6,13 @@
   <title>Decision Deck v0 — AtlasForge</title>
   <link rel="stylesheet" href="styles/marketing.css" />
   <style>
-    .admin-table {
-      display: grid;
-      gap: var(--space-8);
-    }
-
-    .admin-table__row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-8);
-      padding: var(--space-12);
-      border: var(--border-regular) solid var(--color-border-subtle);
-      border-radius: var(--radius-sm);
-      background: var(--color-surface-100);
-    }
-
-    .admin-table__head {
-      background: var(--color-surface-200);
-      font-weight: 700;
-    }
-
-    .admin-lede {
-      margin: 0;
-      color: var(--color-text-muted);
-    }
+    .decision-grid { display: grid; gap: var(--space-12); }
+    .decision-row { display: grid; grid-template-columns: 1fr 1fr 2fr 1.5fr; gap: var(--space-12); align-items: start; padding: var(--space-16); background: var(--panel-light); border: 1px solid var(--panel-border); border-radius: var(--radius-md); }
+    .decision-head { background: var(--panel-mid); font-weight: 700; }
+    .decision-options { display: inline-flex; gap: var(--space-8); flex-wrap: wrap; }
+    .decision-options button { border: var(--border-regular) solid var(--panel-border); background: var(--color-surface-100); padding: var(--space-8) var(--space-12); border-radius: var(--radius-sm); cursor: pointer; }
+    .decision-options button:focus-visible { outline: var(--border-thick) solid var(--state-focus-outline); outline-offset: 2px; }
+    @media (max-width: 800px) { .decision-row { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body class="mf-shell brand-atlasforge">
@@ -49,78 +32,93 @@
   </header>
 
   <main class="mf-main" id="main-content">
-    <section class="mf-section af-hero-gradient-af">
-      <div class="mf-container home-hero__grid">
-        <div class="home-hero__copy">
-          <div class="mf-hero-badge mf-hero-badge--atlasforge">Decision Deck</div>
-          <h1>Decision Deck v0 — Phase 8 scaffolding</h1>
-          <p class="home-hero__lede">Lightweight placeholder for future governance flows. Use this to sketch projects, questions, and statuses.</p>
+    <section class="section af-hero-gradient-af">
+      <div class="container page-hero">
+        <div class="page-hero__copy">
+          <div class="page-hero__logo af-glow">🗂️</div>
+          <h1>Decision Deck v0 – Phase 8 scaffolding</h1>
+          <p class="page-hero__lede">Lightweight staging table for approvals and options. Static only—no persistence yet.</p>
         </div>
       </div>
     </section>
 
-    <section class="mf-section">
-      <div class="mf-container af-stack-lg">
+    <section class="section section--alt">
+      <div class="container af-stack-lg">
         <header class="mf-section-header">
           <div class="mf-eyebrow">Projects</div>
           <h2>Example decisions</h2>
-          <p>Static table only — no persistence. These entries mirror the Phase 8 governance clusters.</p>
+          <p>Each row mirrors a governance cluster. Options are visual only to demo future Atlas V hooks.</p>
         </header>
-        <div class="af-panel-frame" role="region" aria-label="Decision list">
-          <div class="admin-table admin-table--lite">
-            <div class="admin-table__row admin-table__head">
-              <div>Project</div>
-              <div>Category</div>
-              <div>Title</div>
-              <div>Status</div>
-            </div>
-            <div class="admin-table__row">
-              <div>Website</div>
-              <div>Layout</div>
-              <div>Standardize 3→2→1 marketing grid</div>
-              <div>Draft</div>
-            </div>
-            <div class="admin-table__row">
-              <div>OIA</div>
-              <div>Gallery</div>
-              <div>Tap-to-expand vs inline lore cards</div>
-              <div>Pending</div>
-            </div>
-            <div class="admin-table__row">
-              <div>Atlas V</div>
-              <div>Governance</div>
-              <div>Badge cadence across site heroes</div>
-              <div>Backlog</div>
-            </div>
-            <div class="admin-table__row">
-              <div>Atlas Studio</div>
-              <div>UX</div>
-              <div>Task drawer peek mode</div>
-              <div>Draft</div>
+        <div class="decision-grid" role="table" aria-label="Decision list">
+          <div class="decision-row decision-head" role="row">
+            <div role="columnheader">Project</div>
+            <div role="columnheader">Category</div>
+            <div role="columnheader">Question / Title</div>
+            <div role="columnheader">Options</div>
+          </div>
+          <div class="decision-row" role="row">
+            <div role="cell">Website</div>
+            <div role="cell">Layout</div>
+            <div role="cell">Standardize marketing grid to 3→2→1 with beige panels.</div>
+            <div role="cell" class="decision-options">
+              <button type="button">Approve</button>
+              <button type="button">Later</button>
+              <button type="button">Backlog</button>
             </div>
           </div>
-          <div class="af-stack-lg" style="margin-top: var(--space-24);">
-            <label for="decision-export">
-              <strong>Decision Export (future phases)</strong>
-              <p class="admin-lede">Paste or gather export payloads here when Atlas-V governance hooks are ready.</p>
-            </label>
-            <textarea id="decision-export" rows="4" style="width: 100%; border-radius: var(--radius-md); padding: var(--space-12); border: var(--border-regular) solid var(--color-border-subtle); background: var(--color-surface-100);">Paste decisions here in future phases.</textarea>
+          <div class="decision-row" role="row">
+            <div role="cell">OIA</div>
+            <div role="cell">Gallery</div>
+            <div role="cell">Tap-to-expand vs inline lore cards for creatures.</div>
+            <div role="cell" class="decision-options">
+              <button type="button">Yes</button>
+              <button type="button">No</button>
+              <button type="button">Later</button>
+            </div>
           </div>
+          <div class="decision-row" role="row">
+            <div role="cell">Atlas V</div>
+            <div role="cell">Governance</div>
+            <div role="cell">Badge cadence across site heroes.</div>
+            <div role="cell" class="decision-options">
+              <button type="button">Approve</button>
+              <button type="button">Deny</button>
+              <button type="button">Skip</button>
+            </div>
+          </div>
+          <div class="decision-row" role="row">
+            <div role="cell">Atlas Studio</div>
+            <div role="cell">UX</div>
+            <div role="cell">Task drawer peek mode with beige theme tokens.</div>
+            <div role="cell" class="decision-options">
+              <button type="button">Approve</button>
+              <button type="button">Backlog</button>
+              <button type="button">Later</button>
+            </div>
+          </div>
+        </div>
+        <div class="af-stack-lg">
+          <label for="decision-export">
+            <strong>Decision Export (future phases)</strong>
+            <p class="home-hero__lede">Paste or gather export payloads here when Atlas-V governance hooks are ready.</p>
+          </label>
+          <textarea id="decision-export" rows="4" style="width: 100%; border-radius: var(--radius-md); padding: var(--space-12); border: var(--border-regular) solid var(--panel-border); background: var(--panel-light);">Paste decisions here in future phases.</textarea>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="mf-footer">
-    <div class="mf-container mf-footer__grid">
+    <div class="container mf-footer__grid">
       <div>
         <p class="mf-footer__brand">AtlasForge © <span data-year>2024</span></p>
         <p class="mf-footer__meta">Governance scaffolding</p>
       </div>
+      <div class="mf-footer__links" data-footer-primary></div>
+      <div class="mf-footer__links" data-footer-secondary></div>
       <div class="mf-footer__links">
         <a href="canon.html">Canon Viewer</a>
         <a href="admin.html">Admin</a>
-        <a href="index.html">Home</a>
         <a id="mf-footer-admin-link" href="admin.html">Admin (Goblin Mode)</a>
       </div>
     </div>

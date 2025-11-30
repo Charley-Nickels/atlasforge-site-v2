@@ -1,4 +1,25 @@
 :root {
+  /* Beige theme aliases */
+  --bg-base: #f4efe7;
+  --panel-light: #f6f2eb;
+  --panel-mid: #eae4dc;
+  --panel-border: #e2d9cc;
+  --text-main: #1a1a1a;
+  --text-muted: #555555;
+
+  --af-glow: #d81f44;
+  --af-glow-soft: #ff5a8d;
+  --studio-glow: #ff8a2b;
+  --studio-glow-soft: #ffc28a;
+  --av-glow: #00d1d9;
+  --av-glow-soft: #7af0ff;
+  --oia-glow: #ff3c8e;
+  --oia-glow-soft: #ffb3d0;
+  --wave-glow: #21d6b3;
+  --wave-glow-soft: #7cf2d9;
+  --amn-glow: #e7b21a;
+  --amn-glow-soft: #ffe2a1;
+
   /* ======================================== */
   /* Surfaces & Neutral Layer                */
   /* ======================================== */

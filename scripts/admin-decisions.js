@@ -4,6 +4,7 @@
   const EXPORT_FILENAME = 'phase5_decisions_export.json';
   const decisionsContainer = document.getElementById('decisions-container');
   const consoleStatus = document.getElementById('console-status');
+  const decisionCount = document.getElementById('decision-count');
   const categoryFilter = document.getElementById('filter-category');
   const priorityFilter = document.getElementById('filter-priority');
   const statusFilter = document.getElementById('filter-status');
@@ -452,6 +453,9 @@
     });
 
     renderLists(filtered);
+    if (decisionCount) {
+      decisionCount.textContent = `${filtered.length} decision${filtered.length === 1 ? '' : 's'} shown`;
+    }
     setStatus(`Showing ${filtered.length} decision${filtered.length === 1 ? '' : 's'}.`, false);
   };
 

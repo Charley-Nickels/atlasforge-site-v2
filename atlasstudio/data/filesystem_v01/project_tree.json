@@ -1,0 +1,16 @@
+{
+  "name": "AtlasStudio",
+  "children": [
+    {"name": "briefs", "children": [
+      {"name": "pilot-brief.md", "type": "file"},
+      {"name": "oia-episode-01.md", "type": "file"}
+    ]},
+    {"name": "scenes", "children": [
+      {"name": "harbor_intro.scene", "type": "file"},
+      {"name": "repair_loop.scene", "type": "file"}
+    ]},
+    {"name": "logs", "children": [
+      {"name": "atlasv-latest.log", "type": "file"}
+    ]}
+  ]
+}

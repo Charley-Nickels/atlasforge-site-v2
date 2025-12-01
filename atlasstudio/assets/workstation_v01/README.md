@@ -1,0 +1,1 @@
+Workstation composite placeholder.

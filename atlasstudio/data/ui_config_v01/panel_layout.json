@@ -1,0 +1,8 @@
+{
+  "toolbar": ["Generate ideas", "Patch now", "Organize", "Summarize"],
+  "panels": {
+    "sidebar": "filesystem",
+    "main": "editor",
+    "assistant": "atlas-v"
+  }
+}

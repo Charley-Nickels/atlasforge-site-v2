@@ -1,183 +1,79 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-brand="oia">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Octopus in Action</title>
-  <link rel="stylesheet" href="styles/marketing.css" />
+  <title>Octopus in Action – Showcase Game</title>
+  <link rel="stylesheet" href="styles/glow-pages.css" />
 </head>
-<body class="mf-shell brand-oia">
+<body class="af-page-shell">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
-  <!-- Component: Global.Nav.Top -->
-  <!-- Component: Global.Nav.MobileToggle -->
-  <header class="mf-header" role="banner">
-    <div class="mf-header-inner">
-      <a class="mf-logo" href="index.html">
-        <span class="mf-logo-mark"><img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" width="55" height="55" loading="lazy" decoding="async" /></span>
-        <span class="mf-logo-text">AtlasForge Interactive</span>
+  <header class="af-shell-header" role="banner">
+    <div class="container-wide">
+      <a class="af-brandmark" href="index.html">
+        <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" />
+        <span>AtlasForge</span>
       </a>
-      <div class="mf-nav-group" id="mf-primary-nav">
-        <nav class="mf-nav mf-nav--primary" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="atlasstudio.html">AtlasStudio</a>
-          <a href="games.html">Games</a>
-          <a href="media.html">Media</a>
-        </nav>
-        <nav class="mf-nav mf-nav--secondary" aria-label="Secondary">
-          <a href="skb.html">SKB</a>
-        </nav>
-      </div>
-      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
+      <nav class="af-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="atlasv.html">Atlas-V</a>
+        <a href="atlasstudio.html">AtlasStudio</a>
+        <a href="oia.html" aria-current="page">Octopus in Action</a>
+        <a href="decisions.html">Decision Console</a>
+        <a href="wave.html">AtlasWave</a>
+      </nav>
     </div>
   </header>
 
-  <main class="mf-main" id="main-content" role="main">
-    <!-- Layout: OIA.Section.Hero -->
-    <!-- Designer Note: Visual component rules for Figma translation -->
-    <!-- Component: OIA.HeroBlock -->
-    <!-- Component: Global.Hero.Primary -->
-    <section class="mf-hero mf-hero--oia mf-section">
-      <div class="mf-container mf-hero-inner">
+  <main id="main-content">
+    <section class="af-page-banner af-hero-frame">
+      <div class="container-wide af-console-hero">
         <div>
-          <div class="mf-hero-badge mf-hero-badge--oia">
-            <img src="assets/logos/OIA_transparent.png" alt="Octopus in Action logo" class="mf-hero-badge-logo" loading="lazy" decoding="async" />
-            <span>Created by AtlasForge Games</span>
-          </div>
-          <h1>Octopus in Action</h1>
-          <p>Playful harbor sim where Mayor Octavius keeps the town afloat. Powered by Atlas-V. Built in AtlasStudio workflow. Audio by SKB.</p>
-          <div class="mf-hero-actions">
-            <a class="mf-button mf-button--primary" href="#species">Meet the residents</a>
-            <a class="mf-button mf-button--ghost" href="#status">See development status</a>
+          <p class="af-hero-badge">Playable showcase</p>
+          <h1>Octopus in Action proves the canon-safe loop can stay cozy.</h1>
+          <p>A harbor sim that stays aligned to lore thanks to AtlasStudio briefs and Atlas-V validation.</p>
+          <div class="af-hero__actions">
+            <a class="af-button" href="atlasstudio.html">See the workstation</a>
+            <a class="af-button af-button--ghost" href="atlasv.html">Governance notes</a>
           </div>
         </div>
-        <aside class="mf-hero-visual">
-          <h2>Gameplay vibe</h2>
-          <p>Cozy city-building, light management, and charming tentacle-powered problem solving.</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Layout: OIA.Section.WorldIntro -->
-    <!-- Component: OIA.SpeciesIntroPanels -->
-    <section class="mf-section">
-      <div class="mf-container mf-highlight-grid">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">World primer</div>
-          <h2>What makes OIA special</h2>
-        </header>
-        <article class="mf-card"><h3>Mayor Octavius</h3><p>A calm, competent octopus guiding the harbor with humor.</p><p class="mf-note">Powered by Atlas-V guardrails for tone.</p><p class="mf-meta">Tag: Lead character · Status: active narrative</p></article>
-        <article class="mf-card"><h3>City systems</h3><p>Harbor permits, cozy markets, and civic upgrades managed with visible transparency.</p><p class="mf-meta">Tag: Systems design · Status: roadmap-ready</p></article>
-        <article class="mf-card"><h3>Player rhythm</h3><p>Short sessions: tidy the docks, answer radio calls, balance supplies.</p><p class="mf-meta">Tag: Session loop · Status: cadence locked</p></article>
-        <article class="mf-card"><h3>Cross-brand links</h3><p>Audio by SKB; development guided in AtlasStudio; concept roots from Labs experiments.</p><p class="mf-meta">Tag: Cross-brand · Status: callouts required</p></article>
-      </div>
-    </section>
-
-    <!-- Layout: OIA.Section.SpeciesPanels -->
-    <!-- Component: OIA.SpeciesIntroPanels -->
-    <section id="species" class="mf-section">
-      <div class="mf-container mf-case-studies">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Species and citizens</div>
-          <h2>Who lives in the harbor</h2>
-        </header>
-        <div class="mf-case-grid">
-          <article class="mf-card"><h3>Octavius</h3><p>Lead character, mayor, and fixer of oddities.</p><p class="mf-meta">Role: Lead · Status: core</p></article>
-          <article class="mf-card"><h3>Lighthouse crew</h3><p>Signal keepers who monitor storms.</p><p class="mf-meta">Role: Support · Status: active roster</p></article>
-          <article class="mf-card"><h3>Dockhands</h3><p>Friendly helpers moving crates and calming visitors.</p><p class="mf-meta">Role: NPC helpers · Status: draft</p></article>
-          <article class="mf-card"><h3>Merchants</h3><p>Vendors who trade stories as much as goods.</p><p class="mf-meta">Role: Vendors · Status: placeholder</p></article>
-          <article class="mf-card"><h3>Harbor wildlife</h3><p>Gulls, crabs, and little surprise critters that keep things lively.</p><p class="mf-meta">Role: Atmosphere · Status: concept</p></article>
+        <div class="af-panel">
+          <h3>Canon-friendly gameplay</h3>
+          <p>Creatures, quests, and soundtrack cues share the same glow language used across AtlasForge and the Decision Console.</p>
+          <div class="af-chip">Cozy governance</div>
         </div>
-      </div>
-    </section>
-
-    <!-- Layout: OIA.Section.Gallery -->
-    <!-- Component: OIA.ScreenshotGallery -->
-    <section class="mf-section">
-      <div class="mf-container mf-gallery">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Screenshot gallery</div>
-          <h2>Visual placeholders</h2>
-          <p>Pre-Figma frames that will be swapped for final captures in Phase 6.</p>
-        </header>
-        <div class="mf-gallery-grid">
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder screenshot"></div><p>Mayor dashboard</p><p class="mf-meta">Metadata: UI mock · Status: to be replaced with gameplay shot</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder screenshot"></div><p>Market scene</p><p class="mf-meta">Metadata: environment still · Status: art pending</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder screenshot"></div><p>Night lighthouse</p><p class="mf-meta">Metadata: mood board · Status: lighting pass</p></div>
-          <div class="mf-card"><div class="mf-skeleton mf-skeleton--block" aria-label="Placeholder screenshot"></div><p>Docks at sunrise</p><p class="mf-meta">Metadata: atmosphere frame · Status: placeholder</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Layout: OIA.Section.Status -->
-    <!-- Component: Global.SectionWrapper -->
-    <section id="status" class="mf-section">
-      <div class="mf-container mf-flow-panel">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Development status</div>
-          <h2>In progress</h2>
-          <p>OIA is actively being built with Atlas-V guidance and AtlasStudio planning. Expectations are intentionally set to “in progress.”</p>
-        </header>
-        <div class="mf-flow-track"><strong>Powered by Atlas-V</strong><p>Navigator and Guard keep quests scoped and cozy.</p></div>
-        <div class="mf-flow-track"><strong>Built in AtlasStudio workflow</strong><p>Tasks, assets, and approvals live in the workstation preview.</p></div>
-        <div class="mf-flow-track"><strong>Audio by SKB</strong><p>Soundtrack cues land alongside milestones.</p></div>
-        <div class="mf-flow-track"><strong>Experiment from Labs</strong><p>New mechanics prototype in Labs before entering the harbor.</p></div>
-      </div>
-    </section>
-
-    <!-- Layout: OIA.Section.DesignerNotes -->
-    <!-- Component: Global.SectionWrapper -->
-    <section class="mf-section">
-      <div class="mf-container mf-intelligence">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Designer notes</div>
-          <h2>Pre-Figma guidance</h2>
-        </header>
-        <ul class="mf-designer-notes">
-          <li>Tone is playful with professional scaffolding—keep charm without slapstick.</li>
-          <li>Always call out Powered by Atlas-V and Audio by SKB on primary blocks.</li>
-          <li>Placeholder screenshots should be easy to swap for Phase 6 captures.</li>
-          <li>Never expose internal admin tooling; keep governance language light.</li>
-        </ul>
       </div>
     </section>
   </main>
 
-  <!-- Component: Global.Footer.Base -->
-  <footer class="mf-footer" role="contentinfo">
-    <div class="mf-container mf-footer-inner">
-      <div class="mf-footer-brand">
-        <strong>AtlasForge Interactive</strong>
-        <p class="mf-footer-note">Worlds and tools powered by Atlas-V and crafted in the Atlas Studio POC.</p>
-        <a class="mf-footer-link" href="mailto:hello@atlasforge.gg">hello@atlasforge.gg</a>
-        <small>© <span data-year></span> AtlasForge Interactive</small>
+  <footer class="af-footer">
+    <div class="container-wide af-footer__grid">
+      <div>
+        <p class="af-hero-badge">Octopus in Action</p>
+        <p>Showcase game aligned with AtlasForge governance.</p>
       </div>
       <div>
-        <h4>Navigate</h4>
-        <ul class="mf-footer-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="atlasv.html">Atlas-V</a></li>
-          <li><a href="atlasstudio.html">AtlasStudio</a></li>
-          <li><a href="games.html">Games</a></li>
-          <li><a href="media.html">Media</a></li>
-        </ul>
+        <h3>Navigation</h3>
+        <div class="af-inline-nav">
+          <a href="index.html">Home</a>
+          <a href="atlasv.html">Atlas-V</a>
+          <a href="atlasstudio.html">AtlasStudio</a>
+          <a href="oia.html" aria-current="page">Octopus in Action</a>
+          <a href="decisions.html">Decision Console</a>
+          <a href="wave.html">AtlasWave</a>
+        </div>
       </div>
       <div>
-        <h4>Secondary</h4>
-        <ul class="mf-footer-list">
-          <li><a href="skb.html">SKB</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-        <p class="mf-footer-note">Contact and merch live in the footer only.</p>
-        <a href="/admin/atlas-decisions.html" class="mf-footer-admin-link">Admin</a>
+        <h3>More</h3>
+        <div class="af-inline-nav">
+          <a href="publishing.html">Publishing</a>
+          <a href="store.html">Store</a>
+          <a href="canon.html">Canon</a>
+          <a id="mf-footer-admin-link" href="admin.html">Admin</a>
+        </div>
       </div>
     </div>
   </footer>
-
-
-
   <script src="scripts/main.js"></script>
-  <script src="scripts/marketing.js"></script>
-  <script src="scripts/oia.js"></script>
 </body>
 </html>

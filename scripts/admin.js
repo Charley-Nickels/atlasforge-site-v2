@@ -1,3 +1,6 @@
+// Admin governance hub behaviors for admin.html: handles gate, filters, history, and export placeholders.
+// Relies on tokenized styling in styles/admin.css and the page sections within #admin-main.
+// Future governance log wiring can plug into loadGovernanceLog and related placeholders.
 (() => {
   const STORAGE_PREFIX = 'atlasforge_decision_';
   const SECTION_STORAGE_PREFIX = 'atlasforge_admin_section_';
@@ -27,9 +30,14 @@
   const HISTORY_CLEAR_SELECTOR = '[data-history-clear]';
   const STICKY_NAV_SELECTOR = '.admin-sticky-nav';
   const SCROLL_SHADOW_SELECTOR = '[data-scroll-shadow]';
-  const ACTIVATION_PHRASE = 'initiate goblin mode'; // changeable phrase for lore-only gate
+  const ACTIVATION_PHRASE = 'TIME TO GO HOG WILD'; // lore-only gate phrase
 
   let adminInitialized = false;
+
+  const loadGovernanceLog = () => {
+    // Placeholder for future governance log import/export wiring.
+    // Intended hook: fetch and render governance log entries once backend/source is available.
+  };
 
   if (document.body) {
     document.body.classList.add('admin-locked');
@@ -806,9 +814,18 @@
     document.head.appendChild(style);
   };
 
+  const toggleContentVisibility = (visible) => {
+    const content = document.getElementById('admin-main');
+    if (!content) return;
+    content.classList.toggle('admin-locked', !visible);
+    content.classList.toggle('is-hidden', !visible);
+    content.setAttribute('aria-hidden', visible ? 'false' : 'true');
+  };
+
   const setLocked = () => {
     document.body.classList.add('admin-locked');
-    document.body.classList.remove('admin-unlocked');
+    document.body.classList.remove('admin-unlocked', 'goblin-mode');
+    toggleContentVisibility(false);
   };
 
   const bootAdmin = () => {
@@ -830,8 +847,10 @@
     setLocked();
 
     const gate = document.querySelector('.admin-gate');
+    const form = document.getElementById('admin-gate-form');
     const input = document.getElementById('admin-password');
     const button = gate ? gate.querySelector('.admin-btn--primary') : null;
+    const gateShell = document.getElementById('admin-login-gate');
     let errorEl = gate ? gate.querySelector('[data-admin-error]') : null;
 
     if (!errorEl && gate) {
@@ -844,22 +863,35 @@
 
     const unlock = () => {
       document.body.classList.remove('admin-locked');
-      document.body.classList.add('admin-unlocked');
-      if (errorEl) errorEl.textContent = '';
+      document.body.classList.add('admin-unlocked', 'goblin-mode');
+      toggleContentVisibility(true);
+      if (gateShell) gateShell.classList.add('is-hidden');
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.classList.remove('is-visible');
+      }
       bootAdmin();
     };
 
     const validate = () => {
-      const value = (input?.value || '').trim().toLowerCase();
+      const value = (input?.value || '').trim();
       if (value === ACTIVATION_PHRASE) {
         unlock();
       } else if (errorEl) {
-        errorEl.textContent = 'Incorrect activation phrase. The gate stays closed.';
+        errorEl.textContent = 'Incorrect password. The gate stays closed.';
+        errorEl.classList.add('is-visible');
       }
     };
 
     if (button) {
       button.addEventListener('click', validate);
+    }
+
+    if (form) {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        validate();
+      });
     }
 
     if (input) {
@@ -872,8 +904,9 @@
     }
 
     if (!gate || !input || !button) {
-      document.body.classList.add('admin-unlocked');
+      document.body.classList.add('admin-unlocked', 'goblin-mode');
       document.body.classList.remove('admin-locked');
+      toggleContentVisibility(true);
       bootAdmin();
     }
   };

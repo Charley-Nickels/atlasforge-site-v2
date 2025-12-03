@@ -1,0 +1,67 @@
+{
+  "atlasv": {
+    "name": "Atlas-V",
+    "title": "Atlas-V",
+    "shortDescription": "Governance engine for orchestrating AtlasForge decisions.",
+    "description": "Core governance engine for orchestrating AtlasForge decisions.",
+    "category": "Core",
+    "link": "/products/atlasv.html",
+    "bullets": [
+      "Routes requests through vetted decision blocks",
+      "Captures approvals, flags, and revisions",
+      "Keeps AtlasForge canon aligned across products"
+    ]
+  },
+  "atlasstudio": {
+    "name": "AtlasStudio",
+    "title": "AtlasStudio",
+    "shortDescription": "Workstation for crafting experiences with Atlas-V assistance.",
+    "description": "Workstation for crafting experiences with Atlas-V assistance.",
+    "category": "Creation",
+    "link": "/products/atlasstudio.html",
+    "bullets": [
+      "Unified file tree, previews, and Atlas-V chat",
+      "Lightweight authoring with glow-first UI",
+      "Ready for future live data wiring"
+    ]
+  },
+  "oia": {
+    "name": "Octopus in Action",
+    "title": "Octopus in Action",
+    "shortDescription": "Playable playground for AtlasForge characters and loops.",
+    "description": "Playable playground for AtlasForge characters and loops.",
+    "category": "Experiments",
+    "link": "/products/oia.html",
+    "bullets": [
+      "Showcases narrative experiments",
+      "Tests moment-to-moment feel with quick patches",
+      "Feeds insights back into Atlas-V governance"
+    ]
+  },
+  "decision-console": {
+    "name": "Decision Console",
+    "title": "Decision Console",
+    "shortDescription": "Console for answering pending decisions and feeding canon.",
+    "description": "Console for answering pending decisions and feeding canon.",
+    "category": "Governance",
+    "link": "/decisions.html",
+    "bullets": [
+      "Queue, detail, and flags views for governance",
+      "Keeps editors aligned with AtlasForge canon",
+      "Storyboards ready for future live data"
+    ]
+  },
+  "atlaswave": {
+    "name": "AtlasWave",
+    "title": "AtlasWave",
+    "shortDescription": "Signal layer for streaming AtlasForge intelligence.",
+    "description": "Signal layer for streaming AtlasForge intelligence.",
+    "category": "Signals",
+    "link": "/products/atlaswave.html",
+    "bullets": [
+      "Push updates across worlds and consoles",
+      "Monitor live statepack decisions",
+      "Designed for upcoming real-time pilots"
+    ]
+  }
+}

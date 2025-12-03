@@ -1,0 +1,2 @@
+.af-workstation { border: 1px solid #1f2438; border-radius: 16px; }
+.af-workstation__layout { display: grid; grid-template-columns: 240px 1fr 320px; }

@@ -1,0 +1,23 @@
+{
+  "navigation": [
+    {"label": "Home", "href": "index.html"},
+    {"label": "Atlas-V", "href": "atlasv.html"},
+    {"label": "AtlasStudio", "href": "atlasstudio.html"},
+    {"label": "Octopus in Action", "href": "oia.html"},
+    {"label": "Decision Console", "href": "decisions.html"},
+    {"label": "AtlasWave", "href": "wave.html"}
+  ],
+  "footer": [
+    {"label": "Publishing", "href": "publishing.html"},
+    {"label": "Store", "href": "store.html"},
+    {"label": "Canon", "href": "canon.html"},
+    {"label": "Admin", "href": "admin.html"}
+  ],
+  "homeSections": [
+    "hero",
+    "intro",
+    "products",
+    "methodology",
+    "footer"
+  ]
+}

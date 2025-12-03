@@ -20,14 +20,15 @@
       </a>
       <div class="mf-nav-group" id="mf-primary-nav">
         <nav class="mf-nav mf-nav--primary" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="atlasstudio.html">AtlasStudio</a>
-          <a href="games.html">Games</a>
-          <a href="media.html">Media</a>
+          <a href="/index.html">Home</a>
+          <a href="/products/atlasv.html">Atlas-V</a>
+          <a href="/products/atlasstudio.html">AtlasStudio</a>
+          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/decisions.html">Decision Console</a>
+          <a href="/products/atlaswave.html">AtlasWave</a>
         </nav>
         <nav class="mf-nav mf-nav--secondary" aria-label="Secondary">
-          <a href="skb.html">SKB</a>
+          <a href="admin.html" aria-current="page">Admin</a>
         </nav>
       </div>
       <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
@@ -37,69 +38,54 @@
   <main class="mf-main" id="main-content">
     <section class="admin-hero af-hero-gradient-af">
       <div class="admin-container admin-hero__inner">
-        <div class="admin-hero__eyebrow">Hidden console · internal only</div>
-        <h1>AtlasForge Admin Portal</h1>
-        <p class="admin-hero__lede">Decision console for dev/testing. Lore-first, goblin-friendly, and powered by Atlas-V governance hooks.</p>
+        <div class="admin-hero__eyebrow">Governance console · internal only</div>
+        <h1>AtlasForge Governance Admin</h1>
+          <p class="admin-hero__lede">Admin area for decision queues, audit logs, and canon alignment with Atlas-V guidance.</p>
         <div class="admin-hero__meta">
           <span class="admin-pill admin-pill--warning">Dev / testing only</span>
           <span class="admin-pill admin-pill--ghost">Goblin mode prereq</span>
           <span class="admin-pill admin-pill--success">Phase 8 tokens</span>
+          <a class="admin-link" href="decisions.html">Open Decision Console</a>
         </div>
       </div>
     </section>
 
-    <section class="admin-activation">
-      <div class="admin-container admin-grid admin-grid--two">
-        <div class="admin-card af-panel-frame">
-          <div class="admin-card__header">
+    <section class="admin-gate" id="admin-login-gate">
+      <div class="admin-container">
+        <div class="gate-card af-card-frame">
+          <div class="gate-card__header">
             <div>
-              <p class="admin-meta">Goblin gate</p>
-              <h2>Activation phrase</h2>
+              <p class="gate-eyebrow">Goblin gate</p>
+              <h2 class="gate-title">Password access</h2>
+              <p class="gate-description">Enter the governance passphrase to unlock the admin console.</p>
             </div>
-            <span class="admin-pill admin-pill--warning">Visible text</span>
+            <div class="gate-icon" aria-hidden="true">🗝️</div>
           </div>
-          <form id="admin-activation-form" class="af-stack-lg">
-            <label class="admin-field" for="admin-activation-input">
-              <span>Type the phrase to unlock admin</span>
-              <!-- Activation phrase: "initiate goblin mode" -->
-              <input id="admin-activation-input" name="admin-activation-input" type="text" placeholder="enter activation phrase" required />
-              <small class="admin-field__hint">Do not use a real password. This is a lore-only guardrail for the console.</small>
-            </label>
-            <div class="admin-actions">
-              <button class="admin-btn admin-btn--primary" type="submit">Unlock</button>
-              <button class="admin-btn admin-btn--ghost" type="reset">Clear</button>
+          <form class="gate-form" id="admin-gate-form">
+            <label for="admin-password">Goblin password</label>
+            <input id="admin-password" name="admin-password" type="text" placeholder="TIME TO GO HOG WILD" required />
+            <div class="gate-actions">
+              <button class="admin-btn admin-btn--primary" type="submit">Enter Goblin Console</button>
+              <p class="gate-error" id="admin-gate-error" data-admin-error="true" aria-live="polite"></p>
             </div>
-            <p class="admin-meta" id="admin-activation-status" aria-live="polite"></p>
           </form>
         </div>
-        <div class="admin-card af-card-frame">
-          <div class="admin-card__header">
-            <div>
-              <p class="admin-meta">Canon notice</p>
-              <h3>Governed access</h3>
-            </div>
-            <span class="admin-pill admin-pill--info">Phase 8</span>
-          </div>
-          <p>Admin panels stay hidden until the goblin phrase is provided. This keeps previews separate from the public beige site.</p>
-          <ul class="admin-steps">
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Type the phrase exactly.</li>
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Content reveals when matched.</li>
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Reuse the gate for local testing.</li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <div id="admin-protected" class="admin-locked" aria-live="polite">
+    <div id="admin-main" class="admin-main admin-locked" aria-hidden="true">
+
+    <div class="admin-content-inner" aria-live="polite">
 
     <section class="admin-hub">
       <div class="admin-container">
         <header class="admin-hub__header">
           <h1 class="admin-hub__title">AtlasForge Admin Hub</h1>
-          <p class="admin-hub__subtitle">Choose what you want to manage today, or launch the latest Octopus in Action web alpha.</p>
+          <p class="admin-hub__subtitle">Governance hub for canon, logs, and decision records across AtlasForge surfaces.</p>
+          <a class="admin-link admin-link--console" href="decisions.html">Open Decision Console</a>
         </header>
 
-        <div class="admin-hub__grid">
+          <div class="admin-hub__grid">
           <article class="admin-hub__card af-card-frame">
             <h2 class="admin-hub__card-title">Brand Canon</h2>
             <p class="admin-hub__card-body">High-level brand identity, palettes, tone, and company-wide canon decisions.</p>
@@ -139,42 +125,69 @@
       </div>
     </section>
 
-    <section class="admin-gate">
-      <div class="admin-container admin-grid admin-grid--two">
-        <div class="admin-card admin-login-card af-panel-frame">
-          <div class="admin-card__header">
-            <div>
-              <p class="admin-meta">Goblin gate</p>
-              <h2>Lore-only access</h2>
-            </div>
-            <span class="admin-pill admin-pill--info">Visible password</span>
-          </div>
-          <label class="admin-field" for="admin-password">
-            <span>Lore-only password (not secure)</span>
-            <input id="admin-password" name="admin-password" type="text" placeholder="enter goblin phrase" />
-            <small class="admin-field__hint">This console is for AtlasForge dev/testing only. Do not use a real password.</small>
-          </label>
-          <div class="admin-actions">
-            <button class="admin-btn admin-btn--primary" type="button">Enter Goblin Console</button>
-            <button class="admin-btn admin-btn--ghost" type="button">Request checklist gremlin</button>
-          </div>
+    <section class="admin-governance" aria-labelledby="admin-canon-overview">
+      <div class="admin-container admin-governance__grid">
+        <div class="admin-governance__block af-card-frame">
+          <p class="admin-meta">Canon overview</p>
+          <h2 id="admin-canon-overview">Canon Overview</h2>
+          <p class="admin-governance__lede">High-level canon items kept in sync with Decision Console outcomes.</p>
+          <ul class="admin-governance__list">
+            <li>AtlasForge tone and narrative guardrails</li>
+            <li>Atlas-V governance badge placement</li>
+            <li>Octopus in Action ocean ambiance</li>
+            <li>Decision queue labeling schema</li>
+            <li>AtlasStudio preview density</li>
+          </ul>
         </div>
 
-        <div class="admin-card admin-loading-card af-card-frame">
-          <div class="admin-card__header">
-            <div>
-              <p class="admin-meta">Goblin loading theater</p>
-              <h3>Fake progress feed</h3>
-            </div>
-            <span class="admin-pill admin-pill--accent">In progress</span>
+        <div class="admin-governance__block af-card-frame">
+          <p class="admin-meta">Queue overview</p>
+          <h2>Decision Queue Overview</h2>
+          <p class="admin-governance__lede">Decision Console is where pending items move from queue to canon detail with Atlas-V review.</p>
+          <a class="admin-link" href="decisions.html">Open Decision Console</a>
+        </div>
+
+        <div class="admin-governance__block af-card-frame">
+          <p class="admin-meta">Import / Export</p>
+          <h2>Import / Export (Future)</h2>
+          <p class="admin-governance__lede">Hooks for moving decision records into and out of the governance hub will land here.</p>
+          <div class="admin-governance__actions">
+            <button class="admin-btn admin-btn--ghost" type="button" disabled aria-disabled="true">Import Decisions</button>
+            <button class="admin-btn admin-btn--ghost" type="button" disabled aria-disabled="true">Export Canon</button>
           </div>
-          <ul class="admin-steps">
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Initiating goblin mode…</li>
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Attempting to go hog wild…</li>
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Adjusting specifications for filthy pig boy…</li>
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Determining copy-paste goblin’s tasks…</li>
-            <li><span class="admin-step__dot" aria-hidden="true"></span>Adjusting checklists for dirty checklist gremlin…</li>
-          </ul>
+          <p class="admin-governance__note">Not yet implemented.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-log" aria-labelledby="governance-log-title">
+      <div class="admin-container">
+        <div class="admin-log__header">
+          <p class="admin-meta">Governance log</p>
+          <h2 id="governance-log-title">Recent admin notes</h2>
+          <p class="admin-log__lede">Lightweight record of governance adjustments before they are canonized.</p>
+        </div>
+        <div class="admin-log__table af-card-frame" role="table">
+          <div class="admin-log__row admin-log__row--head" role="row">
+            <span role="columnheader">Date</span>
+            <span role="columnheader">Area</span>
+            <span role="columnheader">Note</span>
+          </div>
+          <div class="admin-log__row" role="row">
+            <span role="cell">2024-06-01</span>
+            <span role="cell">Decision Console</span>
+            <span role="cell">Queue → canon detail labels aligned; storyboard copy refreshed.</span>
+          </div>
+          <div class="admin-log__row" role="row">
+            <span role="cell">2024-06-02</span>
+            <span role="cell">Octopus in Action</span>
+            <span role="cell">Ocean theme applied; playable frame expanded for clarity.</span>
+          </div>
+          <div class="admin-log__row" role="row">
+            <span role="cell">2024-06-03</span>
+            <span role="cell">AtlasStudio</span>
+            <span role="cell">Workstation gate tightened; chat and preview shells wired.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -183,9 +196,9 @@
       <div class="admin-container admin-console__inner">
         <div class="admin-console__header">
           <div>
-            <p class="admin-meta">Decision console</p>
-            <h2>Welcome, filthy little copy-paste goblin.</h2>
-            <p class="admin-lede">Snapshot of pending calls across the stack. Use the decision blocks to track A–E picks, approvals, and notes.</p>
+            <p class="admin-meta">Governance console</p>
+            <h2>Queue, logs, and canon detail in one admin lane.</h2>
+            <p class="admin-lede">Snapshot of the decision queue with log review and canon alignment states so reviewers can move work to accepted canon.</p>
           </div>
           <div class="admin-pill-row">
             <span class="admin-pill admin-pill--success">Atlas-V governance</span>
@@ -1066,6 +1079,7 @@
       </div>
     </section>
     </div>
+    </div>
   </main>
 
   <aside class="admin-history" aria-hidden="true" role="complementary" aria-label="Logger history drawer">
@@ -1141,41 +1155,10 @@
       <div class="mf-footer__links">
         <a href="canon.html">Canon Viewer</a>
         <a href="decisions.html">Decision Deck</a>
-        <a id="mf-footer-admin-link" href="admin.html">Admin (Goblin Mode)</a>
+        <a id="mf-footer-admin-link" href="/admin.html">Admin (Goblin Mode)</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    (function() {
-      const protectedBlock = document.getElementById('admin-protected');
-      const activationForm = document.getElementById('admin-activation-form');
-      const activationInput = document.getElementById('admin-activation-input');
-      const activationStatus = document.getElementById('admin-activation-status');
-      const activationSection = document.querySelector('.admin-activation');
-      const ACTIVATION_PHRASE = 'initiate goblin mode';
-
-      if (protectedBlock && activationForm && activationInput) {
-        activationForm.addEventListener('submit', (event) => {
-          event.preventDefault();
-          const value = (activationInput.value || '').trim().toLowerCase();
-
-          if (value === ACTIVATION_PHRASE) {
-            protectedBlock.classList.remove('admin-locked');
-            if (activationSection) activationSection.classList.add('admin-locked');
-            activationStatus.textContent = 'Goblin gate unlocked. Admin tiles revealed.';
-          } else {
-            activationStatus.textContent = 'Incorrect phrase. Try again.';
-            activationInput.focus();
-          }
-        });
-
-        activationForm.addEventListener('reset', () => {
-          activationStatus.textContent = '';
-        });
-      }
-    })();
-  </script>
 
   <script src="scripts/main.js"></script>
   <script src="scripts/marketing.js"></script>

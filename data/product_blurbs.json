@@ -1,0 +1,38 @@
+{
+  "atlasv": {
+    "title": "Atlas-V",
+    "description": "Core governance engine for orchestrating AtlasForge decisions.",
+    "bullets": [
+      "Routes requests through vetted decision blocks",
+      "Captures approvals, flags, and revisions",
+      "Keeps AtlasForge canon aligned across products"
+    ]
+  },
+  "atlasstudio": {
+    "title": "AtlasStudio",
+    "description": "Workstation for crafting experiences with Atlas-V assistance.",
+    "bullets": [
+      "Unified file tree, previews, and Atlas-V chat",
+      "Lightweight authoring with glow-first UI",
+      "Ready for future live data wiring"
+    ]
+  },
+  "oia": {
+    "title": "Octopus in Action",
+    "description": "Playable playground for AtlasForge characters and loops.",
+    "bullets": [
+      "Showcases narrative experiments",
+      "Tests moment-to-moment feel with quick patches",
+      "Feeds insights back into Atlas-V governance"
+    ]
+  },
+  "atlaswave": {
+    "title": "AtlasWave",
+    "description": "Signal layer for streaming AtlasForge intelligence.",
+    "bullets": [
+      "Push updates across worlds and consoles",
+      "Monitor live statepack decisions",
+      "Designed for upcoming real-time pilots"
+    ]
+  }
+}

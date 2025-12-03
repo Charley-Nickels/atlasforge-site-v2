@@ -5,36 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Decision Console – Preview</title>
   <link rel="stylesheet" href="styles/glow-pages.css" />
+  <link rel="stylesheet" href="styles/decision-console.css" />
 </head>
 <body class="af-page-shell">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="af-shell-header" role="banner">
-    <div class="container-wide">
+    <div class="container-wide af-shell-header__inner">
       <a class="af-brandmark" href="index.html">
         <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" />
         <span>AtlasForge</span>
       </a>
       <nav class="af-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="atlasstudio.html">AtlasStudio</a>
-        <a href="oia.html">Octopus in Action</a>
-        <a href="decisions.html" aria-current="page">Decision Console</a>
-        <a href="wave.html">AtlasWave</a>
+        <a href="/index.html">Home</a>
+        <a href="/products/atlasv.html">Atlas-V</a>
+        <a href="/products/atlasstudio.html">AtlasStudio</a>
+        <a href="/products/oia.html">Octopus in Action</a>
+        <a href="/decisions.html" aria-current="page">Decision Console</a>
+        <a href="/products/atlaswave.html">AtlasWave</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="af-page-banner af-hero-frame">
+    <section class="af-page-banner af-hero-frame af-glow-frame af-glow-halo">
       <div class="container-wide af-console-hero">
         <div>
-          <p class="af-hero-badge">Review cockpit</p>
-          <h1>Decision Console keeps queues, flags, and canon merges in one place.</h1>
-          <p>The reviewer’s cockpit surfaces the Decision Queue, in-line flags, and Atlas-V guidance so producers can sign off confidently.</p>
+          <p class="af-hero-badge">Governance cockpit</p>
+          <h1>Decision Console keeps queue, canon detail, and flags in one place.</h1>
+          <p>Governance console for answering pending decisions and feeding canon with Atlas-V guidance.</p>
           <div class="af-hero__actions">
             <a class="af-button" href="#storyboard">See the storyboard</a>
-            <a class="af-button af-button--ghost" href="atlasv.html">Governance underpinnings</a>
+            <a class="af-button af-button--ghost" href="/products/atlasv.html">Governance underpinnings</a>
+            <a class="af-link-inline" href="/admin.html">Back to Admin / Governance</a>
           </div>
         </div>
         <div class="af-panel">
@@ -44,30 +46,21 @@
           <div class="af-chip">Canon merge</div>
         </div>
       </div>
+      <div class="af-glow-bar" aria-hidden="true"></div>
     </section>
 
     <section class="af-page-section" id="storyboard">
       <div class="container-wide">
-        <div class="af-console-card">
+        <div class="af-console-card" id="decision-console">
           <p class="af-hero-badge">Storyboard</p>
-          <h2>Queue → Detail → Canon merge</h2>
-          <div class="af-storyboard">
-            <div class="af-storyboard__panel">
-              <strong>Decision Queue</strong>
-              <p>Incoming changes appear with Atlas-V summaries and a flag count.</p>
-              <p class="af-chip">Action: Accept</p>
-            </div>
-            <div class="af-storyboard__panel">
-              <strong>Decision Detail</strong>
-              <p>Expanded metadata shows lore links, change diff, and Atlas-V risk notes.</p>
-              <p class="af-chip">Action: Request changes</p>
-            </div>
-            <div class="af-storyboard__panel">
-              <strong>Flags</strong>
-              <p>Flags grouped by severity let reviewers mark items as canon-safe or bounce them back.</p>
-              <p class="af-chip">Action: Flag for canon</p>
-            </div>
+          <h2>Queue → Detail → Flags</h2>
+          <p class="dc-lede">Console for answering pending decisions and promoting canon-aligned outcomes.</p>
+          <div class="af-tab-row dc-tab-row" role="tablist" aria-label="Decision Console states">
+            <button id="dc-tab-queue" type="button" role="tab" aria-controls="decision-state" aria-selected="true" tabindex="0" data-tab="queue" class="is-active">Queue</button>
+            <button id="dc-tab-detail" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="detail">Detail</button>
+            <button id="dc-tab-flags" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="flags">Flags</button>
           </div>
+          <div id="decision-state" class="dc-state" data-state="queue" role="tabpanel" aria-labelledby="dc-tab-queue"></div>
         </div>
       </div>
     </section>
@@ -82,12 +75,12 @@
       <div>
         <h3>Navigation</h3>
         <div class="af-inline-nav">
-          <a href="index.html">Home</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="atlasstudio.html">AtlasStudio</a>
-          <a href="oia.html">Octopus in Action</a>
-          <a href="decisions.html" aria-current="page">Decision Console</a>
-          <a href="wave.html">AtlasWave</a>
+          <a href="/index.html">Home</a>
+          <a href="/products/atlasv.html">Atlas-V</a>
+          <a href="/products/atlasstudio.html">AtlasStudio</a>
+          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/decisions.html" aria-current="page">Decision Console</a>
+          <a href="/products/atlaswave.html">AtlasWave</a>
         </div>
       </div>
       <div>
@@ -96,11 +89,12 @@
           <a href="publishing.html">Publishing</a>
           <a href="store.html">Store</a>
           <a href="canon.html">Canon</a>
-          <a id="mf-footer-admin-link" href="admin.html">Admin</a>
+          <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
         </div>
       </div>
     </div>
   </footer>
+  <script src="scripts/decision-console.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 </html>

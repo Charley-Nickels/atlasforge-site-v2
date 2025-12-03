@@ -1,0 +1,6 @@
+{
+  "atlasv": { "label": "Available", "tone": "live" },
+  "atlasstudio": { "label": "In Beta", "tone": "beta" },
+  "oia": { "label": "Prototype", "tone": "beta" },
+  "atlaswave": { "label": "Coming Soon", "tone": "future" }
+}

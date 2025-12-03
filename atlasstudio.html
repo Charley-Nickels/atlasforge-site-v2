@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AtlasStudio – Creator Workstation</title>
   <link rel="stylesheet" href="styles/glow-pages.css" />
+  <link rel="stylesheet" href="styles/atlasstudio.css" />
 </head>
 <body class="af-page-shell">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
   <header class="af-shell-header" role="banner">
-    <div class="container-wide">
+    <div class="container-wide af-shell-header__inner">
       <a class="af-brandmark" href="index.html">
         <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" />
         <span>AtlasForge</span>
       </a>
       <nav class="af-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
-        <a href="atlasv.html">Atlas-V</a>
-        <a href="atlasstudio.html" aria-current="page">AtlasStudio</a>
-        <a href="oia.html">Octopus in Action</a>
-        <a href="decisions.html">Decision Console</a>
-        <a href="wave.html">AtlasWave</a>
+        <a href="/index.html">Home</a>
+        <a href="/products/atlasv.html">Atlas-V</a>
+        <a href="/products/atlasstudio.html">AtlasStudio</a>
+        <a href="/products/oia.html">Octopus in Action</a>
+        <a href="/decisions.html">Decision Console</a>
+        <a href="/products/atlaswave.html">AtlasWave</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="af-page-banner af-hero-frame">
+    <section class="af-page-banner af-hero-frame af-glow-frame af-glow-halo">
       <div class="container-wide af-console-hero">
         <div>
           <p class="af-hero-badge">Creator workstation</p>
@@ -34,7 +35,7 @@
           <p>Generate ideas, patch scenes, organize briefs, and summarize for the Decision Console without leaving the glow.</p>
           <div class="af-hero__actions">
             <a class="af-button" href="#workstation">View workstation layout</a>
-            <a class="af-button af-button--ghost" href="atlasv.html">See Atlas-V rules</a>
+            <a class="af-button af-button--ghost" href="/products/atlasv.html">See Atlas-V rules</a>
           </div>
         </div>
         <div class="af-panel">
@@ -44,6 +45,7 @@
           <div class="af-chip">Atlas-V integrated</div>
         </div>
       </div>
+      <div class="af-glow-bar" aria-hidden="true"></div>
     </section>
 
     <section class="af-page-section" id="workstation">
@@ -57,54 +59,9 @@
             <button class="af-button af-button--ghost" type="button">Summarize</button>
           </div>
           <div class="af-workstation__layout">
-            <aside class="af-workstation__sidebar">
-              <h3>Filesystem</h3>
-              <ul class="af-tree">
-                <li class="af-tree__folder">AtlasStudio</li>
-                <li>
-                  <span class="af-tree__folder">briefs</span>
-                  <ul class="af-tree">
-                    <li>pilot-brief.md</li>
-                    <li>oia-episode-01.md</li>
-                  </ul>
-                </li>
-                <li>
-                  <span class="af-tree__folder">scenes</span>
-                  <ul class="af-tree">
-                    <li class="af-tree__folder">harbor_intro.scene</li>
-                    <li>repair_loop.scene</li>
-                  </ul>
-                </li>
-                <li>
-                  <span class="af-tree__folder">logs</span>
-                  <ul class="af-tree">
-                    <li>atlasv-latest.log</li>
-                  </ul>
-                </li>
-              </ul>
-            </aside>
-            <section class="af-workstation__main">
-              <h3>Editor preview</h3>
-              <p class="af-hero-badge">harbor_intro.scene</p>
-              <pre><code>// scene preview
-Shot of the harbor at dusk with soft cyan reflections and magenta glows on machinery.
-NPC mood: helpful.
-Atlas-V validation: canon aligned.</code></pre>
-              <div class="af-chip">View mode: code</div>
-            </section>
-            <aside class="af-workstation__assistant">
-              <h3>Atlas-V chat</h3>
-              <div class="af-card">
-                <p><strong>Atlas-V:</strong> Canon check passed for harbor_intro.scene.</p>
-                <p><strong>Atlas-V:</strong> Suggested prompt refinement for patch.</p>
-                <p><strong>Atlas-V:</strong> Summarized changes for Decision Console queue.</p>
-              </div>
-              <p class="af-hero-badge">Actions</p>
-              <div class="af-chip">Canon check</div>
-              <div class="af-chip">Generate alt</div>
-              <div class="af-chip">Patch with prompt</div>
-              <div class="af-chip">Summarize for release</div>
-            </aside>
+            <aside class="af-workstation__sidebar" id="file-tree"></aside>
+            <section class="af-workstation__main" id="preview"></section>
+            <aside class="af-workstation__assistant" id="atlasv-chat"></aside>
           </div>
         </div>
       </div>
@@ -120,12 +77,12 @@ Atlas-V validation: canon aligned.</code></pre>
       <div>
         <h3>Navigation</h3>
         <div class="af-inline-nav">
-          <a href="index.html">Home</a>
-          <a href="atlasv.html">Atlas-V</a>
-          <a href="atlasstudio.html" aria-current="page">AtlasStudio</a>
-          <a href="oia.html">Octopus in Action</a>
-          <a href="decisions.html">Decision Console</a>
-          <a href="wave.html">AtlasWave</a>
+          <a href="/index.html">Home</a>
+          <a href="/products/atlasv.html">Atlas-V</a>
+          <a href="/products/atlasstudio.html" aria-current="page">AtlasStudio</a>
+          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/decisions.html">Decision Console</a>
+          <a href="/products/atlaswave.html">AtlasWave</a>
         </div>
       </div>
       <div>
@@ -134,11 +91,12 @@ Atlas-V validation: canon aligned.</code></pre>
           <a href="publishing.html">Publishing</a>
           <a href="store.html">Store</a>
           <a href="canon.html">Canon</a>
-          <a id="mf-footer-admin-link" href="admin.html">Admin</a>
+          <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
         </div>
       </div>
     </div>
   </footer>
+  <script src="scripts/workstation.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 </html>

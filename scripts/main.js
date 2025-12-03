@@ -114,7 +114,7 @@
       sha256Hex(value)
         .then((hashHex) => {
           if (hashHex === ADMIN_CODE_HASH) {
-            window.location.href = "/admin/atlas-decisions.html";
+            window.location.href = "/admin.html";
           } else {
             errorEl.textContent = "Incorrect admin code.";
           }

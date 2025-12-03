@@ -72,6 +72,11 @@ h4 {
   margin: 0 0 var(--space-8);
 }
 
+p {
+  margin: 0 0 var(--space-12);
+  color: var(--color-text-main);
+}
+
 :focus-visible {
     outline: var(--border-thick) solid var(--state-focus-outline);
     outline-offset: 2px;

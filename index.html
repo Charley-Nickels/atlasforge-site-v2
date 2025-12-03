@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AtlasForge – Glow Ecosystem</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/products.css" />
   <link rel="stylesheet" href="styles/glow-pages.css" />
 </head>
 <body class="af-page-shell">
@@ -11,7 +13,6 @@
   <header class="af-shell-header" role="banner">
     <div class="container-wide af-shell-header__inner">
       <a class="af-brandmark" href="index.html">
-        <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" />
         <span>AtlasForge</span>
       </a>
       <nav class="af-nav" aria-label="Primary">
@@ -21,56 +22,58 @@
         <a href="/products/oia.html">Octopus in Action</a>
         <a href="/decisions.html">Decision Console</a>
         <a href="/products/atlaswave.html">AtlasWave</a>
+        <a href="/media.html">Media</a>
+        <a href="/store.html">Store</a>
+        <a href="/canon.html">Canon</a>
+        <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="af-hero af-section af-glow-frame af-glow-halo" id="hero">
+    <section class="af-section af-hero glow-hero" id="hero">
       <div class="container-wide af-hero-grid">
         <div>
-          <h1>Hero</h1>
-          <h2>Tagline</h2>
+          <p class="af-hero-badge">Glow ecosystem</p>
+          <h1 class="af-hero-heading">Build interactive worlds with AtlasForge governance.</h1>
+          <p class="af-hero-lede">AtlasForge brings Atlas-V decisions, AtlasStudio creation, and Octopus in Action playtests together so every experiment stays aligned with canon and ready for delivery.</p>
+          <div class="af-hero__actions">
+            <a class="af-button" href="/products/atlasv.html">Explore Atlas-V</a>
+            <a class="af-button af-button--ghost" href="#products">See the suite</a>
+          </div>
         </div>
       </div>
-      <div class="af-glow-bar" aria-hidden="true"></div>
-    </section>
-
-    <section class="af-section" id="intro">
-      <div class="container-wide af-intro">
-        <div>
-          <h2>Intro</h2>
-        </div>
-      </div>
+      <div class="halo-bar" aria-hidden="true"></div>
     </section>
 
     <section class="af-section af-products" id="products">
       <div class="container-wide">
-        <h2>Products</h2>
-        <div class="af-product-grid">
-          <article class="af-product-card" data-brand="atlasv">
-            <h3>Atlas-V</h3>
-          </article>
-          <article class="af-product-card" data-brand="atlasstudio">
-            <h3>AtlasStudio</h3>
-          </article>
-          <article class="af-product-card" data-brand="oia">
-            <h3>Octopus in Action</h3>
-          </article>
-          <article class="af-product-card" data-brand="decision-console">
-            <h3>Decision Console</h3>
-          </article>
-          <article class="af-product-card" data-brand="atlaswave">
-            <h3>AtlasWave</h3>
-          </article>
+        <div class="mf-section-header">
+          <p class="af-hero-badge">Product stack</p>
+          <h2>Everything you need to ship AtlasForge-ready experiences</h2>
+          <p>Mix governance, creation, playtesting, and streaming layers without breaking alignment.</p>
+          <div class="halo-bar" aria-hidden="true"></div>
         </div>
+        <div class="af-product-grid" data-product-grid></div>
       </div>
     </section>
 
     <section class="af-section" id="methodology">
       <div class="container-wide af-methodology">
-        <div>
-          <h2>Methodology</h2>
+        <div class="af-panel">
+          <p class="af-hero-badge">Atlas-V loop</p>
+          <h2>Phases → Runs → Prompts → Reports</h2>
+          <p>AtlasForge wraps each build in a steady loop so experiments, governance, and delivery stay in sync.</p>
+          <ul>
+            <li><strong>Phases</strong> structure the workstream for each experience.</li>
+            <li><strong>Runs</strong> keep collaborators aligned on what happens next.</li>
+            <li><strong>Prompts</strong> flow through Atlas-V so guidance stays grounded.</li>
+            <li><strong>Reports</strong> capture canon, flags, and approvals for reuse.</li>
+          </ul>
+        </div>
+        <div class="af-panel">
+          <h3>Ready for the rest of the stack</h3>
+          <p>Decision Console keeps queue, detail, and flags visible; AtlasStudio handles workstation craft; Octopus in Action gives you a playground to prove the feel before shipping.</p>
         </div>
       </div>
     </section>
@@ -79,8 +82,9 @@
   <footer class="af-footer">
     <div class="container-wide af-footer__grid">
       <div>
-        <h3>Footer</h3>
-        <div class="af-glow-bar" aria-hidden="true"></div>
+        <h3>AtlasForge</h3>
+        <p>Glow-first shell for Atlas-V governance, AtlasStudio creation, and AtlasWave streaming.</p>
+        <div class="halo-bar" aria-hidden="true"></div>
       </div>
       <div>
         <h3>Navigation</h3>
@@ -96,14 +100,16 @@
       <div>
         <h3>More</h3>
         <div class="af-inline-nav">
-          <a href="publishing.html">Publishing</a>
-          <a href="store.html">Store</a>
-          <a href="canon.html">Canon</a>
+          <a href="/media.html">Media</a>
+          <a href="/publishing.html">Publishing</a>
+          <a href="/store.html">Store</a>
+          <a href="/canon.html">Canon</a>
           <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
         </div>
       </div>
     </div>
   </footer>
   <script src="scripts/main.js"></script>
+  <script src="scripts/products.js"></script>
 </body>
 </html>

@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
 
 :root {
+  /* Core palette */
   --color-bg: #06070f;
   --color-surface: #0b0d18;
   --color-surface-alt: #0f1221;
   --color-panel: #13172b;
   --color-border: #1f2438;
   --color-text: #e8edf7;
+  --color-text-strong: #f6f8ff;
   --color-subtext: #c4cbdf;
   --color-muted: #7d87a6;
 
   --color-brand-accent: #f45d8a;
   --color-brand-accent-soft: #f9b4ce;
+  --color-accent-secondary: #26d1f3;
 
   --font-family-base: 'Inter', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-weight-heading: 700;

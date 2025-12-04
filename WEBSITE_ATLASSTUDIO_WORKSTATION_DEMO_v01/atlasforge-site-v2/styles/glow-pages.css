@@ -1,0 +1,45 @@
+/*
+ * Partial copy of glow-pages.css from the original atlasforge-site-v2 repository.
+ *
+ * This file imports the shared theme definitions and provides basic
+ * scaffolding for the page layout. For brevity only a subset of the
+ * original rules are included; the interactive workstation uses its own
+ * styles defined in workstation.css.
+ */
+@import url('./theme.css');
+
+/* Basic spacing and typography utilities */
+.af-page-section {
+  padding: var(--space-xl, 48px) 0;
+}
+
+.af-inline-nav {
+  display: flex;
+  gap: var(--space-sm, 12px);
+  flex-wrap: wrap;
+}
+
+.af-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.af-button--ghost {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.af-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--color-accent, #50E3C2);
+  color: var(--color-surface-alt, #0B0E15);
+}
+
+/* Additional styles from the original file would go here if needed. */

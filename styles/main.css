@@ -10,8 +10,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg-base);
-  color: var(--text-main);
+  background: var(--color-bg-page);
+  color: var(--color-text);
   font-family: var(--font-family-sans);
   line-height: var(--line-height-normal);
   -webkit-font-smoothing: antialiased;
@@ -54,17 +54,20 @@ h1 {
   line-height: var(--line-height-tight);
   letter-spacing: 0.01em;
   margin: 0 0 var(--space-20);
+  color: var(--color-text);
 }
 
 h2 {
   font-size: var(--font-size-h2);
   line-height: 1.25;
   margin: 0 0 var(--space-16);
+  color: var(--color-text);
 }
 
 h3 {
   font-size: var(--font-size-h3);
   margin: 0 0 var(--space-12);
+  color: var(--color-text);
 }
 
 h4 {
@@ -74,7 +77,13 @@ h4 {
 
 p {
   margin: 0 0 var(--space-12);
-  color: var(--color-text-main);
+  color: var(--color-text-muted);
+}
+
+li,
+small,
+span {
+  color: var(--color-text);
 }
 
 :focus-visible {

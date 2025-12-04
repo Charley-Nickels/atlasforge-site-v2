@@ -1,20 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
 
 :root {
-  /* Core palette */
-  --color-bg: #06070f;
-  --color-surface: #0b0d18;
-  --color-surface-alt: #0f1221;
-  --color-panel: #13172b;
-  --color-border: #1f2438;
-  --color-text: #e8edf7;
-  --color-text-strong: #f6f8ff;
-  --color-subtext: #c4cbdf;
-  --color-muted: #7d87a6;
+  /* Core palette (high-contrast on dark surfaces) */
+  --color-bg-page: #050816;
+  --color-bg: var(--color-bg-page);
+  --color-surface: #0b1024;
+  --color-surface-alt: #101733;
+  --color-panel: #141c3a;
+  --color-border: #202a46;
+
+  --color-text: #f3f6ff;
+  --color-text-strong: #ffffff;
+  --color-subtext: #c8d2e6;
+  --color-muted: #9aa7c4;
+  --color-text-muted: var(--color-subtext);
+  --color-text-main: var(--color-text);
+  --text-main: var(--color-text);
+  --text-muted: var(--color-subtext);
 
   --color-brand-accent: #f45d8a;
   --color-brand-accent-soft: #f9b4ce;
+  --color-accent-primary: var(--color-brand-accent);
   --color-accent-secondary: #26d1f3;
+
+  /* Dark-surface aliases to override legacy beige tokens */
+  --bg-base: var(--color-bg-page);
+  --panel-light: #0c1428;
+  --panel-mid: #0a1022;
+  --panel-border: var(--color-border);
+
+  --color-surface-0: var(--color-bg-page);
+  --color-surface-100: #0c1224;
+  --color-surface-200: #111a33;
+  --color-surface-300: #162040;
+  --color-border-subtle: #1b2542;
+  --color-border-strong: #2c3554;
+
+  --color-text-soft: var(--color-text-muted);
+  --color-text-inverse: var(--color-text-strong);
 
   --font-family-base: 'Inter', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-weight-heading: 700;

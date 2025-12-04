@@ -5,30 +5,30 @@
   }
 
   const NAV_PRIMARY = [
-    { label: 'AtlasForge', href: 'index.html' },
-    { label: 'Studio / About', href: 'about.html' },
-    { label: 'Atlas Studio', href: 'atlasstudio.html' },
-    { label: 'Atlas V', href: 'atlasv.html' },
-    { label: 'Games', href: 'games.html' },
-    { label: 'Labs', href: 'labs.html' }
+    { label: 'Home', href: 'index.html' },
+    { label: 'Atlas-V', href: 'products/atlasv.html' },
+    { label: 'AtlasStudio', href: 'products/atlasstudio.html' },
+    { label: 'Octopus in Action', href: 'products/oia.html' },
+    { label: 'Decision Console', href: 'decisions.html' },
+    { label: 'AtlasWave', href: 'products/atlaswave.html' }
   ];
 
   const NAV_SECONDARY = [
-    { label: 'Atlas Wave', href: 'wave.html' },
-    { label: 'AMN', href: 'amn.html' },
+    { label: 'Media', href: 'media.html' },
+    { label: 'Publishing', href: 'publishing.html' },
     { label: 'Store', href: 'store.html' },
-    { label: 'Publishing & Licensing', href: 'publishing.html' }
+    { label: 'Canon', href: 'canon.html' }
   ];
 
   function isActive(href, current) {
     if (current === '' || current === '/') return href === 'index.html';
-    return current === href;
+    return current === href || current.endsWith(`/${href}`);
   }
 
   function buildNav() {
     const primaryNav = document.querySelector('.mf-nav--primary');
     const secondaryNav = document.querySelector('.mf-nav--secondary');
-    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const current = (window.location.pathname.replace(/^\//, '') || 'index.html').toLowerCase();
 
     if (primaryNav) {
       primaryNav.innerHTML = NAV_PRIMARY.map((item) => {
@@ -115,7 +115,7 @@
       sha256Hex(value)
         .then((hashHex) => {
           if (hashHex === ADMIN_CODE_HASH) {
-            window.location.href = "/admin/atlas-decisions.html";
+            window.location.href = "/admin.html";
           } else {
             errorEl.textContent = "Incorrect admin code.";
           }

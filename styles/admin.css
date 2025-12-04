@@ -7,6 +7,7 @@ body.admin-shell {
   font-family: var(--font-family-sans);
 }
 
+/* Governance overview spacing uses tokenized gutters */
 .admin-container {
   max-width: 1180px;
   margin: 0 auto;
@@ -22,6 +23,7 @@ body.admin-shell {
   display: block;
 }
 
+/* Goblin gate + admin unlock UI (tokens only) */
 .gate-card {
   display: grid;
   gap: var(--space-16);
@@ -119,8 +121,46 @@ body.admin-shell {
   font-weight: 700;
 }
 
-.admin-locked {
+.admin-locked:not(body) {
   display: none;
+}
+
+.admin-gate.is-hidden {
+  display: none;
+}
+
+.admin-main {
+  background: var(--color-surface-0);
+  color: var(--color-text-strong);
+}
+
+.admin-main.is-hidden {
+  display: none;
+}
+
+body.goblin-mode {
+  background: radial-gradient(circle at 20% 20%, rgba(154, 183, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(140, 249, 194, 0.08), transparent 35%),
+    var(--color-surface-0);
+  color: var(--color-text-strong);
+}
+
+.goblin-mode h1,
+.goblin-mode h2,
+.goblin-mode h3,
+.goblin-mode .admin-meta {
+  color: var(--color-status-accent-strong);
+  text-shadow: 0 0 12px rgba(140, 249, 194, 0.3);
+}
+
+.goblin-mode .admin-hero,
+.goblin-mode .admin-console__header {
+  border-color: var(--color-status-accent-strong);
+  box-shadow: var(--shadow-strong);
+}
+
+.goblin-mode .admin-hero__lede {
+  color: var(--color-text-strong);
 }
 
 .admin-hub {
@@ -141,10 +181,112 @@ body.admin-shell {
   color: var(--color-text-muted);
 }
 
+.admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-weight: 700;
+  color: var(--color-accent-strong);
+  text-decoration: none;
+}
+
+.admin-link:hover,
+.admin-link:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.admin-governance {
+  margin-bottom: var(--space-32);
+}
+
+.admin-governance__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-16);
+}
+
+.admin-governance__block {
+  display: grid;
+  gap: var(--space-12);
+  padding: var(--space-16);
+  background: var(--color-surface-light-0);
+  border: var(--border-regular) solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.admin-governance__lede {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.admin-governance__list {
+  margin: 0;
+  padding-left: var(--space-18);
+  display: grid;
+  gap: var(--space-6);
+}
+
+.admin-governance__actions {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.admin-governance__note {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.admin-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .admin-hub__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-12);
+}
+
+.admin-log {
+  margin-bottom: var(--space-32);
+}
+
+.admin-log__header {
+  margin-bottom: var(--space-12);
+}
+
+.admin-log__lede {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.admin-log__table {
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-16);
+  background: var(--color-surface-light-0);
+  border-radius: var(--radius-lg);
+  border: var(--border-regular) solid var(--color-border-subtle);
+}
+
+.admin-log__row {
+  display: grid;
+  grid-template-columns: 140px 180px 1fr;
+  gap: var(--space-12);
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-0);
+}
+
+.admin-log__row--head {
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .admin-console {
@@ -931,7 +1073,7 @@ body.admin-shell {
 .admin-export-modal__overlay {
   position: absolute;
   inset: 0;
-  background: color-mix(in srgb, var(--color-surface-900, #000) 65%, transparent);
+  background: color-mix(in srgb, var(--color-surface-900) 65%, transparent);
   backdrop-filter: blur(4px);
 }
 
@@ -1144,6 +1286,7 @@ body.admin-shell {
   color: var(--color-text-muted);
 }
 
+/* Governance sections + accordions (token spacing only) */
 .admin-section {
   display: grid;
   gap: var(--space-12);
@@ -1625,6 +1768,15 @@ input:focus-visible {
   }
 
   .gate-card__header {
+    grid-template-columns: 1fr;
+  }
+
+  .gate-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-log__row {
     grid-template-columns: 1fr;
   }
 }

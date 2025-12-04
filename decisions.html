@@ -1,128 +1,100 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-brand="decision-console">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Decision Deck v0 — AtlasForge</title>
-  <link rel="stylesheet" href="styles/marketing.css" />
-  <style>
-    .decision-grid { display: grid; gap: var(--space-12); }
-    .decision-row { display: grid; grid-template-columns: 1fr 1fr 2fr 1.5fr; gap: var(--space-12); align-items: start; padding: var(--space-16); background: var(--panel-light); border: 1px solid var(--panel-border); border-radius: var(--radius-md); }
-    .decision-head { background: var(--panel-mid); font-weight: 700; }
-    .decision-options { display: inline-flex; gap: var(--space-8); flex-wrap: wrap; }
-    .decision-options button { border: var(--border-regular) solid var(--panel-border); background: var(--color-surface-100); padding: var(--space-8) var(--space-12); border-radius: var(--radius-sm); cursor: pointer; }
-    .decision-options button:focus-visible { outline: var(--border-thick) solid var(--state-focus-outline); outline-offset: 2px; }
-    @media (max-width: 800px) { .decision-row { grid-template-columns: 1fr; } }
-  </style>
+  <title>Decision Console – Preview</title>
+  <link rel="stylesheet" href="styles/glow-pages.css" />
+  <link rel="stylesheet" href="styles/decision-console.css" />
 </head>
-<body class="mf-shell brand-atlasforge">
+<body class="af-page-shell">
   <a class="mf-skip" href="#main-content">Skip to main content</a>
-  <header class="mf-header" role="banner">
-    <div class="mf-header-inner">
-      <a class="mf-logo" href="index.html">
-        <span class="mf-logo-mark"><img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" width="55" height="55" loading="lazy" decoding="async" /></span>
-        <span class="mf-logo-text">AtlasForge Interactive</span>
+  <header class="af-shell-header" role="banner">
+    <div class="container-wide af-shell-header__inner">
+      <a class="af-brandmark" href="index.html">
+        <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" />
+        <span>AtlasForge</span>
       </a>
-      <div class="mf-nav-group" id="mf-primary-nav">
-        <nav class="mf-nav mf-nav--primary" aria-label="Primary"></nav>
-        <nav class="mf-nav mf-nav--secondary" aria-label="Secondary"></nav>
-      </div>
-      <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
+      <nav class="af-nav" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/products/atlasv.html">Atlas-V</a>
+        <a href="/products/atlasstudio.html">AtlasStudio</a>
+        <a href="/products/oia.html">Octopus in Action</a>
+        <a href="/decisions.html" aria-current="page">Decision Console</a>
+        <a href="/products/atlaswave.html">AtlasWave</a>
+      </nav>
     </div>
   </header>
 
-  <main class="mf-main" id="main-content">
-    <section class="section af-hero-gradient-af">
-      <div class="container page-hero">
-        <div class="page-hero__copy">
-          <div class="page-hero__logo af-glow">🗂️</div>
-          <h1>Decision Deck v0 – Phase 8 scaffolding</h1>
-          <p class="page-hero__lede">Lightweight staging table for approvals and options. Static only—no persistence yet.</p>
+  <main id="main-content">
+    <section class="af-page-banner af-hero-frame af-glow-frame af-glow-halo">
+      <div class="container-wide af-console-hero">
+        <div>
+          <p class="af-hero-badge">Governance cockpit</p>
+          <h1>Decision Console keeps queue, canon detail, and flags in one place.</h1>
+          <p>Governance console for answering pending decisions and feeding canon with Atlas-V guidance.</p>
+          <div class="af-hero__actions">
+            <a class="af-button" href="#storyboard">See the storyboard</a>
+            <a class="af-button af-button--ghost" href="/products/atlasv.html">Governance underpinnings</a>
+            <a class="af-link-inline" href="/admin.html">Back to Admin / Governance</a>
+          </div>
+        </div>
+        <div class="af-panel">
+          <h3>Console vocabulary</h3>
+          <p>Labels pulled from the UI copy: Decision Queue, Flags, and actions like “Accept,” “Request changes,” and “Flag for canon.”</p>
+          <div class="af-chip">Review</div>
+          <div class="af-chip">Canon merge</div>
         </div>
       </div>
+      <div class="af-glow-bar" aria-hidden="true"></div>
     </section>
 
-    <section class="section section--alt">
-      <div class="container af-stack-lg">
-        <header class="mf-section-header">
-          <div class="mf-eyebrow">Projects</div>
-          <h2>Example decisions</h2>
-          <p>Each row mirrors a governance cluster. Options are visual only to demo future Atlas V hooks.</p>
-        </header>
-        <div class="decision-grid" role="table" aria-label="Decision list">
-          <div class="decision-row decision-head" role="row">
-            <div role="columnheader">Project</div>
-            <div role="columnheader">Category</div>
-            <div role="columnheader">Question / Title</div>
-            <div role="columnheader">Options</div>
+    <section class="af-page-section" id="storyboard">
+      <div class="container-wide">
+        <div class="af-console-card" id="decision-console">
+          <p class="af-hero-badge">Storyboard</p>
+          <h2>Queue → Detail → Flags</h2>
+          <p class="dc-lede">Console for answering pending decisions and promoting canon-aligned outcomes.</p>
+          <div class="af-tab-row dc-tab-row" role="tablist" aria-label="Decision Console states">
+            <button id="dc-tab-queue" type="button" role="tab" aria-controls="decision-state" aria-selected="true" tabindex="0" data-tab="queue" class="is-active">Queue</button>
+            <button id="dc-tab-detail" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="detail">Detail</button>
+            <button id="dc-tab-flags" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="flags">Flags</button>
           </div>
-          <div class="decision-row" role="row">
-            <div role="cell">Website</div>
-            <div role="cell">Layout</div>
-            <div role="cell">Standardize marketing grid to 3→2→1 with beige panels.</div>
-            <div role="cell" class="decision-options">
-              <button type="button">Approve</button>
-              <button type="button">Later</button>
-              <button type="button">Backlog</button>
-            </div>
-          </div>
-          <div class="decision-row" role="row">
-            <div role="cell">OIA</div>
-            <div role="cell">Gallery</div>
-            <div role="cell">Tap-to-expand vs inline lore cards for creatures.</div>
-            <div role="cell" class="decision-options">
-              <button type="button">Yes</button>
-              <button type="button">No</button>
-              <button type="button">Later</button>
-            </div>
-          </div>
-          <div class="decision-row" role="row">
-            <div role="cell">Atlas V</div>
-            <div role="cell">Governance</div>
-            <div role="cell">Badge cadence across site heroes.</div>
-            <div role="cell" class="decision-options">
-              <button type="button">Approve</button>
-              <button type="button">Deny</button>
-              <button type="button">Skip</button>
-            </div>
-          </div>
-          <div class="decision-row" role="row">
-            <div role="cell">Atlas Studio</div>
-            <div role="cell">UX</div>
-            <div role="cell">Task drawer peek mode with beige theme tokens.</div>
-            <div role="cell" class="decision-options">
-              <button type="button">Approve</button>
-              <button type="button">Backlog</button>
-              <button type="button">Later</button>
-            </div>
-          </div>
-        </div>
-        <div class="af-stack-lg">
-          <label for="decision-export">
-            <strong>Decision Export (future phases)</strong>
-            <p class="home-hero__lede">Paste or gather export payloads here when Atlas-V governance hooks are ready.</p>
-          </label>
-          <textarea id="decision-export" rows="4" style="width: 100%; border-radius: var(--radius-md); padding: var(--space-12); border: var(--border-regular) solid var(--panel-border); background: var(--panel-light);">Paste decisions here in future phases.</textarea>
+          <div id="decision-state" class="dc-state" data-state="queue" role="tabpanel" aria-labelledby="dc-tab-queue"></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="mf-footer">
-    <div class="container mf-footer__grid">
+  <footer class="af-footer">
+    <div class="container-wide af-footer__grid">
       <div>
-        <p class="mf-footer__brand">AtlasForge © <span data-year>2024</span></p>
-        <p class="mf-footer__meta">Governance scaffolding</p>
+        <p class="af-hero-badge">Decision Console</p>
+        <p>Queue, inspect, and resolve with Atlas-V guidance.</p>
       </div>
-      <div class="mf-footer__links" data-footer-primary></div>
-      <div class="mf-footer__links" data-footer-secondary></div>
-      <div class="mf-footer__links">
-        <a href="canon.html">Canon Viewer</a>
-        <a href="admin.html">Admin</a>
-        <a id="mf-footer-admin-link" href="admin.html">Admin (Goblin Mode)</a>
+      <div>
+        <h3>Navigation</h3>
+        <div class="af-inline-nav">
+          <a href="/index.html">Home</a>
+          <a href="/products/atlasv.html">Atlas-V</a>
+          <a href="/products/atlasstudio.html">AtlasStudio</a>
+          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/decisions.html" aria-current="page">Decision Console</a>
+          <a href="/products/atlaswave.html">AtlasWave</a>
+        </div>
+      </div>
+      <div>
+        <h3>More</h3>
+        <div class="af-inline-nav">
+          <a href="publishing.html">Publishing</a>
+          <a href="store.html">Store</a>
+          <a href="canon.html">Canon</a>
+          <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
+        </div>
       </div>
     </div>
   </footer>
+  <script src="scripts/decision-console.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 </html>

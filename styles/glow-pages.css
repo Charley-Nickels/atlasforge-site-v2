@@ -1,0 +1,196 @@
+@import url('./theme.css');
+
+.af-hero {
+  position: relative;
+  padding: var(--space-xxl) 0;
+}
+
+.glow-hero {
+  background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--color-brand-accent) 35%, transparent), transparent 45%),
+    radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--color-accent-secondary) 30%, transparent), transparent 40%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.05)),
+    var(--color-surface-alt);
+  box-shadow: var(--glow-halo);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.af-hero .container-wide {
+  position: relative;
+  z-index: 1;
+}
+
+.af-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-subtext);
+  margin-bottom: var(--space-sm);
+}
+
+.af-hero__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.glow-card {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)), var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-card), var(--glow-soft);
+  color: var(--color-text);
+}
+
+.halo-bar {
+  width: 140px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--color-brand-accent), var(--color-accent-secondary), transparent);
+  opacity: 0.8;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.45);
+}
+
+.af-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.af-intro__frame {
+  padding: var(--space-lg);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(160deg, rgba(244, 93, 138, 0.08), rgba(38, 209, 243, 0.08)), var(--color-panel);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--elevation-card);
+}
+
+.af-products h2,
+.af-methodology h2,
+.af-console-card h2 {
+  margin-top: 0;
+}
+
+.af-product-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.02)), var(--color-surface-alt);
+  box-shadow: var(--elevation-card);
+  position: relative;
+  overflow: hidden;
+  color: var(--color-text);
+}
+
+.af-product-card.glow-card {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)), var(--color-panel);
+  box-shadow: var(--elevation-card), var(--glow-soft);
+  border-radius: var(--radius-lg);
+}
+
+.af-product-card .af-chip {
+  margin-top: var(--space-sm);
+  color: var(--color-text);
+}
+
+.af-product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.06), transparent 50%);
+  pointer-events: none;
+}
+
+.af-product-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.af-product-card--soon {
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-subtext);
+}
+
+.af-methodology .af-panel {
+  height: 100%;
+}
+
+.af-console-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.af-console-hero .af-pill {
+  width: fit-content;
+}
+
+.af-console-cta {
+  margin-top: var(--space-md);
+}
+
+.af-page-banner {
+  padding: var(--space-xl) 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(38, 209, 243, 0.06)), var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.af-page-banner h1 {
+  margin: 0 0 var(--space-sm);
+}
+
+.af-page-banner p {
+  margin: 0;
+  color: var(--color-subtext);
+}
+
+.af-page-section {
+  padding: var(--space-xl) 0;
+}
+
+.af-hero-glows {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.af-hero-glows .af-glow-orb {
+  top: -60px;
+  left: -40px;
+}
+
+.af-hero-glows .af-glow-orb.af-glow-orb--cyan {
+  top: 20%;
+  right: -120px;
+  left: auto;
+}
+
+.af-hero-glows .af-glow-orb.af-glow-orb--amber {
+  bottom: -80px;
+  left: 35%;
+}
+
+.af-storyboard__panel strong {
+  color: var(--color-text);
+}
+
+.af-inline-nav {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.af-inline-nav a {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.af-inline-nav a:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}

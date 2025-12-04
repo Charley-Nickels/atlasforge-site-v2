@@ -1,0 +1,5 @@
+{
+  "queueTitle": "Decision Queue",
+  "flagsLabel": "Flags",
+  "actionButtons": ["Accept", "Request changes", "Flag for canon"]
+}

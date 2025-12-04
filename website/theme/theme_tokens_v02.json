@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "version": "0.2",
+    "description": "AtlasForge glow system tokens"
+  },
+  "colors": {
+    "base": {
+      "background": "#06070f",
+      "surface": "#0b0d18",
+      "surfaceAlt": "#0f1221",
+      "panel": "#13172b",
+      "muted": "#7d87a6",
+      "text": "#e8edf7",
+      "subtext": "#c4cbdf",
+      "border": "#1f2438"
+    },
+    "brand": {
+      "atlasforge": "#f45d8a",
+      "atlasv": "#26d1f3",
+      "atlasstudio": "#ffb347",
+      "oia": "#ff5cab",
+      "decision": "#7cc7ff",
+      "wave": "#2ce0c5"
+    },
+    "accents": {
+      "magenta": "#f45d8a",
+      "cyan": "#26d1f3",
+      "amber": "#ffb347",
+      "violet": "#9c7bff",
+      "lime": "#8ef7a2"
+    }
+  },
+  "typography": {
+    "fontFamily": "'Inter', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "headingWeight": 700,
+    "bodyWeight": 400,
+    "sizes": {
+      "hero": "3.25rem",
+      "h1": "2.5rem",
+      "h2": "1.75rem",
+      "h3": "1.35rem",
+      "body": "1rem",
+      "small": "0.95rem"
+    }
+  },
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "0.75rem",
+    "md": "1.25rem",
+    "lg": "2rem",
+    "xl": "3rem",
+    "xxl": "4.5rem"
+  },
+  "radius": {
+    "sm": "10px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px"
+  },
+  "glow": {
+    "soft": "0 0 60px rgba(244, 93, 138, 0.25)",
+    "strong": "0 0 90px rgba(38, 209, 243, 0.35)",
+    "halo": "0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 120px rgba(124, 199, 255, 0.25)",
+    "frame": "0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 -1px 0 rgba(255, 255, 255, 0.06) inset"
+  },
+  "elevation": {
+    "card": "0 20px 80px rgba(0, 0, 0, 0.35)",
+    "panel": "0 25px 120px rgba(0, 0, 0, 0.45)",
+    "floating": "0 40px 160px rgba(0, 0, 0, 0.55)"
+  }
+}

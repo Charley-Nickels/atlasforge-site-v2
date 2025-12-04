@@ -1,67 +1,119 @@
 {
+  "atlasforge": {
+    "name": "AtlasForge Interactive",
+    "title": "AtlasForge Interactive",
+    "shortDescription": "Umbrella hub where our tools, engine, and worlds converge with a magenta energy core.",
+    "description": "AtlasForge Interactive is the hub where our tools, engine, and worlds converge. We treat workflows, routing, and sound the way a game treats physics: as systems that should feel consistent no matter where you touch them. From this centre, we build a workstation (AtlasStudio), a language (Atlas-V), immersive worlds like Octopus in Action, and specialised consoles.",
+    "category": "Umbrella Brand",
+    "link": "/index.html",
+    "bullets": [
+      "Magenta energy source, orbit lines, and clean geometry tie the family together",
+      "Playground for stacks that don’t yet exist, where spreadsheets and simulations share a canvas",
+      "Home for AtlasStudio, Atlas-V, Octopus in Action, Decision Console, and AtlasWave"
+    ]
+  },
   "atlasv": {
-    "name": "Atlas-V",
-    "title": "Atlas-V",
-    "shortDescription": "Governance engine for orchestrating AtlasForge decisions.",
-    "description": "Core governance engine for orchestrating AtlasForge decisions.",
-    "category": "Core",
+    "name": "Atlas-V Engine",
+    "title": "Atlas-V Engine",
+    "shortDescription": "Protocol and language that keeps workflows moving safely across time and space.",
+    "description": "Atlas-V is the protocol that keeps your work moving and safe. It isn’t just an engine; it’s a language that describes how tasks flow, pause, branch, and resolve. With modules like Navigator, Memory, Guard and FlowSim, Atlas-V provides a shared vocabulary for worlds, tools and decision systems.",
+    "category": "Core Engine",
     "link": "/products/atlasv.html",
     "bullets": [
-      "Routes requests through vetted decision blocks",
-      "Captures approvals, flags, and revisions",
-      "Keeps AtlasForge canon aligned across products"
+      "Handles concurrency, versioning, and risk so projects stay consistent",
+      "Powers branching workflows, simulations, and complex in-game economies",
+      "Design sophisticated systems without losing sight of people and stories"
+    ]
+  },
+  "atlas_v": {
+    "name": "Atlas-V Engine",
+    "title": "Atlas-V Engine",
+    "shortDescription": "Protocol and language that keeps workflows moving safely across time and space.",
+    "description": "Atlas-V is the protocol that keeps your work moving and safe. It isn’t just an engine; it’s a language that describes how tasks flow, pause, branch, and resolve. With modules like Navigator, Memory, Guard and FlowSim, Atlas-V provides a shared vocabulary for worlds, tools and decision systems.",
+    "category": "Core Engine",
+    "link": "/products/atlasv.html",
+    "bullets": [
+      "Handles concurrency, versioning, and risk so projects stay consistent",
+      "Powers branching workflows, simulations, and complex in-game economies",
+      "Design sophisticated systems without losing sight of people and stories"
     ]
   },
   "atlasstudio": {
-    "name": "AtlasStudio",
-    "title": "AtlasStudio",
-    "shortDescription": "Workstation for crafting experiences with Atlas-V assistance.",
-    "description": "Workstation for crafting experiences with Atlas-V assistance.",
-    "category": "Creation",
+    "name": "AtlasStudio Workstation",
+    "title": "AtlasStudio Workstation",
+    "shortDescription": "Three-panel creative cockpit for tasks, routes, and experiments built on Atlas-V.",
+    "description": "AtlasStudio is your creative cockpit. It presents a three-panel interface for queues, actions and snapshots, letting you manage tasks, routes and experiments from one place. Built on top of Atlas-V, the workstation treats every action as part of a bigger story.",
+    "category": "Workstation",
     "link": "/products/atlasstudio.html",
     "bullets": [
-      "Unified file tree, previews, and Atlas-V chat",
-      "Lightweight authoring with glow-first UI",
-      "Ready for future live data wiring"
+      "Drag clips into pipelines, tweak parameters, and watch effects ripple",
+      "Keeps story, canon, and production context intact while you work",
+      "Living workspace for simulations, audio palettes, and world editors"
+    ]
+  },
+  "octopus_in_action": {
+    "name": "Octopus in Action",
+    "title": "Octopus in Action",
+    "shortDescription": "Harbour-city simulation where decisions and Atlas-V branches weave into story.",
+    "description": "Octopus in Action is our flagship world: a harbour-city simulation where flows turn into stories. In OIA you’ll explore docks, towers and markets while managing loops of work, resources and narrative. Characters and tasks are bound together by the Atlas-V engine, so every decision has consequences that cascade through the city.",
+    "category": "World / Game",
+    "link": "/products/oia.html",
+    "bullets": [
+      "Tentacle branches represent different story paths that weave together",
+      "Playable proving ground for AtlasForge methodology",
+      "Demonstrates how systems with soul emerge from modular design"
     ]
   },
   "oia": {
     "name": "Octopus in Action",
     "title": "Octopus in Action",
-    "shortDescription": "Playable playground for AtlasForge characters and loops.",
-    "description": "Playable playground for AtlasForge characters and loops.",
-    "category": "Experiments",
+    "shortDescription": "Harbour-city simulation where decisions and Atlas-V branches weave into story.",
+    "description": "Octopus in Action is our flagship world: a harbour-city simulation where flows turn into stories. In OIA you’ll explore docks, towers and markets while managing loops of work, resources and narrative. Characters and tasks are bound together by the Atlas-V engine, so every decision has consequences that cascade through the city.",
+    "category": "World / Game",
     "link": "/products/oia.html",
     "bullets": [
-      "Showcases narrative experiments",
-      "Tests moment-to-moment feel with quick patches",
-      "Feeds insights back into Atlas-V governance"
+      "Tentacle branches represent different story paths that weave together",
+      "Playable proving ground for AtlasForge methodology",
+      "Demonstrates how systems with soul emerge from modular design"
+    ]
+  },
+  "decision_console": {
+    "name": "Decision Console",
+    "title": "Decision Console",
+    "shortDescription": "Command bridge for workflows, risks, and trade-offs with Atlas-V guidance.",
+    "description": "The Decision Console is a command bridge for complex projects. Powered by Atlas-V, it provides a clear view into your workflows, risks and trade-offs. Visualise decision loops, run what-if simulations, and adjust parameters in real time.",
+    "category": "Governance",
+    "link": "/decisions.html",
+    "bullets": [
+      "Unifies dashboards, alerting, and control panels in one interface",
+      "Helps teams weigh competing priorities without losing the narrative thread",
+      "Built for orchestrating live events or balancing economies"
     ]
   },
   "decision-console": {
     "name": "Decision Console",
     "title": "Decision Console",
-    "shortDescription": "Console for answering pending decisions and feeding canon.",
-    "description": "Console for answering pending decisions and feeding canon.",
+    "shortDescription": "Command bridge for workflows, risks, and trade-offs with Atlas-V guidance.",
+    "description": "The Decision Console is a command bridge for complex projects. Powered by Atlas-V, it provides a clear view into your workflows, risks and trade-offs. Visualise decision loops, run what-if simulations, and adjust parameters in real time.",
     "category": "Governance",
     "link": "/decisions.html",
     "bullets": [
-      "Queue, detail, and flags views for governance",
-      "Keeps editors aligned with AtlasForge canon",
-      "Storyboards ready for future live data"
+      "Unifies dashboards, alerting, and control panels in one interface",
+      "Helps teams weigh competing priorities without losing the narrative thread",
+      "Built for orchestrating live events or balancing economies"
     ]
   },
   "atlaswave": {
-    "name": "AtlasWave",
+    "name": "AtlasWave (Experimental)",
     "title": "AtlasWave",
-    "shortDescription": "Signal layer for streaming AtlasForge intelligence.",
-    "description": "Signal layer for streaming AtlasForge intelligence.",
-    "category": "Signals",
+    "shortDescription": "Exploration into reactive sound that responds to Atlas-V workflows.",
+    "description": "AtlasWave is an exploration into reactive sound. Built as an extension of the Atlas-V engine and integrated into AtlasStudio, it generates and mixes audio palettes that respond to your workflows.",
+    "category": "Signals / Audio",
     "link": "/products/atlaswave.html",
     "bullets": [
-      "Push updates across worlds and consoles",
-      "Monitor live statepack decisions",
-      "Designed for upcoming real-time pilots"
+      "Craft loops, stems, and soundscapes that evolve with project state",
+      "Give worlds like OIA ambient music and dynamic effects",
+      "Adds a new dimension to the AtlasForge stack while still taking shape"
     ]
   }
 }

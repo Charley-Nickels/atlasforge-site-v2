@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AtlasStudio – Creator Workstation</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/theme.css" />
   <link rel="stylesheet" href="styles/glow-pages.css" />
   <link rel="stylesheet" href="styles/atlasstudio.css" />
 </head>
@@ -17,11 +19,13 @@
       </a>
       <nav class="af-nav" aria-label="Primary">
         <a href="/index.html">Home</a>
-        <a href="/products/atlasv.html">Atlas-V</a>
-        <a href="/products/atlasstudio.html">AtlasStudio</a>
-        <a href="/products/oia.html">Octopus in Action</a>
+        <a href="/atlasstudio.html" aria-current="page">AtlasStudio</a>
+        <a href="/oia.html">Octopus in Action</a>
         <a href="/decisions.html">Decision Console</a>
-        <a href="/products/atlaswave.html">AtlasWave</a>
+        <a href="/media.html">Media</a>
+        <a href="/store.html">Store</a>
+        <a href="/canon.html">Canon</a>
+        <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
       </nav>
     </div>
   </header>
@@ -53,15 +57,15 @@
         <div class="af-workstation">
           <div class="af-workstation__toolbar">
             <span class="af-pill">AtlasStudio toolbar</span>
-            <button class="af-button af-button--ghost" type="button">Generate ideas</button>
-            <button class="af-button af-button--ghost" type="button">Patch now</button>
-            <button class="af-button af-button--ghost" type="button">Organize</button>
-            <button class="af-button af-button--ghost" type="button">Summarize</button>
+            <button class="af-button af-button--ghost" type="button" data-action="generate_ideas">Generate ideas</button>
+            <button class="af-button af-button--ghost" type="button" data-action="patch_now">Patch now</button>
+            <button class="af-button af-button--ghost" type="button" data-action="organize">Organize</button>
+            <button class="af-button af-button--ghost" type="button" data-action="summarize">Summarize</button>
           </div>
           <div class="af-workstation__layout">
-            <aside class="af-workstation__sidebar" id="file-tree"></aside>
-            <section class="af-workstation__main" id="preview"></section>
-            <aside class="af-workstation__assistant" id="atlasv-chat"></aside>
+            <aside class="af-workstation__sidebar" id="file-tree" aria-label="File tree"></aside>
+            <section class="af-workstation__main" id="preview" aria-label="Preview panel"></section>
+            <aside class="af-workstation__assistant" id="atlasv-chat" aria-label="Atlas-V chat"></aside>
           </div>
         </div>
       </div>
@@ -78,11 +82,13 @@
         <h3>Navigation</h3>
         <div class="af-inline-nav">
           <a href="/index.html">Home</a>
-          <a href="/products/atlasv.html">Atlas-V</a>
-          <a href="/products/atlasstudio.html" aria-current="page">AtlasStudio</a>
-          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/atlasstudio.html" aria-current="page">AtlasStudio</a>
+          <a href="/oia.html">Octopus in Action</a>
           <a href="/decisions.html">Decision Console</a>
-          <a href="/products/atlaswave.html">AtlasWave</a>
+          <a href="/media.html">Media</a>
+          <a href="/store.html">Store</a>
+          <a href="/canon.html">Canon</a>
+          <a href="/admin.html">Admin</a>
         </div>
       </div>
       <div>

@@ -1,71 +1,156 @@
 {
-  "meta": {
-    "version": "0.2",
-    "description": "AtlasForge glow system tokens"
-  },
   "colors": {
-    "base": {
-      "background": "#06070f",
-      "surface": "#0b0d18",
-      "surfaceAlt": "#0f1221",
-      "panel": "#13172b",
-      "muted": "#7d87a6",
-      "text": "#e8edf7",
-      "subtext": "#c4cbdf",
-      "border": "#1f2438"
+    "atlasforge": {
+      "primary": "#0F1827",
+      "secondary": "#1F2A40",
+      "accent1": "#00BCD4",
+      "accent2": "#F4B400",
+      "surface": "#162033",
+      "background": "#0F1827",
+      "onPrimary": "#FFFFFF",
+      "onSecondary": "#FFFFFF"
     },
-    "brand": {
-      "atlasforge": "#f45d8a",
-      "atlasv": "#26d1f3",
-      "atlasstudio": "#ffb347",
-      "oia": "#ff5cab",
-      "decision": "#7cc7ff",
-      "wave": "#2ce0c5"
+    "atlas-v": {
+      "primary": "#00A572",
+      "secondary": "#046C4E",
+      "accent": "#8BC34A",
+      "background": "#051E1A",
+      "onPrimary": "#FFFFFF"
     },
-    "accents": {
-      "magenta": "#f45d8a",
-      "cyan": "#26d1f3",
-      "amber": "#ffb347",
-      "violet": "#9c7bff",
-      "lime": "#8ef7a2"
+    "atlasstudio": {
+      "primary": "#6C63FF",
+      "secondary": "#4A3EBF",
+      "accent": "#C5B4E3",
+      "background": "#1E1B39",
+      "onPrimary": "#FFFFFF"
+    },
+    "octopus_in_action": {
+      "primary": "#FF8C42",
+      "secondary": "#D96E30",
+      "accent": "#FFC107",
+      "background": "#33190A",
+      "onPrimary": "#FFFFFF"
+    },
+    "loop": {
+      "primary": "#2AB7CA",
+      "secondary": "#1C8BA0",
+      "accent": "#00FFFF",
+      "background": "#051C20",
+      "onPrimary": "#FFFFFF"
+    },
+
+    "decision_console": {
+      "primary": "#E1582E",
+      "secondary": "#9A3C21",
+      "accent": "#FFA94D",
+      "background": "#2F120C",
+      "onPrimary": "#FFFFFF"
+    },
+    "atlaswave": {
+      "primary": "#5B8DFF",
+      "secondary": "#3A5F9B",
+      "accent": "#A2C0FF",
+      "background": "#0E1A3B",
+      "onPrimary": "#FFFFFF"
+    }
+  },
+
+  
+  "neutrals": {
+    "surface": {
+      "0": "#0D1321",
+      "1": "#17223C",
+      "2": "#23395D",
+      "3": "#2E416D"
+    },
+    "text": {
+      "primary": "#F8FAFC",
+      "secondary": "#CBD5E1",
+      "muted": "#94A3B8"
+    },
+    "border": {
+      "light": "#334E68",
+      "dark": "#1F2A40"
     }
   },
   "typography": {
-    "fontFamily": "'Inter', 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif",
-    "headingWeight": 700,
-    "bodyWeight": 400,
-    "sizes": {
-      "hero": "3.25rem",
-      "h1": "2.5rem",
-      "h2": "1.75rem",
-      "h3": "1.35rem",
-      "body": "1rem",
-      "small": "0.95rem"
+    "fontFamily": {
+      "heading": "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
+      "body": "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
+      "mono": "'JetBrains Mono', 'Courier New', monospace"
+    },
+    "fontWeight": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    },
+    "fontSize": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "md": "1rem",
+      "lg": "1.25rem",
+      "xl": "1.5rem",
+      "2xl": "2rem",
+      "3xl": "2.5rem",
+      "4xl": "3rem",
+      "5xl": "4rem"
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75
     }
   },
   "spacing": {
-    "xs": "0.5rem",
-    "sm": "0.75rem",
-    "md": "1.25rem",
-    "lg": "2rem",
-    "xl": "3rem",
-    "xxl": "4.5rem"
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.5rem",
+    "6": "2rem",
+    "8": "3rem",
+    "10": "4rem",
+    "12": "6rem"
   },
   "radius": {
-    "sm": "10px",
-    "md": "16px",
-    "lg": "24px",
-    "xl": "32px"
+    "none": "0",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px"
   },
   "glow": {
-    "soft": "0 0 60px rgba(244, 93, 138, 0.25)",
-    "strong": "0 0 90px rgba(38, 209, 243, 0.35)",
-    "halo": "0 0 0 1px rgba(255, 255, 255, 0.08), 0 40px 120px rgba(124, 199, 255, 0.25)",
-    "frame": "0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 -1px 0 rgba(255, 255, 255, 0.06) inset"
+    "magenta": "#FF5C8D",
+    "cyan": "#00E8FF",
+    "green": "#35FFAE",
+    "purple": "#7C5CFA",
+    "orange": "#FFB174",
+    "teal": "#4CD2DE",
+    "gold": "#FFD84A",
+    "pinkBlue": ["#E20074", "#6C63FF"]
+  },
+
+  
+  "glowLevels": {
+    "soft": "0 0 15px 5px",
+    "hero": "0 0 40px 15px",
+    "strong": "0 0 60px 25px"
   },
   "elevation": {
-    "card": "0 20px 80px rgba(0, 0, 0, 0.35)",
-    "panel": "0 25px 120px rgba(0, 0, 0, 0.45)",
-    "floating": "0 40px 160px rgba(0, 0, 0, 0.55)"
+    "level1": "0 0 10px 2px rgba(255, 92, 141, 0.3)",
+    "level2": "0 0 20px 4px rgba(0, 232, 255, 0.3)",
+    "level3": "0 0 30px 6px rgba(124, 92, 250, 0.3)",
+    "level4": "0 0 40px 8px rgba(255, 184, 116, 0.3)",
+    "inset": "inset 0 0 10px rgba(0, 0, 0, 0.5)"
+  },
+
+  
+  "elevationLayers": {
+    "card": "0 4px 8px rgba(0,0,0,0.2)",
+    "overlay": "0 8px 16px rgba(0,0,0,0.3)",
+    "hero": "0 12px 24px rgba(0,0,0,0.4)"
   }
 }

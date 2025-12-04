@@ -1,25 +1,179 @@
 {
-  "home": {
-    "hero": {
-      "eyebrow": "Glow-driven ecosystem",
-      "title": "Cinematic tools for governed worlds",
-      "lede": "AtlasForge keeps every product, workstation, and console on the same glow-driven language.",
-      "primaryCta": "Explore the stack",
-      "secondaryCta": "Meet Atlas-V"
+  "home": [
+    {
+      "id": "hero",
+      "contentRef": "site_sections.hero_taglines[0]", 
+      "visual": "hero_panel_glow_frame with large ambient spheres; gradient CTA button"
     },
-    "intro": {
-      "title": "What is AtlasForge?",
-      "copy": "AtlasForge is a cohesive ecosystem for shipping governed, lore-safe products. Atlas-V keeps canon honest, AtlasStudio ships the work, and AtlasWave, OIA, and Decision Console prove the loop."
+    {
+      "id": "introduction",
+      "contentRef": "site_sections.what_is_atlasforge",
+      "visual": "dark surface with subtle gradient; halo_bar_multicolor separates from hero"
     },
-    "methodology": {
-      "title": "The governance loop",
-      "copy": "Brief, generate, validate, and ship. Every step is wrapped in glow cues so teams know which system they’re touching.",
-      "bullets": [
-        "Briefs originate in AtlasStudio using canon-safe templates.",
-        "Atlas-V validates prompts and files against canon.",
-        "Decisions are logged in the console with ready-to-ship diffs.",
-        "Releases hit OIA, AtlasWave, or other experiences with the same glow language."
-      ]
+    {
+      "id": "product_overview",
+      "contentRef": ["product_blurbs.atlas_v", "product_blurbs.atlasstudio", "product_blurbs.octopus_in_action"],
+      "visual": "three product cards with accent glows corresponding to each product; ambient glow spheres behind cards"
+    },
+    {
+      "id": "features_overview",
+      "contentRef": "site_sections.features.atlasforge_interactive",
+      "visual": "four‑column list or icon grid on a dark background; halo bar above"
+    },
+    {
+      "id": "coming_soon_teaser",
+      "contentRef": ["site_sections.coming_soon.decision_console", "site_sections.coming_soon.atlaswave"],
+      "visual": "coming soon cards using loop accent colours with halo_bar_teal_gold; use the glow pack's hero_panel_glow_frame for each card"
+    },
+    {
+      "id": "footer",
+      "contentRef": null,
+      "visual": "dark gradient with halo_bar_teal_gold at the top; teal and gold ambient glows; copyright line"
     }
-  }
+  ],
+  "atlas-v": [
+    {
+      "id": "hero",
+      "contentRef": "product_blurbs.atlas_v",
+      "visual": "hero_panel_glow_frame using atlas-v accent colours (green/cyan/teal); ambient glow spheres"
+    },
+    {
+      "id": "overview",
+      "contentRef": "product_blurbs.atlas_v",
+      "visual": "two‑column layout with text on one side and illustration or diagram on the other; simple halo bar between sections"
+    },
+    {
+      "id": "features",
+      "contentRef": "site_sections.features.atlas_v_engine",
+      "visual": "bullet or icon list; use halo_bar_teal_gold; accent glows behind icons"
+    },
+    {
+      "id": "modules",
+      "contentRef": "site_sections.features.atlas_v_engine (Navigator, Memory, Guard, FlowSim)",
+      "visual": "four columns or cards highlighting each module with its own glow accent"
+    },
+    {
+      "id": "call_to_action",
+      "contentRef": "site_sections.coming_soon.decision_console",
+      "visual": "hero_panel_glow_frame with signup form or button"
+    },
+    {
+      "id": "footer",
+      "contentRef": null,
+      "visual": "same as home footer with colours adapted to atlas-v accent colours"
+    }
+  ],
+  "atlasstudio": [
+    {
+      "id": "hero",
+      "contentRef": "product_blurbs.atlasstudio",
+      "visual": "hero_panel_glow_frame using purple/orange accents; ambient glow spheres"
+    },
+    {
+      "id": "overview",
+      "contentRef": "product_blurbs.atlasstudio",
+      "visual": "split layout with descriptive copy and workstation screenshot placeholder"
+    },
+    {
+      "id": "features",
+      "contentRef": "site_sections.features.atlasstudio_workstation",
+      "visual": "three or four cards representing queues, actions and snapshots, each with purple/orange glows"
+    },
+    {
+      "id": "use_cases",
+      "contentRef": "product_blurbs.atlasstudio",
+      "visual": "storytelling examples or quotes; halo bar divides sections"
+    },
+    {
+      "id": "call_to_action",
+      "contentRef": "site_sections.coming_soon.decision_console",
+      "visual": "signup panel using purple/cyan gradient"
+    },
+    {
+      "id": "footer",
+      "contentRef": null,
+      "visual": "same as home footer with purple/orange accent glows"
+    }
+  ],
+  "octopus_in_action": [
+    {
+      "id": "hero",
+      "contentRef": "product_blurbs.octopus_in_action",
+      "visual": "hero panel with orange/gold glows; include ambient orbs reminiscent of harbour lights"
+    },
+    {
+      "id": "overview",
+      "contentRef": "product_blurbs.octopus_in_action",
+      "visual": "text next to a world map or concept art placeholder"
+    },
+    {
+      "id": "features",
+      "contentRef": "site_sections.features.octopus_in_action",
+      "visual": "four‑item list describing simulation loops, narrative branches, octopus motif and integration with AtlasWave/Decision Console"
+    },
+    {
+      "id": "call_to_action",
+      "contentRef": "site_sections.coming_soon.decision_console",
+      "visual": "hero panel encouraging players to join a waiting list; orange/gold gradient button"
+    },
+    {
+      "id": "footer",
+      "contentRef": null,
+      "visual": "same as home footer with orange/gold accent glows"
+    }
+  ],
+  "decision_console": [
+    {
+      "id": "hero",
+      "contentRef": "product_blurbs.decision_console",
+      "visual": "hero panel emphasising teal/gold glows; tagline about command bridge for complex projects"
+    },
+    {
+      "id": "overview",
+      "contentRef": "product_blurbs.decision_console",
+      "visual": "two‑column layout explaining the console’s purpose"
+    },
+    {
+      "id": "features",
+      "contentRef": "site_sections.features.decision_console",
+      "visual": "list of console features: centralised dashboard, simulations, integration with AtlasStudio, collaboration"
+    },
+    {
+      "id": "coming_soon",
+      "contentRef": "site_sections.coming_soon.decision_console",
+      "visual": "coming soon panel using halo_bar_teal_gold and sign‑up CTA"
+    },
+    {
+      "id": "footer",
+      "contentRef": null,
+      "visual": "same as home footer adapted to teal/gold glows"
+    }
+  ],
+  "atlaswave": [
+    {
+      "id": "hero",
+      "contentRef": "product_blurbs.atlaswave",
+      "visual": "hero panel with magenta/purple/blue glows; tagline about reactive sound"
+    },
+    {
+      "id": "overview",
+      "contentRef": "product_blurbs.atlaswave",
+      "visual": "section explaining AtlasWave’s purpose and integration with AtlasStudio"
+    },
+    {
+      "id": "features",
+      "contentRef": "site_sections.features.atlaswave",
+      "visual": "list of audio features and capabilities; use magenta/purple glow icons"
+    },
+    {
+      "id": "coming_soon",
+      "contentRef": "site_sections.coming_soon.atlaswave",
+      "visual": "coming soon panel with magenta/purple halo bar and sign‑up CTA"
+    },
+    {
+      "id": "footer",
+      "contentRef": null,
+      "visual": "same as home footer adapted to magenta/purple accent glows"
+    }
+  ]
 }

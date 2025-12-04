@@ -1,6 +1,11 @@
 {
-  "scenes": "timeline",
-  "scripts": "code",
-  "design": "preview",
-  "logs": "terminal"
+  "md": "markdown_preview",
+  "proj": "project_overview",
+  "atlas": "module_view",
+  "json": "json_viewer",
+  "cfg": "json_viewer",
+  "log": "log_viewer",
+  "png": "image_preview",
+  "jpg": "image_preview",
+  "txt": "text_viewer"
 }

@@ -1,7 +1,11 @@
 {
-  "atlasv": { "label": "Active", "tone": "live" },
-  "atlasstudio": { "label": "In Beta", "tone": "beta" },
-  "oia": { "label": "Prototype", "tone": "beta" },
-  "decision-console": { "label": "Reviewing", "tone": "beta" },
+  "atlasforge": { "label": "Live Beta", "tone": "beta" },
+  "atlasv": { "label": "Prototype", "tone": "beta" },
+  "atlas_v": { "label": "Prototype", "tone": "beta" },
+  "atlasstudio": { "label": "In Development", "tone": "beta" },
+  "oia": { "label": "Playable Alpha", "tone": "beta" },
+  "octopus_in_action": { "label": "Playable Alpha", "tone": "beta" },
+  "decision-console": { "label": "In Design", "tone": "future" },
+  "decision_console": { "label": "In Design", "tone": "future" },
   "atlaswave": { "label": "Coming Soon", "tone": "future" }
 }

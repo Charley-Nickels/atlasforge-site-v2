@@ -6,18 +6,16 @@
 
   const NAV_PRIMARY = [
     { label: 'Home', href: 'index.html' },
-    { label: 'Atlas-V', href: 'products/atlasv.html' },
-    { label: 'AtlasStudio', href: 'products/atlasstudio.html' },
-    { label: 'Octopus in Action', href: 'products/oia.html' },
-    { label: 'Decision Console', href: 'decisions.html' },
-    { label: 'AtlasWave', href: 'products/atlaswave.html' }
+    { label: 'AtlasStudio', href: 'atlasstudio.html' },
+    { label: 'Octopus in Action', href: 'oia.html' },
+    { label: 'Decision Console', href: 'decisions.html' }
   ];
 
   const NAV_SECONDARY = [
     { label: 'Media', href: 'media.html' },
-    { label: 'Publishing', href: 'publishing.html' },
     { label: 'Store', href: 'store.html' },
-    { label: 'Canon', href: 'canon.html' }
+    { label: 'Canon', href: 'canon.html' },
+    { label: 'Admin', href: 'admin.html', id: 'mf-footer-admin-link' }
   ];
 
   function isActive(href, current) {
@@ -33,14 +31,18 @@
     if (primaryNav) {
       primaryNav.innerHTML = NAV_PRIMARY.map((item) => {
         const active = isActive(item.href.toLowerCase(), current) ? 'is-active' : '';
-        return `<a href="${item.href}" class="${active}">${item.label}</a>`;
+        const idAttr = item.id ? `id="${item.id}"` : '';
+        const ariaCurrent = active ? 'aria-current="page"' : '';
+        return `<a href="${item.href}" class="${active}" ${idAttr} ${ariaCurrent}>${item.label}</a>`;
       }).join('');
     }
 
     if (secondaryNav) {
       secondaryNav.innerHTML = NAV_SECONDARY.map((item) => {
         const active = isActive(item.href.toLowerCase(), current) ? 'is-active' : '';
-        return `<a href="${item.href}" class="${active}">${item.label}</a>`;
+        const idAttr = item.id ? `id="${item.id}"` : '';
+        const ariaCurrent = active ? 'aria-current="page"' : '';
+        return `<a href="${item.href}" class="${active}" ${idAttr} ${ariaCurrent}>${item.label}</a>`;
       }).join('');
     }
   }

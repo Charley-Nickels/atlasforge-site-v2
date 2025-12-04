@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/decision_queue.schema.json",
+  "title": "Decision Queue",
+  "description": "Schema for the collection of decisions awaiting user input.",
+  "type": "object",
+  "properties": {
+    "decisions": {
+      "type": "array",
+      "description": "List of pending or in‑progress decisions awaiting a response from the Creative Director.",
+      "items": {
+        "$ref": "#/definitions/decision"
+      }
+    }
+  },
+  "required": ["decisions"],
+  "definitions": {
+    "decision": {
+      "type": "object",
+      "description": "A single decision item to be presented to the Creative Director.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the decision (e.g., a UUID)."
+        },
+        "questionText": {
+          "type": "string",
+          "description": "The question or prompt requiring a decision."
+        },
+        "responseType": {
+          "type": "string",
+          "description": "Type of response expected from the user.",
+          "enum": ["yes_no", "approve_deny", "multiple_choice", "free_text"]
+        },
+        "options": {
+          "type": "array",
+          "description": "List of choices when responseType is 'multiple_choice'.",
+          "items": {"type": "string"},
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "projectId": {
+          "type": "string",
+          "description": "Identifier of the project this decision belongs to."
+        },
+        "categoryId": {
+          "type": "string",
+          "description": "Identifier of the category within the project."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the decision.",
+          "enum": ["pending", "answered", "closed"]
+        },
+        "userResponse": {
+          "description": "Response provided by the Creative Director. Its type depends on responseType.",
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}}
+          ]
+        },
+        "timestampCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the decision was created."
+        },
+        "timestampAnswered": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the decision was answered.",
+          "nullable": true
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional notes or context provided by the Master Architect or system.",
+          "nullable": true
+        }
+      },
+      "required": ["id", "questionText", "responseType", "projectId", "categoryId", "status", "timestampCreated"],
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "name": "/",
+  "type": "directory",
+  "children": [
+    {
+      "name": "projects",
+      "type": "directory",
+      "children": [
+        {
+          "name": "creative_labs.proj",
+          "type": "file"
+        },
+        {
+          "name": "world_builder.proj",
+          "type": "file"
+        },
+        {
+          "name": "dreamscape.atlas",
+          "type": "file"
+        },
+        {
+          "name": "readme.md",
+          "type": "file"
+        },
+        {
+          "name": "config.cfg",
+          "type": "file"
+        },
+        {
+          "name": "timeline.json",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "modules",
+      "type": "directory",
+      "children": [
+        {
+          "name": "audio_processor.json",
+          "type": "file"
+        },
+        {
+          "name": "terrain_generator.json",
+          "type": "file"
+        },
+        {
+          "name": "network_manager.atlas",
+          "type": "file"
+        },
+        {
+          "name": "module_notes.md",
+          "type": "file"
+        },
+        {
+          "name": "core_module.cfg",
+          "type": "file"
+        },
+        {
+          "name": "path_finder.proj",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "assets",
+      "type": "directory",
+      "children": [
+        {
+          "name": "logo.png",
+          "type": "file"
+        },
+        {
+          "name": "textures.json",
+          "type": "file"
+        },
+        {
+          "name": "materials.md",
+          "type": "file"
+        },
+        {
+          "name": "environment.atlas",
+          "type": "file"
+        },
+        {
+          "name": "fonts.cfg",
+          "type": "file"
+        },
+        {
+          "name": "ui_theme.json",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "logs",
+      "type": "directory",
+      "children": [
+        {
+          "name": "system.log",
+          "type": "file"
+        },
+        {
+          "name": "atlas_boot.log",
+          "type": "file"
+        },
+        {
+          "name": "patch_history.log",
+          "type": "file"
+        },
+        {
+          "name": "generation_output.log",
+          "type": "file"
+        },
+        {
+          "name": "debug.json",
+          "type": "file"
+        },
+        {
+          "name": "summary.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "atlas_v",
+      "type": "directory",
+      "children": [
+        {
+          "name": "prompt_templates.json",
+          "type": "file"
+        },
+        {
+          "name": "session_config.cfg",
+          "type": "file"
+        },
+        {
+          "name": "transcripts.md",
+          "type": "file"
+        },
+        {
+          "name": "manifest.atlas",
+          "type": "file"
+        },
+        {
+          "name": "atlas_settings.json",
+          "type": "file"
+        }
+      ]
+    }
+  ]
+}

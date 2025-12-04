@@ -1,0 +1,8 @@
+# Module Notes
+
+## Audio Processor
+This module processes real-time audio input and generates reactive visual patterns.
+Key parameters:
+- sample_rate: 44100
+- buffer_size: 1024
+- channels: 2

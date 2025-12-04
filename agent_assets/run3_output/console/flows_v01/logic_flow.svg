@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <style type="text/css"><![CDATA[
+      .box { fill: #fff4ec; stroke: #e5966c; stroke-width: 1.5; }
+      .label { font-family: sans-serif; font-size: 12px; fill: #333; }
+    ]]></style>
+  </defs>
+  <!-- Top box -->
+  <rect x="300" y="30" width="200" height="50" class="box" />
+  <text x="400" y="55" text-anchor="middle" class="label">Decision Presented</text>
+  <!-- Bottom boxes -->
+  <rect x="50"  y="160" width="200" height="60" class="box" />
+  <rect x="300" y="160" width="200" height="60" class="box" />
+  <rect x="550" y="160" width="200" height="60" class="box" />
+  <!-- Labels for branches -->
+  <text x="150" y="185" text-anchor="middle" class="label">Yes / Approve</text>
+  <text x="150" y="205" text-anchor="middle" class="label">→ Create Canon</text>
+  <text x="400" y="185" text-anchor="middle" class="label">No / Deny</text>
+  <text x="400" y="205" text-anchor="middle" class="label">→ Mark Rejected</text>
+  <text x="650" y="185" text-anchor="middle" class="label">Skip / Undecided</text>
+  <text x="650" y="205" text-anchor="middle" class="label">→ Return to Queue</text>
+  <!-- Branching lines -->
+  <!-- From bottom of top box to three bottom boxes -->
+  <line x1="400" y1="80" x2="150" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="400" y1="80" x2="400" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="400" y1="80" x2="650" y2="160" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+</svg>

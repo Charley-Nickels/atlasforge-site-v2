@@ -1,0 +1,48 @@
+{
+  "pages": [
+    {
+      "name": "Home",
+      "path": "/",
+      "navLabel": "Home",
+      "inMainNav": true,
+      "inFooter": false
+    },
+    {
+      "name": "Atlas‑V",
+      "path": "/atlas-v",
+      "navLabel": "Atlas‑V Engine",
+      "inMainNav": true,
+      "inFooter": false
+    },
+    {
+      "name": "AtlasStudio",
+      "path": "/atlasstudio",
+      "navLabel": "AtlasStudio",
+      "inMainNav": true,
+      "inFooter": false
+    },
+    {
+      "name": "Octopus in Action",
+      "path": "/oia",
+      "navLabel": "Octopus in Action",
+      "inMainNav": true,
+      "inFooter": false
+    },
+    {
+      "name": "Decision Console",
+      "path": "/decision-console",
+      "navLabel": "Decision Console",
+      "inMainNav": true,
+      "inFooter": false,
+      "comingSoon": true
+    },
+    {
+      "name": "AtlasWave",
+      "path": "/atlaswave",
+      "navLabel": "AtlasWave",
+      "inMainNav": false,
+      "inFooter": true,
+      "comingSoon": true
+    }
+  ]
+}

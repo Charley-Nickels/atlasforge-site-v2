@@ -1,0 +1,145 @@
+/*
+ * Global theme variables generated from theme_tokens_v02.json
+ * This file defines CSS custom properties for neutrals, typography, spacing,
+ * radii, glow colours and brand palettes. Add the appropriate
+ * `brand-<name>` class to the <body> element to switch palettes.
+ */
+
+/* Base neutrals */
+:root {
+  --surface-0: #0D1321;
+  --surface-1: #17223C;
+  --surface-2: #23395D;
+  --surface-3: #2E416D;
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-light: #334E68;
+  --border-dark: #1F2A40;
+
+  /* Typography */
+  --font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3rem;
+  --font-size-5xl: 4rem;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing scale */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+
+  /* Radius scale */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Glow colours */
+  --glow-magenta: #FF5C8D;
+  --glow-cyan: #00E8FF;
+  --glow-green: #35FFAE;
+  --glow-purple: #7C5CFA;
+  --glow-orange: #FFB174;
+  --glow-teal: #4CD2DE;
+  --glow-gold: #FFD84A;
+
+  /* Glow intensities */
+  --glow-level-soft: 0 0 15px 5px;
+  --glow-level-hero: 0 0 40px 15px;
+  --glow-level-strong: 0 0 60px 25px;
+
+  /* Elevation layers */
+  --elevation-card: 0 4px 8px rgba(0,0,0,0.2);
+  --elevation-overlay: 0 8px 16px rgba(0,0,0,0.3);
+  --elevation-hero: 0 12px 24px rgba(0,0,0,0.4);
+
+  /* Brand palettes */
+  --atlasforge-primary: #0F1827;
+  --atlasforge-secondary: #1F2A40;
+  --atlasforge-accent1: #00BCD4;
+  --atlasforge-accent2: #F4B400;
+
+  --atlasv-primary: #00A572;
+  --atlasv-secondary: #046C4E;
+  --atlasv-accent: #8BC34A;
+
+  --atlasstudio-primary: #6C63FF;
+  --atlasstudio-secondary: #4A3EBF;
+  --atlasstudio-accent: #C5B4E3;
+
+  --oia-primary: #FF8C42;
+  --oia-secondary: #D96E30;
+  --oia-accent: #FFC107;
+
+  --loop-primary: #2AB7CA;
+  --loop-secondary: #1C8BA0;
+  --loop-accent: #00FFFF;
+
+  --decision-console-primary: #E1582E;
+  --decision-console-secondary: #9A3C21;
+  --decision-console-accent: #FFA94D;
+
+  --atlaswave-primary: #5B8DFF;
+  --atlaswave-secondary: #3A5F9B;
+  --atlaswave-accent: #A2C0FF;
+}
+
+/* Brand classes to set context-specific colours */
+.brand-atlasforge {
+  --brand-primary: var(--atlasforge-primary);
+  --brand-secondary: var(--atlasforge-secondary);
+  --brand-accent: var(--atlasforge-accent1);
+}
+.brand-atlasv {
+  --brand-primary: var(--atlasv-primary);
+  --brand-secondary: var(--atlasv-secondary);
+  --brand-accent: var(--atlasv-accent);
+}
+.brand-atlasstudio {
+  --brand-primary: var(--atlasstudio-primary);
+  --brand-secondary: var(--atlasstudio-secondary);
+  --brand-accent: var(--atlasstudio-accent);
+}
+.brand-oia {
+  --brand-primary: var(--oia-primary);
+  --brand-secondary: var(--oia-secondary);
+  --brand-accent: var(--oia-accent);
+}
+.brand-loop {
+  --brand-primary: var(--loop-primary);
+  --brand-secondary: var(--loop-secondary);
+  --brand-accent: var(--loop-accent);
+}
+.brand-decisionconsole {
+  --brand-primary: var(--decision-console-primary);
+  --brand-secondary: var(--decision-console-secondary);
+  --brand-accent: var(--decision-console-accent);
+}
+.brand-atlaswave {
+  --brand-primary: var(--atlaswave-primary);
+  --brand-secondary: var(--atlaswave-secondary);
+  --brand-accent: var(--atlaswave-accent);
+}

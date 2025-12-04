@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/projects.schema.json",
+  "title": "Projects",
+  "description": "Schema describing available projects within the Decision Console.",
+  "type": "object",
+  "properties": {
+    "projects": {
+      "type": "array",
+      "description": "List of projects configured for the Decision Console.",
+      "items": {
+        "$ref": "#/definitions/project"
+      }
+    }
+  },
+  "required": ["projects"],
+  "definitions": {
+    "project": {
+      "type": "object",
+      "description": "A single project containing decisions and categories.",
+      "properties": {
+        "projectId": {
+          "type": "string",
+          "description": "Unique identifier for the project (e.g., 'OIA', 'AtlasStudio')."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human‑readable project name."
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional description of the project.",
+          "nullable": true
+        }
+      },
+      "required": ["projectId", "name"],
+      "additionalProperties": false
+    }
+  }
+}

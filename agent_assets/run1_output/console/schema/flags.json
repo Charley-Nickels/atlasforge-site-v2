@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/flags.schema.json",
+  "title": "Revision Flags",
+  "description": "Schema describing flags raised against canon records that require revision.",
+  "type": "object",
+  "properties": {
+    "flags": {
+      "type": "array",
+      "description": "List of flags indicating canon entries needing review or changes.",
+      "items": {
+        "$ref": "#/definitions/flag"
+      }
+    }
+  },
+  "required": ["flags"],
+  "definitions": {
+    "flag": {
+      "type": "object",
+      "description": "A single flag raised against a canon record.",
+      "properties": {
+        "flagId": {
+          "type": "string",
+          "description": "Unique identifier for the flag (e.g., a UUID)."
+        },
+        "recordId": {
+          "type": "string",
+          "description": "Identifier of the canon record being flagged."
+        },
+        "flaggedBy": {
+          "type": "string",
+          "description": "Identifier of the person or system that raised the flag."
+        },
+        "reason": {
+          "type": "string",
+          "description": "Explanation of why the record is being flagged."
+        },
+        "timestampFlagged": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the flag was created."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["open", "resolved"],
+          "description": "Current status of the flag. 'open' means pending action; 'resolved' indicates the flag has been addressed."
+        },
+        "resolutionNote": {
+          "type": "string",
+          "description": "Optional note describing how the flag was resolved.",
+          "nullable": true
+        }
+      },
+      "required": ["flagId", "recordId", "flaggedBy", "reason", "timestampFlagged", "status"],
+      "additionalProperties": false
+    }
+  }
+}

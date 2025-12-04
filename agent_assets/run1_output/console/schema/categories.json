@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/categories.schema.json",
+  "title": "Categories",
+  "description": "Schema describing categories of decisions within each project.",
+  "type": "object",
+  "properties": {
+    "categories": {
+      "type": "array",
+      "description": "List of decision categories across all projects.",
+      "items": {
+        "$ref": "#/definitions/category"
+      }
+    }
+  },
+  "required": ["categories"],
+  "definitions": {
+    "category": {
+      "type": "object",
+      "description": "A decision category within a specific project.",
+      "properties": {
+        "categoryId": {
+          "type": "string",
+          "description": "Unique identifier for the category (e.g., 'story_arcs', 'characters')."
+        },
+        "projectId": {
+          "type": "string",
+          "description": "Identifier of the project this category belongs to."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human‑readable name of the category."
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional description of what kinds of decisions fall under this category.",
+          "nullable": true
+        },
+        "allowedResponseTypes": {
+          "type": "array",
+          "description": "Optional list of response types allowed for decisions in this category.",
+          "items": {
+            "type": "string",
+            "enum": ["yes_no", "approve_deny", "multiple_choice", "free_text"]
+          },
+          "uniqueItems": true
+        }
+      },
+      "required": ["categoryId", "projectId", "name"],
+      "additionalProperties": false
+    }
+  }
+}

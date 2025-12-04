@@ -1,0 +1,55 @@
+{
+  "decisions": [
+    {
+      "id": "dec-001",
+      "questionText": "Should we include a hidden underwater cave in the OIA map?",
+      "responseType": "yes_no",
+      "projectId": "OIA",
+      "categoryId": "map_design",
+      "status": "pending",
+      "timestampCreated": "2025-11-20T10:00:00Z",
+      "notes": "Master Architect suggests exploring underwater environment."
+    },
+    {
+      "id": "dec-002",
+      "questionText": "Choose the primary color theme for the AtlasForge website.",
+      "responseType": "multiple_choice",
+      "options": ["Blue", "Purple", "Orange"],
+      "projectId": "Website",
+      "categoryId": "theme",
+      "status": "pending",
+      "timestampCreated": "2025-11-21T09:30:00Z"
+    },
+    {
+      "id": "dec-003",
+      "questionText": "Should AtlasStudio enable dark mode by default?",
+      "responseType": "yes_no",
+      "projectId": "AtlasStudio",
+      "categoryId": "ui_appearance",
+      "status": "pending",
+      "timestampCreated": "2025-11-21T14:15:00Z"
+    },
+    {
+      "id": "dec-004",
+      "questionText": "Select the default physics engine for Atlas‑V.",
+      "responseType": "multiple_choice",
+      "options": ["Havok", "Bullet", "PhysX"],
+      "projectId": "Atlas-V",
+      "categoryId": "engine_params",
+      "status": "pending",
+      "timestampCreated": "2025-11-22T08:45:00Z"
+    },
+    {
+      "id": "dec-005",
+      "questionText": "Should the OIA environment include dynamic weather effects?",
+      "responseType": "yes_no",
+      "projectId": "OIA",
+      "categoryId": "map_design",
+      "status": "answered",
+      "userResponse": "yes",
+      "timestampCreated": "2025-11-18T11:00:00Z",
+      "timestampAnswered": "2025-11-19T16:30:00Z",
+      "notes": "Dynamic weather adds immersion."
+    }
+  ]
+}

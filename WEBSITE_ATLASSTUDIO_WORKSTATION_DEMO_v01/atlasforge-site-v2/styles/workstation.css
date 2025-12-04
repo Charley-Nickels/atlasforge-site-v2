@@ -1,0 +1,187 @@
+/*
+ * AtlasStudio Workstation styles v01
+ *
+ * These styles define the layout and look of the fake workstation demo. They
+ * intentionally mirror the skeleton created during earlier Agent Studio runs
+ * and leverage CSS variables for easy theming. Panels use dark surfaces with
+ * subtle borders and glows, keeping a professional sci‑fi aesthetic that
+ * complements the existing AtlasForge pages.
+ */
+
+/* Define custom variables for the workstation. These could be mapped to the
+   broader theme tokens via CSS variables in theme.css. */
+:root {
+  --as-bg: var(--color-surface-alt, #0B0E15);
+  --as-panel-bg: var(--color-panel, #1A1D29);
+  --as-header-bg: var(--color-surface, #2C3245);
+  --as-accent: var(--color-accent, #50E3C2);
+  --as-text: var(--color-text, #D0D9FF);
+  --as-secondary-text: var(--color-subtext, #96A0C8);
+  --as-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Reset and base styles */
+.as-workstation {
+  color: var(--as-text);
+  background-color: var(--as-bg);
+  border: 1px solid var(--as-border);
+  border-radius: var(--radius-lg, 8px);
+  box-shadow: var(--elevation-card, 0 4px 8px rgba(0,0,0,0.3));
+  overflow: hidden;
+}
+
+.as-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: var(--as-header-bg);
+  height: 60px;
+  border-bottom: 1px solid var(--as-border);
+}
+
+.as-toolbar-title .af-pill {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--as-accent), var(--as-accent) 70%, transparent);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm, 4px);
+  color: var(--as-bg);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.as-actions button {
+  margin-left: 12px;
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 1px solid var(--as-accent);
+  color: var(--as-text);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.as-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.as-actions button:hover:not(:disabled) {
+  background-color: var(--as-accent);
+  color: var(--as-bg);
+}
+
+.as-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 300px;
+  min-height: 500px;
+}
+
+/* Sidebar styles */
+.as-sidebar {
+  background-color: var(--as-panel-bg);
+  border-right: 1px solid var(--as-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.as-sidebar-header {
+  background-color: var(--as-header-bg);
+  padding: 8px 12px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--as-border);
+}
+/* Tree styles */
+.as-tree, .as-tree ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 16px;
+}
+.as-tree > li {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.as-tree li:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.as-tree .selected {
+  background-color: var(--as-accent);
+  color: var(--as-bg);
+}
+/* Hide nested lists by default for collapsed folders */
+.as-tree ul.hidden {
+  display: none;
+}
+
+/* Editor styles */
+.as-editor {
+  background-color: var(--as-panel-bg);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--as-border);
+}
+.as-editor-header {
+  background-color: var(--as-header-bg);
+  padding: 8px 12px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--as-border);
+}
+.as-editor-info {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  color: var(--as-secondary-text);
+  border-bottom: 1px solid var(--as-border);
+}
+.as-editor-content {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-family: monospace;
+  color: var(--as-text);
+}
+.as-view-mode {
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: var(--as-secondary-text);
+  border-top: 1px solid var(--as-border);
+}
+
+/* Chat styles */
+.as-chat {
+  background-color: var(--as-panel-bg);
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.as-chat-header {
+  background-color: var(--as-header-bg);
+  padding: 8px 12px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--as-border);
+}
+.as-chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.as-chat-messages p {
+  margin: 0;
+  line-height: 1.4;
+}
+.as-chat-messages p strong {
+  color: var(--as-accent);
+}
+
+@media (max-width: 1024px) {
+  .as-layout {
+    grid-template-columns: 180px 1fr 260px;
+  }
+  .as-toolbar {
+    height: 50px;
+  }
+}

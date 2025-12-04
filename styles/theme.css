@@ -368,6 +368,7 @@ a:hover {
 .af-hero-lede {
   color: var(--color-subtext);
   font-size: 1.1rem;
+  margin: 0 0 var(--space-md);
 }
 
 .af-methodology {

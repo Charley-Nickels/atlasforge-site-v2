@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" data-brand="atlasstudio">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AtlasStudio – Creator Workstation</title>
+  <!-- Import the shared glow theme styles -->
+  <link rel="stylesheet" href="styles/glow-pages.css" />
+  <!-- Import the AtlasStudio workstation specific styles -->
+  <link rel="stylesheet" href="styles/workstation.css" />
+</head>
+<body class="af-page-shell">
+  <a class="mf-skip" href="#main-content">Skip to main content</a>
+  <header class="af-shell-header" role="banner">
+    <div class="container-wide">
+      <a class="af-brandmark" href="index.html">
+        <img src="assets/logos/Atlasforge_Transparent.png" alt="AtlasForge logo" />
+        <span>AtlasForge</span>
+      </a>
+      <nav class="af-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="atlasv.html">Atlas-V</a>
+        <a href="atlasstudio.html" aria-current="page">AtlasStudio</a>
+        <a href="oia.html">Octopus in Action</a>
+        <a href="decisions.html">Decision Console</a>
+        <a href="wave.html">AtlasWave</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero section from original site -->
+    <section class="af-page-banner af-hero-frame">
+      <div class="container-wide af-console-hero">
+        <div>
+          <p class="af-hero-badge">Creator workstation</p>
+          <h1>AtlasStudio blends file ops, Atlas-V actions, and a conversational copilot.</h1>
+          <p>Generate ideas, patch scenes, organize briefs, and summarize for the Decision Console without leaving the glow.</p>
+          <div class="af-hero__actions">
+            <a class="af-button" href="#workstation">View workstation layout</a>
+            <a class="af-button af-button--ghost" href="atlasv.html">See Atlas-V rules</a>
+          </div>
+        </div>
+        <div class="af-panel">
+          <h3>Governed creation</h3>
+          <p>AtlasStudio keeps Atlas-V cues visible, so every edit carries canon awareness and handoff context.</p>
+          <div class="af-chip">Workstation</div>
+          <div class="af-chip">Atlas-V integrated</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive workstation section -->
+    <section class="af-page-section" id="workstation">
+      <div class="container-wide">
+        <div class="as-workstation">
+          <!-- Top toolbar with dynamic actions -->
+          <div id="as-toolbar" class="as-toolbar">
+            <div class="as-toolbar-title">
+              <span class="af-pill">AtlasStudio toolbar</span>
+            </div>
+            <!-- Action buttons will be injected here by workstation.js -->
+            <div id="as-actions" class="as-actions"></div>
+          </div>
+          <!-- Main layout: sidebar, editor, chat -->
+          <div class="as-layout">
+            <!-- File explorer sidebar -->
+            <aside id="as-sidebar" class="as-sidebar">
+              <div class="as-sidebar-header">Filesystem</div>
+              <!-- The file tree is built dynamically from project_tree.json -->
+              <ul id="as-file-tree" class="as-tree"></ul>
+            </aside>
+            <!-- Editor / preview panel -->
+            <section id="as-editor" class="as-editor">
+              <div class="as-editor-header">Editor preview</div>
+              <div id="as-editor-info" class="as-editor-info"></div>
+              <pre id="as-editor-content" class="as-editor-content"><code>Select a file to preview its contents.</code></pre>
+              <div id="as-view-mode" class="as-view-mode"></div>
+            </section>
+            <!-- Atlas‑V chat / action log -->
+            <aside id="as-chat" class="as-chat">
+              <div class="as-chat-header">Atlas‑V chat</div>
+              <div id="as-chat-messages" class="as-chat-messages"></div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="af-footer">
+    <div class="container-wide af-footer__grid">
+      <div>
+        <p class="af-hero-badge">AtlasStudio</p>
+        <p>Workstation tuned for glow-driven, governed creation.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <div class="af-inline-nav">
+          <a href="index.html">Home</a>
+          <a href="atlasv.html">Atlas-V</a>
+          <a href="atlasstudio.html" aria-current="page">AtlasStudio</a>
+          <a href="oia.html">Octopus in Action</a>
+          <a href="decisions.html">Decision Console</a>
+          <a href="wave.html">AtlasWave</a>
+        </div>
+      </div>
+      <div>
+        <h3>More</h3>
+        <div class="af-inline-nav">
+          <a href="publishing.html">Publishing</a>
+          <a href="store.html">Store</a>
+          <a href="canon.html">Canon</a>
+          <a id="mf-footer-admin-link" href="admin.html">Admin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Main site script -->
+  <script src="scripts/main.js"></script>
+  <!-- AtlasStudio workstation logic -->
+  <script src="scripts/workstation.js"></script>
+</body>
+</html>

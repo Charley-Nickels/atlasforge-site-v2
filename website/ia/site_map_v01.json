@@ -1,23 +1,84 @@
 {
-  "navigation": [
-    {"label": "Home", "href": "index.html"},
-    {"label": "Atlas-V", "href": "atlasv.html"},
-    {"label": "AtlasStudio", "href": "atlasstudio.html"},
-    {"label": "Octopus in Action", "href": "oia.html"},
-    {"label": "Decision Console", "href": "decisions.html"},
-    {"label": "AtlasWave", "href": "wave.html"}
-  ],
-  "footer": [
-    {"label": "Publishing", "href": "publishing.html"},
-    {"label": "Store", "href": "store.html"},
-    {"label": "Canon", "href": "canon.html"},
-    {"label": "Admin", "href": "admin.html"}
-  ],
-  "homeSections": [
-    "hero",
-    "intro",
-    "products",
-    "methodology",
-    "footer"
+  "pages": [
+    {
+      "name": "Home",
+      "path": "/index.html",
+      "navLabel": "Home",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "Atlas‑V",
+      "path": "/products/atlasv.html",
+      "navLabel": "Atlas‑V",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "AtlasStudio",
+      "path": "/products/atlasstudio.html",
+      "navLabel": "AtlasStudio",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "Octopus in Action",
+      "path": "/products/oia.html",
+      "navLabel": "Octopus in Action",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "Decision Console",
+      "path": "/decisions.html",
+      "navLabel": "Decision Console",
+      "inMainNav": true,
+      "inFooter": true,
+      "comingSoon": true
+    },
+    {
+      "name": "AtlasWave",
+      "path": "/products/atlaswave.html",
+      "navLabel": "AtlasWave",
+      "inMainNav": true,
+      "inFooter": true,
+      "comingSoon": true
+    },
+    {
+      "name": "Media",
+      "path": "/media.html",
+      "navLabel": "Media",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "Publishing",
+      "path": "/publishing.html",
+      "navLabel": "Publishing",
+      "inMainNav": false,
+      "inFooter": true
+    },
+    {
+      "name": "Store",
+      "path": "/store.html",
+      "navLabel": "Store",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "Canon",
+      "path": "/canon.html",
+      "navLabel": "Canon",
+      "inMainNav": true,
+      "inFooter": true
+    },
+    {
+      "name": "Admin",
+      "path": "/admin.html",
+      "navLabel": "Admin",
+      "inMainNav": true,
+      "inFooter": true,
+      "restricted": true
+    }
   ]
 }

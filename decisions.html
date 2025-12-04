@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Decision Console – Preview</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/theme.css" />
   <link rel="stylesheet" href="styles/glow-pages.css" />
   <link rel="stylesheet" href="styles/decision-console.css" />
 </head>
@@ -17,11 +19,13 @@
       </a>
       <nav class="af-nav" aria-label="Primary">
         <a href="/index.html">Home</a>
-        <a href="/products/atlasv.html">Atlas-V</a>
-        <a href="/products/atlasstudio.html">AtlasStudio</a>
-        <a href="/products/oia.html">Octopus in Action</a>
+        <a href="/atlasstudio.html">AtlasStudio</a>
+        <a href="/oia.html">Octopus in Action</a>
         <a href="/decisions.html" aria-current="page">Decision Console</a>
-        <a href="/products/atlaswave.html">AtlasWave</a>
+        <a href="/media.html">Media</a>
+        <a href="/store.html">Store</a>
+        <a href="/canon.html">Canon</a>
+        <a id="mf-footer-admin-link" href="/admin.html">Admin</a>
       </nav>
     </div>
   </header>
@@ -32,7 +36,7 @@
         <div>
           <p class="af-hero-badge">Governance cockpit</p>
           <h1>Decision Console keeps queue, canon detail, and flags in one place.</h1>
-          <p>Governance console for answering pending decisions and feeding canon with Atlas-V guidance.</p>
+          <p>Finalised storyboard from the statepack: queue incoming work, open detail views to answer with Atlas-V guidance, and resolve flags through a revision flow.</p>
           <div class="af-hero__actions">
             <a class="af-button" href="#storyboard">See the storyboard</a>
             <a class="af-button af-button--ghost" href="/products/atlasv.html">Governance underpinnings</a>
@@ -53,11 +57,13 @@
       <div class="container-wide">
         <div class="af-console-card" id="decision-console">
           <p class="af-hero-badge">Storyboard</p>
-          <h2>Queue → Detail → Flags</h2>
-          <p class="dc-lede">Console for answering pending decisions and promoting canon-aligned outcomes.</p>
+          <h2>Queue → Detail → Revision → Flags</h2>
+          <p class="dc-lede">Console for answering pending decisions, filtering by project/category, and promoting canon-aligned outcomes.</p>
           <div class="af-tab-row dc-tab-row" role="tablist" aria-label="Decision Console states">
             <button id="dc-tab-queue" type="button" role="tab" aria-controls="decision-state" aria-selected="true" tabindex="0" data-tab="queue" class="is-active">Queue</button>
             <button id="dc-tab-detail" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="detail">Detail</button>
+            <button id="dc-tab-canon" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="canon">Canon View</button>
+            <button id="dc-tab-revision" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="revision">Revision Flow</button>
             <button id="dc-tab-flags" type="button" role="tab" aria-controls="decision-state" aria-selected="false" tabindex="-1" data-tab="flags">Flags</button>
           </div>
           <div id="decision-state" class="dc-state" data-state="queue" role="tabpanel" aria-labelledby="dc-tab-queue"></div>
@@ -76,11 +82,13 @@
         <h3>Navigation</h3>
         <div class="af-inline-nav">
           <a href="/index.html">Home</a>
-          <a href="/products/atlasv.html">Atlas-V</a>
-          <a href="/products/atlasstudio.html">AtlasStudio</a>
-          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/atlasstudio.html">AtlasStudio</a>
+          <a href="/oia.html">Octopus in Action</a>
           <a href="/decisions.html" aria-current="page">Decision Console</a>
-          <a href="/products/atlaswave.html">AtlasWave</a>
+          <a href="/media.html">Media</a>
+          <a href="/store.html">Store</a>
+          <a href="/canon.html">Canon</a>
+          <a href="/admin.html">Admin</a>
         </div>
       </div>
       <div>

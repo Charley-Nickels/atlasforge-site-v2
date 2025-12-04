@@ -21,14 +21,15 @@
       <div class="mf-nav-group" id="mf-primary-nav">
         <nav class="mf-nav mf-nav--primary" aria-label="Primary">
           <a href="/index.html">Home</a>
-          <a href="/products/atlasv.html">Atlas-V</a>
-          <a href="/products/atlasstudio.html">AtlasStudio</a>
-          <a href="/products/oia.html">Octopus in Action</a>
+          <a href="/atlasstudio.html">AtlasStudio</a>
+          <a href="/oia.html">Octopus in Action</a>
           <a href="/decisions.html">Decision Console</a>
-          <a href="/products/atlaswave.html">AtlasWave</a>
         </nav>
         <nav class="mf-nav mf-nav--secondary" aria-label="Secondary">
-          <a href="admin.html" aria-current="page">Admin</a>
+          <a href="/media.html">Media</a>
+          <a href="/store.html">Store</a>
+          <a href="/canon.html">Canon</a>
+          <a href="admin.html" aria-current="page" id="mf-footer-admin-link">Admin</a>
         </nav>
       </div>
       <button class="mf-nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="mf-primary-nav" aria-expanded="false">Menu</button>
@@ -38,12 +39,12 @@
   <main class="mf-main" id="main-content">
     <section class="admin-hero af-hero-gradient-af">
       <div class="admin-container admin-hero__inner">
-        <div class="admin-hero__eyebrow">Governance console · internal only</div>
-        <h1>AtlasForge Governance Admin</h1>
-          <p class="admin-hero__lede">Admin area for decision queues, audit logs, and canon alignment with Atlas-V guidance.</p>
+        <div class="admin-hero__eyebrow">Governance console · restricted</div>
+        <h1>AtlasForge Admin Console</h1>
+          <p class="admin-hero__lede">Restricted admin area for decision queues, audit logs, and canon alignment with Atlas-V guidance.</p>
         <div class="admin-hero__meta">
           <span class="admin-pill admin-pill--warning">Dev / testing only</span>
-          <span class="admin-pill admin-pill--ghost">Goblin mode prereq</span>
+          <span class="admin-pill admin-pill--ghost">Access phrase required</span>
           <span class="admin-pill admin-pill--success">Phase 8 tokens</span>
           <a class="admin-link" href="decisions.html">Open Decision Console</a>
         </div>
@@ -55,17 +56,21 @@
         <div class="gate-card af-card-frame">
           <div class="gate-card__header">
             <div>
-              <p class="gate-eyebrow">Goblin gate</p>
-              <h2 class="gate-title">Password access</h2>
-              <p class="gate-description">Enter the governance passphrase to unlock the admin console.</p>
+              <p class="gate-eyebrow">Admin gate</p>
+              <h2 class="gate-title">Admin console access</h2>
+              <p class="gate-description">Enter the admin access phrase to continue.</p>
             </div>
-            <div class="gate-icon" aria-hidden="true">🗝️</div>
+            <div class="gate-icon" aria-hidden="true" title="Admin access">
+              <svg viewBox="0 0 24 24" role="presentation" focusable="false">
+                <path d="M14.5 4a4.5 4.5 0 0 0-3.5 7.3V14h-2v2h2v2h2v-2h2v-2h-2v-2.7A4.5 4.5 0 0 0 14.5 4Zm0 2a2.5 2.5 0 1 1-2.1 1.13l.26-.4c.4-.5.98-.73 1.6-.73Z" />
+              </svg>
+            </div>
           </div>
           <form class="gate-form" id="admin-gate-form">
-            <label for="admin-password">Goblin password</label>
-            <input id="admin-password" name="admin-password" type="text" placeholder="TIME TO GO HOG WILD" required />
+            <label for="admin-password">Access phrase</label>
+            <input id="admin-password" name="admin-password" type="text" placeholder="Enter access phrase" autocomplete="off" autocapitalize="off" spellcheck="false" required />
             <div class="gate-actions">
-              <button class="admin-btn admin-btn--primary" type="submit">Enter Goblin Console</button>
+              <button class="admin-btn admin-btn--primary" type="submit">Enter Admin Console</button>
               <p class="gate-error" id="admin-gate-error" data-admin-error="true" aria-live="polite"></p>
             </div>
           </form>
@@ -340,7 +345,7 @@
 
         <section id="misc-decisions" class="admin-anchor">
           <h2 class="admin-anchor__title">Miscellaneous Decisions</h2>
-          <p class="admin-anchor__body">Catch-all anchor for experiments, internal tools, and meta goblin controls.</p>
+          <p class="admin-anchor__body">Catch-all anchor for experiments, internal tools, and meta admin controls.</p>
         </section>
 
         <div class="admin-section" id="admin-section-website" data-section-key="website">
@@ -603,7 +608,7 @@
               <div class="admin-options" role="group" aria-label="Governance strictness">
                 <label class="admin-option admin-decision-option" data-choice="A"><input type="radio" name="av-strictness" /> A) Conservative / block risky replies</label>
                 <label class="admin-option admin-decision-option" data-choice="B"><input type="radio" name="av-strictness" /> B) Balanced with guided clarifications</label>
-                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="av-strictness" /> C) Playful goblin with safety reminders</label>
+                <label class="admin-option admin-decision-option" data-choice="C"><input type="radio" name="av-strictness" /> C) Light tone with safety reminders</label>
                 <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="av-strictness-pass" /> Pass / defer</label>
               </div>
               <div class="admin-status-row" role="group" aria-label="Decision status">
@@ -1023,13 +1028,13 @@
               <header class="admin-decision-card__head">
                 <div>
                   <p class="admin-meta">P8-META-701 · Accepted</p>
-                  <h4>Goblin mode level</h4>
+                  <h4>Tone guard level</h4>
                 </div>
                 <span class="admin-status admin-status--accepted">Accepted</span>
               </header>
-              <p class="admin-decision-card__context">Tune the silliness level for admin copy while keeping clarity.</p>
-              <div class="admin-options admin-options--binary" role="group" aria-label="Goblin mode level">
-                <label class="admin-option admin-decision-option" data-choice="yes"><input type="radio" name="goblin-level" /> Yes — crank goblin references</label>
+              <p class="admin-decision-card__context">Tune the amount of playful tone allowed in admin copy while keeping clarity.</p>
+              <div class="admin-options admin-options--binary" role="group" aria-label="Tone guard level">
+                <label class="admin-option admin-decision-option" data-choice="yes"><input type="radio" name="goblin-level" /> Yes — allow light humor</label>
                 <label class="admin-option admin-decision-option" data-choice="no"><input type="radio" name="goblin-level" /> No — keep restrained tone</label>
                 <label class="admin-option admin-option--pass admin-decision-option" data-pass="true"><input type="checkbox" name="goblin-level-pass" /> Pass / toggle later</label>
               </div>
@@ -1042,7 +1047,7 @@
               </div>
               <label class="admin-notes">
                 <span>Notes</span>
-                <textarea rows="3" placeholder="Notes or checklist gremlin tasks"></textarea>
+                <textarea rows="3" placeholder="Notes or checklist tasks"></textarea>
               </label>
             </article>
 
@@ -1070,7 +1075,7 @@
               </div>
               <label class="admin-notes">
                 <span>Notes</span>
-                <textarea rows="3" placeholder="Notes for goblin ops"></textarea>
+                <textarea rows="3" placeholder="Notes for admin ops"></textarea>
               </label>
             </article>
           </div>

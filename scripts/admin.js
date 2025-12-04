@@ -826,6 +826,17 @@
     document.body.classList.add('admin-locked');
     document.body.classList.remove('admin-unlocked', 'goblin-mode');
     toggleContentVisibility(false);
+
+    const gateInput = document.getElementById('admin-password');
+    const gateError = document.querySelector('[data-admin-error]');
+    if (gateInput) {
+      gateInput.value = '';
+      gateInput.classList.remove('is-invalid');
+    }
+    if (gateError) {
+      gateError.textContent = '';
+      gateError.classList.remove('is-visible');
+    }
   };
 
   const bootAdmin = () => {
@@ -844,14 +855,22 @@
 
   const setupGate = () => {
     ensureGateStyles();
-    setLocked();
-
     const gate = document.querySelector('.admin-gate');
     const form = document.getElementById('admin-gate-form');
     const input = document.getElementById('admin-password');
     const button = gate ? gate.querySelector('.admin-btn--primary') : null;
     const gateShell = document.getElementById('admin-login-gate');
     let errorEl = gate ? gate.querySelector('[data-admin-error]') : null;
+
+    setLocked();
+
+    if (input) {
+      input.value = '';
+      input.setAttribute('autocomplete', 'off');
+      input.setAttribute('autocapitalize', 'off');
+      input.setAttribute('spellcheck', 'false');
+      input.placeholder = 'Enter access phrase';
+    }
 
     if (!errorEl && gate) {
       errorEl = document.createElement('p');
@@ -861,15 +880,29 @@
       gate.querySelector('.admin-card')?.appendChild(errorEl);
     }
 
-    const unlock = () => {
-      document.body.classList.remove('admin-locked');
-      document.body.classList.add('admin-unlocked', 'goblin-mode');
-      toggleContentVisibility(true);
-      if (gateShell) gateShell.classList.add('is-hidden');
+    const clearGateError = () => {
+      if (input) {
+        input.classList.remove('is-invalid');
+      }
       if (errorEl) {
         errorEl.textContent = '';
         errorEl.classList.remove('is-visible');
       }
+    };
+
+    const resetGateField = () => {
+      if (input) {
+        input.value = '';
+      }
+      clearGateError();
+    };
+
+    const unlock = () => {
+      document.body.classList.remove('admin-locked');
+      document.body.classList.add('admin-unlocked');
+      toggleContentVisibility(true);
+      if (gateShell) gateShell.classList.add('is-hidden');
+      resetGateField();
       bootAdmin();
     };
 
@@ -878,8 +911,15 @@
       if (value === ACTIVATION_PHRASE) {
         unlock();
       } else if (errorEl) {
-        errorEl.textContent = 'Incorrect password. The gate stays closed.';
+        errorEl.textContent = 'Incorrect access phrase. Try again.';
         errorEl.classList.add('is-visible');
+        input?.classList.add('is-invalid');
+      }
+    };
+
+    const handleReturnToGate = () => {
+      if (!document.body.classList.contains('admin-unlocked')) {
+        resetGateField();
       }
     };
 
@@ -901,10 +941,16 @@
           validate();
         }
       });
+
+      input.addEventListener('input', () => {
+        clearGateError();
+      });
     }
 
+    window.addEventListener('pageshow', handleReturnToGate);
+
     if (!gate || !input || !button) {
-      document.body.classList.add('admin-unlocked', 'goblin-mode');
+      document.body.classList.add('admin-unlocked');
       document.body.classList.remove('admin-locked');
       toggleContentVisibility(true);
       bootAdmin();

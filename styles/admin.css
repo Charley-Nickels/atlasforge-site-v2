@@ -54,7 +54,17 @@ body.admin-shell {
   border-radius: var(--radius-lg);
   background: var(--color-surface-100);
   border: var(--border-regular) solid var(--color-border-subtle);
-  font-size: var(--font-size-h3);
+  color: var(--color-brand-accent);
+}
+
+.gate-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .gate-eyebrow {
@@ -92,6 +102,11 @@ body.admin-shell {
   border: var(--border-regular) solid var(--color-border-subtle);
   background: var(--color-surface-0);
   font-size: var(--font-size-body);
+}
+
+.gate-form input.is-invalid {
+  border-color: var(--color-status-critical-strong);
+  background: var(--color-status-critical-soft);
 }
 
 .gate-form input:focus-visible {

@@ -1,0 +1,12 @@
+<svg width="1600" height="600" viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="gradSwirl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00BCD4" />
+      <stop offset="50%" stop-color="#2AB7CA" />
+      <stop offset="100%" stop-color="#6C63FF" />
+    </linearGradient>
+  </defs>
+  <!-- Abstract wave path across the bottom of a section -->
+  <path d="M0 450 Q200 350 400 450 T800 450 T1200 450 T1600 450 L1600 600 L0 600 Z" fill="url(#gradSwirl)" opacity="0.3" />
+  <path d="M0 500 Q300 400 600 500 T1200 500 T1600 500 L1600 600 L0 600 Z" fill="url(#gradSwirl)" opacity="0.15" />
+</svg>

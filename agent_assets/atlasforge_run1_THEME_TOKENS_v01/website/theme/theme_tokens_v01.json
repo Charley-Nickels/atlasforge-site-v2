@@ -1,0 +1,90 @@
+{
+  "colors": {
+    "atlasforge": {
+      "primary": "#0F1827",
+      "secondary": "#1F2A40",
+      "accent1": "#00BCD4",
+      "accent2": "#F4B400",
+      "surface": "#162033",
+      "background": "#0F1827",
+      "onPrimary": "#FFFFFF",
+      "onSecondary": "#FFFFFF"
+    },
+    "atlas-v": {
+      "primary": "#00A572",
+      "secondary": "#046C4E",
+      "accent": "#8BC34A",
+      "background": "#051E1A",
+      "onPrimary": "#FFFFFF"
+    },
+    "atlasstudio": {
+      "primary": "#6C63FF",
+      "secondary": "#4A3EBF",
+      "accent": "#C5B4E3",
+      "background": "#1E1B39",
+      "onPrimary": "#FFFFFF"
+    },
+    "octopus_in_action": {
+      "primary": "#FF8C42",
+      "secondary": "#D96E30",
+      "accent": "#FFC107",
+      "background": "#33190A",
+      "onPrimary": "#FFFFFF"
+    },
+    "loop": {
+      "primary": "#2AB7CA",
+      "secondary": "#1C8BA0",
+      "accent": "#00FFFF",
+      "background": "#051C20",
+      "onPrimary": "#FFFFFF"
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "heading": "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
+      "body": "'Open Sans', 'Helvetica Neue', Arial, sans-serif",
+      "mono": "'JetBrains Mono', 'Courier New', monospace"
+    },
+    "fontWeight": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    },
+    "fontSize": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "md": "1rem",
+      "lg": "1.25rem",
+      "xl": "1.5rem",
+      "2xl": "2rem",
+      "3xl": "2.5rem",
+      "4xl": "3rem"
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.5rem",
+    "6": "2rem",
+    "8": "3rem",
+    "10": "4rem",
+    "12": "6rem"
+  },
+  "radius": {
+    "none": "0",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "16px",
+    "xl": "24px",
+    "full": "9999px"
+  }
+}

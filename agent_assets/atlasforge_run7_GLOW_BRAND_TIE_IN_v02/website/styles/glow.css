@@ -1,0 +1,49 @@
+/*
+ * Glow utility classes for pages that adopt the glow aesthetic.
+ * These leverage the theme variables defined in theme.css. To use a glow,
+ * place the corresponding class on an element and ensure the parent body has
+ * a brand class (e.g. brand-atlasv) so --brand-accent resolves correctly.
+ */
+
+/* Soft ambient glow around containers */
+.glow-soft {
+  box-shadow: var(--glow-level-soft) var(--brand-accent);
+}
+
+/* Strong glow for hero panels or callouts */
+.glow-hero {
+  box-shadow: var(--glow-level-hero) var(--brand-accent);
+}
+
+/* Glow frame for hero panels: draws a subtle gradient border */
+.hero-panel {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-8);
+  background-color: var(--surface-1);
+  overflow: hidden;
+}
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--brand-accent), var(--glow-cyan));
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+/* Halo bar for section dividers */
+.halo-bar {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--brand-accent), var(--glow-teal));
+  margin: var(--space-6) 0;
+}

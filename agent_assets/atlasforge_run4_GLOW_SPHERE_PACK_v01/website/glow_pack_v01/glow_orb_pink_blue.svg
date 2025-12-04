@@ -1,0 +1,11 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="gradPinkBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E20074" stop-opacity="1" />
+      <stop offset="40%" stop-color="#B040D6" stop-opacity="0.8" />
+      <stop offset="80%" stop-color="#6C63FF" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#6C63FF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <circle cx="250" cy="250" r="200" fill="url(#gradPinkBlue)" />
+</svg>

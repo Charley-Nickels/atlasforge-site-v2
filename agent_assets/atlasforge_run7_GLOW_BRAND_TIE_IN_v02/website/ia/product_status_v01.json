@@ -1,0 +1,26 @@
+{
+  "AtlasForge": {
+    "status": "Live Beta",
+    "description": "The hub where every brand meets; the site itself is live and evolving."
+  },
+  "Atlas-V": {
+    "status": "Prototype",
+    "description": "Governance copilot core powering processes; user-facing previews are available."
+  },
+  "AtlasStudio": {
+    "status": "In Development",
+    "description": "Creative workstation with flows and decision trails; not yet publicly accessible."
+  },
+  "Octopus in Action": {
+    "status": "Playable Alpha",
+    "description": "Flagship cozy game demonstrating the ecosystem; early playtest builds exist."
+  },
+  "Decision Console": {
+    "status": "In Design",
+    "description": "Workflow tool for teams to make and record decisions; concept phase with early mockups."
+  },
+  "AtlasWave": {
+    "status": "Coming Soon",
+    "description": "Audio platform for soundtracks, ambience, and beats supporting the worlds."
+  }
+}

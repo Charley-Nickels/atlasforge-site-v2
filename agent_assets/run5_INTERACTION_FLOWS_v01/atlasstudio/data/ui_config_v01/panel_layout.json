@@ -1,0 +1,27 @@
+{
+  "regions": {
+    "toolbar": {
+      "position": "top",
+      "height": 60
+    },
+    "sidebar": {
+      "position": "left",
+      "width": 240
+    },
+    "editor": {
+      "position": "center",
+      "flex": 1
+    },
+    "chat": {
+      "position": "right",
+      "width": 280
+    }
+  },
+  "responsive": {
+    "compact": {
+      "toolbar.height": 50,
+      "sidebar.width": 180,
+      "chat.width": 220
+    }
+  }
+}

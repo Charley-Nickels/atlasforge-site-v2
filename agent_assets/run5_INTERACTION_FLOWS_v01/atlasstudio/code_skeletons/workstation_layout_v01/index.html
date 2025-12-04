@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AtlasStudio Workstation Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="as-toolbar">
+        <div class="as-title">AtlasStudio Workstation</div>
+        <nav class="as-actions">
+            <button class="as-btn as-new">New</button>
+            <button class="as-btn as-open">Open</button>
+            <button class="as-btn as-save">Save</button>
+            <button class="as-btn as-run">Run</button>
+        </nav>
+    </header>
+    <div class="as-layout">
+        <aside class="as-sidebar">
+            <div class="as-sidebar-header">File Explorer</div>
+            <ul class="as-file-tree"></ul>
+        </aside>
+        <main class="as-editor">
+            <div class="as-editor-header">Editor</div>
+            <div class="as-editor-content">Select a file to preview.</div>
+        </main>
+        <section class="as-chat">
+            <div class="as-chat-header">Atlas-V</div>
+            <div class="as-chat-messages"></div>
+            <div class="as-chat-input">
+                <input type="text" placeholder="Type a command..." />
+            </div>
+        </section>
+    </div>
+</body>
+</html>

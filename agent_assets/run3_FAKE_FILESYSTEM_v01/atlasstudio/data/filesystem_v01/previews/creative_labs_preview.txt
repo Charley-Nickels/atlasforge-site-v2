@@ -1,0 +1,7 @@
+Project: Creative Labs
+
+This project explores interactive art installations using generative algorithms.
+Files include prototypes, documentation, and configuration parameters for the AI-driven canvas.
+Goals:
+- Create immersive experiences.
+- Integrate Atlas-V modules for real-time feedback.

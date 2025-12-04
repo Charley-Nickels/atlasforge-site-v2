@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/canon_records.schema.json",
+  "title": "Canon Records",
+  "description": "Schema describing decisions that have been finalized and are part of the official canon.",
+  "type": "object",
+  "properties": {
+    "canonRecords": {
+      "type": "array",
+      "description": "List of canonical records derived from answered decisions.",
+      "items": {
+        "$ref": "#/definitions/canonRecord"
+      }
+    }
+  },
+  "required": ["canonRecords"],
+  "definitions": {
+    "canonRecord": {
+      "type": "object",
+      "description": "A record representing a finalized decision and its approved answer.",
+      "properties": {
+        "recordId": {
+          "type": "string",
+          "description": "Unique identifier for the canon record (e.g., a UUID)."
+        },
+        "originalDecisionId": {
+          "type": "string",
+          "description": "Identifier of the source decision in the queue."
+        },
+        "questionText": {
+          "type": "string",
+          "description": "The question text that was answered."
+        },
+        "responseType": {
+          "type": "string",
+          "enum": ["yes_no", "approve_deny", "multiple_choice", "free_text"],
+          "description": "Type of response used for this record."
+        },
+        "answer": {
+          "description": "Final answer stored in the canon. Its shape depends on responseType.",
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}}
+          ]
+        },
+        "projectId": {
+          "type": "string",
+          "description": "Project associated with this canon entry."
+        },
+        "categoryId": {
+          "type": "string",
+          "description": "Category within the project."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["canon", "rejected", "to_revise"],
+          "description": "Status of the canon record. 'canon' means active; 'to_revise' triggers creation of a new decision; 'rejected' indicates the record is no longer valid."
+        },
+        "timestampApproved": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when the decision was accepted into canon."
+        },
+        "revisionHistory": {
+          "type": "array",
+          "description": "List of revisions applied to this canon record over time.",
+          "items": {
+            "$ref": "#/definitions/revision"
+          }
+        }
+      },
+      "required": ["recordId", "originalDecisionId", "questionText", "responseType", "answer", "projectId", "categoryId", "status", "timestampApproved"],
+      "additionalProperties": false
+    },
+    "revision": {
+      "type": "object",
+      "description": "A single revision to a canon record.",
+      "properties": {
+        "revisionId": {
+          "type": "string",
+          "description": "Unique identifier for the revision (e.g., a UUID)."
+        },
+        "newAnswer": {
+          "oneOf": [
+            {"type": "string"},
+            {"type": "array", "items": {"type": "string"}}
+          ],
+          "description": "The updated answer for this revision."
+        },
+        "timestampRevised": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp when this revision was made."
+        },
+        "revisionNote": {
+          "type": "string",
+          "description": "Optional note explaining why the revision occurred.",
+          "nullable": true
+        }
+      },
+      "required": ["revisionId", "newAnswer", "timestampRevised"],
+      "additionalProperties": false
+    }
+  }
+}

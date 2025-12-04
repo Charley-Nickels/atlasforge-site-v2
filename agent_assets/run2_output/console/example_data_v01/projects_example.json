@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "projectId": "OIA",
+      "name": "Octopus In Action",
+      "description": "Internal tool for generative AI environment used to craft interactive stories."
+    },
+    {
+      "projectId": "AtlasStudio",
+      "name": "AtlasStudio",
+      "description": "Design environment for building the UI and assets of the Atlasforge suite."
+    },
+    {
+      "projectId": "Atlas-V",
+      "name": "Atlas‑V",
+      "description": "The core game engine powering Atlasforge experiences."
+    },
+    {
+      "projectId": "Website",
+      "name": "Atlasforge Website",
+      "description": "Public web portal showcasing the Atlasforge products and community."
+    }
+  ]
+}

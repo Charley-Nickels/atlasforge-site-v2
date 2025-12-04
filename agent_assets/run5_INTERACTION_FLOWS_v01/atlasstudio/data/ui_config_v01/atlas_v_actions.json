@@ -1,0 +1,49 @@
+{
+  "actions": [
+    {
+      "id": "generate_ideas",
+      "label": "Generate ideas",
+      "description": "Brainstorm creative variations or improvements based on the selected project or module.",
+      "affects": [
+        "chat"
+      ],
+      "side_effects": [
+        "creates_notes"
+      ]
+    },
+    {
+      "id": "patch_now",
+      "label": "Patch now",
+      "description": "Generate and apply a patch to the selected module; displays a diff view before committing.",
+      "affects": [
+        "editor",
+        "logs"
+      ],
+      "side_effects": [
+        "updates_file",
+        "appends_log"
+      ]
+    },
+    {
+      "id": "organize",
+      "label": "Organize",
+      "description": "Suggest and perform cleanup of files within the current project, moving assets into appropriate folders.",
+      "affects": [
+        "file_tree",
+        "chat"
+      ],
+      "side_effects": [
+        "reorders_files"
+      ]
+    },
+    {
+      "id": "summarize",
+      "label": "Summarize",
+      "description": "Provide a concise summary of the selected file or project.",
+      "affects": [
+        "chat"
+      ],
+      "side_effects": []
+    }
+  ]
+}

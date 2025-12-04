@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <style type="text/css"><![CDATA[
+      .box { fill: #fdf6e3; stroke: #c9a552; stroke-width: 1.5; }
+      .label { font-family: sans-serif; font-size: 12px; fill: #333; }
+    ]]></style>
+  </defs>
+  <!-- Boxes -->
+  <rect x="20"  y="80" width="120" height="60" class="box" />
+  <rect x="170" y="80" width="120" height="60" class="box" />
+  <rect x="320" y="80" width="160" height="60" class="box" />
+  <rect x="520" y="80" width="120" height="60" class="box" />
+  <rect x="670" y="80" width="120" height="60" class="box" />
+  <!-- Labels -->
+  <text x="80"  y="105" text-anchor="middle" class="label">Canon Record</text>
+  <text x="80"  y="125" text-anchor="middle" class="label">(existing)</text>
+  <text x="230" y="105" text-anchor="middle" class="label">Flag Raised</text>
+  <text x="230" y="125" text-anchor="middle" class="label">(open)</text>
+  <text x="400" y="105" text-anchor="middle" class="label">New Decision</text>
+  <text x="400" y="125" text-anchor="middle" class="label">in Queue</text>
+  <text x="580" y="105" text-anchor="middle" class="label">New Canon</text>
+  <text x="580" y="125" text-anchor="middle" class="label">Record</text>
+  <text x="730" y="105" text-anchor="middle" class="label">Flag Resolved</text>
+  <text x="730" y="125" text-anchor="middle" class="label">(closed)</text>
+  <!-- Arrows -->
+  <line x1="140" y1="110" x2="170" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="290" y1="110" x2="320" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="480" y1="110" x2="520" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <line x1="640" y1="110" x2="670" y2="110" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+</svg>

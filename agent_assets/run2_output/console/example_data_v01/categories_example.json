@@ -1,0 +1,53 @@
+{
+  "categories": [
+    {
+      "categoryId": "map_design",
+      "projectId": "OIA",
+      "name": "Map Design",
+      "description": "Decisions related to world layout, points of interest, and level structure.",
+      "allowedResponseTypes": ["yes_no", "multiple_choice", "approve_deny"]
+    },
+    {
+      "categoryId": "character_design",
+      "projectId": "OIA",
+      "name": "Character Design",
+      "description": "Questions about character appearance, abilities, and progression.",
+      "allowedResponseTypes": ["yes_no", "multiple_choice", "free_text"]
+    },
+    {
+      "categoryId": "theme",
+      "projectId": "Website",
+      "name": "Theme",
+      "description": "Choices about the visual theme and palette of the website.",
+      "allowedResponseTypes": ["multiple_choice", "approve_deny"]
+    },
+    {
+      "categoryId": "layout",
+      "projectId": "Website",
+      "name": "Layout",
+      "description": "Structural layout decisions such as grid configuration and navigation.",
+      "allowedResponseTypes": ["yes_no", "free_text"]
+    },
+    {
+      "categoryId": "ui_appearance",
+      "projectId": "AtlasStudio",
+      "name": "UI Appearance",
+      "description": "Decisions about the look and feel of the AtlasStudio interface.",
+      "allowedResponseTypes": ["yes_no", "multiple_choice"]
+    },
+    {
+      "categoryId": "workflow",
+      "projectId": "AtlasStudio",
+      "name": "Workflow",
+      "description": "Questions regarding the order of tasks and user interactions.",
+      "allowedResponseTypes": ["free_text", "approve_deny"]
+    },
+    {
+      "categoryId": "engine_params",
+      "projectId": "Atlas-V",
+      "name": "Engine Parameters",
+      "description": "Technical settings and default configurations for the engine.",
+      "allowedResponseTypes": ["multiple_choice", "free_text"]
+    }
+  ]
+}

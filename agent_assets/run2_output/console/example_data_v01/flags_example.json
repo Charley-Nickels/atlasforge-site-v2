@@ -1,0 +1,21 @@
+{
+  "flags": [
+    {
+      "flagId": "flag-001",
+      "recordId": "can-001",
+      "flaggedBy": "user-creative-director",
+      "reason": "Dynamic weather implementation causes performance issues; needs reassessment.",
+      "timestampFlagged": "2025-11-26T08:00:00Z",
+      "status": "open"
+    },
+    {
+      "flagId": "flag-002",
+      "recordId": "can-002",
+      "flaggedBy": "user-marketing",
+      "reason": "Marketing requests an updated color palette to align with new branding.",
+      "timestampFlagged": "2025-11-29T10:15:00Z",
+      "status": "resolved",
+      "resolutionNote": "New decision created with gradient theme options."
+    }
+  ]
+}

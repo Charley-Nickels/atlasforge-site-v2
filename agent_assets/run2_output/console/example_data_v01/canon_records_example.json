@@ -1,0 +1,59 @@
+{
+  "canonRecords": [
+    {
+      "recordId": "can-001",
+      "originalDecisionId": "dec-005",
+      "questionText": "Should the OIA environment include dynamic weather effects?",
+      "responseType": "yes_no",
+      "answer": "yes",
+      "projectId": "OIA",
+      "categoryId": "map_design",
+      "status": "canon",
+      "timestampApproved": "2025-11-20T09:00:00Z",
+      "revisionHistory": [
+        {
+          "revisionId": "rev-001",
+          "newAnswer": "no",
+          "timestampRevised": "2025-11-25T12:00:00Z",
+          "revisionNote": "Performance concerns led to disabling weather effects."
+        }
+      ]
+    },
+    {
+      "recordId": "can-002",
+      "originalDecisionId": "dec-002",
+      "questionText": "Choose the primary color theme for the AtlasForge website.",
+      "responseType": "multiple_choice",
+      "answer": "Purple",
+      "projectId": "Website",
+      "categoryId": "theme",
+      "status": "canon",
+      "timestampApproved": "2025-11-23T10:00:00Z",
+      "revisionHistory": []
+    },
+    {
+      "recordId": "can-003",
+      "originalDecisionId": "dec-003",
+      "questionText": "Should AtlasStudio enable dark mode by default?",
+      "responseType": "yes_no",
+      "answer": "no",
+      "projectId": "AtlasStudio",
+      "categoryId": "ui_appearance",
+      "status": "canon",
+      "timestampApproved": "2025-11-24T15:00:00Z",
+      "revisionHistory": []
+    },
+    {
+      "recordId": "can-004",
+      "originalDecisionId": "dec-004",
+      "questionText": "Select the default physics engine for Atlas‑V.",
+      "responseType": "multiple_choice",
+      "answer": "PhysX",
+      "projectId": "Atlas-V",
+      "categoryId": "engine_params",
+      "status": "canon",
+      "timestampApproved": "2025-11-27T11:30:00Z",
+      "revisionHistory": []
+    }
+  ]
+}

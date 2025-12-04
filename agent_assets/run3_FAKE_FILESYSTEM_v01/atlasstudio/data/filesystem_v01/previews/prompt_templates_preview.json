@@ -1,0 +1,12 @@
+{
+  "templates": [
+    {
+      "id": "brainstorm",
+      "prompt": "Generate three unique variations of the concept 'Skybound Garden' with a focus on interactivity and sound."
+    },
+    {
+      "id": "refactor",
+      "prompt": "Analyze the 'terrain_generator' module and suggest optimizations for faster runtime."
+    }
+  ]
+}
